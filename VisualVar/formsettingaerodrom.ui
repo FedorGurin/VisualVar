@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormSettingAerodrom</class>
+ <widget class="QWidget" name="FormSettingAerodrom">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>237</width>
+    <height>404</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTableWidget" name="tableWidget">
+     <row>
+      <property name="text">
+       <string>ЧКК пр.</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>ЧКК обр.</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Частота ILS пр.</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Частота ILS обр.</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Широта</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Долгота</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Курс ВПП</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Дальность выхода</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Высота аэродрома</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Высота круга</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Глиссада</string>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string>Длина ВПП</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>Значение</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowVariant</class>
+ <widget class="QMainWindow" name="MainWindowVariant">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>651</width>
+    <height>431</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Редактор вариантов</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonFollowStyle</enum>
+  </property>
+  <property name="documentMode">
+   <bool>true</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowNestedDocks|QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks|QMainWindow::ForceTabbedDocks</set>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>651</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Файл</string>
+    </property>
+    <widget class="QMenu" name="menu_3">
+     <property name="title">
+      <string>Создать</string>
+     </property>
+     <addaction name="actionCreateVar"/>
+     <addaction name="actionCreateVarCircle"/>
+    </widget>
+    <addaction name="menu_3"/>
+    <addaction name="actionOpenXML"/>
+    <addaction name="action_6"/>
+    <addaction name="action_5"/>
+    <addaction name="actionLastVar"/>
+    <addaction name="actionExport"/>
+    <addaction name="actionSaveAll"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="action"/>
+    <addaction name="actionCloseAll"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Окна</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Справка</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuMaps">
+    <property name="title">
+     <string>Карты</string>
+    </property>
+    <widget class="QMenu" name="menuMapGoogle">
+     <property name="title">
+      <string>Google</string>
+     </property>
+     <addaction name="actionSatGoogle"/>
+     <addaction name="actionMapsGoogle"/>
+     <addaction name="actionLandGoogle"/>
+    </widget>
+    <widget class="QMenu" name="menuMapYandex">
+     <property name="title">
+      <string>Яндекс</string>
+     </property>
+     <addaction name="actionSatYandex"/>
+     <addaction name="actionMapsYandex"/>
+    </widget>
+    <widget class="QMenu" name="menuMapBing">
+     <property name="title">
+      <string>Bing</string>
+     </property>
+     <addaction name="actionSatBing"/>
+    </widget>
+    <widget class="QMenu" name="menuGoogle_Earth">
+     <property name="title">
+      <string>Google Earth</string>
+     </property>
+     <addaction name="actionSatGoogleEa"/>
+    </widget>
+    <widget class="QMenu" name="menuNokia">
+     <property name="title">
+      <string>Nokia</string>
+     </property>
+     <addaction name="actionNokiaSatHyb"/>
+     <addaction name="actionNokiaMaps"/>
+    </widget>
+    <addaction name="actionAuto"/>
+    <addaction name="menuMapGoogle"/>
+    <addaction name="menuMapYandex"/>
+    <addaction name="menuMapBing"/>
+    <addaction name="menuGoogle_Earth"/>
+    <addaction name="menuNokia"/>
+   </widget>
+   <widget class="QMenu" name="menuMapsLayer">
+    <property name="title">
+     <string>Слои</string>
+    </property>
+    <widget class="QMenu" name="menuLayerGoogle">
+     <property name="title">
+      <string>Google</string>
+     </property>
+     <addaction name="actionHybGoogle"/>
+    </widget>
+    <widget class="QMenu" name="menuLayerYandex">
+     <property name="title">
+      <string>Яндекс</string>
+     </property>
+     <addaction name="actionHybYandex"/>
+    </widget>
+    <addaction name="menuLayerGoogle"/>
+    <addaction name="menuLayerYandex"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Метки</string>
+    </property>
+    <addaction name="actionAddLabel"/>
+    <addaction name="actionGoto"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Объекты</string>
+    </property>
+    <widget class="QMenu" name="menu_5">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Аэродромы</string>
+     </property>
+     <addaction name="action_7"/>
+    </widget>
+    <widget class="QMenu" name="menu_6">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="title">
+      <string>Радиомяки</string>
+     </property>
+     <addaction name="action_9"/>
+    </widget>
+    <addaction name="menu_5"/>
+    <addaction name="menu_6"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuMaps"/>
+   <addaction name="menuMapsLayer"/>
+   <addaction name="menu_2"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBarOperation">
+   <property name="windowTitle">
+    <string>Панель операций над объектами</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBarMain">
+   <property name="windowTitle">
+    <string>Передача данных по FTP</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBarSendFile">
+   <property name="windowTitle">
+    <string>Ручной способ задания</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonFollowStyle</enum>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBarCreate">
+   <property name="windowTitle">
+    <string>Часто используемые операции</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBarH">
+   <property name="windowTitle">
+    <string>Шкала высоты</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>RightToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionOpenXML">
+   <property name="text">
+    <string>Открыть</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSaveAll">
+   <property name="text">
+    <string>Сохранить все</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="text">
+    <string>Сохранить как...</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Выход</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>Масштаб</string>
+   </property>
+  </action>
+  <action name="actionZoomUp">
+   <property name="text">
+    <string>Увеличить</string>
+   </property>
+  </action>
+  <action name="actionZoomDown">
+   <property name="text">
+    <string>Уменьшить</string>
+   </property>
+  </action>
+  <action name="actionCreate_2">
+   <property name="text">
+    <string>Относительно самолета</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>Относительно модельной СК</string>
+   </property>
+  </action>
+  <action name="actionTable">
+   <property name="text">
+    <string>Табличный способ задания</string>
+   </property>
+  </action>
+  <action name="actionLastVar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Недавние файлы...</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Закрыть вариант</string>
+   </property>
+  </action>
+  <action name="actionCloseAll">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Закрыть все варианты</string>
+   </property>
+  </action>
+  <action name="actionCreateVar">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/png/var</normaloff>:/png/var</iconset>
+   </property>
+   <property name="text">
+    <string>Вариант начальных условий с целями</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="actionCreateVarCircle">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/png/circ</normaloff>:/png/circ</iconset>
+   </property>
+   <property name="text">
+    <string>Вариант движения по кругам</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionExport">
+   <property name="text">
+    <string>Экспорт в формат для VxWorks</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>Выбрать карту...</string>
+   </property>
+  </action>
+  <action name="actionHybGoogle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Гибрид</string>
+   </property>
+  </action>
+  <action name="actionHybYandex">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Гибрид</string>
+   </property>
+  </action>
+  <action name="actionSatGoogle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Спутник</string>
+   </property>
+  </action>
+  <action name="actionMapsGoogle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Карты</string>
+   </property>
+  </action>
+  <action name="actionLandGoogle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Ландшафт</string>
+   </property>
+  </action>
+  <action name="actionSatYandex">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Спутник</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Загрузить ПЗ</string>
+   </property>
+  </action>
+  <action name="actionAddLabel">
+   <property name="text">
+    <string>Добавить метку</string>
+   </property>
+  </action>
+  <action name="actionGoto">
+   <property name="text">
+    <string>Перейти на метку...</string>
+   </property>
+  </action>
+  <action name="actionBing">
+   <property name="text">
+    <string>Bing</string>
+   </property>
+  </action>
+  <action name="actionSatBing">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Спутник</string>
+   </property>
+  </action>
+  <action name="actionSatGoogleEa">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Спутник</string>
+   </property>
+  </action>
+  <action name="actionAuto">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Авто</string>
+   </property>
+  </action>
+  <action name="actionMapsYandex">
+   <property name="text">
+    <string>Карты</string>
+   </property>
+  </action>
+  <action name="action_7">
+   <property name="text">
+    <string>Выбрать из списка...</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="text">
+    <string>Выбрать из списка</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="text">
+    <string>Редактирование вручную</string>
+   </property>
+  </action>
+  <action name="actionNokiaSatHyb">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Спутник гибрид</string>
+   </property>
+  </action>
+  <action name="actionNokiaMaps">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Карты</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
