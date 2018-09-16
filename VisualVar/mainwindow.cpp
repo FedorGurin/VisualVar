@@ -1114,16 +1114,16 @@ void MainWindowVisVar::setGeoParamOfAircraft()
     if(scenes.size()!=0)
     {
 
-        TCommonRequest listReq;
-                listReq.setReciver("MPPM");
-                listReq.setSender("VAR");
-                QString prefixSetupGeo       ="InitialState.Init.";
+//        TCommonRequest listReq;
+//                listReq.setReciver("MPPM");
+//                listReq.setSender("VAR");
+//                QString prefixSetupGeo       ="InitialState.Init.";
 
-                listReq.append(prefixSetupGeo + "Psi",     QString::number(0.0));
-                listReq.append(prefixSetupGeo + "Lat",    QString::number(currentScenes->aircraft->lat));
-                listReq.append(prefixSetupGeo + "Lon", QString::number(currentScenes->aircraft->lon));
-                listReq.append(prefixSetupGeo + "Vist",               QString::number(0.0));
-                listReq.append(prefixSetupGeo + "Y",               QString::number(0.0));
+//                listReq.append(prefixSetupGeo + "Psi",     QString::number(0.0));
+//                listReq.append(prefixSetupGeo + "Lat",    QString::number(currentScenes->aircraft->lat));
+//                listReq.append(prefixSetupGeo + "Lon", QString::number(currentScenes->aircraft->lon));
+//                listReq.append(prefixSetupGeo + "Vist",               QString::number(0.0));
+//                listReq.append(prefixSetupGeo + "Y",               QString::number(0.0));
 
 //        TCommonRequest listReq;
 //        listReq.setReciver("MPPM");
@@ -1137,7 +1137,7 @@ void MainWindowVisVar::setGeoParamOfAircraft()
 //        listReq.append(prefixSetupGeo + "z0_ust",               QString::number(0.0));
 
 
-        requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
+        //requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
 
         /*engine->setValue("MPPM.Au_geography",           "0.0",IEngineData::ASYNCH_ENGINE);
         engine->setValue("MPPM.InitGEO.Setup.fiust_geography",        QString::number(currentScenes->aircraft->lat),IEngineData::ASYNCH_ENGINE);
