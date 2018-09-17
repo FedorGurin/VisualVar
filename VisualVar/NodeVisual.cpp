@@ -875,10 +875,11 @@ void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool cir
         request->append(prefixName+"Psi",  QString::number(unitAngle->convert(KursToPsi(psi),currentUnitTransPsi,"rad")));
 
         request->append(prefixName+"Unt", QString::number(unitAngle->convert(teta,currentUnitTransTeta,"rad")));
-        request->append(prefixName+"Lon", QString::number(unitAngle->convert(lat,currentUnitTransPsi,"rad")));
         request->append(prefixName+"Lat", QString::number(unitAngle->convert(lon,currentUnitTransPsi,"rad")));
-        request->append(prefixName+"Y", QString::number(unitLength->convert(y,currentUnitTransY,"m")));
-        request->append(prefixName+"Yp", QString::number(unitLength->convert(y,currentUnitTransY,"m")));
+        request->append(prefixName+"Lon", QString::number(unitAngle->convert(lat,currentUnitTransPsi,"rad")));        
+        request->append(prefixName+"Y",   QString::number(unitLength->convert(y,currentUnitTransY,"m")));
+        //request->append(prefixName+"Y",   QString::number(y));
+        //request->append(prefixName+"Yp", QString::number(unitLength->convert(y,currentUnitTransY,"m")));
 
         //признак установки угла тангажа/вертикальной скорости
 //        if(this->prVy==true)
