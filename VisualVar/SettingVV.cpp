@@ -15,8 +15,8 @@ SettingVV::SettingVV(QObject *parent):QObject(parent)
     FTPWait=20000;
     //noFTP=1;
 
-    startLat=55.3666;
-    startLon=38.2833;
+    startLat=55.567331494459;
+    startLon=38.121120929718;
 
     typeMap="nokia_hyb";
     typeLayer="";

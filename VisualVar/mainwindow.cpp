@@ -249,6 +249,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
         openFile("./xml/LastSend.xml");
     }
     slotButtonHandMoveMap(buttonHandMoveMap->isChecked());
+    slotButtonCentering();
     connect(formManualModify,SIGNAL(signalAttach()),this,SLOT(slotAttach()));
 }
 void MainWindowVisVar::slotCheckBoxGeography(int value)
