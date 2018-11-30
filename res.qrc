@@ -1,0 +1,56 @@
+<RCC>
+    <qresource prefix="/png">
+        <file alias="zoomin">resource/zoomin.png</file>
+        <file alias="zoomout">resource/zoomout.png</file>
+        <file alias="ruler">resource/ruler.png</file>
+        <file alias="send">resource/send.png</file>
+        <file alias="hand">resource/openhand.png</file>
+        <file alias="intro">resource/su35.jpg</file>
+        <file alias="molnia">resource/charts02.png</file>
+        <file alias="circle">resource/Cycle.png</file>
+        <file>resource/Recycle.png</file>
+        <file>resource/refresh.png</file>
+        <file alias="tool">resource/tool.png</file>
+        <file>resource/zoom.png</file>
+        <file alias="var">resource/variant.png</file>
+        <file alias="circ">resource/variant_circle.png</file>
+        <file alias="introT50">resource/T50.jpg</file>
+        <file alias="bullet">resource/bullet.png</file>
+        <file alias="arrowLeft">resource/arrow_left.png</file>
+        <file alias="arrowRight">resource/arrow_right.png</file>
+        <file alias="pm1">resource/pm1.png</file>
+        <file alias="pm">resource/pm.png</file>
+        <file alias="save">resource/save.png</file>
+        <file alias="cursor">resource/cursor.png</file>
+        <file alias="yellow">resource/mkm_yellow.png</file>
+        <file alias="labelA">resource/A.png</file>
+        <file alias="labelB">resource/B.png</file>
+        <file alias="route">resource/route.png</file>
+        <file alias="routeObjects">resource/target_route.png</file>
+        <file alias="info_obj">resource/info_object.png</file>
+        <file alias="no_tile">resource/no_tile.png</file>
+        <file alias="toolRed">resource/toolRed.png</file>
+        <file>resource/document-send.png</file>
+    </qresource>
+    <qresource prefix="/svg">
+        <file alias="ledGreen">resource/led-green.svg</file>
+        <file alias="ledRed">resource/led-red.svg</file>
+        <file alias="pult">resource/pult.png</file>
+        <file alias="label">resource/label.svg</file>
+    </qresource>
+    <qresource prefix="/res/svg">
+        <file>resource/aerodrom.svg</file>
+        <file alias="gtarget">resource/gtarget.svg</file>
+        <file>resource/info.svg</file>
+        <file alias="target">resource/target.svg</file>
+        <file alias="aircraft">resource/mkm.svg</file>
+        <file alias="aircraft_move">resource/mkm_move.svg</file>
+        <file alias="target_move">resource/target_move.svg</file>
+        <file alias="scale">resource/scale.svg</file>
+        <file alias="t_up">resource/t_empty_up.svg</file>
+        <file alias="t_right">resource/t_empty_right.svg</file>
+        <file alias="t_left">resource/t_empty_left.svg</file>
+        <file alias="t_down">resource/t_empty_down.svg</file>
+    </qresource>
+    <qresource prefix="/sound"/>
+</RCC>
