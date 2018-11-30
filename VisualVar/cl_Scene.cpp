@@ -1,4 +1,4 @@
-/*
+﻿/*
  * cl_Scene.cpp
  *
  *  Created on: 16.06.2009
@@ -372,7 +372,7 @@ cl_Scene::cl_Scene(QDomElement &node,
         target->setAircraft(aircraft);
         target->setZoomLevel(currentZoom);
         target->formSetting->setListObjectVis(typeObjectsVis->listGroundObjects());
-        target->hide();
+        ///target->hide();
         target->loadXML(tempNode);
 
         int tempCode=tempNode.attribute("codeObjectVis","0").toInt();
