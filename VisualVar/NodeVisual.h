@@ -117,29 +117,29 @@ public:
     GraphNode(QGraphicsItem *parent=0):QGraphicsItem(parent)
     {
         //! координаты положения объекта в географической СК
-        lat=0;
-        lon=0;
-        use_russian=true;
+        lat         = 0;
+        lon         = 0;
+        use_russian = true;
         //! координаты положения объекта в прямоугольной СК относительно левого края карты
 //        xMap=0;
 //        zMap=0;
     }
     enum TypeGraphNode
     {
-        MAP=        UserType+1,
-        TARGET_G=   UserType+2,
-        TARGET_V=   UserType+3,
-        AERODROM=   UserType+4,
-        BEACON_RSBN=UserType+5,
-        BEACON_VOR= UserType+6,
-        AIRCRAFT=   UserType+8,
-        UNSET=      UserType+7,
-        SYSCOORD=   UserType+9,
-        INFO=       UserType+10,
-        ROUTE=      UserType+11,
-        POINT=      UserType+12,
-        PPM=        UserType+13,
-        LABEL=      UserType+14
+        MAP         = UserType+1,
+        TARGET_G    = UserType+2,
+        TARGET_V    = UserType+3,
+        AERODROM    = UserType+4,
+        BEACON_RSBN = UserType+5,
+        BEACON_VOR  = UserType+6,
+        AIRCRAFT    = UserType+8,
+        UNSET       = UserType+7,
+        SYSCOORD    = UserType+9,
+        INFO        = UserType+10,
+        ROUTE       = UserType+11,
+        POINT       = UserType+12,
+        PPM         = UserType+13,
+        LABEL       = UserType+14
     };
     //! координаты положения объекта в географической СК
     double lat;
@@ -578,14 +578,15 @@ public:
         formSetting->slotLonDouble(lon);
     }
     //! текущие значения паарметров
-    double currentV()       {return vc;}
-    double currentY()       {return y;}
-    double currentTeta()    {return teta;}
-    double currentDelta_hc(){return delta_hc;}
-    double currentAlfa_c()  {return alfa_c;}
-    double currentVy()      {return vy;}
-    bool currentPrVy()      {return prVy;}
-    bool currentKren90()    {return kren90;}
+    double currentV()       {return vc          ;}
+    double currentY()       {return y           ;}
+    double currentTeta()    {return teta        ;}
+    double currentDelta_hc(){return delta_hc    ;}
+    double currentAlfa_c()  {return alfa_c      ;}
+    double currentVy()      {return vy          ;}
+    bool currentStart()     {return startEarth  ;}
+    bool currentPrVy()      {return prVy        ;}
+    bool currentKren90()    {return kren90      ;}
 
     //! текущие ед. измерения порядок числа
     QString curMessV();
@@ -654,26 +655,26 @@ public:
     void initMessureItem()
     {
         qDebug("start NodeVisual.h: initMessureItem()\n");
-        currentUnitTransV=unitSpeed->find("m/s");
-        currentExpTransV= unitExp->find("");
+        currentUnitTransV    = unitSpeed->find("m/s");
+        currentExpTransV     = unitExp->find("");
 
-        currentUnitTransY=unitLength->find("m");
-        currentExpTransY= unitExp->find("");
+        currentUnitTransY    = unitLength->find("m");
+        currentExpTransY     = unitExp->find("");
 
-        currentUnitTransPsi=unitAngle->find("deg");
-        currentExpTransPsi= unitExp->find("");
+        currentUnitTransPsi  = unitAngle->find("deg");
+        currentExpTransPsi   = unitExp->find("");
 
-        currentUnitTransTeta=unitAngle->find("deg");
-        currentExpTransTeta= unitExp->find("");
+        currentUnitTransTeta = unitAngle->find("deg");
+        currentExpTransTeta  = unitExp->find("");
 
-        currentUnitTransVy=unitSpeed->find("m/s");
-        currentExpTransVy= unitExp->find("");
+        currentUnitTransVy   = unitSpeed->find("m/s");
+        currentExpTransVy    = unitExp->find("");
 
-        currentUnitTransDelta_hc=unitLength->find("m");
-        currentExpTransDelta_hc= unitExp->find("");
+        currentUnitTransDelta_hc = unitLength->find("m");
+        currentExpTransDelta_hc  = unitExp->find("");
 
-        currentUnitTransAlfa_c=unitAngle->find("deg");
-        currentExpTransAlfa_c= unitExp->find("");
+        currentUnitTransAlfa_c   = unitAngle->find("deg");
+        currentExpTransAlfa_c    = unitExp->find("");
         qDebug("end NodeVisual.h: initMessureItem()\n");
     }
 signals:
@@ -722,6 +723,10 @@ public slots:
         colorItem->setRowText(tr("Высота=")+QString::number(formSetting->currentH())+" "+
                             formSetting->currentMessureAlt(),1);
     }
+    void setStartEarth(bool value)
+    {
+        startEarth = value;
+    }
     void slotLonToX(double,QString);
     void slotLatToZ(double,QString);
     void slotLonToX(double);
@@ -748,6 +753,10 @@ public slots:
     {
         kren90=value;
     }
+    bool isStartEarth()
+    {
+        return startEarth;
+    }
     void refresh();
 protected:
     virtual void mousePressEvent(QGraphicsSceneMouseEvent*          event);
@@ -773,6 +782,8 @@ private:
     double delta_hc;    //! превышение над целью
     double alfa_c;      //! угол атаки на маневрирующую цель
     int kren90;         //! крен 90 градусов
+    //! признак старта с земли(true - с земли, false - воздух)
+    bool startEarth;
 };
 
 //! класс воздушная цель

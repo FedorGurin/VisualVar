@@ -15,56 +15,59 @@ SettingVV::SettingVV(QObject *parent):QObject(parent)
     FTPWait=20000;
     //noFTP=1;
 
-    startLat=55.567331494459;
-    startLon=38.121120929718;
+    startLat = 55.567331494459;
+    startLon = 38.121120929718;
 
-    typeMap="nokia_hyb";
-    typeLayer="";
+    typeMap   = "nokia_hyb";
+    typeLayer = "";
 
     zoom=12;
     moveObjects=0;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","FileName");
-    if(temp.size()!=0) fileName=temp;
+    if(temp.isEmpty() == false) fileName=temp;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","HostAddress");
-    if(temp.size()!=0) hostAddress=temp;
+    if(temp.isEmpty() == false) hostAddress=temp;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","UserName");
-    if(temp.size()!=0) userName=temp;
+    if(temp.isEmpty() == false) userName=temp;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","Password");
-    if(temp.size()!=0) password=temp;
+    if(temp.isEmpty() == false) password=temp;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","PathCD");
-    if(temp.size()!=0) pathCD=temp;
+    if(temp.isEmpty() == false) pathCD=temp;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","DirVariant");
-    if(temp.size()!=0) dirSaveVar=temp;
+    if(temp.isEmpty() == false) dirSaveVar=temp;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","DirWithMap");
-    if(temp.size()!=0) pathWithMap=temp;
+    if(temp.isEmpty() == false) pathWithMap=temp;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","FTPWait");
-    if(temp.size()!=0) FTPWait=temp.toInt();
+    if(temp.isEmpty() == false) FTPWait=temp.toInt();
 
     temp=readParamFromXMLFile(nameMainFile,"VV","StartLat");
-    if(temp.size()!=0) startLat=temp.toDouble();
+    if(temp.isEmpty() == false) startLat=temp.toDouble();
 
     temp=readParamFromXMLFile(nameMainFile,"VV","StartLon");
-    if(temp.size()!=0) startLon=temp.toDouble();
+    if(temp.isEmpty() == false) startLon=temp.toDouble();
 
     temp=readParamFromXMLFile(nameMainFile,"VV","Zoom");
-    if(temp.size()!=0) zoom=temp.toInt();
+    if(temp.isEmpty() == false) zoom = temp.toInt();
 
     temp=readParamFromXMLFile(nameMainFile,"VV","MoveObj");
-    if(temp.size()!=0) moveObjects=temp.toInt();
+    if(temp.isEmpty() == false) moveObjects = temp.toInt();
 
     temp=readParamFromXMLFile(nameMainFile,"VV","TypeMap");
-    if(temp.size()!=0) typeMap=temp;
+    if(temp.isEmpty() == false) typeMap  = temp;
 
     temp=readParamFromXMLFile(nameMainFile,"VV","TypeLayer");
-    if(temp.size()!=0) typeLayer=temp;
+    if(temp.isEmpty() == false) typeLayer = temp;
+
+    temp=readParamFromXMLFile(nameMainFile,"VV","PathToObj");
+    if(temp.isEmpty() == false) pathToObj = temp;
 
 //    temp=readParamFromXMLFile(nameMainFile,"VV","NoFTP");
 //    if(temp.size()!=0) noFTP=temp.toInt();

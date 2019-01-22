@@ -33,15 +33,16 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     circleVariant   =   circleVariant_;
     set             =   settingVV;
 
+
     //! текущее увеличение
-    currentZoom         =   settingVV->zoom;
-    use                 =   true;
-    index               =   1;
-    numberNameVariant   =   1;
-    useMoveObj          =   set->moveObjects;
-    activeAddLabel      =   false;
-    activeRoute         =   false;
-    firstConnectingSlots=false;
+    currentZoom         = settingVV->zoom;
+    use                 = true;
+    index               = 1;
+    numberNameVariant   = 1;
+    useMoveObj          = set->moveObjects;
+    activeAddLabel      = false;
+    activeRoute         = false;
+    firstConnectingSlots= false;
 
     map=new GeographySysCoord;
     map->setZValue(0);
@@ -80,8 +81,8 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     //! признак отрисовки траектории
     aircraftMove->trajectory=true;
     //! прочитаем координаты центра окна
-    curLatView=settingVV->startLat;
-    curLonView=settingVV->startLon;
+    curLatView = settingVV->startLat;
+    curLonView = settingVV->startLon;
     //! текущие координаты
     curLat=curLatView;
     curLon=curLonView;
@@ -111,30 +112,31 @@ cl_Scene::cl_Scene(FormStatusBar* form,
 }
 cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
 {
-    allInfoObjects=false;
-    labelObjects=0;    
+    allInfoObjects  = false;
+    labelObjects    = 0;
     airTargets.clear();
     groundTargets.clear();
     aerodroms.clear();
     beaconObjects.clear();
     routeObjects.clear();
 
-    infoObjects =     thisScene->infoObjects;
-    statusBar   =     thisScene->statusBar;
-    typeObjectsVis  = thisScene->typeObjectsVis;
-    circleVariant   = thisScene->circleVariant;
-    set  =            thisScene->set;
-    useMoveObj  =     thisScene->useMoveObj;
-    numberNameVariant=thisScene->numberNameVariant;
+    infoObjects      = thisScene->infoObjects;
+    statusBar        = thisScene->statusBar;
+    typeObjectsVis   = thisScene->typeObjectsVis;
+    circleVariant    = thisScene->circleVariant;
+    set              = thisScene->set;
+    useMoveObj       = thisScene->useMoveObj;
+    numberNameVariant= thisScene->numberNameVariant;
+
 
     //! текущее увеличение
-    currentZoom=thisScene->currentZoom;
-    use=        thisScene->use;
+    currentZoom = thisScene->currentZoom;
+    use         = thisScene->use;
 
-    index=                  1;
-    activeAddLabel=         thisScene->activeAddLabel;
-    activeRoute=            thisScene->activeRoute;
-    firstConnectingSlots=   thisScene->firstConnectingSlots;
+    index                   = 1;
+    activeAddLabel          = thisScene->activeAddLabel;
+    activeRoute             = thisScene->activeRoute;
+    firstConnectingSlots    = thisScene->firstConnectingSlots;
 
     map=new GeographySysCoord;
     map->setZValue(0);
@@ -142,7 +144,7 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     map->setTypeMap(thisScene->map->isTypeMap());
     map->setTypeLayer(thisScene->map->isTypeLayer());
 
-    scene=new GScene;
+    scene = new GScene;
 
     connect(scene,SIGNAL(zoomUp()),this,SLOT(slotZoomUp()));
     connect(scene,SIGNAL(zoomDown()),this,SLOT(slotZoomDown()));
@@ -150,7 +152,7 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     connect(scene,SIGNAL(sigRightMouse()),this,SLOT(slotRightButton()));
     connect(scene,SIGNAL(clickLeftMouse()),this,SLOT(slotClickLeftMouse()));
 
-    view=new GView(scene);
+    view = new GView(scene);
     view->setRenderHint(QPainter::Antialiasing);
     view->setRubberBandSelectionMode(Qt::IntersectsItemBoundingRect);
     view->setDragMode(QGraphicsView::RubberBandDrag);
@@ -167,15 +169,15 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     aircraft->setZoomLevel(currentZoom);
     aircraft->map=map;
 
-    aircraftMove=new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft_move",map);
+    aircraftMove = new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft_move",map);
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
     aircraftMove->map=map;
     aircraftMove->trajectory=true;
 
     //! прочитаем координаты центра окна
-    curLatView=thisScene->curLatView;
-    curLonView=thisScene->curLonView;
+    curLatView = thisScene->curLatView;
+    curLonView = thisScene->curLonView;
 
     curLat=curLatView;
     curLon=curLonView;
@@ -231,18 +233,19 @@ cl_Scene::cl_Scene(QDomElement &node,
     aerodroms.clear();
     routeObjects.clear();
 
-    allInfoObjects  = false;
+    allInfoObjects      = false;
     labelObjects        = 0;
     numberNameVariant   = 1;
 
-    statusBar=form;
-    typeObjectsVis=typeObjectsVis_;
-    infoObjects=0;
-    index=1;
-    useMoveObj=false;
-    activeAddLabel=false;
-    activeRoute=false;
-    firstConnectingSlots=false;
+    statusBar           = form;
+    typeObjectsVis      = typeObjectsVis_;
+    infoObjects         = 0;
+    index               = 1;
+    useMoveObj          = false;
+    activeAddLabel      = false;
+    activeRoute         = false;
+    firstConnectingSlots= false;
+
 
     //! текущий уровень детализации
     currentZoom=node.attribute("scale","4").toInt();
@@ -851,16 +854,16 @@ void cl_Scene::createNewAerodrom(QPointF p)
 }
 void cl_Scene::createNewInfoObject(QPointF p)
 {
-    InfoObject *info=new InfoObject("./res/info.svg",map);
+    InfoObject *info = new InfoObject("./res/info.svg",map);
     infoObjects->push_back(info);
-    info->map=map;
+    info->map = map;
     QPointF pos=map->mapFromScene(p);
     info->setPos(pos.x(),pos.y());
     scene->addItem(info);
 }
 void cl_Scene::createNewBeaconObject(QPointF p)
 {
-    BeaconObject *beacon=new BeaconObject("./res/beam.svg",map);
+    BeaconObject *beacon = new BeaconObject("./res/beam.svg",map);
     beaconObjects.push_back(beacon);
     beacon->map=map;
     QPointF pos=map->mapFromScene(p);
@@ -901,6 +904,12 @@ void cl_Scene::createNewPointRoute(QPointF p)
         routeObjects[i-1]->setRightRoute(route);
         routeObjects[i]->setLeftRoute(routeObjects[i-1]);
     }
+}
+void cl_Scene::slotAircraftPos2D(double lon,double lat, double psi)
+{
+     aircraftMove->setPsi(psi);
+     aircraftMove->slotLatToZ(lat);
+     aircraftMove->slotLonToX(lon);
 }
 void cl_Scene::slotAircraftPsi(double psi)
 {

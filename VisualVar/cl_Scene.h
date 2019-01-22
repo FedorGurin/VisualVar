@@ -225,6 +225,8 @@ public slots:
     void slotAircraftPsi(double psi);
     void slotAircraftLat(double lat);
     void slotAircraftLon(double lon);
+    void slotAircraftPos2D(double lon,double lat, double psi);
+
     //! реакция на изменение координат и угла курса воздушных целей
     void slotTargetPsi(int index,double psi);
     void slotTargetLat(int index,double lat);
@@ -234,6 +236,7 @@ private:
     bool allInfoObjects;
     //! признак отображения перемещения объектов
     bool useMoveObj;
+
     //! имя варианта
     QString  nameVariant;
     QString  comment_;

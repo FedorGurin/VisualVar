@@ -12,22 +12,22 @@
 namespace VisualVariant
 {
 
-TObjectProperty* ObjectGraphNode::unitAngle=0;
-TObjectProperty* ObjectGraphNode::unitSpeed=0;
-TObjectProperty* ObjectGraphNode::unitLength=0;
-TObjectProperty* ObjectGraphNode::unitExp=0;
+TObjectProperty* ObjectGraphNode::unitAngle = nullptr;
+TObjectProperty* ObjectGraphNode::unitSpeed = nullptr;
+TObjectProperty* ObjectGraphNode::unitLength= nullptr;
+TObjectProperty* ObjectGraphNode::unitExp   = nullptr;
 
-const QString google_sat="\\sat\\z";
-const QString google_map="\\map\\z";
-const QString google_land="\\land\\z";
-const QString google_hyb="\\both\\z";
-const QString yandex_hyb="\\yahyb\\z";
-const QString yandex_sat="\\yasat\\z";
-const QString yandex_map="\\yamapng\\z";
-const QString bing_sat="\\vesatbird_N\\z";
-const QString google_sat_earth="\\vesat\\z";
-const QString nokia_hyb="\\ovi_com_Hyb\\z";
-const QString nokia_map="\\ovi_com_map\\z";
+const QString google_sat        = "\\sat\\z";
+const QString google_map        = "\\map\\z";
+const QString google_land       = "\\land\\z";
+const QString google_hyb        = "\\both\\z";
+const QString yandex_hyb        = "\\yahyb\\z";
+const QString yandex_sat        = "\\yasat\\z";
+const QString yandex_map        = "\\yamapng\\z";
+const QString bing_sat          = "\\vesatbird_N\\z";
+const QString google_sat_earth  = "\\vesat\\z";
+const QString nokia_hyb         = "\\ovi_com_Hyb\\z";
+const QString nokia_map         = "\\ovi_com_map\\z";
 
 
 void GeographySysCoord::pixelXYToTileXY(double pixX, double pixY, int &tileX, int &tileY)
@@ -85,18 +85,18 @@ void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
 
     //! для дополнительных слоев
     //! строки для идентификации карты
-    QString pref_layer="";
-    QString ext_layer=".jpg";
+    QString pref_layer  = "";
+    QString ext_layer   = ".jpg";
     switch(typeLayer)
     {
         case YANDEX_HYB:        {pref_layer=yandex_hyb;ext_layer=".png";break;}
         case GOOGLE_HYB:        {pref_layer=google_hyb;ext_layer=".png";break;}
         default:                {pref_layer="";}
     };
-    QString path_map=dirMaps+pref_map+QString::number(currentZoom);
-    QString path_layer=dirMaps+pref_layer+QString::number(currentZoom);
-    if(pref_layer.isEmpty()==true)
-        path_layer ="";
+    QString path_map        = dirMaps+pref_map+QString::number(currentZoom);
+    QString path_layer      = dirMaps+pref_layer+QString::number(currentZoom);
+    if(pref_layer.isEmpty() ==true)
+        path_layer = "";
 
     //! запускаем поток для загрузки тайлов
     threadLoadMaps->startLoadTile(path_map,
@@ -405,7 +405,7 @@ void ObjectGraphNode::setPosC(qreal dx,qreal dy)
     setPos(result);
 
     //! добавить точку в список
-    if(trajectory==true && addPoint==true && fabs(lastTimeForTraj-currentTime)>1.0)
+    if(trajectory==true && addPoint==true)// && fabs(lastTimeForTraj-currentTime)>1.0)
     {
         if(traj.size()!=0)
         {
@@ -434,7 +434,7 @@ void ObjectGraphNode::setPosC(qreal dx,qreal dy)
             addPoint=false;
         }else
         {
-            if(this->scene()!=0)
+            if(this->scene()!=nullptr)
             {
                 traj.push_back(this->scene()->addLine(tempPoint.x(),
                                                   tempPoint.y(),
@@ -443,8 +443,8 @@ void ObjectGraphNode::setPosC(qreal dx,qreal dy)
                 traj.back()->setVisible(this->isVisible());
                 TGeoPoint geoPoint(lat,lon);
                 trajGeoPoints.push_back(geoPoint);
-                lastTimeForTraj=currentTime;
-                addPoint=false;
+                lastTimeForTraj = currentTime;
+                addPoint = false;
             }
         }
     }else
@@ -528,15 +528,16 @@ AircraftObject::AircraftObject(QString nameI,QString nameFile,QGraphicsItem *par
 {
     setZValue(10);
     initMessureItem();
-    name=nameI;
-    vc=250;
-    teta=0;
-    y=3500;
-    vy=0.0;
-    prVy=false;
-    delta_hc=0;
-    alfa_c=0;
-    kren90=false;
+    name        = nameI;
+    vc          = 250;
+    teta        = 0;
+    y           = 3500;
+    vy          = 0.0;
+    prVy        = false;
+    delta_hc    = 0;
+    alfa_c      = 0;
+    kren90      = false;
+    startEarth  = true;
 
     setAcceptHoverEvents(true);
     setScale(0.1);
@@ -585,6 +586,7 @@ AircraftObject::AircraftObject(AircraftObject *aircraft_,QString nameFile,QGraph
     setZValue(10);
     initMessureItem();
     name=aircraft_->name;
+    startEarth = aircraft_->isStartEarth();
 
     setAcceptHoverEvents(true);
     setScale(0.1);
@@ -871,13 +873,14 @@ void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool cir
     {
         QString prefixName = prefix;// + "INITDesArcraft.";
 
-        request->append(prefixName+"Vist",QString::number(unitSpeed->convert(vc,currentUnitTransV,"m/s")));
-        request->append(prefixName+"Psi",  QString::number(unitAngle->convert(KursToPsi(psi),currentUnitTransPsi,"rad")));
+        request->append(prefixName+"Vist", QString::number(unitSpeed->convert(vc,currentUnitTransV,"km/h")));
+        request->append(prefixName+"Psi",  QString::number(unitAngle->convert(KursToPsi(psi),currentUnitTransPsi,"deg")));
 
-        request->append(prefixName+"Unt", QString::number(unitAngle->convert(teta,currentUnitTransTeta,"rad")));
-        request->append(prefixName+"Lat", QString::number(unitAngle->convert(lon,currentUnitTransPsi,"rad")));
-        request->append(prefixName+"Lon", QString::number(unitAngle->convert(lat,currentUnitTransPsi,"rad")));        
-        request->append(prefixName+"Y",   QString::number(unitLength->convert(y,currentUnitTransY,"m")));
+        request->append(prefixName+"Tan0",  QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
+        request->append(prefixName+"Lat",  QString::number(unitAngle->convert(lon,currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Lon",  QString::number(unitAngle->convert(lat,currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Y",    QString::number(unitLength->convert(y,currentUnitTransY,"m")));
+
         //request->append(prefixName+"Y",   QString::number(y));
         //request->append(prefixName+"Yp", QString::number(unitLength->convert(y,currentUnitTransY,"m")));
 

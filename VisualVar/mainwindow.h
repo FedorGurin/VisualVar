@@ -171,11 +171,14 @@ public slots:
     void slotMapGoogle_EA(QAction*);
     void slotLayerYandex(QAction*);
     void slotLayerGoogle(QAction*);
+
+    void slotEventsRequest(TRequestEvent);
 protected:
     void changeEvent(QEvent *e);
     bool event(QEvent *event);
 private:
     TRequestEvent requestEvent;
+    TRequestEvent reqEventCurPos;
     //! параметры структуры
     QString psi_model;
     QString lat_model;
@@ -235,6 +238,12 @@ private:
     FormAddLabelMap *formAddLabel;
 signals:
     void signalAddData();
+    void sigAircraftLat(double);
+    void sigAircraftLon(double);
+    void sigAircraftPsi(double);
+    void sAircraftPos2D(double,double,double);
+    void sigTime(double);
+
 };
 }
 #endif // MAINWINDOW_H

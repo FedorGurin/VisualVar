@@ -18,22 +18,23 @@ namespace VisualVariant
 {
 cl_MouseFilterVariant::cl_MouseFilterVariant(QObject* pobj,QWidget *slotForm_):QObject(pobj)
 {
-    slotForm=slotForm_;
+    slotForm = slotForm_;
 }
 bool cl_MouseFilterVariant::eventFilter(QObject* pobj,QEvent *event)
 {
     if(event->type()==QEvent::ContextMenu)
     {
         MainWindowVisVar *p=qobject_cast<MainWindowVisVar* >(slotForm);
-        if(p!=0)
+        if(p!=nullptr)
         {
             p->rightButtonMouseClicked();
             return true;
-        }else return false;
+        }else
+            return false;
     }else if(event->type()==QEvent::Close)
     {
         MainWindowVisVar *p=qobject_cast<MainWindowVisVar* >(slotForm);
-        if(p!=0)
+        if(p!=nullptr)
         {
 
         for(int i=0;i<p->scenes.size();i++)
@@ -58,8 +59,8 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
 {
     ui->setupUi(this);
     ObjectGraphNode::initObjectsProperty();
-    settingVV=new SettingVV(this);
-    formProjH=new FormProjectH;
+    settingVV = new SettingVV(this);
+    formProjH = new FormProjectH;
     ui->toolBarH->addWidget(formProjH);
 
 #ifdef QT_DEBUG
@@ -69,7 +70,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
 #endif
 
     CreateEngine func = (CreateEngine)libMPPM.resolve("createEngine");
-    if(func == 0)
+    if(func == nullptr)
     {
         QMessageBox::warning(this, tr("Warning!"),
                              tr("libMPPM: (CreateEngine)libMPPM.resolve(\"createEngine\") = 0. \n"
@@ -89,7 +90,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     formAddLabel    = new FormAddLabelMap;
 
     //! текущая сцена не определена
-    currentScenes   = 0;
+    currentScenes   = nullptr;
     //! по умолчанию используем цифровую карту
     useMap          = true;
 
@@ -251,6 +252,42 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     slotButtonHandMoveMap(buttonHandMoveMap->isChecked());
     slotButtonCentering();
     connect(formManualModify,SIGNAL(signalAttach()),this,SLOT(slotAttach()));
+
+    TCommonRequest listReq;
+    listReq.setReciver("MPPM");
+    listReq.setSender("VAR");
+    QString prefixPath      = settingVV->pathToObj + "Общие параметры.Kin.Work.";
+    listReq.append(prefixPath + "fi_geo");
+    listReq.append(prefixPath + "lam_geo" );
+    listReq.append(prefixPath + "Psi");
+    listReq.append(prefixPath + "c_g.x");
+    listReq.append(prefixPath + "c_g.z");
+
+
+    reqEventCurPos = engine->getValue(listReq,IEngineData::CYCLIC_ENGINE);
+    qDebug("Status=%d\n",reqEventCurPos.status);
+    qDebug("Sub Status=%d\n",reqEventCurPos.sub_status[0]);
+    connect(engine,SIGNAL(reciveEventsRequest(TRequestEvent)),this,SLOT(slotEventsRequest(TRequestEvent)));
+
+
+}
+void MainWindowVisVar::slotEventsRequest(TRequestEvent answer)
+{
+    if(answer.uid == reqEventCurPos.uid)
+    {
+        qDebug("answer status=%d\n",answer.status);
+
+
+        if(answer.value.isEmpty() == false)
+        {
+            qDebug("answer sub_status=%d\n",answer.sub_status[0]);
+            emit sAircraftPos2D(rad_deg(answer.value[1].toDouble()),
+                                rad_deg((answer.value[0].toDouble())),
+                                rad_deg(-(answer.value[2].toDouble())));
+
+        }
+        //emit sigTime();
+    }
 }
 void MainWindowVisVar::slotCheckBoxGeography(int value)
 {
@@ -264,28 +301,30 @@ void MainWindowVisVar::slotCheckBoxGeography(int value)
 
 void MainWindowVisVar::slotButtonAllInfoObject(bool value)
 {
-    if(currentScenes!=0)
+    if(currentScenes != nullptr)
         currentScenes->setAllInfo(value);
 }
 void MainWindowVisVar::slotButtonCentering()
 {
-    if(currentScenes!=0)
+    if(currentScenes != nullptr)
         currentScenes->centerByAircarft();
 }
 //! копирование сцены
 void MainWindowVisVar::slotCloningScene(cl_Scene* s)
 {
-    cl_Scene *scene=new cl_Scene(s,this);
+    cl_Scene *scene = new cl_Scene(s,this);
 
     formManualModify->resetModelData();
     scene->setLabelObjects(&(formAddLabel->labelObjects));
 
     scenes.push_back(scene);
     scene->view->installEventFilter(new cl_MouseFilterVariant(scene->view,this));
-    QString strName=tr("Вариант #")+QString::number(scenes.size());
+    QString strName = tr("Вариант #") + QString::number(scenes.size());
 
-    if(s->circleVariant==true) strName+=tr(" - движение по кругам");
-    else strName+=tr(" - начальные условия");
+    if(s->circleVariant == true)
+        strName+=tr(" - движение по кругам");
+    else
+        strName+=tr(" - начальные условия");
     //!
     scene->view->setWindowTitle(strName);
     scene->index=scenes.size();
@@ -303,62 +342,67 @@ void MainWindowVisVar::slotCloningScene(cl_Scene* s)
 }
 void MainWindowVisVar::slotRestart()
 {
-    if(currentScenes!=0)
+    if(currentScenes != nullptr)
         currentScenes->slotFlushState();
 }
 
 void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
 {
-    if(window==0) return ;
+    if(window == nullptr)
+        return ;
 
-    GView* view=static_cast<GView* >(window->widget());
+    GView* view = static_cast<GView* >(window->widget());
 
-    if(view==0)
+    if(view == nullptr)
         return;
-    for(int i=0;i<scenes.size();i++)
+    for(int i = 0;i<scenes.size();i++)
     {
-         if((scenes[i]->view)==view)
+         if((scenes[i]->view) == view)
          {
-             if(currentScenes!=0)
+             if(currentScenes!=nullptr)
                  currentScenes->delLabelMap();
 
-             currentScenes=findScene(view);
+             currentScenes = findScene(view);
              currentScenes->showLabelMap();
              setMapAndLayerContextMenu();
 
              formProjH->setCurrentScene(currentScenes);
 
-             if(currentScenes->firstConnectingSlots==true)
+             if(currentScenes->firstConnectingSlots == true)
              {
                  disconnect(currentScenes,SIGNAL(signalChangeZoom(int)),formZoomPanel,SLOT(setBeginValue(int)));
                  disconnect(formAddLabel, SIGNAL(deleteLabel(LabelObject*)),currentScenes,SLOT(deleteLabelMap(LabelObject*)));
                  disconnect(currentScenes,SIGNAL(signalUpdateValueObj(int)),formProjH,SLOT(updateScene()));
 
-                 disconnect(engineVariant,SIGNAL(sigAircraftLat(double)),currentScenes,SLOT(slotAircraftLat(double)));
-                 disconnect(engineVariant,SIGNAL(sigAircraftLon(double)),currentScenes,SLOT(slotAircraftLon(double)));
-                 disconnect(engineVariant,SIGNAL(sigAircraftPsi(double)),currentScenes,SLOT(slotAircraftPsi(double)));
+                // connect();
+                 //disconnect(this,SIGNAL(sigAircraftLat(double)),currentScenes,SLOT(slotAircraftLat(double)));
+                 //disconnect(this,SIGNAL(sigAircraftLon(double)),currentScenes,SLOT(slotAircraftLon(double)));
+                 //disconnect(this,SIGNAL(sigAircraftPsi(double)),currentScenes,SLOT(slotAircraftPsi(double)));
+                 disconnect(this,SIGNAL(sAircraftPos2D(double,double,double)),currentScenes,SLOT(slotAircraftPos2D(double,double,double)));
 
-                 disconnect(engineVariant,SIGNAL(sigTargetPsi(int,double)),currentScenes,SLOT(slotTargetPsi(int,double)));
-                 disconnect(engineVariant,SIGNAL(sigTargetLat(int,double)),currentScenes,SLOT(slotTargetLat(int,double)));
-                 disconnect(engineVariant,SIGNAL(sigTargetLon(int,double)),currentScenes,SLOT(slotTargetLon(int,double)));
+                 //disconnect(this,SIGNAL(sigTargetPsi(int,double)),currentScenes,SLOT(slotTargetPsi(int,double)));
+                 //disconnect(this,SIGNAL(sigTargetLat(int,double)),currentScenes,SLOT(slotTargetLat(int,double)));
+                 //disconnect(this,SIGNAL(sigTargetLon(int,double)),currentScenes,SLOT(slotTargetLon(int,double)));
                  //! передача текущего времени
-                 connect(engineVariant,SIGNAL(sigTime(double)),currentScenes,SLOT(slotTime(double)));
+                // connect(engineVariant,SIGNAL(sigTime(double)),currentScenes,SLOT(slotTime(double)));
              }else
-                 currentScenes->firstConnectingSlots=false;
+                 currentScenes->firstConnectingSlots = false;
 
              connect(currentScenes,SIGNAL(signalChangeZoom(int)),formZoomPanel,SLOT(setBeginValue(int)));
              connect(currentScenes,SIGNAL(signalUpdateValueObj()),formProjH,SLOT(updateScene()));
              connect(formAddLabel, SIGNAL(deleteLabel(LabelObject*)),currentScenes,SLOT(deleteLabelMap(LabelObject*)));
 
-             connect(engineVariant,SIGNAL(sigAircraftLat(double)),currentScenes,SLOT(slotAircraftLat(double)));
-             connect(engineVariant,SIGNAL(sigAircraftLon(double)),currentScenes,SLOT(slotAircraftLon(double)));
-             connect(engineVariant,SIGNAL(sigAircraftPsi(double)),currentScenes,SLOT(slotAircraftPsi(double)));
+             //! обновление информации об движущемся объекте
+             connect(this,SIGNAL(sAircraftPos2D(double,double,double)),currentScenes,SLOT(slotAircraftPos2D(double,double,double)));
+             //connect(this,SIGNAL(sigAircraftLat(double)),currentScenes,SLOT(slotAircraftLat(double)));
+             //connect(this,SIGNAL(sigAircraftLon(double)),currentScenes,SLOT(slotAircraftLon(double)));
+             //connect(this,SIGNAL(sigAircraftPsi(double)),currentScenes,SLOT(slotAircraftPsi(double)));
 
-             connect(engineVariant,SIGNAL(sigTargetPsi(int,double)),currentScenes,SLOT(slotTargetPsi(int,double)));
-             connect(engineVariant,SIGNAL(sigTargetLat(int,double)),currentScenes,SLOT(slotTargetLat(int,double)));
-             connect(engineVariant,SIGNAL(sigTargetLon(int,double)),currentScenes,SLOT(slotTargetLon(int,double)));
+             //connect(engineVariant,SIGNAL(sigTargetPsi(int,double)),currentScenes,SLOT(slotTargetPsi(int,double)));
+             //connect(engineVariant,SIGNAL(sigTargetLat(int,double)),currentScenes,SLOT(slotTargetLat(int,double)));
+             //connect(engineVariant,SIGNAL(sigTargetLon(int,double)),currentScenes,SLOT(slotTargetLon(int,double)));
              //! передача текущего времени
-             connect(engineVariant,SIGNAL(sigTime(double)),currentScenes,SLOT(slotTime(double)));
+             connect(this,SIGNAL(sigTime(double)),currentScenes,SLOT(slotTime(double)));
 
              formZoomPanel->setBeginValue(currentScenes->currentZoom);
          }
@@ -371,7 +415,7 @@ void MainWindowVisVar::slotButtonSend()
     {
         slotTransferStarted();
 
-        if(useMap==1)
+        if(useMap == 1)
             setGeoParamOfAircraft();
 
         byteArray.clear();
@@ -379,55 +423,13 @@ void MainWindowVisVar::slotButtonSend()
         formManualModify->setLastNameFile(fileName);
         parser->saveVariants("./xml/LastSend.xml",  formManualModify->comment(),useMap,id,fileName);
 
-        //!
-//        if(settingVV->noFTP==0)
-//        {
-//            parser->createXMLForModel(&byteArray,   formManualModify->comment(),useMap,id);
-//            //varExchange->send_file(byteArray);
-//        }else
-//        {
-            //! отправление единым куском памяти
-            TCommonRequest listReq;
-            listReq.setReciver("MPPM");
-            listReq.setSender("VAR");
-            QString prefixVar       ="InitialState.Init.";
-            //QString prefixVarCircle ="VARC.Setup.";
-            //QString prefix          ="";
-
-            //! кол-во вариантов по кругам
-            //int numsVarCircle=0;
-            //! кол-во вариантов НУ
-            //int numsVar=0;
-
-//            for(int i = 0;i<scenes.size();i++)//кол-во вариантов
-//            {
-//                if(scenes[i]->use == false)
-//                    continue;
-
-//                int num=0;
-//                if(scenes[i]->circleVariant==true)
-//                {
-//                    numsVarCircle++;
-//                    prefix = prefixVarCircle;
-//                    num    = numsVarCircle;
-//                }
-//                else
-//                {
-//                    numsVar++;
-//                    prefix = prefixVar;
-//                    num    = numsVar;
-//                }
-//                scenes[i]->getRequest(&listReq,prefix,num);
-//            }
-
-            currentScenes->getRequest(&listReq,prefixVar,0);
-
-            //listReq.append(prefixVarCircle+"numberOf_Variant", QString::number(numsVarCircle));
-            //listReq.append(prefixVar+      "numberOfVariant",  QString::number(numsVar));
-
-            requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
-//        }
-
+        //! отправление единым куском памяти
+        TCommonRequest listReq;
+        listReq.setReciver("MPPM");
+        listReq.setSender("VAR");
+        QString prefixVar      = settingVV->pathToObj  + "InitialState.Init.";
+        currentScenes->getRequest(&listReq,prefixVar,0);
+        requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
     }
 }
 
@@ -436,13 +438,15 @@ void MainWindowVisVar::slotButtonHandMoveMap(bool flag)
     if(flag==true)
     {
         buttonRuler->setChecked(false);
-        if(currentScenes!=0)
+        if(currentScenes!=nullptr)
             currentScenes->deleteRoutes();
 
         buttonCursor->setChecked(false);
     }
     buttonHandMoveMap->setChecked(true);
-    if(currentScenes!=0) currentScenes->activeAddLabel=false;
+
+    if(currentScenes!=nullptr)
+        currentScenes->activeAddLabel=false;
 
     for(int i=0;i<scenes.size();i++)
     {
@@ -456,7 +460,7 @@ void MainWindowVisVar::slotButtonCursor(bool flag)
         slotButtonHandMoveMap(false);
         buttonRuler->setChecked(false);
 
-        if(currentScenes!=0)
+        if(currentScenes!=nullptr)
             currentScenes->deleteRoutes();
 
         buttonHandMoveMap->setChecked(false);
@@ -465,7 +469,7 @@ void MainWindowVisVar::slotButtonCursor(bool flag)
 }
 void MainWindowVisVar::slotButtonRuler(bool flag)
 {
-    if(flag==true)
+    if(flag == true)
     {
         slotButtonHandMoveMap(false);
 
@@ -475,7 +479,7 @@ void MainWindowVisVar::slotButtonRuler(bool flag)
 
     }else
     {
-         if(currentScenes!=0)
+         if(currentScenes!=nullptr)
              currentScenes->deleteRoutes();
 
          slotButtonHandMoveMap(true);
@@ -485,7 +489,7 @@ void MainWindowVisVar::slotButtonRuler(bool flag)
 }
 void MainWindowVisVar::checkTypeMapAndLayer(cl_Scene *scene)
 {
-    if(scene!=0)
+    if(scene != nullptr)
     {
         QString mapStr="";
         if(ui->actionLandGoogle->isChecked()==true)
@@ -529,7 +533,7 @@ void MainWindowVisVar::checkTypeMapAndLayer(cl_Scene *scene)
             scene->setTypeMAP(GeographySysCoord::NOKIA_MAP);
         }
 
-        QString layerStr=0;
+        QString layerStr=tr("");
         if(ui->actionHybYandex->isChecked()==true)
         {
             layerStr=tr("гибрид(Яндекс)");
@@ -540,14 +544,13 @@ void MainWindowVisVar::checkTypeMapAndLayer(cl_Scene *scene)
             scene->setTypeLayer(GeographySysCoord::GOOGLE_HYB);
         }else
         {
-            layerStr=tr("");
             scene->setTypeLayer(GeographySysCoord::NO_LAYER);
         }
 
         if(layerStr.isEmpty()==true)
             statusBar->setSource(mapStr);
         else
-            statusBar->setSource(mapStr+"+"+layerStr);
+            statusBar->setSource(mapStr + "+" + layerStr);
 
         scene->refreshZoomLevel();
     }
@@ -979,7 +982,7 @@ void MainWindowVisVar::setMapAndLayerContextMenu()
     ui->actionHybYandex->setChecked(false);
     ui->actionHybGoogle->setChecked(false);
 
-    if(currentScenes!=0)
+    if(currentScenes!=nullptr)
     {
         switch(currentScenes->map->isTypeMap())
         {
@@ -1005,7 +1008,7 @@ void MainWindowVisVar::setMapAndLayerContextMenu()
 void MainWindowVisVar::closeAllVariant()
 {
     this->setWindowTitle(tr("Редактор вариантов"));
-    currentScenes=0;
+    currentScenes = nullptr;
     QList<QMdiSubWindow*> list=mdiArea->subWindowList();
     for(int i=0;i<list.size();i++)
     {

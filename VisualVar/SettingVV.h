@@ -37,6 +37,8 @@ public:
     QString typeMap;
     //! тип используемого по умолчанию слоя
     QString typeLayer;
+    //! путь к параметрам задания
+    QString pathToObj;
 };
 
 #endif // SETTINGVV_H
