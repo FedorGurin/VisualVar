@@ -517,10 +517,10 @@ QVariant ModelDataTable::data(const QModelIndex &index, int role) const
 {
     switch(pageIndex)
     {
-        case 0: {return page0(index,role);break;}
-        case 1: {return page1(index,role);break;}
-        case 2: {return page2(index,role);break;}
-        case 3: {return page3(index,role);break;}
+        case 0: {return page0(index,role);}
+        case 1: {return page1(index,role);}
+        case 2: {return page2(index,role);}
+        case 3: {return page3(index,role);}
     };
     return QVariant();
 }
@@ -893,7 +893,13 @@ QVariant ModelDataTable::page2(const QModelIndex &index,int role) const
                     if(index.row()==1) return tempAircraft->currentY();
                     if(index.row()==2) return tempAircraft->currentPsi();
                     if(index.row()==3) return tempAircraft->currentTeta();
-                    if(index.row()==4) return tempAircraft->currentStart();
+                    if(index.row()==4)
+                    {
+                        if(tempAircraft->currentStart()==true)
+                            return QString(tr("С земли"));
+                        else
+                            return QString(tr("В воздухе"));
+                    }
                     else if(tempAircraft->metaData.isEmpty()==false)
                     {
                         //return tempAircraft->metaData[index.row()-6].value;

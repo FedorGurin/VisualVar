@@ -275,8 +275,6 @@ void MainWindowVisVar::slotEventsRequest(TRequestEvent answer)
 {
     if(answer.uid == reqEventCurPos.uid)
     {
-        qDebug("answer status=%d\n",answer.status);
-
 
         if(answer.value.isEmpty() == false)
         {

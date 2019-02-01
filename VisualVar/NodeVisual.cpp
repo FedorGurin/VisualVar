@@ -873,13 +873,13 @@ void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool cir
     {
         QString prefixName = prefix;// + "INITDesArcraft.";
 
-        request->append(prefixName+"Vist", QString::number(unitSpeed->convert(vc,currentUnitTransV,"km/h")));
-        request->append(prefixName+"Psi",  QString::number(unitAngle->convert(KursToPsi(psi),currentUnitTransPsi,"deg")));
-
-        request->append(prefixName+"Tan0",  QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
-        request->append(prefixName+"Lat",  QString::number(unitAngle->convert(lon,currentUnitTransPsi,"deg")));
-        request->append(prefixName+"Lon",  QString::number(unitAngle->convert(lat,currentUnitTransPsi,"deg")));
-        request->append(prefixName+"Y",    QString::number(unitLength->convert(y,currentUnitTransY,"m")));
+        request->append(prefixName+"Vist",      QString::number(unitSpeed->convert(vc,currentUnitTransV,"km/h")));
+        request->append(prefixName+"Psi",       QString::number(unitAngle->convert(KursToPsi(psi),currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Tan0",      QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
+        request->append(prefixName+"OnGround",  QString::number(startEarth));
+        request->append(prefixName+"Lat",       QString::number(unitAngle->convert(lon,currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Lon",       QString::number(unitAngle->convert(lat,currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Y",         QString::number(unitLength->convert(y,currentUnitTransY,"m")));
 
         //request->append(prefixName+"Y",   QString::number(y));
         //request->append(prefixName+"Yp", QString::number(unitLength->convert(y,currentUnitTransY,"m")));

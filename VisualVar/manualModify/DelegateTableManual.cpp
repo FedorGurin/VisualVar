@@ -13,9 +13,9 @@ DelegateTableManual::DelegateTableManual(int columnIndex_,
                                          QObject *parent):QItemDelegate(parent)
 {
     Q_UNUSED(parent);
-    columnIndex=columnIndex_;
-    pageIndex=0;
-    currentScene=0;
+    columnIndex  = columnIndex_;
+    pageIndex    = 0;
+    currentScene = 0;
 }
 QWidget* DelegateTableManual::createEditor(QWidget *parent,
                                            const QStyleOptionViewItem &option,
@@ -29,14 +29,14 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
         connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(commitAndCloseEditorComboBox()));
         return comboBox;
     }
-    if(index.column()==2 && pageIndex==2)
+    if(index.column() == 2 && pageIndex == 2)
     {
         GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
 
         if(node->type()==GraphNode::AIRCRAFT)
         {
             QComboBox *comboBox=new QComboBox(parent);
-            QStringList* list=0;
+            QStringList* list = 0;
 
             if(currentScene->circleVariant==false)
             {
@@ -65,7 +65,7 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
         else if(node->type()==GraphNode::TARGET_V)
         {
             QComboBox *comboBox=new QComboBox(parent);
-            QStringList* list=0;
+            QStringList* list = 0;
             if(currentScene->circleVariant==false)
             {
                 if(index.row()==0) list=AirTargetObject::unitSpeed->getListAvailableUnits();
@@ -92,7 +92,7 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
         else if(node->type()==GraphNode::TARGET_G)
         {
             QComboBox *comboBox=new QComboBox(parent);
-            QStringList* list=0;
+            QStringList* list = 0;
             if(index.row()==0) list=GroundTargetObject::unitSpeed->getListAvailableUnits();
             else if(index.row()==1)  list=GroundTargetObject::unitAngle->getListAvailableUnits();
             else if(index.row()==3 || index.row()==4) list=GroundTargetObject::unitLength->getListAvailableUnits();
@@ -128,16 +128,16 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
                 this,SLOT(commitAndCloseEditorLine()));
         return lineEdit;
     }
-    if(index.column()==columnIndex && pageIndex==2)
+    if(index.column() == columnIndex && pageIndex==2)
     {
         GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
         if(node->type()==GraphNode::AIRCRAFT)
         {
-            if(index.row()==5 && currentScene->circleVariant==false)
+            if(index.row()==4 && currentScene->circleVariant==false)
             {
                 QComboBox *comboBox=new QComboBox(parent);
-                comboBox->addItem(tr("Vy"));
-                comboBox->addItem(tr("УНТ"));
+                comboBox->addItem(tr("С земли"));
+                comboBox->addItem(tr("В воздухе"));
                 connect(comboBox,SIGNAL(currentIndexChanged(int)),
                         this,SLOT(commitAndCloseEditorComboBox()));
                 return comboBox;
@@ -270,7 +270,7 @@ void DelegateTableManual::setEditorData(QWidget *editor,
 
         if(node->type()==GraphNode::AIRCRAFT)
         {
-            if((index.row()==5 && currentScene->circleVariant==false) || (index.row()==2 && currentScene->circleVariant==true))
+            if((index.row()==4 && currentScene->circleVariant==false) || (index.row()==2 && currentScene->circleVariant==true))
             {
                 QString value=index.model()->data(index,Qt::DisplayRole).toString();
                 QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
@@ -377,7 +377,7 @@ void DelegateTableManual::setModelData(QWidget *editor,
 
         if(node->type()==GraphNode::AIRCRAFT)
         {
-            if(index.row()==5 && currentScene->circleVariant==false)
+            if(index.row()==4 && currentScene->circleVariant==false)
             {
                 QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
 

@@ -8,6 +8,8 @@
 #include "cl_Scene.h"
 #include "../globalFunc/gl_func.h"
 
+#define MAX_ZOOM_LEVEL 18
+#define MIN_ZOOM_LEVEL 3
 namespace VisualVariant
 {
 
@@ -228,15 +230,15 @@ cl_Scene::cl_Scene(QDomElement &node,
                    QWidget *parent):QObject(parent)
 {
 
+    //! обнуление спсиоков
     airTargets.clear();
     groundTargets.clear();
     aerodroms.clear();
     routeObjects.clear();
-
+    //! значения по умолчанию
     allInfoObjects      = false;
     labelObjects        = 0;
     numberNameVariant   = 1;
-
     statusBar           = form;
     typeObjectsVis      = typeObjectsVis_;
     infoObjects         = 0;
@@ -248,12 +250,12 @@ cl_Scene::cl_Scene(QDomElement &node,
 
 
     //! текущий уровень детализации
-    currentZoom=node.attribute("scale","4").toInt();
+    currentZoom = node.attribute("scale",QString::number(MIN_ZOOM_LEVEL)).toInt();
     //! тип карты и слоя
-    QString tempTypeMap=node.attribute("typeMaps","");
-    QString tempTypeLayer=node.attribute("layerMaps","");
+    QString tempTypeMap     = node.attribute("typeMaps","");
+    QString tempTypeLayer   = node.attribute("layerMaps","");
 
-    map=new GeographySysCoord;
+    map = new GeographySysCoord;
     map->setZValue(0);
     map->setFlag(QGraphicsItem::ItemStacksBehindParent,true);
     map->setTypeMap(tempTypeMap);
@@ -280,15 +282,15 @@ cl_Scene::cl_Scene(QDomElement &node,
     scene->addItem(vScale);
     aircraft=new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft",map);
     aircraft->setZoomLevel(currentZoom);
-    aircraft->map=map;
+    aircraft->map = map;
 
     //! создаем двигающийся объект
     aircraftMove=new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft_move",map);
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
     aircraftMove->setZValue(2);
-    aircraftMove->map=map;
-    aircraftMove->trajectory=true;
+    aircraftMove->map        = map;
+    aircraftMove->trajectory = true;
     aircraftMove->setVisible(useMoveObj);
 
     connect(aircraft,
@@ -296,11 +298,11 @@ cl_Scene::cl_Scene(QDomElement &node,
             this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
 
     //! прочитаем координаты центра окна
-    curLatView=(node.attribute("viewport_center_lat","0")).toDouble();
-    curLonView=(node.attribute("viewport_center_lon","0")).toDouble();
+    curLatView = (node.attribute("viewport_center_lat","0")).toDouble();
+    curLonView = (node.attribute("viewport_center_lon","0")).toDouble();
 
-    curLat=curLatView;
-    curLon=curLonView;
+    curLat = curLatView;
+    curLon = curLonView;
 
     QPolygonF polygon=view->mapToScene(view->viewport()->rect());
     QRectF rect=polygon.boundingRect();
@@ -351,8 +353,9 @@ cl_Scene::cl_Scene(QDomElement &node,
 
 
         int tempCode=tempNode.attribute("codeObjectVis","100").toInt();
-        if(tempCode<100)
-            tempCode=100;
+        tempCode = qMin(tempCode,100);
+//        if(tempCode<100)
+//            tempCode=100;
         target->setCode(tempCode,typeObjectsVis->codeAir(tempCode));
 
         connect(target,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
@@ -576,10 +579,12 @@ void cl_Scene::setCurrentGeoOnCenter()
 }
 void cl_Scene::setCenterWindowView(double lat,double lon, int zoom)
 {
-    if(zoom>24) zoom=24;
-    currentZoom=zoom;
+    if(zoom>MAX_ZOOM_LEVEL)
+        zoom = MAX_ZOOM_LEVEL;
+
+    currentZoom = zoom;
     statusBar->setZoom(zoom);
-    int wh=2<<(zoom-1);
+    int wh = 2<<(zoom-1);
 
     scene->setSceneRect(0.0,0.0,wh*256,wh*256);
     int x;int y;
@@ -591,16 +596,18 @@ void cl_Scene::setCenterWindowView(double lat,double lon, int zoom)
 void cl_Scene::setZoomLevel(int z)
 {
     int x,y;
-    if(z>24) z=24;
-    if(z<3) z=3;
-    currentZoom=z;
+    if(z>MAX_ZOOM_LEVEL)
+        z = MAX_ZOOM_LEVEL;
+    if(z<MIN_ZOOM_LEVEL)
+        z = MIN_ZOOM_LEVEL;
+    currentZoom = z;
     statusBar->setZoom(currentZoom);
-    int wh=2<<(z-1);
+    int wh = 2<<(z-1);
     scene->setSceneRect(0.0,0.0,wh*256,wh*256);
     latLongToPixelXY(curLat,curLon,currentZoom-1,x,y);
     view->centerOn(x,y);
 
-    QPointF mousePosScene=view->mapToScene(mousePos);
+    QPointF mousePosScene = view->mapToScene(mousePos);
     view->centerOn(2*x-mousePosScene.x(),2*y-mousePosScene.y());
     refreshTiles();
 }
