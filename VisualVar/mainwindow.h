@@ -136,6 +136,8 @@ public slots:
     void slotButtonRouteObject(bool);
     //! отображение всей информации об объектах
     void slotButtonAllInfoObject(bool);
+    //! движение сцены за объектом
+    void slotButtonFocusMoveObj(bool);
     //! слот на отправку файла
     void slotButtonSendFile();
     //! перемешение карты рукой
@@ -221,6 +223,7 @@ private:
     QToolButton *buttonRuler;
     QToolButton *buttonCursor;
     QToolButton *buttonCentering;
+    QToolButton *buttonFocusMoveObj;
 
     //! имя файла если файл открывался
     QString fileName;

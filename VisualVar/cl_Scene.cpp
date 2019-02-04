@@ -665,7 +665,7 @@ void cl_Scene::calcItemPosScene()
         groundTargets[i]->setPosC(curX,curY);
     }
     //! объекты метки
-    if(labelObjects!=0)
+    if(labelObjects!=nullptr)
     {
         for(int i=0;i<labelObjects->size();i++)
         {
@@ -822,7 +822,7 @@ void cl_Scene::createNewGroundTarget(QPointF p)
 }
 void cl_Scene::showLabelMap()
 {
-    if(labelObjects!=0)
+    if(labelObjects!=nullptr)
     {
         for(int i=0;i<labelObjects->size();i++)
         {
@@ -837,7 +837,7 @@ void cl_Scene::deleteLabelMap(LabelObject *label)
 
 void cl_Scene::delLabelMap()
 {
-    if(labelObjects!=0)
+    if(labelObjects!=nullptr)
     {
         for(int i=0;i<labelObjects->size();i++)
         {
@@ -933,7 +933,7 @@ void cl_Scene::slotAircraftLon(double lon)
 }
 void cl_Scene::slotTargetPsi(int index,double psi)
 {
-    if(airTargetsMove.size()!=0)
+    if(airTargetsMove.isEmpty() == false)
     {
         int i=clip(index,0,airTargetsMove.size()-1);
         airTargetsMove[i]->setPsi(psi);
@@ -941,7 +941,7 @@ void cl_Scene::slotTargetPsi(int index,double psi)
 }
 void cl_Scene::slotTargetLat(int index,double lat)
 {
-    if(airTargetsMove.size()!=0)
+    if(airTargetsMove.isEmpty() == false)
     {
         int i=clip(index,0,airTargetsMove.size()-1);
         airTargetsMove[i]->slotLatToZ(lat);
@@ -949,7 +949,7 @@ void cl_Scene::slotTargetLat(int index,double lat)
 }
 void cl_Scene::slotTargetLon(int index,double lon)
 {
-    if(airTargetsMove.size()!=0)
+    if(airTargetsMove.isEmpty() == false)
     {
         int i=clip(index,0,airTargetsMove.size()-1);
         airTargetsMove[i]->slotLonToX(lon);
@@ -968,6 +968,10 @@ void cl_Scene::setAllInfo(bool value)
         groundTargets[i]->setAllInfo(allInfoObjects);
 
 }
+void cl_Scene::setFocusMoveObj(bool value)
+{
+
+}
 void cl_Scene::addMetaDataToAircraft(QVector<MetaData> list)
 {
     aircraft->metaData=list;
@@ -975,20 +979,26 @@ void cl_Scene::addMetaDataToAircraft(QVector<MetaData> list)
 void cl_Scene::slotUseMoveObj(bool value)
 {
     useMoveObj=value;
-    if(aircraftMove!=0)
+    if(aircraftMove!=nullptr)
     {
         aircraftMove->setVisible(useMoveObj);
         aircraftMove->setVisibleTraj(useMoveObj);
+        //! обнуление траектории, если отключили отображение  траектории
+        if(value == false)
+            aircraftMove->clearTraj();
     }
     for(int i=0;i<airTargetsMove.size();i++)
     {
         airTargetsMove[i]->setVisible(useMoveObj);
         airTargetsMove[i]->setVisibleTraj(useMoveObj);
+        if(value == false)
+            airTargetsMove[i]->clearTraj();
     }
+
 }
 void cl_Scene::slotTime(double value)
 {
-    if(aircraftMove!=0)
+    if(aircraftMove!=nullptr)
     {
         aircraftMove->setTime(value);
     }
@@ -1017,7 +1027,7 @@ void cl_Scene::reCalcObject(double lat,   /*гео. коорд. нашего с�
 }
 void cl_Scene::slotFlushState()
 {
-    if(aircraftMove!=0)
+    if(aircraftMove!=nullptr)
     {
         aircraftMove->clearTraj();
     }

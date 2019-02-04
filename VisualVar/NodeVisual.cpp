@@ -407,7 +407,7 @@ void ObjectGraphNode::setPosC(qreal dx,qreal dy)
     //! добавить точку в список
     if(trajectory==true && addPoint==true)// && fabs(lastTimeForTraj-currentTime)>1.0)
     {
-        if(traj.size()!=0)
+        if(traj.isEmpty() == false)
         {
             QGraphicsLineItem* tempLine=traj.back();
             QGraphicsLineItem* newLine=scene()->addLine(tempLine->line().x2(),

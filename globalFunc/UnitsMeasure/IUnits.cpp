@@ -8,7 +8,7 @@
 
 QStringList* TObjectProperty::getListAvailableUnits(void)
 {
-    if(list.size()!=0) return &list;
+    if(list.isEmpty() == false) return &list;
 
     for(int i=0;i<units.size();i++)
     {
@@ -26,10 +26,10 @@ TObjectUnit* TObjectProperty::find(QString value)
          if(units[i].unicode_id==value || units[i].unicode_rus==value)
              return &units[i];
      }
-     if(units.size()!=0)
+     if(units.isEmpty() == false)
          return &units[0];
 
-     return 0;
+     return nullptr;
 }
 
 bool TObjectProperty::openXMLFile(QString nameFile, QString prop)

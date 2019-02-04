@@ -189,6 +189,9 @@ public:
     bool activeRoute;
     //! отображать всю информацию для объектов
     void setAllInfo(bool value);
+    //! перемещать окно за движущимся объектом
+    void setFocusMoveObj(bool value);
+
     //! отправить сигнал о том, что обновились параметры объекта
     void sendSignalUpdateValueObj();
     //! пересчет текущего положения объектов

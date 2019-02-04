@@ -28,7 +28,7 @@ void FormAddLabelMap::slotCellChanged(int row,int column)
     if(column==1)
     {
         QTableWidgetItem* item=ui->tableWidget->item(row,column);
-        if(labelObjects.size()!=0)
+        if(labelObjects.isEmpty() == false)
             labelObjects[row-1]->setName(item->text());
     }
 }

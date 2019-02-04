@@ -133,7 +133,7 @@ SOURCES += globalFunc/gl_func.cpp \
 
 
 RESOURCES += res.qrc
-
+RC_ICONS = resource/airports.ico
 
 
 
