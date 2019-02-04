@@ -1046,6 +1046,15 @@ void AircraftObject::slotLatToZ(double value)
 
     setPosC(pX,pZ);
 }
+void AircraftObject::slotLonLatToXZ(double lat_, double lon_)
+{
+    lat = lat_;
+    lon = lon_;
+    int pX,pZ;
+    latLongToPixelXY(lat,lon,zoom-1,pX,pZ);
+    setPosC(pX,pZ);
+}
+
 void AircraftObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
     if(event->button()==Qt::RightButton)

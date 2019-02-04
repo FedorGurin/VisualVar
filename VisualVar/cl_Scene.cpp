@@ -849,11 +849,11 @@ void cl_Scene::delLabelMap()
 
 void cl_Scene::createNewAerodrom(QPointF p)
 {
-    AerodromObject *aero=new AerodromObject("./res/aerodrom.svg",aerodroms.size(),map);
+    AerodromObject *aero = new AerodromObject("./res/aerodrom.svg",aerodroms.size(),map);
     aero->setAircraft(aircraft);
     aerodroms.push_back(aero);
-    aero->map=map;
-    QPointF pos=map->mapFromScene(p);
+    aero->map = map;
+    QPointF pos = map->mapFromScene(p);
     aero->setPos(pos.x(),pos.y());
 
     scene->addItem(aero);
@@ -915,8 +915,7 @@ void cl_Scene::createNewPointRoute(QPointF p)
 void cl_Scene::slotAircraftPos2D(double lon,double lat, double psi)
 {
      aircraftMove->setPsi(psi);
-     aircraftMove->slotLatToZ(lat);
-     aircraftMove->slotLonToX(lon);
+     aircraftMove->slotLonLatToXZ(lat,lon);
 }
 void cl_Scene::slotAircraftPsi(double psi)
 {

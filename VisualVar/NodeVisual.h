@@ -731,7 +731,7 @@ public slots:
     void slotLatToZ(double,QString);
     void slotLonToX(double);
     void slotLatToZ(double);
-    void slotLonLatToXZ(double,double){}
+    void slotLonLatToXZ(double lat,double lon);
 
     void setVy(double f)
     {

@@ -427,6 +427,7 @@ void MainWindowVisVar::slotButtonSend()
         listReq.setSender("VAR");
         QString prefixVar      = settingVV->pathToObj  + "InitialState.Init.";
         currentScenes->getRequest(&listReq,prefixVar,0);
+        listReq.append("","1");
         requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
     }
 }

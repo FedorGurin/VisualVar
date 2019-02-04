@@ -22,10 +22,10 @@ int main(int argc,char *argv[])
         nameMainFile="xml/"+QString(argv[1]);
 
     //! задание кодека
-    //QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
+    QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));
 
     //! создание главной формы
-    MainWindowVisVar *mainForm=new MainWindowVisVar(0);
+    MainWindowVisVar *mainForm = new MainWindowVisVar();
 
     //! задать активное окно
     app.setActiveWindow(mainForm);
