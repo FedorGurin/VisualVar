@@ -978,7 +978,7 @@ void cl_Scene::addMetaDataToAircraft(QVector<MetaData> list)
 }
 void cl_Scene::slotUseMoveObj(bool value)
 {
-    useMoveObj=value;
+    useMoveObj = value;
     if(aircraftMove!=nullptr)
     {
         aircraftMove->setVisible(useMoveObj);

@@ -93,6 +93,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     currentScenes   = nullptr;
     //! по умолчанию используем цифровую карту
     useMap          = true;
+    toFlushButton   = false;
 
     connect(engineVariant,
             SIGNAL(signalLoadVariant(QString)),
@@ -294,9 +295,22 @@ void MainWindowVisVar::slotEventsRequest(TRequestEvent answer)
                                 rad_deg( (answer.value[0].toDouble())),
                                 rad_deg(-(answer.value[2].toDouble())));
 
-            if(answer.value[6].toInt() == 1)
+            //! если останов
+            if(answer.value[7].toInt() == 1 && toFlushButton == true)
             {
-
+                toFlushButton = false;
+                TCommonRequest listReq0;
+                listReq0.setReciver("MPPM");
+                listReq0.setSender("VAR");
+                QString prefixPathReg       = settingVV->pathToObj + "Управление моделированием.InputButton.Input.";
+                //! текущее состояние моделей
+                listReq0.append(prefixPathReg  + "restartButton","0");
+                engine->setValue(listReq0,IEngineData::ASYNCH_ENGINE);
+            }
+            //! если останов
+            if(answer.value[6].toInt() == 1 )
+            {
+                slotRestart();
             }
 
         }
@@ -446,10 +460,21 @@ void MainWindowVisVar::slotButtonSend()
         TCommonRequest listReq;
         listReq.setReciver("MPPM");
         listReq.setSender("VAR");
-        QString prefixVar      = settingVV->pathToObj  + "InitialState.Init.";
+        QString prefixVar           = settingVV->pathToObj  + "InitialState.Init.";
+        QString prefixPathReg       = settingVV->pathToObj + "Управление моделированием.InputButton.Input.";
         currentScenes->getRequest(&listReq,prefixVar,0);
-        listReq.append("","1");
+        //! здесь должен отправить признак нажатия исходного
+        listReq.append(prefixPathReg  + "restartButton","1");
         requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
+
+        toFlushButton = true;
+        //TCommonRequest listReq0;
+        //listReq0.setReciver("MPPM");
+        //listReq0.setSender("VAR");
+
+//        //! текущее состояние моделей
+//        listReq0.append(prefixPathReg  + "restartButton","0");
+//        requestEvent=engine->setValue(listReq0,IEngineData::ASYNCH_ENGINE);
     }
 }
 
@@ -504,7 +529,7 @@ void MainWindowVisVar::slotButtonRuler(bool flag)
 
          slotButtonHandMoveMap(true);
     }
-    if(currentScenes!=0)
+    if(currentScenes!=nullptr)
         currentScenes->setActiveRoute(flag);
 }
 void MainWindowVisVar::checkTypeMapAndLayer(cl_Scene *scene)
@@ -729,12 +754,14 @@ void MainWindowVisVar::slotSaveAs()
 
 void MainWindowVisVar::slotSaveAll()
 {
-    if(fileName!="")  parser->saveVariants(fileName,formManualModify->comment(),useMap,id);
-    else slotSaveAs();
+    if(fileName.isEmpty() == false)
+        parser->saveVariants(fileName,formManualModify->comment(),useMap,id);
+    else
+        slotSaveAs();
 }
 void MainWindowVisVar::slotAddLabel()
 {
-    if(currentScenes!=0)
+    if(currentScenes!=nullptr)
     {
         slotButtonCursor(true);
         currentScenes->activeAddLabel=true;
@@ -757,7 +784,7 @@ void MainWindowVisVar::slotGotoLabel()
 }
 void MainWindowVisVar::slotGotoLatLon(double lat,double lon)
 {
-    if(currentScenes!=0)
+    if(currentScenes!=nullptr)
     {
         currentScenes->setCenterWindowView(lat,lon,currentScenes->currentZoom);
     }
@@ -767,7 +794,7 @@ void MainWindowVisVar::slotRunFormAddLabel(double lat,double lon)
     formAddLabel->addNewLabel(lat,lon);
     formAddLabel->show();
 
-    if(currentScenes!=0)
+    if(currentScenes!=nullptr)
         currentScenes->calcItemPosScene();
 }
 //! создание варианта(обычный или по кругам)
@@ -835,7 +862,7 @@ void MainWindowVisVar::setCurrentActiveWindow(QString name)
 
     for(int i=0;i<list.size();i++)
     {
-        GView* view=(GView*) list[i]->widget();
+        GView* view=static_cast <GView* > (list[i]->widget());
         if(view->windowTitle()==name)
         {
             mdiArea->setActiveSubWindow(list[i]);
@@ -858,7 +885,7 @@ void MainWindowVisVar::slotMenuWindow(QAction * act)
 
     for(int i=0;i<list.size();i++)
     {
-        GView* view=(GView*) list[i]->widget();
+        GView* view=static_cast <GView* > (list[i]->widget());
         if(view->windowTitle()==act->text())
         {
             mdiArea->setActiveSubWindow(list[i]);
@@ -869,11 +896,12 @@ void MainWindowVisVar::slotMenuWindow(QAction * act)
 void MainWindowVisVar::slotZoomLevel(int zoom)
 {
     QMdiSubWindow* subWindow=mdiArea->currentSubWindow();
-    if(subWindow==0) return;
+    if(subWindow == nullptr)
+        return;
 
-    GView* view=(GView*) subWindow->widget();
+    GView* view=static_cast <GView* > (subWindow->widget());
     cl_Scene *scene=findScene(view);
-    if(scene!=0)
+    if(scene!=nullptr)
     {
         scene->setCurrentGeoOnCenter();
         scene->setZoomLevel(zoom);
@@ -885,19 +913,19 @@ void MainWindowVisVar::createWindowMenu()
     ui->menuWindow->clear();
     actList.clear();
 
-    QList<QMdiSubWindow*> list      =mdiArea->subWindowList();
-    QMdiSubWindow* currentSubWindow =mdiArea->currentSubWindow();
+    QList<QMdiSubWindow*> list      = mdiArea->subWindowList();
+    QMdiSubWindow* currentSubWindow = mdiArea->currentSubWindow();
 
     for(int i=0;i<list.size();i++)
     {
         QMdiSubWindow* subWindow=list[i];
 
-        GView* view=(GView*) subWindow->widget();
+        GView* view = static_cast<GView* > (subWindow->widget());
         QAction* act=ui->menuWindow->addAction(view->windowTitle());
         actList.push_back(act);
         act->setCheckable(true);
 
-        if(subWindow==currentSubWindow) act->setChecked(true);
+        if(subWindow == currentSubWindow) act->setChecked(true);
         else act->setChecked(false);
     }
 }
@@ -907,7 +935,7 @@ void MainWindowVisVar::rightButtonMouseClicked()
     if(currentScenes->activeRoute==true || currentScenes->activeAddLabel==true)
         return;
 
-    QAction *act=0;
+    QAction *act = nullptr;
     menu->clear();
     menu->addAction(tr("Добавить воздушную цель"));
     menu->addAction(tr("Добавить наземную цель"));
@@ -935,13 +963,15 @@ void MainWindowVisVar::rightButtonMouseClicked()
 void MainWindowVisVar::slotRunMenuScene(QAction* act)
 {
     QMdiSubWindow* subWindow=mdiArea->currentSubWindow();
-    if(subWindow==0) return;
+    if(subWindow == nullptr)
+        return;
 
-    GView* view=(GView*) subWindow->widget();
+    GView* view = static_cast<GView* > (subWindow->widget());
 
     cl_Scene *scene=findScene(view);
 
-    if(scene==0) return;
+    if(scene == nullptr)
+        return;
 
     QPointF posScene=view->mapToScene(view->mapFromGlobal(posMouseMenu));
 
@@ -1072,7 +1102,8 @@ void MainWindowVisVar::slotOpenXML()
     QStringList fileNames=dialog->selectedFiles();
     if(fileNames.isEmpty() == false)
     {
-        if(fileNames[0]!="") fileName=fileNames[0];
+        if(fileNames[0].isEmpty() == false)
+            fileName = fileNames[0];
         this->setWindowTitle(tr("Редактор вариантов")+" ["+fileName+"]");
 
         if(fileNames.isEmpty() == false)
@@ -1128,9 +1159,10 @@ cl_Scene* MainWindowVisVar::findScene(GView *view)
 {
     for(int i=0;i<scenes.size();i++)
     {
-        if(scenes[i]->view==view) return scenes[i];
+        if(scenes[i]->view==view)
+            return scenes[i];
     }
-    return 0;
+    return nullptr;
 }
 //! запись в структуру "Установка географии"
 void MainWindowVisVar::setGeoParamOfAircraft()
@@ -1202,7 +1234,7 @@ void MainWindowVisVar::slotOpenAndSendVariant(QString nameFile)
 {
     closeAllVariant();
     bool isOpen=parser->openFileVariants(nameFile,&comment,useMap,id);
-    if(isOpen==true)
+    if(isOpen == true)
     {
         showAllVariant();
         formManualModify->resetModelData();
