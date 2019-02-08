@@ -21,9 +21,9 @@
 #include "formsettingforgroundtargets.h"
 #include "../globalFunc/gl_func.h"
 #include "../globalFunc/UnitsMeasure/IUnits.h"
+#include "../mppm/CommonEngineData.h"
 #include "geographyMapping.h"
 #include "formsettingaerodrom.h"
-#include "../CommonEngineData/CommonEngineData.h"
 #include "SettingVV.h"
 namespace VisualVariant
 {

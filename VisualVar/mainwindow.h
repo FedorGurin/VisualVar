@@ -17,8 +17,6 @@
 #include "TypeObjectsVis.h"
 #include "dialogsavecurvar.h"
 #include "./manualModify/FormManualModify.h"
-#include "../CommonEngineData/CommonEngineData.h"
-#include "VariantEngineData.h"
 #include "SettingVV.h"
 #include "../globalFunc/UnitsMeasure/ConvertUnitsMeasure.h"
 #include "formaddlabelmap.h"
@@ -69,8 +67,6 @@ public:
     FormStatusBar *statusBar;
     //! панель увеличения/уменьшения
     FormZoomPanel *formZoomPanel;
-    //! движок для вариантов
-    VariantEngineData *engineVariant;
     //! указатель на движок с данными
     IEngineData *engine;
     //! настройки

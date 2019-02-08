@@ -22,7 +22,7 @@ cl_MouseFilterVariant::cl_MouseFilterVariant(QObject* pobj,QWidget *slotForm_):Q
 }
 bool cl_MouseFilterVariant::eventFilter(QObject* pobj,QEvent *event)
 {
-    if(event->type()==QEvent::ContextMenu)
+    if(event->type() == QEvent::ContextMenu)
     {
         MainWindowVisVar *p=qobject_cast<MainWindowVisVar* >(slotForm);
         if(p!=nullptr)
@@ -36,19 +36,19 @@ bool cl_MouseFilterVariant::eventFilter(QObject* pobj,QEvent *event)
         MainWindowVisVar *p=qobject_cast<MainWindowVisVar* >(slotForm);
         if(p!=nullptr)
         {
-
-        for(int i=0;i<p->scenes.size();i++)
-        {
-            QObject* ptr=p->scenes[i]->view;
-            if(ptr==pobj)
+            for(int i=0;i<p->scenes.size();i++)
             {
-                p->scenes.remove(i);
-                p->formManualModify->deleteScene(i);
-                p->formManualModify->resetModelData();
+                QObject* ptr=p->scenes[i]->view;
+                if(ptr == pobj)
+                {
+                    p->scenes.remove(i);
+                    p->formManualModify->deleteScene(i);
+                    p->formManualModify->resetModelData();
+                }
             }
-        }
-        return true;
-        }else return false;
+            return true;
+        }else
+            return false;
     }
     return false;
 }
@@ -85,7 +85,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     typeObjectsVis  = new TypeObjectsVis;
     dialogSave      = new DialogSaveCurVar;
     formManualModify= new FormManualModify(&scenes);
-    engineVariant   = new VariantEngineData;
+
     //! форма добавления новой метки
     formAddLabel    = new FormAddLabelMap;
 
@@ -94,11 +94,6 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     //! по умолчанию используем цифровую карту
     useMap          = true;
     toFlushButton   = false;
-
-    connect(engineVariant,
-            SIGNAL(signalLoadVariant(QString)),
-            this,
-            SLOT(slotOpenAndSendVariant(QString)));
 
     buttonSend=new QToolButton;
     buttonSend->setIcon(QIcon(":/png/send"));
@@ -242,11 +237,11 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
 
     fileName="";
 
-    dialog=new QFileDialog(this);
+    dialog = new QFileDialog(this);
     dialog->setNameFilter(tr("XML-variants(*.xml)"));
     dialog->setFileMode(QFileDialog::AnyFile);
     dialog->setDirectory(settingVV->dirSaveVar);
-    mdiArea=new QMdiArea;
+    mdiArea = new QMdiArea;
     mdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     this->setCentralWidget(mdiArea);
@@ -665,7 +660,7 @@ void MainWindowVisVar::slotMapBing(QAction* act)
 }
 void MainWindowVisVar::slotMapGoogle_EA(QAction* act)
 {
-    if(act->isChecked()==true)
+    if(act->isChecked() == true)
     {
         ui->actionSatGoogle->setChecked(false);
         ui->actionMapsGoogle->setChecked(false);
@@ -679,12 +674,12 @@ void MainWindowVisVar::slotMapGoogle_EA(QAction* act)
 }
 void MainWindowVisVar::slotMapNokia(QAction* act)
 {
-    if(act->isChecked()==true)
+    if(act->isChecked() == true)
     {
-        if(act==ui->actionNokiaMaps)
+        if(act == ui->actionNokiaMaps)
         {
             ui->actionNokiaSatHyb->setChecked(false);
-        }else if(act==ui->actionNokiaSatHyb)
+        }else if(act == ui->actionNokiaSatHyb)
         {
             ui->actionNokiaMaps->setChecked(false);
         }
