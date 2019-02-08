@@ -31,6 +31,7 @@
         <file alias="no_tile">resource/no_tile.png</file>
         <file alias="toolRed">resource/toolRed.png</file>
         <file>resource/document-send.png</file>
+        <file alias="center_move_obj">resource/g1617.png</file>
     </qresource>
     <qresource prefix="/svg">
         <file alias="ledGreen">resource/led-green.svg</file>

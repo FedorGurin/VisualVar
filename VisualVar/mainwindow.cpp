@@ -153,7 +153,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     buttonFocusMoveObj=new QToolButton;
     buttonFocusMoveObj->setCheckable(true);
     buttonFocusMoveObj->setToolTip(tr("Центрирование по подвижному объекту нашего самолета"));
-    buttonFocusMoveObj->setIcon(QIcon(":/png/yellow"));
+    buttonFocusMoveObj->setIcon(QIcon(":/png/center_move_obj"));
 
 //    varExchange=new VarExchange;
 //    varExchange->SetTarget      (settingVV->hostAddress);
