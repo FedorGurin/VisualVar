@@ -477,7 +477,7 @@ public:
     QTransform transName;
     QTransform transRotate;
     //! хранение траектории в виде геоточек(независимо от уровня детализации)
-    QVector<TGeoPoint> trajGeoPoints;
+    QList<TGeoPoint> trajGeoPoints;
     //! хранение траектории в виде линии для заданного уровня детализации
     //! при смене уровня детализация нужно пересчитать эти линии
     QVector<QGraphicsLineItem* > traj;

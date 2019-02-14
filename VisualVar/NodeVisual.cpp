@@ -430,6 +430,9 @@ void ObjectGraphNode::setPosC(qreal dx,qreal dy)
             traj.push_back(newLine);
             TGeoPoint geoPoint(lat,lon);
             trajGeoPoints.push_back(geoPoint);
+            if(trajGeoPoints.size() >1000)
+                trajGeoPoints.removeFirst();
+
             lastTimeForTraj=currentTime;
             addPoint=false;
         }else
@@ -443,6 +446,8 @@ void ObjectGraphNode::setPosC(qreal dx,qreal dy)
                 traj.back()->setVisible(this->isVisible());
                 TGeoPoint geoPoint(lat,lon);
                 trajGeoPoints.push_back(geoPoint);
+                if(trajGeoPoints.size() >1000)
+                    trajGeoPoints.removeFirst();
                 lastTimeForTraj = currentTime;
                 addPoint = false;
             }

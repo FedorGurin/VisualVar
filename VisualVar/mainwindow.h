@@ -85,6 +85,7 @@ public:
     bool openFile(QString);
     //! признак того, что нужно использовать координаты из карты
     bool useMap;
+    bool toFlushButton;
     //! варианты
     QVector<cl_Scene* > scenes;
     //! пересчет положения объектов, если нет привязки к цифровой карте
