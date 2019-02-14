@@ -51,8 +51,6 @@ HEADERS += globalFunc/gl_func.h \
     globalFunc/UnitsMeasure/IUnits.h \ 
     VisualVar/manualModify/FormManualModify.h \
     VisualVar/manualModify/ModelDataTable.h \  
-    CommonEngineData/CommonEngineData.h \   
-    VisualVar/VariantEngineData.h \
     VisualVar/formsettingaerodrom.h \
     VisualVar/formsettingbeaconrsbn.h \
     VisualVar/formsettingbeaconvor.h \
@@ -114,8 +112,6 @@ SOURCES += globalFunc/gl_func.cpp \
     globalFunc/UnitsMeasure/IUnits.cpp \   
     VisualVar/manualModify/FormManualModify.cpp \
     VisualVar/manualModify/ModelDataTable.cpp \   
-    CommonEngineData/CommonEngineData.cpp \   
-    VisualVar/VariantEngineData.cpp \
     VisualVar/formsettingaerodrom.cpp \
     VisualVar/formsettingbeaconrsbn.cpp \
     VisualVar/formsettingbeaconvor.cpp \

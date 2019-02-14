@@ -879,7 +879,7 @@ void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool cir
         QString prefixName = prefix;// + "INITDesArcraft.";
 
         request->append(prefixName+"Vist",      QString::number(unitSpeed->convert(vc,currentUnitTransV,"km/h")));
-        request->append(prefixName+"Psi",       QString::number(unitAngle->convert(KursToPsi(psi),currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Psi",       QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
         request->append(prefixName+"Tan0",      QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
         request->append(prefixName+"OnGround",  QString::number(startEarth));
         request->append(prefixName+"Lat",       QString::number(unitAngle->convert(lon,currentUnitTransPsi,"deg")));
@@ -1212,21 +1212,21 @@ AirTargetObject::AirTargetObject(QString name_,
 {
     setZValue(9);
     initMessureItem();
-    name=name_;
-    aircraft=0;
-    code=100;
+    name        = name_;
+    aircraft    = 0;
+    code        = 100;
 
-    prCodeLen=true;
-    length=15.0;
+    prCodeLen   = true;
+    length      = 15.0;
 
-    fi=0.0;
-    d=2000.0;
-    y=3500;
-    v=210;
-    teta=0.0;
-    ng_z=0.0;
+    fi          = 0.0;
+    d           = 2000.0;
+    y           = 3500;
+    v           = 210;
+    teta        = 0.0;
+    ng_z        = 0.0;
 
-    code_prev=0;
+    code_prev   = 0;
 
     setScale(0.1);
     setAcceptHoverEvents(true);
