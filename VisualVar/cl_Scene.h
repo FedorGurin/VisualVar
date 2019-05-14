@@ -33,17 +33,17 @@ public:
     cl_Scene(FormStatusBar* form,
              TypeObjectsVis* typeObjectsVis_,
              QList<InfoObject* > *info,
-             bool circleVariant_=false,
-             SettingVV *settingVV=0,
-             QWidget *parent=0);
+             bool circleVariant_    = false,
+             SettingVV *settingVV   = nullptr,
+             QWidget *parent        = nullptr);
 
     //! конструктор для создания объекта из файла
     cl_Scene(QDomElement &node,
              FormStatusBar* form,
              TypeObjectsVis* typeObjectsVis_,
-             QWidget *parent=0);
+             QWidget *parent    = nullptr);
     //! конструктор дял клонирования объекта
-    cl_Scene(cl_Scene* thisScene,QWidget *parent=0);
+    cl_Scene(cl_Scene* thisScene,QWidget *parent = nullptr);
     //! клонирование данных, вовращает свою копию
     cl_Scene *clone();
     //! переопределнный класс отображения сцены
