@@ -11,6 +11,8 @@ namespace VisualVariant
 //        int host;
 //        int fireTarget;
 //    } aspInit;
+
+#define OLD_STEND
 ModelDataTable::ModelDataTable(QVector<cl_Scene* > *scenes_,
                                QObject *parent):QAbstractTableModel(parent)
 {
@@ -179,11 +181,20 @@ bool ModelDataTable::setData(const QModelIndex &index, const QVariant &value, in
                     if(index.row()==1) tempAircraft->setY(value.toDouble());
                     if(index.row()==2) tempAircraft->setPsi(value.toDouble());
                     if(index.row()==3) tempAircraft->setTeta(value.toDouble());
+#ifndef OLD_STEND
                     if(index.row()==4)
                     {
                         if(value.toString()==tr("С земли")) tempAircraft->setStartEarth(true);
                         else tempAircraft->setStartEarth(false);
                     }
+#else
+                    if(index.row()==4) tempAircraft->setVy(value.toDouble());
+                    if(index.row()==5)
+                    {
+                        if(value.toString()==tr("Vy")) tempAircraft->setPrVy(true);
+                        else tempAircraft->setPrVy(false);
+                    }
+#endif
 
                 }else if(currentGraphNode->type()==GraphNode::TARGET_V)
                 {
@@ -288,7 +299,9 @@ bool ModelDataTable::setData(const QModelIndex &index, const QVariant &value, in
                     if(index.row()==1) tempAircraft->setCurMessY(value.toString());
                     if(index.row()==2) tempAircraft->setCurMessPsi(value.toString());
                     if(index.row()==3) tempAircraft->setCurMessTeta(value.toString());
-                    //if(index.row()==4) tempAircraft->setCurMessVy(value.toString());
+#ifdef OLD_STEND
+                    if(index.row()==4) tempAircraft->setCurMessVy(value.toString());
+#endif
                     //if(index.row()==3) tempAircraft->setCurTeta(value);
 
                 }else if(currentGraphNode->type()==GraphNode::TARGET_V)
@@ -371,7 +384,11 @@ int ModelDataTable::rowCount(const QModelIndex &parent)const
             if(currentGraphNode->type()==GraphNode::AIRCRAFT)
             {
                 ObjectGraphNode *obj=static_cast<ObjectGraphNode *> (currentGraphNode);
+#ifndef OLD_STEND
                 return 5 + obj->metaData.size();
+#else
+                return 6+obj->metaData.size();
+#endif
             }
             if(currentGraphNode->type()==GraphNode::TARGET_V)
             {
@@ -421,8 +438,13 @@ QVariant ModelDataTable::headerData(int section,Qt::Orientation orientation, int
                 if(section==6)return QString(tr("Скорость"));
                 if(section==7)return QString(tr("Высота"));
                 if(section==8)return QString(tr("Курс"));
+#ifndef
                 if(section==9)return QString(tr("Тангаж"));
                 if(section==10)return QString(tr("Тип старта"));
+#else
+                if(section==9)return QString(tr("УНТ"));
+                if(section==10)return QString(tr("Vy"));
+#endif
                 if(section==11)return QString(tr("Delta_Hc"));
                 if(section==12)return QString(tr("Alfa_c"));
             }
@@ -485,8 +507,18 @@ Qt::ItemFlags ModelDataTable::flags(const QModelIndex &index) const
       {
           if(currentGraphNode->type()==GraphNode::AIRCRAFT)
           {
-
-
+#ifdef OLD_STEND
+              AircraftObject *tempAircraft=static_cast<AircraftObject* >(currentGraphNode);
+              if(tempAircraft->currentPrVy()==true && (index.row()==3||index.row()==4))
+              {
+                  if(index.row()==3)
+                      return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+              }else
+              {
+                  if(index.row()==4)
+                      return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+              }
+#endif
           }
           if(currentGraphNode->type()==GraphNode::TARGET_V)
           {
@@ -517,10 +549,10 @@ QVariant ModelDataTable::data(const QModelIndex &index, int role) const
 {
     switch(pageIndex)
     {
-        case 0: {return page0(index,role);}
-        case 1: {return page1(index,role);}
-        case 2: {return page2(index,role);}
-        case 3: {return page3(index,role);}
+        case 0: {return page0(index,role);break;}
+        case 1: {return page1(index,role);break;}
+        case 2: {return page2(index,role);break;}
+        case 3: {return page3(index,role);break;}
     };
     return QVariant();
 }
@@ -584,7 +616,12 @@ QVariant ModelDataTable::page0(const QModelIndex &index,int role) const
             {
                 if(scene->circleVariant==false)
                 {
+#ifndef OLD_STEND
                     return (QString::number(scene->aircraft->currentStart()) + QString(tr(" признак")));
+#else
+                    return (QString::number(scene->aircraft->currentVy())+QString(tr(" "))+scene->aircraft->curMessVy());
+              
+#endif
                 }
             }else if(index.column()==11)
             {
@@ -848,12 +885,22 @@ QVariant ModelDataTable::page2(const QModelIndex &index,int role) const
                     if(index.row()==0) return QString(tr("Скорость"));
                     if(index.row()==1) return QString(tr("Высота"));
                     if(index.row()==2) return QString(tr("Курсовой угол"));
+#ifndef OLD_STEND
                     if(index.row()==3) return QString(tr("Тангаж"));
                     if(index.row()==4) return QString(tr("Тип старта"));
                     else if(tempAircraft->metaData.isEmpty()==false)
                     {
                         return tempAircraft->metaData[index.row()-5].name;
                     }
+#else
+                    if(index.row()==3) return QString(tr("УНТ"));
+                    if(index.row()==4) return QString(tr("Vy"));
+                    if(index.row()==5) return QString(tr("Признак Vy/УНТ"));
+                    else if(tempAircraft->metaData.isEmpty()==false)
+                    {
+                        return tempAircraft->metaData[index.row()-6].name;
+                    }
+#endif
                 }else if(currentGraphNode->type()==GraphNode::TARGET_V)
                 {
                      AirTargetObject *tempAirTarget=static_cast<AirTargetObject* >(currentGraphNode);
@@ -893,6 +940,7 @@ QVariant ModelDataTable::page2(const QModelIndex &index,int role) const
                     if(index.row()==1) return tempAircraft->currentY();
                     if(index.row()==2) return tempAircraft->currentPsi();
                     if(index.row()==3) return tempAircraft->currentTeta();
+#ifndef OLD_STEND
                     if(index.row()==4)
                     {
                         if(tempAircraft->currentStart()==true)
@@ -900,6 +948,16 @@ QVariant ModelDataTable::page2(const QModelIndex &index,int role) const
                         else
                             return QString(tr("В воздухе"));
                     }
+#else
+                    if(index.row()==4) return tempAircraft->currentVy();
+                    if(index.row()==5)
+                    {
+                        if(tempAircraft->currentPrVy()==true)
+                            return QString(tr("Vy"));
+                        else
+                            return QString(tr("УНТ"));
+                    }
+#endif
                     else if(tempAircraft->metaData.isEmpty()==false)
                     {
                         //return tempAircraft->metaData[index.row()-6].value;
@@ -953,7 +1011,12 @@ QVariant ModelDataTable::page2(const QModelIndex &index,int role) const
                     if(index.row()==1) return tempAircraft->curMessY();
                     if(index.row()==2) return tempAircraft->curMessPsi();
                     if(index.row()==3) return tempAircraft->curMessTeta();
+#ifndef OLD_STEND
                     if(index.row()==4) return QString(tr("признак"));
+#else
+                    if(index.row()==4) return tempAircraft->curMessVy();
+                    if(index.row()==5) return QString(tr("признак"));
+#endif
 
                 }else if(currentGraphNode->type()==GraphNode::TARGET_V)
                 {
@@ -1075,7 +1138,15 @@ QVariant ModelDataTable::page2(const QModelIndex &index,int role) const
             {
                 AircraftObject *tempAircraft=static_cast<AircraftObject* >(currentGraphNode);
 
-
+#ifdef OLD_STEND
+                if(tempAircraft->currentPrVy()==true)
+                {
+                    if(index.row()==3) return QBrush(QColor(Qt::red));
+                }else
+                {
+                    if(index.row()==4) return QBrush(QColor(Qt::red));
+                }
+#endif
             }else if(currentGraphNode->type()==GraphNode::TARGET_V)
             {
                 AirTargetObject *tempAirTarget=static_cast<AirTargetObject* >(currentGraphNode);

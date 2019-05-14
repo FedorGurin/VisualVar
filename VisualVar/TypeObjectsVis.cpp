@@ -35,9 +35,10 @@ TypeObjectsVis::TypeObjectsVis():QObject()
 QString TypeObjectsVis::codeAir(int code)
 {
     QString str="0";
-    for(int i=0;i<listObjectVisAir.size();i++)
+    for(auto i:listObjectVisAir)
     {
-        if(listObjectVisAir[i]->code==code) str=listObjectVisAir[i]->name;
+        if(i->code == code)
+            str= i->name;
     }
     return str;
 }
@@ -45,9 +46,10 @@ QString TypeObjectsVis::codeAir(int code)
 QString TypeObjectsVis::codeGround(int code)
 {
     QString str="0";
-    for(int i=0;i<listObjectVisGround.size();i++)
+    for(auto i:listObjectVisGround)
     {
-        if(listObjectVisGround[i]->code==code) str=listObjectVisGround[i]->name;
+        if(i->code==code)
+            str = i->name;
     }
     return str;
 }

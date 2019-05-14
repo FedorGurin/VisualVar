@@ -10,6 +10,7 @@
 
 #define MAX_ZOOM_LEVEL 18
 #define MIN_ZOOM_LEVEL 3
+#define OLD_STEND
 namespace VisualVariant
 {
 
@@ -221,11 +222,6 @@ void cl_Scene::setScrollViewHand(bool flag)
     else
         view->setDragMode(QGraphicsView::RubberBandDrag);
 }
-//cl_Scene* cl_Scene::clone()
-//{
-//    return new cl_Scene(this);
-//}
-
 cl_Scene::cl_Scene(QDomElement &node,
                    FormStatusBar* form,
                    TypeObjectsVis* typeObjectsVis_,
@@ -355,7 +351,7 @@ cl_Scene::cl_Scene(QDomElement &node,
 
 
         int tempCode=tempNode.attribute("codeObjectVis","100").toInt();
-        tempCode = qMin(tempCode,100);
+        tempCode = qMax(tempCode,100);
 //        if(tempCode<100)
 //            tempCode=100;
         target->setCode(tempCode,typeObjectsVis->codeAir(tempCode));
@@ -462,9 +458,10 @@ void cl_Scene::saveToXML(QDomDocument &domDocument,QDomElement &node)
 }
 void cl_Scene::getRequest(TCommonRequest *request,QString prefix,int num)
 {
+#ifndef OLD_STEND
     aircraft->getRequest(prefix,request,false);
-
-/*    if(circleVariant == false)
+#else
+    if(circleVariant == false)
     {
         int nAirTarget      = 0;
         int nGroundTarget   = 0;
@@ -505,7 +502,8 @@ void cl_Scene::getRequest(TCommonRequest *request,QString prefix,int num)
         //! для самолета
         aircraft->getRequest(prefixName,request,circleVariant);
         airTargets[0]->getRequest(prefixName,request,circleVariant);
-    }*/
+    }
+#endif
 }
 
 void cl_Scene::slotUpdate()
@@ -581,9 +579,7 @@ void cl_Scene::setCurrentGeoOnCenter()
 }
 void cl_Scene::setCenterWindowView(double lat,double lon, int zoom)
 {
-    if(zoom>MAX_ZOOM_LEVEL)
-        zoom = MAX_ZOOM_LEVEL;
-
+    zoom = qMin(zoom, MAX_ZOOM_LEVEL);
     currentZoom = zoom;
     statusBar->setZoom(zoom);
     int wh = 2<<(zoom-1);
@@ -598,10 +594,7 @@ void cl_Scene::setCenterWindowView(double lat,double lon, int zoom)
 void cl_Scene::setZoomLevel(int z)
 {
     int x,y;
-    if(z>MAX_ZOOM_LEVEL)
-        z = MAX_ZOOM_LEVEL;
-    if(z<MIN_ZOOM_LEVEL)
-        z = MIN_ZOOM_LEVEL;
+    z = qBound(MIN_ZOOM_LEVEL,z, MAX_ZOOM_LEVEL);
     currentZoom = z;
     statusBar->setZoom(currentZoom);
     int wh = 2<<(z-1);
