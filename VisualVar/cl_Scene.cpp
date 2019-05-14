@@ -53,7 +53,7 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     map->setTypeLayer(set->typeLayer);
 
 
-    scene=new GScene;
+    scene = new GScene;
 
     connect(scene,SIGNAL(zoomUp()),this,SLOT(slotZoomUp()));
     connect(scene,SIGNAL(zoomDown()),this,SLOT(slotZoomDown()));
