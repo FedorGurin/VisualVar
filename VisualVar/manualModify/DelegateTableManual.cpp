@@ -5,7 +5,7 @@
 
 #include "DelegateTableManual.h"
 
-
+#define OLD_STEND
 namespace VisualVariant
 {
 
@@ -133,11 +133,19 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
         GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
         if(node->type()==GraphNode::AIRCRAFT)
         {
+#ifndef OLD_STEND
             if(index.row()==4 && currentScene->circleVariant==false)
             {
                 QComboBox *comboBox=new QComboBox(parent);
                 comboBox->addItem(tr("С земли"));
                 comboBox->addItem(tr("В воздухе"));
+#else
+   if(index.row()==5 && currentScene->circleVariant==false)
+            {
+                QComboBox *comboBox=new QComboBox(parent);
+                comboBox->addItem(tr("Vy"));
+                comboBox->addItem(tr("УНТ"));
+#endif
                 connect(comboBox,SIGNAL(currentIndexChanged(int)),
                         this,SLOT(commitAndCloseEditorComboBox()));
                 return comboBox;
@@ -270,7 +278,11 @@ void DelegateTableManual::setEditorData(QWidget *editor,
 
         if(node->type()==GraphNode::AIRCRAFT)
         {
+#ifndef OLD_STEND
             if((index.row()==4 && currentScene->circleVariant==false) || (index.row()==2 && currentScene->circleVariant==true))
+#else
+            if((index.row()==5 && currentScene->circleVariant==false) || (index.row()==2 && currentScene->circleVariant==true))
+ #endif
             {
                 QString value=index.model()->data(index,Qt::DisplayRole).toString();
                 QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
@@ -377,7 +389,11 @@ void DelegateTableManual::setModelData(QWidget *editor,
 
         if(node->type()==GraphNode::AIRCRAFT)
         {
+#ifndef OLD_STEND
             if(index.row()==4 && currentScene->circleVariant==false)
+#else
+            if(index.row()==5 && currentScene->circleVariant==false)
+#endif
             {
                 QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
 

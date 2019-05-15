@@ -8,7 +8,7 @@
 
 #include "./glm/glm.hpp"
 #include "./glm/gtc/matrix_transform.hpp"
-
+#define OLD_STEND
 namespace VisualVariant
 {
 
@@ -48,8 +48,7 @@ void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
     ptrItemMapNew=ptrItemTemp;
     ////////////////////////////////////////////////
     //! ограничим диапазон
-    if(z<1) z=1;
-    else if(z>20) z=20;
+    z = qBound(1,z,20);
     //! рассчитываем кол-во элементов в слое
     //int nLayer=2<<(2*(z-1));
     int tileX1,tileY1;
@@ -58,13 +57,12 @@ void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
     //! загружаем все элементы попадающие в rectView
     pixelXYToTileXY(rectView.x(),rectView.y(),tileX0,tileY0);
     tileX0--;tileY0--;
-    if(tileX0<0) tileX0=0;
-    if(tileY0<0) tileY0=0;
+    tileX0 = qMax(tileX0,0);tileY0 = qMax(tileY0,0);
 
     pixelXYToTileXY(rectView.x()+rectView.width(),rectView.y()+rectView.height(),tileX1,tileY1);
     tileX1++;tileY1++;
-    if(tileX1>(2<<(z-2))) tileX1=2<<(z-2);
-    if(tileY1>(2<<(z-2))) tileY1=2<<(z-2);
+    if(tileX1>(2<<(z-2))) tileX1 = 2<<(z-2);
+    if(tileY1>(2<<(z-2))) tileY1 = 2<<(z-2);
 
     //! строки для идентификации карты
     QString pref_map="";
@@ -210,16 +208,16 @@ void ThreadLoadMaps::startLoadTile(QString path_map_,
                                    int tileY1_)
 {
 
-    if(isRunning()==false)
+    if(isRunning() == false)
     {
-        path_map=   path_map_;
-        ext_map=    ext_map_;
-        path_layer= path_layer_;
-        ext_layer=  ext_layer_;
-        tileX0=     tileX0_;
-        tileX1=     tileX1_;
-        tileY0=     tileY0_;
-        tileY1=     tileY1_;
+        path_map    = path_map_;
+        ext_map     = ext_map_;
+        path_layer  = path_layer_;
+        ext_layer   = ext_layer_;
+        tileX0      = tileX0_;
+        tileX1      = tileX1_;
+        tileY0      = tileY0_;
+        tileY1      = tileY1_;
 
         start(QThread::LowestPriority);
     }
@@ -239,13 +237,13 @@ void ThreadLoadMaps::addTile(QString path,
             QString::number(j)+ext;
 
     if(QFile::exists(fileName)==false)
-        fileName=":/png/no_tile";
+        fileName = ":/png/no_tile";
 
     QFile file(fileName);
     bool openFile=file.open(QIODevice::ReadOnly);
     QByteArray byteArray;
-    if(openFile==true)
-        byteArray=file.readAll();
+    if(openFile == true)
+        byteArray = file.readAll();
     else
         byteArray.clear();
 
@@ -254,10 +252,10 @@ void ThreadLoadMaps::addTile(QString path,
 void GeographySysCoord::slotFinishedLoadAllTile()
 {
     //! обнулим все элементы
-    for(int i=0;i<ptrItemMapOld->size();i++)
+    for(auto i:*ptrItemMapOld)
     {
-        this->scene()->removeItem((*ptrItemMapOld)[i]);
-        delete (*ptrItemMapOld)[i];
+        this->scene()->removeItem(i);
+        delete i;
     }
     ptrItemMapOld->clear();
 }
@@ -298,11 +296,11 @@ ObjectGraphNode::ObjectGraphNode(ObjectGraphNode* clone,QGraphicsItem *parent):G
     traj.clear();
     currentUnitTransPsi=unitAngle->find("deg");
 
-    itemSvg=new QGraphicsSvgItem(clone->fileName,this);
+    itemSvg = new QGraphicsSvgItem(clone->fileName,this);
     QRectF rect=itemSvg->boundingRect();
     itemSvg->setTransformOriginPoint(QPointF(rect.width()/2.0,rect.height()/2.0));
 
-    rotate=new RotateObject(0,0,30,30,itemSvg);
+    rotate = new RotateObject(0,0,30,30,itemSvg);
     transRotate.translate((itemSvg->boundingRect().width()/2.0)-15,-50.0);
     rotate->setTransform(transRotate);
     rotate->setGraphNode(this);
@@ -340,9 +338,9 @@ ObjectGraphNode::ObjectGraphNode(QString fileName_,QGraphicsItem *parent):GraphN
      setVisibleRotateRect(rotate->isVisible());
 
      setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
-     colorItem=new ColorItem(this);
-     colorName=new ColorItem(this);
-     nameItem=new QGraphicsSimpleTextItem(this);
+     colorItem  = new ColorItem(this);
+     colorName  = new ColorItem(this);
+     nameItem   = new QGraphicsSimpleTextItem(this);
 }
 void ObjectGraphNode::refreshTrajectory(int zoom_)
 {
@@ -369,26 +367,25 @@ void ObjectGraphNode::refreshTrajectory(int zoom_)
 }
 void ObjectGraphNode::setVisibleTraj(bool value)
 {
-    for(int i=0;i<traj.size();i++)
+    for(auto i:traj)
     {
-        traj[i]->setVisible(value);
+        i->setVisible(value);
     }
 }
 void ObjectGraphNode::setTime(double value)
 {
-    currentTime=value;
+    currentTime = value;
 }
-
 void ObjectGraphNode::clearTraj()
 {
     trajGeoPoints.clear();
-    for(int i=0;i<traj.size();i++)
+    for(auto i:traj)
     {
-        scene()->removeItem(traj[i]);
+        scene()->removeItem(i);
     }
     traj.clear();
-    currentTime=0;
-    lastTimeForTraj=0;
+    currentTime     = 0;
+    lastTimeForTraj = 0;
 }
 void ObjectGraphNode::setPosC(qreal dx,qreal dy)
 {
@@ -497,7 +494,7 @@ void ColorItem::setRows(unsigned rows)
     QGraphicsSimpleTextItem *tempItem = nullptr;
     for(unsigned i=0;i<rows;i++)
     {
-        tempItem=new QGraphicsSimpleTextItem(this);
+        tempItem = new QGraphicsSimpleTextItem(this);
         lines.push_back(tempItem);
     }
 }
@@ -515,13 +512,14 @@ RotateObject::RotateObject(qreal x,qreal y,qreal width,qreal height,QGraphicsIte
 {
     setBrush(QBrush(Qt::blue));
     setFlags(QGraphicsItem::ItemIsSelectable);
-    graphNode=0;
+    graphNode = nullptr;
 }
 void RotateObject::mouseMoveEvent (QGraphicsSceneMouseEvent* event)
 {
     QPointF point=event->pos();
 
-    if(graphNode!=0)  graphNode->setDirection(this->mapToParent(point));
+    if(graphNode!=nullptr)
+        graphNode->setDirection(this->mapToParent(point));
 
     QGraphicsRectItem::mouseMoveEvent (event);
 }
@@ -876,8 +874,8 @@ void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool cir
 {
     if(circleVariant==false)
     {
+#ifndef OLD_STEND
         QString prefixName = prefix;// + "INITDesArcraft.";
-
         request->append(prefixName+"Vist",      QString::number(unitSpeed->convert(vc,currentUnitTransV,"km/h")));
         request->append(prefixName+"Psi",       QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
         request->append(prefixName+"Tan0",      QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
@@ -886,23 +884,28 @@ void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool cir
         request->append(prefixName+"Lon",       QString::number(unitAngle->convert(lat,currentUnitTransPsi,"deg")));
         request->append(prefixName+"Y",         QString::number(unitLength->convert(y,currentUnitTransY,"m")));
 
-        //request->append(prefixName+"Y",   QString::number(y));
-        //request->append(prefixName+"Yp", QString::number(unitLength->convert(y,currentUnitTransY,"m")));
+#else
+   QString prefixName = prefix + "INITDesArcraft.";
 
+        request->append(prefixName+"mod_Vc",QString::number(unitSpeed->convert(vc,currentUnitTransV,"m/s")));
+        request->append(prefixName+"PsiC",  QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Hight", QString::number(unitLength->convert(y,currentUnitTransY,"m")));
         //признак установки угла тангажа/вертикальной скорости
-//        if(this->prVy==true)
-//        {
-//            double valueVy=unitSpeed->convert(vy,currentUnitTransVy,"m/s");
-//            if(valueVy>0.0)
-//                valueVy+=1000.;
-//            else
-//                valueVy+=-1000.;
+        if(this->prVy==true)
+        {
+            double valueVy=unitSpeed->convert(vy,currentUnitTransVy,"m/s");
+            if(valueVy>0.0)
+                valueVy+=1000.;
+            else
+                valueVy+=-1000.;
 
-//            request->append(prefixName+"TettaC",QString::number(valueVy));
-//        }
-//        else
-//            request->append(prefixName+"TettaC",QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
+            request->append(prefixName+"TettaC",QString::number(valueVy));
+        }
+        else
+            request->append(prefixName+"TettaC",QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
 
+#endif
+     
     }else
     {
         QString prefName = prefix + "INITDes_Arcraft.";
@@ -1075,7 +1078,10 @@ void AircraftObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
 }
 void AircraftObject::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
-    if(event->button()==Qt::LeftButton) { emit signalReleaseAircraft(); }
+    if(event->button()==Qt::LeftButton)
+    {
+        emit signalReleaseAircraft();
+    }
     ObjectGraphNode::mouseReleaseEvent(event);
 }
 void AircraftObject::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
@@ -1213,7 +1219,7 @@ AirTargetObject::AirTargetObject(QString name_,
     setZValue(9);
     initMessureItem();
     name        = name_;
-    aircraft    = 0;
+    aircraft    = nullptr;
     code        = 100;
 
     prCodeLen   = true;
@@ -1790,13 +1796,13 @@ GroundTargetObject::GroundTargetObject(QString name_,QString nameFile,QGraphicsI
     formSetting=new FormSettingForGroundTargets();
     formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
     //! код объекта
-    code=311;
+    code = 311;
     //! тип системы коордиант
-    sks=1;
+    sks = 1;
     //! координаты по умолчанию
-    x=0.0;
-    z=0.0;
-    v=0.0;
+    x = 0.0;
+    z = 0.0;
+    v = 0.0;
 
 
     //colorItemD=new ColorItem(this);
@@ -1969,6 +1975,9 @@ void GroundTargetObject::loadXML(QDomElement tempNode)
     setCurMessX(tempNode.attribute("messX","m"));
     setZt(tempNode.attribute("z","0").toDouble());
     setCurMessZ(tempNode.attribute("messZ","m"));
+#ifdef OLD_STEND
+    setSKS(tempNode.attribute("sks","0").toInt());
+#endif
 }
 
 void GroundTargetObject::saveXML(QDomDocument &domDocument,QDomElement &node)
@@ -2279,17 +2288,17 @@ void RouteObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 }
 void RouteObject::refresh()
 {
-    if(routeRight!=0)
+    if(routeRight != nullptr)
     {
         calcD();
         refreshLine();
     }
-    if(routeLeft!=0)
+    if(routeLeft != nullptr)
     {
         routeLeft->calcD();
         routeLeft->refreshLine();
     }
-    if(routeRight==0)
+    if(routeRight == nullptr)
     {
         colorItemSumD->setRowText(tr("Общее расстояние: ")+QString::number(calcAllRoute())+tr(" метров"),0);
         colorItemSumD->setVisible(true);
@@ -2299,7 +2308,7 @@ double RouteObject::calcAllRoute()
 {
     double di=0.0;
     RouteObject *tempRoute=routeLeft;
-    while(tempRoute!=0)
+    while(tempRoute!=nullptr)
     {
         di+=tempRoute->dist();
         tempRoute=tempRoute->routeLeft;
