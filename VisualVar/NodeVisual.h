@@ -403,10 +403,10 @@ public:
     }
     static void initObjectsProperty()
     {
-        if(unitAngle==0)    unitAngle=new TObjectProperty("./xml/factors.xml","Angle");
-        if(unitSpeed==0)    unitSpeed=new TObjectProperty("./xml/factors.xml","Velocity, Speed");
-        if(unitLength==0)   unitLength=new TObjectProperty("./xml/factors.xml","Length");
-        if(unitExp==0)      unitExp=new TObjectProperty("./xml/factors.xml","Multipliers");
+        if(unitAngle    == nullptr)    unitAngle=new TObjectProperty("./xml/factors.xml","Angle");
+        if(unitSpeed    == nullptr)    unitSpeed=new TObjectProperty("./xml/factors.xml","Velocity, Speed");
+        if(unitLength   == nullptr)   unitLength=new TObjectProperty("./xml/factors.xml","Length");
+        if(unitExp      == nullptr)      unitExp=new TObjectProperty("./xml/factors.xml","Multipliers");
     }
 
     static TObjectProperty *unitAngle;

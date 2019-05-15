@@ -494,7 +494,7 @@ void ColorItem::calcResize()
 void ColorItem::setRows(unsigned rows)
 {
     lines.clear();
-    QGraphicsSimpleTextItem *tempItem=0;
+    QGraphicsSimpleTextItem *tempItem = nullptr;
     for(unsigned i=0;i<rows;i++)
     {
         tempItem=new QGraphicsSimpleTextItem(this);

@@ -140,7 +140,7 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     activeRoute             = thisScene->activeRoute;
     firstConnectingSlots    = thisScene->firstConnectingSlots;
 
-    map=new GeographySysCoord;
+    map = new GeographySysCoord;
     map->setZValue(0);
     map->setFlag(QGraphicsItem::ItemStacksBehindParent,true);
     map->setTypeMap(thisScene->map->isTypeMap());
@@ -841,10 +841,9 @@ void cl_Scene::delLabelMap()
 {
     if(labelObjects!=nullptr)
     {
-        for(int i=0;i<labelObjects->size();i++)
+         for(auto i :*labelObjects)
         {
-            scene->removeItem((*labelObjects)[i]);
-            //scene->addItem((*labelObjects)[i]);
+            scene->removeItem(i);
         }
     }
 }
