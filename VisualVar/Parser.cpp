@@ -174,7 +174,7 @@ void Parser::createXMLForModel(QString comment,bool useMap,uint id)
     sizeVariantsNode.appendChild(domTextVar);
     rootNodeForModel.appendChild(sizeVariantsNode);
 
-    for(autp i : *scenes)
+    for(auto i : *scenes)
     {
         if(i->use == true)
             i->saveToXMLForModel(saveDomVariantsForModel,rootNodeForModel);

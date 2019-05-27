@@ -96,8 +96,6 @@ cl_Scene::cl_Scene(FormStatusBar* form,
 
     setCenterWindowView(curLatView,curLonView,currentZoom);
 
-    //double lat,lon;
-    //pixelXYToLatLong(aircraft->posC(),currentZoom-1,lat,lon);
     int posX,posY;
     latLongToPixelXY(curLatView,curLonView,currentZoom-1,posX,posY);
     aircraft->setPosC(posX,posY);

@@ -73,24 +73,25 @@ public:
     void getRequest(TCommonRequest *request,QString prefix,int num);
 
     //! клонирование воздуного объекта
-    void cloneAirTarget(AirTargetObject *target);
+    //void cloneAirTarget(AirTargetObject *target);
 
     //! клонирование нашего носителя
-    void cloneAircraft(AircraftObject *aircraft_);
+    //void cloneAircraft(AircraftObject *aircraft_);
 
     //! клонирование наземного объекта
-    void cloneGroundTarget(GroundTargetObject *target);
-    void createNewAirTarget(QPointF);
-    void createNewGroundTarget(QPointF);
-    void createNewAerodrom(QPointF);
-    void createNewInfoObject(QPointF);
-    void createNewBeaconObject(QPointF);
-    void createNewPointRoute(QPointF);//создать новую точку в маршруте
+    //void cloneGroundTarget(GroundTargetObject *target);
+    void createTypeObject(GraphNode::TypeGraphNode type, QPointF point);
+//    void createNewAirTarget(QPointF);
+//    void createNewGroundTarget(QPointF);
+//    void createNewAerodrom(QPointF);
+//    void createNewInfoObject(QPointF);
+//    void createNewBeaconObject(QPointF);
+//    void createNewPointRoute(QPointF);//создать новую точку в маршруте
     //! добавить метаданные в
-    void addMetaDataToAircraft(QVector<MetaData> list);//в наш самолет
+    //void addMetaDataToAircraft(QVector<MetaData> list);//в наш самолет
     //! в разработке!!!!!!!
-    void addMetaDataToAirTarget(QVector<MetaData> list){Q_UNUSED(list);}//в воздушную цель
-    void addMetaDataToGroundTarget(QVector<MetaData> list){Q_UNUSED(list);}//в наземную цель
+    //void addMetaDataToAirTarget(QVector<MetaData> list){Q_UNUSED(list);}//в воздушную цель
+    //void addMetaDataToGroundTarget(QVector<MetaData> list){Q_UNUSED(list);}//в наземную цель
 
     //! удалить узлы
     void deleteRoutes();
@@ -144,34 +145,36 @@ public:
     //! вертикальная шкала
     VerticalScale *vScale;
     //! объект самолета
-    AircraftObject *aircraft;
+   // AircraftObject *aircraft;
     //! объект который может перемещаться
-    AircraftObject *aircraftMove;
+   // AircraftObject *aircraftMove;
     //! система координат
     //SystemCoordObject *sysCoord;
     //! карта с географией земли
     GeographySysCoord *map;
     //! типы объектов
-    TypeObjectsVis* typeObjectsVis;
+    //TypeObjectsVis* typeObjectsVis;
     //! список воздушных целей
-    QList<AirTargetObject* >    airTargets;
-    QList<AirTargetObject* >    airTargetsMove;
-    //! список наземных целей
-    QList<GroundTargetObject* > groundTargets;
-    QList<GroundTargetObject* > groundTargetsMove;
-    //! список аэродромов
-    QList<AerodromObject* >     aerodroms;
-    //! список информационных точек
-    QList<InfoObject* >         *infoObjects;
-    //! список маяков
-    QList<BeaconObject* >       beaconObjects;
-    //! список маршрутов
-    QList<RouteObject* >        routeObjects;
-    //! список маршрутов
-    QList<PPMObject* >          ppmObjects;
+//    QList<AirTargetObject* >    airTargets;
+//    QList<AirTargetObject* >    airTargetsMove;
+//    //! список наземных целей
+//    QList<GroundTargetObject* > groundTargets;
+//    QList<GroundTargetObject* > groundTargetsMove;
+//    //! список аэродромов
+//    QList<AerodromObject* >     aerodroms;
+//    //! список информационных точек
+//    QList<InfoObject* >         *infoObjects;
+//    //! список маяков
+//    QList<BeaconObject* >       beaconObjects;
+//    //! список маршрутов
+//    QList<RouteObject* >        routeObjects;
+//    //! список маршрутов
+//    QList<PPMObject* >          ppmObjects;
     //! список меток(метки одинаковы в независимости от экземпляра сцены)
     const QList<LabelObject* >  *labelObjects;
 
+    //! список всех объектов на карте
+    QList<ObjectGraphNode* > objects;
     QMdiSubWindow *subW;
     //! индекс сцены [1...N](сквозная нумерация вариантов)
     int index;

@@ -32,8 +32,8 @@ const QString nokia_map         = "\\ovi_com_map\\z";
 
 void GeographySysCoord::pixelXYToTileXY(double pixX, double pixY, int &tileX, int &tileY)
 {
-    tileX = pixX / 256;
-    tileY = pixY / 256;
+    tileX = static_cast<int>(pixX / 256.);
+    tileY = static_cast<int>(pixY / 256.);
 }
 void GeographySysCoord::tileXYToPixelXY(int tileX,int tileY,double &pixX,  double &pixY)
 {
@@ -327,11 +327,11 @@ ObjectGraphNode::ObjectGraphNode(QString fileName_,QGraphicsItem *parent):GraphN
      traj.clear();
 
      currentUnitTransPsi=unitAngle->find("deg");
-     itemSvg=new QGraphicsSvgItem(fileName,this);
-     QRectF rect=itemSvg->boundingRect();
+     itemSvg = new QGraphicsSvgItem(fileName,this);
+     QRectF rect = itemSvg->boundingRect();
      itemSvg->setTransformOriginPoint(QPointF(rect.width()/2.0,rect.height()/2.0));
 
-     rotate=new RotateObject(0,0,30,30,itemSvg);
+     rotate = new RotateObject(0,0,30,30,itemSvg);
      transRotate.translate((itemSvg->boundingRect().width()/2.0)-15,-50.0);
      rotate->setTransform(transRotate);
      rotate->setGraphNode(this);
@@ -344,8 +344,8 @@ ObjectGraphNode::ObjectGraphNode(QString fileName_,QGraphicsItem *parent):GraphN
 }
 void ObjectGraphNode::refreshTrajectory(int zoom_)
 {
-    int curX1=0,curX2=0;
-    int curY1=0,curY2=0;
+    int curX1 = 0,curX2 = 0;
+    int curY1 = 0,curY2 = 0;
 
     //! пересчитаем географические координаты в новые координаты линий
     for(int i=1;i<trajGeoPoints.size();i++)
