@@ -438,7 +438,7 @@ QVariant ModelDataTable::headerData(int section,Qt::Orientation orientation, int
                 if(section==6)return QString(tr("Скорость"));
                 if(section==7)return QString(tr("Высота"));
                 if(section==8)return QString(tr("Курс"));
-#ifndef
+#ifndef OLD_STEND
                 if(section==9)return QString(tr("Тангаж"));
                 if(section==10)return QString(tr("Тип старта"));
 #else
