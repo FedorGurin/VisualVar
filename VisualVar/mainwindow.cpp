@@ -10,7 +10,7 @@
 #include "./mppm/libmppm.h"
 #include <QLibrary>
 
-#define OLD_STEND
+//#define OLD_STEND
 typedef IEngineData* (*CreateEngine)();
 
 namespace VisualVariant
