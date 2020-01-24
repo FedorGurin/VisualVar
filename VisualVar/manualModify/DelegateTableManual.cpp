@@ -5,7 +5,7 @@
 
 #include "DelegateTableManual.h"
 
-#define OLD_STEND
+//#define OLD_STEND
 namespace VisualVariant
 {
 

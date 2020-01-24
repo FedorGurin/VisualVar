@@ -10,7 +10,7 @@
 
 #define MAX_ZOOM_LEVEL 18
 #define MIN_ZOOM_LEVEL 3
-#define OLD_STEND
+//#define OLD_STEND
 namespace VisualVariant
 {
 

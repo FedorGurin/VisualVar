@@ -12,7 +12,7 @@ namespace VisualVariant
 //        int fireTarget;
 //    } aspInit;
 
-#define OLD_STEND
+//#define OLD_STEND
 ModelDataTable::ModelDataTable(QVector<cl_Scene* > *scenes_,
                                QObject *parent):QAbstractTableModel(parent)
 {

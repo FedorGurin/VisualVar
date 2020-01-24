@@ -432,7 +432,7 @@ void MainWindowVisVar::slotButtonSend()
         listReq.setReciver("MPPM");
         listReq.setSender("VAR");
         QString prefixVar           = settingVV->pathToObj  + "InitialState.Init.";
-        QString prefixPathReg       = settingVV->pathToObj + "Управление моделированием.InputButton.Input.";
+        QString prefixPathReg       = settingVV->pathToObj + "InputButton.Input.";
         currentScenes->getRequest(&listReq,prefixVar,0);
         //! здесь должен отправить признак нажатия исходного
         listReq.append(prefixPathReg  + "restartButton","1");
@@ -1180,7 +1180,7 @@ void MainWindowVisVar::setGeoParamOfAircraft()
         listReq.append(prefixSetupGeo + "z0_ust",               QString::number(0.0));
 
 
-        requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
+        requestEvent = engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
     }
 }
 //! чтение структуры "География земли"
