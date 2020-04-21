@@ -87,13 +87,13 @@ void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
     QString ext_layer   = ".jpg";
     switch(typeLayer)
     {
-        case YANDEX_HYB:        {pref_layer=yandex_hyb;ext_layer=".png";break;}
-        case GOOGLE_HYB:        {pref_layer=google_hyb;ext_layer=".png";break;}
-        default:                {pref_layer="";}
+        case YANDEX_HYB:        {pref_layer = yandex_hyb;ext_layer=".png";break;}
+        case GOOGLE_HYB:        {pref_layer = google_hyb;ext_layer=".png";break;}
+        default:                {pref_layer = "";}
     };
-    QString path_map        = dirMaps+pref_map+QString::number(currentZoom);
-    QString path_layer      = dirMaps+pref_layer+QString::number(currentZoom);
-    if(pref_layer.isEmpty() ==true)
+    QString path_map        = dirMaps + pref_map    + QString::number(currentZoom);
+    QString path_layer      = dirMaps + pref_layer  + QString::number(currentZoom);
+    if(pref_layer.isEmpty() == true)
         path_layer = "";
 
     //! запускаем поток для загрузки тайлов
@@ -137,9 +137,9 @@ void GeographySysCoord::setTypeMap(QString value)
 void GeographySysCoord::setTypeLayer(QString value)
 {
     ///////////загрузка слоя
-    if(value=="google_hyb")
+    if(value == "google_hyb")
         setTypeLayer(GeographySysCoord::GOOGLE_HYB);
-    else if(value=="yand_hyb")
+    else if(value == "yand_hyb")
         setTypeLayer(GeographySysCoord::YANDEX_HYB);
     else
         setTypeLayer(GeographySysCoord::NO_LAYER);
@@ -147,7 +147,7 @@ void GeographySysCoord::setTypeLayer(QString value)
 }
 QString GeographySysCoord::strTypeMap()
 {
-    QString strMap="";
+    QString strMap = "";
     switch(isTypeMap())
     {
     case GeographySysCoord::YANDEX_SAT:         {strMap="yand_sat";     break;}
@@ -263,7 +263,7 @@ void GeographySysCoord::slotCreatePixmapItem(QByteArray byteArray,int pixX,int p
 {
     QPixmap p;
     p.loadFromData(byteArray);
-    QGraphicsPixmapItem *itemPixmap=new QGraphicsPixmapItem(p,this);//,this->parent);
+    QGraphicsPixmapItem *itemPixmap = new QGraphicsPixmapItem(p,this);//,this->parent);
 
     itemPixmap->setPos(pixX,pixY);
     addItemToScene(itemPixmap);

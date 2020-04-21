@@ -54,18 +54,18 @@ void FormStatusBar::setSource(QString str)
 void FormStatusBar::setStatusTransmit(QString name,TStatus status)
 {
 
-    if(status==ST_BAD)
+    if(status == ST_BAD)
     {
         QColor color(Qt::red);
-        QPalette palette=ui->labelStatus->palette();
+        QPalette palette = ui->labelStatus->palette();
 
         palette.setColor(QPalette::Foreground,color);
         ui->labelStatus->setPalette(palette);
     }
-    else if(status==ST_GOOD)
+    else if(status == ST_GOOD)
     {
         QColor color(Qt::blue);
-        QPalette palette=ui->labelStatus->palette();
+        QPalette palette = ui->labelStatus->palette();
 
         palette.setColor(QPalette::Foreground,color);
         ui->labelStatus->setPalette(palette);
@@ -73,7 +73,7 @@ void FormStatusBar::setStatusTransmit(QString name,TStatus status)
     else
     {
         QColor color(Qt::black);
-        QPalette palette=ui->labelStatus->palette();
+        QPalette palette = ui->labelStatus->palette();
 
         palette.setColor(QPalette::Foreground,color);
         ui->labelStatus->setPalette(palette);

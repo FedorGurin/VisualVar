@@ -23,26 +23,26 @@ bool cl_MouseFilterVariant::eventFilter(QObject* pobj,QEvent *event)
 {
     if(event->type() == QEvent::ContextMenu)
     {
-        MainWindowVisVar *p=qobject_cast<MainWindowVisVar* >(slotForm);
-        if(p!=nullptr)
+        MainWindowVisVar *ptr = qobject_cast<MainWindowVisVar* >(slotForm);
+        if(ptr != nullptr)
         {
-            p->rightButtonMouseClicked();
+            ptr->rightButtonMouseClicked();
             return true;
         }else
             return false;
-    }else if(event->type()==QEvent::Close)
+    }else if(event->type() == QEvent::Close)
     {
-        MainWindowVisVar *p=qobject_cast<MainWindowVisVar* >(slotForm);
-        if(p!=nullptr)
+        MainWindowVisVar *ptr = qobject_cast<MainWindowVisVar* >(slotForm);
+        if(ptr != nullptr)
         {
-            for(int i=0;i<p->scenes.size();i++)
+            for(auto i:ptr->scenes)
             {
-                QObject* ptr=p->scenes[i]->view;
-                if(ptr == pobj)
+                QObject* pObject = i->view;
+                if(pObject == pobj)
                 {
-                    p->scenes.remove(i);
-                    p->formManualModify->deleteScene(i);
-                    p->formManualModify->resetModelData();
+                    ptr->scenes.removeAll(i);
+                    ptr->formManualModify->deleteScene(0);
+                    ptr->formManualModify->resetModelData();
                 }
             }
             return true;
@@ -105,53 +105,54 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
 
     buttonVar=new QToolButton;
     buttonVar->setIcon(QIcon(":/png/var"));
-    buttonVar->setToolTip(tr("Создать вариант начальных условий с воздушными и наземными целями(Кл. Ctrl+1)"));
+    buttonVar->setToolTip(tr("Создать вариант начальных условий с воздушными и наземными объектами(Кл. Ctrl+1)"));
 
-    buttonCir=new QToolButton;
+    buttonCir = nullptr;
+    /*(buttonCir=new QToolButton;
     buttonCir->setIcon(QIcon(":/png/circ"));
     buttonCir->setToolTip(tr("Создать вариант начальных условий движения по кругам(Кл. Ctrl+2)"));
-
-    checkBoxGeography=new QCheckBox(tr("Привязка к карте"));
+    */
+    checkBoxGeography = new QCheckBox(tr("Привязка к карте"));
     connect(checkBoxGeography,
             SIGNAL(stateChanged(int)),
             this,
             SLOT(slotCheckBoxGeography(int)));
 
-    pathFileToSend=new QLineEdit(tr("По умолчанию"));
+    pathFileToSend = new QLineEdit(tr("По умолчанию"));
     ui->toolBarSendFile->addWidget(formManualModify);
 
-    buttonHandMoveMap=new QToolButton;
+    buttonHandMoveMap = new QToolButton;
     buttonHandMoveMap->setCheckable(true);
     buttonHandMoveMap->setChecked(true);
     buttonHandMoveMap->setIcon(QIcon(":/png/hand"));
     buttonHandMoveMap->setToolTip(tr("Перемещение карты"));
 
-    buttonRuler=new QToolButton;
+    buttonRuler = new QToolButton;
     buttonRuler->setCheckable(true);
     buttonRuler->setIcon(QIcon(":/png/ruler"));
     buttonRuler->setToolTip(tr("Линейка"));
 
-    buttonCentering=new QToolButton;
+    buttonCentering = new QToolButton;
     buttonCentering->setIcon(QIcon(":/png/yellow"));
-    buttonCentering->setToolTip(tr("Центрирование по самолету"));
+    buttonCentering->setToolTip(tr("Центрирование по вертолету"));
 
-    buttonCursor=new QToolButton;
+    buttonCursor = new QToolButton;
     buttonCursor->setCheckable(true);
     buttonCursor->setIcon(QIcon(":/png/cursor"));
 
-    buttonRouteDynObject=new QToolButton;
+    buttonRouteDynObject = new QToolButton;
     buttonRouteDynObject->setCheckable(true);
     buttonRouteDynObject->setToolTip(tr("Отображение текущих координат объектов"));
     buttonRouteDynObject->setIcon(QIcon(":/png/routeObjects"));
 
-    buttonAllInfoObject=new QToolButton;
+    buttonAllInfoObject = new QToolButton;
     buttonAllInfoObject->setCheckable(true);
     buttonAllInfoObject->setToolTip(tr("Отображение всей информации об объекте"));
     buttonAllInfoObject->setIcon(QIcon(":/png/info_obj"));
 
-    buttonFocusMoveObj=new QToolButton;
+    buttonFocusMoveObj = new QToolButton;
     buttonFocusMoveObj->setCheckable(true);
-    buttonFocusMoveObj->setToolTip(tr("Центрирование по подвижному объекту нашего самолета"));
+    buttonFocusMoveObj->setToolTip(tr("Центрирование по подвижному объекту нашего вертолета"));
     buttonFocusMoveObj->setIcon(QIcon(":/png/center_move_obj"));
 
     parser=new Parser(statusBar,&scenes,typeObjectsVis);
@@ -265,8 +266,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
 
 
     reqEventCurPos = engine->getValue(listReq,IEngineData::CYCLIC_ENGINE);
-    qDebug("Status=%d\n",reqEventCurPos.status);
-    qDebug("Sub Status=%d\n",reqEventCurPos.sub_status[0]);
+
     connect(engine,SIGNAL(reciveEventsRequest(TRequestEvent)),this,SLOT(slotEventsRequest(TRequestEvent)));
 #endif
 }
@@ -702,7 +702,7 @@ void MainWindowVisVar::slotMapNokia(QAction* act)
 }
 void MainWindowVisVar::slotLayerGoogle(QAction* act)
 {
-    if(act->isChecked()==true)
+    if(act->isChecked() == true)
     {
         ui->actionHybYandex->setChecked(false);
     }
@@ -710,7 +710,7 @@ void MainWindowVisVar::slotLayerGoogle(QAction* act)
 }
 void MainWindowVisVar::slotLayerYandex(QAction* act)
 {
-    if(act->isChecked()==true)
+    if(act->isChecked() == true)
     {
         ui->actionHybGoogle->setChecked(false);
     }
@@ -733,20 +733,23 @@ void MainWindowVisVar::slotSaveAs()
     dialog->setNameFilter(tr("XML-variants(*.xml)"));
     dialog->show();
 
-    QStringList fileNames=dialog->selectedFiles();
-    for(int i=0;i<fileNames.size();i++)
+    QStringList fileNames = dialog->selectedFiles();
+    for(auto i:fileNames)
     {
-        bool f=fileNames[i].contains(".xml");
-        if(f==false)
+        bool res = i.contains(".xml");
+        if(res == false)
         {
-            if(fileNames[0]=="") fileName="";
-            else fileNames[0]+=".xml";
-        }else fileName=fileNames[0];
+            if(fileNames[0] == "")
+                fileName = "";
+            else
+                fileNames[0] += ".xml";
+        }else
+            fileName = fileNames[0];
 
     }
     if(fileNames.isEmpty() == false && fileName!="")
     {
-        setWindowTitle(tr("Редактор вариантов")+" ["+fileName+"]");
+        setWindowTitle(tr("Редактор вариантов")+" [" + fileName + "]");
         parser->saveVariants(fileName,formManualModify->comment(),useMap,id);
     }
 }
@@ -760,10 +763,10 @@ void MainWindowVisVar::slotSaveAll()
 }
 void MainWindowVisVar::slotAddLabel()
 {
-    if(currentScenes!=nullptr)
+    if(currentScenes != nullptr)
     {
         slotButtonCursor(true);
-        currentScenes->activeAddLabel=true;
+        currentScenes->activeAddLabel = true;
         currentScenes->view->setCursor(Qt::CrossCursor);
         disconnect(currentScenes,
                 SIGNAL(activeFormAddLabel(double,double)),
@@ -783,7 +786,7 @@ void MainWindowVisVar::slotGotoLabel()
 }
 void MainWindowVisVar::slotGotoLatLon(double lat,double lon)
 {
-    if(currentScenes!=nullptr)
+    if(currentScenes != nullptr)
     {
         currentScenes->setCenterWindowView(lat,lon,currentScenes->currentZoom);
     }
@@ -793,7 +796,7 @@ void MainWindowVisVar::slotRunFormAddLabel(double lat,double lon)
     formAddLabel->addNewLabel(lat,lon);
     formAddLabel->show();
 
-    if(currentScenes!=nullptr)
+    if(currentScenes != nullptr)
         currentScenes->calcItemPosScene();
 }
 //! создание варианта(обычный или по кругам)
@@ -801,11 +804,11 @@ void MainWindowVisVar::createVariant(bool circleVariant)
 {
     if(scenes.isEmpty()==true)
     {
-        fileName="";
-        id=qrand();
+        fileName = "";
+        id = qrand();
         this->setWindowTitle(tr("Редактор вариантов"));
     }
-    cl_Scene *scene=new cl_Scene(statusBar,typeObjectsVis,&infoObjects,circleVariant,settingVV,this);
+    cl_Scene *scene = new cl_Scene(statusBar,typeObjectsVis,&infoObjects,circleVariant,settingVV,this);
     //!
     formManualModify->resetModelData();
     //!
@@ -813,23 +816,23 @@ void MainWindowVisVar::createVariant(bool circleVariant)
     //scene->view->setWindowFlags(Qt::WindowMinMaxButtonsHint);
 
     int index_prev = 1;
-    scene->numberNameVariant=index_prev;
+    scene->numberNameVariant = index_prev;
     if(scenes.isEmpty() == false)
     {
-        index_prev=(scenes.back())->numberNameVariant;
-        scene->numberNameVariant=index_prev+1;
+        index_prev = (scenes.back())->numberNameVariant;
+        scene->numberNameVariant = index_prev + 1;
     }
     scenes.push_back(scene);
     scene->view->installEventFilter(new cl_MouseFilterVariant(scene->view,this));
-    QString strName=tr("Вариант #")+QString::number(scene->numberNameVariant);
+    QString strName = tr("Вариант #")+QString::number(scene->numberNameVariant);
 
-    if(circleVariant==true)
+    if(circleVariant == true)
         strName+=tr(" - движение по кругам");
     else
         strName+=tr(" - начальные условия");
     //!
     scene->view->setWindowTitle(strName);
-    scene->index=scenes.size();
+    scene->index = scenes.size();
     //! укажем какой тип карты использует пользователь
     checkTypeMapAndLayer(scene);
     //! обновим тайлы
@@ -840,7 +843,7 @@ void MainWindowVisVar::createVariant(bool circleVariant)
     scene->view->show();
     createWindowMenu();
 
-    if(scene->circleVariant==true)
+    if(scene->circleVariant == true)
     {
         QPointF posScene(0.0,0.0);
         scene->createNewAirTarget(posScene);
@@ -857,12 +860,12 @@ void MainWindowVisVar::slotCreateMenuCircleVariant()
 }
 void MainWindowVisVar::setCurrentActiveWindow(QString name)
 {
-    QList<QMdiSubWindow*> list=mdiArea->subWindowList();
+    QList<QMdiSubWindow*> list = mdiArea->subWindowList();
 
     for(auto i:list)
     {
         GView* view = static_cast <GView* > (i->widget());
-        if(view->windowTitle()==name)
+        if(view->windowTitle() == name)
         {
             mdiArea->setActiveSubWindow(i);
             //list[i]->setFocus();//showNormal();
@@ -871,11 +874,11 @@ void MainWindowVisVar::setCurrentActiveWindow(QString name)
 }
 void MainWindowVisVar::slotMenuWindow(QAction * act)
 {
-    QList<QMdiSubWindow*> list=mdiArea->subWindowList();
+    QList<QMdiSubWindow*> list = mdiArea->subWindowList();
 
     for(auto i:actList)
     {
-        if(i!=act)
+        if(i != act)
             i->setChecked(false);
         else
             i->setChecked(true);
@@ -884,8 +887,8 @@ void MainWindowVisVar::slotMenuWindow(QAction * act)
 
     for(auto i:list)
     {
-        GView* view=static_cast <GView* > (i->widget());
-        if(view->windowTitle()==act->text())
+        GView* view = static_cast <GView* > (i->widget());
+        if(view->windowTitle() == act->text())
         {
             mdiArea->setActiveSubWindow(i);
             i->showNormal();
@@ -915,17 +918,17 @@ void MainWindowVisVar::createWindowMenu()
     QList<QMdiSubWindow*> list      = mdiArea->subWindowList();
     QMdiSubWindow* currentSubWindow = mdiArea->currentSubWindow();
 
-    for(int i=0;i<list.size();i++)
+    for(auto curWin:list)
     {
-        QMdiSubWindow* subWindow=list[i];
-
-        GView* view = static_cast<GView* > (subWindow->widget());
-        QAction* act=ui->menuWindow->addAction(view->windowTitle());
+        GView* view = static_cast<GView* > (curWin->widget());
+        QAction* act = ui->menuWindow->addAction(view->windowTitle());
         actList.push_back(act);
         act->setCheckable(true);
 
-        if(subWindow == currentSubWindow) act->setChecked(true);
-        else act->setChecked(false);
+        if(curWin == currentSubWindow)
+            act->setChecked(true);
+        else
+            act->setChecked(false);
     }
 }
 
@@ -936,8 +939,8 @@ void MainWindowVisVar::rightButtonMouseClicked()
 
     QAction *act = nullptr;
     menu->clear();
-    menu->addAction(tr("Добавить воздушную цель"));
-    menu->addAction(tr("Добавить наземную цель"));
+    menu->addAction(tr("Добавить воздушный объект"));
+    menu->addAction(tr("Добавить наземный объект"));
     menu->addSeparator();
     act=menu->addAction(tr("Добавить маяк РСБН"));
     act->setEnabled(false);
@@ -972,30 +975,30 @@ void MainWindowVisVar::slotRunMenuScene(QAction* act)
     if(scene == nullptr)
         return;
 
-    QPointF posScene=view->mapToScene(view->mapFromGlobal(posMouseMenu));
+    QPointF posScene = view->mapToScene(view->mapFromGlobal(posMouseMenu));
 
-    if(act->text()==tr("Добавить воздушную цель"))
+    if(act->text() == tr("Добавить воздушный объект"))
     {
-        if(scene->circleVariant==false)
+        if(scene->circleVariant == false)
             scene->createNewAirTarget(posScene);
-    }else if(act->text()==tr("Добавить наземную цель"))
+    }else if(act->text() == tr("Добавить наземный объект"))
     {
-        if(scene->circleVariant==false)
+        if(scene->circleVariant == false)
             scene->createNewGroundTarget(posScene);
-    }else if(act->text()==tr("Добавить аэродром"))
+    }else if(act->text() == tr("Добавить аэродром"))
     {
         scene->createNewAerodrom(posScene);
-    }else if(act->text()==tr("Добавить информационную точку"))
+    }else if(act->text() == tr("Добавить информационную точку"))
     {
         scene->createNewInfoObject(posScene);
         for(auto i:scenes)
         {
             i->refreshInfo();
         }
-    }else if(act->text()==tr("Добавить маяк РСБН"))
+    }else if(act->text() == tr("Добавить маяк РСБН"))
         scene->createNewBeaconObject(posScene);
 
-    else if(act->text()==tr("Добавить маяк VOR"))
+    else if(act->text() == tr("Добавить маяк VOR"))
         scene->createNewBeaconObject(posScene);
 
     formManualModify->resetModelData();
@@ -1058,16 +1061,16 @@ void MainWindowVisVar::closeAllVariant()
 {
     this->setWindowTitle(tr("Редактор вариантов"));
     currentScenes = nullptr;
-    QList<QMdiSubWindow*> list=mdiArea->subWindowList();
-    for(int i=0;i<list.size();i++)
+    QList<QMdiSubWindow*> list = mdiArea->subWindowList();
+    for(auto i:list)
     {
-        list[i]->close();
+        i->close();
     }
 
-    for(int i=0;i<scenes.size();i++)
+    for(auto i:scenes)
     {
-        scenes[i]->view->close();
-        cl_Scene *tempScene=scenes[i];
+        i->view->close();
+        cl_Scene *tempScene = i;
         delete tempScene;
     }
     scenes.clear();
@@ -1084,7 +1087,7 @@ void MainWindowVisVar::slotOpenXML()
     if(scenes.isEmpty() == false)
     {
         dialogSave->exec();
-        if(dialogSave->ok==true)
+        if(dialogSave->ok == true)
         {
             slotSaveAs();
         }
@@ -1098,7 +1101,7 @@ void MainWindowVisVar::slotOpenXML()
     dialog->selectFile("");
     dialog->exec();
 
-    QStringList fileNames=dialog->selectedFiles();
+    QStringList fileNames = dialog->selectedFiles();
     if(fileNames.isEmpty() == false)
     {
         if(fileNames[0].isEmpty() == false)
@@ -1114,7 +1117,7 @@ void MainWindowVisVar::slotOpenXML()
 //! открыть файл с вариантами
 bool MainWindowVisVar::openFile(QString fileName)
 {
-    bool openFile=parser->openFileVariants(fileName,
+    bool openFile = parser->openFileVariants(fileName,
                                            &comment,
                                            useMap,id);
     //! использование цифровой карты
@@ -1146,8 +1149,8 @@ void MainWindowVisVar::slotTransferStarted()
 }
 void MainWindowVisVar::slotTransferFinished(int code, QString errString)
 {
-    QString time=QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate);
-    if(code==0)
+    QString time = QDateTime::currentDateTime().toString(Qt::SystemLocaleShortDate);
+    if(code == 0)
         statusBar->setStatusTransmit(tr("Успешно: дата ") +  time,
                                      FormStatusBar::ST_GOOD);
     else
@@ -1194,7 +1197,6 @@ void MainWindowVisVar::readSetupGeography()
 }
 void MainWindowVisVar::slotIds(TRequestEvent eventRequest)
 {
-
     if(eventRequest.sender == "MPPM")
     {
         if(requestEvent.uid == eventRequest.uid)
@@ -1204,13 +1206,12 @@ void MainWindowVisVar::slotIds(TRequestEvent eventRequest)
             else
                 slotTransferFinished(0x1,tr("Ошибка передачи"));
         }
-
     }
 }
 void MainWindowVisVar::slotOpenAndSendVariant(QString nameFile)
 {
     closeAllVariant();
-    bool isOpen=parser->openFileVariants(nameFile,&comment,useMap,id);
+    bool isOpen = parser->openFileVariants(nameFile,&comment,useMap,id);
     if(isOpen == true)
     {
         showAllVariant();
@@ -1260,20 +1261,15 @@ void MainWindowVisVar::slotAttach()
 //! пересчет положения объектов, если нет привязки к цифровой карте
 void MainWindowVisVar::reCalcVar()
 {
-    qDebug("start reCalcVar\n");
-    if(useMap==false)//! если не используется цифровая карта
+    if(useMap == false)//! если не используется цифровая карта
     {
-        for(int i=0;i<scenes.size();i++)//! для всех сцен расчитываем новое положение объектов
+        for(auto i:scenes)//! для всех сцен расчитываем новое положение объектов
         {
-            qDebug("reCalcVar_lat=%f\n",lat_model.toDouble());
-            qDebug("reCalcVar_lon=%f\n",lon_model.toDouble());
-            qDebug("reCalcVar_psi=%f\n",psi_model.toDouble());
             //! персчет объектов относительно модельной СК
-            scenes[i]->reCalcObject(lat_model.toDouble(),
-                                    lon_model.toDouble(),
-                                    psi_model.toDouble());
+            i->reCalcObject(lat_model.toDouble(),
+                            lon_model.toDouble(),
+                            psi_model.toDouble());
         }
     }
-    qDebug("end reCalcVar\n");
 }
 }

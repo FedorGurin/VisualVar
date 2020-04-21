@@ -1,4 +1,4 @@
-﻿/*
+/*
  * cl_Scene.cpp
  *
  *  Created on: 16.06.2009
@@ -73,11 +73,11 @@ cl_Scene::cl_Scene(FormStatusBar* form,
 
     setScrollViewHand(true);
 
-    aircraft=new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft",map);
+    aircraft=new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft",map);
     aircraft->setZoomLevel(currentZoom);
     aircraft->map = map;
 
-    aircraftMove=new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft_move",map);
+    aircraftMove=new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft_move",map);
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
     aircraftMove->map=map;
@@ -172,7 +172,7 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     aircraft->setZoomLevel(currentZoom);
     aircraft->map = map;
 
-    aircraftMove = new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft_move",map);
+    aircraftMove = new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft_move",map);
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
     aircraftMove->map           = map;
@@ -278,12 +278,12 @@ cl_Scene::cl_Scene(QDomElement &node,
 
     vScale=new VerticalScale(view->geometry());
     scene->addItem(vScale);
-    aircraft = new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft",map);
+    aircraft = new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft",map);
     aircraft->setZoomLevel(currentZoom);
     aircraft->map = map;
 
     //! создаем двигающийся объект
-    aircraftMove=new AircraftObject(tr("Наш самолет"),":/res/svg/aircraft_move",map);
+    aircraftMove=new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft_move",map);
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
     aircraftMove->setZValue(2);
@@ -344,13 +344,13 @@ cl_Scene::cl_Scene(QDomElement &node,
         target_move->setMovingObject(true);
         target_move->loadXML(tempNode);
         target_move->setZValue(1);
-        target_move->trajectory=true;
+        target_move->trajectory = true;
         target_move->setVisible(useMoveObj);
         target->formSetting->setListObjectVis(typeObjectsVis->listAirObjects());
         target->loadXML(tempNode);
 
 
-        int tempCode=tempNode.attribute("codeObjectVis","100").toInt();
+        int tempCode = tempNode.attribute("codeObjectVis","100").toInt();
         tempCode = qMax(tempCode,100);
 //        if(tempCode<100)
 //            tempCode=100;
@@ -364,22 +364,22 @@ cl_Scene::cl_Scene(QDomElement &node,
 
         airTargetsMove.push_back(target_move);
 
-        tempNode=tempNode.nextSiblingElement("AirTarget");
+        tempNode = tempNode.nextSiblingElement("AirTarget");
     }
     //! заполняем данные по наземным целям
-    tempNode=node.firstChildElement("GroundTarget");
+    tempNode = node.firstChildElement("GroundTarget");
     groundTargets.clear();
     while(!tempNode.isNull())
     {
-        GroundTargetObject *target=new GroundTargetObject("",":/res/svg/gtarget",map);
-        target->map=map;
+        GroundTargetObject *target = new GroundTargetObject("",":/res/svg/gtarget",map);
+        target->map = map;
         target->setAircraft(aircraft);
         target->setZoomLevel(currentZoom);
         target->formSetting->setListObjectVis(typeObjectsVis->listGroundObjects());
         ///target->hide();
         target->loadXML(tempNode);
 
-        int tempCode=tempNode.attribute("codeObjectVis","0").toInt();
+        int tempCode = tempNode.attribute("codeObjectVis","0").toInt();
         target->setCode(tempCode,typeObjectsVis->codeGround(tempCode));
 
         connect(target,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
@@ -395,10 +395,10 @@ cl_Scene::cl_Scene(QDomElement &node,
 }
 void cl_Scene::saveToXMLForModel(QDomDocument &domDocument,QDomElement &node)
 {
-   QDomElement tempNode=domDocument.createElement("Variation");
+   QDomElement tempNode = domDocument.createElement("Variation");
    tempNode.setAttribute("circle",circleVariant);
    tempNode.setAttribute("comment",comment_);
-   QDomText domTextVar=domDocument.createTextNode(QString::number(index));
+   QDomText domTextVar = domDocument.createTextNode(QString::number(index));
    tempNode.appendChild(domTextVar);
    node.appendChild(tempNode);
 
@@ -700,7 +700,7 @@ void cl_Scene::cloneAircraft(AircraftObject *aircraft_)
 void cl_Scene::cloneAirTarget(AirTargetObject *target_)
 {
     AirTargetObject *target=new AirTargetObject(target_,aircraft,map);
-    target->setName(tr("Цель #=")+QString::number(airTargets.size()+1));
+    target->setName(tr("Объект #=")+QString::number(airTargets.size()+1));
     target->setZoomLevel(currentZoom);
     target->setAllInfo(allInfoObjects);
     target->formSetting->setListObjectVis(typeObjectsVis->listAirObjects());
@@ -725,7 +725,7 @@ void cl_Scene::cloneAirTarget(AirTargetObject *target_)
 void cl_Scene::cloneGroundTarget(GroundTargetObject *target_)
 {
     GroundTargetObject *target=new GroundTargetObject(target_,aircraft,map);
-    target->setName(tr("Цель #=")+QString::number(groundTargets.size()+1));
+    target->setName(tr("Объект #=")+QString::number(groundTargets.size()+1));
     target->setZoomLevel(currentZoom);
     target->setAllInfo(allInfoObjects);
     target->formSetting->setListObjectVis(typeObjectsVis->listGroundObjects());
@@ -734,7 +734,7 @@ void cl_Scene::cloneGroundTarget(GroundTargetObject *target_)
 
 void cl_Scene::createNewAirTarget(QPointF p)
 {
-    AirTargetObject *target=new AirTargetObject(tr("Цель #=")+QString::number(airTargets.size()+1),":/res/svg/target",map);
+    AirTargetObject *target=new AirTargetObject(tr("Объект #=")+QString::number(airTargets.size()+1),":/res/svg/target",map);
     target->setCode(100,typeObjectsVis->codeAir(100));
 
     target->setAircraft(aircraft);
@@ -744,7 +744,7 @@ void cl_Scene::createNewAirTarget(QPointF p)
     airTargets.push_back(target);
 
     //! создаем новую перемещащуюся цель
-    AirTargetObject *target_move=new AirTargetObject(tr("Цель #=")+QString::number(airTargetsMove.size()+1),":/res/svg/target_move",map);
+    AirTargetObject *target_move = new AirTargetObject(tr("Объект #=") + QString::number(airTargetsMove.size()+1),":/res/svg/target_move",map);
 
     target_move->setAircraft(aircraftMove);
     target_move->setZoomLevel(currentZoom);
@@ -789,7 +789,7 @@ void cl_Scene::sendSignalUpdateValueObj()
 }
 void cl_Scene::createNewGroundTarget(QPointF p)
 {
-    GroundTargetObject *target=new GroundTargetObject(tr("Наз. Цель #=")+QString::number(groundTargets.size()+1),":/res/svg/gtarget",map);
+    GroundTargetObject *target=new GroundTargetObject(tr("Назем. Объект #=")+QString::number(groundTargets.size()+1),":/res/svg/gtarget",map);
     target->setCode(311,typeObjectsVis->codeGround(311));
     target->setAircraft(aircraft);
     target->setZoomLevel(currentZoom);
@@ -858,7 +858,7 @@ void cl_Scene::createNewInfoObject(QPointF p)
     InfoObject *info = new InfoObject("./res/info.svg",map);
     infoObjects->push_back(info);
     info->map = map;
-    QPointF pos=map->mapFromScene(p);
+    QPointF pos = map->mapFromScene(p);
     info->setPos(pos.x(),pos.y());
     scene->addItem(info);
 }
@@ -866,15 +866,15 @@ void cl_Scene::createNewBeaconObject(QPointF p)
 {
     BeaconObject *beacon = new BeaconObject("./res/beam.svg",map);
     beaconObjects.push_back(beacon);
-    beacon->map=map;
-    QPointF pos=map->mapFromScene(p);
+    beacon->map = map;
+    QPointF pos = map->mapFromScene(p);
     beacon->setPos(pos.x(),pos.y());
 
     scene->addItem(beacon);
 }
 void cl_Scene::setActiveRoute(bool value)
 {
-    activeRoute=value;
+    activeRoute = value;
     if(value == true)
     {
         view->setCursor(Qt::CrossCursor);
@@ -885,13 +885,13 @@ void cl_Scene::setActiveRoute(bool value)
 }
 void cl_Scene::createNewPointRoute(QPointF p)
 {
-    RouteObject *route=new RouteObject("./res/route.svg",map);
+    RouteObject *route = new RouteObject("./res/route.svg",map);
     routeObjects.push_back(route);
 
     route->setZoomLevel(currentZoom);
-    route->map=map;
+    route->map = map;
 
-    QPointF pos=map->mapFromScene(p);
+    QPointF pos = map->mapFromScene(p);
 
     double lat,lon;
     pixelXYToLatLong(p,currentZoom-1,lat,lon);
@@ -901,7 +901,7 @@ void cl_Scene::createNewPointRoute(QPointF p)
 
     if(routeObjects.size()>1)
     {
-        int i=routeObjects.size()-1;
+        int i = routeObjects.size()-1;
         routeObjects[i-1]->setRightRoute(route);
         routeObjects[i]->setLeftRoute(routeObjects[i-1]);
     }
@@ -929,7 +929,7 @@ void cl_Scene::slotTargetPsi(int index,double psi)
 {
     if(airTargetsMove.isEmpty() == false)
     {
-        int i=clip(index,0,airTargetsMove.size()-1);
+        int i = clip(index,0,airTargetsMove.size()-1);
         airTargetsMove[i]->setPsi(psi);
     }
 }
@@ -937,7 +937,7 @@ void cl_Scene::slotTargetLat(int index,double lat)
 {
     if(airTargetsMove.isEmpty() == false)
     {
-        int i=clip(index,0,airTargetsMove.size()-1);
+        int i = clip(index,0,airTargetsMove.size()-1);
         airTargetsMove[i]->slotLatToZ(lat);
     }
 }
@@ -945,7 +945,7 @@ void cl_Scene::slotTargetLon(int index,double lon)
 {
     if(airTargetsMove.isEmpty() == false)
     {
-        int i=clip(index,0,airTargetsMove.size()-1);
+        int i = clip(index,0,airTargetsMove.size()-1);
         airTargetsMove[i]->slotLonToX(lon);
     }
 }
@@ -955,11 +955,11 @@ void cl_Scene::setAllInfo(bool value)
 
     aircraft->setAllInfo(allInfoObjects);
 
-    for(int i=0;i<airTargets.size();i++)
-        airTargets[i]->setAllInfo(allInfoObjects);
+    for(auto i:airTargets)
+        i->setAllInfo(allInfoObjects);
 
-    for(int i=0;i<groundTargets.size();i++)
-        groundTargets[i]->setAllInfo(allInfoObjects);
+    for(auto i:groundTargets)
+        i->setAllInfo(allInfoObjects);
 
 }
 void cl_Scene::setFocusMoveObj(bool value)
@@ -992,7 +992,7 @@ void cl_Scene::slotUseMoveObj(bool value)
 }
 void cl_Scene::slotTime(double value)
 {
-    if(aircraftMove!=nullptr)
+    if(aircraftMove != nullptr)
     {
         aircraftMove->setTime(value);
     }
@@ -1021,7 +1021,7 @@ void cl_Scene::reCalcObject(double lat,   /*гео. коорд. нашего с�
 }
 void cl_Scene::slotFlushState()
 {
-    if(aircraftMove!=nullptr)
+    if(aircraftMove != nullptr)
     {
         aircraftMove->clearTraj();
     }

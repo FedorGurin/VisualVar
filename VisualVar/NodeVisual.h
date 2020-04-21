@@ -361,8 +361,8 @@ class ObjectGraphNode:public GraphNode
 {
     Q_OBJECT;
 public:
-    ObjectGraphNode(ObjectGraphNode* clone,QGraphicsItem *parent=0);
-    ObjectGraphNode(QString fileName_,QGraphicsItem *parent=0);
+    ObjectGraphNode(ObjectGraphNode* clone,QGraphicsItem *parent = nullptr);
+    ObjectGraphNode(QString fileName_,QGraphicsItem *parent = nullptr);
     //! задать имя
     virtual void setName(QString name_)
     {
@@ -720,7 +720,7 @@ public slots:
     {
         y=value;
         formSetting->setH(y);
-        colorItem->setRowText(tr("Высота=")+QString::number(formSetting->currentH())+" "+
+        colorItem->setRowText(tr("Высота = ")+QString::number(formSetting->currentH())+" "+
                             formSetting->currentMessureAlt(),1);
     }
     void setStartEarth(bool value)

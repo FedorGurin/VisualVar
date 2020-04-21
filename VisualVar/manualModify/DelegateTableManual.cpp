@@ -15,13 +15,13 @@ DelegateTableManual::DelegateTableManual(int columnIndex_,
     Q_UNUSED(parent);
     columnIndex  = columnIndex_;
     pageIndex    = 0;
-    currentScene = 0;
+    currentScene = nullptr;
 }
 QWidget* DelegateTableManual::createEditor(QWidget *parent,
                                            const QStyleOptionViewItem &option,
                                            const QModelIndex &index)const
 {
-    if(index.column()==0 && (pageIndex==0|| pageIndex==1))
+    if(index.column() == 0 && (pageIndex == 0|| pageIndex == 1))
     {
         QComboBox *comboBox=new QComboBox(parent);
         comboBox->addItem(tr("Да"));
@@ -31,76 +31,80 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
     }
     if(index.column() == 2 && pageIndex == 2)
     {
-        GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
+        GraphNode* node = static_cast<GraphNode*>(index.internalPointer());
 
-        if(node->type()==GraphNode::AIRCRAFT)
+        if(node->type() == GraphNode::AIRCRAFT)
         {
-            QComboBox *comboBox=new QComboBox(parent);
-            QStringList* list = 0;
+            QComboBox *comboBox = new QComboBox(parent);
+            QStringList* list = nullptr;
 
-            if(currentScene->circleVariant==false)
+            if(currentScene->circleVariant == false)
             {
-                if(index.row()==0) list=AircraftObject::unitSpeed->getListAvailableUnits();
-                else if(index.row()==1) list=AircraftObject::unitLength->getListAvailableUnits();
-                else if(index.row()==2) list=AircraftObject::unitAngle->getListAvailableUnits();
-                else if(index.row()==3) list=AircraftObject::unitAngle->getListAvailableUnits();
-                else if(index.row()==4) list=AircraftObject::unitSpeed->getListAvailableUnits();
+                if(index.row() == 0)      list = AircraftObject::unitSpeed->getListAvailableUnits();
+                else if(index.row() == 1) list = AircraftObject::unitLength->getListAvailableUnits();
+                else if(index.row() == 2) list = AircraftObject::unitAngle->getListAvailableUnits();
+                else if(index.row() == 3) list = AircraftObject::unitAngle->getListAvailableUnits();
+                else if(index.row() == 4) list = AircraftObject::unitSpeed->getListAvailableUnits();
                 else
                     return QItemDelegate::createEditor(parent,option,index);
             }else
             {
-                if(index.row()==0) list=AircraftObject::unitLength->getListAvailableUnits();
-                else if(index.row()==1) list=AircraftObject::unitAngle->getListAvailableUnits();
+                if(index.row() == 0) list = AircraftObject::unitLength->getListAvailableUnits();
+                else if(index.row() == 1) list = AircraftObject::unitAngle->getListAvailableUnits();
                 else
                     return QItemDelegate::createEditor(parent,option,index);
             }
 
-            for(int i=0;i<list->size();i++)
+            for(auto i:(*list))
             {
-                comboBox->addItem((*list)[i]);
+                comboBox->addItem(i);
             }
             connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(commitAndCloseEditorComboBox()));
             return comboBox;
         }
-        else if(node->type()==GraphNode::TARGET_V)
+        else if(node->type() == GraphNode::TARGET_V)
         {
-            QComboBox *comboBox=new QComboBox(parent);
-            QStringList* list = 0;
-            if(currentScene->circleVariant==false)
+            QComboBox *comboBox = new QComboBox(parent);
+            QStringList* list = nullptr;
+            if(currentScene->circleVariant == false)
             {
-                if(index.row()==0) list=AirTargetObject::unitSpeed->getListAvailableUnits();
-                else if(index.row()==1 || index.row()==5 || index.row()==7) list=AirTargetObject::unitLength->getListAvailableUnits();
-                else if(index.row()==2 || index.row()==3 || index.row()==4) list=AirTargetObject::unitAngle->getListAvailableUnits();
+                if(index.row() == 0) list = AirTargetObject::unitSpeed->getListAvailableUnits();
+                else if(index.row() == 1 || index.row() == 5 || index.row() == 7) list = AirTargetObject::unitLength->getListAvailableUnits();
+                else if(index.row() == 2 || index.row() == 3 || index.row() == 4) list = AirTargetObject::unitAngle->getListAvailableUnits();
                 else
                     return QItemDelegate::createEditor(parent,option,index);
             }else
             {
-                if(index.row()==0) list=AirTargetObject::unitSpeed->getListAvailableUnits();
-                else if(index.row()==1 || index.row()==5 || index.row()==7) list=AirTargetObject::unitLength->getListAvailableUnits();
-                else if(index.row()==2 || index.row()==4) list=AirTargetObject::unitAngle->getListAvailableUnits();
+                if(index.row() == 0) list = AirTargetObject::unitSpeed->getListAvailableUnits();
+                else if(index.row() == 1 || index.row() == 5 || index.row() == 7) list = AirTargetObject::unitLength->getListAvailableUnits();
+                else if(index.row() == 2 || index.row() == 4) list = AirTargetObject::unitAngle->getListAvailableUnits();
                 else
                     return QItemDelegate::createEditor(parent,option,index);
             }
 
-            for(int i=0;i<list->size();i++)
+            for(auto i:(*list))
             {
-                comboBox->addItem((*list)[i]);
+                comboBox->addItem(i);
             }
             connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(commitAndCloseEditorComboBox()));
             return comboBox;
         }
-        else if(node->type()==GraphNode::TARGET_G)
+        else if(node->type() == GraphNode::TARGET_G)
         {
-            QComboBox *comboBox=new QComboBox(parent);
-            QStringList* list = 0;
-            if(index.row()==0) list=GroundTargetObject::unitSpeed->getListAvailableUnits();
-            else if(index.row()==1)  list=GroundTargetObject::unitAngle->getListAvailableUnits();
-            else if(index.row()==3 || index.row()==4) list=GroundTargetObject::unitLength->getListAvailableUnits();
-            else return QItemDelegate::createEditor(parent,option,index);
+            QComboBox *comboBox = new QComboBox(parent);
+            QStringList* list = nullptr;
+            if(index.row() == 0)
+                list = GroundTargetObject::unitSpeed->getListAvailableUnits();
+            else if(index.row() == 1)
+                list = GroundTargetObject::unitAngle->getListAvailableUnits();
+            else if(index.row() == 3 || index.row() == 4)
+                list = GroundTargetObject::unitLength->getListAvailableUnits();
+            else
+                return QItemDelegate::createEditor(parent,option,index);
 
-            for(int i=0;i<list->size();i++)
+            for(auto i:(*list))
             {
-                comboBox->addItem((*list)[i]);
+                comboBox->addItem(i);
             }
             connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(commitAndCloseEditorComboBox()));
             return comboBox;
@@ -108,13 +112,12 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
     }
     if(index.column()>=4 && pageIndex==2)
     {
-
-        QComboBox *comboBox=new QComboBox(parent);
+        QComboBox *comboBox = new QComboBox(parent);
         QStringList* list=AircraftObject::unitAngle->getListAvailableUnits();
 
-        for(int i=0;i<list->size();i++)
+        for(auto i:(*list))
         {
-            comboBox->addItem((*list)[i]);
+            comboBox->addItem(i);
         }
         connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(commitAndCloseEditorComboBox()));
         return comboBox;
@@ -355,125 +358,125 @@ void DelegateTableManual::setModelData(QWidget *editor,
                                        QAbstractItemModel *model,
                                        const QModelIndex &index) const
 {
-    if(index.column()==0 && (pageIndex==0 || pageIndex==1))
+    if(index.column() == 0 && (pageIndex == 0 || pageIndex == 1))
     {
 
-        QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
+        QComboBox *comboBox = qobject_cast<QComboBox*>(editor);
 
-        QString value=comboBox->currentText();
+        QString value = comboBox->currentText();
         model->setData(index,value);
-    }else if(index.column()==4 && pageIndex==0)
+    }else if(index.column() == 4 && pageIndex == 0)
     {
-        QLineEdit *lineEdit=qobject_cast<QLineEdit*>(editor);
+        QLineEdit *lineEdit = qobject_cast<QLineEdit*>(editor);
 
-        QString value=lineEdit->text();
+        QString value = lineEdit->text();
         model->setData(index,value);
-    }else if(index.column()==2 && pageIndex==2)
+    }else if(index.column() == 2 && pageIndex == 2)
     {
-        GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
+        GraphNode* node = static_cast<GraphNode*>(index.internalPointer());
 
-        if((node->type()==GraphNode::AIRCRAFT && index.row()!=5) ||
+        if((node->type() == GraphNode::AIRCRAFT && index.row()!=5) ||
            //(node->type()==GraphNode::AIRCRAFT && index.row()!=2 && currentScene->circleVariant==true) ||
-           (node->type()==GraphNode::TARGET_V && index.row()!=6 && index.row()!=8 && currentScene->circleVariant==false)||
-           (node->type()==GraphNode::TARGET_G && index.row()!=2)||
-           (node->type()==GraphNode::TARGET_V && index.row()!=6 && index.row()!=8 && index.row()!=3 && currentScene->circleVariant==true))
+           (node->type() == GraphNode::TARGET_V && index.row()!=6 && index.row()!=8 && currentScene->circleVariant==false)||
+           (node->type() == GraphNode::TARGET_G && index.row()!=2)||
+           (node->type() == GraphNode::TARGET_V && index.row()!=6 && index.row()!=8 && index.row()!=3 && currentScene->circleVariant==true))
         {
-            QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
+            QComboBox *comboBox = qobject_cast<QComboBox*>(editor);
 
-            QString value=comboBox->currentText();
+            QString value = comboBox->currentText();
             model->setData(index,value);
         }else QItemDelegate::setModelData(editor,model,index);
-    }else if(index.column()==1 && pageIndex==2)
+    }else if(index.column() == 1 && pageIndex == 2)
     {
-        GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
+        GraphNode* node = static_cast<GraphNode*>(index.internalPointer());
 
-        if(node->type()==GraphNode::AIRCRAFT)
+        if(node->type() == GraphNode::AIRCRAFT)
         {
 #ifndef OLD_STEND
-            if(index.row()==4 && currentScene->circleVariant==false)
+            if(index.row() == 4 && currentScene->circleVariant == false)
 #else
             if(index.row()==5 && currentScene->circleVariant==false)
 #endif
             {
-                QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
+                QComboBox *comboBox = qobject_cast<QComboBox*>(editor);
 
-                QString value=comboBox->currentText();
+                QString value = comboBox->currentText();
                 model->setData(index,value);
-            }else if(index.row()==2 && currentScene->circleVariant==true)
+            }else if(index.row() == 2 && currentScene->circleVariant == true)
             {
-                QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
+                QComboBox *comboBox = qobject_cast<QComboBox*>(editor);
 
-                QString value=comboBox->currentText();
+                QString value = comboBox->currentText();
                 model->setData(index,value);
             }
             else
             {
-                QDoubleSpinBox *spinBox=qobject_cast<QDoubleSpinBox*>(editor);
+                QDoubleSpinBox *spinBox = qobject_cast<QDoubleSpinBox*>(editor);
 
                 spinBox->setMaximum(9999999999.9);
                 spinBox->setMinimum(-9999999999.9);
                 spinBox->setDecimals(12);
 
-                double value=spinBox->value();
+                double value = spinBox->value();
                 model->setData(index,value);
             }
         }
-        if(node->type()==GraphNode::TARGET_V)
+        if(node->type() == GraphNode::TARGET_V)
         {
-            if(index.row()==6)
+            if(index.row() == 6)
             {
                 QSpinBox *spinBox=qobject_cast<QSpinBox*>(editor);
 
                 spinBox->setMaximum(1000);
                 spinBox->setMinimum(100);
 
-                int value=spinBox->value();
+                int value = spinBox->value();
                 model->setData(index,value);
-            }else if(index.row()==8)
+            }else if(index.row() == 8)
             {
-                QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
+                QComboBox *comboBox = qobject_cast<QComboBox*>(editor);
 
-                QString value=comboBox->currentText();
+                QString value = comboBox->currentText();
                 model->setData(index,value);
             }else
             {
-                QDoubleSpinBox *spinBox=qobject_cast<QDoubleSpinBox*>(editor);
+                QDoubleSpinBox *spinBox = qobject_cast<QDoubleSpinBox*>(editor);
 
                 spinBox->setMaximum(9999999999.9);
                 spinBox->setMinimum(-9999999999.9);
 
-                double value=spinBox->value();
+                double value = spinBox->value();
                 model->setData(index,value);
             }
         }
-        if(node->type()==GraphNode::TARGET_G)
+        if(node->type() == GraphNode::TARGET_G)
         {
-            if(index.row()==2)
+            if(index.row() == 2)
             {
-                QSpinBox *spinBox=qobject_cast<QSpinBox*>(editor);
+                QSpinBox *spinBox = qobject_cast<QSpinBox*>(editor);
 
                 spinBox->setMaximum(1000);
                 spinBox->setMinimum(300);
 
                 int value=spinBox->value();
                 model->setData(index,value);
-            }else if(index.row()==5)
+            }else if(index.row() == 5)
             {
-                QSpinBox *spinBox=qobject_cast<QSpinBox*>(editor);
+                QSpinBox *spinBox = qobject_cast<QSpinBox*>(editor);
 
                 spinBox->setMaximum(1);
                 spinBox->setMinimum(0);
 
-                int value=spinBox->value();
+                int value = spinBox->value();
                 model->setData(index,value);
             }else
             {
-                QDoubleSpinBox *spinBox=qobject_cast<QDoubleSpinBox*>(editor);
+                QDoubleSpinBox *spinBox = qobject_cast<QDoubleSpinBox*>(editor);
 
                 spinBox->setMaximum(9999999999.9);
                 spinBox->setMinimum(-9999999999.9);
 
-                double value=spinBox->value();
+                double value = spinBox->value();
                 model->setData(index,value);
             }
         }
@@ -482,33 +485,33 @@ void DelegateTableManual::setModelData(QWidget *editor,
 }
 void DelegateTableManual::commitAndCloseEditor()
 {
-    QSpinBox *editor=qobject_cast<QSpinBox *>(sender());
+    QSpinBox *editor = qobject_cast<QSpinBox *>(sender());
     emit commitData(editor);
     emit closeEditor(editor);
 }
 void DelegateTableManual::commitAndCloseEditorDouble()
 {
-    QDoubleSpinBox *editor=qobject_cast<QDoubleSpinBox *>(sender());
+    QDoubleSpinBox *editor = qobject_cast<QDoubleSpinBox *>(sender());
     emit commitData(editor);
     emit closeEditor(editor);
 }
 void DelegateTableManual::commitAndCloseEditorComboBox()
 {
-    QComboBox *editor=qobject_cast<QComboBox *>(sender());
+    QComboBox *editor = qobject_cast<QComboBox *>(sender());
     emit commitData(editor);
     emit closeEditor(editor);;
 }
 void DelegateTableManual::commitAndCloseEditorLine()
 {
-    QLineEdit *editor=qobject_cast<QLineEdit *>(sender());
+    QLineEdit *editor = qobject_cast<QLineEdit *>(sender());
     emit commitData(editor);
     emit closeEditor(editor);
 }
 void DelegateTableManual::setPageIndex(int index_,cl_Scene* scene)
 {
-    currentScene=scene;
-    if(index_<0)
-        index_=0;
-    pageIndex=index_;
+    currentScene = scene;
+    if(index_ < 0)
+        index_ = 0;
+    pageIndex = index_;
 }
 }

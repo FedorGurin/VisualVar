@@ -7,27 +7,27 @@ namespace VisualVariant
 {
 cl_MouseFilter::cl_MouseFilter(QObject* pobj,QWidget *slotForm_):QObject(pobj)
 {
-    slotForm=slotForm_;
+    slotForm = slotForm_;
 }
 bool cl_MouseFilter::eventFilter(QObject* pobj,QEvent *event)
 {
     Q_UNUSED(pobj);
 
-    if(event->type()==QEvent::KeyPress)
+    if(event->type() == QEvent::KeyPress)
     {
-        QKeyEvent *key=static_cast<QKeyEvent*>(event);
-        if(key->key()==Qt::Key_Delete)
+        QKeyEvent *key = static_cast<QKeyEvent*>(event);
+        if(key->key() == Qt::Key_Delete)
         {
             FormManualModify *p=qobject_cast<FormManualModify* >(slotForm);
-            if(p!=0)
+            if(p != nullptr)
             {
                 p->slotKeyboardDel();
                 return true;
             }
-        }else if(key->key()==Qt::Key_Insert)
+        }else if(key->key() == Qt::Key_Insert)
         {
-            FormManualModify *p=qobject_cast<FormManualModify* >(slotForm);
-            if(p!=0)
+            FormManualModify *p = qobject_cast<FormManualModify* >(slotForm);
+            if(p != nullptr)
             {
                 p->slotKeyboardInsert();
                 return true;
@@ -42,17 +42,17 @@ FormManualModify::FormManualModify( QVector<cl_Scene* > *scenes_,QWidget *parent
     ui(new Ui::FormManualModify)
 {
     ui->setupUi(this);
-    scenes=scenes_;
-    modelData=new ModelDataTable(scenes_,this);
-    delegateTable=new DelegateTableManual(1,modelData);
+    scenes          = scenes_;
+    modelData       = new ModelDataTable(scenes_,this);
+    delegateTable   = new DelegateTableManual(1,modelData);
+    listWidget      = new QListWidget;
 
-    listWidget=new QListWidget;
     QHeaderView *qhv;
-    qhv=ui->tableView->horizontalHeader();
+    qhv = ui->tableView->horizontalHeader();
     qhv->setSectionResizeMode(QHeaderView::ResizeToContents);
 
     ui->tableView->setModel(modelData);
-    selection=new QItemSelectionModel(modelData);
+    selection = new QItemSelectionModel(modelData);
     ui->tableView->setSelectionModel(selection);
     ui->tableView->setItemDelegate(delegateTable);
     ui->tableView->installEventFilter(new cl_MouseFilter(ui->tableView,this));
@@ -75,24 +75,24 @@ FormManualModify::FormManualModify( QVector<cl_Scene* > *scenes_,QWidget *parent
 }
 void FormManualModify::slotDoubleClickedListWidget(QListWidgetItem* item)
 {
-    if(modelData->currentPageIndex()==1)
+    if(modelData->currentPageIndex() == 1)
     {
-        if(item->text()==tr("Воздушную цель"))
+        if(item->text() == tr("Воздушный объект"))
         {
-            QPointF pF=modelData->currentScene->aircraft->posC();
+            QPointF pF = modelData->currentScene->aircraft->posC();
             modelData->currentScene->createNewAirTarget(pF);
 
         }
-        if(item->text()==tr("Наземную цель"))
+        if(item->text() == tr("Наземный объект"))
         {
-            QPointF pF=modelData->currentScene->aircraft->posC();
+            QPointF pF = modelData->currentScene->aircraft->posC();
             modelData->currentScene->createNewGroundTarget(pF);
         }
     }
-    if(modelData->currentPageIndex()==0)
+    if(modelData->currentPageIndex() == 0)
     {
-        if(item->text()==tr("Вариант начальных условий"))  emit createNewScene(false);
-        if(item->text()==tr("Вариант движения по кругам")) emit createNewScene(true);
+        if(item->text() == tr("Вариант начальных условий"))  emit createNewScene(false);
+        //if(item->text()==tr("Вариант движения по кругам")) emit createNewScene(true);
     }
 
     modelData->refreshModelData();
@@ -132,25 +132,25 @@ void FormManualModify::slotPushButtonBegin()
 }
 void FormManualModify::slotPushButtonClone()
 {
-    QItemSelectionModel* select=ui->tableView->selectionModel();
-    QModelIndexList list=select->selectedRows(0);
-    for(int i=0;i<list.size();i++)
+    QItemSelectionModel* select = ui->tableView->selectionModel();
+    QModelIndexList list = select->selectedRows(0);
+    for(auto i:list)
     {
-        if(modelData->currentPageIndex()==0)
+        if(modelData->currentPageIndex() == 0)
         {
-            cl_Scene* scene=static_cast<cl_Scene*>(list[i].internalPointer());
+            cl_Scene* scene=static_cast<cl_Scene*>(i.internalPointer());
             emit cloneScene(scene);
         }
-        if(modelData->currentPageIndex()==1)
+        if(modelData->currentPageIndex() == 1)
         {
-             ObjectGraphNode* node=static_cast<ObjectGraphNode*>(list[i].internalPointer());
+             ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
              if(node->type()==GraphNode::TARGET_V)
              {
-                 AirTargetObject* airtarget=static_cast<AirTargetObject*> (node);
+                 AirTargetObject* airtarget = static_cast<AirTargetObject*> (node);
                  modelData->currentScene->cloneAirTarget(airtarget);
-             }else if(node->type()==GraphNode::TARGET_G)
+             }else if(node->type() == GraphNode::TARGET_G)
              {
-                 GroundTargetObject* groundtarget=static_cast<GroundTargetObject*> (node);
+                 GroundTargetObject* groundtarget = static_cast<GroundTargetObject*> (node);
                  modelData->currentScene->cloneGroundTarget(groundtarget);
              }
         }
@@ -163,15 +163,15 @@ void FormManualModify::slotPushButtonAdd()
 {
     listWidget->close();
 
-    if(modelData->currentPageIndex()==1 /*||
+    if(modelData->currentPageIndex() == 1 /*||
        modelData->currentPageIndex()==0*/)
     {
         listWidget->clear();
-        if(modelData->currentScene->circleVariant==false)
+        if(modelData->currentScene->circleVariant == false)
         {
             listWidget->setWindowTitle(tr("Добавить объект"));
-            listWidget->addItem(new QListWidgetItem(QIcon(":/res/svg/target"),tr("Воздушную цель")));
-            listWidget->addItem(new QListWidgetItem(QIcon(":/res/svg/gtarget"),tr("Наземную цель")));
+            listWidget->addItem(new QListWidgetItem(QIcon(":/res/svg/target"),tr("Воздушный объект")));
+            listWidget->addItem(new QListWidgetItem(QIcon(":/res/svg/gtarget"),tr("Наземный объект")));
         }
     }
     if(modelData->currentPageIndex()==0)
@@ -180,17 +180,17 @@ void FormManualModify::slotPushButtonAdd()
         listWidget->setWindowTitle(tr("Добавить вариант"));
 
         listWidget->addItem(new QListWidgetItem(QIcon(":/png/var"),tr("Вариант начальных условий")));
-        listWidget->addItem(new QListWidgetItem(QIcon(":/png/circ"),tr("Вариант движения по кругам")));
+        //listWidget->addItem(new QListWidgetItem(QIcon(":/png/circ"),tr("Вариант движения по кругам")));
     }
-    if(modelData->currentPageIndex()==0 || modelData->currentPageIndex()==1)
+    if(modelData->currentPageIndex() == 0 || modelData->currentPageIndex() == 1)
     {
         listWidget->move(mapToGlobal(ui->pushButtonAdd->pos()));
         listWidget->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint);
         listWidget->show();
     }
-    if(modelData->currentScene!=0 && modelData->currentPageIndex()!=0)
+    if(modelData->currentScene != nullptr && modelData->currentPageIndex() != 0)
     {
-        if(modelData->currentScene->circleVariant==true)
+        if(modelData->currentScene->circleVariant == true)
         {
             listWidget->close();
         }
@@ -200,12 +200,12 @@ void FormManualModify::slotPushButtonDelete()
 {
     QItemSelectionModel* select=ui->tableView->selectionModel();
     QModelIndexList list=select->selectedRows(0);
-    for(int i=0;i<list.size();i++)
+    for(auto i:list)
     {
         //! нужно удалить вариант
-        if(modelData->currentPageIndex()==0)
+        if(modelData->currentPageIndex() == 0)
         {
-            cl_Scene* scene=static_cast<cl_Scene*>(list[i].internalPointer());
+            cl_Scene* scene=static_cast<cl_Scene*>(i.internalPointer());
 
             //scene->view->close();
             //scenes->remove(scenes->indexOf(scene));
@@ -217,22 +217,22 @@ void FormManualModify::slotPushButtonDelete()
             {
                 for(int i=index;i<scenes->size();i++)
                 {
-                    ((*scenes)[i])->index=((*scenes)[i])->index-1;
+                    ((*scenes)[i])->index=((*scenes)[i])->index - 1;
                 }
             }
               scene->subW->close();
         }
-        if(modelData->currentPageIndex()==1)
+        if(modelData->currentPageIndex() == 1)
         {
-             ObjectGraphNode* node=static_cast<ObjectGraphNode*>(list[i].internalPointer());
-             if(node->type()==GraphNode::TARGET_V)
+             ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
+             if(node->type() == GraphNode::TARGET_V)
              {
-                 AirTargetObject* airtarget=static_cast<AirTargetObject*> (node);
+                 AirTargetObject* airtarget = static_cast<AirTargetObject*> (node);
                  modelData->currentScene->airTargets.removeAt(modelData->currentScene->airTargets.indexOf(airtarget));
                  delete airtarget;
-             }else if(node->type()==GraphNode::TARGET_G)
+             }else if(node->type() == GraphNode::TARGET_G)
              {
-                 GroundTargetObject* groundtarget=static_cast<GroundTargetObject*> (node);
+                 GroundTargetObject* groundtarget = static_cast<GroundTargetObject*> (node);
                  modelData->currentScene->groundTargets.removeAt(modelData->currentScene->groundTargets.indexOf(groundtarget));
                  delete groundtarget;
              }
@@ -243,7 +243,7 @@ void FormManualModify::slotPushButtonDelete()
 }
 void FormManualModify::slotMouseClicked(QModelIndex index)
 {
-    if(modelData->currentPageIndex()==0)
+    if(modelData->currentPageIndex() == 0)
     {
         emit currentActiveWindow(((*scenes)[index.row()])->view->windowTitle());
     }else
@@ -255,9 +255,9 @@ void FormManualModify::slotMouseClicked(QModelIndex index)
 void FormManualModify::slotMouseDoubleClicked(QModelIndex index)
 {
   //if((modelData->currentPageIndex()==0 || modelData->currentPageIndex()==1 ) && (index.column()==0 || index.column()==4)) return;
-    if((modelData->currentPageIndex()==0 &&
-       (index.column()==0 || index.column()==4)) ||
-       (modelData->currentPageIndex()==1 && index.column()==0)) return;
+    if((modelData->currentPageIndex() == 0 &&
+       (index.column() == 0 || index.column() == 4)) ||
+       (modelData->currentPageIndex() == 1 && index.column() == 0)) return;
 
     modelData->changePageIndex(index);
     delegateTable->setPageIndex(modelData->currentPageIndex(),modelData->currentScene);
@@ -279,11 +279,11 @@ void FormManualModify::slotMouseDoubleClicked(QModelIndex index)
 void FormManualModify::slotPushButtonBack()
 {
     //! формируем путь
-    modelData->setPageIndex(modelData->currentPageIndex()-1);
-    delegateTable->setPageIndex(modelData->currentPageIndex()-1,modelData->currentScene);
+    modelData->setPageIndex(modelData->currentPageIndex() - 1);
+    delegateTable->setPageIndex(modelData->currentPageIndex() - 1,modelData->currentScene);
 
     ui->lineEditPath->setText(modelData->path);
-    if(modelData->currentPageIndex()==2)
+    if(modelData->currentPageIndex() == 2)
     {
         ui->pushButtonAdd->setEnabled(false);
         ui->pushButtonDelete->setEnabled(false);
@@ -310,39 +310,39 @@ void FormManualModify::resetModelData(QModelIndex index)
 void FormManualModify::slotKeyboardDel()
 {
     QItemSelectionModel* select=ui->tableView->selectionModel();
-    QModelIndexList list=select->selectedRows(0);
-    for(int i=0;i<list.size();i++)
+    QModelIndexList list = select->selectedRows(0);
+    for(auto i:list)
     {
-        if(modelData->currentPageIndex()==0)
+        if(modelData->currentPageIndex() == 0)
         {
-            cl_Scene* scene=static_cast<cl_Scene*>(list[i].internalPointer());
-            scene->use=false;
+            cl_Scene* scene = static_cast<cl_Scene*>(i.internalPointer());
+            scene->use = false;
         }
-        if(modelData->currentPageIndex()==1)
+        if(modelData->currentPageIndex() == 1)
         {
-             ObjectGraphNode* node=static_cast<ObjectGraphNode*>(list[i].internalPointer());
+             ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
              node->setEnable(false);
         }
-        modelData->refreshModelData(list[i]);
+        modelData->refreshModelData(i);
     }
 }
 void FormManualModify::slotKeyboardInsert()
 {
     QItemSelectionModel* select=ui->tableView->selectionModel();
     QModelIndexList list=select->selectedRows(0);
-    for(int i=0;i<list.size();i++)
+    for(auto i:list)
     {
-        if(modelData->currentPageIndex()==0)
+        if(modelData->currentPageIndex() == 0)
         {
-            cl_Scene* scene=static_cast<cl_Scene*>(list[i].internalPointer());
+            cl_Scene* scene=static_cast<cl_Scene*>(i.internalPointer());
             scene->use=true;
         }
-        if(modelData->currentPageIndex()==1)
+        if(modelData->currentPageIndex() == 1)
         {
-             ObjectGraphNode* node=static_cast<ObjectGraphNode*>(list[i].internalPointer());
+             ObjectGraphNode* node=static_cast<ObjectGraphNode*>(i.internalPointer());
              node->setEnable(true);
         }
-        modelData->refreshModelData(list[i]);
+        modelData->refreshModelData(i);
     }
 }
 
