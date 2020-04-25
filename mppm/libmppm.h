@@ -7,4 +7,5 @@
 extern "C" LIBMPPMSHARED_EXPORT IEngineData* createEngine();
 extern "C" LIBMPPMSHARED_EXPORT void setPathToFileEngine(QString nameFile);
 
+
 #endif // LIBMPPM_H

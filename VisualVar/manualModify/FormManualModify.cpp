@@ -66,7 +66,7 @@ FormManualModify::FormManualModify( QVector<cl_Scene* > *scenes_,QWidget *parent
     connect(ui->pushButtonBegin,    SIGNAL(clicked()),this,SLOT(slotPushButtonBegin()));
     connect(ui->pushButtonDelete,   SIGNAL(clicked()),this,SLOT(slotPushButtonDelete()));
     connect(ui->pushButtonClone,    SIGNAL(clicked()),this,SLOT(slotPushButtonClone()));
-    connect(ui->pushButtonAttach,   SIGNAL(clicked()),this,SIGNAL(signalAttach()));
+    //connect(ui->pushButtonAttach,   SIGNAL(clicked()),this,SIGNAL(signalAttach()));
 
     connect(listWidget,             SIGNAL(itemDoubleClicked(QListWidgetItem*)),this,SLOT(slotDoubleClickedListWidget(QListWidgetItem*)));
 
@@ -185,7 +185,7 @@ void FormManualModify::slotPushButtonAdd()
     if(modelData->currentPageIndex() == 0 || modelData->currentPageIndex() == 1)
     {
         listWidget->move(mapToGlobal(ui->pushButtonAdd->pos()));
-        listWidget->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint);
+        listWidget->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint | Qt::WindowCloseButtonHint);
         listWidget->show();
     }
     if(modelData->currentScene != nullptr && modelData->currentPageIndex() != 0)

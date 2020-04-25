@@ -15,6 +15,7 @@
 #include <QDomElement>
 #include <QObject>
 #include <QMdiSubWindow>
+#include <QTimer>
 
 #include "gscene.h"
 #include "gview.h"
@@ -50,6 +51,8 @@ public:
     GView  *view;
     //! переопредленный класс сцены
     GScene *scene;
+    //!
+    ScaleLine* scaleLine;
     //! настройки модуля считанные из XML файла
     SettingVV *set;
     //! текущий уровень детализации
@@ -87,7 +90,7 @@ public:
     void createNewBeaconObject(QPointF);
     void createNewPointRoute(QPointF);//создать новую точку в маршруте
     //! добавить метаданные в
-    void addMetaDataToAircraft(QVector<MetaData> list);//в наш самолет
+    void addMetaDataToAircraft(QVector<MetaData> list);//в наш вертолет
     //! в разработке!!!!!!!
     void addMetaDataToAirTarget(QVector<MetaData> list){Q_UNUSED(list);}//в воздушную цель
     void addMetaDataToGroundTarget(QVector<MetaData> list){Q_UNUSED(list);}//в наземную цель
@@ -122,7 +125,7 @@ public:
     void showLabelMap();
     //! удалить метку на карте
     void delLabelMap();
-    //! центрирование по самолету
+    //! центрирование по вертолету
     void centerByAircarft();
     void setActiveRoute(bool value);
     //! задать комментарий
@@ -143,7 +146,7 @@ public:
     FormStatusBar *statusBar;
     //! вертикальная шкала
     VerticalScale *vScale;
-    //! объект самолета
+    //! объект вертолета
     AircraftObject *aircraft;
     //! объект который может перемещаться
     AircraftObject *aircraftMove;
@@ -195,8 +198,8 @@ public:
     //! отправить сигнал о том, что обновились параметры объекта
     void sendSignalUpdateValueObj();
     //! пересчет текущего положения объектов
-    void reCalcObject(double lat,   /*гео. коорд. нашего самолета*/
-                      double lon,   /*гео. коорд. нашего самолета*/
+    void reCalcObject(double lat,   /*гео. коорд. нашего вертолета*/
+                      double lon,   /*гео. коорд. нашего вертолета*/
                       double aust); /*угол поворота модельной СК*/
 signals:
     //! сигнал об изменении увеличения
@@ -205,6 +208,7 @@ signals:
     void activeFormAddLabel(double lat,double lon);
     //! сигнал о том, что параметры объектов изменились
     void signalUpdateValueObj();
+    void signalRotateVisible(bool);
 public slots:
     //! сбросить состояние
     void slotFlushState();
@@ -217,9 +221,13 @@ public slots:
     void slotZoomDown();
     //! обновление координат объектов на сцене при смене уровня детализации
     void slotUpdate();
-    void slotRightButton();
+    void slotRightButton();    
+    void slotDoubleClickedMouse();
     void slotClickLeftMouse();
     void slotMove(QPoint);
+    //!
+    void slotRotateOn();
+    void slotRotateOff();
     //! обновление при изменении уровня детализации
     void refreshZoomLevel();
     //! удалить метку карты из сцены
@@ -234,6 +242,8 @@ public slots:
     void slotTargetPsi(int index,double psi);
     void slotTargetLat(int index,double lat);
     void slotTargetLon(int index,double lon);
+
+    void setInvisibleScaleLine();
 private:
     //! признак отображения всей информации
     bool allInfoObjects;
@@ -250,6 +260,10 @@ private:
     QAction* actionAddPPM;
     QAction* actionAddInfo;
     QAction* actionAddAerodroms;
+
+    
+
+    QTimer* timer;
 
 };
 }

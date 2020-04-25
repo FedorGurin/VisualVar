@@ -26,6 +26,10 @@
          <property name="text">
           <string>Начало</string>
          </property>
+         <property name="icon">
+          <iconset resource="../../res.qrc">
+           <normaloff>:/png/home</normaloff>:/png/home</iconset>
+         </property>
         </widget>
        </item>
        <item>
@@ -185,6 +189,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../res.qrc"/>
+ </resources>
  <connections/>
 </ui>

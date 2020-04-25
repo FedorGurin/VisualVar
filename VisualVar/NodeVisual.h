@@ -5,6 +5,8 @@
 
 #include <QString>
 #include <QGraphicsSvgItem>
+#include <QSvgRenderer>
+#include <QGraphicsPixmapItem>
 #include <QGenericMatrix>
 #include <QPen>
 #include <QDomDocument>
@@ -15,6 +17,8 @@
 #include <QGraphicsScene>
 #include <QThread>
 #include <math.h>
+#include <QPixmap>
+#include <QGraphicsSceneMouseEvent>
 
 #include "formsettingforaircraft.h"
 #include "formsettingforairtarget.h"
@@ -25,6 +29,7 @@
 #include "geographyMapping.h"
 #include "formsettingaerodrom.h"
 #include "SettingVV.h"
+
 namespace VisualVariant
 {
 
@@ -188,7 +193,7 @@ public:
 //! поток для подгрузки карт
 class ThreadLoadMaps:public QThread
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     ThreadLoadMaps(QObject* parent=0);
     //! добавить тайл
@@ -230,7 +235,7 @@ private:
 //! географическая система координат
 class GeographySysCoord:public GraphNode
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
 
     enum TypeMAP
@@ -343,23 +348,53 @@ private:
     //! поток для загрузки тайлов
     ThreadLoadMaps *threadLoadMaps;
 };
+
 //! класс для вращения объекта
-class RotateObject:public QGraphicsRectItem
+class RotateObject:public  QGraphicsPixmapItem
 {
 public:
-    RotateObject(qreal x=0,qreal y=0,qreal width=40,qreal height=40,QGraphicsItem *parent=0);
+    RotateObject(const QString &fileName, QGraphicsItem *parent = nullptr): QGraphicsPixmapItem(fileName, parent)
+    {
+        graphNode = nullptr;
+        QPixmap pic(fileName);
+        pic = pic.scaledToWidth(240);
+        setPixmap(pic);
+        QTransform transRotate;
+        transRotate.translate((parent->boundingRect().width()-pic.width())*0.5, -pic.height());
+        setTransform(transRotate);
+        setFlags(QGraphicsItem::ItemIsSelectable);
+        setVisible(false);
+    }
     void setGraphNode(GraphNode* tempNode){graphNode=tempNode;}
-
 protected:
-    virtual void mouseMoveEvent (QGraphicsSceneMouseEvent* event);
-    virtual void keyPressEvent(QKeyEvent *event);
+//    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+//    {
+//        QRectF rect(boundingRect());
+//        rect.setWidth(rect.width()*200);
+//        rect.setHeight(rect.height()*200);
+//        renderer()->render(painter, rect);
+//        QGraphicsSvgItem::paint(painter, option, widget);
+//    }
+    virtual void mouseMoveEvent (QGraphicsSceneMouseEvent* event)
+    {
+        QPointF point = mapToScene(mapToParent(event->pos()));
+        if(graphNode!=nullptr)
+            graphNode->setDirection(point);
+//        QGraphicsSvgItem::mouseMoveEvent(event);
+        QGraphicsPixmapItem::mouseMoveEvent(event);
+    }
+    virtual void keyPressEvent(QKeyEvent *event)
+    {
+        Q_UNUSED(event);
+    }
 private:
     GraphNode *graphNode;
 };
+
 //! основной базовый класс для всех объектов ВЦ, НЦ и т.д
 class ObjectGraphNode:public GraphNode
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     ObjectGraphNode(ObjectGraphNode* clone,QGraphicsItem *parent = nullptr);
     ObjectGraphNode(QString fileName_,QGraphicsItem *parent = nullptr);
@@ -389,18 +424,19 @@ public:
     }
     bool isMoving(){return moving;}
 
-    virtual void setDirection(QPointF pos)
+    virtual void setDirection(QPointF pos /*координаты в СК сцены*/)
     {
-        QPointF centerRotate=itemSvg->transformOriginPoint();
-        QPointF point=pos-centerRotate;
-        double alfa=atan2(point.x(),-point.y());
-        itemSvg->setRotation(check360(itemSvg->rotation()+alfa*180.0/M_PI));
+        QPointF centerRotate = mapToScene(itemSvg->transformOriginPoint());
+        QPointF point = pos - centerRotate;
+        double alfa = check360(atan2(point.x(),-point.y())*180.0/M_PI);
+        itemSvg->setRotation(alfa);
 
         setPsi(unitAngle->convert(itemSvg->rotation(),"deg",currentUnitTransPsi));
         //setPsi(unitAngle->convert(itemSvg->rotation(),"deg","deg"));
         //setPsi(itemSvg->rotation());
         isRotated();
     }
+
     static void initObjectsProperty()
     {
         if(unitAngle    == nullptr)    unitAngle=new TObjectProperty("./xml/factors.xml","Angle");
@@ -454,6 +490,10 @@ public:
         allInfo=value;
         colorItem->setVisible(value);
     }
+    virtual void updateDToAircraft()//для целей
+    {
+    }
+
     bool isAllInfo(void)
     {
         return allInfo;
@@ -475,7 +515,6 @@ public:
     //! объект трансформации
     QTransform transItem;
     QTransform transName;
-    QTransform transRotate;
     //! хранение траектории в виде геоточек(независимо от уровня детализации)
     QList<TGeoPoint> trajGeoPoints;
     //! хранение траектории в виде линии для заданного уровня детализации
@@ -527,10 +566,10 @@ private:
     //! признак того, что объект должен отображать максимум информации
     bool allInfo;
 };
-//! класс с самолета
+//! класс с вертолета
 class AircraftObject:public ObjectGraphNode
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     //! обычный конструктор
     AircraftObject(QString nameI,
@@ -543,7 +582,11 @@ public:
     //! тип объекта
     virtual int type() const
     {
-        return AIRCRAFT;
+        return m_type;//AIRCRAFT;
+    }
+    void setType(TypeGraphNode t)
+    {
+        m_type = t;
     }
     //! сохранить свои параметры в файл
     virtual void saveXML(QDomDocument &domDocument,QDomElement &ele,bool circleVariant);
@@ -560,7 +603,6 @@ public:
         formSetting->setH(y);
         //formSetting->setPsi(psi);
         formSetting->setTeta(teta);
-
         emit isModifyPsi();
         ObjectGraphNode::isRotated();
     }
@@ -609,6 +651,11 @@ public:
 
     QString curMessAlfa_c();
     QString curExpAlfa_c();
+
+    double x_ust(){return x_ut;}
+    double z_ust(){return z_ut;}
+    void setX_ust(double t){x_ut = t;}
+    void setZ_ust(double t){z_ut = t;}
 
     //! задать текущие ед. измерения и порядок числа
     void setCurMessV(QString value);
@@ -676,7 +723,7 @@ public:
         currentUnitTransAlfa_c   = unitAngle->find("deg");
         currentExpTransAlfa_c    = unitExp->find("");
         qDebug("end NodeVisual.h: initMessureItem()\n");
-    }
+    }    
 signals:
     void isModifyPsi(void);
     void isModifyPosition(QPointF,TGeoPoint);
@@ -784,12 +831,17 @@ private:
     int kren90;         //! крен 90 градусов
     //! признак старта с земли(true - с земли, false - воздух)
     bool startEarth;
+
+    double x_ut = 0.; // координаты относительно начала координат
+    double z_ut = 0.; //
+
+    TypeGraphNode m_type = AIRCRAFT;
 };
 
 //! класс воздушная цель
 class AirTargetObject:public ObjectGraphNode
 {
-    Q_OBJECT;
+    Q_OBJECT
 public:
     //! обычный конструктор
     AirTargetObject(QString name_,          /* имя объекта*/
@@ -810,6 +862,18 @@ public:
         formSetting->setD(d);
         ObjectGraphNode::isRotated();
     }
+
+    virtual void updateDToAircraft()
+    {
+        //пересчет линии до вертолета
+        if(lineToAircraft->isVisible()){
+            QPointF pointEnd=mapFromItem(itemSvg,itemSvg->transformOriginPoint());
+            QPointF pointStart=mapFromItem(aircraft->itemSvg,aircraft->itemSvg->transformOriginPoint());
+            QLineF line(pointStart,pointEnd);
+            lineToAircraft->setLine(line);
+        }
+    }
+
     void setAircraft(AircraftObject *air)
     {
         aircraft=air;
@@ -845,8 +909,8 @@ public:
     }
 
     QString currentCodeStr(){return codeStr;}
-    double currentCode()    {return code;}
-    double prevCode()       {return code_prev;}
+    int currentCode()    {return code;}
+    int prevCode()       {return code_prev;}
 
     double currentV()           {return v;}
     double currentY()           {return y;}
@@ -913,11 +977,11 @@ public slots:
     {
         speedAfterFire = value;
     }
-    void setHostId(double value)
+    void setHostId(int value)
     {
         hostId = value;
     }
-    void setIndFireTar(double value)
+    void setIndFireTar(int value)
     {
         indexFireTarget = value;
     }
@@ -1029,8 +1093,9 @@ private:
     int code;               // тип объекта(длина объекта)
     double length;          // длина цели
     float ng_z;             // горизонтальная составляющая перегрузки
-    double fireTime;        // сек
-    double speedAfterFire;  //скорость после полета, м/с
+    int Beg_num_target;//
+    double fireTime;        // время отделения, сек
+    double speedAfterFire;  //скорость после отделения, м/с
     unsigned hostId;        //число
     unsigned indexFireTarget;//число
 
@@ -1041,7 +1106,7 @@ private:
 //! класс наземная цель
 class GroundTargetObject:public ObjectGraphNode
 {
-     Q_OBJECT;
+     Q_OBJECT
 public:
     //! обычный констурктор
     GroundTargetObject(QString name_,
@@ -1059,6 +1124,16 @@ public:
 
         formSetting->setPsi(psi);
         ObjectGraphNode::isRotated();
+    }
+    virtual void updateDToAircraft()
+    {
+        //пересчет линии до вертолета
+        if(lineToAircraft->isVisible()){
+            QPointF pointEnd=mapFromItem(itemSvg,itemSvg->transformOriginPoint());
+            QPointF pointStart=mapFromItem(aircraft->itemSvg,aircraft->itemSvg->transformOriginPoint());
+            QLineF line(pointStart,pointEnd);
+            lineToAircraft->setLine(line);
+        }
     }
     QString currentCodeStr(){return codeStr;}
     int currentCode(){return code;}
@@ -1250,7 +1325,7 @@ private:
 
     double d;
     double v;       // скорость цели
-    int sks;        // 1- относительно самолета, 0 - относительно модельной СК
+    int sks;        // 1- относительно вертолета, 0 - относительно модельной СК
     double x;       // координата x
     double z;       // координата z
     bool prCodeLen; // признак задания длины или кода цели
@@ -1259,6 +1334,7 @@ private:
     QString codeStr;// имя типа объекта
 
 };
+
 class SystemCoordObject:public ObjectGraphNode
 {
 public:
@@ -1277,7 +1353,7 @@ public:
 //! класс аэродрома
 class AerodromObject:public ObjectGraphNode
 {
-     Q_OBJECT;
+     Q_OBJECT
 public:
     AerodromObject(QString name,int num,QGraphicsItem *parent):ObjectGraphNode(name,parent)
     {
@@ -1300,6 +1376,16 @@ public:
         formSetting=new FormSettingAerodrom();
         formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
 
+    }
+ virtual void updateDToAircraft()
+    {
+        //пересчет линии до вертолета
+        if(lineToAircraft->isVisible()){
+            QPointF pointEnd=mapFromItem(itemSvg,itemSvg->transformOriginPoint());
+            QPointF pointStart=mapFromItem(aircraft->itemSvg,aircraft->itemSvg->transformOriginPoint());
+            QLineF line(pointStart,pointEnd);
+            lineToAircraft->setLine(line);
+        }
     }
 protected:
 
@@ -1343,6 +1429,7 @@ private:
      double d;
      double fi;
 };
+
 class RulerObject:public ObjectGraphNode
 {
 public:
@@ -1590,6 +1677,75 @@ private:
 
 };
 
+//! вертикальная шкала для отображение высоты у объектов
+class ScaleLine:public QGraphicsLineItem
+{
+public:
+    ScaleLine(const QRect rect, QGraphicsItem *parent = nullptr) : QGraphicsLineItem(parent)
+    {
+        verticalDir = false;
+        m_length = 100;
+        m_margin = 15;
+        m_dl = 3;
+        text = new QGraphicsTextItem(this);
+        line1 = new QGraphicsLineItem(this);
+        line2 = new QGraphicsLineItem(this);
+        QPen spen(pen()); spen.setWidth(2); setPen(spen);
+        line1->setPen(spen);
+        line2->setPen(spen);
+        QFont font(text->font()); font.setBold(true);
+        text->setFont(font);
+        updateScaleLine(rect, 100);
+    }
+
+    void updateScaleLine(QRectF rect, float zoom)
+    {
+        setVisibleScaleLine(true);
+        if(verticalDir){
+            QLineF l(rect.topLeft().x()+m_margin, rect.topLeft().y() + (rect.height()-m_length)*0.5,
+                     rect.topLeft().x()+m_margin, rect.topLeft().y() + (rect.height()+m_length)*0.5);
+            setLine(l);
+            line1->setLine(l.p1().x()-m_dl, l.p1().y(),
+                           l.p1().x()+m_dl, l.p1().y());
+            line2->setLine(l.p1().x()-m_dl, l.p2().y(),
+                           l.p1().x()+m_dl, l.p2().y());
+            text->setPos(line().p2().x()+m_dl, line().p2().y()-m_length*0.5-10);
+        }
+        else{
+            QLineF l(rect.bottomRight().x() -m_margin-m_length, rect.bottomRight().y()-m_margin,
+                     rect.bottomRight().x() -m_margin,          rect.bottomRight().y()-m_margin);
+            setLine(l);
+            line1->setLine(l.p1().x(), l.p1().y()-m_dl,
+                           l.p1().x(), l.p1().y()+m_dl);
+            line2->setLine(l.p2().x(), l.p1().y()-m_dl,
+                           l.p2().x(), l.p1().y()+m_dl);
+            text->setPos(line().p1().x()+m_length*0.25-10, line().p2().y()-m_dl-20);
+        }
+        double lat1, lon1, lat2, lon2;
+        pixelXYToLatLong(line().p1(),zoom-1,lat1,lon1);
+        pixelXYToLatLong(line().p2(),zoom-1,lat2,lon2);
+        double dlat = verticalDir ? (lat1 - lat2) : (lon2 - lon1);
+        dlat *= 111111;//в метры
+        text->setPlainText(QString::number(dlat,'f', 1));
+    }
+    void setVisibleScaleLine(bool b)
+    {
+        setVisible(b);
+        text->setVisible(b);
+        line1->setVisible(b);
+        line2->setVisible(b);
+    }
+private:
+    QGraphicsTextItem* text;
+    QGraphicsLineItem* line1;
+    QGraphicsLineItem* line2;
+    int m_length;
+    int m_margin;
+    int m_dl;
+
+    bool verticalDir;// true - вертикальная шкала слева, false - горизонтальная шкала справа
+};
+
 /*
 //! Класс описывающий систему координат
 class SystemCoordNode:public GraphNode
@@ -1663,7 +1819,7 @@ private:
     QGraphicsSvgItem *itemSvg;
 
 };
-//! класс с самолета
+//! класс с вертолета
 class AircraftObject:public ObjectGraphNode
 {
 public:

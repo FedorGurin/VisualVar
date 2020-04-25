@@ -15,6 +15,9 @@ typedef IEngineData* (*CreateEngine)();
 
 namespace VisualVariant
 {
+
+GeographicLib::Geocentric* earth = 0;
+
 cl_MouseFilterVariant::cl_MouseFilterVariant(QObject* pobj,QWidget *slotForm_):QObject(pobj)
 {
     slotForm = slotForm_;
@@ -56,11 +59,12 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindowVariant)
 {
+    statusBar = nullptr;
     ui->setupUi(this);
     ObjectGraphNode::initObjectsProperty();
     settingVV = new SettingVV(this);
     formProjH = new FormProjectH;
-    ui->toolBarH->addWidget(formProjH);
+    //ui->toolBarH->addWidget(formProjH);
 
 #ifdef QT_DEBUG
     QLibrary libMPPM("libmppmd");
@@ -71,22 +75,59 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     CreateEngine func = reinterpret_cast<CreateEngine > (libMPPM.resolve("createEngine"));
     if(func == nullptr)
     {
-        QMessageBox::warning(this, tr("Warning!"),
+        QMessageBox::warning(this, tr("Внимание!"),
                              tr("libMPPM: (CreateEngine)libMPPM.resolve(\"createEngine\") = 0. \n"
-                                "Для устранения неполадки обратитесь к разработчику."),
+                                "Библиотека libMPPM не подключена/не загружена"),
                              QMessageBox::Ok);
 
     }
     engine = func();
+
+  //! получение обратного сигнала
+    connect(engine, SIGNAL(reciveEventsRequest(TRequestEvent)), this, SLOT(slotIds(TRequestEvent)));
+    connect(engine, SIGNAL(reciveEventsRequest(TRequestEvent)), this, SLOT(slotEventsRequest(TRequestEvent)));
+
+
+
+  //создание QActions
+    createActions();
+    //создание главного меню
+    createMainMenuBar();
+
+   //! Система координат для пересчета положения целей (применяется для сцены при unitedStands==true)
+    earthWGS = new GeographicLib::Geocentric(GeographicLib::Constants::WGS84_a(), GeographicLib::Constants::WGS84_f());
+    earthPZ90 = new GeographicLib::Geocentric(6378136., 1/298.25784);
+    earth = earthPZ90;//по умолчанию - РЗ-90
 
     menu            = new QMenu;
     statusBar       = new FormStatusBar;
     typeObjectsVis  = new TypeObjectsVis;
     dialogSave      = new DialogSaveCurVar;
     formManualModify= new FormManualModify(&scenes);
-
     //! форма добавления новой метки
     formAddLabel    = new FormAddLabelMap;
+
+    //! окно со списком вариантов
+    dockWidg = new QDockWidget(this);
+    dockWidg->setWindowTitle("Список вариантов");
+    dockWidg->setAllowedAreas(Qt::BottomDockWidgetArea);
+    dockWidg->setWidget(formManualModify);
+    dockWidg->setFeatures(QDockWidget::NoDockWidgetFeatures);
+    dockWidg->setTitleBarWidget(new QWidget());
+    dockWidg->titleBarWidget()->setVisible(false);
+    addDockWidget(Qt::BottomDockWidgetArea, dockWidg);
+
+
+    //! окно со списком вариантов
+    dockWidgH = new QDockWidget(this);
+    dockWidgH->setWindowTitle("Высоты");
+    dockWidgH->setAllowedAreas(Qt::RightDockWidgetArea);
+    dockWidgH->setWidget(formProjH);
+//    dockWidgH->setWidget(stackedWidgProjH);
+    dockWidgH->setFeatures(QDockWidget::NoDockWidgetFeatures);
+    dockWidgH->setTitleBarWidget(new QWidget());
+    dockWidgH->titleBarWidget()->setVisible(false);
+    addDockWidget(Qt::RightDockWidgetArea, dockWidgH);
 
     //! текущая сцена не определена
     currentScenes   = nullptr;
@@ -94,136 +135,48 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     useMap          = true;
     toFlushButton   = false;
 
-    buttonSend=new QToolButton;
-    buttonSend->setIcon(QIcon(":/png/send"));
-    buttonSend->setToolTip(tr("Загрузить варианты в УЦВС"));
-    buttonSendFile=new QToolButton;
+    checkBoxGeography=new QCheckBox(tr("Привязка к карте"));
 
-    buttonSaveAll=new QToolButton;
-    buttonSaveAll->setIcon(QIcon(":/png/save"));
-    buttonSaveAll->setToolTip(tr("Сохранить все варианты"));
-
-    buttonVar=new QToolButton;
-    buttonVar->setIcon(QIcon(":/png/var"));
-    buttonVar->setToolTip(tr("Создать вариант начальных условий с воздушными и наземными объектами(Кл. Ctrl+1)"));
-
-    buttonCir = nullptr;
-    /*(buttonCir=new QToolButton;
-    buttonCir->setIcon(QIcon(":/png/circ"));
-    buttonCir->setToolTip(tr("Создать вариант начальных условий движения по кругам(Кл. Ctrl+2)"));
-    */
-    checkBoxGeography = new QCheckBox(tr("Привязка к карте"));
-    connect(checkBoxGeography,
-            SIGNAL(stateChanged(int)),
-            this,
-            SLOT(slotCheckBoxGeography(int)));
-
-    pathFileToSend = new QLineEdit(tr("По умолчанию"));
-    ui->toolBarSendFile->addWidget(formManualModify);
-
-    buttonHandMoveMap = new QToolButton;
-    buttonHandMoveMap->setCheckable(true);
-    buttonHandMoveMap->setChecked(true);
-    buttonHandMoveMap->setIcon(QIcon(":/png/hand"));
-    buttonHandMoveMap->setToolTip(tr("Перемещение карты"));
-
-    buttonRuler = new QToolButton;
-    buttonRuler->setCheckable(true);
-    buttonRuler->setIcon(QIcon(":/png/ruler"));
-    buttonRuler->setToolTip(tr("Линейка"));
-
-    buttonCentering = new QToolButton;
-    buttonCentering->setIcon(QIcon(":/png/yellow"));
-    buttonCentering->setToolTip(tr("Центрирование по вертолету"));
-
-    buttonCursor = new QToolButton;
-    buttonCursor->setCheckable(true);
-    buttonCursor->setIcon(QIcon(":/png/cursor"));
-
-    buttonRouteDynObject = new QToolButton;
-    buttonRouteDynObject->setCheckable(true);
-    buttonRouteDynObject->setToolTip(tr("Отображение текущих координат объектов"));
-    buttonRouteDynObject->setIcon(QIcon(":/png/routeObjects"));
-
-    buttonAllInfoObject = new QToolButton;
-    buttonAllInfoObject->setCheckable(true);
-    buttonAllInfoObject->setToolTip(tr("Отображение всей информации об объекте"));
-    buttonAllInfoObject->setIcon(QIcon(":/png/info_obj"));
-
-    buttonFocusMoveObj = new QToolButton;
-    buttonFocusMoveObj->setCheckable(true);
-    buttonFocusMoveObj->setToolTip(tr("Центрирование по подвижному объекту нашего вертолета"));
-    buttonFocusMoveObj->setIcon(QIcon(":/png/center_move_obj"));
+    pathFileToSend=new QLineEdit(tr("По умолчанию"));
+    //ui->toolBarSendFile->addWidget(formManualModify);
+    ui->toolBarSendFile->setVisible(false);
 
     parser=new Parser(statusBar,&scenes,typeObjectsVis);
-    connect(ui->actionCreateVar,        SIGNAL(triggered()),    this,SLOT(slotCreateMenu()));
-    connect(ui->actionCreateVarCircle,  SIGNAL(triggered()),    this,SLOT(slotCreateMenuCircleVariant()));
-    connect(ui->actionOpenXML,          SIGNAL(triggered()),    this,SLOT(slotOpenXML()));
-    connect(ui->actionExit,             SIGNAL(triggered()),    this,SLOT(slotExitProgram()));
-    connect(ui->actionSaveAs,           SIGNAL(triggered()),    this,SLOT(slotSaveAs()));
-    connect(ui->actionSaveAll,          SIGNAL(triggered()),    this,SLOT(slotSaveAll()));
-    connect(ui->actionCloseAll,         SIGNAL(triggered()),    this,SLOT(closeAllVariant()));
-    connect(ui->actionExport,           SIGNAL(triggered()),    this,SLOT(slotExport()));
-
-    connect(ui->actionAddLabel,         SIGNAL(triggered()),    this,SLOT(slotAddLabel()));
-    connect(ui->actionGoto,             SIGNAL(triggered()),    this,SLOT(slotGotoLabel()));
-    connect(formAddLabel,
-            SIGNAL(gotoLatLon(double,double)),
-            this,
-            SLOT(slotGotoLatLon(double,double)));
-
-
-    connect(ui->menuMapGoogle,          SIGNAL(triggered(QAction*)),  this,SLOT(slotMapGoogle(QAction*)));
-    connect(ui->menuMapYandex,          SIGNAL(triggered(QAction*)),  this,SLOT(slotMapYandex(QAction*)));
-    connect(ui->menuNokia,              SIGNAL(triggered(QAction*)),  this,SLOT(slotMapNokia(QAction*)));
-    connect(ui->menuMapBing,            SIGNAL(triggered(QAction*)),  this,SLOT(slotMapBing(QAction*)));
-    connect(ui->menuGoogle_Earth,       SIGNAL(triggered(QAction*)),  this,SLOT(slotMapGoogle_EA(QAction*)));
-    connect(ui->menuLayerGoogle,        SIGNAL(triggered(QAction*)),  this,SLOT(slotLayerGoogle(QAction*)));
-    connect(ui->menuLayerYandex,        SIGNAL(triggered(QAction*)),  this,SLOT(slotLayerYandex(QAction*)));
-
-    connect(formManualModify,           SIGNAL(createNewScene(bool)),this,SLOT(createVariant(bool)));
-    connect(formManualModify,           SIGNAL(cloneScene(cl_Scene*)),this,SLOT(slotCloningScene(cl_Scene*)));
-
-    connect(formManualModify,           SIGNAL(currentActiveWindow(QString)),this,SLOT(setCurrentActiveWindow(QString)));
-
-    connect(menu,SIGNAL(triggered(QAction*)),this,SLOT(slotRunMenuScene(QAction*)));
-    connect(ui->menuWindow,SIGNAL(triggered(QAction*)),this,SLOT(slotMenuWindow(QAction*)));
 
     formZoomPanel = new FormZoomPanel;
     ui->statusBar->addWidget(statusBar);
+
     ui->toolBarOperation->addWidget(formZoomPanel);
-    connect(formZoomPanel,SIGNAL(signalZoom(int)),this,SLOT(slotZoomLevel(int)));
+    ui->toolBarOperation->addSeparator();
+    ui->toolBarOperation->addAction(actBtnHandMoveMap);
+    ui->toolBarOperation->addAction(actBtnCursor);
+    ui->toolBarOperation->addAction(actBtnRuler);
+    ui->toolBarOperation->addSeparator();
+    ui->toolBarOperation->addAction(actBtnCentering);
+    ui->toolBarOperation->addAction(actBtnRouteDynObject);
+    ui->toolBarOperation->addAction(actBtnAllInfoObject);
+    ui->toolBarOperation->addAction(actBtnFocusMoveObj);
+    ui->toolBarOperation->addSeparator();
+    ui->toolBarOperation->addAction(actProjH);
+    ui->toolBarOperation->addAction(actRotateVisible);
 
-    ui->toolBarOperation->addWidget(buttonHandMoveMap);
-    ui->toolBarOperation->addWidget(buttonCursor);
-    ui->toolBarOperation->addWidget(buttonRuler);
-    ui->toolBarOperation->addWidget(buttonCentering);
-    ui->toolBarOperation->addWidget(buttonRouteDynObject);
-    ui->toolBarOperation->addWidget(buttonAllInfoObject);
-    ui->toolBarOperation->addWidget(buttonFocusMoveObj);
+    ui->toolBarCreate->addAction(ui->actionSaveAll);
+    ui->toolBarCreate->addSeparator();
+    ui->toolBarCreate->addAction(ui->actionCreateVar);
+    ui->toolBarCreate->addAction(ui->actionCreateVarCircle);
+#ifdef OLD_STAND
+    ui->toolBarCreate->addWidget(checkBoxGeography);
+#endif
+    ui->toolBarCreate->addSeparator();
 
-    ui->toolBarCreate->addWidget(buttonSaveAll);
-    ui->toolBarCreate->addWidget(buttonVar);
-    ui->toolBarCreate->addWidget(buttonCir);
-    //ui->toolBarCreate->addWidget(checkBoxGeography);
+    ui->toolBarCreate->addSeparator();
 
-    ui->toolBarMain->addWidget(buttonSend);
-
-    connect(buttonSend   , SIGNAL(clicked()),this,SLOT(slotButtonSend(void)));
-    connect(buttonVar    , SIGNAL(clicked()),this,SLOT(slotCreateMenu()));
-    connect(buttonCir    , SIGNAL(clicked()),this,SLOT(slotCreateMenuCircleVariant()));
-    connect(buttonSaveAll, SIGNAL(clicked()),this,SLOT(slotSaveAll()));
-
-    connect(buttonHandMoveMap   ,  SIGNAL(clicked(bool)),this,SLOT(slotButtonHandMoveMap(bool)));
-    connect(buttonRuler         ,  SIGNAL(clicked(bool)),this,SLOT(slotButtonRuler(bool)));
-    connect(buttonCentering     ,  SIGNAL(clicked(bool)),this,SLOT(slotButtonCentering()));
-    connect(buttonCursor        ,  SIGNAL(clicked(bool)),this,SLOT(slotButtonCursor(bool)));
-    connect(buttonRouteDynObject,  SIGNAL(clicked(bool)),this,SLOT(slotButtonRouteObject(bool)));
-    connect(buttonAllInfoObject ,  SIGNAL(clicked(bool)),this,SLOT(slotButtonAllInfoObject(bool)));
-    connect(buttonFocusMoveObj  ,  SIGNAL(clicked(bool)),this,SLOT(slotButtonFocusMoveObj(bool)));
-
-    //! получение обратного сигнала
-    connect(engine,                 SIGNAL(reciveEventsRequest(TRequestEvent)),this,SLOT(slotIds(TRequestEvent)));
+    ui->toolBarMain->addAction(actBtnSend);
+    ui->toolBarMain->addSeparator();
+    ui->toolBarMain->addAction(ui->actMppmOpen);
+//#ifdef OLD_STAND
+//    ui->toolBarMain->addAction(actBtnSendToOtherStand);
+//#endif
 
     fileName.clear();
 
@@ -234,8 +187,9 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     mdiArea = new QMdiArea;
     mdiArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     mdiArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    mdiArea->setTabsClosable(false);
+    mdiArea->setViewMode(QMdiArea::TabbedView);
     this->setCentralWidget(mdiArea);
-    connect(mdiArea,SIGNAL(subWindowActivated(QMdiSubWindow*)),this,SLOT(slotMdiSubWindowIsActivated(QMdiSubWindow*)));
 
     formManualModify->setLastNameFile(parser->readLastNameFile("./xml/LastSend.xml"));
     bool isOpen=openFile(parser->readLastNameFile("./xml/LastSend.xml"));
@@ -243,11 +197,13 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     {
         openFile("./xml/LastSend.xml");
     }
-    slotButtonHandMoveMap(buttonHandMoveMap->isChecked());
+    slotButtonHandMoveMap(actBtnHandMoveMap->isChecked());
     slotButtonCentering();
-    connect(formManualModify,SIGNAL(signalAttach()),this,SLOT(slotAttach()));
 
-#ifndef OLD_STEND
+    //!
+    createConnections();
+
+#ifndef OLD_STAND
     //! запрос на чтение текущих параметров
     TCommonRequest listReq;
     listReq.setReciver("MPPM");
@@ -266,10 +222,138 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
 
 
     reqEventCurPos = engine->getValue(listReq,IEngineData::CYCLIC_ENGINE);
-
-    connect(engine,SIGNAL(reciveEventsRequest(TRequestEvent)),this,SLOT(slotEventsRequest(TRequestEvent)));
+    qDebug("Status=%d\n",reqEventCurPos.status);
+    qDebug("Sub Status=%d\n",reqEventCurPos.sub_status[0]);
 #endif
 }
+void MainWindowVisVar::createActions()
+{
+//    actAddVar = new QAction(QIcon(":/png/var"), QString(tr("Создать вариант начальных условий с воздушными и наземными целями")));
+//    actAddVar->setShortcut(QKeySequence(tr("Ctrl+1")));
+
+//    actAddCircVar = new QAction(QIcon(":/png/circ"), QString(tr("Создать вариант начальных условий движения по кругам")));
+//    actAddCircVar->setShortcut(QKeySequence(tr("Ctrl+2")));
+
+    actAddAirTarget = new QAction(QIcon(":/res/svg/target"), QString(tr("Добавить воздушную цель")));
+
+    actAddGroundTarget = new QAction(QIcon(":/res/svg/gtarget"), QString(tr("Добавить наземную цель")));
+
+    actBtnSend = new QAction(QIcon(":/png/send"), QString(tr("Загрузить варианты в УЦВС")));
+    actBtnSend->setShortcut(QKeySequence(tr("Ctrl+Shift+,")));
+
+//    actBtnSendToOtherStand = new QAction(QIcon(":/png/send"), QString(tr("Загрузить варианты во второй УЦВС")));
+//    actBtnSendToOtherStand->setShortcut(QKeySequence(tr("Ctrl+Shift+.")));
+
+    //!
+    actBtnHandMoveMap = new QAction(QIcon(":/png/hand"),tr("Перемещение карты"));
+    actBtnHandMoveMap->setCheckable(true);
+    actBtnHandMoveMap->setChecked(true);
+
+    actBtnCursor=new QAction(QIcon(":/png/cursor"), tr(""));
+    actBtnCursor->setCheckable(true);
+
+    actBtnRuler=new QAction(QIcon(":/png/ruler"),tr("Линейка"));
+    actBtnRuler->setCheckable(true);
+
+    actBtnCentering=new QAction(QIcon(":/png/yellow"), tr("Центрирование по вертолету"));
+
+    actBtnRouteDynObject=new QAction(QIcon(":/png/routeObjects"), tr("Отображение текущих координат объектов"));
+    actBtnRouteDynObject->setCheckable(true);
+
+    actBtnAllInfoObject=new QAction(QIcon(":/png/info_obj"), tr("Отображение всей информации об объекте"));
+    actBtnAllInfoObject->setCheckable(true);
+    actBtnAllInfoObject->setChecked(true);
+
+    actBtnFocusMoveObj=new QAction(QIcon(":/png/center_move_obj"), tr("Центрирование по подвижному объекту нашего вертолета"));
+    actBtnFocusMoveObj->setCheckable(true);
+
+    actProjH = new QAction(QIcon(":/png/projH"),tr("Высоты"));
+    actProjH->setCheckable(true);
+    actProjH->setChecked(true);
+
+    actRotateVisible = new QAction(QIcon(":/png/rotate"),tr("Видимость значка поворота у объектов"));
+    actRotateVisible->setCheckable(true);
+    actRotateVisible->setChecked(false);
+
+    
+//    actMppmOpen = new QAction(QIcon(":/png/pm"),tr("Открыть программу просмотра параметров моделей"));
+//    actMppmOpen->setCheckable(true);
+
+    
+   
+//    lineEditStatusVPult->setFixedWidth(100);
+//    lineEditStatusVPult->setAlignment(Qt::AlignRight);
+//    lineEditStatusVPult->setReadOnly(true);
+}
+
+
+void MainWindowVisVar::createMainMenuBar()
+{
+
+}
+
+void MainWindowVisVar::createConnections()
+{
+    //! QActions
+    connect(ui->actionCreateVar,        SIGNAL(triggered()),    this,SLOT(slotCreateMenu()));
+    connect(ui->actionCreateVarCircle,  SIGNAL(triggered()),    this,SLOT(slotCreateMenuCircleVariant()));
+    connect(ui->actionOpenXML,          SIGNAL(triggered()),    this,SLOT(slotOpenXML()));
+    connect(ui->actionExit,             SIGNAL(triggered()),    this,SLOT(slotExitProgram()));
+    connect(ui->actionSaveAs,           SIGNAL(triggered()),    this,SLOT(slotSaveAs()));
+    connect(ui->actionSaveAll,          SIGNAL(triggered(bool)),    this,SLOT(slotSaveAll(bool)));
+    connect(ui->actionCloseAll,         SIGNAL(triggered()),    this,SLOT(closeAllVariant()));
+    connect(ui->actionExport,           SIGNAL(triggered()),    this,SLOT(slotExport()));
+
+    connect(ui->actionAddLabel,         SIGNAL(triggered()),    this,SLOT(slotAddLabel()));
+    connect(ui->actionGoto,             SIGNAL(triggered()),    this,SLOT(slotGotoLabel()));
+
+    connect(ui->menuMapGoogle,          SIGNAL(triggered(QAction*)),  this,SLOT(slotMapGoogle(QAction*)));
+    connect(ui->menuMapYandex,          SIGNAL(triggered(QAction*)),  this,SLOT(slotMapYandex(QAction*)));
+    connect(ui->menuNokia,              SIGNAL(triggered(QAction*)),  this,SLOT(slotMapNokia(QAction*)));
+    connect(ui->menuMapBing,            SIGNAL(triggered(QAction*)),  this,SLOT(slotMapBing(QAction*)));
+    connect(ui->menuGoogle_Earth,       SIGNAL(triggered(QAction*)),  this,SLOT(slotMapGoogle_EA(QAction*)));
+    connect(ui->menuLayerGoogle,        SIGNAL(triggered(QAction*)),  this,SLOT(slotLayerGoogle(QAction*)));
+    connect(ui->menuLayerYandex,        SIGNAL(triggered(QAction*)),  this,SLOT(slotLayerYandex(QAction*)));
+
+    connect(ui->actionWGS_84, SIGNAL(triggered(bool)), this, SLOT(slotActionWGS_84Triggered(bool)));
+    connect(ui->actionPZ_90, SIGNAL(triggered(bool)), this, SLOT(slotActionPZ_90Triggered(bool)));
+
+    //!
+    connect(checkBoxGeography, SIGNAL(stateChanged(int)), this, SLOT(slotCheckBoxGeography(int)));
+    //!
+    connect(formAddLabel, SIGNAL(gotoLatLon(double,double)), this, SLOT(slotGotoLatLon(double,double)));
+
+    connect(formManualModify, SIGNAL(createNewScene(bool)),this,SLOT(createVariant(bool)));
+    connect(formManualModify, SIGNAL(cloneScene(cl_Scene*)),this,SLOT(slotCloningScene(cl_Scene*)));
+    connect(formManualModify, SIGNAL(currentActiveWindow(QString)),this,SLOT(setCurrentActiveWindow(QString)));
+    connect(formManualModify, SIGNAL(signalAttach()),this,SLOT(slotAttach()));
+
+    connect(menu,SIGNAL(triggered(QAction*)),this,SLOT(slotRunMenuScene(QAction*)));
+    connect(ui->menuWindow,SIGNAL(triggered(QAction*)),this,SLOT(slotMenuWindow(QAction*)));
+
+    connect(formZoomPanel,SIGNAL(signalZoom(int)),this,SLOT(slotZoomLevel(int)));
+
+    connect(actBtnHandMoveMap   ,  SIGNAL(triggered(bool)), this, SLOT(slotButtonHandMoveMap(bool)));
+    connect(actBtnCursor        ,  SIGNAL(triggered(bool)),this,SLOT(slotButtonCursor(bool)));
+    connect(actBtnRuler         ,  SIGNAL(triggered(bool)),this,SLOT(slotButtonRuler(bool)));
+    connect(actBtnCentering     ,  SIGNAL(triggered(bool)),this,SLOT(slotButtonCentering()));
+    connect(actBtnRouteDynObject,  SIGNAL(triggered(bool)),this,SLOT(slotButtonRouteObject(bool)));
+    connect(actBtnAllInfoObject ,  SIGNAL(triggered(bool)),this,SLOT(slotButtonAllInfoObject(bool)));
+    connect(actBtnFocusMoveObj  ,  SIGNAL(triggered(bool)),this,SLOT(slotButtonFocusMoveObj(bool)));
+
+    connect(mdiArea,SIGNAL(subWindowActivated(QMdiSubWindow*)),this,SLOT(slotMdiSubWindowIsActivated(QMdiSubWindow*)));
+
+//    connect(actBtnSend, SIGNAL(triggered(bool)), this, SLOT(slotButtonSend(bool)));
+    connect(actBtnSend, SIGNAL(triggered(bool)), this, SLOT(slotButtonSendPlus(bool)));
+
+    connect(actProjH, SIGNAL(triggered(bool)),this,SLOT(slotProjHVisible(bool)));
+
+    connect(actRotateVisible, SIGNAL(triggered(bool)), this, SLOT(slotRotateVisible(bool)));
+
+
+    connect(ui->actMppmOpen, SIGNAL(triggered(bool)), this, SLOT(slotActMppmOpen(bool)));
+}
+
 void MainWindowVisVar::slotEventsRequest(TRequestEvent answer)
 {
     if(answer.uid == reqEventCurPos.uid)
@@ -309,7 +393,8 @@ void MainWindowVisVar::slotCheckBoxGeography(int value)
     if(useMap == true)
     {
         //! поменять точку привязки
-        setGeoParamOfAircraft();
+        if(currentScenes!=nullptr)
+            setGeoParamOfAircraft();
     }
 }
 
@@ -322,6 +407,21 @@ void MainWindowVisVar::slotButtonFocusMoveObj(bool value)
 {
     if(currentScenes != nullptr)
         currentScenes->setFocusMoveObj(value);
+}
+
+void MainWindowVisVar::slotProjHVisible(bool b)
+{
+    dockWidgH->setVisible(b);
+}
+
+void MainWindowVisVar::slotRotateVisible(bool b)
+{
+    if(currentScenes != nullptr){
+        if(b)
+            currentScenes->slotRotateOn();
+        else
+            currentScenes->slotRotateOff();
+    }
 }
 
 void MainWindowVisVar::slotButtonCentering()
@@ -358,7 +458,7 @@ void MainWindowVisVar::slotCloningScene(cl_Scene* s)
     scene->view->show();
     createWindowMenu();
 
-    slotButtonHandMoveMap(buttonHandMoveMap->isChecked());
+    slotButtonHandMoveMap(actBtnHandMoveMap->isChecked());
 }
 void MainWindowVisVar::slotRestart()
 {
@@ -375,6 +475,9 @@ void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
 
     if(view == nullptr)
         return;
+    if(currentScenes != nullptr){
+        disconnect(currentScenes, SIGNAL(signalRotateVisible(bool)), actRotateVisible, SLOT(setChecked(bool)));
+    }
     for(int i = 0;i<scenes.size();i++)
     {
          if((scenes[i]->view) == view)
@@ -387,6 +490,7 @@ void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
              setMapAndLayerContextMenu();
 
              formProjH->setCurrentScene(currentScenes);
+//             stackedWidgProjH->setCurrentIndex(i);
 
              if(currentScenes->firstConnectingSlots == true)
              {
@@ -401,6 +505,10 @@ void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
              connect(currentScenes,SIGNAL(signalChangeZoom(int)),formZoomPanel,SLOT(setBeginValue(int)));
              connect(currentScenes,SIGNAL(signalUpdateValueObj()),formProjH,SLOT(updateScene()));
              connect(formAddLabel, SIGNAL(deleteLabel(LabelObject*)),currentScenes,SLOT(deleteLabelMap(LabelObject*)));
+             if(currentScenes != nullptr){
+                connect(currentScenes, SIGNAL(signalRotateVisible(bool)), actRotateVisible, SLOT(setChecked(bool)));
+                if(actRotateVisible->isChecked()) currentScenes->slotRotateOn();
+             }
 
              //! обновление информации об движущемся объекте
              connect(this,SIGNAL(sAircraftPos2D(double,double,double)),currentScenes,SLOT(slotAircraftPos2D(double,double,double)));
@@ -413,13 +521,16 @@ void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
     }
 }
 
-void MainWindowVisVar::slotButtonSend()
+void MainWindowVisVar::slotButtonSend(bool b)
 {
+    Q_UNUSED(b)
+
     if(scenes.isEmpty() == false)
     {
         slotTransferStarted();
 
 #ifdef OLD_STEND
+
         setGeoParamOfAircraft();
 #endif
         byteArray.clear();
@@ -444,8 +555,11 @@ void MainWindowVisVar::slotButtonSend()
         TCommonRequest listReq;
         listReq.setReciver("MPPM");
         listReq.setSender("VAR");
-        QString prefixVar       ="VAR.Setup.";
-        QString prefixVarCircle ="VARC.Setup.";
+        QString prefix0(prefix_folder[0]);
+        if(!prefix0.isEmpty())
+            prefix0 += ".";
+        QString prefixVar       = prefix0 + "VAR.Setup.";
+        QString prefixVarCircle = prefix0 + "VARC.Setup.";
         QString prefix          ="";
 
         //! кол-во вариантов по кругам
@@ -480,18 +594,135 @@ void MainWindowVisVar::slotButtonSend()
     #endif
     }
 }
+void MainWindowVisVar::slotButtonSendPlus(bool b)
+{
+    Q_UNUSED(b)
+    if(currentScenes == nullptr)
+        return;
 
+    if(scenes.isEmpty() == false)
+    {
+        slotTransferStarted();
+
+#ifdef OLD_STAND
+        if(useMap == true)
+            setGeoParamOfAircraft();
+#endif
+        byteArray.clear();
+        //! cохраним последнее отправленное имя файла
+        formManualModify->setLastNameFile(fileName);
+        parser->saveVariants("./xml/LastSend.xml",  formManualModify->comment(),useMap,id,fileName);
+#ifndef OLD_STAND
+        //! отправление единым куском памяти
+        TCommonRequest listReq;
+        listReq.setReciver("MPPM");
+        listReq.setSender("VAR");
+        QString prefixVar           = settingVV->pathToObj  + "InitialState.Init.";
+        QString prefixPathReg       = settingVV->pathToObj + "Управление моделированием.InputButton.Input.";
+        currentScenes->getRequest(&listReq,prefixVar,0);
+        //! здесь должен отправить признак нажатия исходного
+        listReq.append(prefixPathReg  + "restartButton","1");
+        requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
+
+        toFlushButton = true;
+#else
+        //! формирование запроса на запись в УЦВС
+        TCommonRequest listReq;
+        listReq.setReciver("MPPM");
+        listReq.setSender("VAR");
+        QString prefix0(prefix_folder[0]);
+        if(!prefix0.isEmpty())
+            prefix0 += ".";
+        QString prefixVar       = prefix0 + "VAR.Setup.";
+        QString prefixVarCircle = prefix0 + "VARC.Setup.";
+        QString prefix          = "";
+
+        TCommonRequest listReq2;
+        listReq2.setReciver("MPPM");
+        QString prefix1(prefix_folder[1]);
+        if(!prefix1.isEmpty())
+            prefix1 += ".";
+        listReq2.setSender(prefix1 + "VAR");
+        QString prefix2      = prefix1 + "VAR.Setup.";
+
+        //! кол-во вариантов по кругам
+        int numsVarCircle=0;
+        //! кол-во вариантов НУ
+        int numsVar=0;
+        unitedStands = false;
+        for(auto i:scenes)//кол-во вариантов
+        {
+            if(i->use == false)
+                continue;
+
+            int num=0;
+            if(i->circleVariant==true)
+            {
+                numsVarCircle++;
+                prefix = prefixVarCircle;
+                num    = numsVarCircle;
+            }
+            else
+            {
+                numsVar++;
+                prefix = prefixVar;
+                num    = numsVar;
+            }
+            i->getRequest(&listReq,prefix,num);
+            if(i->isUnitedStands() && i->circleVariant==false){
+                i->getRequest(&listReq2, prefix2, num);
+                unitedStands = true;
+            }
+        }
+        listReq.append(prefixVarCircle+"numberOf_Variant", QString::number(numsVarCircle));
+        listReq.append(prefixVar+      "numberOfVariant",  QString::number(numsVar));
+        requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
+
+        if(unitedStands){
+            listReq2.append(prefix2 + "numberOfVariant",  QString::number(numsVar));
+            requestEvent2=engine->setValue(listReq2,IEngineData::ASYNCH_ENGINE);
+
+            //отправка на второй стенд географии земли + положение вертолета
+            TCommonRequest listReq;
+            listReq.setReciver("MPPM");            
+            QString prefix1(prefix_folder[1]);
+            if(!prefix1.isEmpty())
+                prefix1 += ".";
+            listReq.setSender(prefix1 + "InitGEO");
+            QString prefixSetupGeo = prefix1 + "InitGEO.Setup.";
+
+            listReq.append(prefixSetupGeo + "Aust_0_geography",     QString::number(0.0));
+            listReq.append(prefixSetupGeo + "fiust_0_geography",    QString::number(currentScenes->aircraft->lat,'g', 10));
+            listReq.append(prefixSetupGeo + "limdaust_0_geography", QString::number(currentScenes->aircraft->lon,'g', 10));
+
+            GeographicLib::LocalCartesian locals1(currentScenes->aircraft->lat, currentScenes->aircraft->lon, 0/*h*/, *earth);
+            double xx, zz;
+            double unused_val;
+            locals1.Forward(currentScenes->aircraft2->lat, currentScenes->aircraft2->lon, 0/*h*/, zz, xx, unused_val);
+            currentScenes->aircraft2->setX_ust(xx);
+            currentScenes->aircraft2->setZ_ust(zz);
+
+            listReq.append(prefixSetupGeo + "x0_ust", QString::number(currentScenes->aircraft2->x_ust(), 'g', 10));
+            listReq.append(prefixSetupGeo + "z0_ust", QString::number(currentScenes->aircraft2->z_ust(), 'g', 10));
+            requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
+        }
+#endif
+//        QTimer::singleShot(1000, this, SLOT(slotVPultRestartPressed()));
+    }
+}
 void MainWindowVisVar::slotButtonHandMoveMap(bool flag)
 {
+    actBtnHandMoveMap->setChecked(true);
+    if(!actBtnRuler->isChecked() && !actBtnCursor->isChecked())
+        return;
     if(flag == true)
     {
-        buttonRuler->setChecked(false);
+        actBtnRuler->setChecked(false);
         if(currentScenes!=nullptr)
             currentScenes->deleteRoutes();
 
-        buttonCursor->setChecked(false);
+        actBtnCursor->setChecked(false);
     }
-    buttonHandMoveMap->setChecked(true);
 
     if(currentScenes != nullptr)
         currentScenes->activeAddLabel=false;
@@ -506,14 +737,14 @@ void MainWindowVisVar::slotButtonCursor(bool flag)
     if(flag==true)
     {
         slotButtonHandMoveMap(false);
-        buttonRuler->setChecked(false);
+        actBtnRuler->setChecked(false);
 
         if(currentScenes!=nullptr)
             currentScenes->deleteRoutes();
 
-        buttonHandMoveMap->setChecked(false);
+        actBtnHandMoveMap->setChecked(false);
     }
-    buttonCursor->setChecked(true);
+    actBtnCursor->setChecked(true);
 }
 void MainWindowVisVar::slotButtonRuler(bool flag)
 {
@@ -521,9 +752,9 @@ void MainWindowVisVar::slotButtonRuler(bool flag)
     {
         slotButtonHandMoveMap(false);
 
-        buttonCursor->setChecked(false);
-        buttonHandMoveMap->setChecked(false);
-        buttonRuler->setChecked(true);
+        actBtnCursor->setChecked(false);
+        actBtnHandMoveMap->setChecked(false);
+        actBtnRuler->setChecked(true);
 
     }else
     {
@@ -592,6 +823,7 @@ void MainWindowVisVar::checkTypeMapAndLayer(cl_Scene *scene)
             scene->setTypeLayer(GeographySysCoord::GOOGLE_HYB);
         }else
         {
+            layerStr=tr("");
             scene->setTypeLayer(GeographySysCoord::NO_LAYER);
         }
 
@@ -754,8 +986,9 @@ void MainWindowVisVar::slotSaveAs()
     }
 }
 
-void MainWindowVisVar::slotSaveAll()
+void MainWindowVisVar::slotSaveAll(bool b)
 {
+    Q_UNUSED(b)
     if(fileName.isEmpty() == false)
         parser->saveVariants(fileName,formManualModify->comment(),useMap,id);
     else
@@ -806,7 +1039,7 @@ void MainWindowVisVar::createVariant(bool circleVariant)
     {
         fileName = "";
         id = qrand();
-        this->setWindowTitle(tr("Редактор вариантов"));
+        this->setWindowTitle(tr("Начальные условия моделировани"));
     }
     cl_Scene *scene = new cl_Scene(statusBar,typeObjectsVis,&infoObjects,circleVariant,settingVV,this);
     //!
@@ -848,7 +1081,7 @@ void MainWindowVisVar::createVariant(bool circleVariant)
         QPointF posScene(0.0,0.0);
         scene->createNewAirTarget(posScene);
     }
-    slotButtonHandMoveMap(buttonHandMoveMap->isChecked());
+    slotButtonHandMoveMap(actBtnHandMoveMap->isChecked());
 }
 void MainWindowVisVar::slotCreateMenu()
 {
@@ -898,8 +1131,12 @@ void MainWindowVisVar::slotMenuWindow(QAction * act)
 void MainWindowVisVar::slotZoomLevel(int zoom)
 {
     QMdiSubWindow* subWindow=mdiArea->currentSubWindow();
-    if(subWindow == nullptr)
-        return;
+    if(subWindow == nullptr){
+        if(!mdiArea->subWindowList().isEmpty())
+            subWindow = mdiArea->subWindowList().first();
+        else
+            return;
+    }
 
     GView* view = static_cast <GView* > (subWindow->widget());
     cl_Scene *scene = findScene(view);
@@ -965,8 +1202,12 @@ void MainWindowVisVar::rightButtonMouseClicked()
 void MainWindowVisVar::slotRunMenuScene(QAction* act)
 {
     QMdiSubWindow* subWindow=mdiArea->currentSubWindow();
-    if(subWindow == nullptr)
-        return;
+    if(subWindow == nullptr){
+        if(!mdiArea->subWindowList().isEmpty())
+            subWindow = mdiArea->subWindowList().first();
+        else
+            return;
+    }
 
     GView* view = static_cast<GView* > (subWindow->widget());
 
@@ -1016,8 +1257,10 @@ void MainWindowVisVar::showAllVariant()
         i->view->setWindowTitle(i->returnNameVariant());
         i->setLabelObjects(&(formAddLabel->labelObjects));
         i->setSubWindowMDI(mdiArea->addSubWindow(i->view));
-        i->view->show();
+        i->view->showMaximized();
     }
+    if(!scenes.isEmpty())
+        currentScenes = scenes[scenes.count()-1];
     createWindowMenu();
     setMapAndLayerContextMenu();
 }
@@ -1059,7 +1302,7 @@ void MainWindowVisVar::setMapAndLayerContextMenu()
 }
 void MainWindowVisVar::closeAllVariant()
 {
-    this->setWindowTitle(tr("Редактор вариантов"));
+    this->setWindowTitle(tr("Начальные условия моделирования"));
     currentScenes = nullptr;
     QList<QMdiSubWindow*> list = mdiArea->subWindowList();
     for(auto i:list)
@@ -1078,6 +1321,8 @@ void MainWindowVisVar::closeAllVariant()
 //! обработка событий
 bool MainWindowVisVar::event(QEvent *event)
 {
+    if(statusBar!=nullptr)
+        statusBar->setGeometry(statusBar->x(), statusBar->y(), width(), statusBar->height());
     return QMainWindow::event(event);
 }
 //! открыть файл с вариантами
@@ -1106,7 +1351,7 @@ void MainWindowVisVar::slotOpenXML()
     {
         if(fileNames[0].isEmpty() == false)
             fileName = fileNames[0];
-        this->setWindowTitle(tr("Редактор вариантов")+" ["+fileName+"]");
+        this->setWindowTitle(tr("Начальные условия моделирования")+" ["+fileName+"]");
 
         if(fileNames.isEmpty() == false)
         {
@@ -1123,7 +1368,8 @@ bool MainWindowVisVar::openFile(QString fileName)
     //! использование цифровой карты
     checkBoxGeography->setChecked(useMap);
     //! комментарий
-    formManualModify->setComment(comment);
+    if(formManualModify!=0)
+        formManualModify->setComment(comment);
 
     if(openFile==true)
     {
@@ -1134,7 +1380,8 @@ bool MainWindowVisVar::openFile(QString fileName)
         //! пересчет положения объектов, если нет привязки к цифровой карте
         //reCalcVar();
         //! сбросить модельные данные
-        formManualModify->resetModelData();
+        if(formManualModify !=0)
+            formManualModify->resetModelData();
     }
     return openFile;
 }
@@ -1173,12 +1420,16 @@ void MainWindowVisVar::setGeoParamOfAircraft()
     {
         TCommonRequest listReq;
         listReq.setReciver("MPPM");
-        listReq.setSender("VAR");
-        QString prefixSetupGeo       ="InitGEO.Setup.";
+        listReq.setSender("VAR");        
+//        QString prefix0(prefix_folder[0]);
+//        if(!prefix0.isEmpty())
+//            prefix0 += ".";
+        QString prefixSetupGeo       = /*prefix0 +*/ "InitGEO.Setup.";
 
         listReq.append(prefixSetupGeo + "Aust_0_geography",     QString::number(0.0));
-        listReq.append(prefixSetupGeo + "fiust_0_geography",    QString::number(currentScenes->aircraft->lat));
-        listReq.append(prefixSetupGeo + "limdaust_0_geography", QString::number(currentScenes->aircraft->lon));
+        listReq.append(prefixSetupGeo + "fiust_0_geography",    QString::number(currentScenes->aircraft->lat,'g', 10));
+        listReq.append(prefixSetupGeo + "limdaust_0_geography", QString::number(currentScenes->aircraft->lon,'g', 10));
+
         listReq.append(prefixSetupGeo + "x0_ust",               QString::number(0.0));
         listReq.append(prefixSetupGeo + "z0_ust",               QString::number(0.0));
 
@@ -1216,7 +1467,8 @@ void MainWindowVisVar::slotOpenAndSendVariant(QString nameFile)
     {
         showAllVariant();
         formManualModify->resetModelData();
-        slotButtonSend();
+//        slotButtonSend(true);
+        slotButtonSendPlus(true);
     }
 }
 void MainWindowVisVar::slotButtonRouteObject(bool value)
@@ -1272,4 +1524,22 @@ void MainWindowVisVar::reCalcVar()
         }
     }
 }
+void MainWindowVisVar::slotActionWGS_84Triggered(bool b)
+{
+    ui->actionWGS_84->setChecked(true);
+    if(b){
+        earth = earthWGS;
+        ui->actionPZ_90->setChecked(false);
+    }
+}
+
+void MainWindowVisVar::slotActionPZ_90Triggered(bool b)
+{
+    ui->actionPZ_90->setChecked(true);
+    if(b){
+        earth = earthPZ90;
+        ui->actionWGS_84->setChecked(false);
+    }
+}
+
 }

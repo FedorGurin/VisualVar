@@ -59,8 +59,11 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     connect(scene,SIGNAL(zoomUp()),this,SLOT(slotZoomUp()));
     connect(scene,SIGNAL(zoomDown()),this,SLOT(slotZoomDown()));
     connect(scene,SIGNAL(dragMove()),this,SLOT(slotUpdate()));
-    connect(scene,SIGNAL(sigRightMouse()),this,SLOT(slotRightButton()));
+//    connect(scene,SIGNAL(sigRightMouse()),this,SLOT(slotRightButton()));
+    connect(scene,SIGNAL(signalDoubleClickMouse()),this,SLOT(slotRightButton()));
     connect(scene,SIGNAL(clickLeftMouse()),this,SLOT(slotClickLeftMouse()));
+    connect(scene, SIGNAL(signalCtrlPress()), this, SLOT(slotRotateOn()));
+    connect(scene, SIGNAL(signalCtrlRelease()), this, SLOT(slotRotateOff()));
 
     view=new GView(scene);
     view->setRenderHint(QPainter::Antialiasing);
@@ -72,6 +75,12 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     connect(view,SIGNAL(sigResize()),this,SLOT(refreshZoomLevel()));
 
     setScrollViewHand(true);
+
+    scaleLine = new ScaleLine(view->geometry());
+    scene->addItem(scaleLine);
+    timer = new QTimer(this);
+    timer->setInterval(2000);
+    connect(timer, SIGNAL(timeout()), this, SLOT(setInvisibleScaleLine()));
 
     aircraft=new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft",map);
     aircraft->setZoomLevel(currentZoom);
@@ -152,8 +161,12 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     connect(scene,SIGNAL(zoomUp())          ,this,SLOT(slotZoomUp()));
     connect(scene,SIGNAL(zoomDown())        ,this,SLOT(slotZoomDown()));
     connect(scene,SIGNAL(dragMove())        ,this,SLOT(slotUpdate()));
-    connect(scene,SIGNAL(sigRightMouse())   ,this,SLOT(slotRightButton()));
+//    connect(scene,SIGNAL(sigRightMouse())   ,this,SLOT(slotRightButton()));
+    connect(scene,SIGNAL(signalDoubleClickMouse()),this,SLOT(slotRightButton()));
     connect(scene,SIGNAL(clickLeftMouse())  ,this,SLOT(slotClickLeftMouse()));
+
+    connect(scene, SIGNAL(signalCtrlPress()), this, SLOT(slotRotateOn()));
+    connect(scene, SIGNAL(signalCtrlRelease()), this, SLOT(slotRotateOff()));
 
     view = new GView(scene);
     view->setRenderHint(QPainter::Antialiasing);
@@ -166,6 +179,12 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     connect(view,SIGNAL(sigResize()),this,SLOT(refreshZoomLevel()));
 
     setScrollViewHand(true);
+
+    scaleLine = new ScaleLine(view->geometry());
+    scene->addItem(scaleLine);
+    timer = new QTimer(this);
+    timer->setInterval(2000);
+    connect(timer, SIGNAL(timeout()), this, SLOT(setInvisibleScaleLine()));
 
     aircraft = new AircraftObject(thisScene->aircraft,":/res/svg/aircraft",map);
 
@@ -215,6 +234,7 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     }
     scene->addItem(map);
 }
+
 void cl_Scene::setScrollViewHand(bool flag)
 {
     if(flag == true)
@@ -264,7 +284,11 @@ cl_Scene::cl_Scene(QDomElement &node,
     connect(scene,SIGNAL(zoomUp()),         this,SLOT(slotZoomUp()));
     connect(scene,SIGNAL(zoomDown()),       this,SLOT(slotZoomDown()));
     connect(scene,SIGNAL(dragMove()),       this,SLOT(slotUpdate()));
-    connect(scene,SIGNAL(sigRightMouse()),  this,SLOT(slotRightButton()));
+//    connect(scene,SIGNAL(sigRightMouse()),  this,SLOT(slotRightButton()));
+    connect(scene,SIGNAL(signalDoubleClickMouse()),this,SLOT(slotRightButton()));
+    connect(scene, SIGNAL(signalCtrlPress()), this, SLOT(slotRotateOn()));
+    connect(scene, SIGNAL(signalCtrlRelease()), this, SLOT(slotRotateOff()));
+    connect(scene,SIGNAL(clickLeftMouse())  ,this,SLOT(slotClickLeftMouse()));
 
     view=new GView(scene);
     view->setRenderHint(QPainter::Antialiasing);
@@ -276,8 +300,14 @@ cl_Scene::cl_Scene(QDomElement &node,
     connect(view,SIGNAL(sigResize()),this,SLOT(refreshZoomLevel()));
     setScrollViewHand(true);
 
-    vScale=new VerticalScale(view->geometry());
-    scene->addItem(vScale);
+    scaleLine = new ScaleLine(view->geometry());
+    scene->addItem(scaleLine);
+    timer = new QTimer(this);
+    timer->setInterval(2000);
+    connect(timer, SIGNAL(timeout()), this, SLOT(setInvisibleScaleLine()));
+
+//    vScale=new VerticalScale(view->geometry());
+//    scene->addItem(vScale);
     aircraft = new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft",map);
     aircraft->setZoomLevel(currentZoom);
     aircraft->map = map;
@@ -317,7 +347,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     nameVariant=node.attribute("name","");
     use=node.attribute("use","1").toInt();
 
-    //! заполняем данные по самолету
+    //! заполняем данные по вертолету
     QDomElement tempNode=node.firstChildElement("Aircraft");
     aircraft->loadXML(tempNode);
     aircraftMove->loadXML(tempNode);
@@ -499,7 +529,7 @@ void cl_Scene::getRequest(TCommonRequest *request,QString prefix,int num)
     {
         QString prefixName=prefix+"DesINIT_Object[" + QString::number(num)+"].";
         //! теперь сформируем запросы
-        //! для самолета
+        //! для вертолета
         aircraft->getRequest(prefixName,request,circleVariant);
         airTargets[0]->getRequest(prefixName,request,circleVariant);
     }
@@ -521,11 +551,15 @@ void cl_Scene::slotUpdate()
 }
 void cl_Scene::slotRightButton()
 {
+
+}
+
+void cl_Scene::slotDoubleClickedMouse()
+{
     if(activeRoute==true)
     {
         createNewPointRoute(mousePosScene);
     }
-
 //    if(activeAddLabel==true)
 //    {
 //        activeAddLabel=false;
@@ -533,9 +567,10 @@ void cl_Scene::slotRightButton()
 //    }
 //    setActiveRoute(false);
 }
+
 void cl_Scene::slotClickLeftMouse()
 {
-
+    setInvisibleScaleLine();
 }
 void cl_Scene::slotZoomUp()
 {
@@ -558,6 +593,33 @@ void cl_Scene::slotMove(QPoint tpos)
     TGeoPoint geo(curLat,curLon);
     statusBar->setPos(pos,geo);
 }
+
+void cl_Scene::slotRotateOn()
+{
+    emit signalRotateVisible(true);
+    aircraft->setVisibleRotateRect(true);
+   
+    for(auto i: airTargets){
+        i->setVisibleRotateRect(true);
+    }
+    for(auto i: groundTargets){
+        i->setVisibleRotateRect(true);
+    }
+}
+
+void cl_Scene::slotRotateOff()
+{
+    emit signalRotateVisible(false);
+    aircraft->setVisibleRotateRect(false);
+   
+    for(auto i: airTargets){
+        i->setVisibleRotateRect(false);
+    }
+    for(auto i: groundTargets){
+        i->setVisibleRotateRect(false);
+    }
+}
+
 void cl_Scene::refreshZoomLevel()
 {
     setZoomLevel(currentZoom);
@@ -614,7 +676,18 @@ void cl_Scene::refreshTiles()
     map->setZoomLevel(currentZoom,rect_temp);
     //! пересчет всех объектов на карте
     calcItemPosScene();
+
+    //! пересчет шкалы масштаба дальности
+    timer->stop();
+    scaleLine->updateScaleLine(rect_temp, currentZoom);
+    timer->start();
 }
+void cl_Scene::setInvisibleScaleLine()
+{
+    scaleLine->setVisibleScaleLine(false);
+    timer->stop();
+}
+
 void cl_Scene::refreshInfo()
 {
 
@@ -623,13 +696,13 @@ void cl_Scene::calcItemPosScene()
 {
     int curX = 0;
     int curY = 0;
-    //! уровень детализации для нашего самолета
+    //! уровень детализации для нашего вертолета
     aircraft->setZoomLevel(currentZoom);
     //! пересчет географических координат в прямоугольные
     latLongToPixelXY(aircraft->lat,aircraft->lon,currentZoom-1,curX,curY);
     //! координаты носителя
     aircraft->setPosC(curX,curY);
-    //! уровень детализации для фантомного нашего самолета
+    //! уровень детализации для фантомного нашего вертолета
     aircraftMove->setZoomLevel(currentZoom);
     //! пересчет географических координат в прямоугольные
     latLongToPixelXY(aircraftMove->lat,aircraftMove->lon,currentZoom-1,curX,curY);
@@ -1002,8 +1075,8 @@ void cl_Scene::slotTime(double value)
     }
 }
 //! пересчет текущего положения графических объектов
-void cl_Scene::reCalcObject(double lat,   /*гео. коорд. нашего самолета (град)*/
-                            double lon,   /*гео. коорд. нашего самолета (град)*/
+void cl_Scene::reCalcObject(double lat,   /*гео. коорд. нашего вертолета (град)*/
+                            double lon,   /*гео. коорд. нашего вертолета (град)*/
                             double aust)  /*угол поворота модельной СК (град) */
 {
     aircraft->slotLatToZ(lat);

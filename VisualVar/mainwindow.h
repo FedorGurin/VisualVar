@@ -9,7 +9,9 @@
 #include <QToolButton>
 #include <QMenu>
 #include <QLineEdit>
+#include <QLabel>
 #include <QCheckBox>
+#include <QDockWidget>
 
 #include "Parser.h"
 #include "formzoompanel.h"
@@ -21,8 +23,16 @@
 #include "../globalFunc/UnitsMeasure/ConvertUnitsMeasure.h"
 #include "formaddlabelmap.h"
 #include "formprojecth.h"
+#include <QStackedWidget>
 
 
+#include "./GeographicLib/geoFunctions.h"
+#include <QTimer>
+
+#include <QProcess>
+#include <Windows.h>
+#include <WinUser.h>
+#include <QApplication>
 namespace Ui {
     class MainWindowVariant;
 }
@@ -34,7 +44,7 @@ class cl_MouseFilterVariant:public QObject
 protected:
     virtual bool eventFilter(QObject*,QEvent*);
 public:
-    cl_MouseFilterVariant(QObject* pobj=0,QWidget *slotForm_=0);
+    cl_MouseFilterVariant(QObject* pobj = nullptr,QWidget *slotForm_ = nullptr);
     QWidget *slotForm;
 };
 
@@ -45,6 +55,11 @@ public:
     ~MainWindowVisVar();
     //! область для многодокументого окна
     QMdiArea *mdiArea;
+    //! Окно со списком вариантов
+    QDockWidget* dockWidg;
+
+    //! Окно с высотами
+    QDockWidget* dockWidgH;
     //!
     QMenu *menu;
     //! найти сцену по окну
@@ -109,7 +124,7 @@ public slots:
     void slotOpenXML();
     void slotExitProgram();
     void slotSaveAs();
-    void slotSaveAll();
+    void slotSaveAll(bool);
     //! добавить новую метку
     void slotAddLabel();
     //! переход на метку
@@ -128,7 +143,8 @@ public slots:
     //! слот на изменение масштаба карты
     void slotZoomLevel(int);
     //! слот на нажатие на кнопку buttonSend;
-    void slotButtonSend();
+    void slotButtonSend(bool);
+    void slotButtonSendPlus(bool);
     //! отоброжать ли текущее положение объектов на карте
     void slotButtonRouteObject(bool);
     //! отображение всей информации об объектах
@@ -171,7 +187,13 @@ public slots:
     void slotLayerYandex(QAction*);
     void slotLayerGoogle(QAction*);
 
-    void slotEventsRequest(TRequestEvent);
+    void slotActionWGS_84Triggered(bool);
+    void slotActionPZ_90Triggered(bool);
+
+    void slotEventsRequest(TRequestEvent req);
+
+    void slotProjHVisible(bool);
+    void slotRotateVisible(bool);
 protected:
     void changeEvent(QEvent *e);
     bool event(QEvent *event);
@@ -195,18 +217,6 @@ private:
     QFileDialog *dialog;
 
 
-    //! кнопка передачи варианта по FTP
-    QToolButton *buttonSend;
-    QToolButton *buttonSendFile;
-    QToolButton *buttonVar;
-    QToolButton *buttonCir;
-
-    //! кнопка включающая отображение текущих координат объектов на карте варианта
-    QToolButton *buttonRouteDynObject;
-    //! кнопка включающая отображение всей информации об объекте
-    QToolButton *buttonAllInfoObject;
-    //! кнопка сохранения файл
-    QToolButton *buttonSaveAll;
     //! путь в целевой машине при отправке файла
     QLineEdit   *pathFileToSend;
     //! использовать географические координаты из карты
@@ -216,11 +226,23 @@ private:
     //! список идентификаторов для обработки
     uint ids;
     //! меню кнопки
-    QToolButton *buttonHandMoveMap;
-    QToolButton *buttonRuler;
-    QToolButton *buttonCursor;
-    QToolButton *buttonCentering;
-    QToolButton *buttonFocusMoveObj;
+      QAction *actBtnHandMoveMap;
+    QAction *actBtnRuler;
+    QAction *actBtnCursor;
+    QAction *actBtnCentering;
+    QAction *actBtnFocusMoveObj;
+    //! кнопка включающая отображение текущих координат объектов на карте варианта
+    QAction *actBtnRouteDynObject;
+    //! кнопка включающая отображение всей информации об объекте
+    QAction *actBtnAllInfoObject;
+    //!
+    QAction* actProjH;
+    //!
+    QAction* actRotateVisible;
+    //!
+//    QAction* actMppmOpen;
+    //!
+  
 
     //! имя файла если файл открывался
     QString fileName;
@@ -236,6 +258,17 @@ private:
     Ui::MainWindowVariant *ui;
     //! форма добавления новой метки
     FormAddLabelMap *formAddLabel;
+
+    GeographicLib::Geocentric* earthWGS;
+    GeographicLib::Geocentric* earthPZ90;
+
+    QAction* actAddAirTarget;
+    QAction* actAddGroundTarget;
+    QAction* actBtnSend;
+
+    void createActions();
+    void createMainMenuBar();
+    void createConnections();
 signals:
     void signalAddData();
     void sigAircraftLat(double);

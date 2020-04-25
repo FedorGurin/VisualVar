@@ -110,6 +110,7 @@ public:
 
     //! кол-во подзапросов
     int size(){return listName.size();}
+    bool isEmpty(){return listName.isEmpty();}
     //! глобальный идентификатор
     int guid(){return uid;}
     //! отправитель
@@ -207,7 +208,87 @@ private:
     QString senderName_;
 };
 
-//extern void setPathToFileEngine(QString nameFile);
+//! класс скрывающий разнородные данные(к этому классу происходит обращение)
+class CommonEngineData : public IEngineData
+{
+    Q_OBJECT
+public:
+    explicit CommonEngineData(QObject *parent = 0);
+    void addEngine(IEngineData* eng)
+    {
+        engines.push_back(eng);
+        connect(eng,SIGNAL(signalEventsRequest(TRequestEvent)),this,SIGNAL(signalEventsRequest(TRequestEvent)));       
+    }
 
+    //! выполнение команды для чтения данных
+    /*virtual uint getCommand(QStringList strCommand,QStringList& values,TYPE_REQUEST type=ASYNCH_ENGINE)
+    {
+        for(int i=0;i<engines.size();i++)
+        {
+            uint id=engines[i]->getCommand(strCommand,values,type);
+            if(id>0)
+                return id;
+        }
+        return 0;
+    }*/
+    virtual TRequestEvent command(TCommonRequest request,TYPE_REQUEST type=ASYNCH_ENGINE)
+    {
+        TRequestEvent answer0;
+        for(int i=0;i<engines.size();i++)
+        {
+            TRequestEvent answer0=engines[i]->command(request,type);
+            if(answer0.status != TRequestEvent::IGNORER)
+                return answer0;
+        }
+        return answer0;
+    }
+
+    //! выполнение специальной команды
+    /*virtual uint specialCommand(QStringList str1,QStringList str2,TYPE_REQUEST type=ASYNCH_ENGINE)
+    {
+        for(int i=0;i<engines.size();i++)
+        {
+            uint id=engines[i]->specialCommand(str1,str2,type);
+            if(id>0)  return id;
+        }
+        return 0;
+    }*/
+
+    virtual TRequestEvent setValue(TCommonRequest request,TYPE_REQUEST type=ASYNCH_ENGINE)
+    {
+        TRequestEvent answer0;
+
+        for(int i=0;i<engines.size();i++)
+        {
+            TRequestEvent answer0=engines[i]->setValue(request,type);
+            if(answer0.status != TRequestEvent::IGNORER)
+                return answer0;
+        }
+        return answer0;
+    }
+
+   /* virtual uint setValue(QStringList idName,QStringList value,TYPE_REQUEST type=ASYNCH_ENGINE)
+    {
+        for(int i=0;i<engines.size();i++)
+        {
+            uint id=engines[i]->setValue(idName,value,type);
+            if(id>0) return id;
+        }
+        return 0;
+    }*/
+    virtual TRequestEvent getValue(TCommonRequest request,TYPE_REQUEST type=ASYNCH_ENGINE)
+    {
+        TRequestEvent answer0;
+
+        for(int i=0;i<engines.size();i++)
+        {
+            TRequestEvent answer0=engines[i]->getValue(request,type);
+            if(answer0.status != TRequestEvent::IGNORER)
+                return answer0;
+        }
+        return answer0;
+    }
+    QList<IEngineData*> engines;
+};
 
 #endif // COMMONENGINEDATA_H

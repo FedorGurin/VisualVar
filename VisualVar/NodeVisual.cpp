@@ -1,6 +1,5 @@
 #include "NodeVisual.h"
 #include <QFile>
-#include <QGraphicsSceneMouseEvent>
 #include <math.h>
 
 #define GLM_PRECISION_HIGHP_FLOAT
@@ -8,6 +7,7 @@
 
 #include "./glm/glm.hpp"
 #include "./glm/gtc/matrix_transform.hpp"
+#include "./GeographicLib/geoFunctions.h"
 //#define OLD_STEND
 namespace VisualVariant
 {
@@ -16,6 +16,8 @@ TObjectProperty* ObjectGraphNode::unitAngle = nullptr;
 TObjectProperty* ObjectGraphNode::unitSpeed = nullptr;
 TObjectProperty* ObjectGraphNode::unitLength= nullptr;
 TObjectProperty* ObjectGraphNode::unitExp   = nullptr;
+
+extern GeographicLib::Geocentric* earth;
 
 const QString google_sat        = "\\sat\\z";
 const QString google_map        = "\\map\\z";
@@ -263,7 +265,7 @@ void GeographySysCoord::slotCreatePixmapItem(QByteArray byteArray,int pixX,int p
 {
     QPixmap p;
     p.loadFromData(byteArray);
-    QGraphicsPixmapItem *itemPixmap = new QGraphicsPixmapItem(p,this);//,this->parent);
+    QGraphicsPixmapItem *itemPixmap=new QGraphicsPixmapItem(p,this);//,this->parent);
 
     itemPixmap->setPos(pixX,pixY);
     addItemToScene(itemPixmap);
@@ -300,9 +302,8 @@ ObjectGraphNode::ObjectGraphNode(ObjectGraphNode* clone,QGraphicsItem *parent):G
     QRectF rect=itemSvg->boundingRect();
     itemSvg->setTransformOriginPoint(QPointF(rect.width()/2.0,rect.height()/2.0));
 
-    rotate = new RotateObject(0,0,30,30,itemSvg);
-    transRotate.translate((itemSvg->boundingRect().width()/2.0)-15,-50.0);
-    rotate->setTransform(transRotate);
+    rotate = new RotateObject(":/png/rotate", itemSvg);
+//    rotate = new RotateObject(":/res/svg/rotate", itemSvg);
     rotate->setGraphNode(this);
 
     setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
@@ -331,11 +332,9 @@ ObjectGraphNode::ObjectGraphNode(QString fileName_,QGraphicsItem *parent):GraphN
      QRectF rect=itemSvg->boundingRect();
      itemSvg->setTransformOriginPoint(QPointF(rect.width()/2.0,rect.height()/2.0));
 
-     rotate=new RotateObject(0,0,30,30,itemSvg);
-     transRotate.translate((itemSvg->boundingRect().width()/2.0)-15,-50.0);
-     rotate->setTransform(transRotate);
+     rotate = new RotateObject(":/png/rotate", itemSvg);
+//     rotate = new RotateObject(":/res/svg/rotate", itemSvg);
      rotate->setGraphNode(this);
-     setVisibleRotateRect(rotate->isVisible());
 
      setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
      colorItem  = new ColorItem(this);
@@ -508,25 +507,7 @@ void ColorItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     painter->setPen(QPen(Qt::NoPen));
     painter->drawRect(this->boundingRect());
 }
-RotateObject::RotateObject(qreal x,qreal y,qreal width,qreal height,QGraphicsItem *parent):QGraphicsRectItem(x,y,width,height,parent)
-{
-    setBrush(QBrush(Qt::blue));
-    setFlags(QGraphicsItem::ItemIsSelectable);
-    graphNode = nullptr;
-}
-void RotateObject::mouseMoveEvent (QGraphicsSceneMouseEvent* event)
-{
-    QPointF point=event->pos();
 
-    if(graphNode!=nullptr)
-        graphNode->setDirection(this->mapToParent(point));
-
-    QGraphicsRectItem::mouseMoveEvent (event);
-}
-void RotateObject::keyPressEvent(QKeyEvent *event)
-{
-    Q_UNUSED(event);
-}
 AircraftObject::AircraftObject(QString nameI,QString nameFile,QGraphicsItem *parent):ObjectGraphNode(nameFile,parent)
 {
     setZValue(10);
@@ -541,6 +522,9 @@ AircraftObject::AircraftObject(QString nameI,QString nameFile,QGraphicsItem *par
     alfa_c      = 0;
     kren90      = false;
     startEarth  = true;
+
+    setX_ust(0);
+    setZ_ust(0);
 
     setAcceptHoverEvents(true);
     setScale(0.1);
@@ -920,22 +904,22 @@ void AircraftObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,
 {
     if(circleVariant==false)
     {
-        //узел=самолет
+        //узел=вертолет
         QDomElement tempNode=domDocument.createElement("Aircraft");
         ele.appendChild(tempNode);
-        //узел=скорость самолета
+        //узел=скорость вертолета
         QDomElement tempNodeAircraft=domDocument.createElement("vc_aircraft");
         tempNodeAircraft.setAttribute("name",tr("skorost samoleta"));
         QDomText tempTextNode=domDocument.createTextNode(QString::number(unitSpeed->convert(vc,currentUnitTransV,"m/s")));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
-        //узел=курс самолета
+        //узел=курс вертолета
         tempNodeAircraft=domDocument.createElement("psic_aircraft");
         tempNodeAircraft.setAttribute("name",tr("Kurs samoleta"));
         tempTextNode=domDocument.createTextNode(QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
-        //узел=высота самолета
+        //узел=высота вертолета
         tempNodeAircraft=domDocument.createElement("yc_aircraft");
         tempNodeAircraft.setAttribute("name",tr("Vysota samoleta"));
         tempTextNode=domDocument.createTextNode(QString::number(unitLength->convert(y,currentUnitTransY,"m")));
@@ -975,16 +959,16 @@ void AircraftObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,
         tempNode.appendChild(tempNodeAircraft);
     }else
     {
-        //узел=самолет
+        //узел=вертолет
         QDomElement tempNode=domDocument.createElement("Aircraft");
         ele.appendChild(tempNode);
-        //узел=скорость самолета
+        //узел=скорость вертолета
         QDomElement tempNodeAircraft=domDocument.createElement("del_hc");
         tempNodeAircraft.setAttribute("name",tr("Prevyshenie nad tselyu"));
         QDomText tempTextNode=domDocument.createTextNode(QString::number(unitLength->convert(delta_hc,currentUnitTransDelta_hc,"m")));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
-        //узел=курс самолета
+        //узел=курс вертолета
         tempNodeAircraft=domDocument.createElement("alfa_c");
         tempNodeAircraft.setAttribute("name",tr("alfa_c"));
         tempTextNode=domDocument.createTextNode(QString::number(unitAngle->convert(alfa_c,currentUnitTransAlfa_c,"deg")));
@@ -1477,13 +1461,13 @@ void AirTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele
 {
     if(circleVariant==false)
     {
-        //узел=самолет
+        //узел=вертолет
         QDomElement tempNode=domDocument.createElement("Air_Target");
         QDomText tempTextNode=domDocument.createTextNode(QString::number(index));
         tempNode.appendChild(tempTextNode);
         ele.appendChild(tempNode);
 
-        //узел=скорость самолета
+        //узел=скорость вертолета
         QDomElement tempNodeAircraft=domDocument.createElement("Tip_target_A");
         tempNodeAircraft.setAttribute("name",tr("Tip target"));
         if(prCodeLen==true) tempTextNode=domDocument.createTextNode(QString::number(code));
@@ -1491,21 +1475,21 @@ void AirTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
 
-        //узел=курс самолета
+        //узел=курс вертолета
         tempNodeAircraft=domDocument.createElement("psi_target_A");
         tempNodeAircraft.setAttribute("name",tr("Kurs target"));
         tempTextNode=domDocument.createTextNode(QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg"),'g',14));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
 
-        //узел=курс самолета
+        //узел=курс вертолета
         tempNodeAircraft=domDocument.createElement("v_target_A");
         tempNodeAircraft.setAttribute("name",tr("speed target"));
         tempTextNode=domDocument.createTextNode(QString::number(unitSpeed->convert(v,currentUnitTransV,"m/s")));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
 
-        //узел=высота самолета
+        //узел=высота вертолета
         tempNodeAircraft=domDocument.createElement("y_target");
         tempNodeAircraft.setAttribute("name",tr("H target"));
         tempTextNode=domDocument.createTextNode(QString::number(unitLength->convert(y,currentUnitTransY,"m")));
@@ -1533,34 +1517,34 @@ void AirTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele
         tempNode.appendChild(tempNodeAircraft);
     }else
     {
-        //узел=самолет
+        //узел=вертолет
         QDomElement tempNode=domDocument.createElement("Target");
         QDomText tempTextNode=domDocument.createTextNode(QString::number(index));
         tempNode.appendChild(tempTextNode);
         ele.appendChild(tempNode);
 
-        //узел=скорость самолета
+        //узел=скорость вертолета
         QDomElement tempNodeAircraft=domDocument.createElement("h");
         tempNodeAircraft.setAttribute("name",tr("h"));
         tempTextNode=domDocument.createTextNode(QString::number(unitLength->convert(y,currentUnitTransY,"m")));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
 
-        //узел=курс самолета
+        //узел=курс вертолета
         tempNodeAircraft=domDocument.createElement("l");
         tempNodeAircraft.setAttribute("name",tr("l"));
         tempTextNode=domDocument.createTextNode(QString::number(code));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
 
-        //узел=курс самолета
+        //узел=курс вертолета
         tempNodeAircraft=domDocument.createElement("v");
         tempNodeAircraft.setAttribute("name",tr("v"));
         tempTextNode=domDocument.createTextNode(QString::number(unitSpeed->convert(v,currentUnitTransV,"m/s")));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
 
-        //узел=высота самолета
+        //узел=высота вертолета
         tempNodeAircraft=domDocument.createElement("psi");
         tempNodeAircraft.setAttribute("name",tr("psi"));
         tempTextNode=domDocument.createTextNode(QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
@@ -1675,7 +1659,7 @@ void AirTargetObject::slotIsModifyPsi()
     //! дальность
     d=sqrt(dx*dx+dy*dy)*groundResolution(lat,zoom-1);
     d=unitLength->convert(d,"m",currentUnitTransD);
-    //! угол относительно самолета
+    //! угол относительно вертолета
     fi=atan2(dx,-dy)*180.0/M_PI;
     fi=check180(fi-KursToPsiGrad(aircraft->psi));
 
@@ -1706,6 +1690,7 @@ void AirTargetObject::slotFi()
     pixelXYToLatLong(x,z,zoom-1,lat,lon);
     setPosC(x,z);
     colorItem->setRowText(tr("fi=")+QString::number(fi),4);
+    updateDToAircraft();
 }
 
 void AirTargetObject::setFi(double value)
@@ -1726,7 +1711,7 @@ void AirTargetObject::slotIsModifyPosition()
 {
     //! при модификации курсового угла
     slotIsModifyPsi();
-    //! отрисовка прямой соединяющей самолет и цель
+    //! отрисовка прямой соединяющей вертолет и цель
     slotEnterLeaveCur(true);
 }
 void AirTargetObject::slotEnterLeaveCur(bool flag)
@@ -2014,13 +1999,13 @@ void GroundTargetObject::saveXML(QDomDocument &domDocument,QDomElement &node)
 void GroundTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant)
 {
     Q_UNUSED(circleVariant);
-    //узел=самолет
+    //узел=вертолет
     QDomElement tempNode=domDocument.createElement("Ground_Target");
     QDomText tempTextNode=domDocument.createTextNode(QString::number(index));
     tempNode.appendChild(tempTextNode);
     ele.appendChild(tempNode);
 
-    //узел=скорость самолета
+    //узел=скорость вертолета
     QDomElement tempNodeAircraft=domDocument.createElement("v_target_G");
     tempNodeAircraft.setAttribute("name",tr("Speed target"));
     tempTextNode=domDocument.createTextNode(QString::number(unitSpeed->convert(v,currentUnitTransV,"m/s")));
@@ -2033,14 +2018,14 @@ void GroundTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &
     tempNodeAircraft.appendChild(tempTextNode);
     tempNode.appendChild(tempNodeAircraft);
 
-    //узел=курс самолета
+    //узел=курс вертолета
     tempNodeAircraft=domDocument.createElement("psi_target_G");
     tempNodeAircraft.setAttribute("name",tr("Kurs target"));
     tempTextNode=domDocument.createTextNode(QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
     tempNodeAircraft.appendChild(tempTextNode);
     tempNode.appendChild(tempNodeAircraft);
 
-    //узел=высота самолета
+    //узел=высота вертолета
     tempNodeAircraft=domDocument.createElement("SKS_target");
     tempNodeAircraft.setAttribute("name",tr("Sistema koordinat"));
     tempTextNode=domDocument.createTextNode(QString::number(sks));
@@ -2062,7 +2047,7 @@ void GroundTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &
 }
 void GroundTargetObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
-    qDebug("Right Button");
+//    qDebug("Right Button");
 
     if(event->button()==Qt::RightButton)
     {
@@ -2096,7 +2081,7 @@ void GroundTargetObject::slotIsModifyPsi()
         glm::vec3 vec=glm::vec3(x,0.0,z);
         //! расчет матрицы курса
         glm::mat3 mPsi;
-        //! курс самолета
+        //! курс вертолета
         double psi_c=GradToRadian(aircraft->psi);
 
         mPsi[0][0]=cos(psi_c);
@@ -2117,18 +2102,18 @@ void GroundTargetObject::slotIsModifyPsi()
 }
 void GroundTargetObject::getRequest(QString prefix,TCommonRequest *request,int numIndex)
 {
-    if(numIndex == -1)
-        numIndex = index;
-    QString prefixName = prefix + "INITDesGRTarget["+QString::number(numIndex)+"].";
+//    if(numIndex == -1)
+//        numIndex = index;
+//    QString prefixName = prefix + "INITDesGRTarget["+QString::number(numIndex)+"].";
 
-    request->append(prefixName+"Global_numGRTarget",QString::number(numIndex));
-    request->append(prefixName+"Tip_GRTarget",      QString::number(code));
-    request->append(prefixName+"Speed0_RGTarget",   QString::number(unitSpeed->convert(v,currentUnitTransV,"m/s")));
-    request->append(prefixName+"Psi0_GRTarget",     QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg"),'g',14));
-    request->append(prefixName+"X0_GRTarget",       QString::number(unitLength->convert(x,currentUnitTransX,"m"),'g',9));
-    request->append(prefixName+"Z0_GRTarget",       QString::number(unitLength->convert(z,currentUnitTransX,"m"),'g',9));
-    request->append(prefixName+"SKS_GRTarget",      QString::number(sks));
-    //request->append(prefixName+"Beg_num_target",QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
+//    request->append(prefixName+"Global_numGRTarget",QString::number(numIndex));
+//    request->append(prefixName+"Tip_GRTarget",      QString::number(code));
+//    request->append(prefixName+"Speed0_RGTarget",   QString::number(unitSpeed->convert(v,currentUnitTransV,"m/s")));
+//    request->append(prefixName+"Psi0_GRTarget",     QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg"),'g',14));
+//    request->append(prefixName+"X0_GRTarget",       QString::number(unitLength->convert(x,currentUnitTransX,"m"),'g',9));
+//    request->append(prefixName+"Z0_GRTarget",       QString::number(unitLength->convert(z,currentUnitTransX,"m"),'g',9));
+//    request->append(prefixName+"SKS_GRTarget",      QString::number(sks));
+//    //request->append(prefixName+"Beg_num_target",QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
 }
 
 void GroundTargetObject::slotIsModifyPosition()
@@ -2218,7 +2203,7 @@ void AerodromObject::slotIsModifyPosition()
 {
     slotIsModifyPsi();
     slotEnterLeaveCur(true);
-    //! отрисовка прямой соединяющей самолет и цель
+    //! отрисовка прямой соединяющей вертолет и объект
 }
 void AerodromObject::slotEnterLeaveCur(bool flag)
 {

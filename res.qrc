@@ -32,6 +32,16 @@
         <file alias="toolRed">resource/toolRed.png</file>
         <file>resource/document-send.png</file>
         <file alias="center_move_obj">resource/g1617.png</file>
+        <file alias="home">resource/home-page.png</file>
+        <file alias="projH">resource/rescale_vert.png</file>
+        <file alias="var_plus">resource/variant_plus.png</file>
+        <file>resource/rotate.png</file>
+        <file>resource/ssDisc.png</file>
+        <file alias="rotate">resource/view-refresh.png</file>
+        <file>resource/edit-undo.png</file>
+        <file alias="vpult_stop">resource/pause2.png</file>
+        <file alias="vpult_start">resource/play.png</file>
+        <file alias="vpult_restart">resource/repeat.png</file>
     </qresource>
     <qresource prefix="/svg">
         <file alias="ledGreen">resource/led-green.svg</file>
@@ -44,7 +54,7 @@
         <file alias="gtarget">resource/gtarget.svg</file>
         <file>resource/info.svg</file>
         <file alias="target">resource/target.svg</file>
-        <file alias="aircraft">resource/mkm.svg</file>
+        <file>resource/mkm.svg</file>
         <file alias="aircraft_move">resource/mkm_move.svg</file>
         <file alias="target_move">resource/target_move.svg</file>
         <file alias="scale">resource/scale.svg</file>
@@ -52,6 +62,10 @@
         <file alias="t_right">resource/t_empty_right.svg</file>
         <file alias="t_left">resource/t_empty_left.svg</file>
         <file alias="t_down">resource/t_empty_down.svg</file>
+        <file alias="rotate">resource/edit-undo.svg</file>
+        <file>resource/4047331-aircraft-army-fighter-helicopter-military-war_113487.svg</file>
+        <file alias="aircraft">resource/orange-helicopter.svg</file>
+        <file>resource/orange-helicopter2.svg</file>
     </qresource>
     <qresource prefix="/sound"/>
 </RCC>

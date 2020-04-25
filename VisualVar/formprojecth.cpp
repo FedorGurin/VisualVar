@@ -45,21 +45,10 @@ void FormProjectH::updateScene()
 }
 void FormProjectH::setCurrentScene(VisualVariant::cl_Scene* scene_)
 {
+    if(currentScene == scene_)
+        return;
     currentScene=scene_;
-    clearObj();
-
-    calcMaxScale();
-    if(currentScene!=0)
-    {
-        moveToH(aircraft,currentScene->aircraft->currentY(),0);
-        for(int i=0;i<currentScene->airTargets.size();i++)
-        {
-            airtarget.push_back(new GraphObject(tr("Ц")+QString::number(i+1),":/res/svg/t_up",svgItem));
-            airtarget[i]->setScale(0.05);
-            moveToH(airtarget[i],currentScene->airTargets[i]->currentY(),i+1);
-            scene->addItem(airtarget[i]);
-        }
-    }
+    updateScene();
 }
 void FormProjectH::calcMaxScale()
 {
@@ -89,9 +78,9 @@ void FormProjectH::calcMaxScale()
 
 void FormProjectH::clearObj()
 {
-    for(int i=0;i<airtarget.size();i++)
+    for(auto i: airtarget)
     {
-        scene->removeItem(airtarget[i]);
+        scene->removeItem(i);
     }
     airtarget.clear();
 }

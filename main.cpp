@@ -17,9 +17,9 @@ int main(int argc,char *argv[])
     QResource::registerResource("/res.rcc");
 
     //! имя файла с настройками
-    nameMainFile="xml/setting.xml";
+    nameMainFile = "xml/setting.xml";
     if(argc>1)
-        nameMainFile="xml/"+QString(argv[1]);
+        nameMainFile = "xml/"+QString(argv[1]);
 
     //! задание кодека
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));

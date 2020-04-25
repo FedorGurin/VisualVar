@@ -8,6 +8,22 @@ FormStatusBar::FormStatusBar(QWidget *parent) :
     ui(new Ui::FormStatusBar)
 {
     ui->setupUi(this);
+
+    isConnect = -1;
+
+    ui->labelSource->setVisible(false);
+    ui->label_6->setVisible(false);
+    ui->label->setVisible(false);
+    ui->labelX->setVisible(false);
+    ui->label_2->setVisible(false);
+    ui->labelZ->setVisible(false);
+
+    p_no_info = p_connect = p_disconnect = ui->labelStatus->palette();
+    p_no_info.setColor(QPalette::Foreground,Qt::gray);
+    p_connect.setColor(QPalette::Foreground,Qt::green);
+    p_disconnect.setColor(QPalette::Foreground,Qt::red);
+
+    updateConnectInfo(TRequestEvent::PROCESSED_FAULT);
 }
 void FormStatusBar::setX(double x)
 {
@@ -95,5 +111,33 @@ void FormStatusBar::changeEvent(QEvent *e)
         break;
     default:
         break;
+    }
+}
+
+void FormStatusBar::updateConnectInfo(TRequestEvent::TYPE_STATUS status)
+{
+    if(status == TRequestEvent::PROCESSED_FAULT)
+    {
+        if(isConnect != 0){
+            ui->connectState->setText("Отключено");
+            ui->connectState->setPalette(p_disconnect);
+        }
+        isConnect = 0;
+    }
+    else if(status == TRequestEvent::PROCESSED)
+    {
+        if(isConnect != 1){
+            ui->connectState->setText("Включено");
+            ui->connectState->setPalette(p_connect);
+        }
+        isConnect = 1;
+    }
+    else
+    {
+        if(isConnect != -1){
+            ui->connectState->setText("Нет информации");
+            ui->connectState->setPalette(p_no_info);
+        }
+        isConnect = -1;
     }
 }

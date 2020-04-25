@@ -65,6 +65,9 @@
     <addaction name="actionSaveAs"/>
     <addaction name="action"/>
     <addaction name="actionCloseAll"/>
+    <addaction name="separator"/>
+    <addaction name="actMppmOpen"/>
+    <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
    <widget class="QMenu" name="menuWindow">
@@ -176,6 +179,19 @@
     <addaction name="menu_5"/>
     <addaction name="menu_6"/>
    </widget>
+   <widget class="QMenu" name="menu_7">
+    <property name="title">
+     <string>Инструменты</string>
+    </property>
+    <widget class="QMenu" name="menu_SC">
+     <property name="title">
+      <string>Используемая СК</string>
+     </property>
+     <addaction name="actionWGS_84"/>
+     <addaction name="actionPZ_90"/>
+    </widget>
+    <addaction name="menu_SC"/>
+   </widget>
    <addaction name="menu"/>
    <addaction name="menuWindow"/>
    <addaction name="menuMaps"/>
@@ -183,6 +199,7 @@
    <addaction name="menu_2"/>
    <addaction name="menuHelp"/>
    <addaction name="menu_4"/>
+   <addaction name="menu_7"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="toolBarOperation">
@@ -235,17 +252,6 @@
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QToolBar" name="toolBarH">
-   <property name="windowTitle">
-    <string>Шкала высоты</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>RightToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
   <action name="actionOpenXML">
    <property name="text">
     <string>Открыть</string>
@@ -255,6 +261,10 @@
    </property>
   </action>
   <action name="actionSaveAll">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/png/save</normaloff>:/png/save</iconset>
+   </property>
    <property name="text">
     <string>Сохранить все</string>
    </property>
@@ -340,6 +350,12 @@
    <property name="shortcut">
     <string>Ctrl+1</string>
    </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+   <property name="shortcutVisibleInContextMenu">
+    <bool>true</bool>
+   </property>
   </action>
   <action name="actionCreateVarCircle">
    <property name="icon">
@@ -351,6 +367,12 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+2</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
+   </property>
+   <property name="shortcutVisibleInContextMenu">
+    <bool>true</bool>
    </property>
   </action>
   <action name="actionExport">
@@ -504,6 +526,45 @@
    </property>
    <property name="text">
     <string>Карты</string>
+   </property>
+  </action>
+  <action name="actionCommonTargetWord">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Общая целевая обстановка</string>
+   </property>
+  </action>
+  <action name="actionWGS_84">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>WGS-84</string>
+   </property>
+  </action>
+  <action name="actionPZ_90">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>ПЗ-90</string>
+   </property>
+  </action>
+  <action name="actMppmOpen">
+   <property name="icon">
+    <iconset resource="../res.qrc">
+     <normaloff>:/png/pm</normaloff>:/png/pm</iconset>
+   </property>
+   <property name="text">
+    <string>Открыть программу просмотра параметров моделей...</string>
    </property>
   </action>
  </widget>

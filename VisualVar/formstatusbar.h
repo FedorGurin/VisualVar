@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "../globalFunc/gl_func.h"
+#include "../mppm/CommonEngineData.h"
 namespace Ui {
     class FormStatusBar;
 }
@@ -21,6 +22,7 @@ public:
         ST_PREPARE
     };
     ~FormStatusBar();
+
 public slots:
     void setX(double x);
     void setZ(double z);
@@ -33,12 +35,19 @@ public slots:
     void setZoom(int zoom);
     void setStatusTransmit(QString,TStatus status);
     void setSource(QString str);
+    void updateConnectInfo(TRequestEvent::TYPE_STATUS status);
 
 protected:
     void changeEvent(QEvent *e);
 
 private:
     Ui::FormStatusBar *ui;
+    //! информация о наличии соединения с УЦВС
+    bool isConnect;
+
+    QPalette p_no_info;
+    QPalette p_connect;
+    QPalette p_disconnect;
 };
 
 #endif // FORMSTATUSBAR_H
