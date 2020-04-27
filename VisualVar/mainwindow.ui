@@ -41,7 +41,7 @@
      <x>0</x>
      <y>0</y>
      <width>651</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -58,15 +58,12 @@
     <addaction name="menu_3"/>
     <addaction name="actionOpenXML"/>
     <addaction name="action_6"/>
-    <addaction name="action_5"/>
     <addaction name="actionLastVar"/>
-    <addaction name="actionExport"/>
     <addaction name="actionSaveAll"/>
     <addaction name="actionSaveAs"/>
     <addaction name="action"/>
     <addaction name="actionCloseAll"/>
     <addaction name="separator"/>
-    <addaction name="actMppmOpen"/>
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
@@ -345,7 +342,7 @@
      <normaloff>:/png/var</normaloff>:/png/var</iconset>
    </property>
    <property name="text">
-    <string>Вариант начальных условий с целями</string>
+    <string>Вариант начальных условий</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+1</string>

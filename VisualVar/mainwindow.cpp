@@ -163,17 +163,17 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     ui->toolBarCreate->addAction(ui->actionSaveAll);
     ui->toolBarCreate->addSeparator();
     ui->toolBarCreate->addAction(ui->actionCreateVar);
-    ui->toolBarCreate->addAction(ui->actionCreateVarCircle);
+    //ui->toolBarCreate->addAction(ui->actionCreateVarCircle);
 #ifdef OLD_STAND
     ui->toolBarCreate->addWidget(checkBoxGeography);
 #endif
     ui->toolBarCreate->addSeparator();
 
-    ui->toolBarCreate->addSeparator();
+   // ui->toolBarCreate->addSeparator();
 
     ui->toolBarMain->addAction(actBtnSend);
-    ui->toolBarMain->addSeparator();
-    ui->toolBarMain->addAction(ui->actMppmOpen);
+    //ui->toolBarMain->addSeparator();
+   // ui->toolBarMain->addAction(ui->actMppmOpen);
 //#ifdef OLD_STAND
 //    ui->toolBarMain->addAction(actBtnSendToOtherStand);
 //#endif
@@ -234,11 +234,11 @@ void MainWindowVisVar::createActions()
 //    actAddCircVar = new QAction(QIcon(":/png/circ"), QString(tr("Создать вариант начальных условий движения по кругам")));
 //    actAddCircVar->setShortcut(QKeySequence(tr("Ctrl+2")));
 
-    actAddAirTarget = new QAction(QIcon(":/res/svg/target"), QString(tr("Добавить воздушную цель")));
+    actAddAirTarget = new QAction(QIcon(":/res/svg/target"), QString(tr("Добавить воздушный объект")));
 
-    actAddGroundTarget = new QAction(QIcon(":/res/svg/gtarget"), QString(tr("Добавить наземную цель")));
+    actAddGroundTarget = new QAction(QIcon(":/res/svg/gtarget"), QString(tr("Добавить наземный объект")));
 
-    actBtnSend = new QAction(QIcon(":/png/send"), QString(tr("Загрузить варианты в УЦВС")));
+    actBtnSend = new QAction(QIcon(":/png/send"), QString(tr("Загрузить варианты в ИМК")));
     actBtnSend->setShortcut(QKeySequence(tr("Ctrl+Shift+,")));
 
 //    actBtnSendToOtherStand = new QAction(QIcon(":/png/send"), QString(tr("Загрузить варианты во второй УЦВС")));
