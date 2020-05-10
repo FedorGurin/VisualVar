@@ -24,14 +24,12 @@ void GScene::mouseMoveEvent(QGraphicsSceneMouseEvent * mouseEvent)
 }
 void GScene::mousePressEvent(QGraphicsSceneMouseEvent   * mouseEvent)
 {
-    if(mouseEvent->buttons()==Qt::RightButton)
+    if(mouseEvent->buttons() == Qt::RightButton)
     {
-        //qDebug("rightButton\n");
         emit sigRightMouse();
     }
-    if(mouseEvent->buttons()==Qt::LeftButton)
+    if(mouseEvent->buttons() == Qt::LeftButton)
     {
-        //qDebug("rightButton\n");
         emit clickLeftMouse();
     }
     QGraphicsScene::mousePressEvent(mouseEvent);
@@ -46,7 +44,7 @@ void GScene::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent)
 void GScene::mouseReleaseEvent(QGraphicsSceneMouseEvent * mouseEvent)
 {
    // qDebug("release Event\n");
-    if(mouseEvent->buttons()==Qt::RightButton)
+    if(mouseEvent->buttons() == Qt::RightButton)
     {
         //qDebug("rightButton\n");
         emit sigRightMouse();

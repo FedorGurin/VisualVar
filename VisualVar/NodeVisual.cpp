@@ -1384,15 +1384,15 @@ QString AirTargetObject::curMessLength()
 }
 void AirTargetObject::setCurMessV(QString value)
 {
-    TObjectUnit* newUnitTrans=unitSpeed->find(value);
-    v=unitSpeed->convert(v,currentUnitTransV,newUnitTrans);
-    currentUnitTransV=newUnitTrans;
+    TObjectUnit* newUnitTrans = unitSpeed->find(value);
+    v = unitSpeed->convert(v,currentUnitTransV,newUnitTrans);
+    currentUnitTransV = newUnitTrans;
 }
 void AirTargetObject::setCurMessY(QString value)
 {
-    TObjectUnit* newUnitTrans=unitLength->find(value);
-    y=unitLength->convert(y,currentUnitTransY,newUnitTrans);
-    currentUnitTransY=newUnitTrans;
+    TObjectUnit* newUnitTrans = unitLength->find(value);
+    y = unitLength->convert(y,currentUnitTransY,newUnitTrans);
+    currentUnitTransY = newUnitTrans;
 }
 void AirTargetObject::setCurMessPsi(QString value)
 {

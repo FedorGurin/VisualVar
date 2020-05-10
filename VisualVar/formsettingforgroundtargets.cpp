@@ -129,17 +129,18 @@ void FormSettingForGroundTargets::setPrCodeLength(bool value)
 }
 void FormSettingForGroundTargets::setCode(int code)
 {
+    int j = 0;
+    currentCode = code;
 
-    currentCode=code;
-
-    for(int i=0;i<listObjectVisGround.size();i++)
+    for(auto i:listObjectVisGround)
     {
-        if(listObjectVisGround[i]->code==code)
+        if(i->code == code)
         {
-            ui->comboBox->setCurrentIndex(i+1);
-            currentCodeStr=ui->comboBox->itemText(i+1);
+            ui->comboBox->setCurrentIndex(j + 1);
+            currentCodeStr = ui->comboBox->itemText(j + 1);
             return;
         }
+        j++;
     }
 
     //! если код не обнаружен, то выставляем "неизвестный код" и не выдаем сигнал

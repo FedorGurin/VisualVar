@@ -16,7 +16,7 @@ typedef IEngineData* (*CreateEngine)();
 namespace VisualVariant
 {
 
-GeographicLib::Geocentric* earth = 0;
+GeographicLib::Geocentric* earth = nullptr;
 
 cl_MouseFilterVariant::cl_MouseFilterVariant(QObject* pobj,QWidget *slotForm_):QObject(pobj)
 {
@@ -770,64 +770,64 @@ void MainWindowVisVar::checkTypeMapAndLayer(cl_Scene *scene)
 {
     if(scene != nullptr)
     {
-        QString mapStr="";
-        if(ui->actionLandGoogle->isChecked()==true)
+        QString mapStr = "";
+        if(ui->actionLandGoogle->isChecked() == true)
         {
-            mapStr=tr("Google(Ладншафт)");
+            mapStr = tr("Google(Ладншафт)");
             scene->setTypeMAP(GeographySysCoord::GOOGLE_LAND);
         }
-        if(ui->actionMapsGoogle->isChecked()==true)
+        if(ui->actionMapsGoogle->isChecked() == true)
         {
-            mapStr=tr("Google(Карта)");
+            mapStr = tr("Google(Карта)");
             scene->setTypeMAP(GeographySysCoord::GOOGLE_MAP);
         }
-        if(ui->actionSatGoogle->isChecked()==true)
+        if(ui->actionSatGoogle->isChecked() == true)
         {
-            mapStr=tr("Google(Спутник)");
+            mapStr = tr("Google(Спутник)");
             scene->setTypeMAP(GeographySysCoord::GOOGLE_SAT);
         }
-        if(ui->actionSatYandex->isChecked()==true)
+        if(ui->actionSatYandex->isChecked() == true)
         {
-            mapStr=tr("Яндекс(Спутник)");
+            mapStr = tr("Яндекс(Спутник)");
             scene->setTypeMAP(GeographySysCoord::YANDEX_SAT);
         }
-        if(ui->actionSatBing->isChecked()==true)
+        if(ui->actionSatBing->isChecked() == true)
         {
-            mapStr=tr("Bing(Спутник)");
+            mapStr = tr("Bing(Спутник)");
             scene->setTypeMAP(GeographySysCoord::BING_SAT);
         }
-        if(ui->actionSatGoogleEa->isChecked()==true)
+        if(ui->actionSatGoogleEa->isChecked() == true)
         {
-            mapStr=tr("Google Earth(Спутник)");
+            mapStr = tr("Google Earth(Спутник)");
             scene->setTypeMAP(GeographySysCoord::GOOGLE_SAT_EARTH);
         }
-        if(ui->actionNokiaSatHyb->isChecked()==true)
+        if(ui->actionNokiaSatHyb->isChecked() == true)
         {
             mapStr=tr("Nokia(Спутник+гибрид)");
             scene->setTypeMAP(GeographySysCoord::NOKIA_HYB);
         }
-        if(ui->actionNokiaMaps->isChecked()==true)
+        if(ui->actionNokiaMaps->isChecked() == true)
         {
             mapStr=tr("Nokia(Карты)");
             scene->setTypeMAP(GeographySysCoord::NOKIA_MAP);
         }
 
-        QString layerStr=tr("");
-        if(ui->actionHybYandex->isChecked()==true)
+        QString layerStr = tr("");
+        if(ui->actionHybYandex->isChecked() == true)
         {
-            layerStr=tr("гибрид(Яндекс)");
+            layerStr = tr("гибрид(Яндекс)");
             scene->setTypeLayer(GeographySysCoord::YANDEX_HYB);
         }else if(ui->actionHybGoogle->isChecked()==true)
         {
-            layerStr=tr("гибрид(Google)");
+            layerStr = tr("гибрид(Google)");
             scene->setTypeLayer(GeographySysCoord::GOOGLE_HYB);
         }else
         {
-            layerStr=tr("");
+            layerStr = tr("");
             scene->setTypeLayer(GeographySysCoord::NO_LAYER);
         }
 
-        if(layerStr.isEmpty()==true)
+        if(layerStr.isEmpty() == true)
             statusBar->setSource(mapStr);
         else
             statusBar->setSource(mapStr + "+" + layerStr);
@@ -845,17 +845,17 @@ void MainWindowVisVar::checkTypeMapAndLayer()
 }
 void MainWindowVisVar::slotMapGoogle(QAction* act)
 {
-    if(act->isChecked()==true)
+    if(act->isChecked() == true)
     {
-        if(act==ui->actionSatGoogle)
+        if(act == ui->actionSatGoogle)
         {
             ui->actionLandGoogle->setChecked(false);
             ui->actionMapsGoogle->setChecked(false);
-        }else if(act==ui->actionLandGoogle)
+        }else if(act == ui->actionLandGoogle)
         {
             ui->actionSatGoogle->setChecked(false);
             ui->actionMapsGoogle->setChecked(false);
-        }else if(act==ui->actionMapsGoogle)
+        }else if(act == ui->actionMapsGoogle)
         {
             ui->actionSatGoogle->setChecked(false);
             ui->actionLandGoogle->setChecked(false);
@@ -1178,6 +1178,8 @@ void MainWindowVisVar::rightButtonMouseClicked()
     menu->clear();
     menu->addAction(tr("Добавить воздушный объект"));
     menu->addAction(tr("Добавить наземный объект"));
+    menu->addAction(tr("Добавить туман"));
+    menu->addAction(tr("Добавить облачность"));
     menu->addSeparator();
     act=menu->addAction(tr("Добавить маяк РСБН"));
     act->setEnabled(false);
@@ -1226,6 +1228,14 @@ void MainWindowVisVar::slotRunMenuScene(QAction* act)
     {
         if(scene->circleVariant == false)
             scene->createNewGroundTarget(posScene);
+    }else if(act->text() == tr("Добавить облачность"))
+    {
+        //if(scene->circleVariant == false)
+        //    scene->createNewGroundTarget(posScene);
+    }else if(act->text() == tr("Добавить туман"))
+    {
+        //if(scene->circleVariant == false)
+        //    scene->createNewGroundTarget(posScene);
     }else if(act->text() == tr("Добавить аэродром"))
     {
         scene->createNewAerodrom(posScene);
@@ -1266,12 +1276,12 @@ void MainWindowVisVar::showAllVariant()
 }
 void MainWindowVisVar::setMapAndLayerContextMenu()
 {
-    ui->actionSatGoogle->setChecked(false);
+    ui->actionSatGoogle ->setChecked(false);
     ui->actionMapsGoogle->setChecked(false);
     ui->actionLandGoogle->setChecked(false);
-    ui->actionSatBing->setChecked(false);
+    ui->actionSatBing   ->setChecked(false);
     ui->actionSatGoogleEa->setChecked(false);
-    ui->actionNokiaMaps->setChecked(false);
+    ui->actionNokiaMaps  ->setChecked(false);
     ui->actionNokiaSatHyb->setChecked(false);
 
     ui->actionHybYandex->setChecked(false);
@@ -1368,10 +1378,10 @@ bool MainWindowVisVar::openFile(QString fileName)
     //! использование цифровой карты
     checkBoxGeography->setChecked(useMap);
     //! комментарий
-    if(formManualModify!=0)
+    if(formManualModify != nullptr)
         formManualModify->setComment(comment);
 
-    if(openFile==true)
+    if(openFile == true)
     {
         //! показать все варианты
         showAllVariant();

@@ -53,8 +53,8 @@ void FormStatusBar::setPos(QPointF pos,TGeoPoint geo)
     ui->labelX->setText(QString::number((long)pos.x()));
     ui->labelZ->setText(QString::number((long)pos.y()));
 
-    QString str1=geo_double_to_string(geo.lat);
-    QString str2=geo_double_to_string(geo.lon);
+    QString str1 = geo_double_to_string(geo.lat);
+    QString str2 = geo_double_to_string(geo.lon);
 
     ui->labelLat->setText(tr("С ")+str1);
     ui->labelLon->setText(tr("В ")+str2);

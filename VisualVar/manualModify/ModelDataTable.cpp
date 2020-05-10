@@ -169,24 +169,26 @@ bool ModelDataTable::setData(const QModelIndex &index, const QVariant &value, in
             }
         }
     }
-    if(pageIndex==2)
+    if(pageIndex == 2)
     {
-        if(index.column()==1)
+        if(index.column() == 1)
         {
-            if(currentScene->circleVariant==false)
+            if(currentScene->circleVariant == false)
             {
-                if(currentGraphNode->type()==GraphNode::AIRCRAFT)
+                if(currentGraphNode->type() == GraphNode::AIRCRAFT)
                 {
                     AircraftObject *tempAircraft=static_cast<AircraftObject* >(currentGraphNode);
-                    if(index.row()==0) tempAircraft->setVc(value.toDouble());
-                    if(index.row()==1) tempAircraft->setY(value.toDouble());
-                    if(index.row()==2) tempAircraft->setPsi(value.toDouble());
-                    if(index.row()==3) tempAircraft->setTeta(value.toDouble());
+                    if(index.row() == 0) tempAircraft->setVc(value.toDouble());
+                    if(index.row() == 1) tempAircraft->setY(value.toDouble());
+                    if(index.row() == 2) tempAircraft->setPsi(value.toDouble());
+                    if(index.row() == 3) tempAircraft->setTeta(value.toDouble());
 #ifndef OLD_STEND
                     if(index.row()==4)
                     {
-                        if(value.toString()==tr("С земли")) tempAircraft->setStartEarth(true);
-                        else tempAircraft->setStartEarth(false);
+                        if(value.toString() == tr("С земли"))
+                            tempAircraft->setStartEarth(true);
+                        else
+                            tempAircraft->setStartEarth(false);
                     }
 #else
                     if(index.row()==4) tempAircraft->setVy(value.toDouble());
@@ -674,8 +676,8 @@ QVariant ModelDataTable::page1(const QModelIndex &index,int role) const
             }
         }else if(index.column()==1)
         {
-            GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
-            if(node!=nullptr)
+            GraphNode* node = static_cast<GraphNode*>(index.internalPointer());
+            if(node != nullptr)
                 return node->name;
         }else if(index.column()==2)
         {

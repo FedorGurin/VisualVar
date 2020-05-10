@@ -262,13 +262,13 @@ public:
     {
         itemMapNew.clear();
         itemMapOld.clear();
-        ptrItemMapNew=&itemMapNew;
-        ptrItemMapOld=&itemMapOld;
-        currentZoom=3;
-        typeMap=NO_MAP;
-        typeLayer=NO_LAYER;
-        dirMaps=readParamFromXMLFile(nameMainFile,"VV","DirWithMap");
-        threadLoadMaps=new ThreadLoadMaps(this);
+        ptrItemMapNew  = &itemMapNew;
+        ptrItemMapOld  = &itemMapOld;
+        currentZoom    = 3;
+        typeMap        = NO_MAP;
+        typeLayer      = NO_LAYER;
+        dirMaps        = readParamFromXMLFile(nameMainFile,"VV","DirWithMap");
+        threadLoadMaps = new ThreadLoadMaps(this);
         connect(threadLoadMaps,
                 SIGNAL(createNewPixmapItem(QByteArray,int,int)),this,
                 SLOT(slotCreatePixmapItem(QByteArray,int,int)));
@@ -287,17 +287,17 @@ public:
 
     void setTypeMap(TypeMAP value)
     {
-        typeMap=value;
+        typeMap = value;
     }
     void setTypeMap(QString value);
     void setTypeLayer(TypeLayer value)
     {
-        typeLayer=value;
+        typeLayer = value;
     }
     void setTypeLayer(QString value);
     virtual QRectF boundingRect() const
     {
-        int wh=2<<(currentZoom-1);
+        int wh = 2<<(currentZoom-1);
         return QRectF(0.0,0.0,wh*256,wh*256);
     }
     void setZoomLevel(int z, QRectF rectView);
@@ -378,7 +378,7 @@ protected:
     virtual void mouseMoveEvent (QGraphicsSceneMouseEvent* event)
     {
         QPointF point = mapToScene(mapToParent(event->pos()));
-        if(graphNode!=nullptr)
+        if(graphNode != nullptr)
             graphNode->setDirection(point);
 //        QGraphicsSvgItem::mouseMoveEvent(event);
         QGraphicsPixmapItem::mouseMoveEvent(event);
@@ -418,7 +418,7 @@ public:
     //! признак того, что объект может перемещаться по сцене
     void setMovingObject(bool move)
     {
-        moving=move;
+        moving = move;
         setFlag(QGraphicsItem::ItemIsMovable,false);
         setFlag(QGraphicsItem::ItemIsSelectable,false);
     }
@@ -466,10 +466,10 @@ public:
     }
     virtual void setPosC(QPointF &point)
     {
-        QPointF tempPoint=mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
-        QPointF dP=tempPoint-pos();
+        QPointF tempPoint = mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
+        QPointF dP = tempPoint-pos();
 
-        setPos(point-dP);
+        setPos(point - dP);
     }
     //! задание новой позиции граф. элемента
     virtual void setPosC(qreal dx,qreal dy);
@@ -479,7 +479,7 @@ public:
     }
     virtual void setEnable(bool f)
     {
-        enable=f;
+        enable = f;
     }
     virtual bool isEnable()
     {
@@ -487,7 +487,7 @@ public:
     }
     virtual void setAllInfo(bool value)
     {
-        allInfo=value;
+        allInfo = value;
         colorItem->setVisible(value);
     }
     virtual void updateDToAircraft()//для целей

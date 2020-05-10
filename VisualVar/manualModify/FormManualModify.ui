@@ -94,16 +94,6 @@
          </property>
         </spacer>
        </item>
-       <item>
-        <widget class="QPushButton" name="pushButtonAttach">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>Прикрепить доп. параметры</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </item>
      <item>
