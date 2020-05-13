@@ -557,13 +557,13 @@ AircraftObject::AircraftObject(QString nameI,QString nameFile,QGraphicsItem *par
     colorItem->setRowText(tr("Высота=")+QString::number(y),1);
     colorItem->setRowText(tr("УНТ=")+QString::number(teta),2);
 
-    //connect(formSetting,SIGNAL(signalH(double)),    this,SLOT(setY(double)));
-    //connect(formSetting,SIGNAL(signalPsi(double)),  this,SLOT(setPsi(double)));
-    //connect(formSetting,SIGNAL(signalTeta(double)), this,SLOT(setTeta(double)));
-    //connect(formSetting,SIGNAL(signalV(double)),    this,SLOT(setVc(double)));
-    //connect(formSetting,SIGNAL(signalLon(double,QString)),this,SLOT(slotLonToX(double,QString)));
-    //connect(formSetting,SIGNAL(signalLat(double,QString)),this,SLOT(slotLatToZ(double,QString)));
-    //connect(formSetting,SIGNAL(signalTanUnt(bool)),this,SLOT(slotTetaUnt(bool)));
+    connect(formSetting,SIGNAL(signalH(double)),    this,SLOT(setY(double)));
+    connect(formSetting,SIGNAL(signalPsi(double)),  this,SLOT(setPsi(double)));
+    connect(formSetting,SIGNAL(signalTeta(double)), this,SLOT(setTeta(double)));
+    connect(formSetting,SIGNAL(signalV(double)),    this,SLOT(setVc(double)));
+    connect(formSetting,SIGNAL(signalLon(double,QString)),this,SLOT(slotLonToX(double,QString)));
+    connect(formSetting,SIGNAL(signalLat(double,QString)),this,SLOT(slotLatToZ(double,QString)));
+    connect(formSetting,SIGNAL(signalTanUnt(bool)),this,SLOT(slotTetaUnt(bool)));
     connect(formSetting,SIGNAL(signalPrVy(bool)),this,SLOT(slotTetaUnt(bool)));
 
     setFlags(QGraphicsItem::ItemIsSelectable| QGraphicsItem::ItemIsMovable);
