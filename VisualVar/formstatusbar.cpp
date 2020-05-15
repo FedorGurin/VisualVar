@@ -23,7 +23,7 @@ FormStatusBar::FormStatusBar(QWidget *parent) :
     p_connect.setColor(QPalette::Foreground,Qt::green);
     p_disconnect.setColor(QPalette::Foreground,Qt::red);
 
-    updateConnectInfo(TRequestEvent::PROCESSED_FAULT);
+    updateConnectInfo(TRequestEvent::PROCESSED);
 }
 void FormStatusBar::setX(double x)
 {
