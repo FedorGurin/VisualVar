@@ -31,11 +31,11 @@ bool Parser::openFileMetaData(const QString &fileName)
     //! DOM - дерево вариантов
     QDomDocument domDoc;
 
-    bool openFile=false;
+    bool openFile = false;
     QFile file(fileName);
 
-    openFile=file.open(QIODevice::ReadOnly);
-    if(openFile==true)
+    openFile = file.open(QIODevice::ReadOnly);
+    if(openFile == true)
     {
         bool readXML    = false;
         QString errMsg  = "";
@@ -43,9 +43,9 @@ bool Parser::openFileMetaData(const QString &fileName)
         int errColumn   = 0;
         readXML = domDoc.setContent(&file,true,&errMsg,&errLine,&errColumn);
 
-        if(readXML==true)
+        if(readXML == true)
         {
-            QDomElement root=domDoc.documentElement();
+            QDomElement root = domDoc.documentElement();
             parserMetaData(root.toElement());
             return true;
         }
@@ -70,38 +70,24 @@ void Parser::parserMetaData(const QDomElement& element)
     QVector<MetaData> list;
     qDebug("parserMetaData\n");
     MetaData tempMetaData;
-    QDomElement ele=element.firstChildElement("variant_nu");
+    QDomElement ele = element.firstChildElement("variant_nu");
     while(!ele.isNull())
     {
-        qDebug("search aircraft\n");
-        QDomElement eleObj=ele.firstChildElement("aircraft");
-        eleObj=eleObj.firstChildElement("metadata");
+
+        QDomElement eleObj = ele.firstChildElement("aircraft");
+        eleObj = eleObj.firstChildElement("metadata");
         while(!eleObj.isNull())
         {
             tempMetaData.readFromNode(eleObj);
             list.push_back(tempMetaData);
-            eleObj=eleObj.nextSiblingElement("metadata");
+            eleObj = eleObj.nextSiblingElement("metadata");
         }
        for(auto i: *scenes)
        {
-            qDebug("addMetaDataToAircraft\n");
             i->addMetaDataToAircraft(list);
-            qDebug("end addMetaDataToAircraft\n");
        }
 
-
-
-//        eleObj=element.firstChildElement("air_target");
-//        while(!eleObj.isNull())
-//        {
-
-//        }
-//        eleObj=element.firstChildElement("ground_target");
-//        while(!eleObj.isNull())
-//        {
-
-//        }
-        ele=ele.nextSiblingElement("variant_nu");
+        ele = ele.nextSiblingElement("variant_nu");
     }
 }
 
@@ -112,7 +98,7 @@ void Parser::sortScenesObjects()
 
     for(auto i: *scenes)
     {
-        if(i->circleVariant==true)
+        if(i->circleVariant == true)
             scenesCircle.push_back(i);
         else
             scenesNU.push_back(i);
@@ -127,11 +113,11 @@ void Parser::saveVariants(const QString &fileName,
                           uint id,
                           QString nameFileSend)
 {
-    bool fileOpen=false;
+    bool fileOpen = false;
     QFile file(fileName);
-    fileOpen=file.open(QIODevice::WriteOnly|QIODevice::Text);
+    fileOpen = file.open(QIODevice::WriteOnly|QIODevice::Text);
 
-    if(fileOpen==true)
+    if(fileOpen == true)
     {
         saveDomVariants.clear();
         QTextStream out(&file);
@@ -159,11 +145,11 @@ void Parser::createXMLForModel(QString comment,bool useMap,uint id)
 {
     bool fileOpen=false;
     QFile file("./xml/export_var_vxworks.xml");
-    fileOpen=file.open(QIODevice::WriteOnly|QIODevice::Text);
+    fileOpen = file.open(QIODevice::WriteOnly|QIODevice::Text);
     QTextStream out(&file);
 
     saveDomVariantsForModel.clear();
-    rootNodeForModel=saveDomVariantsForModel.createElement("DOCUMENT");
+    rootNodeForModel = saveDomVariantsForModel.createElement("DOCUMENT");
     rootNodeForModel.setAttribute("comment",comment);
     rootNodeForModel.setAttribute("useMap",useMap);
     rootNodeForModel.setAttribute("id_var",id);
@@ -211,13 +197,13 @@ void Parser::createXMLForModel(QByteArray *array,QString comment,bool useMap,uin
         if(i->use == true)
             i->saveToXMLForModel(saveDomVariantsForModel,rootNodeForModel);
     }
-    QDomNode xmlNode=saveDomVariantsForModel.createProcessingInstruction("xml","version=\"1.0\" encoding=\"windows-1251\"");
+    QDomNode xmlNode = saveDomVariantsForModel.createProcessingInstruction("xml","version=\"1.0\" encoding=\"windows-1251\"");
     saveDomVariantsForModel.insertBefore(xmlNode,saveDomVariantsForModel.firstChild());
     saveDomVariantsForModel.save(out,4);
 }
 QString Parser::readLastNameFile(const QString &nameFile)
 {
-    bool openFile=false;
+    bool openFile =  false;
     QFile file(nameFile);
 
     openFile = file.open(QIODevice::ReadOnly);
@@ -228,7 +214,7 @@ QString Parser::readLastNameFile(const QString &nameFile)
         readXML = domVariants.setContent(&file,true);
         if(readXML == true)
         {
-            QDomElement root=domVariants.documentElement();
+            QDomElement root = domVariants.documentElement();
             return root.attribute("pathFile",tr("Неизвестно"));
         }
     }
@@ -237,38 +223,38 @@ QString Parser::readLastNameFile(const QString &nameFile)
 
 void Parser::parseVariant(const QDomElement& element)
 {
-    int i=0;
-    QDomElement ele=element.firstChildElement("variant");
+    int i = 0;
+    QDomElement ele = element.firstChildElement("variant");
     while(!ele.isNull())
     {
         i++;
-        cl_Scene *tempScene=new cl_Scene(ele,
+        cl_Scene *tempScene = new cl_Scene(ele,
                                          statusForm,
                                          typeObjectsVis);
-        tempScene->index=i;
+        tempScene->index = i;
         scenes->push_back(tempScene);
 
-        ele=ele.nextSiblingElement("variant");
+        ele = ele.nextSiblingElement("variant");
     }
 }
 
 bool Parser::openFileVariants(const QString &nameFile, QString *name, bool &useMap,uint &id)
 {
-    bool openFile=false;
+    bool openFile = false;
     QFile file(nameFile);
 
-    openFile=file.open(QIODevice::ReadOnly);
-    if(openFile==true)
+    openFile = file.open(QIODevice::ReadOnly);
+    if(openFile == true)
     {
-        bool readXML=false;
+        bool readXML = false;
 
-        readXML=domVariants.setContent(&file,true);
-        if(readXML==true)
+        readXML = domVariants.setContent(&file,true);
+        if(readXML == true)
         {
-            QDomElement root=domVariants.documentElement();
+            QDomElement root = domVariants.documentElement();
 
-            QString typeVar=root.attribute("type",tr("unknown"));
-            if(typeVar!=tr("variantNU"))
+            QString typeVar = root.attribute("type",tr("unknown"));
+            if(typeVar != tr("variantNU"))
             {
 
                 QMessageBox::warning(0,tr("Внимание"),
@@ -276,9 +262,9 @@ bool Parser::openFileVariants(const QString &nameFile, QString *name, bool &useM
                 return false;
             }
 
-            *name=root.attribute("comment","ff");
-            useMap=root.attribute("useMap","1").toInt();
-            id=root.attribute("id_var","0").toUInt();
+            *name  = root.attribute("comment","ff");
+            useMap = root.attribute("useMap","1").toInt();
+            id     = root.attribute("id_var","0").toUInt();
             parseVariant(root.toElement());
         }
         else

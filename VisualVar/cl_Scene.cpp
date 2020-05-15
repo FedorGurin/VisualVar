@@ -22,11 +22,11 @@ cl_Scene::cl_Scene(FormStatusBar* form,
                    QWidget *parent):QObject(parent)
 {
 
-    airTargets.clear();
-    groundTargets.clear();
-    aerodroms.clear();
-    beaconObjects.clear();
-    routeObjects.clear();
+    airTargets      .clear();
+    groundTargets   .clear();
+    aerodroms       .clear();
+    beaconObjects   .clear();
+    routeObjects    .clear();
 
     allInfoObjects  =   false;
     labelObjects    =   nullptr;
@@ -89,9 +89,9 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     aircraftMove=new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft_move",map);
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
-    aircraftMove->map=map;
+    aircraftMove->map = map;
     //! признак отрисовки траектории
-    aircraftMove->trajectory=true;
+    aircraftMove->trajectory = true;
     //! прочитаем координаты центра окна
     curLatView = settingVV->startLat;
     curLonView = settingVV->startLon;
@@ -126,11 +126,12 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
 {
     allInfoObjects  = false;
     labelObjects    = nullptr;
-    airTargets.clear();
-    groundTargets.clear();
-    aerodroms.clear();
-    beaconObjects.clear();
-    routeObjects.clear();
+
+    airTargets      .clear();
+    groundTargets   .clear();
+    aerodroms       .clear();
+    beaconObjects   .clear();
+    routeObjects    .clear();
 
     infoObjects      = thisScene->infoObjects;
     statusBar        = thisScene->statusBar;
@@ -772,8 +773,8 @@ void cl_Scene::cloneAircraft(AircraftObject *aircraft_)
 }
 void cl_Scene::cloneAirTarget(AirTargetObject *target_)
 {
-    AirTargetObject *target=new AirTargetObject(target_,aircraft,map);
-    target->setName(tr("Объект #=")+QString::number(airTargets.size()+1));
+    AirTargetObject *target = new AirTargetObject(target_,aircraft,map);
+    target->setName(tr("Объект №")+QString::number(airTargets.size()+1));
     target->setZoomLevel(currentZoom);
     target->setAllInfo(allInfoObjects);
     target->formSetting->setListObjectVis(typeObjectsVis->listAirObjects());
@@ -798,7 +799,7 @@ void cl_Scene::cloneAirTarget(AirTargetObject *target_)
 void cl_Scene::cloneGroundTarget(GroundTargetObject *target_)
 {
     GroundTargetObject *target=new GroundTargetObject(target_,aircraft,map);
-    target->setName(tr("Объект #=")+QString::number(groundTargets.size()+1));
+    target->setName(tr("Объект №")+QString::number(groundTargets.size()+1));
     target->setZoomLevel(currentZoom);
     target->setAllInfo(allInfoObjects);
     target->formSetting->setListObjectVis(typeObjectsVis->listGroundObjects());
@@ -807,7 +808,7 @@ void cl_Scene::cloneGroundTarget(GroundTargetObject *target_)
 
 void cl_Scene::createNewAirTarget(QPointF p)
 {
-    AirTargetObject *target=new AirTargetObject(tr("Объект #=")+QString::number(airTargets.size()+1),":/res/svg/target",map);
+    AirTargetObject *target=new AirTargetObject(tr("Объект №")+QString::number(airTargets.size()+1),":/res/svg/target",map);
     target->setCode(100,typeObjectsVis->codeAir(100));
 
     target->setAircraft(aircraft);
@@ -817,7 +818,7 @@ void cl_Scene::createNewAirTarget(QPointF p)
     airTargets.push_back(target);
 
     //! создаем новую перемещащуюся цель
-    AirTargetObject *target_move = new AirTargetObject(tr("Объект #=") + QString::number(airTargetsMove.size()+1),":/res/svg/target_move",map);
+    AirTargetObject *target_move = new AirTargetObject(tr("Объект №") + QString::number(airTargetsMove.size()+1),":/res/svg/target_move",map);
 
     target_move->setAircraft(aircraftMove);
     target_move->setZoomLevel(currentZoom);
@@ -862,7 +863,7 @@ void cl_Scene::sendSignalUpdateValueObj()
 }
 void cl_Scene::createNewGroundTarget(QPointF p)
 {
-    GroundTargetObject *target=new GroundTargetObject(tr("Назем. Объект #=")+QString::number(groundTargets.size()+1),":/res/svg/gtarget",map);
+    GroundTargetObject *target=new GroundTargetObject(tr("Назем. Объект №")+QString::number(groundTargets.size()+1),":/res/svg/gtarget",map);
     target->setCode(311,typeObjectsVis->codeGround(311));
     target->setAircraft(aircraft);
     target->setZoomLevel(currentZoom);

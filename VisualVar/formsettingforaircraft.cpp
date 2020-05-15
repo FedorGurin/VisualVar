@@ -17,18 +17,18 @@ FormSettingForAircraft::FormSettingForAircraft(QWidget *parent) :
     messureCurrentPsi=ui->comboBoxPsi->currentText();
     messureCurrentTeta=ui->comboBoxTeta->currentText();
 
-//    connect(ui->dialH,SIGNAL(valueChanged(int)),this,SLOT(slotH(int)));
-//    connect(ui->dialV,SIGNAL(valueChanged(int)),this,SLOT(slotV(int)));
-//    connect(ui->dialPsi,SIGNAL(valueChanged(int)),this,SLOT(slotPsi(int)));
-//    connect(ui->dialTeta,SIGNAL(valueChanged(int)),this,SLOT(slotTeta(int)));
+    connect(ui->dialH,SIGNAL(valueChanged(int)),this,SLOT(slotH(int)));
+    connect(ui->dialV,SIGNAL(valueChanged(int)),this,SLOT(slotV(int)));
+    connect(ui->dialPsi,SIGNAL(valueChanged(int)),this,SLOT(slotPsi(int)));
+    connect(ui->dialTeta,SIGNAL(valueChanged(int)),this,SLOT(slotTeta(int)));
 
 //    connect(ui->doubleSpinBoxH,SIGNAL(valueChanged(double)),this,SLOT(slotHD(double)));
 //    connect(ui->doubleSpinBoxV,SIGNAL(valueChanged(double)),this,SLOT(slotVD(double)));
 //    connect(ui->doubleSpinBoxPsi,SIGNAL(valueChanged(double)),this,SLOT(slotPsiD(double)));
 //    connect(ui->doubleSpinBoxTeta,SIGNAL(valueChanged(double)),this,SLOT(slotTetaD(double)));
 
-    //connect(ui->lineEditLat,SIGNAL(textEdited(QString)),this,SLOT(slotLat(QString)));
-    //connect(ui->lineEditLon,SIGNAL(textEdited(QString)),this,SLOT(slotLon(QString)));
+    connect(ui->lineEditLat,SIGNAL(textEdited(QString)),this,SLOT(slotLat(QString)));
+    connect(ui->lineEditLon,SIGNAL(textEdited(QString)),this,SLOT(slotLon(QString)));
     connect(ui->lineEditLat,SIGNAL(editingFinished()),this,SLOT(slotLat()));
     connect(ui->lineEditLon,SIGNAL(editingFinished()),this,SLOT(slotLon()));
 

@@ -43,7 +43,7 @@ protected:
 private:
     Ui::FormStatusBar *ui;
     //! информация о наличии соединения с УЦВС
-    bool isConnect;
+    uint8_t isConnect;
 
     QPalette p_no_info;
     QPalette p_connect;

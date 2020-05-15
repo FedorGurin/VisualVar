@@ -18,7 +18,7 @@ bool cl_MouseFilter::eventFilter(QObject* pobj,QEvent *event)
         QKeyEvent *key = static_cast<QKeyEvent*>(event);
         if(key->key() == Qt::Key_Delete)
         {
-            FormManualModify *p=qobject_cast<FormManualModify* >(slotForm);
+            FormManualModify *p = qobject_cast<FormManualModify* >(slotForm);
             if(p != nullptr)
             {
                 p->slotKeyboardDel();
@@ -138,13 +138,13 @@ void FormManualModify::slotPushButtonClone()
     {
         if(modelData->currentPageIndex() == 0)
         {
-            cl_Scene* scene=static_cast<cl_Scene*>(i.internalPointer());
+            cl_Scene* scene = static_cast<cl_Scene*>(i.internalPointer());
             emit cloneScene(scene);
         }
         if(modelData->currentPageIndex() == 1)
         {
              ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
-             if(node->type()==GraphNode::TARGET_V)
+             if(node->type() == GraphNode::TARGET_V)
              {
                  AirTargetObject* airtarget = static_cast<AirTargetObject*> (node);
                  modelData->currentScene->cloneAirTarget(airtarget);
@@ -198,24 +198,24 @@ void FormManualModify::slotPushButtonAdd()
 }
 void FormManualModify::slotPushButtonDelete()
 {
-    QItemSelectionModel* select=ui->tableView->selectionModel();
-    QModelIndexList list=select->selectedRows(0);
+    QItemSelectionModel* select = ui->tableView->selectionModel();
+    QModelIndexList list = select->selectedRows(0);
     for(auto i:list)
     {
         //! нужно удалить вариант
         if(modelData->currentPageIndex() == 0)
         {
-            cl_Scene* scene=static_cast<cl_Scene*>(i.internalPointer());
+            cl_Scene* scene = static_cast<cl_Scene*>(i.internalPointer());
 
             //scene->view->close();
             //scenes->remove(scenes->indexOf(scene));
             ////delete scene;
             //scene->use=true;
             //! пересчет индексов
-            int index=scenes->indexOf(scene);
-            if(index!=-1)
+            int index = scenes->indexOf(scene);
+            if(index != -1)
             {
-                for(int i=index;i<scenes->size();i++)
+                for(int i = index;i < scenes->size();i++)
                 {
                     ((*scenes)[i])->index=((*scenes)[i])->index - 1;
                 }
@@ -334,12 +334,12 @@ void FormManualModify::slotKeyboardInsert()
     {
         if(modelData->currentPageIndex() == 0)
         {
-            cl_Scene* scene=static_cast<cl_Scene*>(i.internalPointer());
+            cl_Scene* scene = static_cast<cl_Scene*>(i.internalPointer());
             scene->use=true;
         }
         if(modelData->currentPageIndex() == 1)
         {
-             ObjectGraphNode* node=static_cast<ObjectGraphNode*>(i.internalPointer());
+             ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
              node->setEnable(true);
         }
         modelData->refreshModelData(i);

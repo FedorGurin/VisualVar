@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>636</width>
+    <width>692</width>
     <height>282</height>
    </rect>
   </property>
@@ -371,8 +371,11 @@
               <property name="decimals">
                <number>12</number>
               </property>
+              <property name="minimum">
+               <double>-90.000000000000000</double>
+              </property>
               <property name="maximum">
-               <double>180.990000000000009</double>
+               <double>90.000000000000000</double>
               </property>
              </widget>
             </item>
@@ -402,6 +405,9 @@
              <widget class="QDoubleSpinBox" name="doubleSpinBoxLat">
               <property name="decimals">
                <number>12</number>
+              </property>
+              <property name="minimum">
+               <double>-180.000000000000000</double>
               </property>
               <property name="maximum">
                <double>180.000000000000000</double>

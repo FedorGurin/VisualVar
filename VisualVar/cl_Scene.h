@@ -104,7 +104,7 @@ public:
     //! задать список объектов "метка"
     void setLabelObjects(const QList<LabelObject* > *list)
     {
-        labelObjects=list;
+        labelObjects = list;
     }
 
     //! задать уровень детализации
