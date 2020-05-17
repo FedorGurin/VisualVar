@@ -249,18 +249,18 @@ void MainWindowVisVar::createActions()
     actBtnHandMoveMap->setCheckable(true);
     actBtnHandMoveMap->setChecked(true);
 
-    actBtnCursor=new QAction(QIcon(":/png/cursor"), tr(""));
+    actBtnCursor = new QAction(QIcon(":/png/cursor"), tr(""));
     actBtnCursor->setCheckable(true);
 
-    actBtnRuler=new QAction(QIcon(":/png/ruler"),tr("Линейка"));
+    actBtnRuler = new QAction(QIcon(":/png/ruler"),tr("Линейка"));
     actBtnRuler->setCheckable(true);
 
-    actBtnCentering=new QAction(QIcon(":/png/yellow"), tr("Центрирование по вертолету"));
+    actBtnCentering = new QAction(QIcon(":/png/center"), tr("Центрирование по вертолету"));
 
-    actBtnRouteDynObject=new QAction(QIcon(":/png/routeObjects"), tr("Отображение текущих координат объектов"));
+    actBtnRouteDynObject = new QAction(QIcon(":/png/routeObjects"), tr("Отображение текущих координат объектов"));
     actBtnRouteDynObject->setCheckable(true);
 
-    actBtnAllInfoObject=new QAction(QIcon(":/png/info_obj"), tr("Отображение всей информации об объекте"));
+    actBtnAllInfoObject = new QAction(QIcon(":/png/info_obj"), tr("Отображение всей информации об объекте"));
     actBtnAllInfoObject->setCheckable(true);
     actBtnAllInfoObject->setChecked(true);
 
@@ -275,15 +275,6 @@ void MainWindowVisVar::createActions()
     actRotateVisible->setCheckable(true);
     actRotateVisible->setChecked(false);
 
-    
-//    actMppmOpen = new QAction(QIcon(":/png/pm"),tr("Открыть программу просмотра параметров моделей"));
-//    actMppmOpen->setCheckable(true);
-
-    
-   
-//    lineEditStatusVPult->setFixedWidth(100);
-//    lineEditStatusVPult->setAlignment(Qt::AlignRight);
-//    lineEditStatusVPult->setReadOnly(true);
 }
 
 
@@ -478,11 +469,11 @@ void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
     if(currentScenes != nullptr){
         disconnect(currentScenes, SIGNAL(signalRotateVisible(bool)), actRotateVisible, SLOT(setChecked(bool)));
     }
-    for(int i = 0;i<scenes.size();i++)
+    for(auto i : scenes)
     {
-         if((scenes[i]->view) == view)
+         if((i->view) == view)
          {
-             if(currentScenes!=nullptr)
+             if(currentScenes != nullptr)
                  currentScenes->delLabelMap();
 
              currentScenes = findScene(view);
@@ -1331,7 +1322,7 @@ void MainWindowVisVar::closeAllVariant()
 //! обработка событий
 bool MainWindowVisVar::event(QEvent *event)
 {
-    if(statusBar!=nullptr)
+    if(statusBar != nullptr)
         statusBar->setGeometry(statusBar->x(), statusBar->y(), width(), statusBar->height());
     return QMainWindow::event(event);
 }

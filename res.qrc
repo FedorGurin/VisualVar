@@ -5,8 +5,6 @@
         <file alias="ruler">resource/ruler.png</file>
         <file alias="send">resource/send.png</file>
         <file alias="hand">resource/openhand.png</file>
-        <file alias="intro">resource/su35.jpg</file>
-        <file alias="molnia">resource/charts02.png</file>
         <file alias="circle">resource/Cycle.png</file>
         <file>resource/Recycle.png</file>
         <file>resource/refresh.png</file>
@@ -22,7 +20,6 @@
         <file alias="pm">resource/pm.png</file>
         <file alias="save">resource/save.png</file>
         <file alias="cursor">resource/cursor.png</file>
-        <file alias="yellow">resource/mkm_yellow.png</file>
         <file alias="labelA">resource/A.png</file>
         <file alias="labelB">resource/B.png</file>
         <file alias="route">resource/route.png</file>
@@ -30,7 +27,6 @@
         <file alias="info_obj">resource/info_object.png</file>
         <file alias="no_tile">resource/no_tile.png</file>
         <file alias="toolRed">resource/toolRed.png</file>
-        <file>resource/document-send.png</file>
         <file alias="center_move_obj">resource/g1617.png</file>
         <file alias="home">resource/home-page.png</file>
         <file alias="projH">resource/rescale_vert.png</file>
@@ -39,14 +35,9 @@
         <file>resource/ssDisc.png</file>
         <file alias="rotate">resource/view-refresh.png</file>
         <file>resource/edit-undo.png</file>
-        <file alias="vpult_stop">resource/pause2.png</file>
-        <file alias="vpult_start">resource/play.png</file>
-        <file alias="vpult_restart">resource/repeat.png</file>
+        <file alias="center">resource/k226_sel.png</file>
     </qresource>
     <qresource prefix="/svg">
-        <file alias="ledGreen">resource/led-green.svg</file>
-        <file alias="ledRed">resource/led-red.svg</file>
-        <file alias="pult">resource/pult.png</file>
         <file alias="label">resource/label.svg</file>
     </qresource>
     <qresource prefix="/res/svg">
@@ -54,7 +45,6 @@
         <file alias="gtarget">resource/gtarget.svg</file>
         <file>resource/info.svg</file>
         <file alias="target">resource/target.svg</file>
-        <file>resource/mkm.svg</file>
         <file alias="aircraft_move">resource/mkm_move.svg</file>
         <file alias="target_move">resource/target_move.svg</file>
         <file alias="scale">resource/scale.svg</file>
@@ -64,8 +54,9 @@
         <file alias="t_down">resource/t_empty_down.svg</file>
         <file alias="rotate">resource/edit-undo.svg</file>
         <file>resource/4047331-aircraft-army-fighter-helicopter-military-war_113487.svg</file>
-        <file alias="aircraft">resource/orange-helicopter.svg</file>
+        <file>resource/orange-helicopter.svg</file>
         <file>resource/orange-helicopter2.svg</file>
+        <file alias="aircraft">resource/k226.svg</file>
     </qresource>
     <qresource prefix="/sound"/>
 </RCC>

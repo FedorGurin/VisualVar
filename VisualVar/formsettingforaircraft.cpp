@@ -50,15 +50,15 @@ FormSettingForAircraft::~FormSettingForAircraft()
 }
 double FormSettingForAircraft::minV()
 {
-    double value=ui->dialV->minimum();
-    double tempValue=value;
+    double value     = ui->dialV->minimum();
+    double tempValue = value;
     messureUnits->toStandartUnitSpeed(value,ui->comboBoxSpeed->currentText(),tempValue);
     return tempValue;
 }
 double FormSettingForAircraft::maxV()
 {
-    double value=ui->dialV->maximum();
-    double tempValue=value;
+    double value     = ui->dialV->maximum();
+    double tempValue = value;
     messureUnits->toStandartUnitSpeed(value,ui->comboBoxSpeed->currentText(),tempValue);
     return tempValue;
 }

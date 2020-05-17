@@ -349,12 +349,12 @@ cl_Scene::cl_Scene(QDomElement &node,
     use=node.attribute("use","1").toInt();
 
     //! заполняем данные по вертолету
-    QDomElement tempNode=node.firstChildElement("Aircraft");
+    QDomElement tempNode = node.firstChildElement("Aircraft");
     aircraft->loadXML(tempNode);
     aircraftMove->loadXML(tempNode);
 
     //! номер имени варианта
-    numberNameVariant=(node.attribute("numberNameVariant","1")).toInt();
+    numberNameVariant = (node.attribute("numberNameVariant","1")).toInt();
     //! заполняем данные по воздушным целям
     tempNode=node.firstChildElement("AirTarget");
     airTargets.clear();
@@ -362,13 +362,13 @@ cl_Scene::cl_Scene(QDomElement &node,
     while(!tempNode.isNull())
     {
         //! оьъект цели
-        AirTargetObject *target=new AirTargetObject("",":/res/svg/target",map);
-        target->map=map;
+        AirTargetObject *target = new AirTargetObject("",":/res/svg/target",map);
+        target->map = map;
         target->setAircraft(aircraft);
         target->setZoomLevel(currentZoom);
 
         //! создаем двигающийся объект
-        AirTargetObject *target_move=new AirTargetObject("",":/res/svg/target_move",map);
+        AirTargetObject *target_move = new AirTargetObject("",":/res/svg/target_move",map);
         target_move->map=map;
         target_move->setAircraft(aircraftMove);
         target_move->setZoomLevel(currentZoom);
@@ -441,7 +441,7 @@ void cl_Scene::saveToXMLForModel(QDomDocument &domDocument,QDomElement &node)
    //! сохраним параметры воздушный целей
    for(auto i:airTargets)
    {
-       if(i->isEnable()==true)
+       if(i->isEnable() == true)
            i->saveXMLForModel(domDocument,tempNode,circleVariant);
    }
    eleNode=domDocument.createElement("NumberOfGroundTarget");
@@ -452,7 +452,7 @@ void cl_Scene::saveToXMLForModel(QDomDocument &domDocument,QDomElement &node)
    //! сохраним параметры воздушный целей
    for(auto i:groundTargets)
    {
-       if(i->isEnable()==true)
+       if(i->isEnable() == true)
            i->saveXMLForModel(domDocument,tempNode);
    }
 }
@@ -539,13 +539,13 @@ void cl_Scene::getRequest(TCommonRequest *request,QString prefix,int num)
 
 void cl_Scene::slotUpdate()
 {
-    QPolygonF polygon=view->mapToScene(view->viewport()->rect());
-    QRectF rect=polygon.boundingRect();
+    QPolygonF polygon = view->mapToScene(view->viewport()->rect());
+    QRectF rect = polygon.boundingRect();
     map->setZoomLevel(currentZoom,rect);
 
-    if(activeAddLabel==true)
+    if(activeAddLabel == true)
     {
-        activeAddLabel=false;
+        activeAddLabel = false;
         view->setCursor(Qt::ArrowCursor);
         emit activeFormAddLabel(curLat,curLon);
     }
@@ -557,7 +557,7 @@ void cl_Scene::slotRightButton()
 
 void cl_Scene::slotDoubleClickedMouse()
 {
-    if(activeRoute==true)
+    if(activeRoute == true)
     {
         createNewPointRoute(mousePosScene);
     }
@@ -587,8 +587,8 @@ void cl_Scene::slotZoomDown()
 }
 void cl_Scene::slotMove(QPoint tpos)
 {
-    mousePos=tpos;
-    QPointF pos=view->mapToScene(tpos);
+    mousePos    = tpos;
+    QPointF pos = view->mapToScene(tpos);
     mousePosScene=pos;
     pixelXYToLatLong(pos.x(),pos.y(),currentZoom-1,curLat,curLon);
     TGeoPoint geo(curLat,curLon);
