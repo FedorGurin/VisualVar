@@ -44,8 +44,8 @@
         <file>resource/aerodrom.svg</file>
         <file alias="gtarget">resource/gtarget.svg</file>
         <file>resource/info.svg</file>
-        <file alias="target">resource/target.svg</file>
-        <file alias="aircraft_move">resource/mkm_move.svg</file>
+        <file>resource/target.svg</file>
+        <file>resource/mkm_move.svg</file>
         <file alias="target_move">resource/target_move.svg</file>
         <file alias="scale">resource/scale.svg</file>
         <file alias="t_up">resource/t_empty_up.svg</file>
@@ -57,6 +57,8 @@
         <file>resource/orange-helicopter.svg</file>
         <file>resource/orange-helicopter2.svg</file>
         <file alias="aircraft">resource/k226.svg</file>
+        <file alias="aircraft_move">resource/k226_move.svg</file>
+        <file alias="target">resource/k226_target.svg</file>
     </qresource>
     <qresource prefix="/sound"/>
 </RCC>
