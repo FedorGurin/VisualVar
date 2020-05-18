@@ -260,11 +260,7 @@ private:
     QAction* actionAddPPM;
     QAction* actionAddInfo;
     QAction* actionAddAerodroms;
-
-    
-
     QTimer* timer;
-
 };
 }
 #endif /* CL_SCENE_H_ */

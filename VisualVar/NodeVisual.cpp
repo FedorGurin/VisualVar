@@ -272,13 +272,13 @@ void GeographySysCoord::slotCreatePixmapItem(QByteArray byteArray,int pixX,int p
 }
 void GeographySysCoord::addTile(QString prefix,int i,int j,double pixX,double pixY,QString ext)
 {
-    QString fileName=dirMaps+prefix+QString::number(currentZoom)+"/"+QString::number(i/1024)+"/x"+QString::number(i)+"/"+QString::number(j/1024)+"/y"+QString::number(j)+ext;
+    QString fileName = dirMaps+prefix+QString::number(currentZoom)+"/"+QString::number(i/1024)+"/x"+QString::number(i)+"/"+QString::number(j/1024)+"/y"+QString::number(j)+ext;
 
-    if(QFile::exists(fileName)==false)
+    if(QFile::exists(fileName) == false)
         fileName=":/png/no_tile";
 
     QPixmap pix(fileName);
-    QGraphicsPixmapItem *itemPixmap=new QGraphicsPixmapItem(pix,this);
+    QGraphicsPixmapItem *itemPixmap = new QGraphicsPixmapItem(pix,this);
 
     itemPixmap->setPos(pixX,pixY);
     addItemToScene(itemPixmap);
@@ -307,9 +307,9 @@ ObjectGraphNode::ObjectGraphNode(ObjectGraphNode* clone,QGraphicsItem *parent):G
     rotate->setGraphNode(this);
 
     setFlags(QGraphicsItem::ItemIsMovable | QGraphicsItem::ItemIsSelectable);
-    colorItem=new ColorItem(this);
-    colorName=new ColorItem(this);
-    nameItem=new QGraphicsSimpleTextItem(this);
+    colorItem   = new ColorItem(this);
+    colorName   = new ColorItem(this);
+    nameItem    = new QGraphicsSimpleTextItem(this);
 }
 
 ObjectGraphNode::ObjectGraphNode(QString fileName_,QGraphicsItem *parent):GraphNode(parent)
@@ -347,7 +347,7 @@ void ObjectGraphNode::refreshTrajectory(int zoom_)
     int curY1=0,curY2=0;
 
     //! пересчитаем географические координаты в новые координаты линий
-    for(int i=1;i<trajGeoPoints.size();i++)
+    for(int i =1;i<trajGeoPoints.size();i++)
     {
         latLongToPixelXY(trajGeoPoints[i].lat,
                          trajGeoPoints[i].lon,
@@ -1016,15 +1016,15 @@ void AircraftObject::slotLatToZ(double value, QString strValue)
     int pX,pZ;
     sLat=strValue;
 
-    latLongToPixelXY(lat,lon,zoom-1,pX,pZ);
+    latLongToPixelXY(lat,lon,zoom - 1,pX,pZ);
     //setXMap(pX);
     //setZMap(pZ);
 }
 void AircraftObject::slotLonToX(double value)
 {
-    lon=value;
+    lon = value;
     int pX,pZ;
-    latLongToPixelXY(lat,lon,zoom-1,pX,pZ);
+    latLongToPixelXY(lat,lon,zoom - 1,pX,pZ);
 
     setPosC(pX,pZ);
 }
@@ -1043,7 +1043,7 @@ void AircraftObject::slotLonLatToXZ(double lat_, double lon_)
     lat = lat_;
     lon = lon_;
     int pX,pZ;
-    latLongToPixelXY(lat,lon,zoom-1,pX,pZ);
+    latLongToPixelXY(lat,lon,zoom - 1,pX,pZ);
     setPosC(pX,pZ);
 }
 
@@ -1062,7 +1062,7 @@ void AircraftObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
 }
 void AircraftObject::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
-    if(event->button()==Qt::LeftButton)
+    if(event->button() == Qt::LeftButton)
     {
         emit signalReleaseAircraft();
     }
@@ -1076,7 +1076,7 @@ void AircraftObject::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
 
 void AircraftObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
-    QPointF p=mapToScene(itemSvg->transformOriginPoint());
+    QPointF p = mapToScene(itemSvg->transformOriginPoint());
 
     pixelXYToLatLong(p,zoom-1,lat,lon);
 
@@ -1109,16 +1109,16 @@ AirTargetObject::AirTargetObject(AirTargetObject *airTarget,
 {
     setZValue(9);
     initMessureItem();
-    code_prev=0;
+    code_prev = 0;
 
-    d=2000;
+    d = 2000;
     formSetting=new FormSettingForAirTarget();
     formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
 
     QRectF rect=itemSvg->boundingRect();
-    lineFSpeed.setLine(rect.width()+20,
+    lineFSpeed.setLine(rect.width() + 20,
                        rect.height(),
-                       rect.width()+20,rect.height()*(1-v/(formSetting->maxV()-formSetting->minV()))+1);
+                       rect.width() + 20,rect.height() * (1 - v/(formSetting->maxV() - formSetting->minV())) + 1);
 
     QRectF rect1=boundingRect();
     setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
@@ -1127,19 +1127,19 @@ AirTargetObject::AirTargetObject(AirTargetObject *airTarget,
     QPen pen(Qt::DotLine);
     pen.setColor(Qt::blue);
 
-    lineSpeed=new QGraphicsLineItem(lineFSpeed,itemSvg);
+    lineSpeed = new QGraphicsLineItem(lineFSpeed,itemSvg);
     lineSpeed->setPen(pen);
 
     formSetting->setWindowTitle(name);
 
-    lineNotEnable=new QGraphicsLineItem(QLineF(0.0,0.0,rect.width(),rect.height()),itemSvg);
-    ellipseNotEnable=new QGraphicsEllipseItem(rect,itemSvg);
+    lineNotEnable    = new QGraphicsLineItem(QLineF(0.0,0.0,rect.width(),rect.height()),itemSvg);
+    ellipseNotEnable = new QGraphicsEllipseItem(rect,itemSvg);
 
-    lineToAircraft=new QGraphicsLineItem(QLineF(0.0,0.0,10.0,10.0),this);
-    colorItemD=new ColorItem(lineToAircraft);
+    lineToAircraft  = new QGraphicsLineItem(QLineF(0.0,0.0,10.0,10.0),this);
+    colorItemD      = new ColorItem(lineToAircraft);
     colorItemD->setScale(10);
     colorItemD->setRows(1);
-    colorItemD->setRowText("d="+QString::number(d)+tr("м"),0);
+    colorItemD->setRowText("d="+QString::number(d) + tr("м"),0);
     //lineToAircraftTextD=new QGraphicsSimpleTextItem("d="+QString::number(d),lineToAircraft);
 
     QPen penA(Qt::SolidLine);
