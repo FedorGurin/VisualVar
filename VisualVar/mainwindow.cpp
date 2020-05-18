@@ -963,7 +963,7 @@ void MainWindowVisVar::slotSaveAs()
 {
     dialog->setAcceptMode(QFileDialog::AcceptSave);
     dialog->setNameFilter(tr("XML-variants(*.xml)"));
-    dialog->show();
+    dialog->exec();
 
     QStringList fileNames = dialog->selectedFiles();
     for(auto i:fileNames)

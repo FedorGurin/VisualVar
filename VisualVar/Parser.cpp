@@ -122,7 +122,7 @@ void Parser::saveVariants(const QString &fileName,
         saveDomVariants.clear();
         QTextStream out(&file);
 
-        rootNode=saveDomVariants.createElement("data");
+        rootNode = saveDomVariants.createElement("data");
         rootNode.setAttribute("comment",    comment);
         rootNode.setAttribute("pathFile",   nameFileSend);
         rootNode.setAttribute("id_var",     id);
