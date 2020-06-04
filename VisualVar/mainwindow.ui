@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Редактор вариантов</string>
+   <string>Окно начальных условий моделирования (НУМ)</string>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonFollowStyle</enum>
@@ -41,7 +41,7 @@
      <x>0</x>
      <y>0</y>
      <width>651</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

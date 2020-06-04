@@ -806,6 +806,7 @@ void AircraftObject::loadXML(QDomElement tempNode)
     setAlfa_c(tempNode.attribute("alfa_c","0").toDouble());
     setDelta_hc(tempNode.attribute("del_hc","0").toDouble());
     setKren90(tempNode.attribute("Kren90","0").toDouble());
+    setStartEarth(tempNode.attribute("typeStart","0").toUInt());
 }
 void AircraftObject::saveXML(QDomDocument &domDocument,QDomElement &node,bool circleVariant)
 {
@@ -837,6 +838,8 @@ void AircraftObject::saveXML(QDomDocument &domDocument,QDomElement &node,bool ci
     tempNode.setAttribute("defualtMesVy","m/s");
 
     tempNode.setAttribute("prVy_Teta",prVy);
+    tempNode.setAttribute("typeStart",startEarth);
+
 
     //tempNode.setAttribute("messVy",curMessVy());
 
@@ -864,8 +867,8 @@ void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool cir
         request->append(prefixName+"Psi",       QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
         request->append(prefixName+"Tan0",      QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
         request->append(prefixName+"OnGround",  QString::number(startEarth));
-        request->append(prefixName+"Lat",       QString::number(unitAngle->convert(lon,currentUnitTransPsi,"deg")));
-        request->append(prefixName+"Lon",       QString::number(unitAngle->convert(lat,currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Lat",       QString::number(unitAngle->convert(lat,currentUnitTransPsi,"deg")));
+        request->append(prefixName+"Lon",       QString::number(unitAngle->convert(lon,currentUnitTransPsi,"deg")));
         request->append(prefixName+"Y",         QString::number(unitLength->convert(y,currentUnitTransY,"m")));
 
 #else
@@ -1612,6 +1615,7 @@ void AirTargetObject::saveXML(QDomDocument &domDocument,QDomElement &node,bool c
     tempNode.setAttribute("teta",unitAngle->convert(teta,currentUnitTransTeta,"deg"));
     tempNode.setAttribute("messTeta",curMessTeta());
     tempNode.setAttribute("defualtMesTeta","deg");
+
 
     if(circleVariant==true)
         tempNode.setAttribute("ng_z",ng_z);
