@@ -33,8 +33,7 @@ public:
     //! конструктор для создания нового объекта из меню
     cl_Scene(FormStatusBar* form,
              TypeObjectsVis* typeObjectsVis_,
-             QList<InfoObject* > *info,
-             bool circleVariant_    = false,
+             QList<InfoObject* > *info,            
              SettingVV *settingVV   = nullptr,
              QWidget *parent        = nullptr);
 
@@ -75,25 +74,20 @@ public:
     //! эта функция альтернативный способ передачи варианта на УЦВС.
     void getRequest(TCommonRequest *request,QString prefix,int num);
 
-    //! клонирование воздуного объекта
-    void cloneAirTarget(AirTargetObject *target);
+    //! клонирование воздушного объекта
+    void cloneAirObj(AirObj *target);
 
     //! клонирование нашего носителя
     void cloneAircraft(AircraftObject *aircraft_);
 
     //! клонирование наземного объекта
-    void cloneGroundTarget(GroundTargetObject *target);
-    void createNewAirTarget(QPointF);
-    void createNewGroundTarget(QPointF);
+    void cloneGroundObj(GroundObj *target);
+    void createNewAirObj(QPointF);
+    void createNewGroundObj(QPointF);
     void createNewAerodrom(QPointF);
     void createNewInfoObject(QPointF);
     void createNewBeaconObject(QPointF);
     void createNewPointRoute(QPointF);//создать новую точку в маршруте
-    //! добавить метаданные в
-    void addMetaDataToAircraft(QVector<MetaData> list);//в наш вертолет
-    //! в разработке!!!!!!!
-    void addMetaDataToAirTarget(QVector<MetaData> list){Q_UNUSED(list);}//в воздушную цель
-    void addMetaDataToGroundTarget(QVector<MetaData> list){Q_UNUSED(list);}//в наземную цель
 
     //! удалить узлы
     void deleteRoutes();
@@ -157,11 +151,11 @@ public:
     //! типы объектов
     TypeObjectsVis* typeObjectsVis;
     //! список воздушных целей
-    QList<AirTargetObject* >    airTargets;
-    QList<AirTargetObject* >    airTargetsMove;
+    QList<AirObj* >    airObj;
+    QList<AirObj* >    airObjMove;
     //! список наземных целей
-    QList<GroundTargetObject* > groundTargets;
-    QList<GroundTargetObject* > groundTargetsMove;
+    QList<GroundObj* >  groundObj;
+    QList<GroundObj* >  groundObjMove;
     //! список аэродромов
     QList<AerodromObject* >     aerodroms;
     //! список информационных точек
@@ -183,7 +177,7 @@ public:
     //! текущий уровень масштаба
     //double valueScale;
     //! признак варианта движения по кругам(false/true)
-    bool circleVariant;
+    //bool circleVariant;
     //! признак использовать ли данный вариант при отправке всех вариантов
     bool use;
     //! признак добавления новой метки пользователем

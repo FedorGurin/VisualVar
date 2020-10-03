@@ -18,8 +18,7 @@ public:
 
     //! прочитать файл с изображением карты
     bool openImageFile(QString fileNamePixmap);
-    //! прочитать файл с метаинформацией о карте
-    bool openMetaInfoFile(QString fileNameMetaInfo);
+
     //! проверить загружена ли метаинформация о карте
     bool isHaveMetaInfo();
     //! проверка загружена ли карта

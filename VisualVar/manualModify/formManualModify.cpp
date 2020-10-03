@@ -80,13 +80,13 @@ void FormManualModify::slotDoubleClickedListWidget(QListWidgetItem* item)
         if(item->text() == tr("Воздушный объект"))
         {
             QPointF pF = modelData->currentScene->aircraft->posC();
-            modelData->currentScene->createNewAirTarget(pF);
+            modelData->currentScene->createNewAirObj(pF);
 
         }
         if(item->text() == tr("Наземный объект"))
         {
             QPointF pF = modelData->currentScene->aircraft->posC();
-            modelData->currentScene->createNewGroundTarget(pF);
+            modelData->currentScene->createNewGroundObj(pF);
         }
     }
     if(modelData->currentPageIndex() == 0)
@@ -144,14 +144,14 @@ void FormManualModify::slotPushButtonClone()
         if(modelData->currentPageIndex() == 1)
         {
              ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
-             if(node->type() == GraphNode::TARGET_V)
+             if(node->type() == GraphNode::OBJ_V)
              {
-                 AirTargetObject* airtarget = static_cast<AirTargetObject*> (node);
-                 modelData->currentScene->cloneAirTarget(airtarget);
-             }else if(node->type() == GraphNode::TARGET_G)
+                 AirObj* airtarget = static_cast<AirObj*> (node);
+                 modelData->currentScene->cloneAirObj(airtarget);
+             }else if(node->type() == GraphNode::OBJ_G)
              {
-                 GroundTargetObject* groundtarget = static_cast<GroundTargetObject*> (node);
-                 modelData->currentScene->cloneGroundTarget(groundtarget);
+                 GroundObj* groundtarget = static_cast<GroundObj*> (node);
+                 modelData->currentScene->cloneGroundObj(groundtarget);
              }
         }
         //resetModelData();
@@ -167,12 +167,11 @@ void FormManualModify::slotPushButtonAdd()
        modelData->currentPageIndex()==0*/)
     {
         listWidget->clear();
-        if(modelData->currentScene->circleVariant == false)
-        {
+
             listWidget->setWindowTitle(tr("Добавить объект"));
             listWidget->addItem(new QListWidgetItem(QIcon(":/res/svg/target"),tr("Воздушный объект")));
             listWidget->addItem(new QListWidgetItem(QIcon(":/res/svg/gtarget"),tr("Наземный объект")));
-        }
+
     }
     if(modelData->currentPageIndex()==0)
     {
@@ -190,10 +189,7 @@ void FormManualModify::slotPushButtonAdd()
     }
     if(modelData->currentScene != nullptr && modelData->currentPageIndex() != 0)
     {
-        if(modelData->currentScene->circleVariant == true)
-        {
-            listWidget->close();
-        }
+
     }
 }
 void FormManualModify::slotPushButtonDelete()
@@ -225,15 +221,15 @@ void FormManualModify::slotPushButtonDelete()
         if(modelData->currentPageIndex() == 1)
         {
              ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
-             if(node->type() == GraphNode::TARGET_V)
+             if(node->type() == GraphNode::OBJ_V)
              {
-                 AirTargetObject* airtarget = static_cast<AirTargetObject*> (node);
-                 modelData->currentScene->airTargets.removeAt(modelData->currentScene->airTargets.indexOf(airtarget));
+                 AirObj* airtarget = static_cast<AirObj*> (node);
+                 modelData->currentScene->airObj.removeAt(modelData->currentScene->airObj.indexOf(airtarget));
                  delete airtarget;
-             }else if(node->type() == GraphNode::TARGET_G)
+             }else if(node->type() == GraphNode::OBJ_G)
              {
-                 GroundTargetObject* groundtarget = static_cast<GroundTargetObject*> (node);
-                 modelData->currentScene->groundTargets.removeAt(modelData->currentScene->groundTargets.indexOf(groundtarget));
+                 GroundObj* groundtarget = static_cast<GroundObj*> (node);
+                 modelData->currentScene->groundObj.removeAt(modelData->currentScene->groundObj.indexOf(groundtarget));
                  delete groundtarget;
              }
         }

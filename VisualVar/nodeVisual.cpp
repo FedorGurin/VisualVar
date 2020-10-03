@@ -1,4 +1,4 @@
-#include "NodeVisual.h"
+#include "nodeVisual.h"
 #include <QFile>
 #include <math.h>
 
@@ -808,7 +808,7 @@ void AircraftObject::loadXML(QDomElement tempNode)
     setKren90(tempNode.attribute("Kren90","0").toDouble());
     setStartEarth(tempNode.attribute("typeStart","0").toUInt());
 }
-void AircraftObject::saveXML(QDomDocument &domDocument,QDomElement &node,bool circleVariant)
+void AircraftObject::saveXML(QDomDocument &domDocument,QDomElement &node)
 {
     QDomElement tempNode=domDocument.createElement("Aircraft");
     tempNode.setAttribute("vc",unitSpeed->convert(vc,currentUnitTransV,"m/s"));
@@ -843,25 +843,14 @@ void AircraftObject::saveXML(QDomDocument &domDocument,QDomElement &node,bool ci
 
     //tempNode.setAttribute("messVy",curMessVy());
 
-    if(circleVariant==true)
-    {
-        tempNode.setAttribute("del_hc",delta_hc);
-        tempNode.setAttribute("messDelta_hc",currentDelta_hc());
-        tempNode.setAttribute("defualtMesDelta_hc","m");
 
-        tempNode.setAttribute("alfa_c",alfa_c);
-        tempNode.setAttribute("messAlfa_c",currentAlfa_c());
-        tempNode.setAttribute("defualtMesAlfa_c","deg");
-        tempNode.setAttribute("Kren90",kren90);
-    }
     tempNode.setAttribute("name",name);
     node.appendChild(tempNode);
 }
-void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool circleVariant)
+void AircraftObject::getRequest(QString prefix, TCommonRequest *request)
 {
-    if(circleVariant==false)
-    {
-#ifndef OLD_STEND
+
+
         QString prefixName = prefix;// + "INITDesArcraft.";
         request->append(prefixName+"Vist",      QString::number(unitSpeed->convert(vc,currentUnitTransV,"km/h")));
         request->append(prefixName+"Psi",       QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
@@ -871,42 +860,14 @@ void AircraftObject::getRequest(QString prefix, TCommonRequest *request,bool cir
         request->append(prefixName+"Lon",       QString::number(unitAngle->convert(lon,currentUnitTransPsi,"deg")));
         request->append(prefixName+"Y",         QString::number(unitLength->convert(y,currentUnitTransY,"m")));
 
-#else
-   QString prefixName = prefix + "INITDesArcraft.";
 
-        request->append(prefixName+"mod_Vc",QString::number(unitSpeed->convert(vc,currentUnitTransV,"m/s")));
-        request->append(prefixName+"PsiC",  QString::number(unitAngle->convert(psi,currentUnitTransPsi,"deg")));
-        request->append(prefixName+"Hight", QString::number(unitLength->convert(y,currentUnitTransY,"m")));
-        //признак установки угла тангажа/вертикальной скорости
-        if(this->prVy==true)
-        {
-            double valueVy=unitSpeed->convert(vy,currentUnitTransVy,"m/s");
-            if(valueVy>0.0)
-                valueVy+=1000.;
-            else
-                valueVy+=-1000.;
-
-            request->append(prefixName+"TettaC",QString::number(valueVy));
-        }
-        else
-            request->append(prefixName+"TettaC",QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
-
-#endif
      
-    }else
-    {
-        QString prefName = prefix + "INITDes_Arcraft.";
 
-        request->append(prefName+"del_Hc", QString::number(unitLength->convert(delta_hc,currentUnitTransDelta_hc,"m/s")));
-        request->append(prefName+"Alfa_c", QString::number(unitAngle->convert(alfa_c,currentUnitTransAlfa_c,"deg")));
-        request->append(prefName+"Kren90", QString::number(kren90));
-    }
 }
 
-void AircraftObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele, bool circleVariant)
+void AircraftObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele)
 {
-    if(circleVariant==false)
-    {
+
         //узел=вертолет
         QDomElement tempNode=domDocument.createElement("Aircraft");
         ele.appendChild(tempNode);
@@ -960,43 +921,7 @@ void AircraftObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,
         tempTextNode=domDocument.createTextNode(QString::number(lon,'g',14));
         tempNodeAircraft.appendChild(tempTextNode);
         tempNode.appendChild(tempNodeAircraft);
-    }else
-    {
-        //узел=вертолет
-        QDomElement tempNode=domDocument.createElement("Aircraft");
-        ele.appendChild(tempNode);
-        //узел=скорость вертолета
-        QDomElement tempNodeAircraft=domDocument.createElement("del_hc");
-        tempNodeAircraft.setAttribute("name",tr("Prevyshenie nad tselyu"));
-        QDomText tempTextNode=domDocument.createTextNode(QString::number(unitLength->convert(delta_hc,currentUnitTransDelta_hc,"m")));
-        tempNodeAircraft.appendChild(tempTextNode);
-        tempNode.appendChild(tempNodeAircraft);
-        //узел=курс вертолета
-        tempNodeAircraft=domDocument.createElement("alfa_c");
-        tempNodeAircraft.setAttribute("name",tr("alfa_c"));
-        tempTextNode=domDocument.createTextNode(QString::number(unitAngle->convert(alfa_c,currentUnitTransAlfa_c,"deg")));
-        tempNodeAircraft.appendChild(tempTextNode);
-        tempNode.appendChild(tempNodeAircraft);
-        //признак крена 90 градусов
-        tempNodeAircraft=domDocument.createElement("Kren90");
-        tempNodeAircraft.setAttribute("name",tr("Kren90"));
-        tempTextNode=domDocument.createTextNode(QString::number(kren90));
-        tempNodeAircraft.appendChild(tempTextNode);
-        tempNode.appendChild(tempNodeAircraft);
-        /////////////////////////////////////////////////////////////
-        //! координаты fi и lam
-        tempNodeAircraft=domDocument.createElement("lat");
-        tempNodeAircraft.setAttribute("name",tr("Shirota"));
-        tempTextNode=domDocument.createTextNode(QString::number(lat,'g',14));
-        tempNodeAircraft.appendChild(tempTextNode);
-        tempNode.appendChild(tempNodeAircraft);
 
-        tempNodeAircraft=domDocument.createElement("lon");
-        tempNodeAircraft.setAttribute("name",tr("Dolgota"));
-        tempTextNode=domDocument.createTextNode(QString::number(lon,'g',14));
-        tempNodeAircraft.appendChild(tempTextNode);
-        tempNode.appendChild(tempNodeAircraft);
-    }
 }
 
 void AircraftObject::refresh()
@@ -1102,11 +1027,11 @@ void AircraftObject::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     refresh();
     ObjectGraphNode::hoverLeaveEvent(event);
 }
-//AirTargetObject *AirTargetObject::clone()
+//AirObj *AirObj::clone()
 //{
-//    return new AirTargetObject(this,map);
+//    return new AirObj(this,map);
 //}
-AirTargetObject::AirTargetObject(AirTargetObject *airTarget,
+AirObj::AirObj(AirObj *airTarget,
                                  AircraftObject *aircraft,
                                  QGraphicsItem *parent):ObjectGraphNode(airTarget,parent)
 {
@@ -1199,7 +1124,7 @@ AirTargetObject::AirTargetObject(AirTargetObject *airTarget,
     setCode(airTarget->currentCode());
 }
 
-AirTargetObject::AirTargetObject(QString name_,
+AirObj::AirObj(QString name_,
                                  QString nameFile,
                                  QGraphicsItem *parent):ObjectGraphNode(nameFile,parent)
 {
@@ -1297,7 +1222,7 @@ AirTargetObject::AirTargetObject(QString name_,
 
     setCode(code);
 }
-void AirTargetObject::loadXML(QDomElement tempNode)
+void AirObj::loadXML(QDomElement tempNode)
 {
     setPosC(tempNode.attribute("xMap","0").toDouble(),
            tempNode.attribute("zMap","0").toDouble());
@@ -1331,104 +1256,104 @@ void AirTargetObject::loadXML(QDomElement tempNode)
     setLength(tempNode.attribute("length","0").toDouble());
     setPrCodeLength(tempNode.attribute("prCodeLen","1").toInt());
 }
-QString AirTargetObject::curMessTime()
+QString AirObj::curMessTime()
 {
     return QString("sec");
 }
 //! текущие ед. измерения
-QString AirTargetObject::curMessV()
+QString AirObj::curMessV()
 {
     if(use_russian==true)
         return currentUnitTransV->unicode_rus;
     else
         return currentUnitTransV->unicode_id;
 }
-QString AirTargetObject::curMessY()
+QString AirObj::curMessY()
 {
     if(use_russian==true)
         return currentUnitTransY->unicode_rus;
     else
         return currentUnitTransY->unicode_id;
 }
-QString AirTargetObject::curMessPsi()
+QString AirObj::curMessPsi()
 {
     if(use_russian==true)
         return currentUnitTransPsi->unicode_rus;
     else
         return currentUnitTransPsi->unicode_id;
 }
-QString AirTargetObject::curMessTeta()
+QString AirObj::curMessTeta()
 {
     if(use_russian==true)
         return currentUnitTransTeta->unicode_rus;
     else
         return currentUnitTransTeta->unicode_id;
 }
-QString AirTargetObject::curMessFi()
+QString AirObj::curMessFi()
 {
     if(use_russian==true)
         return currentUnitTransFi->unicode_rus;
     else
         return currentUnitTransFi->unicode_id;
 }
-QString AirTargetObject::curMessD()
+QString AirObj::curMessD()
 {
     if(use_russian==true)
         return currentUnitTransD->unicode_rus;
     else
         return currentUnitTransD->unicode_id;
 }
-QString AirTargetObject::curMessLength()
+QString AirObj::curMessLength()
 {
     if(use_russian==true)
         return currentUnitTransLength->unicode_rus;
     else
         return currentUnitTransLength->unicode_id;
 }
-void AirTargetObject::setCurMessV(QString value)
+void AirObj::setCurMessV(QString value)
 {
     TObjectUnit* newUnitTrans = unitSpeed->find(value);
     v = unitSpeed->convert(v,currentUnitTransV,newUnitTrans);
     currentUnitTransV = newUnitTrans;
 }
-void AirTargetObject::setCurMessY(QString value)
+void AirObj::setCurMessY(QString value)
 {
     TObjectUnit* newUnitTrans = unitLength->find(value);
     y = unitLength->convert(y,currentUnitTransY,newUnitTrans);
     currentUnitTransY = newUnitTrans;
 }
-void AirTargetObject::setCurMessPsi(QString value)
+void AirObj::setCurMessPsi(QString value)
 {
     TObjectUnit* newUnitTrans=unitAngle->find(value);
     psi=unitAngle->convert(psi,currentUnitTransPsi,newUnitTrans);
     currentUnitTransPsi=newUnitTrans;
 }
-void AirTargetObject::setCurMessTeta(QString value)
+void AirObj::setCurMessTeta(QString value)
 {
     TObjectUnit* newUnitTrans=unitAngle->find(value);
     teta=unitAngle->convert(teta,currentUnitTransTeta,newUnitTrans);
     currentUnitTransTeta=newUnitTrans;
 }
-void AirTargetObject::setCurMessFi(QString value)
+void AirObj::setCurMessFi(QString value)
 {
     TObjectUnit* newUnitTrans=unitAngle->find(value);
     fi=unitAngle->convert(fi,currentUnitTransFi,newUnitTrans);
     currentUnitTransFi=newUnitTrans;
 }
-void AirTargetObject::setCurMessD(QString value)
+void AirObj::setCurMessD(QString value)
 {
     TObjectUnit* newUnitTrans=unitLength->find(value);
     d=unitLength->convert(d,currentUnitTransD,newUnitTrans);
     currentUnitTransD=newUnitTrans;
 }
-void AirTargetObject::setCurMessLength(QString value)
+void AirObj::setCurMessLength(QString value)
 {
     TObjectUnit* newUnitTrans=unitLength->find(value);
     length=unitLength->convert(length,currentUnitTransLength,newUnitTrans);
     currentUnitTransLength=newUnitTrans;
 }
 
-void AirTargetObject::getRequest(QString prefix,TCommonRequest *request,bool circleVariant,int numIndex)
+void AirObj::getRequest(QString prefix,TCommonRequest *request,bool circleVariant,int numIndex)
 {
     if(numIndex== -1)
         numIndex = index;
@@ -1460,7 +1385,7 @@ void AirTargetObject::getRequest(QString prefix,TCommonRequest *request,bool cir
     }
 }
 
-void AirTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant)
+void AirObj::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant)
 {
     if(circleVariant==false)
     {
@@ -1576,7 +1501,7 @@ void AirTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele
         tempNode.appendChild(tempNodeAircraft);
     }
 }
-void AirTargetObject::saveXML(QDomDocument &domDocument,QDomElement &node,bool circleVariant)
+void AirObj::saveXML(QDomDocument &domDocument,QDomElement &node,bool circleVariant)
 {
     QDomElement tempNode=domDocument.createElement("AirTarget");
     tempNode.setAttribute("name",name);
@@ -1623,7 +1548,7 @@ void AirTargetObject::saveXML(QDomDocument &domDocument,QDomElement &node,bool c
     node.appendChild(tempNode);
 }
 
-void AirTargetObject::mousePressEvent (QGraphicsSceneMouseEvent* event)
+void AirObj::mousePressEvent (QGraphicsSceneMouseEvent* event)
 {
     if(event->button()==Qt::RightButton)
     {
@@ -1637,7 +1562,7 @@ void AirTargetObject::mousePressEvent (QGraphicsSceneMouseEvent* event)
     }
     ObjectGraphNode::mousePressEvent(event);
 }
-void AirTargetObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+void AirObj::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
     QPointF p=mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
     pixelXYToLatLong(p.x(),p.y(),zoom-1,lat,lon);
@@ -1649,13 +1574,13 @@ void AirTargetObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     slotEnterLeaveCur(true);
     ObjectGraphNode::mouseMoveEvent(event);
 }
-void AirTargetObject::slotMovePos()
+void AirObj::slotMovePos()
 {
     slotEnterLeaveCur(true);
     slotFi();
 
 }
-void AirTargetObject::slotIsModifyPsi()
+void AirObj::slotIsModifyPsi()
 {
     //! смещения относительно центра
     double dx=posC().x()-aircraft->posC().x();
@@ -1671,7 +1596,7 @@ void AirTargetObject::slotIsModifyPsi()
     //formSetting->setD(d);
     setFi(fi);
 }
-void AirTargetObject::setD(double value)
+void AirObj::setD(double value)
 {
     d=value;
     double tempFi=checkPI(GradToRadian(fi)+GradToRadian(KursToPsiGrad(aircraft->psi))+M_PI/2.0);
@@ -1683,7 +1608,7 @@ void AirTargetObject::setD(double value)
     pixelXYToLatLong(x,z,zoom-1,lat,lon);
     setPosC(x,z);
 }
-void AirTargetObject::slotFi()
+void AirObj::slotFi()
 {
     double tempFi=checkPI(GradToRadian(fi)+GradToRadian(KursToPsiGrad(aircraft->psi))+M_PI/2.0);
 
@@ -1697,7 +1622,7 @@ void AirTargetObject::slotFi()
     updateDToAircraft();
 }
 
-void AirTargetObject::setFi(double value)
+void AirObj::setFi(double value)
 {
     //! сохранить значение угла на цель
     fi=value;
@@ -1711,14 +1636,14 @@ void AirTargetObject::setFi(double value)
     setPosC(x,z);
     colorItem->setRowText(tr("fi=")+QString::number(fi),4);
 }
-void AirTargetObject::slotIsModifyPosition()
+void AirObj::slotIsModifyPosition()
 {
     //! при модификации курсового угла
     slotIsModifyPsi();
     //! отрисовка прямой соединяющей вертолет и цель
     slotEnterLeaveCur(true);
 }
-void AirTargetObject::slotEnterLeaveCur(bool flag)
+void AirObj::slotEnterLeaveCur(bool flag)
 {
     QPointF pointEnd=mapFromItem(itemSvg,itemSvg->transformOriginPoint());
     QPointF pointStart=mapFromItem(aircraft->itemSvg,aircraft->itemSvg->transformOriginPoint());
@@ -1732,7 +1657,7 @@ void AirTargetObject::slotEnterLeaveCur(bool flag)
     colorItemD->setVisible(flag);
     //lineToAircraftTextD->setVisible(flag);
 }
-void AirTargetObject::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
+void AirObj::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     Q_UNUSED(event);
     slotEnterLeaveCur(true);
@@ -1740,7 +1665,7 @@ void AirTargetObject::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     if(isAllInfo()==false)
         colorItem->setVisible(true);
 }
-void AirTargetObject::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
+void AirObj::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     Q_UNUSED(event);
     slotEnterLeaveCur(false);
@@ -1749,7 +1674,7 @@ void AirTargetObject::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     if(isAllInfo()==false)
         colorItem->setVisible(false);
 }
-void AirTargetObject::slotLonToX(double value)
+void AirObj::slotLonToX(double value)
 {
     lon=value;
     int pX,pZ;
@@ -1757,7 +1682,7 @@ void AirTargetObject::slotLonToX(double value)
     setPosC(pX,pZ);
 }
 
-void AirTargetObject::slotLatToZ(double value)
+void AirObj::slotLatToZ(double value)
 {
     lat=value;
     int pX,pZ;
@@ -1765,7 +1690,7 @@ void AirTargetObject::slotLatToZ(double value)
 
     setPosC(pX,pZ);
 }
-GroundTargetObject::GroundTargetObject(QString name_,QString nameFile,QGraphicsItem *parent):ObjectGraphNode(nameFile,parent)
+GroundObj::GroundObj(QString name_,QString nameFile,QGraphicsItem *parent):ObjectGraphNode(nameFile,parent)
 {
     //! имя объекта
     name=name_;
@@ -1855,7 +1780,7 @@ GroundTargetObject::GroundTargetObject(QString name_,QString nameFile,QGraphicsI
 
 }
 //! для операции клонирования
-GroundTargetObject::GroundTargetObject(GroundTargetObject   *groundTarget, /*наземная цель*/
+GroundObj::GroundObj(GroundObj   *groundTarget, /*наземная цель*/
                    AircraftObject       *aircraft,     /*носителя*/
                    QGraphicsItem        *parent):ObjectGraphNode(groundTarget,parent)
 {
@@ -1939,7 +1864,7 @@ GroundTargetObject::GroundTargetObject(GroundTargetObject   *groundTarget, /*н�
     setCode(groundTarget->currentCode());
 }
 
-void GroundTargetObject::loadXML(QDomElement tempNode)
+void GroundObj::loadXML(QDomElement tempNode)
 {
     setPosC(tempNode.attribute("xMap","0").toDouble(),
            tempNode.attribute("zMap","0").toDouble());
@@ -1969,7 +1894,7 @@ void GroundTargetObject::loadXML(QDomElement tempNode)
 #endif
 }
 
-void GroundTargetObject::saveXML(QDomDocument &domDocument,QDomElement &node)
+void GroundObj::saveXML(QDomDocument &domDocument,QDomElement &node)
 {
     QDomElement tempNode=domDocument.createElement("GroundTarget");
     tempNode.setAttribute("name",name);
@@ -2000,7 +1925,7 @@ void GroundTargetObject::saveXML(QDomDocument &domDocument,QDomElement &node)
     tempNode.setAttribute("enable",isEnable());
     node.appendChild(tempNode);
 }
-void GroundTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant)
+void GroundObj::saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant)
 {
     Q_UNUSED(circleVariant);
     //узел=вертолет
@@ -2049,7 +1974,7 @@ void GroundTargetObject::saveXMLForModel(QDomDocument &domDocument,QDomElement &
     tempNodeAircraft.appendChild(tempTextNode);
     tempNode.appendChild(tempNodeAircraft);
 }
-void GroundTargetObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
+void GroundObj::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
 //    qDebug("Right Button");
 
@@ -2064,7 +1989,7 @@ void GroundTargetObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
     }
     ObjectGraphNode::mousePressEvent(event);
 }
-void GroundTargetObject::slotIsModifyPsi()
+void GroundObj::slotIsModifyPsi()
 {
     //! смещения относительно центра
     double dx=posC().x()-aircraft->posC().x();
@@ -2104,7 +2029,7 @@ void GroundTargetObject::slotIsModifyPsi()
         x=vec0.x; z=vec0.z;
     }
 }
-void GroundTargetObject::getRequest(QString prefix,TCommonRequest *request,int numIndex)
+void GroundObj::getRequest(QString prefix,TCommonRequest *request,int numIndex)
 {
 //    if(numIndex == -1)
 //        numIndex = index;
@@ -2120,12 +2045,12 @@ void GroundTargetObject::getRequest(QString prefix,TCommonRequest *request,int n
 //    //request->append(prefixName+"Beg_num_target",QString::number(unitAngle->convert(teta,currentUnitTransTeta,"deg")));
 }
 
-void GroundTargetObject::slotIsModifyPosition()
+void GroundObj::slotIsModifyPosition()
 {
     slotIsModifyPsi();
     slotEnterLeaveCur(true);
 }
-void GroundTargetObject::slotLonToX(double value)
+void GroundObj::slotLonToX(double value)
 {
     lon=value;
     int pX,pZ;
@@ -2133,14 +2058,14 @@ void GroundTargetObject::slotLonToX(double value)
     setPosC(pX,pZ);
 }
 
-void GroundTargetObject::slotLatToZ(double value)
+void GroundObj::slotLatToZ(double value)
 {
     lat=value;
     int pX,pZ;
     latLongToPixelXY(lat,lon,zoom-1,pX,pZ);
     setPosC(pX,pZ);
 }
-void GroundTargetObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
+void GroundObj::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
     QPointF p=mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
     pixelXYToLatLong(p.x(),p.y(),zoom-1,lat,lon);
@@ -2155,15 +2080,15 @@ void GroundTargetObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     slotEnterLeaveCur(true);
     ObjectGraphNode::mouseMoveEvent(event);
 }
-void GroundTargetObject::hoverEnterEvent(QGraphicsSceneHoverEvent *)
+void GroundObj::hoverEnterEvent(QGraphicsSceneHoverEvent *)
 {
     slotEnterLeaveCur(true);
 }
-void GroundTargetObject::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
+void GroundObj::hoverLeaveEvent(QGraphicsSceneHoverEvent *)
 {
     slotEnterLeaveCur(false);
 }
-void GroundTargetObject::slotEnterLeaveCur(bool flag)
+void GroundObj::slotEnterLeaveCur(bool flag)
 {
     QLineF line(aircraft->transformOriginPoint(),
                 this->mapFromItem(aircraft,aircraft->transformOriginPoint()));

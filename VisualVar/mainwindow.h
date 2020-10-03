@@ -108,8 +108,7 @@ public slots:
     //void slotTime(double){}
     //! клонирование сцены
     void slotCloningScene(cl_Scene* s);
-    //! открыть файл с метаданными
-    void slotAttach();
+
     //! задать географию земли в случае наличия привязки к карте
     void setGeoParamOfAircraft();
     //! чтение параметров структуры географии
@@ -120,7 +119,7 @@ public slots:
     void slotExport();
     //! создание меню
     void slotCreateMenu();
-    void slotCreateMenuCircleVariant();
+   // void slotCreateMenuCircleVariant();
     void slotOpenXML();
     void slotExitProgram();
     void slotSaveAs();
@@ -131,7 +130,7 @@ public slots:
     void slotGotoLabel();
     void slotGotoLatLon(double lat,double lon);
     //! создание варианта(либо стандартного/полет по кругам)
-    void createVariant(bool circleVariant);
+    void createVariant();
     //! сохранить данные в XML
     void slotSaveXML();
     //! действия по нажатию правой кнопки на карте
@@ -262,8 +261,13 @@ private:
     GeographicLib::Geocentric* earthWGS;
     GeographicLib::Geocentric* earthPZ90;
 
-    QAction* actAddAirTarget;
-    QAction* actAddGroundTarget;
+    //! пункты меню
+    QAction* actAddAirObject;
+    QAction* actAddGroundObject;
+    QAction* actAddCloud;
+    QAction* actAddNewAreodrom;
+    QAction* actAddFog;
+
     QAction* actBtnSend;
 
     void createActions();

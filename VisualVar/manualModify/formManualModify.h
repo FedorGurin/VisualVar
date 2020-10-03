@@ -58,8 +58,8 @@ protected:
 signals:
     void createNewScene(bool);
     void cloneScene(cl_Scene*);
-    void createNewAirTarget();
-    void createNewGroundTarget();
+    void createNewAirObj();
+    void createNewGroundObj();
     void currentActiveWindow(QString);
     void signalAttach();
 private:

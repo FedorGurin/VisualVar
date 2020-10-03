@@ -46,10 +46,10 @@ win32:LIBS += -luser32
 HEADERS += globalFunc/gl_func.h \
     globalFunc/Vector3D_D.h \
     globalFunc/Matrix3D_D.h \
-    VisualVar/TypeObjectsVis.h \
-    VisualVar/RecentOpenFiles.h \
-    VisualVar/Parser.h \
-    VisualVar/MessureUnits.h \
+    VisualVar/typeObjectsVis.h \
+    VisualVar/recentOpenFiles.h \
+    VisualVar/parser.h \
+    VisualVar/messureUnits.h \
     VisualVar/globalTypeData.h \
     VisualVar/geographyMapping.h \
     VisualVar/formzoompanel.h \
@@ -60,15 +60,15 @@ HEADERS += globalFunc/gl_func.h \
     VisualVar/formsettingforaircraft.h \
     VisualVar/formboxarea.h \
     VisualVar/dialogsavecurvar.h \
-    VisualVar/NodeVisual.h \
+    VisualVar/nodeVisual.h \
     VisualVar/mainwindow.h \  
     globalFunc/UnitsMeasure/IUnits.h \ 
-    VisualVar/manualModify/FormManualModify.h \
-    VisualVar/manualModify/ModelDataTable.h \  
+    VisualVar/manualModify/formManualModify.h \
+    VisualVar/manualModify/modelDataTable.h \
     VisualVar/formsettingaerodrom.h \
     VisualVar/formsettingbeaconrsbn.h \
     VisualVar/formsettingbeaconvor.h \
-    VisualVar/manualModify/DelegateTableManual.h \
+    VisualVar/manualModify/delegateTableManual.h \
     VisualVar/SettingVV.h \   
     VisualVar/gscene.h \
     VisualVar/gview.h \
@@ -143,7 +143,7 @@ FORMS += VisualVar/mainwindow.ui \
     VisualVar/formsettingforaircraft.ui \
     VisualVar/formboxarea.ui \
     VisualVar/dialogsavecurvar.ui \  
-    VisualVar/manualModify/FormManualModify.ui \
+    VisualVar/manualModify/formManualModify.ui \
     VisualVar/formsettingaerodrom.ui \
     VisualVar/formsettingbeaconrsbn.ui \
     VisualVar/formsettingbeaconvor.ui \
@@ -157,10 +157,10 @@ SOURCES += globalFunc/gl_func.cpp \
     main.cpp \    
     globalFunc/Vector3D_D.cpp \
     globalFunc/Matrix3D_D.cpp \
-    VisualVar/TypeObjectsVis.cpp \
-    VisualVar/RecentOpenFiles.cpp \
-    VisualVar/Parser.cpp \
-    VisualVar/MessureUnits.cpp \
+    VisualVar/typeObjectsVis.cpp \
+    VisualVar/recentOpenFiles.cpp \
+    VisualVar/parser.cpp \
+    VisualVar/messureUnits.cpp \
     VisualVar/geographyMapping.cpp \
     VisualVar/formzoompanel.cpp \
     VisualVar/formtable.cpp \
@@ -173,12 +173,12 @@ SOURCES += globalFunc/gl_func.cpp \
     VisualVar/NodeVisual.cpp \
     VisualVar/mainwindow.cpp \    
     globalFunc/UnitsMeasure/IUnits.cpp \   
-    VisualVar/manualModify/FormManualModify.cpp \
-    VisualVar/manualModify/ModelDataTable.cpp \   
+    VisualVar/manualModify/formManualModify.cpp \
+    VisualVar/manualModify/modelDataTable.cpp \
     VisualVar/formsettingaerodrom.cpp \
     VisualVar/formsettingbeaconrsbn.cpp \
     VisualVar/formsettingbeaconvor.cpp \
-    VisualVar/manualModify/DelegateTableManual.cpp \
+    VisualVar/manualModify/delegateTableManual.cpp \
     VisualVar/SettingVV.cpp \    
     VisualVar/gscene.cpp \
     VisualVar/gview.cpp \

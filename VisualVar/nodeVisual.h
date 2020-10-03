@@ -33,72 +33,6 @@
 namespace VisualVariant
 {
 
-class MetaParam
-{
-public:
-    enum TType{
-        REAL,
-        INT
-    };
-
-    MetaParam()
-    {
-
-    }
-
-    MetaParam(QDomElement root)
-    {
-        name=root.firstChildElement("name").text();
-        qDebug("name_meta_data=%s\n",qPrintable(name));
-        tagXML=root.firstChildElement("tag").text();
-        value_default=root.firstChildElement("value_default").text();
-        value=value_default;
-        QString temp=root.firstChildElement("type").text();
-        if(temp=="int")
-            type=INT;
-        else
-            type=REAL;
-    }
-
-    QString name;
-    QString tagXML;
-    TType type;
-    QString value_default;
-    QString value;
-};
-
-//! класс описания метаданных
-class MetaData
-{
-public:
-
-    MetaData()
-    {
-        //name=name_;
-        param.clear();
-    }
-    void readFromNode(QDomElement root)
-    {
-        qDebug("read_meta_data\n");
-        name=root.text();
-        qDebug("name_man=%s\n",qPrintable(name));
-        QDomElement ele=root.firstChildElement("metaparam");
-        while(!ele.isNull())
-        {
-            param.push_back(MetaParam(ele));
-            ele=ele.nextSiblingElement("metaparam");
-        }
-
-    }
-
-    void addParam(MetaParam param_)
-    {
-        param.push_back(param_);
-    }
-
-    QVector<MetaParam> param;
-    QString name;
-};
 
 class ColorItem:public QGraphicsRectItem
 {
@@ -132,8 +66,8 @@ public:
     enum TypeGraphNode
     {
         MAP         = UserType+1,
-        TARGET_G    = UserType+2,
-        TARGET_V    = UserType+3,
+        OBJ_G    = UserType+2,
+        OBJ_V    = UserType+3,
         AERODROM    = UserType+4,
         BEACON_RSBN = UserType+5,
         BEACON_VOR  = UserType+6,
@@ -501,10 +435,7 @@ public:
 
     double currentPsi(){return psi;}
 
-    bool isMetaData()
-    {
-        return !metaData.isEmpty();
-    }
+
     //! показать траекторию
     void setVisibleTraj(bool value);
     //! текущее время
@@ -522,8 +453,7 @@ public:
     QVector<QGraphicsLineItem* > traj;
     //! имя файла
     QString fileName;
-    //! список метаданных
-    QVector<MetaData> metaData;
+
     //! бинарные метаданные
     QByteArray binMetaData;
     //! объект для преобразования курса
@@ -589,11 +519,11 @@ public:
         m_type = t;
     }
     //! сохранить свои параметры в файл
-    virtual void saveXML(QDomDocument &domDocument,QDomElement &ele,bool circleVariant);
+    virtual void saveXML(QDomDocument &domDocument,QDomElement &ele);
     //! сохранить данные в xml понятный VxWorks
-    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant);
+    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele);
     //! формирование запросов
-    void getRequest(QString prefix,TCommonRequest *request,bool circleVariant=false);
+    void getRequest(QString prefix,TCommonRequest *request);
     //! загрузка данных из файла XML
     void loadXML(QDomElement node);
     //! вращение объекта
@@ -839,17 +769,17 @@ private:
 };
 
 //! класс воздушная цель
-class AirTargetObject:public ObjectGraphNode
+class AirObj:public ObjectGraphNode
 {
     Q_OBJECT
 public:
     //! обычный конструктор
-    AirTargetObject(QString name_,          /* имя объекта*/
+    AirObj(QString name_,          /* имя объекта*/
                     QString nameFile,       /* имя файла  */
                     QGraphicsItem *parent); /* указатель на родителя*/
 
     //! для операции клонирования
-    AirTargetObject(AirTargetObject *airTarget, /* воздушная цель*/
+    AirObj(AirObj *airTarget, /* воздушная цель*/
                     AircraftObject  *aircraft,  /* носителя*/
                     QGraphicsItem   *parent);   /* указатель на родителя*/
 
@@ -1066,7 +996,7 @@ public slots:
     void slotFi();
     void slotMovePos();
 
-    virtual int type() const{return TARGET_V;}
+    virtual int type() const{return OBJ_V;}
 signals:
     void isModifyPosition(QPointF,TGeoPoint);
 protected:
@@ -1104,17 +1034,17 @@ private:
 };
 
 //! класс наземная цель
-class GroundTargetObject:public ObjectGraphNode
+class GroundObj:public ObjectGraphNode
 {
      Q_OBJECT
 public:
     //! обычный констурктор
-    GroundTargetObject(QString name_,
+    GroundObj(QString name_,
                        QString nameFile,
                        QGraphicsItem *parent);
 
     //! для операции клонирования
-    GroundTargetObject(GroundTargetObject   *groundTarget, /*наземная цель*/
+    GroundObj(GroundObj   *groundTarget, /*наземная цель*/
                        AircraftObject       *aircraft,     /*носителя*/
                        QGraphicsItem        *parent);      /*ссылка на родительский элемент*/
 
@@ -1147,7 +1077,7 @@ public:
     //double currentV(){return v;}
     virtual int type() const
     {
-        return TARGET_G;
+        return OBJ_G;
     }
     //! формирование запросов
     void getRequest(QString prefix,TCommonRequest *request,int numIndex=-1);
