@@ -1,4 +1,4 @@
-#include "ModelDataTable.h"
+#include "modelDataTable.h"
 #include <QIcon>
 
 namespace VisualVariant

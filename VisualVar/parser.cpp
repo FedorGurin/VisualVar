@@ -5,29 +5,22 @@
  *      Author: Fedor
  */
 
-#include "Parser.h"
+#include "parser.h"
 #include <QApplication>
 namespace VisualVariant
 {
 #define DATA_FILE "None"
 #define VARIANT_FILE "data.xml"
 
-extern QWidget *mygroup;
-
 Parser::Parser(FormStatusBar* form,QVector<cl_Scene* > *scenes_,TypeObjectsVis *typeObjectsVis_)
 {
-    // TODO Auto-generated constructor stub
-    //openFileVariants(qApp->applicationDirPath()+"/"+QString(VARIANT_FILE));
     domVariants.clear();
     domVariantsForModel.clear();
 
     scenes          = scenes_;
     statusForm      = form;
     typeObjectsVis  = typeObjectsVis_;
-
 }
-
-
 void Parser::sortScenesObjects()
 {
     scenesNU.clear();

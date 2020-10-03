@@ -1,4 +1,4 @@
-#include "SettingVV.h"
+#include "settingVV.h"
 #include "../globalFunc/gl_func.h"
 
 

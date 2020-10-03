@@ -1,4 +1,4 @@
-#include "TypeObjectsVis.h"
+#include "typeObjectsVis.h"
 #include <QFile>
 #include <QMessageBox>
 #include <QDomElement>

@@ -1991,20 +1991,17 @@ void GroundObj::mousePressEvent(QGraphicsSceneMouseEvent* event)
 }
 void GroundObj::slotIsModifyPsi()
 {
-    //! смещения относительно центра
-    double dx=posC().x()-aircraft->posC().x();
-    double dy=posC().y()-aircraft->posC().y();
-    //! дальность
-    d=sqrt(dx*dx+dy*dy)*groundResolution(lat,zoom-1);
-    d=unitLength->convert(d,"m",currentUnitTransD);
-    ///////////////////////////////////////////////////
+    //! дальность  смещения относительно центра
+    QPointF v = posC() - aircraft->posC();
+    float r = QPointF::dotProduct(posC(),aircraft->posC());
+
+    d =  r* groundResolution(lat,zoom - 1);
+    d = unitLength->convert(d,"m",currentUnitTransD);
 
     //! расчет координат НЦ относительно модельной СК
-    //x=dx*groundResolution(lat,zoom-1);
-    //z=-dy*groundResolution(lat,zoom-1);
-    x=-dy*groundResolution(lat,zoom-1);
-    z=dx*groundResolution(lat,zoom-1);
-    if(sks==1)
+    x = -v.y() * groundResolution(lat,zoom -1);
+    z =  v.x() * groundResolution(lat,zoom -1);
+    if(sks == 1)
     {
         //! положение НЦ относительно модельной
         glm::vec3 vec=glm::vec3(x,0.0,z);
@@ -2062,12 +2059,12 @@ void GroundObj::slotLatToZ(double value)
 {
     lat=value;
     int pX,pZ;
-    latLongToPixelXY(lat,lon,zoom-1,pX,pZ);
+    latLongToPixelXY(lat,lon,zoom - 1,pX,pZ);
     setPosC(pX,pZ);
 }
 void GroundObj::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
-    QPointF p=mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
+    QPointF p = mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
     pixelXYToLatLong(p.x(),p.y(),zoom-1,lat,lon);
 
     formSetting->setLat(lat);
@@ -2159,7 +2156,7 @@ void AerodromObject::hoverLeaveEvent(QGraphicsSceneHoverEvent* event)
 }
 void AerodromObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
-    QPointF p=mapToItem(map,this->transformOriginPoint());
+    QPointF p = mapToItem(map,this->transformOriginPoint());
 
 //    xMap=p.x();
 //    zMap=p.y();
@@ -2195,7 +2192,7 @@ void RouteObject::refreshLine()
 void RouteObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 {
     QPointF p=mapToScene(itemSvg->transformOriginPoint());
-    pixelXYToLatLong(p,zoom-1,lat,lon);
+    pixelXYToLatLong(p,zoom - 1,lat,lon);
 
     refresh();
     ObjectGraphNode::mouseMoveEvent(event);
@@ -2232,11 +2229,8 @@ double RouteObject::calcAllRoute()
 }
 void RouteObject::calcD()
 {
-    //! смещения относительно центра
-    double dx=posC().x()-routeRight->posC().x();
-    double dy=posC().y()-routeRight->posC().y();
     //! дальность
-    d=sqrt(dx*dx+dy*dy)*groundResolution(lat,zoom-1);
+    d = QPointF::dotProduct(posC(),routeRight->posC()) * groundResolution(lat,zoom - 1);
 }
 
 }

@@ -3,7 +3,7 @@
 #include <QComboBox>
 #include <QLineEdit>
 
-#include "DelegateTableManual.h"
+#include "delegateTableManual.h"
 
 //#define OLD_STEND
 namespace VisualVariant

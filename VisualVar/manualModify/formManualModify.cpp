@@ -1,4 +1,4 @@
-#include "FormManualModify.h"
+#include "formManualModify.h"
 #include "ui_FormManualModify.h"
 #include <QRegExpValidator>
 #include <QKeyEvent>
