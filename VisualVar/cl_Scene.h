@@ -84,6 +84,8 @@ public:
     void cloneGroundObj(GroundObj *target);
     void createNewAirObj(QPointF);
     void createNewGroundObj(QPointF);
+    void createNewCloud(QPointF);
+    void createNewFog(QPointF);
     void createNewAerodrom(QPointF);
     void createNewInfoObject(QPointF);
     void createNewBeaconObject(QPointF);

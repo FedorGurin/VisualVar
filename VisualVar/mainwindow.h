@@ -207,7 +207,7 @@ private:
     QString z_model;
 
     //! текущая ссылка на объект scene
-    cl_Scene *currentScenes;
+    cl_Scene *curScenes;
     //! преобразование ед. измерения
     //ConvertUnitsMeasure *convertor;
     //! буффер с данными

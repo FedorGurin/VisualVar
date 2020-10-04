@@ -28,7 +28,7 @@
 #include "../mppm/CommonEngineData.h"
 #include "geographyMapping.h"
 #include "formsettingaerodrom.h"
-#include "SettingVV.h"
+#include "settingVV.h"
 
 namespace VisualVariant
 {
@@ -53,7 +53,7 @@ private:
 class GraphNode:public QGraphicsItem,public QObject
 {
 public:
-    GraphNode(QGraphicsItem *parent=0):QGraphicsItem(parent)
+    GraphNode(QGraphicsItem *parent = 0):QGraphicsItem(parent)
     {
         //! координаты положения объекта в географической СК
         lat         = 0;
@@ -65,20 +65,22 @@ public:
     }
     enum TypeGraphNode
     {
-        MAP         = UserType+1,
-        OBJ_G    = UserType+2,
-        OBJ_V    = UserType+3,
-        AERODROM    = UserType+4,
-        BEACON_RSBN = UserType+5,
-        BEACON_VOR  = UserType+6,
-        AIRCRAFT    = UserType+8,
-        UNSET       = UserType+7,
-        SYSCOORD    = UserType+9,
-        INFO        = UserType+10,
-        ROUTE       = UserType+11,
-        POINT       = UserType+12,
-        PPM         = UserType+13,
-        LABEL       = UserType+14
+        E_MAP         = UserType + 1,
+        E_OBJ_G       = UserType + 2,
+        E_OBJ_V       = UserType + 3,
+        E_AERODROM    = UserType + 4,
+        E_BEACON_RSBN = UserType + 5,
+        E_BEACON_VOR  = UserType + 6,
+        E_AIRCRAFT    = UserType + 8,
+        E_UNSET       = UserType + 7,
+        E_SYSCOORD    = UserType + 9,
+        E_INFO        = UserType + 10,
+        E_ROUTE       = UserType + 11,
+        E_POINT       = UserType + 12,
+        E_PPM         = UserType + 13,
+        E_LABEL       = UserType + 14,
+        E_CLOUD       = UserType + 15,
+        E_FOG         = UserType + 16
     };
     //! координаты положения объекта в географической СК
     double lat;
@@ -119,7 +121,7 @@ public:
     }
     virtual int type() const
     {
-        return UNSET;
+        return E_UNSET;
     }
     //! признак для выбора единиц измерения
     bool use_russian;
@@ -256,7 +258,7 @@ public:
     }
     virtual int type() const
     {
-        return MAP;
+        return E_MAP;
     }
     TypeMAP     isTypeMap(){return typeMap;}
     QString     strTypeMap();
@@ -553,12 +555,10 @@ public:
     double currentV()       {return vc          ;}
     double currentY()       {return y           ;}
     double currentTeta()    {return teta        ;}
-    double currentDelta_hc(){return delta_hc    ;}
-    double currentAlfa_c()  {return alfa_c      ;}
+
     double currentVy()      {return vy          ;}
     bool currentStart()     {return startEarth  ;}
     bool currentPrVy()      {return prVy        ;}
-    bool currentKren90()    {return kren90      ;}
 
     //! текущие ед. измерения порядок числа
     QString curMessV();
@@ -685,14 +685,7 @@ public slots:
         teta=value;
         formSetting->setTeta(teta);
     }
-    void setDelta_hc(double delta_hc_)
-    {
-        delta_hc=delta_hc_;
-    }
-    void setAlfa_c(double alfa_c_)
-    {
-        alfa_c=alfa_c_;
-    }
+
     void setY(double value)
     {
         y=value;
@@ -726,10 +719,7 @@ public slots:
                                     QString::number(formSetting->currentVy())+" "+
                                     formSetting->currentMessureVy(),2);
     }
-    void setKren90(bool value)
-    {
-        kren90=value;
-    }
+
     bool isStartEarth()
     {
         return startEarth;
@@ -756,16 +746,14 @@ private:
     double y;           //! высота
     double vy;          //! вертикальная скорость
     bool   prVy;        //! признак, что задаем параметров teta, либо угол тагнажа или вертикальную скорость
-    double delta_hc;    //! превышение над целью
-    double alfa_c;      //! угол атаки на маневрирующую цель
-    int kren90;         //! крен 90 градусов
+
     //! признак старта с земли(true - с земли, false - воздух)
     bool startEarth;
 
     double x_ut = 0.; // координаты относительно начала координат
     double z_ut = 0.; //
 
-    TypeGraphNode m_type = AIRCRAFT;
+    TypeGraphNode m_type = E_AIRCRAFT;
 };
 
 //! класс воздушная цель
@@ -996,7 +984,7 @@ public slots:
     void slotFi();
     void slotMovePos();
 
-    virtual int type() const{return OBJ_V;}
+    virtual int type() const{return E_OBJ_V;}
 signals:
     void isModifyPosition(QPointF,TGeoPoint);
 protected:
@@ -1077,7 +1065,7 @@ public:
     //double currentV(){return v;}
     virtual int type() const
     {
-        return OBJ_G;
+        return E_OBJ_G;
     }
     //! формирование запросов
     void getRequest(QString prefix,TCommonRequest *request,int numIndex=-1);
@@ -1275,10 +1263,89 @@ public:
     }
     virtual int type() const
     {
-        return SYSCOORD;
+        return E_SYSCOORD;
     }
 };
 
+////! класс облачности
+//class CloudObject:public ObjectGraphNode
+//{
+//     Q_OBJECT
+//public:
+//    CloudObject(QString name,int num,QGraphicsItem *parent):ObjectGraphNode(name,parent)
+//    {
+//        setScale(0.1);
+//        setAcceptHoverEvents(true);
+//        d=0.0;fi=0.0;
+
+//        numIndex=num;
+
+//        lineToAircraft=new QGraphicsLineItem(QLineF(0.0,0.0,10.0,10.0),this);
+//        colorItemD=new ColorItem(lineToAircraft);
+//        colorItemD->setScale(10);
+//        colorItemD->setRows(1);
+//        colorItemD->setRowText("d="+QString::number(d),0);
+
+//        QPen penA(Qt::SolidLine);
+//        penA.setColor(Qt::gray);
+//        lineToAircraft->setPen(penA);
+
+//        formSetting=new FormSettingAerodrom();
+//        formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
+
+//    }
+// virtual void updateDToAircraft()
+//    {
+//        //пересчет линии до вертолета
+//        if(lineToAircraft->isVisible()){
+//            QPointF pointEnd=mapFromItem(itemSvg,itemSvg->transformOriginPoint());
+//            QPointF pointStart=mapFromItem(aircraft->itemSvg,aircraft->itemSvg->transformOriginPoint());
+//            QLineF line(pointStart,pointEnd);
+//            lineToAircraft->setLine(line);
+//        }
+//    }
+//protected:
+
+//    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
+//    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
+//    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+//    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+//public:
+//    void setAircraft(AircraftObject *air)
+//    {
+//        aircraft=air;
+//        connect(aircraft,SIGNAL(isModifyPsi()),this,SLOT(slotIsModifyPsi()));
+//        connect(aircraft,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this,SLOT(slotIsModifyPosition()));
+//        connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
+//    }
+////signals:
+//    /*void isModifyPsi(void);
+//    void isModifyPosition(QPointF,QPointF);
+//    void sigHoverEnterEvent(bool);*/
+
+//    FormSettingAerodrom *formSetting;
+//    virtual int type() const
+//    {
+//        return E_AERODROM;
+//    }
+//signals:
+//     void isModifyPosition(QPointF,TGeoPoint);
+//public slots:
+//    void slotIsModifyPsi(void);
+//    void slotIsModifyPosition();
+//    void slotEnterLeaveCur(bool);
+
+//private:
+//     AircraftObject *aircraft;
+
+//     QGraphicsLineItem *lineToAircraft;
+//     ColorItem *colorItemD;
+
+//     int numIndex;
+
+//     double d;
+//     double fi;
+//};
 
 //! класс аэродрома
 class AerodromObject:public ObjectGraphNode
@@ -1339,7 +1406,7 @@ public:
     FormSettingAerodrom *formSetting;
     virtual int type() const
     {
-        return AERODROM;
+        return E_AERODROM;
     }
 signals:
      void isModifyPosition(QPointF,TGeoPoint);
@@ -1439,7 +1506,7 @@ public:
 public:
     virtual int type() const
     {
-        return LABEL;
+        return E_LABEL;
     }
 private:
     QString name;
@@ -1456,7 +1523,7 @@ public:
     }
     virtual int type() const
     {
-        return INFO;
+        return E_INFO;
     }
 };
 //! класс радиомаяк
@@ -1469,7 +1536,7 @@ public:
     }
     virtual int type() const
     {
-        return BEACON_RSBN;
+        return E_BEACON_RSBN;
     }
 };
 class RouteObject:public ObjectGraphNode
@@ -1567,7 +1634,7 @@ public:
     }
     virtual int type() const
     {
-        return ROUTE;
+        return E_ROUTE;
     }
 protected:
 
@@ -1591,7 +1658,7 @@ public:
     }
     virtual int type() const
     {
-        return PPM;
+        return E_PPM;
     }
 };
 //! вертикальная шкала для отображение высоты у объектов

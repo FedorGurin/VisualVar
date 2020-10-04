@@ -144,11 +144,11 @@ void FormManualModify::slotPushButtonClone()
         if(modelData->currentPageIndex() == 1)
         {
              ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
-             if(node->type() == GraphNode::OBJ_V)
+             if(node->type() == GraphNode::E_OBJ_V)
              {
                  AirObj* airtarget = static_cast<AirObj*> (node);
                  modelData->currentScene->cloneAirObj(airtarget);
-             }else if(node->type() == GraphNode::OBJ_G)
+             }else if(node->type() == GraphNode::E_OBJ_G)
              {
                  GroundObj* groundtarget = static_cast<GroundObj*> (node);
                  modelData->currentScene->cloneGroundObj(groundtarget);
@@ -221,12 +221,12 @@ void FormManualModify::slotPushButtonDelete()
         if(modelData->currentPageIndex() == 1)
         {
              ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
-             if(node->type() == GraphNode::OBJ_V)
+             if(node->type() == GraphNode::E_OBJ_V)
              {
                  AirObj* airtarget = static_cast<AirObj*> (node);
                  modelData->currentScene->airObj.removeAt(modelData->currentScene->airObj.indexOf(airtarget));
                  delete airtarget;
-             }else if(node->type() == GraphNode::OBJ_G)
+             }else if(node->type() == GraphNode::E_OBJ_G)
              {
                  GroundObj* groundtarget = static_cast<GroundObj*> (node);
                  modelData->currentScene->groundObj.removeAt(modelData->currentScene->groundObj.indexOf(groundtarget));
@@ -281,14 +281,14 @@ void FormManualModify::slotPushButtonBack()
     ui->lineEditPath->setText(modelData->path);
     if(modelData->currentPageIndex() == 2)
     {
-        ui->pushButtonAdd->setEnabled(false);
+        ui->pushButtonAdd   ->setEnabled(false);
         ui->pushButtonDelete->setEnabled(false);
-        ui->pushButtonClone->setEnabled(false);
+        ui->pushButtonClone ->setEnabled(false);
     }else
     {
-        ui->pushButtonAdd->setEnabled(true);
+        ui->pushButtonAdd   ->setEnabled(true);
         ui->pushButtonDelete->setEnabled(true);
-        ui->pushButtonClone->setEnabled(true);
+        ui->pushButtonClone ->setEnabled(true);
     }
 }
 void FormManualModify::deleteScene(int)
@@ -305,7 +305,7 @@ void FormManualModify::resetModelData(QModelIndex index)
 }
 void FormManualModify::slotKeyboardDel()
 {
-    QItemSelectionModel* select=ui->tableView->selectionModel();
+    QItemSelectionModel* select = ui->tableView->selectionModel();
     QModelIndexList list = select->selectedRows(0);
     for(auto i:list)
     {
@@ -324,14 +324,14 @@ void FormManualModify::slotKeyboardDel()
 }
 void FormManualModify::slotKeyboardInsert()
 {
-    QItemSelectionModel* select=ui->tableView->selectionModel();
-    QModelIndexList list=select->selectedRows(0);
+    QItemSelectionModel* select = ui->tableView->selectionModel();
+    QModelIndexList list = select->selectedRows(0);
     for(auto i:list)
     {
         if(modelData->currentPageIndex() == 0)
         {
             cl_Scene* scene = static_cast<cl_Scene*>(i.internalPointer());
-            scene->use=true;
+            scene->use = true;
         }
         if(modelData->currentPageIndex() == 1)
         {

@@ -33,7 +33,7 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
     {
         GraphNode* node = static_cast<GraphNode*>(index.internalPointer());
 
-        if(node->type() == GraphNode::AIRCRAFT)
+        if(node->type() == GraphNode::E_AIRCRAFT)
         {
             QComboBox *comboBox = new QComboBox(parent);
             QStringList* list = nullptr;
@@ -54,7 +54,7 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
             connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(commitAndCloseEditorComboBox()));
             return comboBox;
         }
-        else if(node->type() == GraphNode::OBJ_V)
+        else if(node->type() == GraphNode::E_OBJ_V)
         {
             QComboBox *comboBox = new QComboBox(parent);
             QStringList* list = nullptr;
@@ -72,7 +72,7 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
             connect(comboBox,SIGNAL(currentIndexChanged(int)),this,SLOT(commitAndCloseEditorComboBox()));
             return comboBox;
         }
-        else if(node->type() == GraphNode::OBJ_G)
+        else if(node->type() == GraphNode::E_OBJ_G)
         {
             QComboBox *comboBox = new QComboBox(parent);
             QStringList* list = nullptr;
@@ -117,7 +117,7 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
     if(index.column() == columnIndex && pageIndex==2)
     {
         GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
-        if(node->type()==GraphNode::AIRCRAFT)
+        if(node->type()==GraphNode::E_AIRCRAFT)
         {
 
             if(index.row()==4 )
@@ -141,7 +141,7 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
                 return spinBox;
             }
         }
-        if(node->type() == GraphNode::OBJ_V)
+        if(node->type() == GraphNode::E_OBJ_V)
         {
             if(index.row() == 6)
             {
@@ -172,7 +172,7 @@ QWidget* DelegateTableManual::createEditor(QWidget *parent,
                 return spinBox;
             }
         }
-        if(node->type() == GraphNode::OBJ_G)
+        if(node->type() == GraphNode::E_OBJ_G)
         {
             if(index.row() == 2)
             {
@@ -222,15 +222,15 @@ void DelegateTableManual::setEditorData(QWidget *editor,
     {
         GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
 
-        if(node->type()==GraphNode::AIRCRAFT && index.row()!=5)
+        if(node->type()==GraphNode::E_AIRCRAFT && index.row()!=5)
         {
             QString value=index.model()->data(index,Qt::DisplayRole).toString();
             QComboBox *comboBox = qobject_cast<QComboBox*>(editor);
             int indexInCB=comboBox->findText(value);
             if(indexInCB!=-1)
                 comboBox->setCurrentIndex(indexInCB);
-        }else if((node->type()==GraphNode::OBJ_V && index.row()!=6 && index.row()!=8 )||
-                 (node->type()==GraphNode::OBJ_G && index.row()!=2))
+        }else if((node->type()==GraphNode::E_OBJ_V && index.row()!=6 && index.row()!=8 )||
+                 (node->type()==GraphNode::E_OBJ_G && index.row()!=2))
         {
             QString value=index.model()->data(index,Qt::DisplayRole).toString();
             QComboBox *comboBox=qobject_cast<QComboBox*>(editor);
@@ -243,11 +243,11 @@ void DelegateTableManual::setEditorData(QWidget *editor,
         QString value=index.model()->data(index,Qt::DisplayRole).toString();
         QLineEdit *lineEdit=qobject_cast<QLineEdit*>(editor);
         lineEdit->setText(value);
-    }else if(index.column()==columnIndex && pageIndex==2)
+    }else if(index.column() == columnIndex && pageIndex==2)
     {
-        GraphNode* node=static_cast<GraphNode*>(index.internalPointer());
+        GraphNode* node = static_cast<GraphNode*>(index.internalPointer());
 
-        if(node->type()==GraphNode::AIRCRAFT)
+        if(node->type() == GraphNode::E_AIRCRAFT)
         {
 
             if(index.row()==4  )
@@ -266,7 +266,7 @@ void DelegateTableManual::setEditorData(QWidget *editor,
                 spinBox->setValue(value);
             }
         }
-        if(node->type()==GraphNode::OBJ_V)
+        if(node->type()==GraphNode::E_OBJ_V)
         {
             if(index.row()==6)
             {
@@ -290,7 +290,7 @@ void DelegateTableManual::setEditorData(QWidget *editor,
                 spinBox->setValue(value);
             }
         }
-        if(node->type()==GraphNode::OBJ_G)
+        if(node->type()==GraphNode::E_OBJ_G)
         {
             if(index.row()==2)
             {
@@ -341,10 +341,10 @@ void DelegateTableManual::setModelData(QWidget *editor,
     {
         GraphNode* node = static_cast<GraphNode*>(index.internalPointer());
 
-        if((node->type() == GraphNode::AIRCRAFT && index.row()!=5) ||
+        if((node->type() == GraphNode::E_AIRCRAFT && index.row()!=5) ||
            //(node->type()==GraphNode::AIRCRAFT && index.row()!=2 && currentScene->circleVariant==true) ||
-           (node->type() == GraphNode::OBJ_V && index.row()!=6 && index.row()!=8 )||
-           (node->type() == GraphNode::OBJ_G && index.row()!=2))
+           (node->type() == GraphNode::E_OBJ_V && index.row()!=6 && index.row()!=8 )||
+           (node->type() == GraphNode::E_OBJ_G && index.row()!=2))
         {
             QComboBox *comboBox = qobject_cast<QComboBox*>(editor);
 
@@ -355,7 +355,7 @@ void DelegateTableManual::setModelData(QWidget *editor,
     {
         GraphNode* node = static_cast<GraphNode*>(index.internalPointer());
 
-        if(node->type() == GraphNode::AIRCRAFT)
+        if(node->type() == GraphNode::E_AIRCRAFT)
         {
 
             if(index.row() == 4 )
@@ -378,7 +378,7 @@ void DelegateTableManual::setModelData(QWidget *editor,
                 model->setData(index,value);
             }
         }
-        if(node->type() == GraphNode::OBJ_V)
+        if(node->type() == GraphNode::E_OBJ_V)
         {
             if(index.row() == 6)
             {
@@ -406,7 +406,7 @@ void DelegateTableManual::setModelData(QWidget *editor,
                 model->setData(index,value);
             }
         }
-        if(node->type() == GraphNode::OBJ_G)
+        if(node->type() == GraphNode::E_OBJ_G)
         {
             if(index.row() == 2)
             {

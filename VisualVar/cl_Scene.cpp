@@ -254,6 +254,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     groundObj.clear();
     aerodroms.clear();
     routeObjects.clear();
+
     //! значения по умолчанию
     allInfoObjects      = false;
     labelObjects        = nullptr;
@@ -314,7 +315,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     aircraft->map = map;
 
     //! создаем двигающийся объект
-    aircraftMove=new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft_move",map);
+    aircraftMove = new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft_move",map);
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
     aircraftMove->setZValue(2);
@@ -434,7 +435,7 @@ void cl_Scene::saveToXMLForModel(QDomDocument &domDocument,QDomElement &node)
 
    aircraft->saveXMLForModel(domDocument,tempNode);
    QDomElement eleNode=domDocument.createElement("NumberOfAirTarget");
-   domTextVar=domDocument.createTextNode(QString::number(airObj.size()));
+   domTextVar = domDocument.createTextNode(QString::number(airObj.size()));
    eleNode.appendChild(domTextVar);
    tempNode.appendChild(eleNode);
    //! сохраним параметры воздушный целей
@@ -443,8 +444,8 @@ void cl_Scene::saveToXMLForModel(QDomDocument &domDocument,QDomElement &node)
        if(i->isEnable() == true)
            i->saveXMLForModel(domDocument,tempNode);
    }
-   eleNode=domDocument.createElement("NumberOfGroundTarget");
-   domTextVar=domDocument.createTextNode(QString::number(groundObj.size()));
+   eleNode      = domDocument.createElement("NumberOfGroundTarget");
+   domTextVar   = domDocument.createTextNode(QString::number(groundObj.size()));
    eleNode.appendChild(domTextVar);
    tempNode.appendChild(eleNode);
 
@@ -627,8 +628,8 @@ void cl_Scene::setZoomLevel(int z)
 }
 void cl_Scene::refreshTiles()
 {
-    QPolygonF polygon_temp=view->mapToScene(view->viewport()->rect());
-    QRectF rect_temp=polygon_temp.boundingRect();
+    QPolygonF polygon_temp = view->mapToScene(view->viewport()->rect());
+    QRectF rect_temp = polygon_temp.boundingRect();
     //! загрузка и отображение тайлов
     map->setZoomLevel(currentZoom,rect_temp);
     //! пересчет всех объектов на карте
@@ -870,7 +871,30 @@ void cl_Scene::delLabelMap()
         }
     }
 }
+void cl_Scene::createNewCloud(QPointF p)
+{
+    AerodromObject *aero = new AerodromObject("./res/aerodrom.svg",aerodroms.size(),map);
+    aero->setAircraft(aircraft);
+    aerodroms.push_back(aero);
+    aero->map = map;
+    QPointF pos = map->mapFromScene(p);
+    aero->setPos(pos.x(),pos.y());
 
+    scene->addItem(aero);
+    connect(aero,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
+}
+void cl_Scene::createNewFog(QPointF p)
+{
+    AerodromObject *aero = new AerodromObject("./res/aerodrom.svg",aerodroms.size(),map);
+    aero->setAircraft(aircraft);
+    aerodroms.push_back(aero);
+    aero->map = map;
+    QPointF pos = map->mapFromScene(p);
+    aero->setPos(pos.x(),pos.y());
+
+    scene->addItem(aero);
+    connect(aero,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
+}
 void cl_Scene::createNewAerodrom(QPointF p)
 {
     AerodromObject *aero = new AerodromObject("./res/aerodrom.svg",aerodroms.size(),map);
@@ -981,7 +1005,7 @@ void cl_Scene::slotTargetLon(int index,double lon)
 }
 void cl_Scene::setAllInfo(bool value)
 {
-    allInfoObjects=value;
+    allInfoObjects = value;
 
     aircraft->setAllInfo(allInfoObjects);
 

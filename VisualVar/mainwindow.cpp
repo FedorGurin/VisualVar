@@ -128,7 +128,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     addDockWidget(Qt::RightDockWidgetArea, dockWidgH);
 
     //! текущая сцена не определена
-    currentScenes   = nullptr;
+    curScenes   = nullptr;
     //! по умолчанию используем цифровую карту
     useMap          = true;
     toFlushButton   = false;
@@ -139,7 +139,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     //ui->toolBarSendFile->addWidget(formManualModify);
     ui->toolBarSendFile->setVisible(false);
 
-    parser=new Parser(statusBar,&scenes,typeObjectsVis);
+    parser = new Parser(statusBar,&scenes,typeObjectsVis);
 
     formZoomPanel = new FormZoomPanel;
     ui->statusBar->addWidget(statusBar);
@@ -229,9 +229,9 @@ void MainWindowVisVar::createActions()
     //! добавление наземного объекта
     actAddGroundObject = new QAction(QIcon(":/res/svg/gtarget"), QString(tr("Добавить наземный объект")));
     //! добавление тумана
-    actAddFog   = new QAction(QIcon(":/res/svg/target"), QString(tr("Добавить туман")));;
+    actAddFog   = new QAction(QIcon(":/res/svg/fog"), QString(tr("Добавить туман")));;
     //! добавление облачности
-    actAddCloud = new QAction(QIcon(":/res/svg/target"), QString(tr("Добавить облачность")));;
+    actAddCloud = new QAction(QIcon(":/res/svg/cloud"), QString(tr("Добавить облачность")));;
 
     actBtnSend = new QAction(QIcon(":/png/send"), QString(tr("Загрузить варианты в ИМК")));
     actBtnSend->setShortcut(QKeySequence(tr("Ctrl+Shift+,")));
@@ -378,20 +378,20 @@ void MainWindowVisVar::slotCheckBoxGeography(int value)
     if(useMap == true)
     {
         //! поменять точку привязки
-        if(currentScenes!=nullptr)
+        if(curScenes!=nullptr)
             setGeoParamOfAircraft();
     }
 }
 
 void MainWindowVisVar::slotButtonAllInfoObject(bool value)
 {
-    if(currentScenes != nullptr)
-        currentScenes->setAllInfo(value);
+    if(curScenes != nullptr)
+        curScenes->setAllInfo(value);
 }
 void MainWindowVisVar::slotButtonFocusMoveObj(bool value)
 {
-    if(currentScenes != nullptr)
-        currentScenes->setFocusMoveObj(value);
+    if(curScenes != nullptr)
+        curScenes->setFocusMoveObj(value);
 }
 
 void MainWindowVisVar::slotProjHVisible(bool b)
@@ -401,18 +401,18 @@ void MainWindowVisVar::slotProjHVisible(bool b)
 
 void MainWindowVisVar::slotRotateVisible(bool b)
 {
-    if(currentScenes != nullptr){
+    if(curScenes != nullptr){
         if(b)
-            currentScenes->slotRotateOn();
+            curScenes->slotRotateOn();
         else
-            currentScenes->slotRotateOff();
+            curScenes->slotRotateOff();
     }
 }
 
 void MainWindowVisVar::slotButtonCentering()
 {
-    if(currentScenes != nullptr)
-        currentScenes->centerByAircarft();
+    if(curScenes != nullptr)
+        curScenes->centerByAircarft();
 }
 //! копирование сцены
 void MainWindowVisVar::slotCloningScene(cl_Scene* s)
@@ -444,8 +444,8 @@ void MainWindowVisVar::slotCloningScene(cl_Scene* s)
 }
 void MainWindowVisVar::slotRestart()
 {
-    if(currentScenes != nullptr)
-        currentScenes->slotFlushState();
+    if(curScenes != nullptr)
+        curScenes->slotFlushState();
 }
 
 void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
@@ -457,48 +457,48 @@ void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
 
     if(view == nullptr)
         return;
-    if(currentScenes != nullptr){
-        disconnect(currentScenes, SIGNAL(signalRotateVisible(bool)), actRotateVisible, SLOT(setChecked(bool)));
+    if(curScenes != nullptr){
+        disconnect(curScenes, SIGNAL(signalRotateVisible(bool)), actRotateVisible, SLOT(setChecked(bool)));
     }
     for(auto i : scenes)
     {
          if((i->view) == view)
          {
-             if(currentScenes != nullptr)
-                 currentScenes->delLabelMap();
+             if(curScenes != nullptr)
+                 curScenes->delLabelMap();
 
-             currentScenes = findScene(view);
-             currentScenes->showLabelMap();
+             curScenes = findScene(view);
+             curScenes->showLabelMap();
              setMapAndLayerContextMenu();
 
-             formProjH->setCurrentScene(currentScenes);
+             formProjH->setCurrentScene(curScenes);
 //             stackedWidgProjH->setCurrentIndex(i);
 
-             if(currentScenes->firstConnectingSlots == true)
+             if(curScenes->firstConnectingSlots == true)
              {
-                 disconnect(currentScenes,SIGNAL(signalChangeZoom(int)),formZoomPanel,SLOT(setBeginValue(int)));
-                 disconnect(formAddLabel, SIGNAL(deleteLabel(LabelObject*)),currentScenes,SLOT(deleteLabelMap(LabelObject*)));
-                 disconnect(currentScenes,SIGNAL(signalUpdateValueObj(int)),formProjH,SLOT(updateScene()));
-                 disconnect(this,SIGNAL(sAircraftPos2D(double,double,double)),currentScenes,SLOT(slotAircraftPos2D(double,double,double)));
+                 disconnect(curScenes,SIGNAL(signalChangeZoom(int)),formZoomPanel,SLOT(setBeginValue(int)));
+                 disconnect(formAddLabel, SIGNAL(deleteLabel(LabelObject*)),curScenes,SLOT(deleteLabelMap(LabelObject*)));
+                 disconnect(curScenes,SIGNAL(signalUpdateValueObj(int)),formProjH,SLOT(updateScene()));
+                 disconnect(this,SIGNAL(sAircraftPos2D(double,double,double)),curScenes,SLOT(slotAircraftPos2D(double,double,double)));
 
              }else
-                 currentScenes->firstConnectingSlots = false;
+                 curScenes->firstConnectingSlots = false;
 
-             connect(currentScenes,SIGNAL(signalChangeZoom(int)),formZoomPanel,SLOT(setBeginValue(int)));
-             connect(currentScenes,SIGNAL(signalUpdateValueObj()),formProjH,SLOT(updateScene()));
-             connect(formAddLabel, SIGNAL(deleteLabel(LabelObject*)),currentScenes,SLOT(deleteLabelMap(LabelObject*)));
-             if(currentScenes != nullptr){
-                connect(currentScenes, SIGNAL(signalRotateVisible(bool)), actRotateVisible, SLOT(setChecked(bool)));
-                if(actRotateVisible->isChecked()) currentScenes->slotRotateOn();
+             connect(curScenes,SIGNAL(signalChangeZoom(int)),formZoomPanel,SLOT(setBeginValue(int)));
+             connect(curScenes,SIGNAL(signalUpdateValueObj()),formProjH,SLOT(updateScene()));
+             connect(formAddLabel, SIGNAL(deleteLabel(LabelObject*)),curScenes,SLOT(deleteLabelMap(LabelObject*)));
+             if(curScenes != nullptr){
+                connect(curScenes, SIGNAL(signalRotateVisible(bool)), actRotateVisible, SLOT(setChecked(bool)));
+                if(actRotateVisible->isChecked()) curScenes->slotRotateOn();
              }
 
              //! обновление информации об движущемся объекте
-             connect(this,SIGNAL(sAircraftPos2D(double,double,double)),currentScenes,SLOT(slotAircraftPos2D(double,double,double)));
+             connect(this,SIGNAL(sAircraftPos2D(double,double,double)),curScenes,SLOT(slotAircraftPos2D(double,double,double)));
 
              //! передача текущего времени
-             connect(this,SIGNAL(sigTime(double)),currentScenes,SLOT(slotTime(double)));
+             connect(this,SIGNAL(sigTime(double)),curScenes,SLOT(slotTime(double)));
 
-             formZoomPanel->setBeginValue(currentScenes->currentZoom);
+             formZoomPanel->setBeginValue(curScenes->currentZoom);
          }
     }
 }
@@ -526,7 +526,7 @@ void MainWindowVisVar::slotButtonSend(bool b)
         listReq.setSender("VAR");
         QString prefixVar           = settingVV->pathToObj  + "InitialState.Init.";
         QString prefixPathReg       = settingVV->pathToObj + "InputButton.Input.";
-        currentScenes->getRequest(&listReq,prefixVar,0);
+        curScenes->getRequest(&listReq,prefixVar,0);
         //! здесь должен отправить признак нажатия исходного
         listReq.append(prefixPathReg  + "restartButton","1");
         requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
@@ -579,117 +579,30 @@ void MainWindowVisVar::slotButtonSend(bool b)
 void MainWindowVisVar::slotButtonSendPlus(bool b)
 {
     Q_UNUSED(b)
-    if(currentScenes == nullptr)
+    if(curScenes == nullptr)
         return;
 
     if(scenes.isEmpty() == false)
     {
         slotTransferStarted();
-
-#ifdef OLD_STAND
-        if(useMap == true)
-            setGeoParamOfAircraft();
-#endif
         byteArray.clear();
         //! cохраним последнее отправленное имя файла
         formManualModify->setLastNameFile(fileName);
         parser->saveVariants("./xml/LastSend.xml",  formManualModify->comment(),useMap,id,fileName);
-#ifndef OLD_STAND
+
         //! отправление единым куском памяти
         TCommonRequest listReq;
         listReq.setReciver("MPPM");
         listReq.setSender("VAR");
         QString prefixVar           = settingVV->pathToObj  + "InitialState.Init.";
         QString prefixPathReg       = settingVV->pathToObj + "Управление моделированием.InputButton.Input.";
-        currentScenes->getRequest(&listReq,prefixVar,0);
+        curScenes->getRequest(&listReq,prefixVar,0);
         //! здесь должен отправить признак нажатия исходного
         listReq.append(prefixPathReg  + "restartButton","1");
         requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
 
         toFlushButton = true;
-#else
-        //! формирование запроса на запись в УЦВС
-        TCommonRequest listReq;
-        listReq.setReciver("MPPM");
-        listReq.setSender("VAR");
-        QString prefix0(prefix_folder[0]);
-        if(!prefix0.isEmpty())
-            prefix0 += ".";
-        QString prefixVar       = prefix0 + "VAR.Setup.";
-        QString prefixVarCircle = prefix0 + "VARC.Setup.";
-        QString prefix          = "";
 
-        TCommonRequest listReq2;
-        listReq2.setReciver("MPPM");
-        QString prefix1(prefix_folder[1]);
-        if(!prefix1.isEmpty())
-            prefix1 += ".";
-        listReq2.setSender(prefix1 + "VAR");
-        QString prefix2      = prefix1 + "VAR.Setup.";
-
-        //! кол-во вариантов по кругам
-        int numsVarCircle=0;
-        //! кол-во вариантов НУ
-        int numsVar=0;
-        unitedStands = false;
-        for(auto i:scenes)//кол-во вариантов
-        {
-            if(i->use == false)
-                continue;
-
-            int num=0;
-            if(i->circleVariant==true)
-            {
-                numsVarCircle++;
-                prefix = prefixVarCircle;
-                num    = numsVarCircle;
-            }
-            else
-            {
-                numsVar++;
-                prefix = prefixVar;
-                num    = numsVar;
-            }
-            i->getRequest(&listReq,prefix,num);
-            if(i->isUnitedStands() && i->circleVariant==false){
-                i->getRequest(&listReq2, prefix2, num);
-                unitedStands = true;
-            }
-        }
-        listReq.append(prefixVarCircle+"numberOf_Variant", QString::number(numsVarCircle));
-        listReq.append(prefixVar+      "numberOfVariant",  QString::number(numsVar));
-        requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
-
-        if(unitedStands){
-            listReq2.append(prefix2 + "numberOfVariant",  QString::number(numsVar));
-            requestEvent2=engine->setValue(listReq2,IEngineData::ASYNCH_ENGINE);
-
-            //отправка на второй стенд географии земли + положение вертолета
-            TCommonRequest listReq;
-            listReq.setReciver("MPPM");            
-            QString prefix1(prefix_folder[1]);
-            if(!prefix1.isEmpty())
-                prefix1 += ".";
-            listReq.setSender(prefix1 + "InitGEO");
-            QString prefixSetupGeo = prefix1 + "InitGEO.Setup.";
-
-            listReq.append(prefixSetupGeo + "Aust_0_geography",     QString::number(0.0));
-            listReq.append(prefixSetupGeo + "fiust_0_geography",    QString::number(currentScenes->aircraft->lat,'g', 10));
-            listReq.append(prefixSetupGeo + "limdaust_0_geography", QString::number(currentScenes->aircraft->lon,'g', 10));
-
-            GeographicLib::LocalCartesian locals1(currentScenes->aircraft->lat, currentScenes->aircraft->lon, 0/*h*/, *earth);
-            double xx, zz;
-            double unused_val;
-            locals1.Forward(currentScenes->aircraft2->lat, currentScenes->aircraft2->lon, 0/*h*/, zz, xx, unused_val);
-            currentScenes->aircraft2->setX_ust(xx);
-            currentScenes->aircraft2->setZ_ust(zz);
-
-            listReq.append(prefixSetupGeo + "x0_ust", QString::number(currentScenes->aircraft2->x_ust(), 'g', 10));
-            listReq.append(prefixSetupGeo + "z0_ust", QString::number(currentScenes->aircraft2->z_ust(), 'g', 10));
-            requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
-        }
-#endif
-//        QTimer::singleShot(1000, this, SLOT(slotVPultRestartPressed()));
     }
 }
 void MainWindowVisVar::slotButtonHandMoveMap(bool flag)
@@ -700,14 +613,14 @@ void MainWindowVisVar::slotButtonHandMoveMap(bool flag)
     if(flag == true)
     {
         actBtnRuler->setChecked(false);
-        if(currentScenes!=nullptr)
-            currentScenes->deleteRoutes();
+        if(curScenes!=nullptr)
+            curScenes->deleteRoutes();
 
         actBtnCursor->setChecked(false);
     }
 
-    if(currentScenes != nullptr)
-        currentScenes->activeAddLabel=false;
+    if(curScenes != nullptr)
+        curScenes->activeAddLabel=false;
 
     for(auto i:scenes)
     {
@@ -721,8 +634,8 @@ void MainWindowVisVar::slotButtonCursor(bool flag)
         slotButtonHandMoveMap(false);
         actBtnRuler->setChecked(false);
 
-        if(currentScenes!=nullptr)
-            currentScenes->deleteRoutes();
+        if(curScenes!=nullptr)
+            curScenes->deleteRoutes();
 
         actBtnHandMoveMap->setChecked(false);
     }
@@ -740,13 +653,13 @@ void MainWindowVisVar::slotButtonRuler(bool flag)
 
     }else
     {
-         if(currentScenes!=nullptr)
-             currentScenes->deleteRoutes();
+         if(curScenes!=nullptr)
+             curScenes->deleteRoutes();
 
          slotButtonHandMoveMap(true);
     }
-    if(currentScenes!=nullptr)
-        currentScenes->setActiveRoute(flag);
+    if(curScenes!=nullptr)
+        curScenes->setActiveRoute(flag);
 }
 void MainWindowVisVar::checkTypeMapAndLayer(cl_Scene *scene)
 {
@@ -978,16 +891,16 @@ void MainWindowVisVar::slotSaveAll(bool b)
 }
 void MainWindowVisVar::slotAddLabel()
 {
-    if(currentScenes != nullptr)
+    if(curScenes != nullptr)
     {
         slotButtonCursor(true);
-        currentScenes->activeAddLabel = true;
-        currentScenes->view->setCursor(Qt::CrossCursor);
-        disconnect(currentScenes,
+        curScenes->activeAddLabel = true;
+        curScenes->view->setCursor(Qt::CrossCursor);
+        disconnect(curScenes,
                 SIGNAL(activeFormAddLabel(double,double)),
                 this,
                 SLOT(slotRunFormAddLabel(double,double)));
-        connect(currentScenes,
+        connect(curScenes,
                 SIGNAL(activeFormAddLabel(double,double)),
                 this,
                 SLOT(slotRunFormAddLabel(double,double)));
@@ -1001,9 +914,9 @@ void MainWindowVisVar::slotGotoLabel()
 }
 void MainWindowVisVar::slotGotoLatLon(double lat,double lon)
 {
-    if(currentScenes != nullptr)
+    if(curScenes != nullptr)
     {
-        currentScenes->setCenterWindowView(lat,lon,currentScenes->currentZoom);
+        curScenes->setCenterWindowView(lat,lon,curScenes->currentZoom);
     }
 }
 void MainWindowVisVar::slotRunFormAddLabel(double lat,double lon)
@@ -1011,8 +924,8 @@ void MainWindowVisVar::slotRunFormAddLabel(double lat,double lon)
     formAddLabel->addNewLabel(lat,lon);
     formAddLabel->show();
 
-    if(currentScenes != nullptr)
-        currentScenes->calcItemPosScene();
+    if(curScenes != nullptr)
+        curScenes->calcItemPosScene();
 }
 //! создание варианта(обычный или по кругам)
 void MainWindowVisVar::createVariant()
@@ -1144,18 +1057,17 @@ void MainWindowVisVar::createWindowMenu()
 
 void MainWindowVisVar::rightButtonMouseClicked()
 {
-    if(currentScenes->activeRoute == true || currentScenes->activeAddLabel == true)
+    if(curScenes->activeRoute == true || curScenes->activeAddLabel == true)
         return;
 
     QAction *act = nullptr;
     menu->clear();
-    menu->addAction(actAddAirObject);;//.tr("Добавить воздушный объект"));
-    menu->addAction(actAddGroundObject);;//tr("Добавить наземный объект"));
+    menu->addAction(actAddAirObject);
+    menu->addAction(actAddGroundObject);
     menu->addAction(actAddCloud);
     menu->addAction(actAddFog);
 
-    //menu->addAction(tr("Добавить туман"));
-    //menu->addAction(tr("Добавить облачность"));
+
     menu->addSeparator();
     act=menu->addAction(tr("Добавить маяк РСБН"));
     act->setEnabled(false);
@@ -1173,7 +1085,7 @@ void MainWindowVisVar::rightButtonMouseClicked()
     //menu->addAction(tr("Скопировать объекты из..."));
 
     menu->setContextMenuPolicy(Qt::ActionsContextMenu);
-    posMouseMenu=QCursor::pos();
+    posMouseMenu = QCursor::pos();
     menu->exec(QCursor::pos());
 }
 
@@ -1204,12 +1116,10 @@ void MainWindowVisVar::slotRunMenuScene(QAction* act)
         scene->createNewGroundObj(posScene);
     }else if(act == actAddCloud)
     {
-        //if(scene->circleVariant == false)
-        //    scene->createNewGroundObj(posScene);
+        scene->createNewCloud(posScene);
     }else if(act == actAddFog)
     {
-        //if(scene->circleVariant == false)
-        //    scene->createNewGroundObj(posScene);
+        scene->createNewFog(posScene);
     }else if(act->text() == tr("Добавить аэродром"))
     {
         scene->createNewAerodrom(posScene);
@@ -1244,7 +1154,7 @@ void MainWindowVisVar::showAllVariant()
         i->view->showMaximized();
     }
     if(!scenes.isEmpty())
-        currentScenes = scenes[scenes.count()-1];
+        curScenes = scenes[scenes.count()-1];
     createWindowMenu();
     setMapAndLayerContextMenu();
 }
@@ -1261,9 +1171,9 @@ void MainWindowVisVar::setMapAndLayerContextMenu()
     ui->actionHybYandex->setChecked(false);
     ui->actionHybGoogle->setChecked(false);
 
-    if(currentScenes!=nullptr)
+    if(curScenes!=nullptr)
     {
-        switch(currentScenes->map->isTypeMap())
+        switch(curScenes->map->isTypeMap())
         {
             case GeographySysCoord::GOOGLE_SAT:         {ui->actionSatGoogle->setChecked(true);break;}
             case GeographySysCoord::GOOGLE_MAP:         {ui->actionMapsGoogle->setChecked(true);break;}
@@ -1276,7 +1186,7 @@ void MainWindowVisVar::setMapAndLayerContextMenu()
             case GeographySysCoord::YANDEX_MAP:         {ui->actionMapsYandex->setChecked(true);break;}
         };
 
-        switch(currentScenes->map->isTypeLayer())
+        switch(curScenes->map->isTypeLayer())
         {
             case GeographySysCoord::GOOGLE_HYB:         {ui->actionHybGoogle->setChecked(true);break;}
             case GeographySysCoord::YANDEX_HYB:         {ui->actionHybYandex->setChecked(true);break;}
@@ -1287,7 +1197,7 @@ void MainWindowVisVar::setMapAndLayerContextMenu()
 void MainWindowVisVar::closeAllVariant()
 {
     this->setWindowTitle(tr("Начальные условия моделирования"));
-    currentScenes = nullptr;
+    curScenes = nullptr;
     QList<QMdiSubWindow*> list = mdiArea->subWindowList();
     for(auto i:list)
     {
@@ -1411,8 +1321,8 @@ void MainWindowVisVar::setGeoParamOfAircraft()
         QString prefixSetupGeo       = /*prefix0 +*/ "InitGEO.Setup.";
 
         listReq.append(prefixSetupGeo + "Aust_0_geography",     QString::number(0.0));
-        listReq.append(prefixSetupGeo + "fiust_0_geography",    QString::number(currentScenes->aircraft->lat,'g', 10));
-        listReq.append(prefixSetupGeo + "limdaust_0_geography", QString::number(currentScenes->aircraft->lon,'g', 10));
+        listReq.append(prefixSetupGeo + "fiust_0_geography",    QString::number(curScenes->aircraft->lat,'g', 10));
+        listReq.append(prefixSetupGeo + "limdaust_0_geography", QString::number(curScenes->aircraft->lon,'g', 10));
 
         listReq.append(prefixSetupGeo + "x0_ust",               QString::number(0.0));
         listReq.append(prefixSetupGeo + "z0_ust",               QString::number(0.0));

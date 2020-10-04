@@ -44,10 +44,10 @@ void GeographySysCoord::tileXYToPixelXY(int tileX,int tileY,double &pixX,  doubl
 }
 void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
 {
-    currentZoom=z;
-    QList<QGraphicsPixmapItem *> *ptrItemTemp=ptrItemMapOld;
-    ptrItemMapOld=ptrItemMapNew;
-    ptrItemMapNew=ptrItemTemp;
+    currentZoom = z;
+    QList<QGraphicsPixmapItem *> *ptrItemTemp = ptrItemMapOld;
+    ptrItemMapOld = ptrItemMapNew;
+    ptrItemMapNew = ptrItemTemp;
     ////////////////////////////////////////////////
     //! ограничим диапазон
     z = qBound(1,z,20);
@@ -61,7 +61,7 @@ void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
     tileX0--;tileY0--;
     tileX0 = qMax(tileX0,0);tileY0 = qMax(tileY0,0);
 
-    pixelXYToTileXY(rectView.x()+rectView.width(),rectView.y()+rectView.height(),tileX1,tileY1);
+    pixelXYToTileXY(rectView.x() + rectView.width(),rectView.y() + rectView.height(),tileX1,tileY1);
     tileX1++;tileY1++;
     if(tileX1>(2<<(z-2))) tileX1 = 2<<(z-2);
     if(tileY1>(2<<(z-2))) tileY1 = 2<<(z-2);
@@ -328,8 +328,8 @@ ObjectGraphNode::ObjectGraphNode(QString fileName_,QGraphicsItem *parent):GraphN
      traj.clear();
 
      currentUnitTransPsi=unitAngle->find("deg");
-     itemSvg=new QGraphicsSvgItem(fileName,this);
-     QRectF rect=itemSvg->boundingRect();
+     itemSvg = new QGraphicsSvgItem(fileName,this);
+     QRectF rect = itemSvg->boundingRect();
      itemSvg->setTransformOriginPoint(QPointF(rect.width()/2.0,rect.height()/2.0));
 
      rotate = new RotateObject(":/png/rotate", itemSvg);
@@ -343,11 +343,11 @@ ObjectGraphNode::ObjectGraphNode(QString fileName_,QGraphicsItem *parent):GraphN
 }
 void ObjectGraphNode::refreshTrajectory(int zoom_)
 {
-    int curX1=0,curX2=0;
-    int curY1=0,curY2=0;
+    int curX1 = 0,curX2 = 0;
+    int curY1 = 0,curY2 = 0;
 
     //! пересчитаем географические координаты в новые координаты линий
-    for(int i =1;i<trajGeoPoints.size();i++)
+    for(int i = 1;i<trajGeoPoints.size();i++)
     {
         latLongToPixelXY(trajGeoPoints[i].lat,
                          trajGeoPoints[i].lon,
@@ -388,20 +388,20 @@ void ObjectGraphNode::clearTraj()
 }
 void ObjectGraphNode::setPosC(qreal dx,qreal dy)
 {
-    static bool addPoint=true;
+    static bool addPoint = true;
     QPointF point(dx,dy);
 
-    QPointF tempPoint=mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
-    QPointF dP=tempPoint-pos();
+    QPointF tempPoint = mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
+    QPointF dP  =tempPoint - pos();
 
     //! получаем координаты левого верхнего угла элемента
-    QPointF result=point-dP;
+    QPointF result = point - dP;
 
     //! перемещаем наш элемент
     setPos(result);
 
     //! добавить точку в список
-    if(trajectory==true && addPoint==true)// && fabs(lastTimeForTraj-currentTime)>1.0)
+    if(trajectory == true && addPoint == true)// && fabs(lastTimeForTraj-currentTime)>1.0)
     {
         if(traj.isEmpty() == false)
         {
@@ -518,9 +518,7 @@ AircraftObject::AircraftObject(QString nameI,QString nameFile,QGraphicsItem *par
     y           = 3500;
     vy          = 0.0;
     prVy        = false;
-    delta_hc    = 0;
-    alfa_c      = 0;
-    kren90      = false;
+
     startEarth  = true;
 
     setX_ust(0);
@@ -614,11 +612,9 @@ AircraftObject::AircraftObject(AircraftObject *aircraft_,QString nameFile,QGraph
     setTeta(aircraft_->currentTeta());
     setVy(aircraft_->currentVy());
     setPrVy(aircraft_->currentPrVy());
-    setAlfa_c(aircraft_->currentAlfa_c());
-    setDelta_hc(aircraft_->currentDelta_hc());
+
     setY(aircraft_->currentY());
-    setKren90(aircraft_->currentKren90());
-    //use_russian=
+
 
     connect(formSetting,SIGNAL(signalPrVy(bool)),this,SLOT(slotTetaUnt(bool)));
 
@@ -761,18 +757,7 @@ void AircraftObject::setCurMessVy(QString value)
     vy=unitSpeed->convert(vy,currentUnitTransVy,newUnitTrans);
     currentUnitTransVy=newUnitTrans;
 }
-void AircraftObject::setCurMessDelta_hc(QString value)
-{
-    TObjectUnit* newUnitTrans=unitLength->find(value);
-    delta_hc=unitLength->convert(delta_hc,currentUnitTransDelta_hc,newUnitTrans);
-    currentUnitTransDelta_hc=newUnitTrans;
-}
-void AircraftObject::setCurMessAlfa_c(QString value)
-{
-    TObjectUnit* newUnitTrans=unitAngle->find(value);
-    alfa_c=unitAngle->convert(alfa_c,currentUnitTransAlfa_c,newUnitTrans);
-    currentUnitTransAlfa_c=newUnitTrans;
-}
+
 void AircraftObject::slotTetaUnt(bool flag)
 {
     vy=flag;
@@ -803,9 +788,7 @@ void AircraftObject::loadXML(QDomElement tempNode)
     setCurMessY(tempNode.attribute("messY","m"));
     setName(tempNode.attribute("name",""));
 
-    setAlfa_c(tempNode.attribute("alfa_c","0").toDouble());
-    setDelta_hc(tempNode.attribute("del_hc","0").toDouble());
-    setKren90(tempNode.attribute("Kren90","0").toDouble());
+
     setStartEarth(tempNode.attribute("typeStart","0").toUInt());
 }
 void AircraftObject::saveXML(QDomDocument &domDocument,QDomElement &node)
