@@ -2,8 +2,8 @@
 #define _GL_FUNC_H
 #include <QString>
 #include <QStringList>
-#include <math.h>
-//#include "../xml/VariantNode.h"
+#include <QtMath>
+
 #include "mercator.h"
 #include <QDomElement>
 #include <QPointF>
@@ -40,7 +40,7 @@ typedef struct _TGeoPoint
 //! углы относительно строительной оси
 typedef struct SAngle
 {
-    SAngle(double tau_=0.0,double sigma_=0.0):tau(tau_),sigma(sigma_){};
+    SAngle(double tau_=0.0,double sigma_=0.0):tau(tau_),sigma(sigma_){}
     void set(double tau_,double sigma_){tau=tau_;sigma=sigma_;}
 
     //! смещение по вертикали (положительное направление - вверх)
@@ -83,15 +83,7 @@ double coord_to_float(int grad, int min, double sec);
 */
 Tcordd float_to_coord(double flt);
 
-//! Преобразование сферических в декартовы
-void convertSphereToDekart(double lambda0,double fi0,
-                           double lambda,double fi,
-                           double &x,double &z);
 
-//! Преобразование декартовых в сферические
-void convertDekartToSphere(double lambda0,double fi0,
-                           double x,double z,
-                           double &lambda,double &fi);
 
 double GradToRadian(double x);
 double RadianToGrad(double x);

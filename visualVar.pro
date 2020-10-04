@@ -44,8 +44,6 @@ win32:LIBS += -luser32
 
 # Input
 HEADERS += globalFunc/gl_func.h \
-    globalFunc/Vector3D_D.h \
-    globalFunc/Matrix3D_D.h \
     VisualVar/typeObjectsVis.h \
     VisualVar/recentOpenFiles.h \
     VisualVar/parser.h \
@@ -53,12 +51,10 @@ HEADERS += globalFunc/gl_func.h \
     VisualVar/globalTypeData.h \
     VisualVar/geographyMapping.h \
     VisualVar/formzoompanel.h \
-    VisualVar/formtable.h \
     VisualVar/formstatusbar.h \
     VisualVar/formsettingforgroundtargets.h \
     VisualVar/formsettingforairtarget.h \
     VisualVar/formsettingforaircraft.h \
-    VisualVar/formboxarea.h \
     VisualVar/dialogsavecurvar.h \
     VisualVar/nodeVisual.h \
     VisualVar/mainwindow.h \  
@@ -69,14 +65,13 @@ HEADERS += globalFunc/gl_func.h \
     VisualVar/formsettingbeaconrsbn.h \
     VisualVar/formsettingbeaconvor.h \
     VisualVar/manualModify/delegateTableManual.h \
-    VisualVar/SettingVV.h \   
+    VisualVar/settingVV.h \
     VisualVar/gscene.h \
     VisualVar/gview.h \
     VisualVar/formaddlabelmap.h \
     globalFunc/mercator.h \    
     VisualVar/listaerodroms.h \
     VisualVar/formlistaerodroms.h \
-    VisualVar/formfileeditor.h \
     VisualVar/formprojecth.h \
     mppm/CommonEngineData.h \
     mppm/libmppm.h \
@@ -131,18 +126,17 @@ HEADERS += globalFunc/gl_func.h \
     mppm/libmppm.h \
     mppm/libmppm_global.h \
     mppm/libmppmSpec.h \
-    VisualVar/formsettingcloud.h
+    VisualVar/formsettingcloud.h \
+    VisualVar/formfog.h
 
 
 
 FORMS += VisualVar/mainwindow.ui \
     VisualVar/formzoompanel.ui \
-    VisualVar/formtable.ui \
     VisualVar/formstatusbar.ui \
     VisualVar/formsettingforgroundtargets.ui \
     VisualVar/formsettingforairtarget.ui \
     VisualVar/formsettingforaircraft.ui \
-    VisualVar/formboxarea.ui \
     VisualVar/dialogsavecurvar.ui \  
     VisualVar/manualModify/formManualModify.ui \
     VisualVar/formsettingaerodrom.ui \
@@ -150,29 +144,25 @@ FORMS += VisualVar/mainwindow.ui \
     VisualVar/formsettingbeaconvor.ui \
     VisualVar/formaddlabelmap.ui \   
     VisualVar/formlistaerodroms.ui \
-    VisualVar/formfileeditor.ui \
     VisualVar/formprojecth.ui \
-    VisualVar/formsettingcloud.ui
+    VisualVar/formsettingcloud.ui \
+    VisualVar/formfog.ui
 
 
 SOURCES += globalFunc/gl_func.cpp \
     main.cpp \    
-    globalFunc/Vector3D_D.cpp \
-    globalFunc/Matrix3D_D.cpp \
     VisualVar/typeObjectsVis.cpp \
     VisualVar/recentOpenFiles.cpp \
     VisualVar/parser.cpp \
     VisualVar/messureUnits.cpp \
     VisualVar/geographyMapping.cpp \
     VisualVar/formzoompanel.cpp \
-    VisualVar/formtable.cpp \
     VisualVar/formstatusbar.cpp \
     VisualVar/formsettingforgroundtargets.cpp \
     VisualVar/formsettingforairtarget.cpp \
     VisualVar/formsettingforaircraft.cpp \
-    VisualVar/formboxarea.cpp \
     VisualVar/dialogsavecurvar.cpp \
-    VisualVar/NodeVisual.cpp \
+    VisualVar/nodeVisual.cpp \
     VisualVar/mainwindow.cpp \    
     globalFunc/UnitsMeasure/IUnits.cpp \   
     VisualVar/manualModify/formManualModify.cpp \
@@ -188,7 +178,6 @@ SOURCES += globalFunc/gl_func.cpp \
     globalFunc/mercator.cpp \   
     VisualVar/listaerodroms.cpp \
     VisualVar/formlistaerodroms.cpp \
-    VisualVar/formfileeditor.cpp \
     VisualVar/formprojecth.cpp \
     GeographicLib/Accumulator.cpp \
     GeographicLib/AlbersEqualArea.cpp \
@@ -230,7 +219,8 @@ SOURCES += globalFunc/gl_func.cpp \
     GeographicLib/Utility.cpp \
     GeographicLib/UTMUPS.cpp \
     VisualVar/cl_Scene.cpp \
-    VisualVar/formsettingcloud.cpp
+    VisualVar/formsettingcloud.cpp \
+    VisualVar/formfog.cpp
 
 
 

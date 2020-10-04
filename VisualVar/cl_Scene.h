@@ -160,6 +160,8 @@ public:
     QList<GroundObj* >  groundObjMove;
     //! список зон с облачностью
     QList<CloudObject* > cloudObj;
+    //! список зон с туманами
+    QList<FogObject* > fogObj;
     //! список аэродромов
     QList<AerodromObject* >     aerodroms;
     //! список информационных точек

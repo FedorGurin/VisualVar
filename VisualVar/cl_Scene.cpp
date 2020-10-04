@@ -24,7 +24,8 @@ cl_Scene::cl_Scene(FormStatusBar* form,
 
     airObj      .clear();
     groundObj   .clear();
-    cloudObj.clear();
+    cloudObj    .clear();
+    fogObj      .clear();
     aerodroms       .clear();
     beaconObjects   .clear();
     routeObjects    .clear();
@@ -130,7 +131,8 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
 
     airObj      .clear();
     groundObj   .clear();
-    cloudObj.clear();
+    cloudObj    .clear();
+    fogObj      .clear();
     aerodroms       .clear();
     beaconObjects   .clear();
     routeObjects    .clear();
@@ -251,11 +253,12 @@ cl_Scene::cl_Scene(QDomElement &node,
                    QWidget *parent):QObject(parent)
 {
 
-    //! обнуление спсиоков
-    airObj.clear();
-    groundObj.clear();
-    aerodroms.clear();
-    cloudObj.clear();
+    //! обнуление спиcков
+    airObj      .clear();
+    groundObj   .clear();
+    aerodroms   .clear();
+    cloudObj    .clear();
+    fogObj      .clear();
     routeObjects.clear();
 
     //! значения по умолчанию
@@ -492,9 +495,7 @@ void cl_Scene::saveToXML(QDomDocument &domDocument,QDomElement &node)
 }
 void cl_Scene::getRequest(TCommonRequest *request,QString prefix,int num)
 {
-
     aircraft->getRequest(prefix,request);
-
 }
 
 void cl_Scene::slotUpdate()
@@ -699,6 +700,12 @@ void cl_Scene::calcItemPosScene()
         latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
         i->setPosC(curX,curY);
     }
+    for(auto i:fogObj)
+    {
+        i->setZoomLevel(currentZoom);
+        latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
+        i->setPosC(curX,curY);
+    }
     //! объекты метки
     if(labelObjects!=nullptr)
     {
@@ -898,15 +905,19 @@ void cl_Scene::createNewCloud(QPointF p)
 }
 void cl_Scene::createNewFog(QPointF p)
 {
-    AerodromObject *aero = new AerodromObject("./res/aerodrom.svg",aerodroms.size(),map);
-    aero->setAircraft(aircraft);
-    aerodroms.push_back(aero);
-    aero->map = map;
-    QPointF pos = map->mapFromScene(p);
-    aero->setPos(pos.x(),pos.y());
+    FogObject *fog = new FogObject(":/res/svg/fog",map);
 
-    scene->addItem(aero);
-    connect(aero,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
+    fog->map = map;
+    QPointF pos = map->mapFromScene(p);
+    fog->setPos(pos.x(),pos.y());
+    fog->setZoomLevel(currentZoom);
+    pixelXYToLatLong(p,currentZoom - 1,fog->lat,fog->lon);
+    fogObj.push_back(fog);
+    scene->addItem(fog);
+
+    connect(fog,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
+    //! приводит к обновлению сцены
+    setZoomLevel(currentZoom);
 }
 void cl_Scene::createNewAerodrom(QPointF p)
 {

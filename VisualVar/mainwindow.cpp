@@ -95,7 +95,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
    //! Система координат для пересчета положения целей (применяется для сцены при unitedStands==true)
     earthWGS = new GeographicLib::Geocentric(GeographicLib::Constants::WGS84_a(), GeographicLib::Constants::WGS84_f());
     earthPZ90 = new GeographicLib::Geocentric(6378136., 1/298.25784);
-    earth = earthPZ90;//по умолчанию - РЗ-90
+    earth = earthPZ90;//по умолчанию - ПЗ-90
 
     menu            = new QMenu;
     statusBar       = new FormStatusBar;
@@ -199,7 +199,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     //!
     createConnections();
 
-#ifndef OLD_STAND
+
     //! запрос на чтение текущих параметров
     TCommonRequest listReq;
     listReq.setReciver("MPPM");
@@ -218,9 +218,6 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
 
 
     reqEventCurPos = engine->getValue(listReq,IEngineData::CYCLIC_ENGINE);
-    qDebug("Status=%d\n",reqEventCurPos.status);
-    qDebug("Sub Status=%d\n",reqEventCurPos.sub_status[0]);
-#endif
 }
 void MainWindowVisVar::createActions()
 {

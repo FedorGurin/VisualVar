@@ -24,6 +24,7 @@
 #include "formsettingforairtarget.h"
 #include "formsettingforgroundtargets.h"
 #include "formsettingcloud.h"
+#include "formfog.h"
 #include "../globalFunc/gl_func.h"
 #include "../globalFunc/UnitsMeasure/IUnits.h"
 #include "../mppm/CommonEngineData.h"
@@ -1244,28 +1245,44 @@ public:
 signals:
     void isModifyPosition(QPointF,TGeoPoint);
 protected:
-    //virtual void mousePressEvent(QGraphicsSceneMouseEvent   *event);
     virtual void mouseMoveEvent (QGraphicsSceneMouseEvent   *event);
-   // virtual void hoverEnterEvent(QGraphicsSceneHoverEvent   *event);
-   // virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent   *event);
-
 public:
-
-
-
     FormSettingCloud *settings;
     virtual int type() const
     {
         return E_CLOUD;
     }
-//signals:
-//     void isModifyPosition(QPointF,TGeoPoint);
-//public slots:
-//    void slotIsModifyPsi(void);
-//    void slotIsModifyPosition();
-//    void slotEnterLeaveCur(bool);
-};
 
+};
+//! класс тумана
+class FogObject:public ObjectGraphNode
+{
+     Q_OBJECT
+public:
+    FogObject(QString name_,QGraphicsItem *parent):ObjectGraphNode(name_,parent)
+    {
+        setZValue(10);
+        setScale(0.1);
+        setAcceptHoverEvents(true);
+
+        settings = new FormFog();
+        settings->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
+        QRectF rect1 = boundingRect();
+        setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+        itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+    }
+signals:
+    void isModifyPosition(QPointF,TGeoPoint);
+protected:
+    virtual void mouseMoveEvent (QGraphicsSceneMouseEvent   *event);
+public:
+    FormFog *settings;
+    virtual int type() const
+    {
+        return E_FOG;
+    }
+
+};
 //! класс аэродрома
 class AerodromObject:public ObjectGraphNode
 {
