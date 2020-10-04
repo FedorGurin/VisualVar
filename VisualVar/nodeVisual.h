@@ -23,6 +23,7 @@
 #include "formsettingforaircraft.h"
 #include "formsettingforairtarget.h"
 #include "formsettingforgroundtargets.h"
+#include "formsettingcloud.h"
 #include "../globalFunc/gl_func.h"
 #include "../globalFunc/UnitsMeasure/IUnits.h"
 #include "../mppm/CommonEngineData.h"
@@ -59,9 +60,7 @@ public:
         lat         = 0;
         lon         = 0;
         use_russian = true;
-        //! координаты положения объекта в прямоугольной СК относительно левого края карты
-//        xMap=0;
-//        zMap=0;
+
     }
     enum TypeGraphNode
     {
@@ -802,10 +801,10 @@ public:
         connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
     }
 
-    virtual void saveXML(QDomDocument &domDocument,QDomElement &ele,bool circleVariant=false);
-    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant=false);
+    virtual void saveXML(QDomDocument &domDocument,QDomElement &ele);
+    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele);
     //! формирование запросов
-    void getRequest(QString prefix,TCommonRequest *request,bool circleVariant=false,int numIndex=-1);
+    void getRequest(QString prefix,TCommonRequest *request,int numIndex=-1);
 
     void loadXML(QDomElement tempNode);
 
@@ -835,13 +834,6 @@ public:
     double currentD()           {return d;}
     double currentFi()          {return fi;}
     double currentTeta()        {return teta;}
-    double currentNg_z()        {return ng_z;}
-    bool   currentPrTypeCode()  {return prCodeLen;}
-    double currentLength()      {return length;}
-    double curFireTime()        {return fireTime;}
-    double curSpeedAfterFire()  {return speedAfterFire;}
-    double curHostId()          {return hostId;}
-    double curIndFireTar()      {return indexFireTarget;}
 
     //! текущие ед. измерения
     QString curMessV();
@@ -887,23 +879,6 @@ public slots:
     void slotLonToX(double);
     void slotLatToZ(double);
 
-    void setFireTime(double value)
-    {
-        fireTime = value;
-    }
-    void setSpeedAfterFire(double value)
-    {
-        speedAfterFire = value;
-    }
-    void setHostId(int value)
-    {
-        hostId = value;
-    }
-    void setIndFireTar(int value)
-    {
-        indexFireTarget = value;
-    }
-
     void setTeta(double value)
     {
         teta=value;
@@ -911,17 +886,14 @@ public slots:
         colorItem->setRowText(tr("УНТ=")+QString::number(teta),2);
     }
 
-    void setNg_z(double ng_z_)
-    {
-        ng_z=ng_z_;
-    }
+
     void setCode(int c,QString str)
     {
         code_prev = code;
         code=c;
         codeStr=str;
         formSetting->setCode(code);
-        formSetting->setPrCodeLength(prCodeLen);
+
         colorItem->setRowText(tr("Тип объекта=")+codeStr,3);
     }
     void setCode(int c)
@@ -930,16 +902,10 @@ public slots:
         code=c;
         //codeStr=formSetting->typeObject(c);
         formSetting->setCode(c);
-        formSetting->setPrCodeLength(prCodeLen);
+
     }
-    void setLength(double value)
-    {
-        length=value;
-    }
-    void setPrCodeLength(bool value)
-    {
-        prCodeLen=value;
-    }
+
+
 
     void setV(double value)
     {
@@ -1007,16 +973,7 @@ private:
     double y;       // высота (метры)
     double v;               // скорость (м/с)
     double teta;            // угол тангажа (град -90,90)
-    bool prCodeLen;         // признак задания длины или кода цели
     int code;               // тип объекта(длина объекта)
-    double length;          // длина цели
-    float ng_z;             // горизонтальная составляющая перегрузки
-    int Beg_num_target;//
-    double fireTime;        // время отделения, сек
-    double speedAfterFire;  //скорость после отделения, м/с
-    unsigned hostId;        //число
-    unsigned indexFireTarget;//число
-
     int code_prev;
     QString codeStr;// название объекта полученного по коду
 };
@@ -1102,7 +1059,7 @@ public:
         connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
     }
     virtual void saveXML(QDomDocument &domDocument,QDomElement &ele);
-    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant=false);
+    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele);
     void loadXML(QDomElement tempNode);
 signals:
     void isModifyPosition(QPointF,TGeoPoint);
@@ -1267,85 +1224,47 @@ public:
     }
 };
 
-////! класс облачности
-//class CloudObject:public ObjectGraphNode
-//{
-//     Q_OBJECT
-//public:
-//    CloudObject(QString name,int num,QGraphicsItem *parent):ObjectGraphNode(name,parent)
-//    {
-//        setScale(0.1);
-//        setAcceptHoverEvents(true);
-//        d=0.0;fi=0.0;
+//! класс облачности
+class CloudObject:public ObjectGraphNode
+{
+     Q_OBJECT
+public:
+    CloudObject(QString name_,QGraphicsItem *parent):ObjectGraphNode(name_,parent)
+    {
+        setZValue(10);
+        setScale(0.1);
+        setAcceptHoverEvents(true);
 
-//        numIndex=num;
+        settings = new FormSettingCloud();
+        settings->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
+        QRectF rect1=boundingRect();
+        setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+        itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+    }
+signals:
+    void isModifyPosition(QPointF,TGeoPoint);
+protected:
+    //virtual void mousePressEvent(QGraphicsSceneMouseEvent   *event);
+    virtual void mouseMoveEvent (QGraphicsSceneMouseEvent   *event);
+   // virtual void hoverEnterEvent(QGraphicsSceneHoverEvent   *event);
+   // virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent   *event);
 
-//        lineToAircraft=new QGraphicsLineItem(QLineF(0.0,0.0,10.0,10.0),this);
-//        colorItemD=new ColorItem(lineToAircraft);
-//        colorItemD->setScale(10);
-//        colorItemD->setRows(1);
-//        colorItemD->setRowText("d="+QString::number(d),0);
+public:
 
-//        QPen penA(Qt::SolidLine);
-//        penA.setColor(Qt::gray);
-//        lineToAircraft->setPen(penA);
 
-//        formSetting=new FormSettingAerodrom();
-//        formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
 
-//    }
-// virtual void updateDToAircraft()
-//    {
-//        //пересчет линии до вертолета
-//        if(lineToAircraft->isVisible()){
-//            QPointF pointEnd=mapFromItem(itemSvg,itemSvg->transformOriginPoint());
-//            QPointF pointStart=mapFromItem(aircraft->itemSvg,aircraft->itemSvg->transformOriginPoint());
-//            QLineF line(pointStart,pointEnd);
-//            lineToAircraft->setLine(line);
-//        }
-//    }
-//protected:
-
-//    virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);
-//    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent* event);
-//    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
-//    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
-//public:
-//    void setAircraft(AircraftObject *air)
-//    {
-//        aircraft=air;
-//        connect(aircraft,SIGNAL(isModifyPsi()),this,SLOT(slotIsModifyPsi()));
-//        connect(aircraft,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this,SLOT(slotIsModifyPosition()));
-//        connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
-//    }
-////signals:
-//    /*void isModifyPsi(void);
-//    void isModifyPosition(QPointF,QPointF);
-//    void sigHoverEnterEvent(bool);*/
-
-//    FormSettingAerodrom *formSetting;
-//    virtual int type() const
-//    {
-//        return E_AERODROM;
-//    }
+    FormSettingCloud *settings;
+    virtual int type() const
+    {
+        return E_CLOUD;
+    }
 //signals:
 //     void isModifyPosition(QPointF,TGeoPoint);
 //public slots:
 //    void slotIsModifyPsi(void);
 //    void slotIsModifyPosition();
 //    void slotEnterLeaveCur(bool);
-
-//private:
-//     AircraftObject *aircraft;
-
-//     QGraphicsLineItem *lineToAircraft;
-//     ColorItem *colorItemD;
-
-//     int numIndex;
-
-//     double d;
-//     double fi;
-//};
+};
 
 //! класс аэродрома
 class AerodromObject:public ObjectGraphNode
@@ -1370,7 +1289,7 @@ public:
         penA.setColor(Qt::gray);
         lineToAircraft->setPen(penA);
 
-        formSetting=new FormSettingAerodrom();
+        formSetting = new FormSettingAerodrom();
         formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
 
     }

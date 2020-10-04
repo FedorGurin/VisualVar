@@ -131,36 +131,10 @@ bool ModelDataTable::setData(const QModelIndex &index, const QVariant &value, in
             else if(name==tr("Нет"))
                 node->setEnable(false);
 
-            if(node->type() == GraphNode::E_OBJ_V)
-            {
-                 AirObj *tempAirTarget = static_cast<AirObj* > (node);
-                 if(node->isEnable() == false)
-                 {
-                     tempAirTarget->setPrCodeLength(false);
-                     tempAirTarget->setLength(0.0);
-                 }else
-                 {
-                     tempAirTarget->setPrCodeLength(true);
-                     tempAirTarget->setLength(10.0);
-                 }
-            }
-        }
-    }
-    if(pageIndex == 3)
-    {
-        if(index.column() == 1)
-        {
-            if(currentGraphNode->type() == GraphNode::E_OBJ_V)
-            {
-                AirObj *tempAirTarget = static_cast<AirObj* >(currentGraphNode);
 
-                if(index.row()==0) tempAirTarget->setFireTime(value.toDouble());
-                if(index.row()==1) tempAirTarget->setSpeedAfterFire(value.toDouble());
-                if(index.row()==2) tempAirTarget->setHostId(value.toDouble());
-                if(index.row()==3) tempAirTarget->setIndFireTar(value.toDouble());
-            }
         }
     }
+
     if(pageIndex == 2)
     {
         if(index.column() == 1)
@@ -193,28 +167,9 @@ bool ModelDataTable::setData(const QModelIndex &index, const QVariant &value, in
                     if(index.row()==4) tempAirTarget->setFi(value.toDouble());
                     if(index.row()==5) tempAirTarget->setD(value.toDouble());
                     if(index.row()==6) tempAirTarget->setCode(value.toInt());
-                    if(index.row()==7)
-                    {
-                        tempAirTarget->setLength(value.toDouble());
-                        if(value.toDouble()==0)
-                            tempAirTarget->setEnable(false);
-                        else
-                            tempAirTarget->setEnable(true);
-                    }
-                    if(index.row()==8)
-                    {
-                        if(value.toString()==tr("Длина"))
-                            tempAirTarget->setPrCodeLength(false);
-                        else
-                            tempAirTarget->setPrCodeLength(true);
-                    }
-                    if(tempAirTarget->currentCode()>=600 && tempAirTarget->currentCode()<700)
-                    {
-                        if(index.row()==9) tempAirTarget->setFireTime(value.toDouble());
-                        if(index.row()==10) tempAirTarget->setSpeedAfterFire(value.toDouble());
-                        if(index.row()==11) tempAirTarget->setHostId(value.toDouble());
-                        if(index.row()==12) tempAirTarget->setIndFireTar(value.toDouble());
-                    }
+
+
+
                     if(tempAirTarget->currentCode() != tempAirTarget->prevCode())
                     {
                         endResetModel();
@@ -405,9 +360,9 @@ Qt::ItemFlags ModelDataTable::flags(const QModelIndex &index) const
           }
           if(currentGraphNode->type() == GraphNode::E_OBJ_V)
           {
-              AirObj *tempAirTarget = static_cast<AirObj*> (currentGraphNode);
 
-              if(tempAirTarget->currentPrTypeCode() == false &&(index.row() == 6 || index.row() == 7))
+
+              if((index.row() == 6 || index.row() == 7))
               {
                   if(index.row() == 6)
                       return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
@@ -790,22 +745,7 @@ QVariant ModelDataTable::page2(const QModelIndex &index,int role) const
                     if(index.row()==4) return tempAirTarget->currentFi();
                     if(index.row()==5) return tempAirTarget->currentD();
                     if(index.row()==6) return tempAirTarget->currentCode();
-                    if(index.row()==7) return tempAirTarget->currentLength();
-                    if(index.row()==8)
-                    {
-                        if(tempAirTarget->currentPrTypeCode()==true)
-                            return QString(tr("Код"));
-                        else
-                            return QString(tr("Длина"));
 
-//                        if(tempAirTarget->currentCode()>=600 && tempAirTarget->currentCode()<700)
-//                        {
-//                            if(index.row()==9) return tempAirTarget->curFireTime();
-//                            if(index.row()==10) return tempAirTarget->curSpeedAfterFire();
-//                            if(index.row()==11) return tempAirTarget->curHostId();
-//                            if(index.row()==12) return tempAirTarget->curIndFireTar();
-//                        }
-                    }
                 }else if(currentGraphNode->type()==GraphNode::E_OBJ_G)
                 {
                     GroundObj *tempGroundTarget=static_cast<GroundObj* >(currentGraphNode);
@@ -872,15 +812,10 @@ QVariant ModelDataTable::page2(const QModelIndex &index,int role) const
 
             }else if(currentGraphNode->type() == GraphNode::E_OBJ_V)
             {
-                AirObj *tempAirTarget=static_cast<AirObj* >(currentGraphNode);
 
-                if(tempAirTarget->currentPrTypeCode()==false)
-                {
-                    if(index.row() == 6) return QBrush(QColor(Qt::red));
-                }else
-                {
+
                     if(index.row() == 7) return QBrush(QColor(Qt::red));
-                }
+
             }
 
     }else if(role == Qt::TextAlignmentRole){

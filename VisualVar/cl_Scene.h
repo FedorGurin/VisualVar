@@ -158,6 +158,8 @@ public:
     //! список наземных целей
     QList<GroundObj* >  groundObj;
     QList<GroundObj* >  groundObjMove;
+    //! список зон с облачностью
+    QList<CloudObject* > cloudObj;
     //! список аэродромов
     QList<AerodromObject* >     aerodroms;
     //! список информационных точек

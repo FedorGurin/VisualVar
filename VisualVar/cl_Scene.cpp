@@ -24,6 +24,7 @@ cl_Scene::cl_Scene(FormStatusBar* form,
 
     airObj      .clear();
     groundObj   .clear();
+    cloudObj.clear();
     aerodroms       .clear();
     beaconObjects   .clear();
     routeObjects    .clear();
@@ -129,6 +130,7 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
 
     airObj      .clear();
     groundObj   .clear();
+    cloudObj.clear();
     aerodroms       .clear();
     beaconObjects   .clear();
     routeObjects    .clear();
@@ -253,6 +255,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     airObj.clear();
     groundObj.clear();
     aerodroms.clear();
+    cloudObj.clear();
     routeObjects.clear();
 
     //! значения по умолчанию
@@ -282,7 +285,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     map->setTypeLayer(tempTypeLayer);
 
     //! сцена
-    scene=new GScene;
+    scene = new GScene;
     connect(scene,SIGNAL(zoomUp()),         this,SLOT(slotZoomUp()));
     connect(scene,SIGNAL(zoomDown()),       this,SLOT(slotZoomDown()));
     connect(scene,SIGNAL(dragMove()),       this,SLOT(slotUpdate()));
@@ -292,7 +295,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     connect(scene, SIGNAL(signalCtrlRelease()), this, SLOT(slotRotateOff()));
     connect(scene,SIGNAL(clickLeftMouse())  ,this,SLOT(slotClickLeftMouse()));
 
-    view=new GView(scene);
+    view = new GView(scene);
     view->setRenderHint(QPainter::Antialiasing);
     view->setRubberBandSelectionMode(Qt::IntersectsItemBoundingRect);
     view->setDragMode(QGraphicsView::RubberBandDrag);
@@ -342,11 +345,11 @@ cl_Scene::cl_Scene(QDomElement &node,
     mousePos.setY(rect.height()/2.0);
 
 
-    comment_=node.attribute("comment","");
+    comment_ = node.attribute("comment","");
 
     //! заполняем данные по варианту
-    nameVariant=node.attribute("name","");
-    use=node.attribute("use","1").toInt();
+    nameVariant = node.attribute("name","");
+    use = node.attribute("use","1").toInt();
 
     //! заполняем данные по вертолету
     QDomElement tempNode = node.firstChildElement("Aircraft");
@@ -369,7 +372,7 @@ cl_Scene::cl_Scene(QDomElement &node,
 
         //! создаем двигающийся объект
         AirObj *target_move = new AirObj("",":/res/svg/target_move",map);
-        target_move->map=map;
+        target_move->map = map;
         target_move->setAircraft(aircraftMove);
         target_move->setZoomLevel(currentZoom);
         target_move->setMovingObject(true);
@@ -672,7 +675,7 @@ void cl_Scene::calcItemPosScene()
     for(auto i:airObj)
     {
         i->setZoomLevel(currentZoom);
-        latLongToPixelXY(i->lat,i->lon,currentZoom-1,curX,curY);
+        latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
         i->setPosC(curX,curY);
     }
     //! двигующиеся воздушные объекты
@@ -687,7 +690,13 @@ void cl_Scene::calcItemPosScene()
     for(auto i:groundObj)
     {
         i->setZoomLevel(currentZoom);
-        latLongToPixelXY(i->lat,i->lon,currentZoom-1,curX,curY);
+        latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
+        i->setPosC(curX,curY);
+    }
+    for(auto i:cloudObj)
+    {
+        i->setZoomLevel(currentZoom);
+        latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
         i->setPosC(curX,curY);
     }
     //! объекты метки
@@ -873,15 +882,19 @@ void cl_Scene::delLabelMap()
 }
 void cl_Scene::createNewCloud(QPointF p)
 {
-    AerodromObject *aero = new AerodromObject("./res/aerodrom.svg",aerodroms.size(),map);
-    aero->setAircraft(aircraft);
-    aerodroms.push_back(aero);
-    aero->map = map;
-    QPointF pos = map->mapFromScene(p);
-    aero->setPos(pos.x(),pos.y());
+    CloudObject *cloud = new CloudObject(":/res/svg/cloud",map);
 
-    scene->addItem(aero);
-    connect(aero,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
+    cloud->map = map;
+    QPointF pos = map->mapFromScene(p);
+    cloud->setPos(pos.x(),pos.y());
+    cloud->setZoomLevel(currentZoom);
+    pixelXYToLatLong(p,currentZoom - 1,cloud->lat,cloud->lon);
+    cloudObj.push_back(cloud);
+    scene->addItem(cloud);
+
+    connect(cloud,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
+    //! приводит к обновлению сцены
+    setZoomLevel(currentZoom);
 }
 void cl_Scene::createNewFog(QPointF p)
 {

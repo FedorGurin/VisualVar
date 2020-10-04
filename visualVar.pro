@@ -130,7 +130,8 @@ HEADERS += globalFunc/gl_func.h \
     mppm/CommonEngineData.h \
     mppm/libmppm.h \
     mppm/libmppm_global.h \
-    mppm/libmppmSpec.h
+    mppm/libmppmSpec.h \
+    VisualVar/formsettingcloud.h
 
 
 
@@ -150,7 +151,8 @@ FORMS += VisualVar/mainwindow.ui \
     VisualVar/formaddlabelmap.ui \   
     VisualVar/formlistaerodroms.ui \
     VisualVar/formfileeditor.ui \
-    VisualVar/formprojecth.ui
+    VisualVar/formprojecth.ui \
+    VisualVar/formsettingcloud.ui
 
 
 SOURCES += globalFunc/gl_func.cpp \
@@ -227,7 +229,8 @@ SOURCES += globalFunc/gl_func.cpp \
     GeographicLib/TransverseMercatorExact.cpp \
     GeographicLib/Utility.cpp \
     GeographicLib/UTMUPS.cpp \
-    VisualVar/cl_Scene.cpp
+    VisualVar/cl_Scene.cpp \
+    VisualVar/formsettingcloud.cpp
 
 
 
