@@ -42,9 +42,7 @@ public:
     void createXMLForModel(QString comment,bool useMap,uint id);
     //! функция чтения(разбора) данных
     void parseVariant(const QDomElement& element);//рекурсивная
-    //! чтение метаданных из файла
-    bool openFileMetaData(const QString &fileName);
-    void parserMetaData(const QDomElement& element);
+
     //! отсортировать общий список объектов
     void sortScenesObjects();
     //! прочитать последний загруженный файл
@@ -54,8 +52,7 @@ private:
     QVector<cl_Scene* > *scenes;
     //! список объектов только с начальными условиями
     QVector<cl_Scene* > scenesNU;
-    //! список объектов только с вариантами движения по кургам
-    QVector<cl_Scene* > scenesCircle;
+
     FormStatusBar* statusForm;
     TypeObjectsVis *typeObjectsVis;
 

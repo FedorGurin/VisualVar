@@ -135,11 +135,7 @@ bool GeographyMapping::openImageFile(QString fileNamePixmap)
 {
     return false;
 }
-//! прочитать файл с метаинформацией о карте
-bool GeographyMapping::openMetaInfoFile(QString fileNameMetaInfo)
-{
-    return false;
-}
+
 bool GeographyMapping::isPointInRect(TPairRect *rect,QPointF *point)
 {
     Q_UNUSED(rect);

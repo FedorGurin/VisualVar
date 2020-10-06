@@ -1,4 +1,4 @@
-#include "FormManualModify.h"
+#include "formManualModify.h"
 #include "ui_FormManualModify.h"
 #include <QRegExpValidator>
 #include <QKeyEvent>
@@ -80,13 +80,13 @@ void FormManualModify::slotDoubleClickedListWidget(QListWidgetItem* item)
         if(item->text() == tr("Воздушный объект"))
         {
             QPointF pF = modelData->currentScene->aircraft->posC();
-            modelData->currentScene->createNewAirTarget(pF);
+            modelData->currentScene->createNewAirObj(pF);
 
         }
         if(item->text() == tr("Наземный объект"))
         {
             QPointF pF = modelData->currentScene->aircraft->posC();
-            modelData->currentScene->createNewGroundTarget(pF);
+            modelData->currentScene->createNewGroundObj(pF);
         }
     }
     if(modelData->currentPageIndex() == 0)
@@ -144,14 +144,14 @@ void FormManualModify::slotPushButtonClone()
         if(modelData->currentPageIndex() == 1)
         {
              ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
-             if(node->type() == GraphNode::TARGET_V)
+             if(node->type() == GraphNode::E_OBJ_V)
              {
-                 AirTargetObject* airtarget = static_cast<AirTargetObject*> (node);
-                 modelData->currentScene->cloneAirTarget(airtarget);
-             }else if(node->type() == GraphNode::TARGET_G)
+                 AirObj* airtarget = static_cast<AirObj*> (node);
+                 modelData->currentScene->cloneAirObj(airtarget);
+             }else if(node->type() == GraphNode::E_OBJ_G)
              {
-                 GroundTargetObject* groundtarget = static_cast<GroundTargetObject*> (node);
-                 modelData->currentScene->cloneGroundTarget(groundtarget);
+                 GroundObj* groundtarget = static_cast<GroundObj*> (node);
+                 modelData->currentScene->cloneGroundObj(groundtarget);
              }
         }
         //resetModelData();
@@ -167,12 +167,11 @@ void FormManualModify::slotPushButtonAdd()
        modelData->currentPageIndex()==0*/)
     {
         listWidget->clear();
-        if(modelData->currentScene->circleVariant == false)
-        {
+
             listWidget->setWindowTitle(tr("Добавить объект"));
             listWidget->addItem(new QListWidgetItem(QIcon(":/res/svg/target"),tr("Воздушный объект")));
             listWidget->addItem(new QListWidgetItem(QIcon(":/res/svg/gtarget"),tr("Наземный объект")));
-        }
+
     }
     if(modelData->currentPageIndex()==0)
     {
@@ -190,10 +189,7 @@ void FormManualModify::slotPushButtonAdd()
     }
     if(modelData->currentScene != nullptr && modelData->currentPageIndex() != 0)
     {
-        if(modelData->currentScene->circleVariant == true)
-        {
-            listWidget->close();
-        }
+
     }
 }
 void FormManualModify::slotPushButtonDelete()
@@ -225,15 +221,15 @@ void FormManualModify::slotPushButtonDelete()
         if(modelData->currentPageIndex() == 1)
         {
              ObjectGraphNode* node = static_cast<ObjectGraphNode*>(i.internalPointer());
-             if(node->type() == GraphNode::TARGET_V)
+             if(node->type() == GraphNode::E_OBJ_V)
              {
-                 AirTargetObject* airtarget = static_cast<AirTargetObject*> (node);
-                 modelData->currentScene->airTargets.removeAt(modelData->currentScene->airTargets.indexOf(airtarget));
+                 AirObj* airtarget = static_cast<AirObj*> (node);
+                 modelData->currentScene->airObj.removeAt(modelData->currentScene->airObj.indexOf(airtarget));
                  delete airtarget;
-             }else if(node->type() == GraphNode::TARGET_G)
+             }else if(node->type() == GraphNode::E_OBJ_G)
              {
-                 GroundTargetObject* groundtarget = static_cast<GroundTargetObject*> (node);
-                 modelData->currentScene->groundTargets.removeAt(modelData->currentScene->groundTargets.indexOf(groundtarget));
+                 GroundObj* groundtarget = static_cast<GroundObj*> (node);
+                 modelData->currentScene->groundObj.removeAt(modelData->currentScene->groundObj.indexOf(groundtarget));
                  delete groundtarget;
              }
         }
@@ -285,14 +281,14 @@ void FormManualModify::slotPushButtonBack()
     ui->lineEditPath->setText(modelData->path);
     if(modelData->currentPageIndex() == 2)
     {
-        ui->pushButtonAdd->setEnabled(false);
+        ui->pushButtonAdd   ->setEnabled(false);
         ui->pushButtonDelete->setEnabled(false);
-        ui->pushButtonClone->setEnabled(false);
+        ui->pushButtonClone ->setEnabled(false);
     }else
     {
-        ui->pushButtonAdd->setEnabled(true);
+        ui->pushButtonAdd   ->setEnabled(true);
         ui->pushButtonDelete->setEnabled(true);
-        ui->pushButtonClone->setEnabled(true);
+        ui->pushButtonClone ->setEnabled(true);
     }
 }
 void FormManualModify::deleteScene(int)
@@ -309,7 +305,7 @@ void FormManualModify::resetModelData(QModelIndex index)
 }
 void FormManualModify::slotKeyboardDel()
 {
-    QItemSelectionModel* select=ui->tableView->selectionModel();
+    QItemSelectionModel* select = ui->tableView->selectionModel();
     QModelIndexList list = select->selectedRows(0);
     for(auto i:list)
     {
@@ -328,14 +324,14 @@ void FormManualModify::slotKeyboardDel()
 }
 void FormManualModify::slotKeyboardInsert()
 {
-    QItemSelectionModel* select=ui->tableView->selectionModel();
-    QModelIndexList list=select->selectedRows(0);
+    QItemSelectionModel* select = ui->tableView->selectionModel();
+    QModelIndexList list = select->selectedRows(0);
     for(auto i:list)
     {
         if(modelData->currentPageIndex() == 0)
         {
             cl_Scene* scene = static_cast<cl_Scene*>(i.internalPointer());
-            scene->use=true;
+            scene->use = true;
         }
         if(modelData->currentPageIndex() == 1)
         {

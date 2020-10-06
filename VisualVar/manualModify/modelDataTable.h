@@ -31,7 +31,7 @@ public:
     QVariant page0(const QModelIndex &index,int role)const;
     QVariant page1(const QModelIndex &index,int role)const;
     QVariant page2(const QModelIndex &index,int role)const;
-    QVariant page3(const QModelIndex &index,int role)const;
+
     //! отрисовка пути
     void checkPath(); 
     //! путь

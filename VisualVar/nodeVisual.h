@@ -23,82 +23,18 @@
 #include "formsettingforaircraft.h"
 #include "formsettingforairtarget.h"
 #include "formsettingforgroundtargets.h"
+#include "formsettingcloud.h"
+#include "formfog.h"
 #include "../globalFunc/gl_func.h"
 #include "../globalFunc/UnitsMeasure/IUnits.h"
 #include "../mppm/CommonEngineData.h"
 #include "geographyMapping.h"
 #include "formsettingaerodrom.h"
-#include "SettingVV.h"
+#include "settingVV.h"
 
 namespace VisualVariant
 {
 
-class MetaParam
-{
-public:
-    enum TType{
-        REAL,
-        INT
-    };
-
-    MetaParam()
-    {
-
-    }
-
-    MetaParam(QDomElement root)
-    {
-        name=root.firstChildElement("name").text();
-        qDebug("name_meta_data=%s\n",qPrintable(name));
-        tagXML=root.firstChildElement("tag").text();
-        value_default=root.firstChildElement("value_default").text();
-        value=value_default;
-        QString temp=root.firstChildElement("type").text();
-        if(temp=="int")
-            type=INT;
-        else
-            type=REAL;
-    }
-
-    QString name;
-    QString tagXML;
-    TType type;
-    QString value_default;
-    QString value;
-};
-
-//! класс описания метаданных
-class MetaData
-{
-public:
-
-    MetaData()
-    {
-        //name=name_;
-        param.clear();
-    }
-    void readFromNode(QDomElement root)
-    {
-        qDebug("read_meta_data\n");
-        name=root.text();
-        qDebug("name_man=%s\n",qPrintable(name));
-        QDomElement ele=root.firstChildElement("metaparam");
-        while(!ele.isNull())
-        {
-            param.push_back(MetaParam(ele));
-            ele=ele.nextSiblingElement("metaparam");
-        }
-
-    }
-
-    void addParam(MetaParam param_)
-    {
-        param.push_back(param_);
-    }
-
-    QVector<MetaParam> param;
-    QString name;
-};
 
 class ColorItem:public QGraphicsRectItem
 {
@@ -119,32 +55,32 @@ private:
 class GraphNode:public QGraphicsItem,public QObject
 {
 public:
-    GraphNode(QGraphicsItem *parent=0):QGraphicsItem(parent)
+    GraphNode(QGraphicsItem *parent = 0):QGraphicsItem(parent)
     {
         //! координаты положения объекта в географической СК
         lat         = 0;
         lon         = 0;
         use_russian = true;
-        //! координаты положения объекта в прямоугольной СК относительно левого края карты
-//        xMap=0;
-//        zMap=0;
+
     }
     enum TypeGraphNode
     {
-        MAP         = UserType+1,
-        TARGET_G    = UserType+2,
-        TARGET_V    = UserType+3,
-        AERODROM    = UserType+4,
-        BEACON_RSBN = UserType+5,
-        BEACON_VOR  = UserType+6,
-        AIRCRAFT    = UserType+8,
-        UNSET       = UserType+7,
-        SYSCOORD    = UserType+9,
-        INFO        = UserType+10,
-        ROUTE       = UserType+11,
-        POINT       = UserType+12,
-        PPM         = UserType+13,
-        LABEL       = UserType+14
+        E_MAP         = UserType + 1,
+        E_OBJ_G       = UserType + 2,
+        E_OBJ_V       = UserType + 3,
+        E_AERODROM    = UserType + 4,
+        E_BEACON_RSBN = UserType + 5,
+        E_BEACON_VOR  = UserType + 6,
+        E_AIRCRAFT    = UserType + 8,
+        E_UNSET       = UserType + 7,
+        E_SYSCOORD    = UserType + 9,
+        E_INFO        = UserType + 10,
+        E_ROUTE       = UserType + 11,
+        E_POINT       = UserType + 12,
+        E_PPM         = UserType + 13,
+        E_LABEL       = UserType + 14,
+        E_CLOUD       = UserType + 15,
+        E_FOG         = UserType + 16
     };
     //! координаты положения объекта в географической СК
     double lat;
@@ -185,7 +121,7 @@ public:
     }
     virtual int type() const
     {
-        return UNSET;
+        return E_UNSET;
     }
     //! признак для выбора единиц измерения
     bool use_russian;
@@ -322,7 +258,7 @@ public:
     }
     virtual int type() const
     {
-        return MAP;
+        return E_MAP;
     }
     TypeMAP     isTypeMap(){return typeMap;}
     QString     strTypeMap();
@@ -501,10 +437,7 @@ public:
 
     double currentPsi(){return psi;}
 
-    bool isMetaData()
-    {
-        return !metaData.isEmpty();
-    }
+
     //! показать траекторию
     void setVisibleTraj(bool value);
     //! текущее время
@@ -522,8 +455,7 @@ public:
     QVector<QGraphicsLineItem* > traj;
     //! имя файла
     QString fileName;
-    //! список метаданных
-    QVector<MetaData> metaData;
+
     //! бинарные метаданные
     QByteArray binMetaData;
     //! объект для преобразования курса
@@ -589,11 +521,11 @@ public:
         m_type = t;
     }
     //! сохранить свои параметры в файл
-    virtual void saveXML(QDomDocument &domDocument,QDomElement &ele,bool circleVariant);
+    virtual void saveXML(QDomDocument &domDocument,QDomElement &ele);
     //! сохранить данные в xml понятный VxWorks
-    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant);
+    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele);
     //! формирование запросов
-    void getRequest(QString prefix,TCommonRequest *request,bool circleVariant=false);
+    void getRequest(QString prefix,TCommonRequest *request);
     //! загрузка данных из файла XML
     void loadXML(QDomElement node);
     //! вращение объекта
@@ -623,12 +555,10 @@ public:
     double currentV()       {return vc          ;}
     double currentY()       {return y           ;}
     double currentTeta()    {return teta        ;}
-    double currentDelta_hc(){return delta_hc    ;}
-    double currentAlfa_c()  {return alfa_c      ;}
+
     double currentVy()      {return vy          ;}
     bool currentStart()     {return startEarth  ;}
     bool currentPrVy()      {return prVy        ;}
-    bool currentKren90()    {return kren90      ;}
 
     //! текущие ед. измерения порядок числа
     QString curMessV();
@@ -755,14 +685,7 @@ public slots:
         teta=value;
         formSetting->setTeta(teta);
     }
-    void setDelta_hc(double delta_hc_)
-    {
-        delta_hc=delta_hc_;
-    }
-    void setAlfa_c(double alfa_c_)
-    {
-        alfa_c=alfa_c_;
-    }
+
     void setY(double value)
     {
         y=value;
@@ -796,10 +719,7 @@ public slots:
                                     QString::number(formSetting->currentVy())+" "+
                                     formSetting->currentMessureVy(),2);
     }
-    void setKren90(bool value)
-    {
-        kren90=value;
-    }
+
     bool isStartEarth()
     {
         return startEarth;
@@ -826,30 +746,28 @@ private:
     double y;           //! высота
     double vy;          //! вертикальная скорость
     bool   prVy;        //! признак, что задаем параметров teta, либо угол тагнажа или вертикальную скорость
-    double delta_hc;    //! превышение над целью
-    double alfa_c;      //! угол атаки на маневрирующую цель
-    int kren90;         //! крен 90 градусов
+
     //! признак старта с земли(true - с земли, false - воздух)
     bool startEarth;
 
     double x_ut = 0.; // координаты относительно начала координат
     double z_ut = 0.; //
 
-    TypeGraphNode m_type = AIRCRAFT;
+    TypeGraphNode m_type = E_AIRCRAFT;
 };
 
 //! класс воздушная цель
-class AirTargetObject:public ObjectGraphNode
+class AirObj:public ObjectGraphNode
 {
     Q_OBJECT
 public:
     //! обычный конструктор
-    AirTargetObject(QString name_,          /* имя объекта*/
+    AirObj(QString name_,          /* имя объекта*/
                     QString nameFile,       /* имя файла  */
                     QGraphicsItem *parent); /* указатель на родителя*/
 
     //! для операции клонирования
-    AirTargetObject(AirTargetObject *airTarget, /* воздушная цель*/
+    AirObj(AirObj *airTarget, /* воздушная цель*/
                     AircraftObject  *aircraft,  /* носителя*/
                     QGraphicsItem   *parent);   /* указатель на родителя*/
 
@@ -884,10 +802,10 @@ public:
         connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
     }
 
-    virtual void saveXML(QDomDocument &domDocument,QDomElement &ele,bool circleVariant=false);
-    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant=false);
+    virtual void saveXML(QDomDocument &domDocument,QDomElement &ele);
+    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele);
     //! формирование запросов
-    void getRequest(QString prefix,TCommonRequest *request,bool circleVariant=false,int numIndex=-1);
+    void getRequest(QString prefix,TCommonRequest *request,int numIndex=-1);
 
     void loadXML(QDomElement tempNode);
 
@@ -917,13 +835,6 @@ public:
     double currentD()           {return d;}
     double currentFi()          {return fi;}
     double currentTeta()        {return teta;}
-    double currentNg_z()        {return ng_z;}
-    bool   currentPrTypeCode()  {return prCodeLen;}
-    double currentLength()      {return length;}
-    double curFireTime()        {return fireTime;}
-    double curSpeedAfterFire()  {return speedAfterFire;}
-    double curHostId()          {return hostId;}
-    double curIndFireTar()      {return indexFireTarget;}
 
     //! текущие ед. измерения
     QString curMessV();
@@ -969,23 +880,6 @@ public slots:
     void slotLonToX(double);
     void slotLatToZ(double);
 
-    void setFireTime(double value)
-    {
-        fireTime = value;
-    }
-    void setSpeedAfterFire(double value)
-    {
-        speedAfterFire = value;
-    }
-    void setHostId(int value)
-    {
-        hostId = value;
-    }
-    void setIndFireTar(int value)
-    {
-        indexFireTarget = value;
-    }
-
     void setTeta(double value)
     {
         teta=value;
@@ -993,17 +887,14 @@ public slots:
         colorItem->setRowText(tr("УНТ=")+QString::number(teta),2);
     }
 
-    void setNg_z(double ng_z_)
-    {
-        ng_z=ng_z_;
-    }
+
     void setCode(int c,QString str)
     {
         code_prev = code;
         code=c;
         codeStr=str;
         formSetting->setCode(code);
-        formSetting->setPrCodeLength(prCodeLen);
+
         colorItem->setRowText(tr("Тип объекта=")+codeStr,3);
     }
     void setCode(int c)
@@ -1012,16 +903,10 @@ public slots:
         code=c;
         //codeStr=formSetting->typeObject(c);
         formSetting->setCode(c);
-        formSetting->setPrCodeLength(prCodeLen);
+
     }
-    void setLength(double value)
-    {
-        length=value;
-    }
-    void setPrCodeLength(bool value)
-    {
-        prCodeLen=value;
-    }
+
+
 
     void setV(double value)
     {
@@ -1066,7 +951,7 @@ public slots:
     void slotFi();
     void slotMovePos();
 
-    virtual int type() const{return TARGET_V;}
+    virtual int type() const{return E_OBJ_V;}
 signals:
     void isModifyPosition(QPointF,TGeoPoint);
 protected:
@@ -1089,32 +974,23 @@ private:
     double y;       // высота (метры)
     double v;               // скорость (м/с)
     double teta;            // угол тангажа (град -90,90)
-    bool prCodeLen;         // признак задания длины или кода цели
     int code;               // тип объекта(длина объекта)
-    double length;          // длина цели
-    float ng_z;             // горизонтальная составляющая перегрузки
-    int Beg_num_target;//
-    double fireTime;        // время отделения, сек
-    double speedAfterFire;  //скорость после отделения, м/с
-    unsigned hostId;        //число
-    unsigned indexFireTarget;//число
-
     int code_prev;
     QString codeStr;// название объекта полученного по коду
 };
 
 //! класс наземная цель
-class GroundTargetObject:public ObjectGraphNode
+class GroundObj:public ObjectGraphNode
 {
      Q_OBJECT
 public:
     //! обычный констурктор
-    GroundTargetObject(QString name_,
+    GroundObj(QString name_,
                        QString nameFile,
                        QGraphicsItem *parent);
 
     //! для операции клонирования
-    GroundTargetObject(GroundTargetObject   *groundTarget, /*наземная цель*/
+    GroundObj(GroundObj   *groundTarget, /*наземная цель*/
                        AircraftObject       *aircraft,     /*носителя*/
                        QGraphicsItem        *parent);      /*ссылка на родительский элемент*/
 
@@ -1147,7 +1023,7 @@ public:
     //double currentV(){return v;}
     virtual int type() const
     {
-        return TARGET_G;
+        return E_OBJ_G;
     }
     //! формирование запросов
     void getRequest(QString prefix,TCommonRequest *request,int numIndex=-1);
@@ -1184,7 +1060,7 @@ public:
         connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
     }
     virtual void saveXML(QDomDocument &domDocument,QDomElement &ele);
-    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele,bool circleVariant=false);
+    virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele);
     void loadXML(QDomElement tempNode);
 signals:
     void isModifyPosition(QPointF,TGeoPoint);
@@ -1345,11 +1221,68 @@ public:
     }
     virtual int type() const
     {
-        return SYSCOORD;
+        return E_SYSCOORD;
     }
 };
 
+//! класс облачности
+class CloudObject:public ObjectGraphNode
+{
+     Q_OBJECT
+public:
+    CloudObject(QString name_,QGraphicsItem *parent):ObjectGraphNode(name_,parent)
+    {
+        setZValue(10);
+        setScale(0.1);
+        setAcceptHoverEvents(true);
 
+        settings = new FormSettingCloud();
+        settings->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
+        QRectF rect1=boundingRect();
+        setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+        itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+    }
+signals:
+    void isModifyPosition(QPointF,TGeoPoint);
+protected:
+    virtual void mouseMoveEvent (QGraphicsSceneMouseEvent   *event);
+public:
+    FormSettingCloud *settings;
+    virtual int type() const
+    {
+        return E_CLOUD;
+    }
+
+};
+//! класс тумана
+class FogObject:public ObjectGraphNode
+{
+     Q_OBJECT
+public:
+    FogObject(QString name_,QGraphicsItem *parent):ObjectGraphNode(name_,parent)
+    {
+        setZValue(10);
+        setScale(0.1);
+        setAcceptHoverEvents(true);
+
+        settings = new FormFog();
+        settings->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
+        QRectF rect1 = boundingRect();
+        setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+        itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+    }
+signals:
+    void isModifyPosition(QPointF,TGeoPoint);
+protected:
+    virtual void mouseMoveEvent (QGraphicsSceneMouseEvent   *event);
+public:
+    FormFog *settings;
+    virtual int type() const
+    {
+        return E_FOG;
+    }
+
+};
 //! класс аэродрома
 class AerodromObject:public ObjectGraphNode
 {
@@ -1373,7 +1306,7 @@ public:
         penA.setColor(Qt::gray);
         lineToAircraft->setPen(penA);
 
-        formSetting=new FormSettingAerodrom();
+        formSetting = new FormSettingAerodrom();
         formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
 
     }
@@ -1409,7 +1342,7 @@ public:
     FormSettingAerodrom *formSetting;
     virtual int type() const
     {
-        return AERODROM;
+        return E_AERODROM;
     }
 signals:
      void isModifyPosition(QPointF,TGeoPoint);
@@ -1509,7 +1442,7 @@ public:
 public:
     virtual int type() const
     {
-        return LABEL;
+        return E_LABEL;
     }
 private:
     QString name;
@@ -1526,7 +1459,7 @@ public:
     }
     virtual int type() const
     {
-        return INFO;
+        return E_INFO;
     }
 };
 //! класс радиомаяк
@@ -1539,7 +1472,7 @@ public:
     }
     virtual int type() const
     {
-        return BEACON_RSBN;
+        return E_BEACON_RSBN;
     }
 };
 class RouteObject:public ObjectGraphNode
@@ -1637,7 +1570,7 @@ public:
     }
     virtual int type() const
     {
-        return ROUTE;
+        return E_ROUTE;
     }
 protected:
 
@@ -1661,7 +1594,7 @@ public:
     }
     virtual int type() const
     {
-        return PPM;
+        return E_PPM;
     }
 };
 //! вертикальная шкала для отображение высоты у объектов

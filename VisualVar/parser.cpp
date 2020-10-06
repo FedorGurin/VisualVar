@@ -5,106 +5,29 @@
  *      Author: Fedor
  */
 
-#include "Parser.h"
+#include "parser.h"
 #include <QApplication>
 namespace VisualVariant
 {
 #define DATA_FILE "None"
 #define VARIANT_FILE "data.xml"
 
-extern QWidget *mygroup;
-
 Parser::Parser(FormStatusBar* form,QVector<cl_Scene* > *scenes_,TypeObjectsVis *typeObjectsVis_)
 {
-    // TODO Auto-generated constructor stub
-    //openFileVariants(qApp->applicationDirPath()+"/"+QString(VARIANT_FILE));
     domVariants.clear();
     domVariantsForModel.clear();
 
     scenes          = scenes_;
     statusForm      = form;
     typeObjectsVis  = typeObjectsVis_;
-
 }
-bool Parser::openFileMetaData(const QString &fileName)
-{
-    //! DOM - дерево вариантов
-    QDomDocument domDoc;
-
-    bool openFile = false;
-    QFile file(fileName);
-
-    openFile = file.open(QIODevice::ReadOnly);
-    if(openFile == true)
-    {
-        bool readXML    = false;
-        QString errMsg  = "";
-        int errLine     = 0;
-        int errColumn   = 0;
-        readXML = domDoc.setContent(&file,true,&errMsg,&errLine,&errColumn);
-
-        if(readXML == true)
-        {
-            QDomElement root = domDoc.documentElement();
-            parserMetaData(root.toElement());
-            return true;
-        }
-        else
-        {
-            QMessageBox::warning(0,tr("Внимание"),
-                                 tr("Ошибка в структуре XML файла \n = ")+QString(VARIANT_FILE)+"\nError msg="
-                                 +errMsg+"\nLine="+errLine+"\nColumn="+errColumn);
-        }
-    }
-    return false;
-#ifdef PRINT_WARNING_LOAD_FILE
-    else
-    {
-        QMessageBox::warning(0,tr("Внимание"),
-                             tr("Файл не найден = ")+QString(VARIANT_FILE));
-    }
-#endif
-}
-void Parser::parserMetaData(const QDomElement& element)
-{
-    QVector<MetaData> list;
-    qDebug("parserMetaData\n");
-    MetaData tempMetaData;
-    QDomElement ele = element.firstChildElement("variant_nu");
-    while(!ele.isNull())
-    {
-
-        QDomElement eleObj = ele.firstChildElement("aircraft");
-        eleObj = eleObj.firstChildElement("metadata");
-        while(!eleObj.isNull())
-        {
-            tempMetaData.readFromNode(eleObj);
-            list.push_back(tempMetaData);
-            eleObj = eleObj.nextSiblingElement("metadata");
-        }
-       for(auto i: *scenes)
-       {
-            i->addMetaDataToAircraft(list);
-       }
-
-        ele = ele.nextSiblingElement("variant_nu");
-    }
-}
-
 void Parser::sortScenesObjects()
 {
-    scenesCircle.clear();
     scenesNU.clear();
 
     for(auto i: *scenes)
     {
-        if(i->circleVariant == true)
-            scenesCircle.push_back(i);
-        else
-            scenesNU.push_back(i);
-
-            /*scenesCircle.push_back((*scenes[i]));
-        else scenesNU.push_back((*scenes[i]));*/
+        scenesNU.push_back(i);
     }
 }
 void Parser::saveVariants(const QString &fileName,

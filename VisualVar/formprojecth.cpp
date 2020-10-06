@@ -34,11 +34,11 @@ void FormProjectH::updateScene()
     if(currentScene != nullptr)
     {
         moveToH(aircraft,currentScene->aircraft->currentY(),0);
-        for(int i=0;i<currentScene->airTargets.size();i++)
+        for(int i=0;i<currentScene->airObj.size();i++)
         {
             airtarget.push_back(new GraphObject(tr("ВО ") + QString::number(i+1),":/res/svg/t_up",svgItem));
             airtarget[i]->setScale(0.05);
-            moveToH(airtarget[i],currentScene->airTargets[i]->currentY(),i+1);
+            moveToH(airtarget[i],currentScene->airObj[i]->currentY(),i+1);
             scene->addItem(airtarget[i]);
         }
     }
@@ -57,7 +57,7 @@ void FormProjectH::calcMaxScale()
     if(currentScene != nullptr)
     {
         maxScale = currentScene->aircraft->currentY();
-        for(auto i:currentScene->airTargets)
+        for(auto i:currentScene->airObj)
         {
             if(maxScale < i->currentY())
                 maxScale = i->currentY();

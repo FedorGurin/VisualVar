@@ -1,8 +1,8 @@
 #include "gl_func.h"
-#include <math.h>
+
 #include <QTextCodec>
 #include <QStringList>
-#include "../globalFunc/Matrix3D_D.h"
+
 #include <QFile>
 #include <QApplication>
 #include <QTextStream>
@@ -183,168 +183,9 @@ void inverseMercator(double x, double y, double &lon, double &lat)
     lat = (y / 20037508.34) * 180;
     lat = 180.0/M_PI * (2.0 * atan(exp(lat * M_PI / 180.0)) - M_PI / 2.0);
 }
-//! Преобразование сферических в декартовы
-void convertSphereToDekart(double lambda0,double fi0,
-                           double lambda,double fi,
-                           double &x,double &z)
-{
-
-    Matrix3D_D Alambda0;
-    double cosLambda0=cos(lambda0);
-    double sinLambda0=sin(lambda0);
-
-    Alambda0.x[0][0]=1.0;
-    Alambda0.x[0][1]=0.0;
-    Alambda0.x[0][2]=0.0;
-
-    Alambda0.x[1][0]=0.0;
-    Alambda0.x[1][1]=cosLambda0;
-    Alambda0.x[1][2]=sinLambda0;
-
-    Alambda0.x[2][0]=0.0;
-    Alambda0.x[2][1]=-sinLambda0;
-    Alambda0.x[2][2]=cosLambda0;
-    /////////////////////////////////////////////////////
-
-    Matrix3D_D Afi0;
-    double cosfi0=cos(fi0);
-    double sinfi0=sin(fi0);
-
-    Afi0.x[0][0]=cosfi0;
-    Afi0.x[0][1]=-sinfi0;
-    Afi0.x[0][2]=0.0;
-
-    Afi0.x[1][0]=sinfi0;
-    Afi0.x[1][1]=cosfi0;
-    Afi0.x[1][2]=0.0;
-
-    Afi0.x[2][0]=0.0;
-    Afi0.x[2][1]=0.0;
-    Afi0.x[2][2]=1.0;
-    /////////////////////////////////////////////////////
-    Matrix3D_D AsG=Afi0*Alambda0;
-    ////////////////////////////////////////////////////
-
-    Matrix3D_D AgG;
-
-    double cosfi=cos(fi);
-    double sinfi=sin(fi);
-    double cosLambda=cos(lambda);
-    double sinLambda=sin(lambda);
-
-    AgG.x[0][0]=cosfi;
-    AgG.x[0][1]=-sinfi*cosLambda;
-    AgG.x[0][2]=-sinfi*sinLambda;
-
-    AgG.x[1][0]=sinfi;
-    AgG.x[1][1]=cosfi*cosLambda;
-    AgG.x[1][2]=cosfi*sinLambda;
-
-    AgG.x[2][0]=0.0;
-    AgG.x[2][1]=-sinLambda;
-    AgG.x[2][2]=cosLambda;
-
-    Matrix3D_D tempAsG=AsG;
-    Matrix3D_D Asg=AgG*tempAsG.transpose();
-
-    double tetta=asin(Asg.x[1][0]);
-    double psi=atan2(Asg.x[1][2],Asg.x[1][1]);
-
-    x=6356767.0*tetta; z=6356767.0*psi;
-
-}
-
-//! Преобразование декартовых в сферические
-//! положение стартовой СК относительно земной СК
-//!                                             -lambda
-//!                                             -fi
-
-//! Декартовы координаты объекта относительно стартовой СК
-//!                                             -x
-//!                                             -z
-void convertDekartToSphere(double lambda0,double fi0,
-                           double x,double z,
-                           double &lambda,double &fi)
-{
-    Matrix3D_D Alambda0;
-    double cosLambda0=cos(lambda0);
-    double sinLambda0=sin(lambda0);
-
-    Alambda0.x[0][0]=1.0;
-    Alambda0.x[0][1]=0.0;
-    Alambda0.x[0][2]=0.0;
-
-    Alambda0.x[1][0]=0.0;
-    Alambda0.x[1][1]=cosLambda0;
-    Alambda0.x[1][2]=sinLambda0;
-
-    Alambda0.x[2][0]=0.0;
-    Alambda0.x[2][1]=-sinLambda0;
-    Alambda0.x[2][2]=cosLambda0;
-    /////////////////////////////////////////////////////
-
-    Matrix3D_D Afi0;
-    double cosfi0=cos(fi0);
-    double sinfi0=sin(fi0);
-
-    Afi0.x[0][0]=cosfi0;
-    Afi0.x[0][1]=-sinfi0;
-    Afi0.x[0][2]=0.0;
-
-    Afi0.x[1][0]=sinfi0;
-    Afi0.x[1][1]=cosfi0;
-    Afi0.x[1][2]=0.0;
-
-    Afi0.x[2][0]=0.0;
-    Afi0.x[2][1]=0.0;
-    Afi0.x[2][2]=1.0;
-    /////////////////////////////////////////////////////
-    Matrix3D_D AsG=Afi0*Alambda0;
-    ////////////////////////////////////////////////////
-    double tetta=x/6356767.0;
-    double psi=z/6356767.0;
-
-    Matrix3D_D Atetta;
-    double cosTetta=cos(tetta);
-    double sinTetta=sin(tetta);
-
-    Atetta.x[0][0]=cosTetta;
-    Atetta.x[0][1]=-sinTetta;
-    Atetta.x[0][2]=0.0;
-
-    Atetta.x[1][0]=sinTetta;
-    Atetta.x[1][1]=cosTetta;
-    Atetta.x[1][2]=0.0;
-
-    Atetta.x[2][0]=0.0;
-    Atetta.x[2][1]=0.0;
-    Atetta.x[2][2]=1.0;
 
 
-    Matrix3D_D Apsi;
 
-    double cosPsi=cos(psi);
-    double sinPsi=sin(psi);
-
-    Apsi.x[0][0]=1.0;
-    Apsi.x[0][1]=0.0;
-    Apsi.x[0][2]=0.0;
-
-    Apsi.x[1][0]=0.0;
-    Apsi.x[1][1]=cosPsi;
-    Apsi.x[1][2]=sinPsi;
-
-    Apsi.x[2][0]=0.0;
-    Apsi.x[2][1]=-sinPsi;
-    Apsi.x[2][2]=cosPsi;
-
-    Matrix3D_D tempMatrix=Atetta*AsG;
-    Matrix3D_D AgG=Apsi*tempMatrix;
-
-    fi=asin(AgG.x[1][0]);
-    lambda=atan2(AgG.x[1][2],AgG.x[1][1]);
-
-}
 double KursToPsiGrad(double kurs)
 {
     double psi=kurs;

@@ -12,7 +12,6 @@
         <file>resource/zoom.png</file>
         <file alias="var">resource/variant.png</file>
         <file alias="circ">resource/variant_circle.png</file>
-        <file alias="introT50">resource/T50.jpg</file>
         <file alias="bullet">resource/bullet.png</file>
         <file alias="arrowLeft">resource/arrow_left.png</file>
         <file alias="arrowRight">resource/arrow_right.png</file>
@@ -59,6 +58,8 @@
         <file alias="aircraft">resource/k226.svg</file>
         <file alias="aircraft_move">resource/k226_move.svg</file>
         <file alias="target">resource/k226_target.svg</file>
+        <file alias="fog">resource/fog.svg</file>
+        <file alias="cloud">resource/cloud.svg</file>
     </qresource>
     <qresource prefix="/sound"/>
 </RCC>
