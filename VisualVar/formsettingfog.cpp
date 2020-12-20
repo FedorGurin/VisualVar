@@ -1,4 +1,4 @@
-#include "formfog.h"
+#include "formsettingfog.h"
 #include "ui_formfog.h"
 
 FormFog::FormFog(QWidget *parent) :

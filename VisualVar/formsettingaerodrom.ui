@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>237</width>
-    <height>404</height>
+    <width>290</width>
+    <height>347</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,16 +16,6 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTableWidget" name="tableWidget">
-     <row>
-      <property name="text">
-       <string>ЧКК пр.</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>ЧКК обр.</string>
-      </property>
-     </row>
      <row>
       <property name="text">
        <string>Частота ILS пр.</string>
@@ -38,12 +28,12 @@
      </row>
      <row>
       <property name="text">
-       <string>Широта</string>
+       <string>Широта центра ВПП</string>
       </property>
      </row>
      <row>
       <property name="text">
-       <string>Долгота</string>
+       <string>Долгота центра ВПП</string>
       </property>
      </row>
      <row>
@@ -68,7 +58,7 @@
      </row>
      <row>
       <property name="text">
-       <string>Глиссада</string>
+       <string>Угол наклона глиссады</string>
       </property>
      </row>
      <row>

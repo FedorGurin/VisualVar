@@ -229,6 +229,15 @@ void MainWindowVisVar::createActions()
     actAddFog   = new QAction(QIcon(":/res/svg/fog"), QString(tr("Добавить туман")));;
     //! добавление облачности
     actAddCloud = new QAction(QIcon(":/res/svg/cloud"), QString(tr("Добавить облачность")));;
+    //! добавление радиостанции АРК
+    actARK = new QAction(QIcon(":/res/svg/ark"), QString(tr("Добавить радистанцию АРК")));;
+    //! добавление маяка ILS
+    actILS = new QAction(QIcon(":/res/svg/ils"), QString(tr("Добавить маяк ILS")));;
+    //! добавление маяка VOR
+    actVOR = new QAction(QIcon(":/res/svg/vor"), QString(tr("Добавить маяк VOR")));;
+    //! добавление маяка TACAN
+    actTACAN = new QAction(QIcon(":/res/svg/tacan"), QString(tr("Добавить маяк TACAN")));;
+
 
     actBtnSend = new QAction(QIcon(":/png/send"), QString(tr("Загрузить варианты в ИМК")));
     actBtnSend->setShortcut(QKeySequence(tr("Ctrl+Shift+,")));
@@ -1066,14 +1075,18 @@ void MainWindowVisVar::rightButtonMouseClicked()
 
 
     menu->addSeparator();
-    act=menu->addAction(tr("Добавить маяк РСБН"));
-    act->setEnabled(false);
-    act=menu->addAction(tr("Добавить маяк VOR"));
-    act->setEnabled(false);
+    menu->addAction(actARK);
+    menu->addAction(actILS);
+    menu->addAction(actVOR);
+    menu->addAction(actTACAN);
+//    act=menu->addAction(tr("Добавить радиостанцию АРК"));
+//    act->setEnabled(false);
+//    act=menu->addAction(tr("Добавить маяк VOR"));
+//    act->setEnabled(false);
 
-    act=menu->addAction(tr("Добавить аэродром"));
-    act->setEnabled(false);
-    //menu->addSeparator();
+//    act=menu->addAction(tr("Добавить маяк ILS для "));
+//    act->setEnabled(false);
+//    //menu->addSeparator();
     //menu->addAction(tr("Добавить информационную точку"));
     //menu->addSeparator();
     //menu->addAction(tr("Добавить ППМ для ПЗ"));

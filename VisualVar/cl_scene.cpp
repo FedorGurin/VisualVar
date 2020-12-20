@@ -900,7 +900,7 @@ void cl_Scene::createNewCloud(QPointF p)
     scene->addItem(cloud);
 
     connect(cloud,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
-    //! приводит к обновлению сцены
+    // приводит к обновлению сцены
     setZoomLevel(currentZoom);
 }
 void cl_Scene::createNewFog(QPointF p)

@@ -1,5 +1,5 @@
-#include "formsettingbeaconvor.h"
-#include "ui_formsettingbeaconvor.h"
+#include "formsettingvor.h"
+#include "ui_formsettingvor.h"
 
 FormSettingBeaconVOR::FormSettingBeaconVOR(QWidget *parent) :
     QWidget(parent),

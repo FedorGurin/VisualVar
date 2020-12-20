@@ -60,6 +60,10 @@
         <file alias="target">resource/k226_target.svg</file>
         <file alias="fog">resource/fog.svg</file>
         <file alias="cloud">resource/cloud.svg</file>
+        <file alias="ils">resource/beacon_ils.svg</file>
+        <file alias="ark">resource/beacon_ark.svg</file>
+        <file alias="vor">resource/beacon_vor.svg</file>
+        <file alias="tacan">resource/beacon_tacan.svg</file>
     </qresource>
     <qresource prefix="/sound"/>
 </RCC>

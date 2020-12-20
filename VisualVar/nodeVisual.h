@@ -24,7 +24,7 @@
 #include "formsettingforairtarget.h"
 #include "formsettingforgroundtargets.h"
 #include "formsettingcloud.h"
-#include "formfog.h"
+#include "formsettingfog.h"
 #include "../globalFunc/gl_func.h"
 #include "../globalFunc/UnitsMeasure/IUnits.h"
 #include "../mppm/CommonEngineData.h"

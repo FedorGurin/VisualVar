@@ -41,7 +41,7 @@
      <x>0</x>
      <y>0</y>
      <width>651</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -176,7 +176,7 @@
     <addaction name="menu_5"/>
     <addaction name="menu_6"/>
    </widget>
-   <widget class="QMenu" name="menu_7">
+   <widget class="QMenu" name="menuTools">
     <property name="title">
      <string>Инструменты</string>
     </property>
@@ -196,7 +196,7 @@
    <addaction name="menu_2"/>
    <addaction name="menuHelp"/>
    <addaction name="menu_4"/>
-   <addaction name="menu_7"/>
+   <addaction name="menuTools"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QToolBar" name="toolBarOperation">

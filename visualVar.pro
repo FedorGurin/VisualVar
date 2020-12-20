@@ -44,6 +44,9 @@ win32:LIBS += -luser32
 
 # Input
 HEADERS += globalFunc/gl_func.h \
+    VisualVar/formsettingfog.h \
+    VisualVar/formsettingtacan.h \
+    VisualVar/formsettingvor.h \
     VisualVar/typeObjectsVis.h \
     VisualVar/recentOpenFiles.h \
     VisualVar/parser.h \
@@ -62,8 +65,6 @@ HEADERS += globalFunc/gl_func.h \
     VisualVar/manualModify/formManualModify.h \
     VisualVar/manualModify/modelDataTable.h \
     VisualVar/formsettingaerodrom.h \
-    VisualVar/formsettingbeaconrsbn.h \
-    VisualVar/formsettingbeaconvor.h \
     VisualVar/manualModify/delegateTableManual.h \
     VisualVar/settingVV.h \
     VisualVar/gscene.h \
@@ -126,22 +127,23 @@ HEADERS += globalFunc/gl_func.h \
     mppm/libmppm.h \
     mppm/libmppm_global.h \
     mppm/libmppmSpec.h \
-    VisualVar/formsettingcloud.h \
-    VisualVar/formfog.h
+    VisualVar/formsettingcloud.h
 
 
 
 FORMS += VisualVar/mainwindow.ui \
+    VisualVar/formsettingfog.ui \
+    VisualVar/formsettingtacan.ui \
+    VisualVar/formsettingvor.ui \
     VisualVar/formzoompanel.ui \
     VisualVar/formstatusbar.ui \
     VisualVar/formsettingforgroundtargets.ui \
     VisualVar/formsettingforairtarget.ui \
     VisualVar/formsettingforaircraft.ui \
-    VisualVar/dialogsavecurvar.ui \  
+    VisualVar/dialogsavecurvar.ui \
+    VisualVar/formsettingark.ui \
     VisualVar/manualModify/formManualModify.ui \
     VisualVar/formsettingaerodrom.ui \
-    VisualVar/formsettingbeaconrsbn.ui \
-    VisualVar/formsettingbeaconvor.ui \
     VisualVar/formaddlabelmap.ui \   
     VisualVar/formlistaerodroms.ui \
     VisualVar/formprojecth.ui \
@@ -150,6 +152,9 @@ FORMS += VisualVar/mainwindow.ui \
 
 
 SOURCES += globalFunc/gl_func.cpp \
+    VisualVar/formsettingfog.cpp \
+    VisualVar/formsettingtacan.cpp \
+    VisualVar/formsettingvor.cpp \
     main.cpp \    
     VisualVar/typeObjectsVis.cpp \
     VisualVar/recentOpenFiles.cpp \
@@ -168,8 +173,6 @@ SOURCES += globalFunc/gl_func.cpp \
     VisualVar/manualModify/formManualModify.cpp \
     VisualVar/manualModify/modelDataTable.cpp \
     VisualVar/formsettingaerodrom.cpp \
-    VisualVar/formsettingbeaconrsbn.cpp \
-    VisualVar/formsettingbeaconvor.cpp \
     VisualVar/manualModify/delegateTableManual.cpp \
     VisualVar/SettingVV.cpp \    
     VisualVar/gscene.cpp \
@@ -219,8 +222,7 @@ SOURCES += globalFunc/gl_func.cpp \
     GeographicLib/Utility.cpp \
     GeographicLib/UTMUPS.cpp \
     VisualVar/cl_Scene.cpp \
-    VisualVar/formsettingcloud.cpp \
-    VisualVar/formfog.cpp
+    VisualVar/formsettingcloud.cpp
 
 
 

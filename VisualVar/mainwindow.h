@@ -267,6 +267,11 @@ private:
     QAction* actAddCloud;
     QAction* actAddNewAreodrom;
     QAction* actAddFog;
+    QAction* actARK;
+    QAction* actILS;
+    QAction* actVOR;
+    QAction* actTACAN;
+
 
     QAction* actBtnSend;
 
