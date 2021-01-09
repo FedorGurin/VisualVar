@@ -19,7 +19,7 @@
 #include <QGraphicsSceneMouseEvent>
 
 #include "nodeVisual.h"
-#include "formsettingforaircraft.h"
+#include "formAircraft.h"
 
 //! класс с вертолета
 class AircraftObject:public ObjectGraphNode
@@ -74,6 +74,7 @@ public:
         lon=value;
         formSetting->slotLonDouble(lon);
     }
+    virtual void connectToObj(ObjectGraphNode* ){}
     //! текущие значения паарметров
     double currentV()       {return vc          ;}
     double currentY()       {return y           ;}

@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef GSCENE_H
 #define GSCENE_H
 

@@ -57,11 +57,11 @@ HEADERS += globalFunc/gl_func.h \
     VisualVar/formsettingtacan.h \
     VisualVar/formsettingvor.h \
     VisualVar/nodes/airObj/airObj.h \
-    VisualVar/nodes/airObj/formsettingforairtarget.h \
-    VisualVar/nodes/groundObj/formsettingforgroundtargets.h \
+    VisualVar/nodes/airObj/formAirTarget.h \
+    VisualVar/nodes/groundObj/formGroundTargets.h \
     VisualVar/nodes/groundObj/groundObj.h \
     VisualVar/nodes/mapObj/mapObj.h \
-    VisualVar/nodes/ourObj/formsettingforaircraft.h \
+    VisualVar/nodes/ourObj/formAircraft.h \
     VisualVar/nodes/ourObj/ourObj.h \
     VisualVar/typeObjectsVis.h \
     VisualVar/recentOpenFiles.h \
@@ -150,13 +150,13 @@ FORMS += VisualVar/mainwindow.ui \
     VisualVar/dialogsavecurvar.ui \
     VisualVar/formsettingark.ui \
     VisualVar/manualModify/formManualModify.ui \
-    VisualVar/formaddlabelmap.ui \    
+    VisualVar/formaddlabelmap.ui \
+    VisualVar/nodes/airObj/formAirTarget.ui \
+    VisualVar/nodes/groundObj/formGroundTargets.ui \
     VisualVar/formprojecth.ui \
     VisualVar/formsettingcloud.ui \
     VisualVar/formfog.ui \
-    VisualVar/nodes/airObj/formsettingforairtarget.ui \
-    VisualVar/nodes/groundObj/formsettingforgroundtargets.ui \
-    VisualVar/nodes/ourObj/formsettingforaircraft.ui
+    VisualVar/nodes/ourObj/formAircraft.ui
 
 
 SOURCES += globalFunc/gl_func.cpp \
@@ -167,11 +167,11 @@ SOURCES += globalFunc/gl_func.cpp \
     VisualVar/nodes/aerodromObj/aerodObj.cpp \
     VisualVar/nodes/aerodromObj/formsettingaerodrom.cpp \
     VisualVar/nodes/airObj/airObj.cpp \
-    VisualVar/nodes/airObj/formsettingforairtarget.cpp \
-    VisualVar/nodes/groundObj/formsettingforgroundtargets.cpp \
+    VisualVar/nodes/airObj/formAirTarget.cpp \
+    VisualVar/nodes/groundObj/formGroundTargets.cpp \
     VisualVar/nodes/groundObj/groundObj.cpp \
     VisualVar/nodes/mapObj/mapObj.cpp \
-    VisualVar/nodes/ourObj/formsettingforaircraft.cpp \
+    VisualVar/nodes/ourObj/formAircraft.cpp \
     VisualVar/nodes/ourObj/ourObj.cpp \
     main.cpp \    
     VisualVar/typeObjectsVis.cpp \

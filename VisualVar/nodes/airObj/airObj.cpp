@@ -10,8 +10,8 @@
 #include "./GeographicLib/geoFunctions.h"
 
 AirObj::AirObj(AirObj *airTarget,
-                                 AircraftObject *aircraft,
-                                 QGraphicsItem *parent):ObjectGraphNode(airTarget,parent)
+               AircraftObject *aircraft,
+               QGraphicsItem *parent):ObjectGraphNode(airTarget,parent)
 {
     setZValue(9);
     initMessureItem();
@@ -74,7 +74,7 @@ AirObj::AirObj(AirObj *airTarget,
     colorItem->setRowText(tr("Тип объекта=")+QString::number(code),3);
     colorItem->setVisible(false);
 
-    setAircraft(aircraft);
+    connectToObj(aircraft);
 
     setFi(airTarget->currentFi());
     setD(airTarget->currentD());

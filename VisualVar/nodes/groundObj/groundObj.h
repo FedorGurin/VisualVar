@@ -18,7 +18,7 @@
 #include <QGraphicsSceneMouseEvent>
 
 
-#include "formsettingforgroundtargets.h"
+#include "formGroundTargets.h"
 
 #include "../globalFunc/gl_func.h"
 #include "../globalFunc/UnitsMeasure/IUnits.h"
@@ -102,12 +102,15 @@ public:
         lon=value;
         formSetting->setLonDouble(lon);
     }
-    void setAircraft(AircraftObject *air)
+    virtual void connectToObj(ObjectGraphNode *air)
     {
-        aircraft=air;
-        connect(aircraft,SIGNAL(isModifyPsi()),this,SLOT(slotIsModifyPsi()));
-        connect(aircraft,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this,SLOT(slotIsModifyPosition()));
-        connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
+        if(air->type() == E_HELLICOPTER)
+        {
+            aircraft = static_cast<AircraftObject *> (air);
+            connect(aircraft,SIGNAL(isModifyPsi()),this,SLOT(slotIsModifyPsi()));
+            connect(aircraft,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this,SLOT(slotIsModifyPosition()));
+            connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
+        }
     }
     virtual void saveXML(QDomDocument &domDocument,QDomElement &ele);
     virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele);

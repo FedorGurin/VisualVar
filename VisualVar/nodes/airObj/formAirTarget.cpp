@@ -1,4 +1,4 @@
-#include "formsettingforairtarget.h"
+#include "formAirTarget.h"
 #include "ui_formsettingforairtarget.h"
 #include "../globalFunc/gl_func.h"
 FormSettingForAirTarget::FormSettingForAirTarget(QWidget *parent) :

@@ -66,6 +66,7 @@ public:
             lineToAircraft->setLine(line);
         }
     }
+       virtual void connectToObj(ObjectGraphNode *obj) {}
 protected:
 
     virtual void mousePressEvent(QGraphicsSceneMouseEvent* event);

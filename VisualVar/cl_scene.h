@@ -15,7 +15,8 @@
 #include "formstatusbar.h"
 #include "typeObjectsVis.h"
 #include "settingVV.h"
-#include  "nodes/ourObj/ourObj.h"
+
+#include "nodes/ourObj/ourObj.h"
 #include "nodes/airObj/airObj.h"
 #include "nodes/groundObj/groundObj.h"
 #include "nodes/aerodromObj/aerodObj.h"
@@ -144,8 +145,6 @@ public:
     AircraftObject *aircraft;
     //! объект который может перемещаться
     AircraftObject *aircraftMove;
-    //! система координат
-    //SystemCoordObject *sysCoord;
     //! карта с географией земли
     GeographySysCoord *map;
     //! типы объектов
@@ -172,6 +171,8 @@ public:
     QList<PPMObject* >          ppmObjects;
     //! список меток(метки одинаковы в независимости от экземпляра сцены)
     const QList<LabelObject* >  *labelObjects;
+    //! список всех объектов
+    QList<ObjectGraphNode* > objects;
 
     QMdiSubWindow *subW;
     //! индекс сцены [1...N](сквозная нумерация вариантов)

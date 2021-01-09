@@ -76,7 +76,7 @@ public:
         E_CLOUD       = UserType + 15,
         E_FOG         = UserType + 16
     };
-    //! координаты положения объекта в географической СК
+
     double lat;
     double lon;
     //! строка для географическх координат
@@ -275,6 +275,8 @@ public:
     double currentPsi(){return psi;}
 
 
+    virtual void connectToObj(ObjectGraphNode *obj) = 0;
+
     //! показать траекторию
     void setVisibleTraj(bool value);
     //! текущее время
@@ -369,6 +371,7 @@ public:
         setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
         itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
     }
+    virtual void connectToObj(ObjectGraphNode *obj){}
 signals:
     void isModifyPosition(QPointF,TGeoPoint);
 protected:
@@ -398,6 +401,7 @@ public:
         setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
         itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
     }
+    virtual void connectToObj(ObjectGraphNode *obj){}
 signals:
     void isModifyPosition(QPointF,TGeoPoint);
 protected:
@@ -488,6 +492,7 @@ public:
     {
         lon=value;
     }
+       virtual void connectToObj(ObjectGraphNode *obj) {}
 public:
     virtual int type() const
     {
@@ -506,6 +511,7 @@ public:
     {
         setScale(0.06);
     }
+    virtual void connectToObj(ObjectGraphNode *obj) {}
     virtual int type() const
     {
         return E_INFO;
@@ -523,6 +529,7 @@ public:
     {
         return E_BEACON_RSBN;
     }
+    virtual void connectToObj(ObjectGraphNode *obj){}
 };
 class RouteObject:public ObjectGraphNode
 {
@@ -559,19 +566,13 @@ public:
 
         refresh();
     }
+       virtual void connectToObj(ObjectGraphNode *obj) {}
     virtual void setZoomLevel(int value)
     {
         ObjectGraphNode::setZoomLevel(value);
         refresh();
     }
-    void setLat(double value)
-    {
-        lat=value;
-    }
-    void setLon(double value)
-    {
-        lon=value;
-    }
+
     //! маршрут левее
     void setLeftRoute(RouteObject *route)
     {

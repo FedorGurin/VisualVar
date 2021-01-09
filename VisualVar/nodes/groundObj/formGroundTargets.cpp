@@ -1,4 +1,4 @@
-#include "formsettingforgroundtargets.h"
+#include "formGroundTargets.h"
 #include "ui_formsettingforgroundtargets.h"
 #include "../globalFunc/gl_func.h"
 FormSettingForGroundTargets::FormSettingForGroundTargets(QWidget *parent) :

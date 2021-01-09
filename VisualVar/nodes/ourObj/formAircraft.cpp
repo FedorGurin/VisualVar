@@ -1,4 +1,4 @@
-#include "formsettingforaircraft.h"
+#include "formAircraft.h"
 #include "ui_formsettingforaircraft.h"
 #include "../globalFunc/gl_func.h"
 FormSettingForAircraft::FormSettingForAircraft(QWidget *parent) :

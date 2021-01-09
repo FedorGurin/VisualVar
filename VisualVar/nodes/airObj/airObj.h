@@ -18,7 +18,7 @@
 #include <QGraphicsSceneMouseEvent>
 
 #include "nodeVisual.h"
-#include "formsettingforairtarget.h"
+#include "formAirTarget.h"
 #include "nodes/ourObj/ourObj.h"
 //! класс воздушная цель
 class AirObj:public ObjectGraphNode
@@ -56,15 +56,20 @@ public:
         }
     }
 
-    void setAircraft(AircraftObject *air)
+    virtual void connectToObj(ObjectGraphNode *air)
     {
-        aircraft=air;
-        //connect(aircraft,SIGNAL(isModifyPsi()),this,SLOT(slotIsModifyPsi()));
-        connect(aircraft,SIGNAL(isModifyPsi()),this,SLOT(slotFi()));
-        connect(aircraft,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this,SLOT(slotMovePos()));
-        //connect(aircraft,SIGNAL(isModifyPosition(QPointF,QPointF)),this,SLOT(slotIsModifyPosition()));
-        connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
+        if(air->type() == E_HELLICOPTER)
+        {
+           aircraft = static_cast<AircraftObject *> (air);
+
+            //connect(aircraft,SIGNAL(isModifyPsi()),this,SLOT(slotIsModifyPsi()));
+            connect(aircraft,SIGNAL(isModifyPsi()),this,SLOT(slotFi()));
+            connect(aircraft,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this,SLOT(slotMovePos()));
+            //connect(aircraft,SIGNAL(isModifyPosition(QPointF,QPointF)),this,SLOT(slotIsModifyPosition()));
+            connect(aircraft,SIGNAL(sigHoverEnterEvent(bool)),this,SLOT(slotEnterLeaveCur(bool)));
+        }
     }
+
 
     virtual void saveXML(QDomDocument &domDocument,QDomElement &ele);
     virtual void saveXMLForModel(QDomDocument &domDocument,QDomElement &ele);

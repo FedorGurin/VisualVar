@@ -362,13 +362,13 @@ cl_Scene::cl_Scene(QDomElement &node,
         //! оьъект цели
         AirObj *target = new AirObj("",":/res/svg/target",map);
         target->map = map;
-        target->setAircraft(aircraft);
+        target->connectToObj(aircraft);
         target->setZoomLevel(currentZoom);
 
         //! создаем двигающийся объект
         AirObj *target_move = new AirObj("",":/res/svg/target_move",map);
         target_move->map = map;
-        target_move->setAircraft(aircraftMove);
+        target_move->connectToObj(aircraftMove);
         target_move->setZoomLevel(currentZoom);
         target_move->setMovingObject(true);
         target_move->loadXML(tempNode);
@@ -402,7 +402,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     {
         GroundObj *target = new GroundObj("",":/res/svg/gtarget",map);
         target->map = map;
-        target->setAircraft(aircraft);
+        target->connectToObj(aircraft);
         target->setZoomLevel(currentZoom);
         target->formSetting->setListObjectVis(typeObjectsVis->listGroundObjects());
         ///target->hide();
@@ -781,7 +781,7 @@ void cl_Scene::createNewAirObj(QPointF p)
     AirObj *target=new AirObj(tr("Объект №")+QString::number(airObj.size()+1),":/res/svg/target",map);
     target->setCode(100,typeObjectsVis->codeAir(100));
 
-    target->setAircraft(aircraft);
+    target->connectToObj(aircraft);
     target->setZoomLevel(currentZoom);
     target->setAllInfo(allInfoObjects);
     target->formSetting->setListObjectVis(typeObjectsVis->listAirObjects());
@@ -790,7 +790,7 @@ void cl_Scene::createNewAirObj(QPointF p)
     // создаем новую перемещащуюся цель
     AirObj *target_move = new AirObj(tr("Объект №") + QString::number(airObjMove.size()+1),":/res/svg/target_move",map);
 
-    target_move->setAircraft(aircraftMove);
+    target_move->connectToObj(aircraftMove);
     target_move->setZoomLevel(currentZoom);
     target_move->formSetting->setListObjectVis(typeObjectsVis->listAirObjects());
     target_move->setMovingObject(true);
@@ -835,7 +835,7 @@ void cl_Scene::createNewGroundObj(QPointF p)
 {
     GroundObj *target=new GroundObj(tr("Назем. Объект №")+QString::number(groundObj.size()+1),":/res/svg/gtarget",map);
     target->setCode(311,typeObjectsVis->codeGround(311));
-    target->setAircraft(aircraft);
+    target->connectToObj(aircraft);
     target->setZoomLevel(currentZoom);
     target->setAllInfo(allInfoObjects);
     target->formSetting->setListObjectVis(typeObjectsVis->listGroundObjects());
@@ -965,13 +965,8 @@ void cl_Scene::createNewPointRoute(QPointF p)
 
     route->setZoomLevel(currentZoom);
     route->map = map;
-
     QPointF pos = map->mapFromScene(p);
-
-    double lat,lon;
-    pixelXYToLatLong(p,currentZoom-1,lat,lon);
-    route->setLat(lat);
-    route->setLon(lon);
+    pixelXYToLatLong(p,currentZoom-1,route->lat,route->lon);
     route->setPosC(pos.x(),pos.y());
 
     if(routeObjects.size()>1)

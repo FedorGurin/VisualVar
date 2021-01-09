@@ -110,7 +110,7 @@ GroundObj::GroundObj(GroundObj   *groundTarget, /*наземная цель*/
     //! масштаб объекта
     setScale(0.1);
 
-    setAircraft(aircraft);
+    connectToObj(aircraft);
     setLength(groundTarget->currentLength());
     setPrCodeLength(groundTarget->currentPrCodeLength());
 
