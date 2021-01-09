@@ -282,7 +282,7 @@ void MainWindowVisVar::createConnections()
 {
     //QActions
     connect(ui->actionCreateVar,        SIGNAL(triggered()),    this,SLOT(slotCreateMenu()));
-    connect(ui->actionCreateVarCircle,  SIGNAL(triggered()),    this,SLOT(slotCreateMenuCircleVariant()));
+    //connect(ui->actionCreateVarCircle,  SIGNAL(triggered()),    this,SLOT(slotCreateMenuCircleVariant()));
     connect(ui->actionOpenXML,          SIGNAL(triggered()),    this,SLOT(slotOpenXML()));
     connect(ui->actionExit,             SIGNAL(triggered()),    this,SLOT(slotExitProgram()));
     connect(ui->actionSaveAs,           SIGNAL(triggered()),    this,SLOT(slotSaveAs()));
@@ -309,7 +309,7 @@ void MainWindowVisVar::createConnections()
     //!
     connect(formAddLabel, SIGNAL(gotoLatLon(double,double)), this, SLOT(slotGotoLatLon(double,double)));
 
-    connect(formManualModify, SIGNAL(createNewScene(bool)),this,SLOT(createVariant(bool)));
+    connect(formManualModify, SIGNAL(createNewScene(bool)),this,SLOT(createVariant()));
     connect(formManualModify, SIGNAL(cloneScene(cl_Scene*)),this,SLOT(slotCloningScene(cl_Scene*)));
     connect(formManualModify, SIGNAL(currentActiveWindow(QString)),this,SLOT(setCurrentActiveWindow(QString)));
 
@@ -336,7 +336,6 @@ void MainWindowVisVar::createConnections()
     connect(actRotateVisible, SIGNAL(triggered(bool)), this, SLOT(slotRotateVisible(bool)));
 
 
-    connect(ui->actMppmOpen, SIGNAL(triggered(bool)), this, SLOT(slotActMppmOpen(bool)));
 }
 
 void MainWindowVisVar::slotEventsRequest(TRequestEvent answer)

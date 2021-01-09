@@ -523,15 +523,6 @@
     <string>ПЗ-90</string>
    </property>
   </action>
-  <action name="actMppmOpen">
-   <property name="icon">
-    <iconset resource="../res.qrc">
-     <normaloff>:/png/pm</normaloff>:/png/pm</iconset>
-   </property>
-   <property name="text">
-    <string>Открыть программу просмотра параметров моделей...</string>
-   </property>
-  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

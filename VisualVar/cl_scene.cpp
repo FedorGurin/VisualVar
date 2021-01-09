@@ -939,13 +939,16 @@ void cl_Scene::createNewInfoObject(QPointF p)
 }
 void cl_Scene::createNewBeaconObject(QPointF p)
 {
-    BeaconObject *beacon = new BeaconObject("./res/beam.svg",map);
-    beaconObjects.push_back(beacon);
+    BeaconObject *beacon = new BeaconObject(":/res/svg/vor",map);
+
     beacon->map = map;
     QPointF pos = map->mapFromScene(p);
     beacon->setPos(pos.x(),pos.y());
-
+    beacon->setZoomLevel(currentZoom);
+    pixelXYToLatLong(p,currentZoom - 1,beacon->lat,beacon->lon);
+    beaconObjects.push_back(beacon);
     scene->addItem(beacon);
+    setZoomLevel(currentZoom);
 }
 void cl_Scene::setActiveRoute(bool value)
 {

@@ -1,7 +1,5 @@
 #pragma once
 
-
-
 #include <QString>
 #include <QGraphicsSvgItem>
 #include <QSvgRenderer>
@@ -26,8 +24,17 @@ class BeaconObject:public ObjectGraphNode
 public:
     BeaconObject(QString name,QGraphicsItem *parent):ObjectGraphNode(name,parent)
     {
-        setScale(0.1);
+        setZValue(10);
+        setScale(0.2);
+        setAcceptHoverEvents(true);
+
+        //settings = new FormSettingCloud();
+        //settings->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
+        QRectF rect1=boundingRect();
+        setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
+        itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
     }
+
     virtual int type() const
     {
         return E_BEACON;
