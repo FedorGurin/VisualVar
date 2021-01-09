@@ -55,10 +55,10 @@ HEADERS += globalFunc/gl_func.h \
     VisualVar/cl_scene.h \
     VisualVar/factoryObj.h \
     VisualVar/formlistaerodroms.h \
-    VisualVar/formsettingtacan.h \
-    VisualVar/formsettingvor.h \
     VisualVar/nodes/airObj/airObj.h \
     VisualVar/nodes/airObj/formAirTarget.h \
+    VisualVar/nodes/beaconObj/beaconObj.h \
+    VisualVar/nodes/beaconObj/formsettingvor.h \
     VisualVar/nodes/cloudObj/cloudObj.h \
     VisualVar/nodes/cloudObj/formsettingcloud.h \
     VisualVar/nodes/fogObj/fogObj.h \
@@ -145,14 +145,12 @@ HEADERS += globalFunc/gl_func.h \
 
 
 FORMS += VisualVar/mainwindow.ui \
+    VisualVar/nodes/beaconObj/formsettingvor.ui \
     VisualVar/nodes/cloudObj/formsettingcloud.ui \
-    VisualVar/formsettingtacan.ui \
-    VisualVar/formsettingvor.ui \
     VisualVar/formzoompanel.ui \
     VisualVar/formstatusbar.ui \
     VisualVar/nodes/aerodromObj/formsettingaerodrom.ui \
     VisualVar/dialogsavecurvar.ui \
-    VisualVar/formsettingark.ui \
     VisualVar/manualModify/formManualModify.ui \
     VisualVar/formaddlabelmap.ui \
     VisualVar/nodes/airObj/formAirTarget.ui \
@@ -164,12 +162,12 @@ FORMS += VisualVar/mainwindow.ui \
 
 SOURCES += globalFunc/gl_func.cpp \
     VisualVar/factoryObj.cpp \
-    VisualVar/formsettingtacan.cpp \
-    VisualVar/formsettingvor.cpp \
     VisualVar/nodes/aerodromObj/aerodObj.cpp \
     VisualVar/nodes/aerodromObj/formsettingaerodrom.cpp \
     VisualVar/nodes/airObj/airObj.cpp \
     VisualVar/nodes/airObj/formAirTarget.cpp \
+    VisualVar/nodes/beaconObj/beaconObj.cpp \
+    VisualVar/nodes/beaconObj/formsettingvor.cpp \
     VisualVar/nodes/cloudObj/cloudObj.cpp \
     VisualVar/nodes/cloudObj/formsettingcloud.cpp \
     VisualVar/nodes/fogObj/fogObj.cpp \

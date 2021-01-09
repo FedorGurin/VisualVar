@@ -23,6 +23,7 @@
 #include "nodes/mapObj/mapObj.h"
 #include "nodes/cloudObj/cloudObj.h"
 #include "nodes/fogObj/fogObj.h"
+#include "nodes/beaconObj/beaconObj.h"
 
 class cl_Scene:public QObject
 {

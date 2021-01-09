@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef GEOGRAPHYMAPPING_H
 #define GEOGRAPHYMAPPING_H
 

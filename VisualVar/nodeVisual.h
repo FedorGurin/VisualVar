@@ -60,8 +60,7 @@ public:
         E_OBJ_G       = UserType + 2,
         E_OBJ_V       = UserType + 3,
         E_AERODROM    = UserType + 4,
-        E_BEACON_RSBN = UserType + 5,
-        E_BEACON_VOR  = UserType + 6,
+        E_BEACON      = UserType + 5,
         E_HELLICOPTER = UserType + 8,
         E_UNSET       = UserType + 7,
         E_SYSCOORD    = UserType + 9,
@@ -455,20 +454,7 @@ public:
         return E_INFO;
     }
 };
-//! класс радиомаяк
-class BeaconObject:public ObjectGraphNode
-{
-public:
-    BeaconObject(QString name,QGraphicsItem *parent):ObjectGraphNode(name,parent)
-    {
-        setScale(0.1);
-    }
-    virtual int type() const
-    {
-        return E_BEACON_RSBN;
-    }
-    virtual void connectToObj(ObjectGraphNode *obj){}
-};
+
 class RouteObject:public ObjectGraphNode
 {
 public:

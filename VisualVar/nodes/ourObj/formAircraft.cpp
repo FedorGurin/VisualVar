@@ -27,8 +27,8 @@ FormSettingForAircraft::FormSettingForAircraft(QWidget *parent) :
 //    connect(ui->doubleSpinBoxPsi,SIGNAL(valueChanged(double)),this,SLOT(slotPsiD(double)));
 //    connect(ui->doubleSpinBoxTeta,SIGNAL(valueChanged(double)),this,SLOT(slotTetaD(double)));
 
-    connect(ui->lineEditLat,SIGNAL(textEdited(QString)),this,SLOT(slotLat(QString)));
-    connect(ui->lineEditLon,SIGNAL(textEdited(QString)),this,SLOT(slotLon(QString)));
+   // connect(ui->lineEditLat,SIGNAL(textEdited(QString)),this,SLOT(slotLat(QString)));
+   // connect(ui->lineEditLon,SIGNAL(textEdited(QString)),this,SLOT(slotLon(QString)));
     connect(ui->lineEditLat,SIGNAL(editingFinished()),this,SLOT(slotLat()));
     connect(ui->lineEditLon,SIGNAL(editingFinished()),this,SLOT(slotLon()));
 
