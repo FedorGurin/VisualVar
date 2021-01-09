@@ -14,7 +14,7 @@ void FormZoomPanel::slotEvents(int value)
 {    
     emit signalZoom(value);
 }
-//! увеличить масштаб
+//увеличить масштаб
 void FormZoomPanel::slotButtonUp()
 {
     int value = ui->verticalSlider->value() + 1;
@@ -25,7 +25,7 @@ void FormZoomPanel::setBeginValue(int z)
 {
     ui->verticalSlider->setValue(z);
 }
-//! уменьшить масштаб
+//уменьшить масштаб
 void FormZoomPanel::slotButtonDown()
 {
     int value = ui->verticalSlider->value() - 1;

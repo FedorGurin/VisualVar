@@ -9,8 +9,6 @@
 #include "./glm/gtc/matrix_transform.hpp"
 #include "./GeographicLib/geoFunctions.h"
 
-
-
 extern GeographicLib::Geocentric* earth;
 
 const QString google_sat        = "\\sat\\z";
@@ -116,14 +114,14 @@ void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
     switch(typeMap)
     {
         case YANDEX_SAT:        {pref_map = yandex_sat;               break;}
-        case YANDEX_MAP:        {pref_map = yandex_map;ext_map=".png";break;}
-        case GOOGLE_MAP:        {pref_map = google_map;ext_map=".png";break;}
+        case YANDEX_MAP:        {pref_map = yandex_map; ext_map = ".png";break;}
+        case GOOGLE_MAP:        {pref_map = google_map; ext_map = ".png";break;}
         case GOOGLE_LAND:       {pref_map = google_land;              break;}
         case GOOGLE_SAT:        {pref_map = google_sat;              break;}
         case BING_SAT:          {pref_map = bing_sat;                 break;}
         case GOOGLE_SAT_EARTH:  {pref_map = google_sat_earth;         break;}
-        case NOKIA_MAP:         {pref_map = nokia_map;ext_map=".png"; break;}
-        case NOKIA_HYB:         {pref_map = nokia_hyb;ext_map=".png"; break;}
+        case NOKIA_MAP:         {pref_map = nokia_map; ext_map = ".png"; break;}
+        case NOKIA_HYB:         {pref_map = nokia_hyb; ext_map = ".png"; break;}
         default:                {pref_map = "";}
     };
 
@@ -196,16 +194,16 @@ QString GeographySysCoord::strTypeMap()
     QString strMap = "";
     switch(isTypeMap())
     {
-    case GeographySysCoord::YANDEX_SAT:         {strMap="yand_sat";     break;}
-    case GeographySysCoord::YANDEX_MAP:         {strMap="yand_map";     break;}
-    case GeographySysCoord::GOOGLE_MAP:         {strMap="google_map";   break;}
-    case GeographySysCoord::GOOGLE_LAND:        {strMap="google_land";  break;}
-    case GeographySysCoord::GOOGLE_SAT:         {strMap="google_sat";   break;}
-    case GeographySysCoord::BING_SAT:           {strMap="bing_sat";     break;}
-    case GeographySysCoord::GOOGLE_SAT_EARTH:   {strMap="google_sat_ea";break;}
-    case GeographySysCoord::NOKIA_HYB:          {strMap="nokia_hyb";    break;}
-    case GeographySysCoord::NOKIA_MAP:          {strMap="nokia_map";    break;}
-    default:                                    {strMap="";}
+    case GeographySysCoord::YANDEX_SAT:         {strMap = "yand_sat";     break;}
+    case GeographySysCoord::YANDEX_MAP:         {strMap = "yand_map";     break;}
+    case GeographySysCoord::GOOGLE_MAP:         {strMap = "google_map";   break;}
+    case GeographySysCoord::GOOGLE_LAND:        {strMap = "google_land";  break;}
+    case GeographySysCoord::GOOGLE_SAT:         {strMap = "google_sat";   break;}
+    case GeographySysCoord::BING_SAT:           {strMap = "bing_sat";     break;}
+    case GeographySysCoord::GOOGLE_SAT_EARTH:   {strMap = "google_sat_ea";break;}
+    case GeographySysCoord::NOKIA_HYB:          {strMap = "nokia_hyb";    break;}
+    case GeographySysCoord::NOKIA_MAP:          {strMap = "nokia_map";    break;}
+    default:                                    {strMap = "";}
     };
     return strMap;
 }
@@ -225,7 +223,6 @@ ThreadLoadMaps::ThreadLoadMaps(QObject* parent):QThread(parent)
 {
 
 }
-
 void ThreadLoadMaps::run()
 {
     int pixX,pixY;
@@ -280,11 +277,11 @@ void ThreadLoadMaps::addTile(QString path,
                              double pixY,
                              QString ext)
 {
-    QString fileName=path+"\\"+
-            QString::number(i/1024)+"\\x"+
-            QString::number(i)+"\\"+
-            QString::number(j/1024)+"\\y"+
-            QString::number(j)+ext;
+    QString fileName = path + "\\" +
+            QString::number(i/1024) + "\\x" +
+            QString::number(i)+"\\" +
+            QString::number(j/1024) + "\\y" +
+            QString::number(j) + ext;
 
     if(QFile::exists(fileName)==false)
         fileName = ":/png/no_tile";
@@ -305,7 +302,7 @@ void GeographySysCoord::slotFinishedLoadAllTile()
     // обнулим все элементы
     for(auto i:*ptrItemMapOld)
     {
-        this->scene()->removeItem(i);
+        scene()->removeItem(i);
         delete i;
     }
     ptrItemMapOld->clear();
@@ -321,7 +318,15 @@ void GeographySysCoord::slotCreatePixmapItem(QByteArray byteArray,int pixX,int p
 }
 void GeographySysCoord::addTile(QString prefix,int i,int j,double pixX,double pixY,QString ext)
 {
-    QString fileName = dirMaps+prefix+QString::number(currentZoom)+"/"+QString::number(i/1024)+"/x"+QString::number(i)+"/"+QString::number(j/1024)+"/y"+QString::number(j)+ext;
+    QString fileName = dirMaps +
+                       prefix +
+                       QString::number(currentZoom) +
+                       "/" +
+                       QString::number(i/1024) +
+                       "/x" +
+                       QString::number(i) +
+                       "/" +
+                       QString::number(j/1024) + "/y" + QString::number(j) + ext;
 
     if(QFile::exists(fileName) == false)
         fileName=":/png/no_tile";

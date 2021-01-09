@@ -19,9 +19,6 @@
 #include <QPixmap>
 #include <QGraphicsSceneMouseEvent>
 
-
-#include "formsettingcloud.h"
-#include "formsettingfog.h"
 #include "../globalFunc/gl_func.h"
 #include "../globalFunc/UnitsMeasure/IUnits.h"
 #include "../mppm/CommonEngineData.h"
@@ -354,66 +351,7 @@ public:
     }
 };
 
-//! класс облачности
-class CloudObject:public ObjectGraphNode
-{
-     Q_OBJECT
-public:
-    CloudObject(QString name_,QGraphicsItem *parent):ObjectGraphNode(name_,parent)
-    {
-        setZValue(10);
-        setScale(0.1);
-        setAcceptHoverEvents(true);
 
-        settings = new FormSettingCloud();
-        settings->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
-        QRectF rect1=boundingRect();
-        setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
-        itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
-    }
-    virtual void connectToObj(ObjectGraphNode *obj){}
-signals:
-    void isModifyPosition(QPointF,TGeoPoint);
-protected:
-    virtual void mouseMoveEvent (QGraphicsSceneMouseEvent   *event);
-public:
-    FormSettingCloud *settings;
-    virtual int type() const
-    {
-        return E_CLOUD;
-    }
-
-};
-//! класс тумана
-class FogObject:public ObjectGraphNode
-{
-     Q_OBJECT
-public:
-    FogObject(QString name_,QGraphicsItem *parent):ObjectGraphNode(name_,parent)
-    {
-        setZValue(10);
-        setScale(0.1);
-        setAcceptHoverEvents(true);
-
-        settings = new FormFog();
-        settings->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
-        QRectF rect1 = boundingRect();
-        setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
-        itemSvg->setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));
-    }
-    virtual void connectToObj(ObjectGraphNode *obj){}
-signals:
-    void isModifyPosition(QPointF,TGeoPoint);
-protected:
-    virtual void mouseMoveEvent (QGraphicsSceneMouseEvent   *event);
-public:
-    FormFog *settings;
-    virtual int type() const
-    {
-        return E_FOG;
-    }
-
-};
 
 
 class RulerObject:public ObjectGraphNode

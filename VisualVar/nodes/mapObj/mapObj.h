@@ -25,7 +25,6 @@
 #include "geographyMapping.h"
 
 #include "settingVV.h"
-
 #include "nodeVisual.h"
 
 //! поток для подгрузки карт

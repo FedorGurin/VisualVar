@@ -1,14 +1,5 @@
 #include "aerodObj.h"
-#include <QFile>
-#include <math.h>
-
-#define GLM_PRECISION_HIGHP_FLOAT
-#define GLM_FORCE_RADIANS
-
 #include "./glm/glm.hpp"
-#include "./glm/gtc/matrix_transform.hpp"
-#include "./GeographicLib/geoFunctions.h"
-
 
 void AerodromObject::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
@@ -42,7 +33,7 @@ void AerodromObject::slotIsModifyPosition()
 {
     slotIsModifyPsi();
     slotEnterLeaveCur(true);
-    //! отрисовка прямой соединяющей вертолет и объект
+    // отрисовка прямой соединяющей вертолет и объект
 }
 void AerodromObject::slotEnterLeaveCur(bool flag)
 {

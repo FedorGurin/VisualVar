@@ -26,9 +26,9 @@ FormProjectH::FormProjectH(QWidget *parent) :
 }
 void FormProjectH::updateScene()
 {
-    //! очищение всех объектов
+    //очищение всех объектов
     clearObj();
-    //! расчет масштаба
+    //расчет масштаба
     calcMaxScale();
 
     if(currentScene != nullptr)

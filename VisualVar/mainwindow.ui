@@ -57,7 +57,6 @@
     </widget>
     <addaction name="menu_3"/>
     <addaction name="actionOpenXML"/>
-    <addaction name="action_6"/>
     <addaction name="actionLastVar"/>
     <addaction name="actionSaveAll"/>
     <addaction name="actionSaveAs"/>
@@ -72,38 +71,19 @@
      <string>Окна</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="title">
-     <string>Справка</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuMaps">
     <property name="title">
      <string>Карты</string>
     </property>
-    <widget class="QMenu" name="menuMapGoogle">
-     <property name="title">
-      <string>Google</string>
-     </property>
-     <addaction name="actionSatGoogle"/>
-     <addaction name="actionMapsGoogle"/>
-     <addaction name="actionLandGoogle"/>
-    </widget>
     <widget class="QMenu" name="menuMapYandex">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="title">
       <string>Яндекс</string>
      </property>
      <addaction name="actionSatYandex"/>
      <addaction name="actionMapsYandex"/>
-    </widget>
-    <widget class="QMenu" name="menuMapBing">
-     <property name="title">
-      <string>Bing</string>
-     </property>
-     <addaction name="actionSatBing"/>
     </widget>
     <widget class="QMenu" name="menuGoogle_Earth">
      <property name="title">
@@ -111,19 +91,9 @@
      </property>
      <addaction name="actionSatGoogleEa"/>
     </widget>
-    <widget class="QMenu" name="menuNokia">
-     <property name="title">
-      <string>Nokia</string>
-     </property>
-     <addaction name="actionNokiaSatHyb"/>
-     <addaction name="actionNokiaMaps"/>
-    </widget>
     <addaction name="actionAuto"/>
-    <addaction name="menuMapGoogle"/>
     <addaction name="menuMapYandex"/>
-    <addaction name="menuMapBing"/>
     <addaction name="menuGoogle_Earth"/>
-    <addaction name="menuNokia"/>
    </widget>
    <widget class="QMenu" name="menuMapsLayer">
     <property name="title">
@@ -194,7 +164,6 @@
    <addaction name="menuMaps"/>
    <addaction name="menuMapsLayer"/>
    <addaction name="menu_2"/>
-   <addaction name="menuHelp"/>
    <addaction name="menu_4"/>
    <addaction name="menuTools"/>
   </widget>

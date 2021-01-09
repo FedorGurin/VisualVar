@@ -81,7 +81,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     }
     engine = func();
 
-  //! получение обратного сигнала
+  //получение обратного сигнала
     connect(engine, SIGNAL(reciveEventsRequest(TRequestEvent)), this, SLOT(slotIds(TRequestEvent)));
     connect(engine, SIGNAL(reciveEventsRequest(TRequestEvent)), this, SLOT(slotEventsRequest(TRequestEvent)));
 
@@ -90,7 +90,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     //создание главного меню
     createMainMenuBar();
 
-   //! Система координат для пересчета положения целей (применяется для сцены при unitedStands==true)
+   //Система координат для пересчета положения целей (применяется для сцены при unitedStands==true)
     earthWGS = new GeographicLib::Geocentric(GeographicLib::Constants::WGS84_a(), GeographicLib::Constants::WGS84_f());
     earthPZ90 = new GeographicLib::Geocentric(6378136., 1/298.25784);
     earth = earthPZ90;//по умолчанию - ПЗ-90
@@ -100,10 +100,10 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     typeObjectsVis  = new TypeObjectsVis;
     dialogSave      = new DialogSaveCurVar;
     formManualModify= new FormManualModify(&scenes);
-    //! форма добавления новой метки
+    //форма добавления новой метки
     formAddLabel    = new FormAddLabelMap;
 
-    //! окно со списком вариантов
+    //окно со списком вариантов
     dockWidg = new QDockWidget(this);
     dockWidg->setWindowTitle("Список вариантов");
     dockWidg->setAllowedAreas(Qt::BottomDockWidgetArea);
@@ -114,7 +114,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     addDockWidget(Qt::BottomDockWidgetArea, dockWidg);
 
 
-    //! окно со списком вариантов
+    //окно со списком вариантов
     dockWidgH = new QDockWidget(this);
     dockWidgH->setWindowTitle("Высоты");
     dockWidgH->setAllowedAreas(Qt::RightDockWidgetArea);
@@ -125,9 +125,9 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     dockWidgH->titleBarWidget()->setVisible(false);
     addDockWidget(Qt::RightDockWidgetArea, dockWidgH);
 
-    //! текущая сцена не определена
+    //текущая сцена не определена
     curScenes   = nullptr;
-    //! по умолчанию используем цифровую карту
+    //по умолчанию используем цифровую карту
     useMap          = true;
     toFlushButton   = false;
 
@@ -194,7 +194,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     createConnections();
 
 
-    //! запрос на чтение текущих параметров
+    //запрос на чтение текущих параметров
     TCommonRequest listReq;
     listReq.setReciver("MPPM");
     listReq.setSender("VAR");
@@ -204,7 +204,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
     listReq.append(prefixPath + "Psi");
     listReq.append(prefixPath + "c_g.x");
     listReq.append(prefixPath + "c_g.z");
-    //! текущее состояние моделей
+    //текущее состояние моделей
     QString prefixPathReg      = settingVV->pathToObj + "Управление моделированием.Reg.Cur.";
     listReq.append(prefixPathReg  + "startReg");
     listReq.append(prefixPathReg  + "restartReg");
@@ -215,21 +215,21 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
 }
 void MainWindowVisVar::createActions()
 {
-    //! добавление воздушного объекта
+    //добавление воздушного объекта
     actAddAirObject= new QAction(QIcon(":/res/svg/target"), QString(tr("Добавить воздушный объект")));
-    //! добавление наземного объекта
+    //добавление наземного объекта
     actAddGroundObject = new QAction(QIcon(":/res/svg/gtarget"), QString(tr("Добавить наземный объект")));
-    //! добавление тумана
+    //добавление тумана
     actAddFog   = new QAction(QIcon(":/res/svg/fog"), QString(tr("Добавить туман")));;
-    //! добавление облачности
+    //добавление облачности
     actAddCloud = new QAction(QIcon(":/res/svg/cloud"), QString(tr("Добавить облачность")));;
-    //! добавление радиостанции АРК
+    //добавление радиостанции АРК
     actARK = new QAction(QIcon(":/res/svg/ark"), QString(tr("Добавить радистанцию АРК")));;
-    //! добавление маяка ILS
+    //добавление маяка ILS
     actILS = new QAction(QIcon(":/res/svg/ils"), QString(tr("Добавить маяк ILS")));;
-    //! добавление маяка VOR
+    //добавление маяка VOR
     actVOR = new QAction(QIcon(":/res/svg/vor"), QString(tr("Добавить маяк VOR")));;
-    //! добавление маяка TACAN
+    //добавление маяка TACAN
     actTACAN = new QAction(QIcon(":/res/svg/tacan"), QString(tr("Добавить маяк TACAN")));;
 
 
@@ -280,7 +280,7 @@ void MainWindowVisVar::createMainMenuBar()
 
 void MainWindowVisVar::createConnections()
 {
-    //! QActions
+    //QActions
     connect(ui->actionCreateVar,        SIGNAL(triggered()),    this,SLOT(slotCreateMenu()));
     connect(ui->actionCreateVarCircle,  SIGNAL(triggered()),    this,SLOT(slotCreateMenuCircleVariant()));
     connect(ui->actionOpenXML,          SIGNAL(triggered()),    this,SLOT(slotOpenXML()));
@@ -293,10 +293,10 @@ void MainWindowVisVar::createConnections()
     connect(ui->actionAddLabel,         SIGNAL(triggered()),    this,SLOT(slotAddLabel()));
     connect(ui->actionGoto,             SIGNAL(triggered()),    this,SLOT(slotGotoLabel()));
 
-    connect(ui->menuMapGoogle,          SIGNAL(triggered(QAction*)),  this,SLOT(slotMapGoogle(QAction*)));
+    //connect(ui->menuMapGoogle,          SIGNAL(triggered(QAction*)),  this,SLOT(slotMapGoogle(QAction*)));
     connect(ui->menuMapYandex,          SIGNAL(triggered(QAction*)),  this,SLOT(slotMapYandex(QAction*)));
-    connect(ui->menuNokia,              SIGNAL(triggered(QAction*)),  this,SLOT(slotMapNokia(QAction*)));
-    connect(ui->menuMapBing,            SIGNAL(triggered(QAction*)),  this,SLOT(slotMapBing(QAction*)));
+    //connect(ui->menuNokia,              SIGNAL(triggered(QAction*)),  this,SLOT(slotMapNokia(QAction*)));
+    //connect(ui->menuMapBing,            SIGNAL(triggered(QAction*)),  this,SLOT(slotMapBing(QAction*)));
     connect(ui->menuGoogle_Earth,       SIGNAL(triggered(QAction*)),  this,SLOT(slotMapGoogle_EA(QAction*)));
     connect(ui->menuLayerGoogle,        SIGNAL(triggered(QAction*)),  this,SLOT(slotLayerGoogle(QAction*)));
     connect(ui->menuLayerYandex,        SIGNAL(triggered(QAction*)),  this,SLOT(slotLayerYandex(QAction*)));
@@ -351,7 +351,7 @@ void MainWindowVisVar::slotEventsRequest(TRequestEvent answer)
                                 rad_deg( (answer.value[0].toDouble())),
                                 rad_deg(-(answer.value[2].toDouble())));
 
-            //! если останов
+            //если останов
             if(answer.value[7].toInt() == 1 && toFlushButton == true)
             {
                 toFlushButton = false;
@@ -359,11 +359,11 @@ void MainWindowVisVar::slotEventsRequest(TRequestEvent answer)
                 listReq0.setReciver("MPPM");
                 listReq0.setSender("VAR");
                 QString prefixPathReg       = settingVV->pathToObj + "Управление моделированием.InputButton.Input.";
-                //! текущее состояние моделей
+                //текущее состояние моделей
                 listReq0.append(prefixPathReg  + "restartButton","0");
                 engine->setValue(listReq0,IEngineData::ASYNCH_ENGINE);
             }
-            //! если останов
+            //если останов
             if(answer.value[6].toInt() == 1 )
             {
                 slotRestart();
@@ -377,7 +377,7 @@ void MainWindowVisVar::slotCheckBoxGeography(int value)
     useMap = value;
     if(useMap == true)
     {
-        //! поменять точку привязки
+        //поменять точку привязки
         if(curScenes!=nullptr)
             setGeoParamOfAircraft();
     }
@@ -414,7 +414,7 @@ void MainWindowVisVar::slotButtonCentering()
     if(curScenes != nullptr)
         curScenes->centerByAircarft();
 }
-//! копирование сцены
+//копирование сцены
 void MainWindowVisVar::slotCloningScene(cl_Scene* s)
 {
     cl_Scene *scene = new cl_Scene(s,this);
@@ -430,9 +430,9 @@ void MainWindowVisVar::slotCloningScene(cl_Scene* s)
     //!
     scene->view->setWindowTitle(strName);
     scene->index=scenes.size();
-    //! укажем какой тип карты использует пользователь
+    //укажем какой тип карты использует пользователь
     checkTypeMapAndLayer(scene);
-    //! обновим тайлы
+    //обновим тайлы
     scene->refreshTiles();
     scene->setNameVariant(scene->view->windowTitle());
     scene->setSubWindowMDI(mdiArea->addSubWindow(scene->view));
@@ -492,10 +492,10 @@ void MainWindowVisVar::slotMdiSubWindowIsActivated(QMdiSubWindow *window)
                 if(actRotateVisible->isChecked()) curScenes->slotRotateOn();
              }
 
-             //! обновление информации об движущемся объекте
+             //обновление информации об движущемся объекте
              connect(this,SIGNAL(sAircraftPos2D(double,double,double)),curScenes,SLOT(slotAircraftPos2D(double,double,double)));
 
-             //! передача текущего времени
+             //передача текущего времени
              connect(this,SIGNAL(sigTime(double)),curScenes,SLOT(slotTime(double)));
 
              formZoomPanel->setBeginValue(curScenes->currentZoom);
@@ -516,24 +516,24 @@ void MainWindowVisVar::slotButtonSend(bool b)
         setGeoParamOfAircraft();
 #endif
         byteArray.clear();
-        //! cохраним последнее отправленное имя файла
+        //cохраним последнее отправленное имя файла
         formManualModify->setLastNameFile(fileName);
         parser->saveVariants("./xml/LastSend.xml",  formManualModify->comment(),useMap,id,fileName);
 #ifndef OLD_STEND
-        //! отправление единым куском памяти
+        //отправление единым куском памяти
         TCommonRequest listReq;
         listReq.setReciver("MPPM");
         listReq.setSender("VAR");
         QString prefixVar           = settingVV->pathToObj  + "InitialState.Init.";
         QString prefixPathReg       = settingVV->pathToObj + "InputButton.Input.";
         curScenes->getRequest(&listReq,prefixVar,0);
-        //! здесь должен отправить признак нажатия исходного
+        //здесь должен отправить признак нажатия исходного
         listReq.append(prefixPathReg  + "restartButton","1");
         requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
 
         toFlushButton = true;  
 #else
-        //! отправление единым куском памяти
+        //отправление единым куском памяти
         TCommonRequest listReq;
         listReq.setReciver("MPPM");
         listReq.setSender("VAR");
@@ -544,9 +544,9 @@ void MainWindowVisVar::slotButtonSend(bool b)
         QString prefixVarCircle = prefix0 + "VARC.Setup.";
         QString prefix          ="";
 
-        //! кол-во вариантов по кругам
+        //кол-во вариантов по кругам
         int numsVarCircle=0;
-        //! кол-во вариантов НУ
+        //кол-во вариантов НУ
         int numsVar=0;
 
         for(auto i:scenes)//кол-во вариантов
@@ -586,18 +586,18 @@ void MainWindowVisVar::slotButtonSendPlus(bool b)
     {
         slotTransferStarted();
         byteArray.clear();
-        //! cохраним последнее отправленное имя файла
+        //cохраним последнее отправленное имя файла
         formManualModify->setLastNameFile(fileName);
         parser->saveVariants("./xml/LastSend.xml",  formManualModify->comment(),useMap,id,fileName);
 
-        //! отправление единым куском памяти
+        //отправление единым куском памяти
         TCommonRequest listReq;
         listReq.setReciver("MPPM");
         listReq.setSender("VAR");
         QString prefixVar           = settingVV->pathToObj  + "InitialState.Init.";
         QString prefixPathReg       = settingVV->pathToObj + "Управление моделированием.InputButton.Input.";
         curScenes->getRequest(&listReq,prefixVar,0);
-        //! здесь должен отправить признак нажатия исходного
+        //здесь должен отправить признак нажатия исходного
         listReq.append(prefixPathReg  + "restartButton","1");
         requestEvent=engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
 
@@ -927,7 +927,7 @@ void MainWindowVisVar::slotRunFormAddLabel(double lat,double lon)
     if(curScenes != nullptr)
         curScenes->calcItemPosScene();
 }
-//! создание варианта(обычный или по кругам)
+//создание варианта(обычный или по кругам)
 void MainWindowVisVar::createVariant()
 {
     if(scenes.isEmpty()==true)
@@ -959,9 +959,9 @@ void MainWindowVisVar::createVariant()
     //!
     scene->view->setWindowTitle(strName);
     scene->index = scenes.size();
-    //! укажем какой тип карты использует пользователь
+    //укажем какой тип карты использует пользователь
     checkTypeMapAndLayer(scene);
-    //! обновим тайлы
+    //обновим тайлы
     scene->refreshTiles();
     scene->setNameVariant(scene->view->windowTitle());
     scene->setSubWindowMDI(mdiArea->addSubWindow(scene->view));
@@ -1216,17 +1216,17 @@ void MainWindowVisVar::closeAllVariant()
     }
     scenes.clear();
 }
-//! обработка событий
+//обработка событий
 bool MainWindowVisVar::event(QEvent *event)
 {
     if(statusBar != nullptr)
         statusBar->setGeometry(statusBar->x(), statusBar->y(), width(), statusBar->height());
     return QMainWindow::event(event);
 }
-//! открыть файл с вариантами
+//открыть файл с вариантами
 void MainWindowVisVar::slotOpenXML()
 {
-    //! здесь нужна проверка того были ли созданы уже варинаты, если да, то нужно предложить сохранить перед загрузкой
+    //здесь нужна проверка того были ли созданы уже варинаты, если да, то нужно предложить сохранить перед загрузкой
     if(scenes.isEmpty() == false)
     {
         dialogSave->exec();
@@ -1257,27 +1257,27 @@ void MainWindowVisVar::slotOpenXML()
         }
     }
 }
-//! открыть файл с вариантами
+//открыть файл с вариантами
 bool MainWindowVisVar::openFile(QString fileName)
 {
     bool openFile = parser->openFileVariants(fileName,
                                            &comment,
                                            useMap,id);
-    //! использование цифровой карты
+    //использование цифровой карты
     checkBoxGeography->setChecked(useMap);
-    //! комментарий
+    //комментарий
     if(formManualModify != nullptr)
         formManualModify->setComment(comment);
 
     if(openFile == true)
     {
-        //! показать все варианты
+        //показать все варианты
         showAllVariant();
-        //! читаем параметры географии
+        //читаем параметры географии
         //readSetupGeography();
-        //! пересчет положения объектов, если нет привязки к цифровой карте
+        //пересчет положения объектов, если нет привязки к цифровой карте
         //reCalcVar();
-        //! сбросить модельные данные
+        //сбросить модельные данные
         if(formManualModify !=0)
             formManualModify->resetModelData();
     }
@@ -1311,7 +1311,7 @@ cl_Scene* MainWindowVisVar::findScene(GView *view)
     }
     return nullptr;
 }
-//! запись в структуру "Установка географии"
+//запись в структуру "Установка географии"
 void MainWindowVisVar::setGeoParamOfAircraft()
 {
     if(scenes.isEmpty() == false)
@@ -1335,7 +1335,7 @@ void MainWindowVisVar::setGeoParamOfAircraft()
         requestEvent = engine->setValue(listReq,IEngineData::ASYNCH_ENGINE);
     }
 }
-//! чтение структуры "География земли"
+//чтение структуры "География земли"
 void MainWindowVisVar::readSetupGeography()
 {
     /*engine->getValue("MPPM.InitGEO.Setup.Aust_0_geography",       psi_model,IEngineData::ASYNCH_ENGINE);
@@ -1392,14 +1392,14 @@ void MainWindowVisVar::changeEvent(QEvent *e)
     }
 }
 
-//! пересчет положения объектов, если нет привязки к цифровой карте
+//пересчет положения объектов, если нет привязки к цифровой карте
 void MainWindowVisVar::reCalcVar()
 {
-    if(useMap == false)//! если не используется цифровая карта
+    if(useMap == false)//если не используется цифровая карта
     {
-        for(auto i:scenes)//! для всех сцен расчитываем новое положение объектов
+        for(auto i:scenes)//для всех сцен расчитываем новое положение объектов
         {
-            //! персчет объектов относительно модельной СК
+            //персчет объектов относительно модельной СК
             i->reCalcObject(lat_model.toDouble(),
                             lon_model.toDouble(),
                             psi_model.toDouble());

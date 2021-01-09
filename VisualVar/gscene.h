@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef GSCENE_H
-#define GSCENE_H
-
 #include <QGraphicsScene>
 #include <QGraphicsSceneWheelEvent>
 #include <QKeyEvent>
@@ -41,5 +38,3 @@ signals:
     //!
     void signalCtrlRelease();
 };
-
-#endif // GSCENE_H

@@ -34,7 +34,7 @@ public:
     //! открыть файл с вариантами
     bool openFileVariants(const QString &fileName, QString *,bool &useMap,uint &id);
     //! сохранить  варианты в файл
-    void saveVariants(const QString &fileName, const QString &comment, bool useMap,uint id, QString nameFileSend="");
+    void saveVariants(const QString &fileName, const QString &comment, bool useMap,uint id, QString nameFileSend = "");
     //! создать файл с вариантами для последующей передачи в целевую машину
     void createXMLForModel(QByteArray *array,QString comment,bool useMap,uint id);
     //! создать файл с вариантами в формате целевой машины

@@ -120,17 +120,17 @@ GeographyMapping::GeographyMapping(QString fileNamePixmap,
     scaleLonToMeter=distanceSphere(37.9213714599609,55.720922807787,38.6560821533203,55.720922807787)/8560;
     scaleLatToMeter=distanceSphere(37.9213714599609,55.720922807787,37.9213714599609,55.3822312320878)/6976;
 }
-//! загружена ли метаинформация о карте
+//загружена ли метаинформация о карте
 bool GeographyMapping::isHaveMetaInfo()
 {
     return isHaveMetaInfo_;
 }
-//! загружено ли изображение карты
+//загружено ли изображение карты
 bool GeographyMapping::isHaveImageMap()
 {
     return isHaveImageMap_;
 }
-//! прочитать файл с изображением карты
+//прочитать файл с изображением карты
 bool GeographyMapping::openImageFile(QString fileNamePixmap)
 {
     return false;
@@ -142,7 +142,7 @@ bool GeographyMapping::isPointInRect(TPairRect *rect,QPointF *point)
     Q_UNUSED(point);
     return false;
 }
-//! функция преобразования прямоугольных в географические координаты
+//функция преобразования прямоугольных в географические координаты
 void GeographyMapping::mappingToXZ(double inLon,double inLat,double &outX,double &outZ)
 {
     double dp=0.0;
@@ -192,7 +192,7 @@ void GeographyMapping::mappingToXZ(double inLon,double inLat,double &outX,double
     outX=linearInterpolation2Arg(dp,dq,f11X,f12X,f21X,f22X);
     outZ=linearInterpolation2Arg(dp,dq,f11Z,f12Z,f21Z,f22Z);
 }
-//! функция преобразования географических в прямоугольные координаты
+//функция преобразования географических в прямоугольные координаты
 void GeographyMapping::mappingToLatLon(double inX,double inZ,double &outLon,double &outLat)
 {
     double dp=0.0;

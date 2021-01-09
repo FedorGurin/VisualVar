@@ -1,5 +1,4 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#pragma once
 
 #include <QMainWindow>
 #include <QMdiArea>
@@ -224,7 +223,7 @@ private:
     //! список идентификаторов для обработки
     uint ids;
     //! меню кнопки
-      QAction *actBtnHandMoveMap;
+    QAction *actBtnHandMoveMap;
     QAction *actBtnRuler;
     QAction *actBtnCursor;
     QAction *actBtnCentering;
@@ -237,11 +236,6 @@ private:
     QAction* actProjH;
     //!
     QAction* actRotateVisible;
-    //!
-//    QAction* actMppmOpen;
-    //!
-  
-
     //! имя файла если файл открывался
     QString fileName;
     //! класс разбора
@@ -287,4 +281,3 @@ signals:
 
 };
 
-#endif // MAINWINDOW_H

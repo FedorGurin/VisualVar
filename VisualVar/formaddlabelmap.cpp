@@ -203,7 +203,7 @@ bool FormAddLabelMap::event(QEvent *event)
 
         mercXYtoLonLat(5083406*k,2637371*k,telon,telat);
 
-        //! сохранить вариант
+        //сохранить вариант
         saveXML(tr("./xml/")+XML_LABEL);
     }
     return QWidget::event(event);

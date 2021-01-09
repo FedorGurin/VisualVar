@@ -1,38 +1,29 @@
 #include "groundObj.h"
-#include <QFile>
-#include <math.h>
-
-#define GLM_PRECISION_HIGHP_FLOAT
-#define GLM_FORCE_RADIANS
-
 #include "./glm/glm.hpp"
-#include "./glm/gtc/matrix_transform.hpp"
-#include "./GeographicLib/geoFunctions.h"
-
 GroundObj::GroundObj(QString name_,QString nameFile,QGraphicsItem *parent):ObjectGraphNode(nameFile,parent)
 {
-    //! имя объекта
+    // имя объекта
     name=name_;
-    //! положение объекта при перекрывании
+    // положение объекта при перекрывании
     setZValue(8);
-    //! инициализация элементов перевода ед. измерения
+    // инициализация элементов перевода ед. измерения
     initMessureItem();
-    //! масштаб объекта
+    // масштаб объекта
     setScale(0.1);
-    //! признак задания кодов
+    // признак задания кодов
     prCodeLen=true;
-    //! длинна
+    // длинна
     length=0.0;
 
     //enable=true;
     setAcceptHoverEvents(true);
     formSetting=new FormSettingForGroundTargets();
     formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
-    //! код объекта
+    // код объекта
     code = 311;
-    //! тип системы коордиант
+    // тип системы коордиант
     sks = 1;
-    //! координаты по умолчанию
+    // координаты по умолчанию
     x = 0.0;
     z = 0.0;
     v = 0.0;
@@ -98,16 +89,16 @@ GroundObj::GroundObj(QString name_,QString nameFile,QGraphicsItem *parent):Objec
     setCode(code);
 
 }
-//! для операции клонирования
+// для операции клонирования
 GroundObj::GroundObj(GroundObj   *groundTarget, /*наземная цель*/
                    AircraftObject       *aircraft,     /*носителя*/
                    QGraphicsItem        *parent):ObjectGraphNode(groundTarget,parent)
 {
-    //! положение объекта при перекрывании
+    // положение объекта при перекрывании
     setZValue(8);
-    //! инициализация элементов перевода ед. измерения
+    // инициализация элементов перевода ед. измерения
     initMessureItem();
-    //! масштаб объекта
+    // масштаб объекта
     setScale(0.1);
 
     connectToObj(aircraft);
@@ -122,7 +113,7 @@ GroundObj::GroundObj(GroundObj   *groundTarget, /*наземная цель*/
     formSetting=new FormSettingForGroundTargets();
     formSetting->setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);
 
-    //! тип системы коордиант
+    // тип системы коордиант
     sks=1;
 
 
@@ -310,23 +301,23 @@ void GroundObj::mousePressEvent(QGraphicsSceneMouseEvent* event)
 }
 void GroundObj::slotIsModifyPsi()
 {
-    //! дальность  смещения относительно центра
+    // дальность  смещения относительно центра
     QPointF v = posC() - aircraft->posC();
     float r = QPointF::dotProduct(posC(),aircraft->posC());
 
     d =  r* groundResolution(lat,zoom - 1);
     d = unitLength->convert(d,"m",currentUnitTransD);
 
-    //! расчет координат НЦ относительно модельной СК
+    // расчет координат НЦ относительно модельной СК
     x = -v.y() * groundResolution(lat,zoom -1);
     z =  v.x() * groundResolution(lat,zoom -1);
     if(sks == 1)
     {
-        //! положение НЦ относительно модельной
+        // положение НЦ относительно модельной
         glm::vec3 vec=glm::vec3(x,0.0,z);
-        //! расчет матрицы курса
+        // расчет матрицы курса
         glm::mat3 mPsi;
-        //! курс вертолета
+        // курс вертолета
         double psi_c=GradToRadian(aircraft->psi);
 
         mPsi[0][0]=cos(psi_c);

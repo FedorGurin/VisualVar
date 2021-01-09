@@ -157,7 +157,7 @@ bool MessureUnits::toStandartUnitAngle(double value,
 }
 bool MessureUnits::convertSpeed(double value,QString messureCurrent,QString messureLast,double &outValue)
 {
-    //! преобразуем в стандартные
+    //преобразуем в стандартные
     double stValue;
     bool flag=toStandartUnitSpeed(value,messureLast,stValue);
     if(flag==false) return false;
@@ -169,7 +169,7 @@ bool MessureUnits::convertSpeed(double value,QString messureCurrent,QString mess
 
 bool MessureUnits::convertAlt(double value,QString messureCurrent,QString messureLast,double &outValue)
 {
-    //! преобразуем в стандартные
+    //преобразуем в стандартные
     double stValue;
     bool flag=toStandartUnitAlt(value,messureLast,stValue);
     if(flag==false) return false;
@@ -180,7 +180,7 @@ bool MessureUnits::convertAlt(double value,QString messureCurrent,QString messur
 }
 bool MessureUnits::convertAngle(double value,QString messureCurrent,QString messureLast,double &outValue)
 {
-    //! преобразуем в стандартные
+    //преобразуем в стандартные
     double stValue;
     bool flag=toStandartUnitAngle(value,messureLast,stValue);
     if(flag==false) return false;

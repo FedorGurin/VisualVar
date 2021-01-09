@@ -1,13 +1,4 @@
 #include "airObj.h"
-#include <QFile>
-#include <math.h>
-
-#define GLM_PRECISION_HIGHP_FLOAT
-#define GLM_FORCE_RADIANS
-
-#include "./glm/glm.hpp"
-#include "./glm/gtc/matrix_transform.hpp"
-#include "./GeographicLib/geoFunctions.h"
 
 AirObj::AirObj(AirObj *airTarget,
                AircraftObject *aircraft,
@@ -232,7 +223,7 @@ QString AirObj::curMessTime()
 {
     return QString("sec");
 }
-//! текущие ед. измерения
+// текущие ед. измерения
 QString AirObj::curMessV()
 {
     if(use_russian==true)
@@ -492,13 +483,13 @@ void AirObj::slotMovePos()
 }
 void AirObj::slotIsModifyPsi()
 {
-    //! смещения относительно центра
+    // смещения относительно центра
     double dx=posC().x()-aircraft->posC().x();
     double dy=posC().y()-aircraft->posC().y();
-    //! дальность
+    // дальность
     d=sqrt(dx*dx+dy*dy)*groundResolution(lat,zoom-1);
     d=unitLength->convert(d,"m",currentUnitTransD);
-    //! угол относительно вертолета
+    // угол относительно вертолета
     fi=atan2(dx,-dy)*180.0/M_PI;
     fi=check180(fi-KursToPsiGrad(aircraft->psi));
 
@@ -534,7 +525,7 @@ void AirObj::slotFi()
 
 void AirObj::setFi(double value)
 {
-    //! сохранить значение угла на цель
+    // сохранить значение угла на цель
     fi=value;
     double tempFi=checkPI(GradToRadian(fi)+GradToRadian(KursToPsiGrad(aircraft->psi))+M_PI/2.0);
 
@@ -548,9 +539,9 @@ void AirObj::setFi(double value)
 }
 void AirObj::slotIsModifyPosition()
 {
-    //! при модификации курсового угла
+    // при модификации курсового угла
     slotIsModifyPsi();
-    //! отрисовка прямой соединяющей вертолет и цель
+    // отрисовка прямой соединяющей вертолет и цель
     slotEnterLeaveCur(true);
 }
 void AirObj::slotEnterLeaveCur(bool flag)

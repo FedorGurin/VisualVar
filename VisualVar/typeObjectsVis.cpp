@@ -54,7 +54,7 @@ QString TypeObjectsVis::codeGround(int code)
     return str;
 }
 
-//! загрузка объектов воздушных целей
+//загрузка объектов воздушных целей
 void TypeObjectsVis::parserObject(QDomElement &tempElement,QList<TObjectVis*> &list)
 {
     QDomElement ele = tempElement.firstChildElement("object");

@@ -21,6 +21,8 @@
 #include "nodes/groundObj/groundObj.h"
 #include "nodes/aerodromObj/aerodObj.h"
 #include "nodes/mapObj/mapObj.h"
+#include "nodes/cloudObj/cloudObj.h"
+#include "nodes/fogObj/fogObj.h"
 
 class cl_Scene:public QObject
 {

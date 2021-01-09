@@ -84,7 +84,7 @@ void ObjectGraphNode::refreshTrajectory(int zoom_)
     int curX1 = 0,curX2 = 0;
     int curY1 = 0,curY2 = 0;
 
-    //! пересчитаем географические координаты в новые координаты линий
+    //пересчитаем географические координаты в новые координаты линий
     for(int i = 1;i<trajGeoPoints.size();i++)
     {
         latLongToPixelXY(trajGeoPoints[i].lat,
@@ -98,7 +98,7 @@ void ObjectGraphNode::refreshTrajectory(int zoom_)
                          zoom_,
                          curX1,
                          curY1);
-        //! изменяем координаты линий на новые с учетом детализации
+        //изменяем координаты линий на новые с учетом детализации
         traj[i]->setLine(curX1,curY1,curX2,curY2);
     }
 }
@@ -132,13 +132,13 @@ void ObjectGraphNode::setPosC(qreal dx,qreal dy)
     QPointF tempPoint = mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
     QPointF dP  =tempPoint - pos();
 
-    //! получаем координаты левого верхнего угла элемента
+    //получаем координаты левого верхнего угла элемента
     QPointF result = point - dP;
 
-    //! перемещаем наш элемент
+    //перемещаем наш элемент
     setPos(result);
 
-    //! добавить точку в список
+    //добавить точку в список
     if(trajectory == true && addPoint == true)// && fabs(lastTimeForTraj-currentTime)>1.0)
     {
         if(traj.isEmpty() == false)
@@ -302,32 +302,7 @@ double RouteObject::calcAllRoute()
 }
 void RouteObject::calcD()
 {
-    //! дальность
+    //дальность
     d = QPointF::dotProduct(posC(),routeRight->posC()) * groundResolution(lat,zoom - 1);
-}
-
-void CloudObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-{
-    QPointF p = mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
-    pixelXYToLatLong(p.x(),p.y(),zoom - 1,lat,lon);
-
-    TGeoPoint pt(lat,lon);
-    emit isModifyPosition(pos(),pt);
-
-    //slotIsModifyPsi();
-    //slotEnterLeaveCur(true);
-    ObjectGraphNode::mouseMoveEvent(event);
-}
-void FogObject::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
-{
-    QPointF p = mapToScene(mapFromItem(itemSvg,itemSvg->transformOriginPoint()));
-    pixelXYToLatLong(p.x(),p.y(),zoom - 1,lat,lon);
-
-    TGeoPoint pt(lat,lon);
-    emit isModifyPosition(pos(),pt);
-
-    //slotIsModifyPsi();
-    //slotEnterLeaveCur(true);
-    ObjectGraphNode::mouseMoveEvent(event);
 }
 

@@ -312,7 +312,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     aircraft->setZoomLevel(currentZoom);
     aircraft->map = map;
 
-    //! создаем двигающийся объект
+    //создаем двигающийся объект
     aircraftMove = new AircraftObject(tr("Наш вертолет"),":/res/svg/aircraft_move",map);
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
@@ -325,7 +325,7 @@ cl_Scene::cl_Scene(QDomElement &node,
             SIGNAL(isModifyPosition(QPointF,TGeoPoint)),
             this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
 
-    //! прочитаем координаты центра окна
+    //прочитаем координаты центра окна
     curLatView = (node.attribute("viewport_center_lat","0")).toDouble();
     curLonView = (node.attribute("viewport_center_lon","0")).toDouble();
 
@@ -335,37 +335,37 @@ cl_Scene::cl_Scene(QDomElement &node,
     QPolygonF polygon = view->mapToScene(view->viewport()->rect());
     QRectF rect = polygon.boundingRect();
 
-    //! выставляем по координатам в центр окна
+    //выставляем по координатам в центр окна
     mousePos.setX(rect.width()/2.0);
     mousePos.setY(rect.height()/2.0);
 
 
     comment_ = node.attribute("comment","");
 
-    //! заполняем данные по варианту
+    //заполняем данные по варианту
     nameVariant = node.attribute("name","");
     use = node.attribute("use","1").toInt();
 
-    //! заполняем данные по вертолету
+    //заполняем данные по вертолету
     QDomElement tempNode = node.firstChildElement("Aircraft");
     aircraft->loadXML(tempNode);
     aircraftMove->loadXML(tempNode);
 
-    //! номер имени варианта
+    //номер имени варианта
     numberNameVariant = (node.attribute("numberNameVariant","1")).toInt();
-    //! заполняем данные по воздушным целям
+    //заполняем данные по воздушным целям
     tempNode=node.firstChildElement("AirTarget");
     airObj.clear();
 
     while(!tempNode.isNull())
     {
-        //! оьъект цели
+        //оьъект цели
         AirObj *target = new AirObj("",":/res/svg/target",map);
         target->map = map;
         target->connectToObj(aircraft);
         target->setZoomLevel(currentZoom);
 
-        //! создаем двигающийся объект
+        //создаем двигающийся объект
         AirObj *target_move = new AirObj("",":/res/svg/target_move",map);
         target_move->map = map;
         target_move->connectToObj(aircraftMove);
@@ -395,7 +395,7 @@ cl_Scene::cl_Scene(QDomElement &node,
 
         tempNode = tempNode.nextSiblingElement("AirTarget");
     }
-    //! заполняем данные по наземным целям
+    //заполняем данные по наземным целям
     tempNode = node.firstChildElement("GroundTarget");
     groundObj.clear();
     while(!tempNode.isNull())
@@ -436,7 +436,7 @@ void cl_Scene::saveToXMLForModel(QDomDocument &domDocument,QDomElement &node)
    domTextVar = domDocument.createTextNode(QString::number(airObj.size()));
    eleNode.appendChild(domTextVar);
    tempNode.appendChild(eleNode);
-   //! сохраним параметры воздушный целей
+   //сохраним параметры воздушный целей
    for(auto i:airObj)
    {
        if(i->isEnable() == true)
@@ -447,7 +447,7 @@ void cl_Scene::saveToXMLForModel(QDomDocument &domDocument,QDomElement &node)
    eleNode.appendChild(domTextVar);
    tempNode.appendChild(eleNode);
 
-   //! сохраним параметры наземных объектов
+   //сохраним параметры наземных объектов
    for(auto i:groundObj)
    {
        if(i->isEnable() == true)
@@ -462,7 +462,7 @@ void cl_Scene::saveToXML(QDomDocument &domDocument,QDomElement &node)
     tempNode.setAttribute("comment",comment());
     tempNode.setAttribute("scale",QString::number(currentZoom));
 
-    //! вариант используется или нет
+    //вариант используется или нет
     tempNode.setAttribute("use",use);
 
     tempNode.setAttribute("viewport_center_lat",curLatView);
@@ -472,14 +472,14 @@ void cl_Scene::saveToXML(QDomDocument &domDocument,QDomElement &node)
     tempNode.setAttribute("numberNameVariant",numberNameVariant);
     ////////////////////////////////////////////////////////////////
 
-    //! сохранить XML файл
+    //сохранить XML файл
     aircraft->saveXML(domDocument,tempNode);
-    //! сохраним параметры воздушный целей
+    //сохраним параметры воздушный целей
     for(auto i:airObj)
     {
         i->saveXML(domDocument,tempNode);
     }
-    //! сохраним параметры наземной цели
+    //сохраним параметры наземной цели
     for(auto i:groundObj)
     {
        i->saveXML(domDocument,tempNode);
@@ -626,12 +626,12 @@ void cl_Scene::refreshTiles()
 {
     QPolygonF polygon_temp = view->mapToScene(view->viewport()->rect());
     QRectF rect_temp = polygon_temp.boundingRect();
-    //! загрузка и отображение тайлов
+    //загрузка и отображение тайлов
     map->setZoomLevel(currentZoom,rect_temp);
-    //! пересчет всех объектов на карте
+    //пересчет всех объектов на карте
     calcItemPosScene();
 
-    //! пересчет шкалы масштаба дальности
+    //пересчет шкалы масштаба дальности
     timer->stop();
     scaleLine->updateScaleLine(rect_temp, currentZoom);
     timer->start();
@@ -913,7 +913,7 @@ void cl_Scene::createNewFog(QPointF p)
     scene->addItem(fog);
 
     connect(fog,SIGNAL(isModifyPosition(QPointF,TGeoPoint)),this->statusBar,SLOT(setPos(QPointF,TGeoPoint)));
-    //! приводит к обновлению сцены
+    // приводит к обновлению сцены
     setZoomLevel(currentZoom);
 }
 void cl_Scene::createNewAerodrom(QPointF p)
@@ -1044,7 +1044,7 @@ void cl_Scene::slotUseMoveObj(bool value)
     {
         aircraftMove->setVisible(useMoveObj);
         aircraftMove->setVisibleTraj(useMoveObj);
-        //! обнуление траектории, если отключили отображение  траектории
+        //обнуление траектории, если отключили отображение  траектории
         if(value == false)
             aircraftMove->clearTraj();
     }
@@ -1068,7 +1068,7 @@ void cl_Scene::slotTime(double value)
         i->setTime(value);
     }
 }
-//! пересчет текущего положения графических объектов
+//пересчет текущего положения графических объектов
 void cl_Scene::reCalcObject(double lat,   /*гео. коорд. нашего вертолета (град)*/
                             double lon,   /*гео. коорд. нашего вертолета (град)*/
                             double aust)  /*угол поворота модельной СК (град) */

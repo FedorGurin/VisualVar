@@ -47,17 +47,22 @@ INCLUDEPATH += VisualVar \
                nodes/ourObj \
                nodes/groundObj \
                nodes/mapObj \
-               nodes/aerodromObj
+               nodes/aerodromObj \
+               nodes/fogObj \
+               nodes/cloudObj
 # Input
 HEADERS += globalFunc/gl_func.h \
     VisualVar/cl_scene.h \
     VisualVar/factoryObj.h \
     VisualVar/formlistaerodroms.h \
-    VisualVar/formsettingfog.h \
     VisualVar/formsettingtacan.h \
     VisualVar/formsettingvor.h \
     VisualVar/nodes/airObj/airObj.h \
     VisualVar/nodes/airObj/formAirTarget.h \
+    VisualVar/nodes/cloudObj/cloudObj.h \
+    VisualVar/nodes/cloudObj/formsettingcloud.h \
+    VisualVar/nodes/fogObj/fogObj.h \
+    VisualVar/nodes/fogObj/formsettingfog.h \
     VisualVar/nodes/groundObj/formGroundTargets.h \
     VisualVar/nodes/groundObj/groundObj.h \
     VisualVar/nodes/mapObj/mapObj.h \
@@ -135,13 +140,12 @@ HEADERS += globalFunc/gl_func.h \
     mppm/CommonEngineData.h \
     mppm/libmppm.h \
     mppm/libmppm_global.h \
-    mppm/libmppmSpec.h \
-    VisualVar/formsettingcloud.h
+    mppm/libmppmSpec.h
 
 
 
 FORMS += VisualVar/mainwindow.ui \
-    VisualVar/formsettingfog.ui \
+    VisualVar/nodes/cloudObj/formsettingcloud.ui \
     VisualVar/formsettingtacan.ui \
     VisualVar/formsettingvor.ui \
     VisualVar/formzoompanel.ui \
@@ -152,22 +156,24 @@ FORMS += VisualVar/mainwindow.ui \
     VisualVar/manualModify/formManualModify.ui \
     VisualVar/formaddlabelmap.ui \
     VisualVar/nodes/airObj/formAirTarget.ui \
+    VisualVar/nodes/fogObj/formsettingfog.ui \
     VisualVar/nodes/groundObj/formGroundTargets.ui \
-    VisualVar/formprojecth.ui \
-    VisualVar/formsettingcloud.ui \
-    VisualVar/formfog.ui \
+    VisualVar/formprojecth.ui \   
     VisualVar/nodes/ourObj/formAircraft.ui
 
 
 SOURCES += globalFunc/gl_func.cpp \
     VisualVar/factoryObj.cpp \
-    VisualVar/formsettingfog.cpp \
     VisualVar/formsettingtacan.cpp \
     VisualVar/formsettingvor.cpp \
     VisualVar/nodes/aerodromObj/aerodObj.cpp \
     VisualVar/nodes/aerodromObj/formsettingaerodrom.cpp \
     VisualVar/nodes/airObj/airObj.cpp \
     VisualVar/nodes/airObj/formAirTarget.cpp \
+    VisualVar/nodes/cloudObj/cloudObj.cpp \
+    VisualVar/nodes/cloudObj/formsettingcloud.cpp \
+    VisualVar/nodes/fogObj/fogObj.cpp \
+    VisualVar/nodes/fogObj/formsettingfog.cpp \
     VisualVar/nodes/groundObj/formGroundTargets.cpp \
     VisualVar/nodes/groundObj/groundObj.cpp \
     VisualVar/nodes/mapObj/mapObj.cpp \
@@ -234,8 +240,7 @@ SOURCES += globalFunc/gl_func.cpp \
     GeographicLib/TransverseMercatorExact.cpp \
     GeographicLib/Utility.cpp \
     GeographicLib/UTMUPS.cpp \
-    VisualVar/cl_scene.cpp \
-    VisualVar/formsettingcloud.cpp
+    VisualVar/cl_scene.cpp
 
 
 

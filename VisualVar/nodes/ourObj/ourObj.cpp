@@ -1,14 +1,4 @@
 #include "ourObj.h"
-#include <QFile>
-#include <math.h>
-
-#define GLM_PRECISION_HIGHP_FLOAT
-#define GLM_FORCE_RADIANS
-
-#include "./glm/glm.hpp"
-#include "./glm/gtc/matrix_transform.hpp"
-#include "./GeographicLib/geoFunctions.h"
-
 
 
 AircraftObject::AircraftObject(QString nameI,QString nameFile,QGraphicsItem *parent):ObjectGraphNode(nameFile,parent)
@@ -124,7 +114,7 @@ AircraftObject::AircraftObject(AircraftObject *aircraft_,QString nameFile,QGraph
     setFlags(QGraphicsItem::ItemIsSelectable| QGraphicsItem::ItemIsMovable);
     //map=map;
 }
-//! текущие ед. измерения
+// текущие ед. измерения
 QString AircraftObject::curMessV()
 {
     if(use_russian==true)
