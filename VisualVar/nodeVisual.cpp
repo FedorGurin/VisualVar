@@ -48,45 +48,45 @@ void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
     // увеличение зоны выравнивания группы тайлов
     const int ext_align = 1;
 
-    count++;
-    if(count>3)
-    {
-        int k =0;
-        z = qBound(1,z,20);
+//    count++;
+//    if(count>3)
+//    {
+//        int k =0;
+//        z = qBound(1,z,20);
 
-        int tileX1,tileY1,maxTile = 2<<(z-2);
-        int tileX0,tileY0;
+//        int tileX1,tileY1,maxTile = 2<<(z-2);
+//        int tileX0,tileY0;
 
-        // загружаем все элементы попадающие в rectView с небольшим избытком
-        pixelXYToTileXY(rectView.x(),rectView.y(),tileX0,tileY0);
-        pixelXYToTileXY(rectView.x() + rectView.width(),rectView.y() + rectView.height(),tileX1,tileY1);
+//        // загружаем все элементы попадающие в rectView с небольшим избытком
+//        pixelXYToTileXY(rectView.x(),rectView.y(),tileX0,tileY0);
+//        pixelXYToTileXY(rectView.x() + rectView.width(),rectView.y() + rectView.height(),tileX1,tileY1);
 
-        // расширим координаты тайлов и ограничим снизу и сверху
-        tileX0-=ext_align; tileX0 = qMax(tileX0,0);
-        tileY0-=ext_align; tileY0 = qMax(tileY0,0);
+//        // расширим координаты тайлов и ограничим снизу и сверху
+//        tileX0-=ext_align; tileX0 = qMax(tileX0,0);
+//        tileY0-=ext_align; tileY0 = qMax(tileY0,0);
 
-        tileX1+=ext_align; tileX1 = qMin(tileX1,maxTile);
-        tileY1+=ext_align; tileY1 = qMin(tileY1,maxTile);
+//        tileX1+=ext_align; tileX1 = qMin(tileX1,maxTile);
+//        tileY1+=ext_align; tileY1 = qMin(tileY1,maxTile);
 
-        double pixX,  pixY;
-            for(int i = tileX0;i < tileX1;i++)
-            {
-                for(int j = tileY0;j < tileY1;j++)
-                {
-                    // пересчет из координат тайла в координаты сцены
-                    tileXYToPixelXY(i,j,pixX,pixY);
+//        double pixX,  pixY;
+//            for(int i = tileX0;i < tileX1;i++)
+//            {
+//                for(int j = tileY0;j < tileY1;j++)
+//                {
+//                    // пересчет из координат тайла в координаты сцены
+//                    tileXYToPixelXY(i,j,pixX,pixY);
 
-                    QGraphicsPixmapItem *pixMap = ((*ptrItemMapNew)[k]);
-                    if(currentZoom > z)
-                        pixMap->setScale(pixMap->scale()/2);
-                    else if(currentZoom < z)
-                        pixMap->setScale(pixMap->scale()*2);
-                    pixMap->setPos(pixX,pixY);
-                    k++;
-                }
-            }
-        return;
-    }
+//                    QGraphicsPixmapItem *pixMap = ((*ptrItemMapNew)[k]);
+//                    if(currentZoom > z)
+//                        pixMap->setScale(pixMap->scale()/2);
+//                    else if(currentZoom < z)
+//                        pixMap->setScale(pixMap->scale()*2);
+//                    pixMap->setPos(pixX,pixY);
+//                    k++;
+//                }
+//            }
+//        return;
+//    }
 
 
     // сохранить заданный масштаб, как текущий

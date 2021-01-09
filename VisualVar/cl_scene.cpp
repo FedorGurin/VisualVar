@@ -792,7 +792,7 @@ void cl_Scene::createNewAirObj(QPointF p)
     target->formSetting->setListObjectVis(typeObjectsVis->listAirObjects());
     airObj.push_back(target);
 
-    //! создаем новую перемещащуюся цель
+    // создаем новую перемещащуюся цель
     AirObj *target_move = new AirObj(tr("Объект №") + QString::number(airObjMove.size()+1),":/res/svg/target_move",map);
 
     target_move->setAircraft(aircraftMove);

@@ -5,7 +5,6 @@ GScene::GScene(QObject * parent):QGraphicsScene(parent)
 }
 void GScene::wheelEvent(QGraphicsSceneWheelEvent * wheelEvent)
 {
-//    QGraphicsScene::wheelEvent(wheelEvent);
     if(wheelEvent->delta()>0)
     {
         emit zoomUp();
