@@ -2,16 +2,7 @@
 #define MERCATOR_H
 
 
-
-
-
-
-//double fmin(double x, double y);
-//double fmax(double x, double y);
-
-
 double deg_rad (double ang);
-
 
 double merc_x (double lon);
 

@@ -19,14 +19,14 @@ class cl_MouseFilter:public QObject
 protected:
     virtual bool eventFilter(QObject*,QEvent*);
 public:
-    cl_MouseFilter(QObject* pobj=0,QWidget *slotForm_=0);
+    cl_MouseFilter(QObject* pobj = nullptr,QWidget *slotForm_ = nullptr);
     QWidget *slotForm;
 };
 class FormManualModify : public QWidget
 {
     Q_OBJECT
 public:
-    explicit FormManualModify( QVector<cl_Scene* > *scenes_,QWidget *parent = 0);
+    explicit FormManualModify( QVector<cl_Scene* > *scenes_,QWidget *parent = nullptr);
     ~FormManualModify();
     void resetModelData();
     void resetModelData(QModelIndex);

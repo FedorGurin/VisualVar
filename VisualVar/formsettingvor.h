@@ -12,7 +12,7 @@ class FormSettingBeaconVOR : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormSettingBeaconVOR(QWidget *parent = 0);
+    explicit FormSettingBeaconVOR(QWidget *parent = nullptr);
     ~FormSettingBeaconVOR();
 
 private:

@@ -12,7 +12,7 @@ class FormSettingAerodrom : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormSettingAerodrom(QWidget *parent = 0);
+    explicit FormSettingAerodrom(QWidget *parent = nullptr);
     ~FormSettingAerodrom();
 
 private:

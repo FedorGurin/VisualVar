@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsSvgItem>
 
-#include "cl_Scene.h"
+#include "cl_scene.h"
 namespace Ui {
 class FormProjectH;
 }
@@ -28,7 +28,7 @@ class FormProjectH : public QWidget
     Q_OBJECT
     
 public:
-    explicit FormProjectH(QWidget *parent = 0);
+    explicit FormProjectH(QWidget *parent = nullptr);
     ~FormProjectH();
     //! указатель на текущую сцену
     void setCurrentScene(VisualVariant::cl_Scene* scene_);

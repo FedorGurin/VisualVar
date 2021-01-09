@@ -14,7 +14,7 @@
 #include <QMessageBox>
 #include <QTextStream>
 
-#include "cl_Scene.h"
+#include "cl_scene.h"
 #include "TypeObjectsVis.h"
 
 namespace VisualVariant

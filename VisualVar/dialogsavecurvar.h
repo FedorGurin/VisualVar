@@ -12,7 +12,7 @@ class DialogSaveCurVar : public QDialog
     Q_OBJECT
 
 public:
-    explicit DialogSaveCurVar(QWidget *parent = 0);
+    explicit DialogSaveCurVar(QWidget *parent = nullptr);
     ~DialogSaveCurVar();
     bool ok;
 signals:

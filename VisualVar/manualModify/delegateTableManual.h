@@ -2,7 +2,7 @@
 #define DELEGATETABLEMANUAL_H
 
 #include <QItemDelegate>
-#include "../cl_Scene.h"
+#include "../cl_scene.h"
 
 namespace VisualVariant
 {
@@ -11,7 +11,7 @@ class DelegateTableManual : public QItemDelegate
     Q_OBJECT
 public:
     DelegateTableManual(int indexColumn,
-                        QObject *parent = 0);
+                        QObject *parent = nullptr);
     QWidget *createEditor(QWidget *parent,
                           const QStyleOptionViewItem &option,
                           const QModelIndex &index) const;

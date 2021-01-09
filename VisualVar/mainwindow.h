@@ -51,7 +51,7 @@ public:
 class MainWindowVisVar : public QMainWindow {
     Q_OBJECT
 public:
-    MainWindowVisVar(QWidget *parent = 0);
+    MainWindowVisVar(QWidget *parent = nullptr);
     ~MainWindowVisVar();
     //! область для многодокументого окна
     QMdiArea *mdiArea;

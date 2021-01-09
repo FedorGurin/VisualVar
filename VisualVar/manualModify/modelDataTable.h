@@ -1,7 +1,7 @@
 #ifndef MODELDATATABLE_H
 #define MODELDATATABLE_H
 #include <QAbstractTableModel>
-#include "../cl_Scene.h"
+#include "../cl_scene.h"
 #include <QVector>
 
 namespace VisualVariant
@@ -9,7 +9,7 @@ namespace VisualVariant
 class ModelDataTable: public QAbstractTableModel
 {
 public:
-    ModelDataTable(QVector<cl_Scene* > *scenes_,QObject *parent=0);
+    ModelDataTable(QVector<cl_Scene* > *scenes_,QObject *parent = nullptr);
     QModelIndex index(int row,int column, const QModelIndex &parent )const;
     int rowCount(const QModelIndex &parent)const;
     int columnCount(const QModelIndex &parent)const;

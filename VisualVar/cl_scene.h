@@ -1,10 +1,3 @@
-/*
- * cl_Scene.h
- *
- *  Created on: 16.06.2009
- *      Author: Fedor
- */
-
 #ifndef CL_SCENE_H_
 #define CL_SCENE_H_
 
@@ -44,7 +37,7 @@ public:
              QWidget *parent    = nullptr);
     //! конструктор дял клонирования объекта
     cl_Scene(cl_Scene* thisScene,QWidget *parent = nullptr);
-    //! клонирование данных, вовращает свою копию
+    //! клонирование данных, возвращает свою копию
     cl_Scene *clone();
     //! переопределнный класс отображения сцены
     GView  *view;

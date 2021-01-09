@@ -44,6 +44,7 @@ win32:LIBS += -luser32
 
 # Input
 HEADERS += globalFunc/gl_func.h \
+    VisualVar/cl_scene.h \
     VisualVar/formsettingfog.h \
     VisualVar/formsettingtacan.h \
     VisualVar/formsettingvor.h \
@@ -71,7 +72,6 @@ HEADERS += globalFunc/gl_func.h \
     VisualVar/gview.h \
     VisualVar/formaddlabelmap.h \
     globalFunc/mercator.h \    
-    VisualVar/listaerodroms.h \
     VisualVar/formlistaerodroms.h \
     VisualVar/formprojecth.h \
     mppm/CommonEngineData.h \
@@ -122,7 +122,6 @@ HEADERS += globalFunc/gl_func.h \
     GeographicLib/TransverseMercatorExact.hpp \
     GeographicLib/Utility.hpp \
     GeographicLib/UTMUPS.hpp \
-    VisualVar/cl_Scene.h \
     mppm/CommonEngineData.h \
     mppm/libmppm.h \
     mppm/libmppm_global.h \
@@ -174,12 +173,11 @@ SOURCES += globalFunc/gl_func.cpp \
     VisualVar/manualModify/modelDataTable.cpp \
     VisualVar/formsettingaerodrom.cpp \
     VisualVar/manualModify/delegateTableManual.cpp \
-    VisualVar/SettingVV.cpp \    
+    VisualVar/settingVV.cpp \
     VisualVar/gscene.cpp \
     VisualVar/gview.cpp \
     VisualVar/formaddlabelmap.cpp \
     globalFunc/mercator.cpp \   
-    VisualVar/listaerodroms.cpp \
     VisualVar/formlistaerodroms.cpp \
     VisualVar/formprojecth.cpp \
     GeographicLib/Accumulator.cpp \
@@ -221,7 +219,7 @@ SOURCES += globalFunc/gl_func.cpp \
     GeographicLib/TransverseMercatorExact.cpp \
     GeographicLib/Utility.cpp \
     GeographicLib/UTMUPS.cpp \
-    VisualVar/cl_Scene.cpp \
+    VisualVar/cl_scene.cpp \
     VisualVar/formsettingcloud.cpp
 
 

@@ -5,11 +5,6 @@ GView::GView(QGraphicsScene * scene, QWidget * parent):QGraphicsView(scene,paren
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
-//void GView::wheelEvent ( QWheelEvent * wheelEvent)
-//{
-//    if(wheelEvent->)
-
-//}
 void GView::resizeEvent(QResizeEvent * event)
 {
     emit sigResize();

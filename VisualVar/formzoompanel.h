@@ -11,7 +11,7 @@ class FormZoomPanel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit FormZoomPanel(QWidget *parent = 0);
+    explicit FormZoomPanel(QWidget *parent = nullptr);
     ~FormZoomPanel();
 
 public slots:

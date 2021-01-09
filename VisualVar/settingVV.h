@@ -4,19 +4,11 @@
 #include <QString>
 #include <QObject>
 
-
-//#define NAME_FILE_XML "setting.xml"
-
 class SettingVV:public QObject
 {
 public:
-    SettingVV(QObject* parent=0);
+    SettingVV(QObject* parent = nullptr);
 
-    QString fileName;
-    QString hostAddress;
-    QString userName;
-    QString password;
-    QString pathCD;
     //! директория по умолчанию, куда обычно сохраняются варианты
     QString dirSaveVar;
     //! директория с картой
@@ -26,13 +18,9 @@ public:
     double startLat;
     double startLon;
     //! уровень детализации
-    int zoom;
-    //! время ожидания по ftp
-    int FTPWait;
+    int zoom;   
     //! разрешение отрисовки двигующихся объектов
-    int moveObjects;
-    //! не использовать FTP
-    //int noFTP;
+    int moveObjects;  
     //! тип используемой по умолчанию карты
     QString typeMap;
     //! тип используемого по умолчанию слоя

@@ -42,49 +42,99 @@ void GeographySysCoord::tileXYToPixelXY(int tileX,int tileY,double &pixX,  doubl
     pixX = tileX * 256;
     pixY = tileY * 256;
 }
+static int count = 0;
 void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
 {
+    // увеличение зоны выравнивания группы тайлов
+    const int ext_align = 1;
+
+    count++;
+    if(count>3)
+    {
+        int k =0;
+        z = qBound(1,z,20);
+
+        int tileX1,tileY1,maxTile = 2<<(z-2);
+        int tileX0,tileY0;
+
+        // загружаем все элементы попадающие в rectView с небольшим избытком
+        pixelXYToTileXY(rectView.x(),rectView.y(),tileX0,tileY0);
+        pixelXYToTileXY(rectView.x() + rectView.width(),rectView.y() + rectView.height(),tileX1,tileY1);
+
+        // расширим координаты тайлов и ограничим снизу и сверху
+        tileX0-=ext_align; tileX0 = qMax(tileX0,0);
+        tileY0-=ext_align; tileY0 = qMax(tileY0,0);
+
+        tileX1+=ext_align; tileX1 = qMin(tileX1,maxTile);
+        tileY1+=ext_align; tileY1 = qMin(tileY1,maxTile);
+
+        double pixX,  pixY;
+            for(int i = tileX0;i < tileX1;i++)
+            {
+                for(int j = tileY0;j < tileY1;j++)
+                {
+                    // пересчет из координат тайла в координаты сцены
+                    tileXYToPixelXY(i,j,pixX,pixY);
+
+                    QGraphicsPixmapItem *pixMap = ((*ptrItemMapNew)[k]);
+                    if(currentZoom > z)
+                        pixMap->setScale(pixMap->scale()/2);
+                    else if(currentZoom < z)
+                        pixMap->setScale(pixMap->scale()*2);
+                    pixMap->setPos(pixX,pixY);
+                    k++;
+                }
+            }
+        return;
+    }
+
+
+    // сохранить заданный масштаб, как текущий
     currentZoom = z;
+    // смена указателей на буфер
     QList<QGraphicsPixmapItem *> *ptrItemTemp = ptrItemMapOld;
     ptrItemMapOld = ptrItemMapNew;
     ptrItemMapNew = ptrItemTemp;
+    // надо увеличить масштаб уже исходных объектов
+
+
     ////////////////////////////////////////////////
-    //! ограничим диапазон
+    // ограничим диапазон
     z = qBound(1,z,20);
-    //! рассчитываем кол-во элементов в слое
-    //int nLayer=2<<(2*(z-1));
-    int tileX1,tileY1;
+
+    int tileX1,tileY1,maxTile = 2<<(z-2);
     int tileX0,tileY0;
 
-    //! загружаем все элементы попадающие в rectView
+    // загружаем все элементы попадающие в rectView с небольшим избытком
     pixelXYToTileXY(rectView.x(),rectView.y(),tileX0,tileY0);
-    tileX0--;tileY0--;
-    tileX0 = qMax(tileX0,0);tileY0 = qMax(tileY0,0);
-
     pixelXYToTileXY(rectView.x() + rectView.width(),rectView.y() + rectView.height(),tileX1,tileY1);
-    tileX1++;tileY1++;
-    if(tileX1>(2<<(z-2))) tileX1 = 2<<(z-2);
-    if(tileY1>(2<<(z-2))) tileY1 = 2<<(z-2);
 
-    //! строки для идентификации карты
-    QString pref_map="";
-    QString ext_map=".jpg";
+    // расширим координаты тайлов и ограничим снизу и сверху
+    tileX0-=ext_align; tileX0 = qMax(tileX0,0);
+    tileY0-=ext_align; tileY0 = qMax(tileY0,0);
+
+    tileX1+=ext_align; tileX1 = qMin(tileX1,maxTile);
+    tileY1+=ext_align; tileY1 = qMin(tileY1,maxTile);
+
+    // строки для идентификации карты
+    QString pref_map = "";
+    QString ext_map  = ".jpg";
     switch(typeMap)
     {
-        case YANDEX_SAT:        {pref_map=yandex_sat;               break;}
-        case YANDEX_MAP:        {pref_map=yandex_map;ext_map=".png";break;}
-        case GOOGLE_MAP:        {pref_map=google_map;ext_map=".png";break;}
-        case GOOGLE_LAND:       {pref_map=google_land;              break;}
-        case GOOGLE_SAT:        {pref_map=google_sat;              break;}
-        case BING_SAT:          {pref_map=bing_sat;                 break;}
-        case GOOGLE_SAT_EARTH:  {pref_map=google_sat_earth;         break;}
-        case NOKIA_MAP:         {pref_map=nokia_map;ext_map=".png"; break;}
-        case NOKIA_HYB:         {pref_map=nokia_hyb;ext_map=".png"; break;}
-        default:                {pref_map="";}
+        case YANDEX_SAT:        {pref_map = yandex_sat;               break;}
+        case YANDEX_MAP:        {pref_map = yandex_map;ext_map=".png";break;}
+        case GOOGLE_MAP:        {pref_map = google_map;ext_map=".png";break;}
+        case GOOGLE_LAND:       {pref_map = google_land;              break;}
+        case GOOGLE_SAT:        {pref_map = google_sat;              break;}
+        case BING_SAT:          {pref_map = bing_sat;                 break;}
+        case GOOGLE_SAT_EARTH:  {pref_map = google_sat_earth;         break;}
+        case NOKIA_MAP:         {pref_map = nokia_map;ext_map=".png"; break;}
+        case NOKIA_HYB:         {pref_map = nokia_hyb;ext_map=".png"; break;}
+        default:                {pref_map = "";}
     };
 
-    //! для дополнительных слоев
-    //! строки для идентификации карты
+    // для дополнительных слоев
+    // строки для идентификации карты
     QString pref_layer  = "";
     QString ext_layer   = ".jpg";
     switch(typeLayer)
@@ -98,7 +148,7 @@ void GeographySysCoord::setZoomLevel(int z, QRectF rectView)
     if(pref_layer.isEmpty() == true)
         path_layer = "";
 
-    //! запускаем поток для загрузки тайлов
+    // запускаем поток для загрузки тайлов
     threadLoadMaps->startLoadTile(path_map,
                                   ext_map,
                                   path_layer,
@@ -184,20 +234,24 @@ ThreadLoadMaps::ThreadLoadMaps(QObject* parent):QThread(parent)
 
 void ThreadLoadMaps::run()
 {
-    for(int i=tileX0;i<tileX1;i++)
+    int pixX,pixY;
+    for(int i = tileX0;i < tileX1;i++)
     {
-        for(int j=tileY0;j<tileY1;j++)
+        for(int j = tileY0;j < tileY1;j++)
         {
-            int pixX,pixY;
+            // пересчет из координат тайла в координаты сцены
             tileXYToPixelXY(i,j,pixX,pixY);
 
-            if(path_map.isEmpty()==false)
+            // добавление тайлов с слоя карт
+            if(path_map.isEmpty() == false)
                 addTile(path_map,i,j,pixX,pixY,ext_map);
 
-            if(path_layer.isEmpty()==false)
+            // добавление тайлов с дополнительного слоя
+            if(path_layer.isEmpty() == false)
                 addTile(path_layer,i,j,pixX,pixY,ext_layer);
         }
     }
+    // сигнал о полной загруке всех тайлов
     emit finishedLoadAllTile();
 }
 void ThreadLoadMaps::startLoadTile(QString path_map_,
@@ -242,18 +296,19 @@ void ThreadLoadMaps::addTile(QString path,
         fileName = ":/png/no_tile";
 
     QFile file(fileName);
-    bool openFile=file.open(QIODevice::ReadOnly);
+    bool openFile = file.open(QIODevice::ReadOnly);
     QByteArray byteArray;
     if(openFile == true)
         byteArray = file.readAll();
     else
         byteArray.clear();
 
+    // отправляем сигнал о готовносте изображения
     emit createNewPixmapItem(byteArray,pixX,pixY);
 }
 void GeographySysCoord::slotFinishedLoadAllTile()
 {
-    //! обнулим все элементы
+    // обнулим все элементы
     for(auto i:*ptrItemMapOld)
     {
         this->scene()->removeItem(i);
@@ -265,7 +320,7 @@ void GeographySysCoord::slotCreatePixmapItem(QByteArray byteArray,int pixX,int p
 {
     QPixmap p;
     p.loadFromData(byteArray);
-    QGraphicsPixmapItem *itemPixmap=new QGraphicsPixmapItem(p,this);//,this->parent);
+    QGraphicsPixmapItem *itemPixmap = new QGraphicsPixmapItem(p,this);//,this->parent);
 
     itemPixmap->setPos(pixX,pixY);
     addItemToScene(itemPixmap);

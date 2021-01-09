@@ -13,7 +13,7 @@ class FormSettingForAircraft : public QWidget
 {
     Q_OBJECT
 public:
-    explicit FormSettingForAircraft(QWidget *parent = 0);
+    explicit FormSettingForAircraft(QWidget *parent = nullptr);
 
     ~FormSettingForAircraft();
 

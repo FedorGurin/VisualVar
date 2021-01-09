@@ -17,7 +17,7 @@ class FormListAerodroms : public QWidget
 {
     Q_OBJECT    
 public:
-    explicit FormListAerodroms(QWidget *parent = 0);
+    explicit FormListAerodroms(QWidget *parent = nullptr);
     ~FormListAerodroms();
     // добавить новый аэродром
     void addNewAerodrom(const QDomElement& element);

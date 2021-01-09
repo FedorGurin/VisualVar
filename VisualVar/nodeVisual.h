@@ -39,7 +39,7 @@ namespace VisualVariant
 class ColorItem:public QGraphicsRectItem
 {
 public:
-    ColorItem(QGraphicsItem * parent = 0 );
+    ColorItem(QGraphicsItem * parent = nullptr );
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
     void setRows(unsigned value);
     //! пересчитать размер прямоугольника
@@ -55,9 +55,9 @@ private:
 class GraphNode:public QGraphicsItem,public QObject
 {
 public:
-    GraphNode(QGraphicsItem *parent = 0):QGraphicsItem(parent)
+    GraphNode(QGraphicsItem *parent = nullptr):QGraphicsItem(parent)
     {
-        //! координаты положения объекта в географической СК
+        // координаты положения объекта в географической СК
         lat         = 0;
         lon         = 0;
         use_russian = true;
@@ -131,7 +131,7 @@ class ThreadLoadMaps:public QThread
 {
     Q_OBJECT
 public:
-    ThreadLoadMaps(QObject* parent=0);
+    ThreadLoadMaps(QObject* parent = nullptr);
     //! добавить тайл
     void addTile(QString path,
                  int i,
@@ -151,7 +151,12 @@ public:
 protected:
     virtual void run();
 signals:
-    void createNewPixmapItem(QByteArray,int,int);
+    /*! сигнал о готовности добавления одного тайла
+    * \param byteArray - загруженное изображение тайла
+    * \param X - координата X тайла относительно сцены
+    * \param Y - координата Y тайла относительно сцены
+    */
+    void createNewPixmapItem(QByteArray byteArray,int X,int Y);
     //! сигнал о том, что все тайлы загружены
     void finishedLoadAllTile();
 private:
@@ -161,7 +166,7 @@ private:
     QString ext_map;
     QString path_layer;
     QString ext_layer;
-    //! координаты тайла
+    //! координаты прямоугольного тайла
     int tileX0;
     int tileX1;
     int tileY0;
@@ -194,7 +199,7 @@ public:
         YANDEX_HYB
     };
 
-    GeographySysCoord(QGraphicsItem *parent=0):GraphNode(parent)
+    GeographySysCoord(QGraphicsItem *parent = nullptr):GraphNode(parent)
     {
         itemMapNew.clear();
         itemMapOld.clear();
@@ -268,7 +273,7 @@ public slots:
     void slotCreatePixmapItem(QByteArray pixmap,int pixX,int pixY);
     void slotFinishedLoadAllTile();
 private:
-    //! указатели на список загруженных тайлы
+    //! указатели на список загруженных тайлов на предыдущем шаге
     QList<QGraphicsPixmapItem *> itemMapOld;
     QList<QGraphicsPixmapItem *> itemMapNew;
     QList<QGraphicsPixmapItem *> *ptrItemMapNew;
@@ -375,10 +380,10 @@ public:
 
     static void initObjectsProperty()
     {
-        if(unitAngle    == nullptr)    unitAngle=new TObjectProperty("./xml/factors.xml","Angle");
-        if(unitSpeed    == nullptr)    unitSpeed=new TObjectProperty("./xml/factors.xml","Velocity, Speed");
-        if(unitLength   == nullptr)   unitLength=new TObjectProperty("./xml/factors.xml","Length");
-        if(unitExp      == nullptr)      unitExp=new TObjectProperty("./xml/factors.xml","Multipliers");
+        if(unitAngle    == nullptr)    unitAngle    = new TObjectProperty("./xml/factors.xml","Angle");
+        if(unitSpeed    == nullptr)    unitSpeed    = new TObjectProperty("./xml/factors.xml","Velocity, Speed");
+        if(unitLength   == nullptr)    unitLength   = new TObjectProperty("./xml/factors.xml","Length");
+        if(unitExp      == nullptr)    unitExp      = new TObjectProperty("./xml/factors.xml","Multipliers");
     }
 
     static TObjectProperty *unitAngle;

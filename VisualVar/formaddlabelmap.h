@@ -20,7 +20,7 @@ class FormAddLabelMap : public QWidget
     Q_OBJECT
     
 public:
-    explicit  FormAddLabelMap(QWidget *parent = 0);
+    explicit  FormAddLabelMap(QWidget *parent = nullptr);
 
     void addNewLabel(double lat,double lon);
     void addNewLabel(QString name,double lat,double lon);

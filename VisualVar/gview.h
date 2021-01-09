@@ -1,5 +1,4 @@
-#ifndef GVIEW_H
-#define GVIEW_H
+#pragma once
 
 #include <QGraphicsView>
 #include <QMouseEvent>
@@ -8,7 +7,7 @@ class GView : public QGraphicsView
 {
     Q_OBJECT
 public:
-    explicit GView(QGraphicsScene * scene, QWidget * parent=0);
+    explicit GView(QGraphicsScene * scene, QWidget * parent = nullptr);
 protected:
     virtual void mouseMoveEvent(QMouseEvent * mouseEvent);
     virtual void resizeEvent(QResizeEvent * event);
@@ -19,4 +18,4 @@ signals:
     void sigResize();
 };
 
-#endif // GVIEW_H
+

@@ -13,7 +13,7 @@ class FormSettingForAirTarget : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormSettingForAirTarget(QWidget *parent = 0);
+    explicit FormSettingForAirTarget(QWidget *parent = nullptr);
     ~FormSettingForAirTarget();
 
     double minV();

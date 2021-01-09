@@ -12,7 +12,7 @@ class FormSettingBeaconTACAN : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormSettingBeaconTACAN(QWidget *parent = 0);
+    explicit FormSettingBeaconTACAN(QWidget *parent = nullptr);
     ~FormSettingBeaconTACAN();
 
 private:

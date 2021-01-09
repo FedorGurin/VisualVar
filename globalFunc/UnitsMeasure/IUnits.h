@@ -28,11 +28,11 @@ class TObjectProperty: public QObject
     Q_OBJECT
 public:
 
-    TObjectProperty(QObject *parent=0):QObject(parent)
+    TObjectProperty(QObject *parent = nullptr):QObject(parent)
     {
         list.size();
     }
-    TObjectProperty(QString nameFile, QString prop,QObject *parent=0):QObject(parent)
+    TObjectProperty(QString nameFile, QString prop,QObject *parent = nullptr):QObject(parent)
     {
 
         list.size();

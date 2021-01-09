@@ -1,10 +1,3 @@
-/*
- * Parser.cpp
- *
- *  Created on: 17.06.2009
- *      Author: Fedor
- */
-
 #include "parser.h"
 #include <QApplication>
 namespace VisualVariant

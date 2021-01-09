@@ -13,7 +13,7 @@ class FormStatusBar : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormStatusBar(QWidget *parent = 0);
+    explicit FormStatusBar(QWidget *parent = nullptr);
 
     enum TStatus
     {

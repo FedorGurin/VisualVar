@@ -12,7 +12,7 @@ class FormSettingForGroundTargets : public QWidget
     Q_OBJECT
 
 public:
-    explicit FormSettingForGroundTargets(QWidget *parent = 0);
+    explicit FormSettingForGroundTargets(QWidget *parent = nullptr);
     ~FormSettingForGroundTargets();
     void setV(double);
     void setPsi(double); 

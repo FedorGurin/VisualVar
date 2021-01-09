@@ -5,7 +5,7 @@
  *      Author: Fedor
  */
 
-#include "cl_Scene.h"
+#include "cl_scene.h"
 #include "../globalFunc/gl_func.h"
 
 #define MAX_ZOOM_LEVEL 18
@@ -49,7 +49,7 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     activeRoute         = false;
     firstConnectingSlots= false;
 
-    map=new GeographySysCoord;
+    map = new GeographySysCoord;
     map->setZValue(0);
     map->setFlag(QGraphicsItem::ItemStacksBehindParent,true);
     map->setTypeMap(set->typeMap);
@@ -658,28 +658,28 @@ void cl_Scene::calcItemPosScene()
 {
     int curX = 0;
     int curY = 0;
-    //! уровень детализации для нашего вертолета
+    // уровень детализации для нашего вертолета
     aircraft->setZoomLevel(currentZoom);
-    //! пересчет географических координат в прямоугольные
+    // пересчет географических координат в прямоугольные
     latLongToPixelXY(aircraft->lat,aircraft->lon,currentZoom-1,curX,curY);
-    //! координаты носителя
+    // координаты носителя
     aircraft->setPosC(curX,curY);
-    //! уровень детализации для фантомного нашего вертолета
+    // уровень детализации для фантомного нашего вертолета
     aircraftMove->setZoomLevel(currentZoom);
-    //! пересчет географических координат в прямоугольные
+    // пересчет географических координат в прямоугольные
     latLongToPixelXY(aircraftMove->lat,aircraftMove->lon,currentZoom-1,curX,curY);
-    //! пересчитать всю траекторию с учетом новым уровнем детализации
+    // пересчитать всю траекторию с учетом новым уровнем детализации
     aircraftMove->refreshTrajectory(currentZoom-1);
-    //! текущие координаты
+    // текущие координаты
     aircraftMove->setPosC(curX,curY);
-    //! воздушные объекты
+    // воздушные объекты
     for(auto i:airObj)
     {
         i->setZoomLevel(currentZoom);
         latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
         i->setPosC(curX,curY);
     }
-    //! двигующиеся воздушные объекты
+    // двигующиеся воздушные объекты
     for(auto i:airObjMove)
     {
         i->setZoomLevel(currentZoom);
@@ -687,26 +687,28 @@ void cl_Scene::calcItemPosScene()
         i->refreshTrajectory(currentZoom-1);
         i->setPosC(curX,curY);
     }
-    //! наземные объекты
+    // наземные объекты
     for(auto i:groundObj)
     {
         i->setZoomLevel(currentZoom);
         latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
         i->setPosC(curX,curY);
     }
+    // пересчет облачности
     for(auto i:cloudObj)
     {
         i->setZoomLevel(currentZoom);
         latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
         i->setPosC(curX,curY);
     }
+    // пересчет тумана
     for(auto i:fogObj)
     {
         i->setZoomLevel(currentZoom);
         latLongToPixelXY(i->lat,i->lon,currentZoom - 1,curX,curY);
         i->setPosC(curX,curY);
     }
-    //! объекты метки
+    // объекты метки
     if(labelObjects!=nullptr)
     {
         for(auto i:*labelObjects)
@@ -716,7 +718,7 @@ void cl_Scene::calcItemPosScene()
             i->setPosC(curX,curY);
         }
     }
-    //! объекты маршрута
+    // объекты маршрута
     for(auto i:routeObjects)
     {
         i->setZoomLevel(currentZoom);

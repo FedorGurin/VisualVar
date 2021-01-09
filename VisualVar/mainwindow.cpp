@@ -5,7 +5,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "cl_Scene.h"
+#include "cl_scene.h"
 #include "./mppm/CommonEngineData.h"
 #include "./mppm/libmppm.h"
 #include <QLibrary>

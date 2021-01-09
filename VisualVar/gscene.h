@@ -9,7 +9,7 @@ class GScene : public QGraphicsScene
 {
     Q_OBJECT
 public:
-    explicit GScene(QObject * parent = 0);
+    explicit GScene(QObject * parent = nullptr);
 protected:
     virtual void wheelEvent(QGraphicsSceneWheelEvent * wheelEvent);
     virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent * mouseEvent);

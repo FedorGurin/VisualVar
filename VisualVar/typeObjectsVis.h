@@ -1,5 +1,5 @@
-#ifndef TYPEOBJECTSVIS_H
-#define TYPEOBJECTSVIS_H
+#pragma once
+
 #include <QString>
 #include <QDomElement>
 #include <QDomDocument>
@@ -32,5 +32,3 @@ private:
     QDomDocument domDocument;
     QDomElement rootNode;
 };
-
-#endif // TYPEOBJECTSVIS_H

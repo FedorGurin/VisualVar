@@ -22,7 +22,7 @@ class MessureUnits : public QObject
 {
     Q_OBJECT
 public:
-    explicit MessureUnits(QObject *parent = 0);
+    explicit MessureUnits(QObject *parent = nullptr);
 
     bool toStandartUnitSpeed(double value,
                              QString messure,
