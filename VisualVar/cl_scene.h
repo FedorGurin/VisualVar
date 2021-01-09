@@ -1,5 +1,4 @@
-#ifndef CL_SCENE_H_
-#define CL_SCENE_H_
+#pragma once
 
 #include <QSvgRenderer>
 #include <QGraphicsScene>
@@ -12,10 +11,10 @@
 
 #include "gscene.h"
 #include "gview.h"
-#include "NodeVisual.h"
+#include "nodeVisual.h"
 #include "formstatusbar.h"
-#include "TypeObjectsVis.h"
-#include "SettingVV.h"
+#include "typeObjectsVis.h"
+#include "settingVV.h"
 
 namespace VisualVariant
 {
@@ -75,6 +74,9 @@ public:
 
     //! клонирование наземного объекта
     void cloneGroundObj(GroundObj *target);
+    //! создание объекта
+    //void createObj(QPointF p, GraphNode::TypeGraphNode type);
+
     void createNewAirObj(QPointF);
     void createNewGroundObj(QPointF);
     void createNewCloud(QPointF);
@@ -252,4 +254,4 @@ private:
     QTimer* timer;
 };
 }
-#endif /* CL_SCENE_H_ */
+
