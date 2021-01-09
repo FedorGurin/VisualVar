@@ -4,8 +4,7 @@
 #include <QItemDelegate>
 #include "../cl_scene.h"
 
-namespace VisualVariant
-{
+
 class DelegateTableManual : public QItemDelegate
 {
     Q_OBJECT
@@ -37,5 +36,5 @@ private slots:
                               const QStyleOptionViewItem &option,
                               const QModelIndex &index) const;*/
 };
-}
+
 #endif // DELEGATETABLEMANUAL_H

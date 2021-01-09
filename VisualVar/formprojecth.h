@@ -31,7 +31,7 @@ public:
     explicit FormProjectH(QWidget *parent = nullptr);
     ~FormProjectH();
     //! указатель на текущую сцену
-    void setCurrentScene(VisualVariant::cl_Scene* scene_);
+    void setCurrentScene(cl_Scene* scene_);
     //! переместить объект на указанную высоту
     void moveToH(GraphObject* obj, double h, int index);
     //! очистка объектов
@@ -46,7 +46,7 @@ private:
     QGraphicsScene *scene;
     QGraphicsSvgItem *svgItem;
     QGraphicsTextItem *textScale;
-    VisualVariant::cl_Scene* currentScene;
+    cl_Scene* currentScene;
     GraphObject *aircraft;
     QVector<GraphObject* > airtarget;
     double maxScale;

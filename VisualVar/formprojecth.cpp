@@ -45,7 +45,7 @@ void FormProjectH::updateScene()
     //ui->graphicsViewH->update();
     scene->update();//graphicsViewH->update();
 }
-void FormProjectH::setCurrentScene(VisualVariant::cl_Scene* scene_)
+void FormProjectH::setCurrentScene(cl_Scene* scene_)
 {
     if(currentScene == scene_)
         return;

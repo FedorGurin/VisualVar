@@ -36,8 +36,7 @@
 namespace Ui {
     class MainWindowVariant;
 }
-namespace VisualVariant
-{
+
 class cl_MouseFilterVariant:public QObject
 {
     Q_OBJECT
@@ -287,5 +286,5 @@ signals:
     void sigTime(double);
 
 };
-}
+
 #endif // MAINWINDOW_H

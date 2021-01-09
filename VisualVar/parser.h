@@ -17,8 +17,7 @@
 #include "cl_scene.h"
 #include "TypeObjectsVis.h"
 
-namespace VisualVariant
-{
+
 //! класс для сохранения и чтения вариантов
 class Parser :public QObject
 {
@@ -58,5 +57,5 @@ private:
 
 };
 
-}
+
 #endif /* PARSER_H_ */

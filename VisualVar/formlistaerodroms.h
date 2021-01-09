@@ -7,11 +7,12 @@
 #include <QDomDocument>
 
 #include "NodeVisual.h"
+#include "nodes/aerodromObj/aerodObj.h"
 namespace Ui {
 class FormListAerodroms;
 }
 
-using namespace VisualVariant;
+
 //! класс для чтения аэродромов и отображение данных
 class FormListAerodroms : public QWidget
 {

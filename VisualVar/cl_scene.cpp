@@ -1,18 +1,10 @@
-/*
- * cl_Scene.cpp
- *
- *  Created on: 16.06.2009
- *      Author: Fedor
- */
-
 #include "cl_scene.h"
 #include "../globalFunc/gl_func.h"
+#include "factoryObj.h"
 
 #define MAX_ZOOM_LEVEL 18
 #define MIN_ZOOM_LEVEL 3
-//#define OLD_STEND
-namespace VisualVariant
-{
+
 
 cl_Scene::cl_Scene(FormStatusBar* form,
                    TypeObjectsVis* typeObjectsVis_,
@@ -39,7 +31,7 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     set             =   settingVV;
 
 
-    //! текущее увеличение
+    // текущее увеличение
     currentZoom         = settingVV->zoom;
     use                 = true;
     index               = 1;
@@ -92,16 +84,16 @@ cl_Scene::cl_Scene(FormStatusBar* form,
     aircraftMove->setZoomLevel(currentZoom);
     aircraftMove->setMovingObject(true);
     aircraftMove->map = map;
-    //! признак отрисовки траектории
+    // признак отрисовки траектории
     aircraftMove->trajectory = true;
-    //! прочитаем координаты центра окна
+    // прочитаем координаты центра окна
     curLatView = settingVV->startLat;
     curLonView = settingVV->startLon;
-    //! текущие координаты
+    // текущие координаты
     curLat = curLatView;
     curLon = curLonView;
     QRect rect=view->viewport()->rect();
-    //! выставляем по координатам в центр окна
+    // выставляем по координатам в центр окна
     mousePos.setX(rect.width()/2.0);
     mousePos.setY(rect.height()/2.0);
 
@@ -146,7 +138,7 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     numberNameVariant= thisScene->numberNameVariant;
 
 
-    //! текущее увеличение
+    // текущее увеличение
     currentZoom = thisScene->currentZoom;
     use         = thisScene->use;
 
@@ -202,14 +194,14 @@ cl_Scene::cl_Scene(cl_Scene* thisScene,QWidget *parent):QObject(parent)
     aircraftMove->map           = map;
     aircraftMove->trajectory    = true;
 
-    //! прочитаем координаты центра окна
+    // прочитаем координаты центра окна
     curLatView = thisScene->curLatView;
     curLonView = thisScene->curLonView;
 
     curLat = curLatView;
     curLon = curLonView;
     QRect rect = view->viewport()->rect();
-    //! выставляем по координатам в центр окна
+    // выставляем по координатам в центр окна
     mousePos.setX(rect.width()/2.0);
     mousePos.setY(rect.height()/2.0);
 
@@ -253,7 +245,7 @@ cl_Scene::cl_Scene(QDomElement &node,
                    QWidget *parent):QObject(parent)
 {
 
-    //! обнуление спиcков
+    // обнуление спиcков
     airObj      .clear();
     groundObj   .clear();
     aerodroms   .clear();
@@ -261,7 +253,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     fogObj      .clear();
     routeObjects.clear();
 
-    //! значения по умолчанию
+    // значения по умолчанию
     allInfoObjects      = false;
     labelObjects        = nullptr;
     numberNameVariant   = 1;
@@ -275,9 +267,9 @@ cl_Scene::cl_Scene(QDomElement &node,
     firstConnectingSlots= false;
 
 
-    //! текущий уровень детализации
+    // текущий уровень детализации
     currentZoom = node.attribute("scale",QString::number(MIN_ZOOM_LEVEL)).toInt();
-    //! тип карты и слоя
+    // тип карты и слоя
     QString tempTypeMap     = node.attribute("typeMaps","");
     QString tempTypeLayer   = node.attribute("layerMaps","");
 
@@ -287,7 +279,7 @@ cl_Scene::cl_Scene(QDomElement &node,
     map->setTypeMap(tempTypeMap);
     map->setTypeLayer(tempTypeLayer);
 
-    //! сцена
+    // сцена
     scene = new GScene;
     connect(scene,SIGNAL(zoomUp()),         this,SLOT(slotZoomUp()));
     connect(scene,SIGNAL(zoomDown()),       this,SLOT(slotZoomDown()));
@@ -780,7 +772,10 @@ void cl_Scene::cloneGroundObj(GroundObj *target_)
     target->formSetting->setListObjectVis(typeObjectsVis->listGroundObjects());
     groundObj.push_back(target);
 }
-
+void cl_Scene::createObj(QPointF p, GraphNode::TypeGraphNode type)
+{
+    FactoryObj::obj()->createObj(type,map);
+}
 void cl_Scene::createNewAirObj(QPointF p)
 {
     AirObj *target=new AirObj(tr("Объект №")+QString::number(airObj.size()+1),":/res/svg/target",map);
@@ -1108,4 +1103,4 @@ void cl_Scene::slotFlushState()
     }
 }
 
-}
+

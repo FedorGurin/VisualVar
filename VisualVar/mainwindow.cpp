@@ -10,11 +10,9 @@
 #include "./mppm/libmppm.h"
 #include <QLibrary>
 
-//#define OLD_STEND
+
 typedef IEngineData* (*CreateEngine)();
 
-namespace VisualVariant
-{
 
 GeographicLib::Geocentric* earth = nullptr;
 
@@ -168,11 +166,7 @@ MainWindowVisVar::MainWindowVisVar(QWidget *parent) :
    // ui->toolBarCreate->addSeparator();
 
     ui->toolBarMain->addAction(actBtnSend);
-    //ui->toolBarMain->addSeparator();
-   // ui->toolBarMain->addAction(ui->actMppmOpen);
-//#ifdef OLD_STAND
-//    ui->toolBarMain->addAction(actBtnSendToOtherStand);
-//#endif
+
 
     fileName.clear();
 
@@ -1430,4 +1424,3 @@ void MainWindowVisVar::slotActionPZ_90Triggered(bool b)
     }
 }
 
-}

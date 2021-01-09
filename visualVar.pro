@@ -41,13 +41,28 @@ win32:LIBS += -luser32
     #QMAKE_POST_LINK +=windeployqt $$OUT_PWD/$$DESTDIR
     }
 #}
-
+INCLUDEPATH += VisualVar \
+               nodes \
+               nodes/airObj \
+               nodes/ourObj \
+               nodes/groundObj \
+               nodes/mapObj \
+               nodes/aerodromObj
 # Input
 HEADERS += globalFunc/gl_func.h \
     VisualVar/cl_scene.h \
+    VisualVar/factoryObj.h \
+    VisualVar/formlistaerodroms.h \
     VisualVar/formsettingfog.h \
     VisualVar/formsettingtacan.h \
     VisualVar/formsettingvor.h \
+    VisualVar/nodes/airObj/airObj.h \
+    VisualVar/nodes/airObj/formsettingforairtarget.h \
+    VisualVar/nodes/groundObj/formsettingforgroundtargets.h \
+    VisualVar/nodes/groundObj/groundObj.h \
+    VisualVar/nodes/mapObj/mapObj.h \
+    VisualVar/nodes/ourObj/formsettingforaircraft.h \
+    VisualVar/nodes/ourObj/ourObj.h \
     VisualVar/typeObjectsVis.h \
     VisualVar/recentOpenFiles.h \
     VisualVar/parser.h \
@@ -56,23 +71,18 @@ HEADERS += globalFunc/gl_func.h \
     VisualVar/geographyMapping.h \
     VisualVar/formzoompanel.h \
     VisualVar/formstatusbar.h \
-    VisualVar/formsettingforgroundtargets.h \
-    VisualVar/formsettingforairtarget.h \
-    VisualVar/formsettingforaircraft.h \
     VisualVar/dialogsavecurvar.h \
     VisualVar/nodeVisual.h \
     VisualVar/mainwindow.h \  
     globalFunc/UnitsMeasure/IUnits.h \ 
     VisualVar/manualModify/formManualModify.h \
     VisualVar/manualModify/modelDataTable.h \
-    VisualVar/formsettingaerodrom.h \
     VisualVar/manualModify/delegateTableManual.h \
     VisualVar/settingVV.h \
     VisualVar/gscene.h \
     VisualVar/gview.h \
     VisualVar/formaddlabelmap.h \
     globalFunc/mercator.h \    
-    VisualVar/formlistaerodroms.h \
     VisualVar/formprojecth.h \
     mppm/CommonEngineData.h \
     mppm/libmppm.h \
@@ -136,24 +146,33 @@ FORMS += VisualVar/mainwindow.ui \
     VisualVar/formsettingvor.ui \
     VisualVar/formzoompanel.ui \
     VisualVar/formstatusbar.ui \
-    VisualVar/formsettingforgroundtargets.ui \
-    VisualVar/formsettingforairtarget.ui \
-    VisualVar/formsettingforaircraft.ui \
+    VisualVar/nodes/aerodromObj/formsettingaerodrom.ui \
     VisualVar/dialogsavecurvar.ui \
     VisualVar/formsettingark.ui \
     VisualVar/manualModify/formManualModify.ui \
-    VisualVar/formsettingaerodrom.ui \
-    VisualVar/formaddlabelmap.ui \   
-    VisualVar/formlistaerodroms.ui \
+    VisualVar/formaddlabelmap.ui \    
     VisualVar/formprojecth.ui \
     VisualVar/formsettingcloud.ui \
-    VisualVar/formfog.ui
+    VisualVar/formfog.ui \
+    VisualVar/nodes/airObj/formsettingforairtarget.ui \
+    VisualVar/nodes/groundObj/formsettingforgroundtargets.ui \
+    VisualVar/nodes/ourObj/formsettingforaircraft.ui
 
 
 SOURCES += globalFunc/gl_func.cpp \
+    VisualVar/factoryObj.cpp \
     VisualVar/formsettingfog.cpp \
     VisualVar/formsettingtacan.cpp \
     VisualVar/formsettingvor.cpp \
+    VisualVar/nodes/aerodromObj/aerodObj.cpp \
+    VisualVar/nodes/aerodromObj/formsettingaerodrom.cpp \
+    VisualVar/nodes/airObj/airObj.cpp \
+    VisualVar/nodes/airObj/formsettingforairtarget.cpp \
+    VisualVar/nodes/groundObj/formsettingforgroundtargets.cpp \
+    VisualVar/nodes/groundObj/groundObj.cpp \
+    VisualVar/nodes/mapObj/mapObj.cpp \
+    VisualVar/nodes/ourObj/formsettingforaircraft.cpp \
+    VisualVar/nodes/ourObj/ourObj.cpp \
     main.cpp \    
     VisualVar/typeObjectsVis.cpp \
     VisualVar/recentOpenFiles.cpp \
@@ -162,16 +181,12 @@ SOURCES += globalFunc/gl_func.cpp \
     VisualVar/geographyMapping.cpp \
     VisualVar/formzoompanel.cpp \
     VisualVar/formstatusbar.cpp \
-    VisualVar/formsettingforgroundtargets.cpp \
-    VisualVar/formsettingforairtarget.cpp \
-    VisualVar/formsettingforaircraft.cpp \
     VisualVar/dialogsavecurvar.cpp \
     VisualVar/nodeVisual.cpp \
     VisualVar/mainwindow.cpp \    
     globalFunc/UnitsMeasure/IUnits.cpp \   
     VisualVar/manualModify/formManualModify.cpp \
     VisualVar/manualModify/modelDataTable.cpp \
-    VisualVar/formsettingaerodrom.cpp \
     VisualVar/manualModify/delegateTableManual.cpp \
     VisualVar/settingVV.cpp \
     VisualVar/gscene.cpp \
@@ -226,6 +241,10 @@ SOURCES += globalFunc/gl_func.cpp \
 
 RESOURCES += res.qrc
 RC_ICONS = resource/helicopter_23771.ico
+
+HEADERS += \
+    VisualVar/nodes/aerodromObj/aerodObj.h \
+    VisualVar/nodes/aerodromObj/formsettingaerodrom.h
 
 
 

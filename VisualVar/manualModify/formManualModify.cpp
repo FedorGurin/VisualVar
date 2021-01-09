@@ -3,8 +3,7 @@
 #include <QRegExpValidator>
 #include <QKeyEvent>
 
-namespace VisualVariant
-{
+
 cl_MouseFilter::cl_MouseFilter(QObject* pobj,QWidget *slotForm_):QObject(pobj)
 {
     slotForm = slotForm_;
@@ -353,4 +352,4 @@ void FormManualModify::changeEvent(QEvent *e)
         break;
     }
 }
-}
+

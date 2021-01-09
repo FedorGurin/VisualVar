@@ -11,8 +11,7 @@
 namespace Ui{
     class FormManualModify;
 }
-namespace VisualVariant
-{
+
 class cl_MouseFilter:public QObject
 {
     Q_OBJECT
@@ -69,5 +68,5 @@ private:
     //! список возможных объектов для добавления
     QListWidget *listWidget;
 };
-}
+
 #endif // FORMMANUALMODIFY_H

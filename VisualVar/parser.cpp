@@ -1,7 +1,6 @@
 #include "parser.h"
 #include <QApplication>
-namespace VisualVariant
-{
+
 #define DATA_FILE "None"
 #define VARIANT_FILE "data.xml"
 
@@ -197,4 +196,4 @@ bool Parser::openFileVariants(const QString &nameFile, QString *name, bool &useM
     }*/
     return openFile;
 }
-}
+

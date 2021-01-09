@@ -15,9 +15,12 @@
 #include "formstatusbar.h"
 #include "typeObjectsVis.h"
 #include "settingVV.h"
+#include  "nodes/ourObj/ourObj.h"
+#include "nodes/airObj/airObj.h"
+#include "nodes/groundObj/groundObj.h"
+#include "nodes/aerodromObj/aerodObj.h"
+#include "nodes/mapObj/mapObj.h"
 
-namespace VisualVariant
-{
 class cl_Scene:public QObject
 {
     Q_OBJECT
@@ -75,7 +78,7 @@ public:
     //! клонирование наземного объекта
     void cloneGroundObj(GroundObj *target);
     //! создание объекта
-    //void createObj(QPointF p, GraphNode::TypeGraphNode type);
+    void createObj(QPointF p, GraphNode::TypeGraphNode type);
 
     void createNewAirObj(QPointF);
     void createNewGroundObj(QPointF);
@@ -253,5 +256,5 @@ private:
     QAction* actionAddAerodroms;
     QTimer* timer;
 };
-}
+
 

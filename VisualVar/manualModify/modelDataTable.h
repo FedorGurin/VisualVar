@@ -4,8 +4,7 @@
 #include "../cl_scene.h"
 #include <QVector>
 
-namespace VisualVariant
-{
+
 class ModelDataTable: public QAbstractTableModel
 {
 public:
@@ -47,5 +46,5 @@ private:
 
     GraphNode *currentGraphNode;
 };
-}
+
 #endif // MODELDATATABLE_H

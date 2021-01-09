@@ -14,7 +14,7 @@
 namespace Ui {
 class FormAddLabelMap;
 }
-using namespace VisualVariant;
+
 class FormAddLabelMap : public QWidget
 {
     Q_OBJECT
