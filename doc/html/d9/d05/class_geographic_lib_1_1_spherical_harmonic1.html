@@ -1,0 +1,626 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::SphericalHarmonic1</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html">SphericalHarmonic1</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="../../d8/d71/class_geographic_lib_1_1_spherical_harmonic1-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::SphericalHarmonic1</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Spherical harmonic series with a correction to the coefficients.  
+ <a href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../df/d29/_spherical_harmonic1_8hpp_source.html">SphericalHarmonic1.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:ac4aaa81e0f753894ecef173c4d667916"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916">normalization</a> { <a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aafd320d946e992459e0013da6b769638">FULL</a>, 
+<a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aa1959e3e2bdf7c01f596692757858231">SCHMIDT</a>
+ }</td></tr>
+<tr class="separator:ac4aaa81e0f753894ecef173c4d667916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aeb3299ea40b0bedae55fd0a6f0c1fa40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#aeb3299ea40b0bedae55fd0a6f0c1fa40">SphericalHarmonic1</a> (const std::vector&lt; real &gt; &amp;C, const std::vector&lt; real &gt; &amp;S, int N, const std::vector&lt; real &gt; &amp;C1, const std::vector&lt; real &gt; &amp;S1, int N1, real a, unsigned norm=<a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aafd320d946e992459e0013da6b769638">FULL</a>)</td></tr>
+<tr class="separator:aeb3299ea40b0bedae55fd0a6f0c1fa40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca472a143f7e000e232f4c261550b626"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#aca472a143f7e000e232f4c261550b626">SphericalHarmonic1</a> (const std::vector&lt; real &gt; &amp;C, const std::vector&lt; real &gt; &amp;S, int N, int nmx, int mmx, const std::vector&lt; real &gt; &amp;C1, const std::vector&lt; real &gt; &amp;S1, int N1, int nmx1, int mmx1, real a, unsigned norm=<a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aafd320d946e992459e0013da6b769638">FULL</a>)</td></tr>
+<tr class="separator:aca472a143f7e000e232f4c261550b626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa976378e6eae1e85ce04976b631ccb5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#aa976378e6eae1e85ce04976b631ccb5f">SphericalHarmonic1</a> ()</td></tr>
+<tr class="separator:aa976378e6eae1e85ce04976b631ccb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ffc6858ed212e98b8cebea968914532"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#a4ffc6858ed212e98b8cebea968914532">operator()</a> (real tau, real x, real y, real z) const</td></tr>
+<tr class="separator:a4ffc6858ed212e98b8cebea968914532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53cc704105c345eb2f60bfe1a17a35d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#a53cc704105c345eb2f60bfe1a17a35d4">operator()</a> (real tau, real x, real y, real z, real &amp;gradx, real &amp;grady, real &amp;gradz) const</td></tr>
+<tr class="separator:a53cc704105c345eb2f60bfe1a17a35d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66a03d08917be2e4a853fec5080041a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#a66a03d08917be2e4a853fec5080041a0">Circle</a> (real tau, real p, real z, bool gradp) const</td></tr>
+<tr class="separator:a66a03d08917be2e4a853fec5080041a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ced6ed9fa5d2ea0a90c590c5392bb1c"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#a1ced6ed9fa5d2ea0a90c590c5392bb1c">Coefficients</a> () const</td></tr>
+<tr class="separator:a1ced6ed9fa5d2ea0a90c590c5392bb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2def9892268f027b1705e3bb3e3ba6ba"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#a2def9892268f027b1705e3bb3e3ba6ba">Coefficients1</a> () const</td></tr>
+<tr class="separator:a2def9892268f027b1705e3bb3e3ba6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Spherical harmonic series with a correction to the coefficients. </p>
+<p>This classes is similar to <a class="el" href="../../d7/da9/class_geographic_lib_1_1_spherical_harmonic.html" title="Spherical harmonic series.">SphericalHarmonic</a>, except that the coefficients <em>C</em><sub><em>nm</em></sub> are replaced by <em>C</em><sub><em>nm</em></sub> + <em>tau</em> <em>C'</em><sub><em>nm</em></sub> (and similarly for <em>S</em><sub><em>nm</em></sub>).</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --> </div><h2 class="groupheader">Перечисления</h2>
+<a id="ac4aaa81e0f753894ecef173c4d667916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4aaa81e0f753894ecef173c4d667916">&#9670;&nbsp;</a></span>normalization</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916">GeographicLib::SphericalHarmonic1::normalization</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Supported normalizations for associate Legendre polynomials. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="ac4aaa81e0f753894ecef173c4d667916aafd320d946e992459e0013da6b769638"></a>FULL&#160;</td><td class="fielddoc"><p>Fully normalized associated Legendre polynomials. See <a class="el" href="../../d7/da9/class_geographic_lib_1_1_spherical_harmonic.html#a889791c67edc32865996842c600104ebaee7040963f955b45b5a8ab0ea325c782">SphericalHarmonic::FULL</a> for documentation. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac4aaa81e0f753894ecef173c4d667916aa1959e3e2bdf7c01f596692757858231"></a>SCHMIDT&#160;</td><td class="fielddoc"><p>Schmidt semi-normalized associated Legendre polynomials. See <a class="el" href="../../d7/da9/class_geographic_lib_1_1_spherical_harmonic.html#a889791c67edc32865996842c600104eba014c2f3300abd50ff65ea8d73ef3c69e">SphericalHarmonic::SCHMIDT</a> for documentation. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aeb3299ea40b0bedae55fd0a6f0c1fa40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3299ea40b0bedae55fd0a6f0c1fa40">&#9670;&nbsp;</a></span>SphericalHarmonic1() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::SphericalHarmonic1::SphericalHarmonic1 </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>S</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>C1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>S1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>norm</em> = <code><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aafd320d946e992459e0013da6b769638">FULL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor with a full set of coefficients specified.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>the coefficients <em>C</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">S</td><td>the coefficients <em>S</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>the maximum degree and order of the sum </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C1</td><td>the coefficients <em>C'</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">S1</td><td>the coefficients <em>S'</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N1</td><td>the maximum degree and order of the correction coefficients <em>C'</em><sub><em>nm</em></sub> and <em>S'</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>the reference radius appearing in the definition of the sum. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">norm</td><td>the normalization for the associated Legendre polynomials, either <a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aafd320d946e992459e0013da6b769638">SphericalHarmonic1::FULL</a> (the default) or <a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aa1959e3e2bdf7c01f596692757858231">SphericalHarmonic1::SCHMIDT</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>N</em> and <em>N1</em> do not satisfy <em>N</em> &ge; <em>N1</em> &ge; &minus;1. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if any of the vectors of coefficients is not large enough.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>See <a class="el" href="../../d7/da9/class_geographic_lib_1_1_spherical_harmonic.html" title="Spherical harmonic series.">SphericalHarmonic</a> for the way the coefficients should be stored.</p>
+<p>The class stores <em>pointers</em> to the first elements of <em>C</em>, <em>S</em>, <em>C'</em>, and <em>S'</em>. These arrays should not be altered or destroyed during the lifetime of a <a class="el" href="../../d7/da9/class_geographic_lib_1_1_spherical_harmonic.html" title="Spherical harmonic series.">SphericalHarmonic</a> object. </p>
+
+</div>
+</div>
+<a id="aca472a143f7e000e232f4c261550b626"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca472a143f7e000e232f4c261550b626">&#9670;&nbsp;</a></span>SphericalHarmonic1() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::SphericalHarmonic1::SphericalHarmonic1 </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>S</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nmx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mmx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>C1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>S1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nmx1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mmx1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>norm</em> = <code><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aafd320d946e992459e0013da6b769638">FULL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor with a subset of coefficients specified.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">C</td><td>the coefficients <em>C</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">S</td><td>the coefficients <em>S</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>the degree used to determine the layout of <em>C</em> and <em>S</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nmx</td><td>the maximum degree used in the sum. The sum over <em>n</em> is from 0 thru <em>nmx</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mmx</td><td>the maximum order used in the sum. The sum over <em>m</em> is from 0 thru min(<em>n</em>, <em>mmx</em>). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">C1</td><td>the coefficients <em>C'</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">S1</td><td>the coefficients <em>S'</em><sub><em>nm</em></sub>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">N1</td><td>the degree used to determine the layout of <em>C'</em> and <em>S'</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nmx1</td><td>the maximum degree used for <em>C'</em> and <em>S'</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mmx1</td><td>the maximum order used for <em>C'</em> and <em>S'</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>the reference radius appearing in the definition of the sum. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">norm</td><td>the normalization for the associated Legendre polynomials, either <a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aafd320d946e992459e0013da6b769638">SphericalHarmonic1::FULL</a> (the default) or <a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#ac4aaa81e0f753894ecef173c4d667916aa1959e3e2bdf7c01f596692757858231">SphericalHarmonic1::SCHMIDT</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the parameters do not satisfy <em>N</em> &ge; <em>nmx</em> &ge; <em>mmx</em> &ge; &minus;1; <em>N1</em> &ge; <em>nmx1</em> &ge; <em>mmx1</em> &ge; &minus;1; <em>N</em> &ge; <em>N1</em>; <em>nmx</em> &ge; <em>nmx1</em>; <em>mmx</em> &ge; <em>mmx1</em>. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if any of the vectors of coefficients is not large enough.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The class stores <em>pointers</em> to the first elements of <em>C</em>, <em>S</em>, <em>C'</em>, and <em>S'</em>. These arrays should not be altered or destroyed during the lifetime of a <a class="el" href="../../d7/da9/class_geographic_lib_1_1_spherical_harmonic.html" title="Spherical harmonic series.">SphericalHarmonic</a> object. </p>
+
+</div>
+</div>
+<a id="aa976378e6eae1e85ce04976b631ccb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa976378e6eae1e85ce04976b631ccb5f">&#9670;&nbsp;</a></span>SphericalHarmonic1() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::SphericalHarmonic1::SphericalHarmonic1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A default constructor so that the object can be created when the constructor for another object is initialized. This default object can then be reset with the default copy assignment operator. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a66a03d08917be2e4a853fec5080041a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a03d08917be2e4a853fec5080041a0">&#9670;&nbsp;</a></span>Circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a> GeographicLib::SphericalHarmonic1::Circle </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>gradp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Create a <a class="el" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html" title="Spherical harmonic sums for a circle.">CircularEngine</a> to allow the efficient evaluation of several points on a circle of latitude at a fixed value of <em>tau</em>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tau</td><td>the multiplier for the correction coefficients. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>the radius of the circle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>the height of the circle above the equatorial plane. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">gradp</td><td>if true the returned object will be able to compute the gradient of the sum. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if the memory for the <a class="el" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html" title="Spherical harmonic sums for a circle.">CircularEngine</a> can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the <a class="el" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html" title="Spherical harmonic sums for a circle.">CircularEngine</a> object.</dd></dl>
+<p><a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#a4ffc6858ed212e98b8cebea968914532">SphericalHarmonic1::operator()()</a> exchanges the order of the sums in the definition, i.e., &sum;<sub><em>n</em> = 0..<em>N</em></sub> &sum;<sub><em>m</em> = 0..<em>n</em></sub> becomes &sum;<sub><em>m</em> = 0..<em>N</em></sub> &sum;<sub><em>n</em> = <em>m</em>..<em>N</em></sub>. <a class="el" href="../../d9/d05/class_geographic_lib_1_1_spherical_harmonic1.html#a66a03d08917be2e4a853fec5080041a0">SphericalHarmonic1::Circle</a> performs the inner sum over degree <em>n</em> (which entails about <em>N</em><sup>2</sup> operations). Calling <a class="el" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a7f1925c2aa4ea598706fbeb02a97001a">CircularEngine::operator()()</a> on the returned object performs the outer sum over the order <em>m</em> (about <em>N</em> operations).</p>
+<p>See <a class="el" href="../../d7/da9/class_geographic_lib_1_1_spherical_harmonic.html#ac82d07b5ac8ca025504825861f52341b">SphericalHarmonic::Circle</a> for an example of its use. </p>
+
+</div>
+</div>
+<a id="a1ced6ed9fa5d2ea0a90c590c5392bb1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ced6ed9fa5d2ea0a90c590c5392bb1c">&#9670;&nbsp;</a></span>Coefficients()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>&amp; GeographicLib::SphericalHarmonic1::Coefficients </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the zeroth <a class="el" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html" title="Package up coefficients for SphericalEngine.">SphericalEngine::coeff</a> object. </dd></dl>
+
+</div>
+</div>
+<a id="a2def9892268f027b1705e3bb3e3ba6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2def9892268f027b1705e3bb3e3ba6ba">&#9670;&nbsp;</a></span>Coefficients1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>&amp; GeographicLib::SphericalHarmonic1::Coefficients1 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the first <a class="el" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html" title="Package up coefficients for SphericalEngine.">SphericalEngine::coeff</a> object. </dd></dl>
+
+</div>
+</div>
+<a id="a4ffc6858ed212e98b8cebea968914532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ffc6858ed212e98b8cebea968914532">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::SphericalHarmonic1::operator() </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compute a spherical harmonic sum with a correction term.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tau</td><td>multiplier for correction coefficients <em>C'</em> and <em>S'</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>cartesian coordinate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>cartesian coordinate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>cartesian coordinate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>V</em> the spherical harmonic sum.</dd></dl>
+<p>This routine requires constant memory and thus never throws an exception. </p>
+
+</div>
+</div>
+<a id="a53cc704105c345eb2f60bfe1a17a35d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53cc704105c345eb2f60bfe1a17a35d4">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::SphericalHarmonic1::operator() </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gradx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>grady</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gradz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compute a spherical harmonic sum with a correction term and its gradient.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tau</td><td>multiplier for correction coefficients <em>C'</em> and <em>S'</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>cartesian coordinate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>cartesian coordinate. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td>cartesian coordinate. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gradx</td><td><em>x</em> component of the gradient </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">grady</td><td><em>y</em> component of the gradient </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gradz</td><td><em>z</em> component of the gradient </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>V</em> the spherical harmonic sum.</dd></dl>
+<p>This is the same as the previous function, except that the components of the gradients of the sum in the <em>x</em>, <em>y</em>, and <em>z</em> directions are computed. This routine requires constant memory and thus never throws an exception. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../df/d29/_spherical_harmonic1_8hpp_source.html">SphericalHarmonic1.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:20. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

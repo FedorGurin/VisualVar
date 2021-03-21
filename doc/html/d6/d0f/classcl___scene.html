@@ -1,0 +1,2740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс cl_Scene</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Открытые слоты</a> &#124;
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../d6/dfa/classcl___scene-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс cl_Scene</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d2/da3/cl__scene_8h_source.html">cl_scene.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:cl_Scene:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../d6/d0f/classcl___scene.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:ad3f1ca0ec13cb825254515a36e9c337b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ad3f1ca0ec13cb825254515a36e9c337b">slotFlushState</a> ()</td></tr>
+<tr class="memdesc:ad3f1ca0ec13cb825254515a36e9c337b"><td class="mdescLeft">&#160;</td><td class="mdescRight">сбросить состояние  <a href="../../d6/d0f/classcl___scene.html#ad3f1ca0ec13cb825254515a36e9c337b">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad3f1ca0ec13cb825254515a36e9c337b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2cf048f20cab3093579d406531e5053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aa2cf048f20cab3093579d406531e5053">slotTime</a> (double)</td></tr>
+<tr class="memdesc:aa2cf048f20cab3093579d406531e5053"><td class="mdescLeft">&#160;</td><td class="mdescRight">получение времени  <a href="../../d6/d0f/classcl___scene.html#aa2cf048f20cab3093579d406531e5053">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa2cf048f20cab3093579d406531e5053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a145ef43df2ae5249408f768c49d567d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a145ef43df2ae5249408f768c49d567d3">slotUseMoveObj</a> (bool)</td></tr>
+<tr class="memdesc:a145ef43df2ae5249408f768c49d567d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">отображение перемещающихся объектов  <a href="../../d6/d0f/classcl___scene.html#a145ef43df2ae5249408f768c49d567d3">Подробнее...</a><br /></td></tr>
+<tr class="separator:a145ef43df2ae5249408f768c49d567d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51cdc532949b97258b5d267836409f58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a51cdc532949b97258b5d267836409f58">slotZoomUp</a> ()</td></tr>
+<tr class="memdesc:a51cdc532949b97258b5d267836409f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">увеличение/уменьшение масштаба  <a href="../../d6/d0f/classcl___scene.html#a51cdc532949b97258b5d267836409f58">Подробнее...</a><br /></td></tr>
+<tr class="separator:a51cdc532949b97258b5d267836409f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9641b65c951feebf692048c139544add"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a9641b65c951feebf692048c139544add">slotZoomDown</a> ()</td></tr>
+<tr class="separator:a9641b65c951feebf692048c139544add"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2627c9f38ce8342c0dcd5c39e5b999c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a2627c9f38ce8342c0dcd5c39e5b999c5">slotUpdate</a> ()</td></tr>
+<tr class="memdesc:a2627c9f38ce8342c0dcd5c39e5b999c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">обновление координат объектов на сцене при смене уровня детализации  <a href="../../d6/d0f/classcl___scene.html#a2627c9f38ce8342c0dcd5c39e5b999c5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2627c9f38ce8342c0dcd5c39e5b999c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f1a2331b6fe210b7b0967b2b40866bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a5f1a2331b6fe210b7b0967b2b40866bc">slotRightButton</a> ()</td></tr>
+<tr class="separator:a5f1a2331b6fe210b7b0967b2b40866bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19fe45b4bb4c8936957334e7e06611d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a19fe45b4bb4c8936957334e7e06611d4">slotDoubleClickedMouse</a> ()</td></tr>
+<tr class="separator:a19fe45b4bb4c8936957334e7e06611d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58989d7baea4d89f37447e7d3e440b5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a58989d7baea4d89f37447e7d3e440b5d">slotClickLeftMouse</a> ()</td></tr>
+<tr class="separator:a58989d7baea4d89f37447e7d3e440b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aae3cacf741b0ca1965ee37e24ef021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a7aae3cacf741b0ca1965ee37e24ef021">slotMove</a> (QPoint)</td></tr>
+<tr class="separator:a7aae3cacf741b0ca1965ee37e24ef021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52eafa9a3cdebb452950000f1d26f91c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a52eafa9a3cdebb452950000f1d26f91c">slotRotateOn</a> ()</td></tr>
+<tr class="separator:a52eafa9a3cdebb452950000f1d26f91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f3b96364aa1ef4a137f1a0c2b5f0d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a18f3b96364aa1ef4a137f1a0c2b5f0d2">slotRotateOff</a> ()</td></tr>
+<tr class="separator:a18f3b96364aa1ef4a137f1a0c2b5f0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b627ef95e737c847f5e5ffb929faa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a74b627ef95e737c847f5e5ffb929faa2">refreshZoomLevel</a> ()</td></tr>
+<tr class="memdesc:a74b627ef95e737c847f5e5ffb929faa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">обновление при изменении уровня детализации  <a href="../../d6/d0f/classcl___scene.html#a74b627ef95e737c847f5e5ffb929faa2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a74b627ef95e737c847f5e5ffb929faa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7084298b0fcaac9d644c951f71674c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aa7084298b0fcaac9d644c951f71674c6">deleteLabelMap</a> (<a class="el" href="../../d8/d47/class_label_object.html">LabelObject</a> *)</td></tr>
+<tr class="memdesc:aa7084298b0fcaac9d644c951f71674c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">удалить метку карты из сцены  <a href="../../d6/d0f/classcl___scene.html#aa7084298b0fcaac9d644c951f71674c6">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa7084298b0fcaac9d644c951f71674c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add6d7b4de71cf1b55e3ea4b39a33ec1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#add6d7b4de71cf1b55e3ea4b39a33ec1c">slotAircraftPsi</a> (double psi)</td></tr>
+<tr class="memdesc:add6d7b4de71cf1b55e3ea4b39a33ec1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">реакция на изменение координат и угла курса нашего объекта  <a href="../../d6/d0f/classcl___scene.html#add6d7b4de71cf1b55e3ea4b39a33ec1c">Подробнее...</a><br /></td></tr>
+<tr class="separator:add6d7b4de71cf1b55e3ea4b39a33ec1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbad5860fea6d8cf38168f21c9a13b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a5fbad5860fea6d8cf38168f21c9a13b8">slotAircraftLat</a> (double lat)</td></tr>
+<tr class="separator:a5fbad5860fea6d8cf38168f21c9a13b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcdd364d6c864d2b76c0185ea27c1b14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#abcdd364d6c864d2b76c0185ea27c1b14">slotAircraftLon</a> (double lon)</td></tr>
+<tr class="separator:abcdd364d6c864d2b76c0185ea27c1b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56598aaa21ed88080bd0e015165419d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a56598aaa21ed88080bd0e015165419d6">slotAircraftPos2D</a> (double lon, double lat, double psi)</td></tr>
+<tr class="separator:a56598aaa21ed88080bd0e015165419d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a749e8cf63b8889ae10c6d24268f25f72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a749e8cf63b8889ae10c6d24268f25f72">slotTargetPsi</a> (int <a class="el" href="../../d6/d0f/classcl___scene.html#a75e57d9bba2dfcf1dd8133f81864a6f4">index</a>, double psi)</td></tr>
+<tr class="memdesc:a749e8cf63b8889ae10c6d24268f25f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">реакция на изменение координат и угла курса воздушных целей  <a href="../../d6/d0f/classcl___scene.html#a749e8cf63b8889ae10c6d24268f25f72">Подробнее...</a><br /></td></tr>
+<tr class="separator:a749e8cf63b8889ae10c6d24268f25f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc3dc68499fc49dc190cc6e80c53ef6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#accc3dc68499fc49dc190cc6e80c53ef6">slotTargetLat</a> (int <a class="el" href="../../d6/d0f/classcl___scene.html#a75e57d9bba2dfcf1dd8133f81864a6f4">index</a>, double lat)</td></tr>
+<tr class="separator:accc3dc68499fc49dc190cc6e80c53ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9162085538aedd5cc5b851ce8612448c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a9162085538aedd5cc5b851ce8612448c">slotTargetLon</a> (int <a class="el" href="../../d6/d0f/classcl___scene.html#a75e57d9bba2dfcf1dd8133f81864a6f4">index</a>, double lon)</td></tr>
+<tr class="separator:a9162085538aedd5cc5b851ce8612448c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91521e0961f77ac6d1c8a9bab5d45ce5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a91521e0961f77ac6d1c8a9bab5d45ce5">setInvisibleScaleLine</a> ()</td></tr>
+<tr class="separator:a91521e0961f77ac6d1c8a9bab5d45ce5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:a23db10d106a4cb90be97bf83816dffb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a23db10d106a4cb90be97bf83816dffb7">signalChangeZoom</a> (int)</td></tr>
+<tr class="memdesc:a23db10d106a4cb90be97bf83816dffb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">сигнал об изменении увеличения  <a href="../../d6/d0f/classcl___scene.html#a23db10d106a4cb90be97bf83816dffb7">Подробнее...</a><br /></td></tr>
+<tr class="separator:a23db10d106a4cb90be97bf83816dffb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07f1b43a93a2707b6c47d5d1a3fc5802"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a07f1b43a93a2707b6c47d5d1a3fc5802">activeFormAddLabel</a> (double lat, double lon)</td></tr>
+<tr class="memdesc:a07f1b43a93a2707b6c47d5d1a3fc5802"><td class="mdescLeft">&#160;</td><td class="mdescRight">форма для добавления метки  <a href="../../d6/d0f/classcl___scene.html#a07f1b43a93a2707b6c47d5d1a3fc5802">Подробнее...</a><br /></td></tr>
+<tr class="separator:a07f1b43a93a2707b6c47d5d1a3fc5802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc3b3e175fe96915a930b5dfc3d0814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a5cc3b3e175fe96915a930b5dfc3d0814">signalUpdateValueObj</a> ()</td></tr>
+<tr class="memdesc:a5cc3b3e175fe96915a930b5dfc3d0814"><td class="mdescLeft">&#160;</td><td class="mdescRight">сигнал о том, что параметры объектов изменились  <a href="../../d6/d0f/classcl___scene.html#a5cc3b3e175fe96915a930b5dfc3d0814">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5cc3b3e175fe96915a930b5dfc3d0814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10cd417399d4ca69a23cf25feae7228f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a10cd417399d4ca69a23cf25feae7228f">signalRotateVisible</a> (bool)</td></tr>
+<tr class="separator:a10cd417399d4ca69a23cf25feae7228f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a4a576ad31594d7f80a8e1a93c6fb7ccb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a4a576ad31594d7f80a8e1a93c6fb7ccb">cl_Scene</a> (<a class="el" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a> *form, <a class="el" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *typeObjectsVis_, QList&lt; <a class="el" href="../../d8/d49/class_info_object.html">InfoObject</a> * &gt; *info, <a class="el" href="../../de/d00/class_setting_v_v.html">SettingVV</a> *settingVV=nullptr, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:a4a576ad31594d7f80a8e1a93c6fb7ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">конструктор для создания нового объекта из меню  <a href="../../d6/d0f/classcl___scene.html#a4a576ad31594d7f80a8e1a93c6fb7ccb">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4a576ad31594d7f80a8e1a93c6fb7ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff431ea26ea184e7a99f8de85053b8db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aff431ea26ea184e7a99f8de85053b8db">cl_Scene</a> (QDomElement &amp;node, <a class="el" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a> *form, <a class="el" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *typeObjectsVis_, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:aff431ea26ea184e7a99f8de85053b8db"><td class="mdescLeft">&#160;</td><td class="mdescRight">конструктор для создания объекта из файла  <a href="../../d6/d0f/classcl___scene.html#aff431ea26ea184e7a99f8de85053b8db">Подробнее...</a><br /></td></tr>
+<tr class="separator:aff431ea26ea184e7a99f8de85053b8db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac834fed01f3d1bb6f65d0f1937e85f5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ac834fed01f3d1bb6f65d0f1937e85f5c">cl_Scene</a> (<a class="el" href="../../d6/d0f/classcl___scene.html">cl_Scene</a> *thisScene, QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:ac834fed01f3d1bb6f65d0f1937e85f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">конструктор дял клонирования объекта  <a href="../../d6/d0f/classcl___scene.html#ac834fed01f3d1bb6f65d0f1937e85f5c">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac834fed01f3d1bb6f65d0f1937e85f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6b6be719f39a1db9eb225e1d1f422e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d0f/classcl___scene.html">cl_Scene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a8b6b6be719f39a1db9eb225e1d1f422e">clone</a> ()</td></tr>
+<tr class="memdesc:a8b6b6be719f39a1db9eb225e1d1f422e"><td class="mdescLeft">&#160;</td><td class="mdescRight">клонирование данных, возвращает свою копию  <a href="../../d6/d0f/classcl___scene.html#a8b6b6be719f39a1db9eb225e1d1f422e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8b6b6be719f39a1db9eb225e1d1f422e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdf3b56f88be379f0cce0e3c163b8382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#abdf3b56f88be379f0cce0e3c163b8382">saveToXML</a> (QDomDocument &amp;domDocument, QDomElement &amp;node)</td></tr>
+<tr class="memdesc:abdf3b56f88be379f0cce0e3c163b8382"><td class="mdescLeft">&#160;</td><td class="mdescRight">сохранить сцену в XML.  <a href="../../d6/d0f/classcl___scene.html#abdf3b56f88be379f0cce0e3c163b8382">Подробнее...</a><br /></td></tr>
+<tr class="separator:abdf3b56f88be379f0cce0e3c163b8382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6a02804ed09340f4d4e17018579ad10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ac6a02804ed09340f4d4e17018579ad10">saveToXMLForModel</a> (QDomDocument &amp;domDocument, QDomElement &amp;node)</td></tr>
+<tr class="separator:ac6a02804ed09340f4d4e17018579ad10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f41f52fe1cc53ac565b39ca5f72509e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a4f41f52fe1cc53ac565b39ca5f72509e">getRequest</a> (<a class="el" href="../../dd/d04/class_t_common_request.html">TCommonRequest</a> *request, QString prefix, int num)</td></tr>
+<tr class="memdesc:a4f41f52fe1cc53ac565b39ca5f72509e"><td class="mdescLeft">&#160;</td><td class="mdescRight">эта функция альтернативный способ передачи варианта на УЦВС.  <a href="../../d6/d0f/classcl___scene.html#a4f41f52fe1cc53ac565b39ca5f72509e">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4f41f52fe1cc53ac565b39ca5f72509e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13875729908bfed316259e43645adf15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a13875729908bfed316259e43645adf15">cloneAirObj</a> (<a class="el" href="../../d7/d8a/class_air_obj.html">AirObj</a> *target)</td></tr>
+<tr class="memdesc:a13875729908bfed316259e43645adf15"><td class="mdescLeft">&#160;</td><td class="mdescRight">клонирование воздушного объекта  <a href="../../d6/d0f/classcl___scene.html#a13875729908bfed316259e43645adf15">Подробнее...</a><br /></td></tr>
+<tr class="separator:a13875729908bfed316259e43645adf15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebac40e1553732e2d524a8d8c7dc5b6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aebac40e1553732e2d524a8d8c7dc5b6e">cloneAircraft</a> (<a class="el" href="../../d6/d71/class_aircraft_object.html">AircraftObject</a> *aircraft_)</td></tr>
+<tr class="memdesc:aebac40e1553732e2d524a8d8c7dc5b6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">клонирование нашего носителя  <a href="../../d6/d0f/classcl___scene.html#aebac40e1553732e2d524a8d8c7dc5b6e">Подробнее...</a><br /></td></tr>
+<tr class="separator:aebac40e1553732e2d524a8d8c7dc5b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab575ff8ded81c0bc9d05896e87a4a11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aab575ff8ded81c0bc9d05896e87a4a11">cloneGroundObj</a> (<a class="el" href="../../d1/dbc/class_ground_obj.html">GroundObj</a> *target)</td></tr>
+<tr class="memdesc:aab575ff8ded81c0bc9d05896e87a4a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">клонирование наземного объекта  <a href="../../d6/d0f/classcl___scene.html#aab575ff8ded81c0bc9d05896e87a4a11">Подробнее...</a><br /></td></tr>
+<tr class="separator:aab575ff8ded81c0bc9d05896e87a4a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acad23b4d886417d11c233b0d356a2563"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#acad23b4d886417d11c233b0d356a2563">createObj</a> (QPointF p, <a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450">GraphNode::TypeGraphNode</a> type)</td></tr>
+<tr class="memdesc:acad23b4d886417d11c233b0d356a2563"><td class="mdescLeft">&#160;</td><td class="mdescRight">создание объекта  <a href="../../d6/d0f/classcl___scene.html#acad23b4d886417d11c233b0d356a2563">Подробнее...</a><br /></td></tr>
+<tr class="separator:acad23b4d886417d11c233b0d356a2563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bf796e04976fc622568ff5ac26d2933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a4bf796e04976fc622568ff5ac26d2933">createNewAirObj</a> (QPointF)</td></tr>
+<tr class="separator:a4bf796e04976fc622568ff5ac26d2933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e7328b085c4077e0a5078e51c6a1f40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a4e7328b085c4077e0a5078e51c6a1f40">createNewGroundObj</a> (QPointF)</td></tr>
+<tr class="separator:a4e7328b085c4077e0a5078e51c6a1f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae17abe5cd16e86103a8c8849f6b30a54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ae17abe5cd16e86103a8c8849f6b30a54">createNewCloud</a> (QPointF)</td></tr>
+<tr class="separator:ae17abe5cd16e86103a8c8849f6b30a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa10ed38f19ccacaf8f8ebfc1bcd6cb1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aa10ed38f19ccacaf8f8ebfc1bcd6cb1b">createNewFog</a> (QPointF)</td></tr>
+<tr class="separator:aa10ed38f19ccacaf8f8ebfc1bcd6cb1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eaaafb1f33cfe5974f6da9e730c1114"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a9eaaafb1f33cfe5974f6da9e730c1114">createNewAerodrom</a> (QPointF)</td></tr>
+<tr class="separator:a9eaaafb1f33cfe5974f6da9e730c1114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc08524b90d4f30115ab2a54ebd356f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a9cc08524b90d4f30115ab2a54ebd356f">createNewInfoObject</a> (QPointF)</td></tr>
+<tr class="separator:a9cc08524b90d4f30115ab2a54ebd356f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0136dbf4708d0d257ed2daf5a63437d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ab0136dbf4708d0d257ed2daf5a63437d">createNewBeaconObject</a> (QPointF)</td></tr>
+<tr class="separator:ab0136dbf4708d0d257ed2daf5a63437d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5281597211da33fdd1fe1d9e676858db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a5281597211da33fdd1fe1d9e676858db">createNewPointRoute</a> (QPointF)</td></tr>
+<tr class="separator:a5281597211da33fdd1fe1d9e676858db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e28e829001dc0210693b8d8c0227f8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a4e28e829001dc0210693b8d8c0227f8d">deleteRoutes</a> ()</td></tr>
+<tr class="memdesc:a4e28e829001dc0210693b8d8c0227f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">удалить узлы  <a href="../../d6/d0f/classcl___scene.html#a4e28e829001dc0210693b8d8c0227f8d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4e28e829001dc0210693b8d8c0227f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c07652f1e9af785ce239b44cb2f44e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#af9c07652f1e9af785ce239b44cb2f44e">setCurrentGeoOnCenter</a> ()</td></tr>
+<tr class="memdesc:af9c07652f1e9af785ce239b44cb2f44e"><td class="mdescLeft">&#160;</td><td class="mdescRight">curLat, curLon относительно их будет увеличение, задается координатами центра экрана  <a href="../../d6/d0f/classcl___scene.html#af9c07652f1e9af785ce239b44cb2f44e">Подробнее...</a><br /></td></tr>
+<tr class="separator:af9c07652f1e9af785ce239b44cb2f44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6dd15128f8f1957774363a0132a903"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a8a6dd15128f8f1957774363a0132a903">setCenterWindowView</a> (double lat, double lon, int zoom)</td></tr>
+<tr class="memdesc:a8a6dd15128f8f1957774363a0132a903"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать окно просмотра view.  <a href="../../d6/d0f/classcl___scene.html#a8a6dd15128f8f1957774363a0132a903">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8a6dd15128f8f1957774363a0132a903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62968661b54f7af532f9fcf128fa4051"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a62968661b54f7af532f9fcf128fa4051">setLabelObjects</a> (const QList&lt; <a class="el" href="../../d8/d47/class_label_object.html">LabelObject</a> * &gt; *list)</td></tr>
+<tr class="memdesc:a62968661b54f7af532f9fcf128fa4051"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать список объектов "метка".  <a href="../../d6/d0f/classcl___scene.html#a62968661b54f7af532f9fcf128fa4051">Подробнее...</a><br /></td></tr>
+<tr class="separator:a62968661b54f7af532f9fcf128fa4051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0562a310140d2a220adab6a8930076a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a0562a310140d2a220adab6a8930076a3">setZoomLevel</a> (int)</td></tr>
+<tr class="memdesc:a0562a310140d2a220adab6a8930076a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать уровень детализации  <a href="../../d6/d0f/classcl___scene.html#a0562a310140d2a220adab6a8930076a3">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0562a310140d2a220adab6a8930076a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34b5c5a39474d3af6ad33e25b5d50073"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a34b5c5a39474d3af6ad33e25b5d50073">setViewportCentert</a> ()</td></tr>
+<tr class="memdesc:a34b5c5a39474d3af6ad33e25b5d50073"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать положение viewport.  <a href="../../d6/d0f/classcl___scene.html#a34b5c5a39474d3af6ad33e25b5d50073">Подробнее...</a><br /></td></tr>
+<tr class="separator:a34b5c5a39474d3af6ad33e25b5d50073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee0843c8d58a6476949cb71026e5d17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a4ee0843c8d58a6476949cb71026e5d17">setSubWindowMDI</a> (QMdiSubWindow *sub)</td></tr>
+<tr class="separator:a4ee0843c8d58a6476949cb71026e5d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0670e6aa4200e54fb41e4d0b77b62d6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a0670e6aa4200e54fb41e4d0b77b62d6c">setScrollViewHand</a> (bool)</td></tr>
+<tr class="memdesc:a0670e6aa4200e54fb41e4d0b77b62d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">прокручивание  <a href="../../d6/d0f/classcl___scene.html#a0670e6aa4200e54fb41e4d0b77b62d6c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0670e6aa4200e54fb41e4d0b77b62d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a245dbbbffcb3f60d4902c5f552c218"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a9a245dbbbffcb3f60d4902c5f552c218">refreshInfo</a> ()</td></tr>
+<tr class="memdesc:a9a245dbbbffcb3f60d4902c5f552c218"><td class="mdescLeft">&#160;</td><td class="mdescRight">обновить список информационных точек  <a href="../../d6/d0f/classcl___scene.html#a9a245dbbbffcb3f60d4902c5f552c218">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9a245dbbbffcb3f60d4902c5f552c218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7ba62bc22322663123696ead8919b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a5c7ba62bc22322663123696ead8919b6">refreshTiles</a> ()</td></tr>
+<tr class="memdesc:a5c7ba62bc22322663123696ead8919b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">обновить карту  <a href="../../d6/d0f/classcl___scene.html#a5c7ba62bc22322663123696ead8919b6">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5c7ba62bc22322663123696ead8919b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4fc7967d1b022426d7d759082986e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a1f4fc7967d1b022426d7d759082986e0">showLabelMap</a> ()</td></tr>
+<tr class="memdesc:a1f4fc7967d1b022426d7d759082986e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">показать на карте "Метки".  <a href="../../d6/d0f/classcl___scene.html#a1f4fc7967d1b022426d7d759082986e0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1f4fc7967d1b022426d7d759082986e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ced4d01aa3f70cfb704761b33bcb1e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a1ced4d01aa3f70cfb704761b33bcb1e2">delLabelMap</a> ()</td></tr>
+<tr class="memdesc:a1ced4d01aa3f70cfb704761b33bcb1e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">удалить метку на карте  <a href="../../d6/d0f/classcl___scene.html#a1ced4d01aa3f70cfb704761b33bcb1e2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1ced4d01aa3f70cfb704761b33bcb1e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3da93bc4c88d4741969875e8c13811bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a3da93bc4c88d4741969875e8c13811bc">centerByAircarft</a> ()</td></tr>
+<tr class="memdesc:a3da93bc4c88d4741969875e8c13811bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">центрирование по вертолету  <a href="../../d6/d0f/classcl___scene.html#a3da93bc4c88d4741969875e8c13811bc">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3da93bc4c88d4741969875e8c13811bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac779e542c80739320d3955cc92952eb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ac779e542c80739320d3955cc92952eb1">setActiveRoute</a> (bool value)</td></tr>
+<tr class="separator:ac779e542c80739320d3955cc92952eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc0a44bb198a0b8ba3500dbd45f829b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aedc0a44bb198a0b8ba3500dbd45f829b">setComment</a> (QString value)</td></tr>
+<tr class="memdesc:aedc0a44bb198a0b8ba3500dbd45f829b"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать комментарий  <a href="../../d6/d0f/classcl___scene.html#aedc0a44bb198a0b8ba3500dbd45f829b">Подробнее...</a><br /></td></tr>
+<tr class="separator:aedc0a44bb198a0b8ba3500dbd45f829b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6eb37458ec9ac4ba8876e6c1799c68"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a5a6eb37458ec9ac4ba8876e6c1799c68">comment</a> ()</td></tr>
+<tr class="memdesc:a5a6eb37458ec9ac4ba8876e6c1799c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">комментарий  <a href="../../d6/d0f/classcl___scene.html#a5a6eb37458ec9ac4ba8876e6c1799c68">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5a6eb37458ec9ac4ba8876e6c1799c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a440862da270a47a8619974e11126cfad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a440862da270a47a8619974e11126cfad">setNameVariant</a> (QString name)</td></tr>
+<tr class="memdesc:a440862da270a47a8619974e11126cfad"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать имя варианта  <a href="../../d6/d0f/classcl___scene.html#a440862da270a47a8619974e11126cfad">Подробнее...</a><br /></td></tr>
+<tr class="separator:a440862da270a47a8619974e11126cfad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca757e8f4de2bcf4a7ea33201f8bc957"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aca757e8f4de2bcf4a7ea33201f8bc957">setTypeMAP</a> (<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">GeographySysCoord::TypeMAP</a> value)</td></tr>
+<tr class="memdesc:aca757e8f4de2bcf4a7ea33201f8bc957"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать тип карты  <a href="../../d6/d0f/classcl___scene.html#aca757e8f4de2bcf4a7ea33201f8bc957">Подробнее...</a><br /></td></tr>
+<tr class="separator:aca757e8f4de2bcf4a7ea33201f8bc957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4b0564d3009801ecf4ce654e481a9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ade4b0564d3009801ecf4ce654e481a9b">setTypeLayer</a> (<a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">GeographySysCoord::TypeLayer</a> value)</td></tr>
+<tr class="memdesc:ade4b0564d3009801ecf4ce654e481a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать тип слоя  <a href="../../d6/d0f/classcl___scene.html#ade4b0564d3009801ecf4ce654e481a9b">Подробнее...</a><br /></td></tr>
+<tr class="separator:ade4b0564d3009801ecf4ce654e481a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97d07fbe1c095f83d89b43e8a1355f88"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a97d07fbe1c095f83d89b43e8a1355f88">returnNameVariant</a> ()</td></tr>
+<tr class="memdesc:a97d07fbe1c095f83d89b43e8a1355f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">вернуть имя файла  <a href="../../d6/d0f/classcl___scene.html#a97d07fbe1c095f83d89b43e8a1355f88">Подробнее...</a><br /></td></tr>
+<tr class="separator:a97d07fbe1c095f83d89b43e8a1355f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fea1184cfd8faaf1eb84e05bc7bde6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a4fea1184cfd8faaf1eb84e05bc7bde6f">calcItemPosScene</a> ()</td></tr>
+<tr class="memdesc:a4fea1184cfd8faaf1eb84e05bc7bde6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">пересчитать координаты объектов при изменении масштаба сцены  <a href="../../d6/d0f/classcl___scene.html#a4fea1184cfd8faaf1eb84e05bc7bde6f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4fea1184cfd8faaf1eb84e05bc7bde6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af04f6991201aa9819bc8672146cc0d32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#af04f6991201aa9819bc8672146cc0d32">setAllInfo</a> (bool value)</td></tr>
+<tr class="memdesc:af04f6991201aa9819bc8672146cc0d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">отображать всю информацию для объектов  <a href="../../d6/d0f/classcl___scene.html#af04f6991201aa9819bc8672146cc0d32">Подробнее...</a><br /></td></tr>
+<tr class="separator:af04f6991201aa9819bc8672146cc0d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e6435a3f7798c577c754d9c238b089"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ac0e6435a3f7798c577c754d9c238b089">setFocusMoveObj</a> (bool value)</td></tr>
+<tr class="memdesc:ac0e6435a3f7798c577c754d9c238b089"><td class="mdescLeft">&#160;</td><td class="mdescRight">перемещать окно за движущимся объектом  <a href="../../d6/d0f/classcl___scene.html#ac0e6435a3f7798c577c754d9c238b089">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac0e6435a3f7798c577c754d9c238b089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949bd408a560356a0c23aca7394259f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a949bd408a560356a0c23aca7394259f0">sendSignalUpdateValueObj</a> ()</td></tr>
+<tr class="memdesc:a949bd408a560356a0c23aca7394259f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">отправить сигнал о том, что обновились параметры объекта  <a href="../../d6/d0f/classcl___scene.html#a949bd408a560356a0c23aca7394259f0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a949bd408a560356a0c23aca7394259f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941d0a6b91e282b676b7fe93b8ff41fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a941d0a6b91e282b676b7fe93b8ff41fc">reCalcObject</a> (double lat, double lon, double aust)</td></tr>
+<tr class="memdesc:a941d0a6b91e282b676b7fe93b8ff41fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">пересчет текущего положения объектов  <a href="../../d6/d0f/classcl___scene.html#a941d0a6b91e282b676b7fe93b8ff41fc">Подробнее...</a><br /></td></tr>
+<tr class="separator:a941d0a6b91e282b676b7fe93b8ff41fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:acf003df1c8fea56cecbd40224d320ea0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dc9/class_g_view.html">GView</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#acf003df1c8fea56cecbd40224d320ea0">view</a></td></tr>
+<tr class="memdesc:acf003df1c8fea56cecbd40224d320ea0"><td class="mdescLeft">&#160;</td><td class="mdescRight">переопределнный класс отображения сцены  <a href="../../d6/d0f/classcl___scene.html#acf003df1c8fea56cecbd40224d320ea0">Подробнее...</a><br /></td></tr>
+<tr class="separator:acf003df1c8fea56cecbd40224d320ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac91c32a96752d910667f1a5ccf8938b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d97/class_g_scene.html">GScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ac91c32a96752d910667f1a5ccf8938b1">scene</a></td></tr>
+<tr class="memdesc:ac91c32a96752d910667f1a5ccf8938b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">переопредленный класс сцены  <a href="../../d6/d0f/classcl___scene.html#ac91c32a96752d910667f1a5ccf8938b1">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac91c32a96752d910667f1a5ccf8938b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadff749f143a3e2d0ac56878df88b66c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d86/class_scale_line.html">ScaleLine</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aadff749f143a3e2d0ac56878df88b66c">scaleLine</a></td></tr>
+<tr class="separator:aadff749f143a3e2d0ac56878df88b66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad081220cb0865e7e26d5634707786c7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d00/class_setting_v_v.html">SettingVV</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ad081220cb0865e7e26d5634707786c7c">set</a></td></tr>
+<tr class="memdesc:ad081220cb0865e7e26d5634707786c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">настройки модуля считанные из XML файла  <a href="../../d6/d0f/classcl___scene.html#ad081220cb0865e7e26d5634707786c7c">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad081220cb0865e7e26d5634707786c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1737d70003dec4fec041e62698af4668"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a1737d70003dec4fec041e62698af4668">currentZoom</a></td></tr>
+<tr class="memdesc:a1737d70003dec4fec041e62698af4668"><td class="mdescLeft">&#160;</td><td class="mdescRight">текущий уровень детализации  <a href="../../d6/d0f/classcl___scene.html#a1737d70003dec4fec041e62698af4668">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1737d70003dec4fec041e62698af4668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1458589535d01d03116401ab629d13ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a1458589535d01d03116401ab629d13ae">firstConnectingSlots</a></td></tr>
+<tr class="memdesc:a1458589535d01d03116401ab629d13ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">первое подключение к слотам  <a href="../../d6/d0f/classcl___scene.html#a1458589535d01d03116401ab629d13ae">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1458589535d01d03116401ab629d13ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b87c82583af20a4dfd9477089d16daa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a3b87c82583af20a4dfd9477089d16daa">curLat</a></td></tr>
+<tr class="memdesc:a3b87c82583af20a4dfd9477089d16daa"><td class="mdescLeft">&#160;</td><td class="mdescRight">текущие координаты  <a href="../../d6/d0f/classcl___scene.html#a3b87c82583af20a4dfd9477089d16daa">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3b87c82583af20a4dfd9477089d16daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529410415a01e410ad051e1d073a9271"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a529410415a01e410ad051e1d073a9271">curLon</a></td></tr>
+<tr class="separator:a529410415a01e410ad051e1d073a9271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbbf721fe73072c29cc8c5d42e7e2636"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#abbbf721fe73072c29cc8c5d42e7e2636">curLatView</a></td></tr>
+<tr class="separator:abbbf721fe73072c29cc8c5d42e7e2636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d2348ce9e8310d1c805a403b20dee3e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a2d2348ce9e8310d1c805a403b20dee3e">curLonView</a></td></tr>
+<tr class="separator:a2d2348ce9e8310d1c805a403b20dee3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2eb65a50b005d4dc9ac4dce9dcbae33"><td class="memItemLeft" align="right" valign="top">QPoint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#af2eb65a50b005d4dc9ac4dce9dcbae33">mousePos</a></td></tr>
+<tr class="separator:af2eb65a50b005d4dc9ac4dce9dcbae33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0a0aaa918c2775ccd09dd478476008b"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ae0a0aaa918c2775ccd09dd478476008b">mousePosScene</a></td></tr>
+<tr class="separator:ae0a0aaa918c2775ccd09dd478476008b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b30b3f1c5a33bfcebe9d70dad65c6db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a6b30b3f1c5a33bfcebe9d70dad65c6db">statusBar</a></td></tr>
+<tr class="memdesc:a6b30b3f1c5a33bfcebe9d70dad65c6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">отображение состояния  <a href="../../d6/d0f/classcl___scene.html#a6b30b3f1c5a33bfcebe9d70dad65c6db">Подробнее...</a><br /></td></tr>
+<tr class="separator:a6b30b3f1c5a33bfcebe9d70dad65c6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a278421664cddce584cf7e0a5511d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d35/class_vertical_scale.html">VerticalScale</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aa4a278421664cddce584cf7e0a5511d0">vScale</a></td></tr>
+<tr class="memdesc:aa4a278421664cddce584cf7e0a5511d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">вертикальная шкала  <a href="../../d6/d0f/classcl___scene.html#aa4a278421664cddce584cf7e0a5511d0">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa4a278421664cddce584cf7e0a5511d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169ce65b6cd9291ae7c8f053efeb1ad1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d71/class_aircraft_object.html">AircraftObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a169ce65b6cd9291ae7c8f053efeb1ad1">aircraft</a></td></tr>
+<tr class="memdesc:a169ce65b6cd9291ae7c8f053efeb1ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">объект вертолета  <a href="../../d6/d0f/classcl___scene.html#a169ce65b6cd9291ae7c8f053efeb1ad1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a169ce65b6cd9291ae7c8f053efeb1ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f7396105f0ecf65c09a2c2ca941d00f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d71/class_aircraft_object.html">AircraftObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a9f7396105f0ecf65c09a2c2ca941d00f">aircraftMove</a></td></tr>
+<tr class="memdesc:a9f7396105f0ecf65c09a2c2ca941d00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">объект который может перемещаться  <a href="../../d6/d0f/classcl___scene.html#a9f7396105f0ecf65c09a2c2ca941d00f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9f7396105f0ecf65c09a2c2ca941d00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e76b50563b85de5671bbd054b5fa263"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d54/class_geography_sys_coord.html">GeographySysCoord</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a8e76b50563b85de5671bbd054b5fa263">map</a></td></tr>
+<tr class="memdesc:a8e76b50563b85de5671bbd054b5fa263"><td class="mdescLeft">&#160;</td><td class="mdescRight">карта с географией земли  <a href="../../d6/d0f/classcl___scene.html#a8e76b50563b85de5671bbd054b5fa263">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8e76b50563b85de5671bbd054b5fa263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d866eab468f838c860d98a295ebea6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a1d866eab468f838c860d98a295ebea6a">typeObjectsVis</a></td></tr>
+<tr class="memdesc:a1d866eab468f838c860d98a295ebea6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">типы объектов  <a href="../../d6/d0f/classcl___scene.html#a1d866eab468f838c860d98a295ebea6a">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1d866eab468f838c860d98a295ebea6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c0c6b59e295f2b36613c9211da5089"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d7/d8a/class_air_obj.html">AirObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ae1c0c6b59e295f2b36613c9211da5089">airObj</a></td></tr>
+<tr class="memdesc:ae1c0c6b59e295f2b36613c9211da5089"><td class="mdescLeft">&#160;</td><td class="mdescRight">список воздушных целей  <a href="../../d6/d0f/classcl___scene.html#ae1c0c6b59e295f2b36613c9211da5089">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae1c0c6b59e295f2b36613c9211da5089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab766a66d72218992ff91f8b55d978238"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d7/d8a/class_air_obj.html">AirObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ab766a66d72218992ff91f8b55d978238">airObjMove</a></td></tr>
+<tr class="separator:ab766a66d72218992ff91f8b55d978238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24d39eda8166bd31e8a4324157855220"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d1/dbc/class_ground_obj.html">GroundObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a24d39eda8166bd31e8a4324157855220">groundObj</a></td></tr>
+<tr class="memdesc:a24d39eda8166bd31e8a4324157855220"><td class="mdescLeft">&#160;</td><td class="mdescRight">список наземных целей  <a href="../../d6/d0f/classcl___scene.html#a24d39eda8166bd31e8a4324157855220">Подробнее...</a><br /></td></tr>
+<tr class="separator:a24d39eda8166bd31e8a4324157855220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86177ccf437f4f0160d93bb2781e7cd5"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d1/dbc/class_ground_obj.html">GroundObj</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a86177ccf437f4f0160d93bb2781e7cd5">groundObjMove</a></td></tr>
+<tr class="separator:a86177ccf437f4f0160d93bb2781e7cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8ee251114edf8e9d38b07654e247095"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d0/d87/class_cloud_object.html">CloudObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ad8ee251114edf8e9d38b07654e247095">cloudObj</a></td></tr>
+<tr class="memdesc:ad8ee251114edf8e9d38b07654e247095"><td class="mdescLeft">&#160;</td><td class="mdescRight">список зон с облачностью  <a href="../../d6/d0f/classcl___scene.html#ad8ee251114edf8e9d38b07654e247095">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad8ee251114edf8e9d38b07654e247095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18104bf9c9c6ba22e319f7595d707ffc"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../da/d03/class_fog_object.html">FogObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a18104bf9c9c6ba22e319f7595d707ffc">fogObj</a></td></tr>
+<tr class="memdesc:a18104bf9c9c6ba22e319f7595d707ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">список зон с туманами  <a href="../../d6/d0f/classcl___scene.html#a18104bf9c9c6ba22e319f7595d707ffc">Подробнее...</a><br /></td></tr>
+<tr class="separator:a18104bf9c9c6ba22e319f7595d707ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e8ad00aa8e4ec10cae57ff66080190"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d5/d1d/class_aerodrom_object.html">AerodromObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#ac8e8ad00aa8e4ec10cae57ff66080190">aerodroms</a></td></tr>
+<tr class="memdesc:ac8e8ad00aa8e4ec10cae57ff66080190"><td class="mdescLeft">&#160;</td><td class="mdescRight">список аэродромов  <a href="../../d6/d0f/classcl___scene.html#ac8e8ad00aa8e4ec10cae57ff66080190">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac8e8ad00aa8e4ec10cae57ff66080190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b0fe648f579d3910e0df69990d9cc46"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d8/d49/class_info_object.html">InfoObject</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a5b0fe648f579d3910e0df69990d9cc46">infoObjects</a></td></tr>
+<tr class="memdesc:a5b0fe648f579d3910e0df69990d9cc46"><td class="mdescLeft">&#160;</td><td class="mdescRight">список информационных точек  <a href="../../d6/d0f/classcl___scene.html#a5b0fe648f579d3910e0df69990d9cc46">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5b0fe648f579d3910e0df69990d9cc46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a682be2334dbab163657e79ac40545e8c"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d9/d78/class_beacon_object.html">BeaconObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a682be2334dbab163657e79ac40545e8c">beaconObjects</a></td></tr>
+<tr class="memdesc:a682be2334dbab163657e79ac40545e8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">список маяков  <a href="../../d6/d0f/classcl___scene.html#a682be2334dbab163657e79ac40545e8c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a682be2334dbab163657e79ac40545e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a73a574a167e293b5932d7cd0e99035"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../db/d78/class_route_object.html">RouteObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a7a73a574a167e293b5932d7cd0e99035">routeObjects</a></td></tr>
+<tr class="memdesc:a7a73a574a167e293b5932d7cd0e99035"><td class="mdescLeft">&#160;</td><td class="mdescRight">список маршрутов  <a href="../../d6/d0f/classcl___scene.html#a7a73a574a167e293b5932d7cd0e99035">Подробнее...</a><br /></td></tr>
+<tr class="separator:a7a73a574a167e293b5932d7cd0e99035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5692d0d132a8e29856e6f5a9675e6d2f"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../de/d09/class_p_p_m_object.html">PPMObject</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a5692d0d132a8e29856e6f5a9675e6d2f">ppmObjects</a></td></tr>
+<tr class="memdesc:a5692d0d132a8e29856e6f5a9675e6d2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">список маршрутов  <a href="../../d6/d0f/classcl___scene.html#a5692d0d132a8e29856e6f5a9675e6d2f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5692d0d132a8e29856e6f5a9675e6d2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ad8a663d665bcc2cf3907e0f026cd71"><td class="memItemLeft" align="right" valign="top">const QList&lt; <a class="el" href="../../d8/d47/class_label_object.html">LabelObject</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a9ad8a663d665bcc2cf3907e0f026cd71">labelObjects</a></td></tr>
+<tr class="memdesc:a9ad8a663d665bcc2cf3907e0f026cd71"><td class="mdescLeft">&#160;</td><td class="mdescRight">список меток(метки одинаковы в независимости от экземпляра сцены)  <a href="../../d6/d0f/classcl___scene.html#a9ad8a663d665bcc2cf3907e0f026cd71">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9ad8a663d665bcc2cf3907e0f026cd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a329592942ce9a172cf8ab1646fad46af"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a329592942ce9a172cf8ab1646fad46af">objects</a></td></tr>
+<tr class="memdesc:a329592942ce9a172cf8ab1646fad46af"><td class="mdescLeft">&#160;</td><td class="mdescRight">список всех объектов  <a href="../../d6/d0f/classcl___scene.html#a329592942ce9a172cf8ab1646fad46af">Подробнее...</a><br /></td></tr>
+<tr class="separator:a329592942ce9a172cf8ab1646fad46af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c8fd14cc53d4fb8eb779920748360df"><td class="memItemLeft" align="right" valign="top">QMdiSubWindow *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a4c8fd14cc53d4fb8eb779920748360df">subW</a></td></tr>
+<tr class="separator:a4c8fd14cc53d4fb8eb779920748360df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e57d9bba2dfcf1dd8133f81864a6f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a75e57d9bba2dfcf1dd8133f81864a6f4">index</a></td></tr>
+<tr class="memdesc:a75e57d9bba2dfcf1dd8133f81864a6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">индекс сцены [1...N](сквозная нумерация вариантов)  <a href="../../d6/d0f/classcl___scene.html#a75e57d9bba2dfcf1dd8133f81864a6f4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a75e57d9bba2dfcf1dd8133f81864a6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33eb487f335f0f734c6e8978c9b1319f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#a33eb487f335f0f734c6e8978c9b1319f">numberNameVariant</a></td></tr>
+<tr class="memdesc:a33eb487f335f0f734c6e8978c9b1319f"><td class="mdescLeft">&#160;</td><td class="mdescRight">номер в имени варианта  <a href="../../d6/d0f/classcl___scene.html#a33eb487f335f0f734c6e8978c9b1319f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a33eb487f335f0f734c6e8978c9b1319f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07c39505743d5960328a826cc73530f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#af07c39505743d5960328a826cc73530f">use</a></td></tr>
+<tr class="memdesc:af07c39505743d5960328a826cc73530f"><td class="mdescLeft">&#160;</td><td class="mdescRight">признак использовать ли данный вариант при отправке всех вариантов  <a href="../../d6/d0f/classcl___scene.html#af07c39505743d5960328a826cc73530f">Подробнее...</a><br /></td></tr>
+<tr class="separator:af07c39505743d5960328a826cc73530f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa670b145dcb4abf13d2598feadf3933b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aa670b145dcb4abf13d2598feadf3933b">activeAddLabel</a></td></tr>
+<tr class="memdesc:aa670b145dcb4abf13d2598feadf3933b"><td class="mdescLeft">&#160;</td><td class="mdescRight">признак добавления новой метки пользователем  <a href="../../d6/d0f/classcl___scene.html#aa670b145dcb4abf13d2598feadf3933b">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa670b145dcb4abf13d2598feadf3933b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41212c4795c829485c5ccd02ed1b373"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d0f/classcl___scene.html#aa41212c4795c829485c5ccd02ed1b373">activeRoute</a></td></tr>
+<tr class="memdesc:aa41212c4795c829485c5ccd02ed1b373"><td class="mdescLeft">&#160;</td><td class="mdescRight">признак добавления маршрута  <a href="../../d6/d0f/classcl___scene.html#aa41212c4795c829485c5ccd02ed1b373">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa41212c4795c829485c5ccd02ed1b373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a4a576ad31594d7f80a8e1a93c6fb7ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a576ad31594d7f80a8e1a93c6fb7ccb">&#9670;&nbsp;</a></span>cl_Scene() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cl_Scene::cl_Scene </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a> *&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *&#160;</td>
+          <td class="paramname"><em>typeObjectsVis_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QList&lt; <a class="el" href="../../d8/d49/class_info_object.html">InfoObject</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d00/class_setting_v_v.html">SettingVV</a> *&#160;</td>
+          <td class="paramname"><em>settingVV</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>конструктор для создания нового объекта из меню </p>
+
+</div>
+</div>
+<a id="aff431ea26ea184e7a99f8de85053b8db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff431ea26ea184e7a99f8de85053b8db">&#9670;&nbsp;</a></span>cl_Scene() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cl_Scene::cl_Scene </td>
+          <td>(</td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a> *&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *&#160;</td>
+          <td class="paramname"><em>typeObjectsVis_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>конструктор для создания объекта из файла </p>
+<p>target-&gt;hide();</p>
+
+</div>
+</div>
+<a id="ac834fed01f3d1bb6f65d0f1937e85f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac834fed01f3d1bb6f65d0f1937e85f5c">&#9670;&nbsp;</a></span>cl_Scene() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cl_Scene::cl_Scene </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d0f/classcl___scene.html">cl_Scene</a> *&#160;</td>
+          <td class="paramname"><em>thisScene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>конструктор дял клонирования объекта </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a07f1b43a93a2707b6c47d5d1a3fc5802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07f1b43a93a2707b6c47d5d1a3fc5802">&#9670;&nbsp;</a></span>activeFormAddLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::activeFormAddLabel </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>форма для добавления метки </p>
+
+</div>
+</div>
+<a id="a4fea1184cfd8faaf1eb84e05bc7bde6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fea1184cfd8faaf1eb84e05bc7bde6f">&#9670;&nbsp;</a></span>calcItemPosScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::calcItemPosScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>пересчитать координаты объектов при изменении масштаба сцены </p>
+
+</div>
+</div>
+<a id="a3da93bc4c88d4741969875e8c13811bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da93bc4c88d4741969875e8c13811bc">&#9670;&nbsp;</a></span>centerByAircarft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::centerByAircarft </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>центрирование по вертолету </p>
+
+</div>
+</div>
+<a id="a8b6b6be719f39a1db9eb225e1d1f422e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6b6be719f39a1db9eb225e1d1f422e">&#9670;&nbsp;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d0f/classcl___scene.html">cl_Scene</a>* cl_Scene::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>клонирование данных, возвращает свою копию </p>
+
+</div>
+</div>
+<a id="aebac40e1553732e2d524a8d8c7dc5b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebac40e1553732e2d524a8d8c7dc5b6e">&#9670;&nbsp;</a></span>cloneAircraft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::cloneAircraft </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d71/class_aircraft_object.html">AircraftObject</a> *&#160;</td>
+          <td class="paramname"><em>aircraft_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>клонирование нашего носителя </p>
+
+</div>
+</div>
+<a id="a13875729908bfed316259e43645adf15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13875729908bfed316259e43645adf15">&#9670;&nbsp;</a></span>cloneAirObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::cloneAirObj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d8a/class_air_obj.html">AirObj</a> *&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>клонирование воздушного объекта </p>
+
+</div>
+</div>
+<a id="aab575ff8ded81c0bc9d05896e87a4a11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab575ff8ded81c0bc9d05896e87a4a11">&#9670;&nbsp;</a></span>cloneGroundObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::cloneGroundObj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/dbc/class_ground_obj.html">GroundObj</a> *&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>клонирование наземного объекта </p>
+
+</div>
+</div>
+<a id="a5a6eb37458ec9ac4ba8876e6c1799c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6eb37458ec9ac4ba8876e6c1799c68">&#9670;&nbsp;</a></span>comment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString cl_Scene::comment </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>комментарий </p>
+
+</div>
+</div>
+<a id="a9eaaafb1f33cfe5974f6da9e730c1114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eaaafb1f33cfe5974f6da9e730c1114">&#9670;&nbsp;</a></span>createNewAerodrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createNewAerodrom </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4bf796e04976fc622568ff5ac26d2933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bf796e04976fc622568ff5ac26d2933">&#9670;&nbsp;</a></span>createNewAirObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createNewAirObj </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0136dbf4708d0d257ed2daf5a63437d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0136dbf4708d0d257ed2daf5a63437d">&#9670;&nbsp;</a></span>createNewBeaconObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createNewBeaconObject </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae17abe5cd16e86103a8c8849f6b30a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae17abe5cd16e86103a8c8849f6b30a54">&#9670;&nbsp;</a></span>createNewCloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createNewCloud </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa10ed38f19ccacaf8f8ebfc1bcd6cb1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa10ed38f19ccacaf8f8ebfc1bcd6cb1b">&#9670;&nbsp;</a></span>createNewFog()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createNewFog </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e7328b085c4077e0a5078e51c6a1f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e7328b085c4077e0a5078e51c6a1f40">&#9670;&nbsp;</a></span>createNewGroundObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createNewGroundObj </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9cc08524b90d4f30115ab2a54ebd356f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc08524b90d4f30115ab2a54ebd356f">&#9670;&nbsp;</a></span>createNewInfoObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createNewInfoObject </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5281597211da33fdd1fe1d9e676858db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5281597211da33fdd1fe1d9e676858db">&#9670;&nbsp;</a></span>createNewPointRoute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createNewPointRoute </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acad23b4d886417d11c233b0d356a2563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acad23b4d886417d11c233b0d356a2563">&#9670;&nbsp;</a></span>createObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::createObj </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450">GraphNode::TypeGraphNode</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>создание объекта </p>
+
+</div>
+</div>
+<a id="aa7084298b0fcaac9d644c951f71674c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7084298b0fcaac9d644c951f71674c6">&#9670;&nbsp;</a></span>deleteLabelMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::deleteLabelMap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/d47/class_label_object.html">LabelObject</a> *&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>удалить метку карты из сцены </p>
+
+</div>
+</div>
+<a id="a4e28e829001dc0210693b8d8c0227f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e28e829001dc0210693b8d8c0227f8d">&#9670;&nbsp;</a></span>deleteRoutes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::deleteRoutes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>удалить узлы </p>
+
+</div>
+</div>
+<a id="a1ced4d01aa3f70cfb704761b33bcb1e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ced4d01aa3f70cfb704761b33bcb1e2">&#9670;&nbsp;</a></span>delLabelMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::delLabelMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>удалить метку на карте </p>
+
+</div>
+</div>
+<a id="a4f41f52fe1cc53ac565b39ca5f72509e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f41f52fe1cc53ac565b39ca5f72509e">&#9670;&nbsp;</a></span>getRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::getRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d04/class_t_common_request.html">TCommonRequest</a> *&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>prefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>num</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>эта функция альтернативный способ передачи варианта на УЦВС. </p>
+
+</div>
+</div>
+<a id="a941d0a6b91e282b676b7fe93b8ff41fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a941d0a6b91e282b676b7fe93b8ff41fc">&#9670;&nbsp;</a></span>reCalcObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::reCalcObject </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>aust</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>пересчет текущего положения объектов </p>
+
+</div>
+</div>
+<a id="a9a245dbbbffcb3f60d4902c5f552c218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a245dbbbffcb3f60d4902c5f552c218">&#9670;&nbsp;</a></span>refreshInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::refreshInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>обновить список информационных точек </p>
+
+</div>
+</div>
+<a id="a5c7ba62bc22322663123696ead8919b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7ba62bc22322663123696ead8919b6">&#9670;&nbsp;</a></span>refreshTiles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::refreshTiles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>обновить карту </p>
+
+</div>
+</div>
+<a id="a74b627ef95e737c847f5e5ffb929faa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b627ef95e737c847f5e5ffb929faa2">&#9670;&nbsp;</a></span>refreshZoomLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::refreshZoomLevel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>обновление при изменении уровня детализации </p>
+
+</div>
+</div>
+<a id="a97d07fbe1c095f83d89b43e8a1355f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97d07fbe1c095f83d89b43e8a1355f88">&#9670;&nbsp;</a></span>returnNameVariant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString cl_Scene::returnNameVariant </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>вернуть имя файла </p>
+
+</div>
+</div>
+<a id="abdf3b56f88be379f0cce0e3c163b8382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdf3b56f88be379f0cce0e3c163b8382">&#9670;&nbsp;</a></span>saveToXML()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::saveToXML </td>
+          <td>(</td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>domDocument</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>сохранить сцену в XML. </p>
+
+</div>
+</div>
+<a id="ac6a02804ed09340f4d4e17018579ad10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a02804ed09340f4d4e17018579ad10">&#9670;&nbsp;</a></span>saveToXMLForModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::saveToXMLForModel </td>
+          <td>(</td>
+          <td class="paramtype">QDomDocument &amp;&#160;</td>
+          <td class="paramname"><em>domDocument</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a949bd408a560356a0c23aca7394259f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949bd408a560356a0c23aca7394259f0">&#9670;&nbsp;</a></span>sendSignalUpdateValueObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::sendSignalUpdateValueObj </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>отправить сигнал о том, что обновились параметры объекта </p>
+
+</div>
+</div>
+<a id="ac779e542c80739320d3955cc92952eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac779e542c80739320d3955cc92952eb1">&#9670;&nbsp;</a></span>setActiveRoute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setActiveRoute </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af04f6991201aa9819bc8672146cc0d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af04f6991201aa9819bc8672146cc0d32">&#9670;&nbsp;</a></span>setAllInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setAllInfo </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>отображать всю информацию для объектов </p>
+
+</div>
+</div>
+<a id="a8a6dd15128f8f1957774363a0132a903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a6dd15128f8f1957774363a0132a903">&#9670;&nbsp;</a></span>setCenterWindowView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setCenterWindowView </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zoom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>задать окно просмотра view. </p>
+
+</div>
+</div>
+<a id="aedc0a44bb198a0b8ba3500dbd45f829b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc0a44bb198a0b8ba3500dbd45f829b">&#9670;&nbsp;</a></span>setComment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setComment </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>задать комментарий </p>
+
+</div>
+</div>
+<a id="af9c07652f1e9af785ce239b44cb2f44e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c07652f1e9af785ce239b44cb2f44e">&#9670;&nbsp;</a></span>setCurrentGeoOnCenter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setCurrentGeoOnCenter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>curLat, curLon относительно их будет увеличение, задается координатами центра экрана </p>
+
+</div>
+</div>
+<a id="ac0e6435a3f7798c577c754d9c238b089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e6435a3f7798c577c754d9c238b089">&#9670;&nbsp;</a></span>setFocusMoveObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setFocusMoveObj </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>перемещать окно за движущимся объектом </p>
+
+</div>
+</div>
+<a id="a91521e0961f77ac6d1c8a9bab5d45ce5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91521e0961f77ac6d1c8a9bab5d45ce5">&#9670;&nbsp;</a></span>setInvisibleScaleLine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setInvisibleScaleLine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62968661b54f7af532f9fcf128fa4051"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62968661b54f7af532f9fcf128fa4051">&#9670;&nbsp;</a></span>setLabelObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setLabelObjects </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; <a class="el" href="../../d8/d47/class_label_object.html">LabelObject</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>list</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>задать список объектов "метка". </p>
+
+</div>
+</div>
+<a id="a440862da270a47a8619974e11126cfad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a440862da270a47a8619974e11126cfad">&#9670;&nbsp;</a></span>setNameVariant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setNameVariant </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>задать имя варианта </p>
+
+</div>
+</div>
+<a id="a0670e6aa4200e54fb41e4d0b77b62d6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0670e6aa4200e54fb41e4d0b77b62d6c">&#9670;&nbsp;</a></span>setScrollViewHand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setScrollViewHand </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>прокручивание </p>
+
+</div>
+</div>
+<a id="a4ee0843c8d58a6476949cb71026e5d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee0843c8d58a6476949cb71026e5d17">&#9670;&nbsp;</a></span>setSubWindowMDI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setSubWindowMDI </td>
+          <td>(</td>
+          <td class="paramtype">QMdiSubWindow *&#160;</td>
+          <td class="paramname"><em>sub</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade4b0564d3009801ecf4ce654e481a9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4b0564d3009801ecf4ce654e481a9b">&#9670;&nbsp;</a></span>setTypeLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setTypeLayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">GeographySysCoord::TypeLayer</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>задать тип слоя </p>
+
+</div>
+</div>
+<a id="aca757e8f4de2bcf4a7ea33201f8bc957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca757e8f4de2bcf4a7ea33201f8bc957">&#9670;&nbsp;</a></span>setTypeMAP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setTypeMAP </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">GeographySysCoord::TypeMAP</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>задать тип карты </p>
+
+</div>
+</div>
+<a id="a34b5c5a39474d3af6ad33e25b5d50073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b5c5a39474d3af6ad33e25b5d50073">&#9670;&nbsp;</a></span>setViewportCentert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setViewportCentert </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>задать положение viewport. </p>
+
+</div>
+</div>
+<a id="a0562a310140d2a220adab6a8930076a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0562a310140d2a220adab6a8930076a3">&#9670;&nbsp;</a></span>setZoomLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::setZoomLevel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>z</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>задать уровень детализации </p>
+
+</div>
+</div>
+<a id="a1f4fc7967d1b022426d7d759082986e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4fc7967d1b022426d7d759082986e0">&#9670;&nbsp;</a></span>showLabelMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::showLabelMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>показать на карте "Метки". </p>
+
+</div>
+</div>
+<a id="a23db10d106a4cb90be97bf83816dffb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23db10d106a4cb90be97bf83816dffb7">&#9670;&nbsp;</a></span>signalChangeZoom</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::signalChangeZoom </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>сигнал об изменении увеличения </p>
+
+</div>
+</div>
+<a id="a10cd417399d4ca69a23cf25feae7228f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10cd417399d4ca69a23cf25feae7228f">&#9670;&nbsp;</a></span>signalRotateVisible</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::signalRotateVisible </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5cc3b3e175fe96915a930b5dfc3d0814"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cc3b3e175fe96915a930b5dfc3d0814">&#9670;&nbsp;</a></span>signalUpdateValueObj</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::signalUpdateValueObj </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>сигнал о том, что параметры объектов изменились </p>
+
+</div>
+</div>
+<a id="a5fbad5860fea6d8cf38168f21c9a13b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbad5860fea6d8cf38168f21c9a13b8">&#9670;&nbsp;</a></span>slotAircraftLat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotAircraftLat </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcdd364d6c864d2b76c0185ea27c1b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcdd364d6c864d2b76c0185ea27c1b14">&#9670;&nbsp;</a></span>slotAircraftLon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotAircraftLon </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a56598aaa21ed88080bd0e015165419d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56598aaa21ed88080bd0e015165419d6">&#9670;&nbsp;</a></span>slotAircraftPos2D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotAircraftPos2D </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>psi</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add6d7b4de71cf1b55e3ea4b39a33ec1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add6d7b4de71cf1b55e3ea4b39a33ec1c">&#9670;&nbsp;</a></span>slotAircraftPsi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotAircraftPsi </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>psi</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>реакция на изменение координат и угла курса нашего объекта </p>
+
+</div>
+</div>
+<a id="a58989d7baea4d89f37447e7d3e440b5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58989d7baea4d89f37447e7d3e440b5d">&#9670;&nbsp;</a></span>slotClickLeftMouse</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotClickLeftMouse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19fe45b4bb4c8936957334e7e06611d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19fe45b4bb4c8936957334e7e06611d4">&#9670;&nbsp;</a></span>slotDoubleClickedMouse</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotDoubleClickedMouse </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3f1ca0ec13cb825254515a36e9c337b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f1ca0ec13cb825254515a36e9c337b">&#9670;&nbsp;</a></span>slotFlushState</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotFlushState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>сбросить состояние </p>
+
+</div>
+</div>
+<a id="a7aae3cacf741b0ca1965ee37e24ef021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aae3cacf741b0ca1965ee37e24ef021">&#9670;&nbsp;</a></span>slotMove</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotMove </td>
+          <td>(</td>
+          <td class="paramtype">QPoint&#160;</td>
+          <td class="paramname"><em>tpos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f1a2331b6fe210b7b0967b2b40866bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f1a2331b6fe210b7b0967b2b40866bc">&#9670;&nbsp;</a></span>slotRightButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotRightButton </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18f3b96364aa1ef4a137f1a0c2b5f0d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f3b96364aa1ef4a137f1a0c2b5f0d2">&#9670;&nbsp;</a></span>slotRotateOff</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotRotateOff </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52eafa9a3cdebb452950000f1d26f91c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52eafa9a3cdebb452950000f1d26f91c">&#9670;&nbsp;</a></span>slotRotateOn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotRotateOn </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="accc3dc68499fc49dc190cc6e80c53ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc3dc68499fc49dc190cc6e80c53ef6">&#9670;&nbsp;</a></span>slotTargetLat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotTargetLat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9162085538aedd5cc5b851ce8612448c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9162085538aedd5cc5b851ce8612448c">&#9670;&nbsp;</a></span>slotTargetLon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotTargetLon </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a749e8cf63b8889ae10c6d24268f25f72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a749e8cf63b8889ae10c6d24268f25f72">&#9670;&nbsp;</a></span>slotTargetPsi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotTargetPsi </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>psi</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>реакция на изменение координат и угла курса воздушных целей </p>
+
+</div>
+</div>
+<a id="aa2cf048f20cab3093579d406531e5053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2cf048f20cab3093579d406531e5053">&#9670;&nbsp;</a></span>slotTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotTime </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>получение времени </p>
+
+</div>
+</div>
+<a id="a2627c9f38ce8342c0dcd5c39e5b999c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2627c9f38ce8342c0dcd5c39e5b999c5">&#9670;&nbsp;</a></span>slotUpdate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>обновление координат объектов на сцене при смене уровня детализации </p>
+
+</div>
+</div>
+<a id="a145ef43df2ae5249408f768c49d567d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a145ef43df2ae5249408f768c49d567d3">&#9670;&nbsp;</a></span>slotUseMoveObj</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotUseMoveObj </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>отображение перемещающихся объектов </p>
+
+</div>
+</div>
+<a id="a9641b65c951feebf692048c139544add"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9641b65c951feebf692048c139544add">&#9670;&nbsp;</a></span>slotZoomDown</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotZoomDown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51cdc532949b97258b5d267836409f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51cdc532949b97258b5d267836409f58">&#9670;&nbsp;</a></span>slotZoomUp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cl_Scene::slotZoomUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>увеличение/уменьшение масштаба </p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="aa670b145dcb4abf13d2598feadf3933b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa670b145dcb4abf13d2598feadf3933b">&#9670;&nbsp;</a></span>activeAddLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cl_Scene::activeAddLabel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>признак добавления новой метки пользователем </p>
+
+</div>
+</div>
+<a id="aa41212c4795c829485c5ccd02ed1b373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa41212c4795c829485c5ccd02ed1b373">&#9670;&nbsp;</a></span>activeRoute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cl_Scene::activeRoute</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>признак добавления маршрута </p>
+
+</div>
+</div>
+<a id="ac8e8ad00aa8e4ec10cae57ff66080190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8e8ad00aa8e4ec10cae57ff66080190">&#9670;&nbsp;</a></span>aerodroms</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d5/d1d/class_aerodrom_object.html">AerodromObject</a>* &gt; cl_Scene::aerodroms</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список аэродромов </p>
+
+</div>
+</div>
+<a id="a169ce65b6cd9291ae7c8f053efeb1ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169ce65b6cd9291ae7c8f053efeb1ad1">&#9670;&nbsp;</a></span>aircraft</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d71/class_aircraft_object.html">AircraftObject</a>* cl_Scene::aircraft</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>объект вертолета </p>
+
+</div>
+</div>
+<a id="a9f7396105f0ecf65c09a2c2ca941d00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f7396105f0ecf65c09a2c2ca941d00f">&#9670;&nbsp;</a></span>aircraftMove</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d71/class_aircraft_object.html">AircraftObject</a>* cl_Scene::aircraftMove</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>объект который может перемещаться </p>
+
+</div>
+</div>
+<a id="ae1c0c6b59e295f2b36613c9211da5089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c0c6b59e295f2b36613c9211da5089">&#9670;&nbsp;</a></span>airObj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d7/d8a/class_air_obj.html">AirObj</a>* &gt; cl_Scene::airObj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список воздушных целей </p>
+
+</div>
+</div>
+<a id="ab766a66d72218992ff91f8b55d978238"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab766a66d72218992ff91f8b55d978238">&#9670;&nbsp;</a></span>airObjMove</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d7/d8a/class_air_obj.html">AirObj</a>* &gt; cl_Scene::airObjMove</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a682be2334dbab163657e79ac40545e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a682be2334dbab163657e79ac40545e8c">&#9670;&nbsp;</a></span>beaconObjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d9/d78/class_beacon_object.html">BeaconObject</a>* &gt; cl_Scene::beaconObjects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список маяков </p>
+
+</div>
+</div>
+<a id="ad8ee251114edf8e9d38b07654e247095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ee251114edf8e9d38b07654e247095">&#9670;&nbsp;</a></span>cloudObj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d0/d87/class_cloud_object.html">CloudObject</a>* &gt; cl_Scene::cloudObj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список зон с облачностью </p>
+
+</div>
+</div>
+<a id="a3b87c82583af20a4dfd9477089d16daa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b87c82583af20a4dfd9477089d16daa">&#9670;&nbsp;</a></span>curLat</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cl_Scene::curLat</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>текущие координаты </p>
+
+</div>
+</div>
+<a id="abbbf721fe73072c29cc8c5d42e7e2636"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbbf721fe73072c29cc8c5d42e7e2636">&#9670;&nbsp;</a></span>curLatView</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cl_Scene::curLatView</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a529410415a01e410ad051e1d073a9271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529410415a01e410ad051e1d073a9271">&#9670;&nbsp;</a></span>curLon</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cl_Scene::curLon</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d2348ce9e8310d1c805a403b20dee3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d2348ce9e8310d1c805a403b20dee3e">&#9670;&nbsp;</a></span>curLonView</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cl_Scene::curLonView</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1737d70003dec4fec041e62698af4668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1737d70003dec4fec041e62698af4668">&#9670;&nbsp;</a></span>currentZoom</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cl_Scene::currentZoom</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>текущий уровень детализации </p>
+
+</div>
+</div>
+<a id="a1458589535d01d03116401ab629d13ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1458589535d01d03116401ab629d13ae">&#9670;&nbsp;</a></span>firstConnectingSlots</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cl_Scene::firstConnectingSlots</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>первое подключение к слотам </p>
+
+</div>
+</div>
+<a id="a18104bf9c9c6ba22e319f7595d707ffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18104bf9c9c6ba22e319f7595d707ffc">&#9670;&nbsp;</a></span>fogObj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../da/d03/class_fog_object.html">FogObject</a>* &gt; cl_Scene::fogObj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список зон с туманами </p>
+
+</div>
+</div>
+<a id="a24d39eda8166bd31e8a4324157855220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d39eda8166bd31e8a4324157855220">&#9670;&nbsp;</a></span>groundObj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d1/dbc/class_ground_obj.html">GroundObj</a>* &gt; cl_Scene::groundObj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список наземных целей </p>
+
+</div>
+</div>
+<a id="a86177ccf437f4f0160d93bb2781e7cd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86177ccf437f4f0160d93bb2781e7cd5">&#9670;&nbsp;</a></span>groundObjMove</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d1/dbc/class_ground_obj.html">GroundObj</a>* &gt; cl_Scene::groundObjMove</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75e57d9bba2dfcf1dd8133f81864a6f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e57d9bba2dfcf1dd8133f81864a6f4">&#9670;&nbsp;</a></span>index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cl_Scene::index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>индекс сцены [1...N](сквозная нумерация вариантов) </p>
+
+</div>
+</div>
+<a id="a5b0fe648f579d3910e0df69990d9cc46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b0fe648f579d3910e0df69990d9cc46">&#9670;&nbsp;</a></span>infoObjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d8/d49/class_info_object.html">InfoObject</a>* &gt;* cl_Scene::infoObjects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список информационных точек </p>
+
+</div>
+</div>
+<a id="a9ad8a663d665bcc2cf3907e0f026cd71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad8a663d665bcc2cf3907e0f026cd71">&#9670;&nbsp;</a></span>labelObjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QList&lt;<a class="el" href="../../d8/d47/class_label_object.html">LabelObject</a>* &gt;* cl_Scene::labelObjects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список меток(метки одинаковы в независимости от экземпляра сцены) </p>
+
+</div>
+</div>
+<a id="a8e76b50563b85de5671bbd054b5fa263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e76b50563b85de5671bbd054b5fa263">&#9670;&nbsp;</a></span>map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d54/class_geography_sys_coord.html">GeographySysCoord</a>* cl_Scene::map</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>карта с географией земли </p>
+
+</div>
+</div>
+<a id="af2eb65a50b005d4dc9ac4dce9dcbae33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2eb65a50b005d4dc9ac4dce9dcbae33">&#9670;&nbsp;</a></span>mousePos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPoint cl_Scene::mousePos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0a0aaa918c2775ccd09dd478476008b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0a0aaa918c2775ccd09dd478476008b">&#9670;&nbsp;</a></span>mousePosScene</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF cl_Scene::mousePosScene</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33eb487f335f0f734c6e8978c9b1319f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33eb487f335f0f734c6e8978c9b1319f">&#9670;&nbsp;</a></span>numberNameVariant</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cl_Scene::numberNameVariant</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>номер в имени варианта </p>
+
+</div>
+</div>
+<a id="a329592942ce9a172cf8ab1646fad46af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a329592942ce9a172cf8ab1646fad46af">&#9670;&nbsp;</a></span>objects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a>* &gt; cl_Scene::objects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список всех объектов </p>
+
+</div>
+</div>
+<a id="a5692d0d132a8e29856e6f5a9675e6d2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5692d0d132a8e29856e6f5a9675e6d2f">&#9670;&nbsp;</a></span>ppmObjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../de/d09/class_p_p_m_object.html">PPMObject</a>* &gt; cl_Scene::ppmObjects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список маршрутов </p>
+
+</div>
+</div>
+<a id="a7a73a574a167e293b5932d7cd0e99035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a73a574a167e293b5932d7cd0e99035">&#9670;&nbsp;</a></span>routeObjects</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../db/d78/class_route_object.html">RouteObject</a>* &gt; cl_Scene::routeObjects</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>список маршрутов </p>
+
+</div>
+</div>
+<a id="aadff749f143a3e2d0ac56878df88b66c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadff749f143a3e2d0ac56878df88b66c">&#9670;&nbsp;</a></span>scaleLine</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d86/class_scale_line.html">ScaleLine</a>* cl_Scene::scaleLine</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac91c32a96752d910667f1a5ccf8938b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac91c32a96752d910667f1a5ccf8938b1">&#9670;&nbsp;</a></span>scene</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d97/class_g_scene.html">GScene</a>* cl_Scene::scene</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>переопредленный класс сцены </p>
+
+</div>
+</div>
+<a id="ad081220cb0865e7e26d5634707786c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad081220cb0865e7e26d5634707786c7c">&#9670;&nbsp;</a></span>set</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d00/class_setting_v_v.html">SettingVV</a>* cl_Scene::set</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>настройки модуля считанные из XML файла </p>
+
+</div>
+</div>
+<a id="a6b30b3f1c5a33bfcebe9d70dad65c6db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b30b3f1c5a33bfcebe9d70dad65c6db">&#9670;&nbsp;</a></span>statusBar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a>* cl_Scene::statusBar</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>отображение состояния </p>
+
+</div>
+</div>
+<a id="a4c8fd14cc53d4fb8eb779920748360df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c8fd14cc53d4fb8eb779920748360df">&#9670;&nbsp;</a></span>subW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMdiSubWindow* cl_Scene::subW</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d866eab468f838c860d98a295ebea6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d866eab468f838c860d98a295ebea6a">&#9670;&nbsp;</a></span>typeObjectsVis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a>* cl_Scene::typeObjectsVis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>типы объектов </p>
+
+</div>
+</div>
+<a id="af07c39505743d5960328a826cc73530f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af07c39505743d5960328a826cc73530f">&#9670;&nbsp;</a></span>use</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cl_Scene::use</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>признак использовать ли данный вариант при отправке всех вариантов </p>
+
+</div>
+</div>
+<a id="acf003df1c8fea56cecbd40224d320ea0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf003df1c8fea56cecbd40224d320ea0">&#9670;&nbsp;</a></span>view</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/dc9/class_g_view.html">GView</a>* cl_Scene::view</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>переопределнный класс отображения сцены </p>
+
+</div>
+</div>
+<a id="aa4a278421664cddce584cf7e0a5511d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a278421664cddce584cf7e0a5511d0">&#9670;&nbsp;</a></span>vScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d35/class_vertical_scale.html">VerticalScale</a>* cl_Scene::vScale</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>вертикальная шкала </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/<a class="el" href="../../d2/da3/cl__scene_8h_source.html">cl_scene.h</a></li>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/<a class="el" href="../../db/de1/cl__scene_8cpp.html">cl_scene.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:41. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

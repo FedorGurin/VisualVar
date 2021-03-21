@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/MagneticCircle.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MagneticCircle.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/d76/_magnetic_circle_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_MAGNETICCIRCLE_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_MAGNETICCIRCLE_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/df4/_circular_engine_8hpp.html">GeographicLib/CircularEngine.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">   37</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">MagneticCircle</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    real _a, _f, _lat, _h, _t, _cphi, _sphi, _t1, _dt0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> _interpolate, _constterm;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a> _circ0, _circ1, _circ2;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">MagneticCircle</a>(real a, real f, real lat, real h, real t,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                   real cphi, real sphi, real t1, real dt0,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                   <span class="keywordtype">bool</span> <a class="code" href="../../da/dc8/group__gtx__matrix__interpolation.html#ga797ad3192e9cfb80840a93a20b55896a">interpolate</a>,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                   <span class="keyword">const</span> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a>&amp; circ0, <span class="keyword">const</span> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a>&amp; circ1)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      : _a(a)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      , _f(f)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      , _lat(<a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a1f1f676c013a1c7a7493354e4140a521">Math::LatFix</a>(lat))</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      , _h(h)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      , _t(t)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      , _cphi(cphi)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      , _sphi(sphi)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      , _t1(t1)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      , _dt0(dt0)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      , _interpolate(<a class="code" href="../../da/dc8/group__gtx__matrix__interpolation.html#ga797ad3192e9cfb80840a93a20b55896a">interpolate</a>)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      , _constterm(<span class="keyword">false</span>)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      , _circ0(circ0)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      , _circ1(circ1)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">MagneticCircle</a>(real a, real f, real lat, real h, real t,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                   real cphi, real sphi, real t1, real dt0,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                   <span class="keywordtype">bool</span> <a class="code" href="../../da/dc8/group__gtx__matrix__interpolation.html#ga797ad3192e9cfb80840a93a20b55896a">interpolate</a>,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                   <span class="keyword">const</span> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a>&amp; circ0, <span class="keyword">const</span> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a>&amp; circ1,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                   <span class="keyword">const</span> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a>&amp; circ2)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      : _a(a)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      , _f(f)</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      , _lat(lat)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      , _h(h)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      , _t(t)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      , _cphi(cphi)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      , _sphi(sphi)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      , _t1(t1)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      , _dt0(dt0)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      , _interpolate(<a class="code" href="../../da/dc8/group__gtx__matrix__interpolation.html#ga797ad3192e9cfb80840a93a20b55896a">interpolate</a>)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      , _constterm(<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      , _circ0(circ0)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      , _circ1(circ1)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      , _circ2(circ2)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> Field(real lon, <span class="keywordtype">bool</span> diffp,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;               real&amp; Bx, real&amp; By, real&amp; Bz,</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;               real&amp; Bxt, real&amp; Byt, real&amp; Bzt) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#af6619ebe4c078705fc49a0d9f950b431">   89</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html">MagneticModel</a>; <span class="comment">// MagneticModel calls the private constructor</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a49170460b1833722ad9bc45b92c86e5a">   98</a></span>&#160;    <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a49170460b1833722ad9bc45b92c86e5a">MagneticCircle</a>() : _a(-1) {}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a6d420a65e151a89712f48201b7322511">  113</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a6d420a65e151a89712f48201b7322511">operator()</a>(real lon, real&amp; Bx, real&amp; By, real&amp; Bz)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      real dummy;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      Field(lon, <span class="keyword">false</span>, Bx, By, Bz, dummy, dummy, dummy);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#ab13c4b5702337cfceb07dfa4a047f9cb">  131</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#ab13c4b5702337cfceb07dfa4a047f9cb">operator()</a>(real lon, real&amp; Bx, real&amp; By, real&amp; Bz,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                    real&amp; Bxt, real&amp; Byt, real&amp; Bzt)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      Field(lon, <span class="keyword">true</span>, Bx, By, Bz, Bxt, Byt, Bzt);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a83ebc788f3ecec38ba0baa67551bd109">  143</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a83ebc788f3ecec38ba0baa67551bd109">Init</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _a &gt; 0; }</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a946d85d4f25d854325898c7f7439bed5">  149</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a946d85d4f25d854325898c7f7439bed5">MajorRadius</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _a : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a1e7b507bef88707f6ef30b3adcabd426">  155</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a1e7b507bef88707f6ef30b3adcabd426">Flattening</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _f : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a98fcd53e6391e355fc0a0cfe82ca1802">  160</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a98fcd53e6391e355fc0a0cfe82ca1802">Latitude</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _lat : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a96ff224c1df56776055f9615968bf7e7">  165</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a96ff224c1df56776055f9615968bf7e7">Height</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _h : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a042b2f2b6a3699b33a4ed7b342de6c38">  170</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a042b2f2b6a3699b33a4ed7b342de6c38">Time</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _t : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  };</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_MAGNETICCIRCLE_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_a1e7b507bef88707f6ef30b3adcabd426"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a1e7b507bef88707f6ef30b3adcabd426">GeographicLib::MagneticCircle::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:155</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_ad1dc13a367125d3f8d291eaa98339186"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">GeographicLib::Math::NaN</a></div><div class="ttdeci">static T NaN()</div><div class="ttdef"><b>Definition:</b> Math.hpp:783</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_a1f1f676c013a1c7a7493354e4140a521"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#a1f1f676c013a1c7a7493354e4140a521">GeographicLib::Math::LatFix</a></div><div class="ttdeci">static T LatFix(T x)</div><div class="ttdef"><b>Definition:</b> Math.hpp:482</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">GeographicLib::CircularEngine</a></div><div class="ttdoc">Spherical harmonic sums for a circle.</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:52</div></div>
+<div class="ttc" id="a_circular_engine_8hpp_html"><div class="ttname"><a href="../../dc/df4/_circular_engine_8hpp.html">CircularEngine.hpp</a></div><div class="ttdoc">Header for GeographicLib::CircularEngine class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_a042b2f2b6a3699b33a4ed7b342de6c38"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a042b2f2b6a3699b33a4ed7b342de6c38">GeographicLib::MagneticCircle::Time</a></div><div class="ttdeci">Math::real Time() const</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:170</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_a49170460b1833722ad9bc45b92c86e5a"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a49170460b1833722ad9bc45b92c86e5a">GeographicLib::MagneticCircle::MagneticCircle</a></div><div class="ttdeci">MagneticCircle()</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:98</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="agroup__gtx__matrix__interpolation_html_ga797ad3192e9cfb80840a93a20b55896a"><div class="ttname"><a href="../../da/dc8/group__gtx__matrix__interpolation.html#ga797ad3192e9cfb80840a93a20b55896a">glm::interpolate</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; interpolate(detail::tmat4x4&lt; T &gt; const &amp;m1, detail::tmat4x4&lt; T &gt; const &amp;m2, T const delta)</div><div class="ttdef"><b>Definition:</b> matrix_interpolation.inl:114</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">GeographicLib::MagneticCircle</a></div><div class="ttdoc">Geomagnetic field on a circle of latitude.</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:37</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_a98fcd53e6391e355fc0a0cfe82ca1802"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a98fcd53e6391e355fc0a0cfe82ca1802">GeographicLib::MagneticCircle::Latitude</a></div><div class="ttdeci">Math::real Latitude() const</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:160</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_a83ebc788f3ecec38ba0baa67551bd109"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a83ebc788f3ecec38ba0baa67551bd109">GeographicLib::MagneticCircle::Init</a></div><div class="ttdeci">bool Init() const</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:143</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_a6d420a65e151a89712f48201b7322511"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a6d420a65e151a89712f48201b7322511">GeographicLib::MagneticCircle::operator()</a></div><div class="ttdeci">void operator()(real lon, real &amp;Bx, real &amp;By, real &amp;Bz) const</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:113</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_a946d85d4f25d854325898c7f7439bed5"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a946d85d4f25d854325898c7f7439bed5">GeographicLib::MagneticCircle::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:149</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_ab13c4b5702337cfceb07dfa4a047f9cb"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#ab13c4b5702337cfceb07dfa4a047f9cb">GeographicLib::MagneticCircle::operator()</a></div><div class="ttdeci">void operator()(real lon, real &amp;Bx, real &amp;By, real &amp;Bz, real &amp;Bxt, real &amp;Byt, real &amp;Bzt) const</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:131</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_model_html"><div class="ttname"><a href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html">GeographicLib::MagneticModel</a></div><div class="ttdoc">Model of the earth's magnetic field.</div><div class="ttdef"><b>Definition:</b> MagneticModel.hpp:63</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html_a96ff224c1df56776055f9615968bf7e7"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html#a96ff224c1df56776055f9615968bf7e7">GeographicLib::MagneticCircle::Height</a></div><div class="ttdeci">Math::real Height() const</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:165</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

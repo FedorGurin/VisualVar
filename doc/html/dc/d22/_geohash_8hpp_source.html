@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/Geohash.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Geohash.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d22/_geohash_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_GEOHASH_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_GEOHASH_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Squelch warnings about dll vs string</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#  pragma warning (push)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#  pragma warning (disable: 4251)</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d1/d49/class_geographic_lib_1_1_geohash.html">   40</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d1/d49/class_geographic_lib_1_1_geohash.html">Geohash</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> maxlen_ = 18;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> mask_ = 1ULL &lt;&lt; 45;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string lcdigits_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string ucdigits_;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d1/d49/class_geographic_lib_1_1_geohash.html">Geohash</a>();                     <span class="comment">// Disable constructor</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Forward(real lat, real lon, <span class="keywordtype">int</span> len, std::string&amp; geohash);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Reverse(<span class="keyword">const</span> std::string&amp; geohash, real&amp; lat, real&amp; lon,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                        <span class="keywordtype">int</span>&amp; len, <span class="keywordtype">bool</span> centerp = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a0551b38628901e799153b333592927a1">   99</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a0551b38628901e799153b333592927a1">LatitudeResolution</a>(<span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">std::pow</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      len = (<a class="code" href="../../d0/de3/group__core__func__common.html#gaa228561a9da55898f8f72ad2403fafac">std::max</a>)(0, (<a class="code" href="../../d0/de3/group__core__func__common.html#ga3dc90dbd66c9ca1dd5625c93d9c50f02">std::min</a>)(int(maxlen_), len));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordflow">return</span> 180 * <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">pow</a>(real(0.5), 5 * len / 2);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a4d8d01b527c5be03056ad175fd014fea">  113</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a4d8d01b527c5be03056ad175fd014fea">LongitudeResolution</a>(<span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">std::pow</a>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      len = (<a class="code" href="../../d0/de3/group__core__func__common.html#gaa228561a9da55898f8f72ad2403fafac">std::max</a>)(0, (<a class="code" href="../../d0/de3/group__core__func__common.html#ga3dc90dbd66c9ca1dd5625c93d9c50f02">std::min</a>)(int(maxlen_), len));</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="keywordflow">return</span> 360 * <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">pow</a>(real(0.5), 5 * len - 5 * len / 2);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#abd5df5f8f4b3488c7f66a9f96c43c772">  128</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#abd5df5f8f4b3488c7f66a9f96c43c772">GeohashLength</a>(real res) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../d0/de3/group__core__func__common.html#gaea946f96ec1df259802effe9f532e1c1">std::abs</a>; res = <a class="code" href="../../d0/de3/group__core__func__common.html#gaea946f96ec1df259802effe9f532e1c1">abs</a>(res);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> len = 0; len &lt; maxlen_; ++len)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">if</span> (LongitudeResolution(len) &lt;= res)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          <span class="keywordflow">return</span> len;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      <span class="keywordflow">return</span> maxlen_;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a8ade3e89e09ee77006e3734d98f19be3">  145</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a8ade3e89e09ee77006e3734d98f19be3">GeohashLength</a>(real latres, real lonres) {</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../d0/de3/group__core__func__common.html#gaea946f96ec1df259802effe9f532e1c1">std::abs</a>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;      latres = <a class="code" href="../../d0/de3/group__core__func__common.html#gaea946f96ec1df259802effe9f532e1c1">abs</a>(latres);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      lonres = <a class="code" href="../../d0/de3/group__core__func__common.html#gaea946f96ec1df259802effe9f532e1c1">abs</a>(lonres);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> len = 0; len &lt; maxlen_; ++len)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">if</span> (LatitudeResolution(len) &lt;= latres &amp;&amp;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            LongitudeResolution(len) &lt;= lonres)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;          <span class="keywordflow">return</span> len;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordflow">return</span> maxlen_;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a4435cb2961b446103500bbc91c8cd43c">  167</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code" href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a4435cb2961b446103500bbc91c8cd43c">DecimalPrecision</a>(<span class="keywordtype">int</span> len) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../d0/de3/group__core__func__common.html#ga86350252cc9bf86421317460bbd1f21c">std::floor</a>; <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga0c8da2d2921da250e8700ac4476916a1">std::log</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">return</span> -int(<a class="code" href="../../d0/de3/group__core__func__common.html#ga86350252cc9bf86421317460bbd1f21c">floor</a>(<a class="code" href="../../df/d74/group__core__func__exponential.html#ga0c8da2d2921da250e8700ac4476916a1">log</a>(LatitudeResolution(len))/<a class="code" href="../../df/d74/group__core__func__exponential.html#ga0c8da2d2921da250e8700ac4476916a1">log</a>(<a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>(10))));</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  };</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#  pragma warning (pop)</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_GEOHASH_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__core__func__common_html_ga3dc90dbd66c9ca1dd5625c93d9c50f02"><div class="ttname"><a href="../../d0/de3/group__core__func__common.html#ga3dc90dbd66c9ca1dd5625c93d9c50f02">glm::min</a></div><div class="ttdeci">GLM_FUNC_DECL genType min(genType const &amp;x, genType const &amp;y)</div><div class="ttdef"><b>Definition:</b> func_common.inl:286</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="agroup__core__func__common_html_ga86350252cc9bf86421317460bbd1f21c"><div class="ttname"><a href="../../d0/de3/group__core__func__common.html#ga86350252cc9bf86421317460bbd1f21c">glm::floor</a></div><div class="ttdeci">GLM_FUNC_DECL genType floor(genType const &amp;x)</div><div class="ttdef"><b>Definition:</b> func_common.inl:105</div></div>
+<div class="ttc" id="agroup__core__func__exponential_html_ga1ce4b2fddd26d0d3a35a8d98f37f3ac0"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">glm::pow</a></div><div class="ttdeci">GLM_FUNC_DECL genType pow(genType const &amp;base, genType const &amp;exponent)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:34</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geohash_html_a0551b38628901e799153b333592927a1"><div class="ttname"><a href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a0551b38628901e799153b333592927a1">GeographicLib::Geohash::LatitudeResolution</a></div><div class="ttdeci">static Math::real LatitudeResolution(int len)</div><div class="ttdef"><b>Definition:</b> Geohash.hpp:99</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="agroup__core__func__common_html_gaa228561a9da55898f8f72ad2403fafac"><div class="ttname"><a href="../../d0/de3/group__core__func__common.html#gaa228561a9da55898f8f72ad2403fafac">glm::max</a></div><div class="ttdeci">GLM_FUNC_DECL genType max(genType const &amp;x, genType const &amp;y)</div><div class="ttdef"><b>Definition:</b> func_common.inl:305</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geohash_html"><div class="ttname"><a href="../../d1/d49/class_geographic_lib_1_1_geohash.html">GeographicLib::Geohash</a></div><div class="ttdoc">Conversions for geohashes.</div><div class="ttdef"><b>Definition:</b> Geohash.hpp:40</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geohash_html_a8ade3e89e09ee77006e3734d98f19be3"><div class="ttname"><a href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a8ade3e89e09ee77006e3734d98f19be3">GeographicLib::Geohash::GeohashLength</a></div><div class="ttdeci">static int GeohashLength(real latres, real lonres)</div><div class="ttdef"><b>Definition:</b> Geohash.hpp:145</div></div>
+<div class="ttc" id="agroup__core__func__exponential_html_ga0c8da2d2921da250e8700ac4476916a1"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#ga0c8da2d2921da250e8700ac4476916a1">glm::log</a></div><div class="ttdeci">GLM_FUNC_DECL genType log(genType const &amp;x)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:63</div></div>
+<div class="ttc" id="agroup__core__func__common_html_gaea946f96ec1df259802effe9f532e1c1"><div class="ttname"><a href="../../d0/de3/group__core__func__common.html#gaea946f96ec1df259802effe9f532e1c1">glm::abs</a></div><div class="ttdeci">GLM_FUNC_DECL genType abs(genType const &amp;x)</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geohash_html_abd5df5f8f4b3488c7f66a9f96c43c772"><div class="ttname"><a href="../../d1/d49/class_geographic_lib_1_1_geohash.html#abd5df5f8f4b3488c7f66a9f96c43c772">GeographicLib::Geohash::GeohashLength</a></div><div class="ttdeci">static int GeohashLength(real res)</div><div class="ttdef"><b>Definition:</b> Geohash.hpp:128</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geohash_html_a4435cb2961b446103500bbc91c8cd43c"><div class="ttname"><a href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a4435cb2961b446103500bbc91c8cd43c">GeographicLib::Geohash::DecimalPrecision</a></div><div class="ttdeci">static int DecimalPrecision(int len)</div><div class="ttdef"><b>Definition:</b> Geohash.hpp:167</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geohash_html_a4d8d01b527c5be03056ad175fd014fea"><div class="ttname"><a href="../../d1/d49/class_geographic_lib_1_1_geohash.html#a4d8d01b527c5be03056ad175fd014fea">GeographicLib::Geohash::LongitudeResolution</a></div><div class="ttdeci">static Math::real LongitudeResolution(int len)</div><div class="ttdef"><b>Definition:</b> Geohash.hpp:113</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

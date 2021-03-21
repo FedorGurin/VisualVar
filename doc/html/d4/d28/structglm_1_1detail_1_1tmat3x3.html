@@ -1,0 +1,1528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Шаблон структуры glm::detail::tmat3x3&lt; T &gt;</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d4/dff/namespaceglm.html">glm</a></li><li class="navelem"><a class="el" href="../../d7/dd9/namespaceglm_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="../../d6/d8e/structglm_1_1detail_1_1tmat3x3-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон структуры glm::detail::tmat3x3&lt; T &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d8/dab/type__mat3x3_8hpp_source.html">type_mat3x3.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a24175afa829b47d3cc2a65860b16e103"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a24175afa829b47d3cc2a65860b16e103">ctor</a> { <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a24175afa829b47d3cc2a65860b16e103a77ab11b46ad78628a50430fe05c6c8aa">null</a>
+ }</td></tr>
+<tr class="separator:a24175afa829b47d3cc2a65860b16e103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab4f85e201efbee89e6da484930a2dc8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a></td></tr>
+<tr class="separator:aab4f85e201efbee89e6da484930a2dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba8dbcfaebb2bff81e45ec6a5b405629"><td class="memItemLeft" align="right" valign="top">typedef std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a></td></tr>
+<tr class="separator:aba8dbcfaebb2bff81e45ec6a5b405629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0e2472707a4ef5ebdb99d01f265cfd5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a></td></tr>
+<tr class="separator:ad0e2472707a4ef5ebdb99d01f265cfd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d6d712e55dac6fa3660ea23923ed62e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a6d6d712e55dac6fa3660ea23923ed62e">row_type</a></td></tr>
+<tr class="separator:a6d6d712e55dac6fa3660ea23923ed62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d3ade773d7ecdee78f54f9c8b355fd"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a16d3ade773d7ecdee78f54f9c8b355fd">type</a></td></tr>
+<tr class="separator:a16d3ade773d7ecdee78f54f9c8b355fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8297942592cc441994c1a8b55119d6a7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a8297942592cc441994c1a8b55119d6a7">transpose_type</a></td></tr>
+<tr class="separator:a8297942592cc441994c1a8b55119d6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:af556276818ad1a09853bd6b2ab33442c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../de/d9a/__detail_8hpp.html#a08b807947b47031d3a511f03f89645ad">GLM_CONSTEXPR</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#af556276818ad1a09853bd6b2ab33442c">length</a> () const</td></tr>
+<tr class="separator:af556276818ad1a09853bd6b2ab33442c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e22a8155f02f09d649ec78f8283c9e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a1e22a8155f02f09d649ec78f8283c9e6">tmat3x3</a> ()</td></tr>
+<tr class="separator:a1e22a8155f02f09d649ec78f8283c9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e1e8d593c006b63ac0f34f936217f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a45e1e8d593c006b63ac0f34f936217f0">tmat3x3</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> const &amp;m)</td></tr>
+<tr class="separator:a45e1e8d593c006b63ac0f34f936217f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e9eee7da731f5a47e2464b770c3cf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a74e9eee7da731f5a47e2464b770c3cf3">tmat3x3</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a24175afa829b47d3cc2a65860b16e103">ctor</a> Null)</td></tr>
+<tr class="separator:a74e9eee7da731f5a47e2464b770c3cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a2d202aab2cbdec7a5a0df54f4e081"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a27a2d202aab2cbdec7a5a0df54f4e081">tmat3x3</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;s)</td></tr>
+<tr class="separator:a27a2d202aab2cbdec7a5a0df54f4e081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac695982e33626e8671900c4b4216afca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ac695982e33626e8671900c4b4216afca">tmat3x3</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;x0, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;y0, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;z0, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;x1, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;y1, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;z1, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;x2, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;y2, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;z2)</td></tr>
+<tr class="separator:ac695982e33626e8671900c4b4216afca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dfee69976020a22913dd7045ff8577b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a3dfee69976020a22913dd7045ff8577b">tmat3x3</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> const &amp;v0, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> const &amp;v1, <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> const &amp;v2)</td></tr>
+<tr class="separator:a3dfee69976020a22913dd7045ff8577b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa670b7140f58c3b1dfcc51c20b4fb2cd"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:aa670b7140f58c3b1dfcc51c20b4fb2cd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aa670b7140f58c3b1dfcc51c20b4fb2cd">tmat3x3</a> (U const &amp;x)</td></tr>
+<tr class="separator:aa670b7140f58c3b1dfcc51c20b4fb2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0425c74c37b23c53fe07ed3d4487612"><td class="memTemplParams" colspan="2">template&lt;typename X1 , typename Y1 , typename Z1 , typename X2 , typename Y2 , typename Z2 , typename X3 , typename Y3 , typename Z3 &gt; </td></tr>
+<tr class="memitem:ab0425c74c37b23c53fe07ed3d4487612"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ab0425c74c37b23c53fe07ed3d4487612">tmat3x3</a> (X1 const &amp;x1, Y1 const &amp;y1, Z1 const &amp;z1, X2 const &amp;x2, Y2 const &amp;y2, Z2 const &amp;z2, X3 const &amp;x3, Y3 const &amp;y3, Z3 const &amp;z3)</td></tr>
+<tr class="separator:ab0425c74c37b23c53fe07ed3d4487612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787532b9eb870c1b0f2d7ba56bc93d63"><td class="memTemplParams" colspan="2">template&lt;typename V1 , typename V2 , typename V3 &gt; </td></tr>
+<tr class="memitem:a787532b9eb870c1b0f2d7ba56bc93d63"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a787532b9eb870c1b0f2d7ba56bc93d63">tmat3x3</a> (<a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt; V1 &gt; const &amp;v1, <a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt; V2 &gt; const &amp;v2, <a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt; V3 &gt; const &amp;v3)</td></tr>
+<tr class="separator:a787532b9eb870c1b0f2d7ba56bc93d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ebfe525d241841e712ce78807f8860d"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a1ebfe525d241841e712ce78807f8860d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a1ebfe525d241841e712ce78807f8860d">tmat3x3</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:a1ebfe525d241841e712ce78807f8860d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32cfbe6209897b6021190d717ff0097"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#af32cfbe6209897b6021190d717ff0097">tmat3x3</a> (<a class="el" href="../../db/dec/structglm_1_1detail_1_1tmat2x2.html">tmat2x2</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;x)</td></tr>
+<tr class="separator:af32cfbe6209897b6021190d717ff0097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e0e3bb09b8472e41f4ede37067bd22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a92e0e3bb09b8472e41f4ede37067bd22">tmat3x3</a> (<a class="el" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">tmat4x4</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;x)</td></tr>
+<tr class="separator:a92e0e3bb09b8472e41f4ede37067bd22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac33eb8c19273b4d379d873dfad7b94fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ac33eb8c19273b4d379d873dfad7b94fc">tmat3x3</a> (<a class="el" href="../../d0/d33/structglm_1_1detail_1_1tmat2x3.html">tmat2x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;x)</td></tr>
+<tr class="separator:ac33eb8c19273b4d379d873dfad7b94fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0edc83f6ba32941cc9a80fca3bb6dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a6c0edc83f6ba32941cc9a80fca3bb6dd">tmat3x3</a> (<a class="el" href="../../dc/d43/structglm_1_1detail_1_1tmat3x2.html">tmat3x2</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;x)</td></tr>
+<tr class="separator:a6c0edc83f6ba32941cc9a80fca3bb6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba13a29ea87a7d44e3939e16a7d5c52c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba13a29ea87a7d44e3939e16a7d5c52c">tmat3x3</a> (<a class="el" href="../../de/d02/structglm_1_1detail_1_1tmat2x4.html">tmat2x4</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;x)</td></tr>
+<tr class="separator:aba13a29ea87a7d44e3939e16a7d5c52c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a542658be3f1e505f5bd8be72d8aaff21"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a542658be3f1e505f5bd8be72d8aaff21">tmat3x3</a> (<a class="el" href="../../dd/d4e/structglm_1_1detail_1_1tmat4x2.html">tmat4x2</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;x)</td></tr>
+<tr class="separator:a542658be3f1e505f5bd8be72d8aaff21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ba1a1022de9fb4bd2162d0223f19688"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a5ba1a1022de9fb4bd2162d0223f19688">tmat3x3</a> (<a class="el" href="../../d1/d7e/structglm_1_1detail_1_1tmat3x4.html">tmat3x4</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;x)</td></tr>
+<tr class="separator:a5ba1a1022de9fb4bd2162d0223f19688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ba00242684d8b6d253f771eb7a1e32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aa5ba00242684d8b6d253f771eb7a1e32">tmat3x3</a> (<a class="el" href="../../d9/d5a/structglm_1_1detail_1_1tmat4x3.html">tmat4x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;x)</td></tr>
+<tr class="separator:aa5ba00242684d8b6d253f771eb7a1e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f4a50af98bba6f10c2f3373fb86eb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a01f4a50af98bba6f10c2f3373fb86eb9">operator[]</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a> i)</td></tr>
+<tr class="separator:a01f4a50af98bba6f10c2f3373fb86eb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fde94647d5f86250ed7f1e6c696ef72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> const  &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a1fde94647d5f86250ed7f1e6c696ef72">operator[]</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a> i) const</td></tr>
+<tr class="separator:a1fde94647d5f86250ed7f1e6c696ef72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b2468efadce20e29801a4c604b74ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ab0b2468efadce20e29801a4c604b74ed">operator=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;m)</td></tr>
+<tr class="separator:ab0b2468efadce20e29801a4c604b74ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9fbbe1e38ba72329be511e3f196d8a6"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:af9fbbe1e38ba72329be511e3f196d8a6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#af9fbbe1e38ba72329be511e3f196d8a6">operator=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:af9fbbe1e38ba72329be511e3f196d8a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a377ac0fd8b02b5f1b6d8b4284802fcb1"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a377ac0fd8b02b5f1b6d8b4284802fcb1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a377ac0fd8b02b5f1b6d8b4284802fcb1">operator+=</a> (U const &amp;s)</td></tr>
+<tr class="separator:a377ac0fd8b02b5f1b6d8b4284802fcb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7dc7caf2167cf9a671eaa5032138e0"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a3d7dc7caf2167cf9a671eaa5032138e0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a3d7dc7caf2167cf9a671eaa5032138e0">operator+=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:a3d7dc7caf2167cf9a671eaa5032138e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8636caa88fa286fa0152acdba0e19884"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a8636caa88fa286fa0152acdba0e19884"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a8636caa88fa286fa0152acdba0e19884">operator-=</a> (U const &amp;s)</td></tr>
+<tr class="separator:a8636caa88fa286fa0152acdba0e19884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a960ac7281deaadb7e51cd68e4b3ed2ed"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a960ac7281deaadb7e51cd68e4b3ed2ed"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a960ac7281deaadb7e51cd68e4b3ed2ed">operator-=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:a960ac7281deaadb7e51cd68e4b3ed2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e74ec2035c45d8fffc0080798f1a07d"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a5e74ec2035c45d8fffc0080798f1a07d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a5e74ec2035c45d8fffc0080798f1a07d">operator*=</a> (U const &amp;s)</td></tr>
+<tr class="separator:a5e74ec2035c45d8fffc0080798f1a07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9054662de0139020d24b73795f7b336"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:ae9054662de0139020d24b73795f7b336"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ae9054662de0139020d24b73795f7b336">operator*=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:ae9054662de0139020d24b73795f7b336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf8199d23a291f1fde6ca5424a34562"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a2bf8199d23a291f1fde6ca5424a34562"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a2bf8199d23a291f1fde6ca5424a34562">operator/=</a> (U const &amp;s)</td></tr>
+<tr class="separator:a2bf8199d23a291f1fde6ca5424a34562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c534e0919d17f91d6f5476afd628f0f"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a6c534e0919d17f91d6f5476afd628f0f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a6c534e0919d17f91d6f5476afd628f0f">operator/=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:a6c534e0919d17f91d6f5476afd628f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf26b11d8dfb7f353ab769152797ae65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#acf26b11d8dfb7f353ab769152797ae65">operator++</a> ()</td></tr>
+<tr class="separator:acf26b11d8dfb7f353ab769152797ae65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85bb0e7a7e92c25903e544f0bc2b0578"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a85bb0e7a7e92c25903e544f0bc2b0578">operator--</a> ()</td></tr>
+<tr class="separator:a85bb0e7a7e92c25903e544f0bc2b0578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab691d7caf9061561191dd850583f5378"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:ab691d7caf9061561191dd850583f5378"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ab691d7caf9061561191dd850583f5378">tmat3x3</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:ab691d7caf9061561191dd850583f5378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6cc9ed7b043e1a0e875d53fae70b9cc"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:aa6cc9ed7b043e1a0e875d53fae70b9cc"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aa6cc9ed7b043e1a0e875d53fae70b9cc">operator=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:aa6cc9ed7b043e1a0e875d53fae70b9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d63393cb6bfbbb178ea94c3f8e32a33"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a6d63393cb6bfbbb178ea94c3f8e32a33"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a6d63393cb6bfbbb178ea94c3f8e32a33">operator+=</a> (U const &amp;s)</td></tr>
+<tr class="separator:a6d63393cb6bfbbb178ea94c3f8e32a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a6a2f95ee79fb5d44be2302528f621d"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a6a6a2f95ee79fb5d44be2302528f621d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a6a6a2f95ee79fb5d44be2302528f621d">operator+=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:a6a6a2f95ee79fb5d44be2302528f621d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb0cfb073fa68a4d59d23c4ed753306"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a0eb0cfb073fa68a4d59d23c4ed753306"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a0eb0cfb073fa68a4d59d23c4ed753306">operator-=</a> (U const &amp;s)</td></tr>
+<tr class="separator:a0eb0cfb073fa68a4d59d23c4ed753306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19536db51bd84f4219209a0b6ef92182"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a19536db51bd84f4219209a0b6ef92182"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a19536db51bd84f4219209a0b6ef92182">operator-=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:a19536db51bd84f4219209a0b6ef92182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6990048c6ddf16f2bd84bca0b89bb808"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a6990048c6ddf16f2bd84bca0b89bb808"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a6990048c6ddf16f2bd84bca0b89bb808">operator*=</a> (U const &amp;s)</td></tr>
+<tr class="separator:a6990048c6ddf16f2bd84bca0b89bb808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc7b8929e609b3f2172de98a3171695"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a5bc7b8929e609b3f2172de98a3171695"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a5bc7b8929e609b3f2172de98a3171695">operator*=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:a5bc7b8929e609b3f2172de98a3171695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefc88ba39684548fcdad9f02f9144b65"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:aefc88ba39684548fcdad9f02f9144b65"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aefc88ba39684548fcdad9f02f9144b65">operator/=</a> (U const &amp;s)</td></tr>
+<tr class="separator:aefc88ba39684548fcdad9f02f9144b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af62460353adb37ff2118b39cac0eb9d0"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:af62460353adb37ff2118b39cac0eb9d0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#af62460353adb37ff2118b39cac0eb9d0">operator/=</a> (<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;m)</td></tr>
+<tr class="separator:af62460353adb37ff2118b39cac0eb9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:adad00b6048cfb901455278d9d4576945"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#adad00b6048cfb901455278d9d4576945">col_size</a> ()</td></tr>
+<tr class="separator:adad00b6048cfb901455278d9d4576945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae33289a56bcabdb12eebac93ebebf5f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ae33289a56bcabdb12eebac93ebebf5f3">row_size</a> ()</td></tr>
+<tr class="separator:ae33289a56bcabdb12eebac93ebebf5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Определения типов</h2>
+<a id="ad0e2472707a4ef5ebdb99d01f265cfd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0e2472707a4ef5ebdb99d01f265cfd5">&#9670;&nbsp;</a></span>col_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d6d712e55dac6fa3660ea23923ed62e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d6d712e55dac6fa3660ea23923ed62e">&#9670;&nbsp;</a></span>row_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a6d6d712e55dac6fa3660ea23923ed62e">row_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba8dbcfaebb2bff81e45ec6a5b405629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba8dbcfaebb2bff81e45ec6a5b405629">&#9670;&nbsp;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::size_t <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8297942592cc441994c1a8b55119d6a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8297942592cc441994c1a8b55119d6a7">&#9670;&nbsp;</a></span>transpose_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a8297942592cc441994c1a8b55119d6a7">transpose_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16d3ade773d7ecdee78f54f9c8b355fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d3ade773d7ecdee78f54f9c8b355fd">&#9670;&nbsp;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a16d3ade773d7ecdee78f54f9c8b355fd">type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab4f85e201efbee89e6da484930a2dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab4f85e201efbee89e6da484930a2dc8">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Перечисления</h2>
+<a id="a24175afa829b47d3cc2a65860b16e103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24175afa829b47d3cc2a65860b16e103">&#9670;&nbsp;</a></span>ctor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a24175afa829b47d3cc2a65860b16e103">glm::detail::tmat3x3::ctor</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a24175afa829b47d3cc2a65860b16e103a77ab11b46ad78628a50430fe05c6c8aa"></a>null&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a1e22a8155f02f09d649ec78f8283c9e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e22a8155f02f09d649ec78f8283c9e6">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[1/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a45e1e8d593c006b63ac0f34f936217f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e1e8d593c006b63ac0f34f936217f0">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[2/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74e9eee7da731f5a47e2464b770c3cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74e9eee7da731f5a47e2464b770c3cf3">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[3/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#a24175afa829b47d3cc2a65860b16e103">ctor</a>&#160;</td>
+          <td class="paramname"><em>Null</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27a2d202aab2cbdec7a5a0df54f4e081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a2d202aab2cbdec7a5a0df54f4e081">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[4/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac695982e33626e8671900c4b4216afca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac695982e33626e8671900c4b4216afca">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[5/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>z0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aab4f85e201efbee89e6da484930a2dc8">value_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>z2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3dfee69976020a22913dd7045ff8577b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dfee69976020a22913dd7045ff8577b">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[6/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>v0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> const &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa670b7140f58c3b1dfcc51c20b4fb2cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa670b7140f58c3b1dfcc51c20b4fb2cd">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[7/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0425c74c37b23c53fe07ed3d4487612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0425c74c37b23c53fe07ed3d4487612">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[8/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename X1 , typename Y1 , typename Z1 , typename X2 , typename Y2 , typename Z2 , typename X3 , typename Y3 , typename Z3 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype">X1 const &amp;&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Y1 const &amp;&#160;</td>
+          <td class="paramname"><em>y1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Z1 const &amp;&#160;</td>
+          <td class="paramname"><em>z1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">X2 const &amp;&#160;</td>
+          <td class="paramname"><em>x2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Y2 const &amp;&#160;</td>
+          <td class="paramname"><em>y2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Z2 const &amp;&#160;</td>
+          <td class="paramname"><em>z2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">X3 const &amp;&#160;</td>
+          <td class="paramname"><em>x3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Y3 const &amp;&#160;</td>
+          <td class="paramname"><em>y3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Z3 const &amp;&#160;</td>
+          <td class="paramname"><em>z3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a787532b9eb870c1b0f2d7ba56bc93d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787532b9eb870c1b0f2d7ba56bc93d63">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[9/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename V1 , typename V2 , typename V3 &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt; V1 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt; V2 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>v2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">tvec3</a>&lt; V3 &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>v3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ebfe525d241841e712ce78807f8860d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ebfe525d241841e712ce78807f8860d">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[10/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af32cfbe6209897b6021190d717ff0097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af32cfbe6209897b6021190d717ff0097">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[11/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../db/dec/structglm_1_1detail_1_1tmat2x2.html">tmat2x2</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a92e0e3bb09b8472e41f4ede37067bd22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92e0e3bb09b8472e41f4ede37067bd22">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[12/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">tmat4x4</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac33eb8c19273b4d379d873dfad7b94fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac33eb8c19273b4d379d873dfad7b94fc">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[13/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d33/structglm_1_1detail_1_1tmat2x3.html">tmat2x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c0edc83f6ba32941cc9a80fca3bb6dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0edc83f6ba32941cc9a80fca3bb6dd">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[14/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d43/structglm_1_1detail_1_1tmat3x2.html">tmat3x2</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aba13a29ea87a7d44e3939e16a7d5c52c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba13a29ea87a7d44e3939e16a7d5c52c">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[15/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d02/structglm_1_1detail_1_1tmat2x4.html">tmat2x4</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a542658be3f1e505f5bd8be72d8aaff21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a542658be3f1e505f5bd8be72d8aaff21">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[16/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d4e/structglm_1_1detail_1_1tmat4x2.html">tmat4x2</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ba1a1022de9fb4bd2162d0223f19688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ba1a1022de9fb4bd2162d0223f19688">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[17/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d7e/structglm_1_1detail_1_1tmat3x4.html">tmat3x4</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5ba00242684d8b6d253f771eb7a1e32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ba00242684d8b6d253f771eb7a1e32">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[18/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/d5a/structglm_1_1detail_1_1tmat4x3.html">tmat4x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab691d7caf9061561191dd850583f5378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab691d7caf9061561191dd850583f5378">&#9670;&nbsp;</a></span>tmat3x3() <span class="overload">[19/19]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="adad00b6048cfb901455278d9d4576945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad00b6048cfb901455278d9d4576945">&#9670;&nbsp;</a></span>col_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::col_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af556276818ad1a09853bd6b2ab33442c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af556276818ad1a09853bd6b2ab33442c">&#9670;&nbsp;</a></span>length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../de/d9a/__detail_8hpp.html#a08b807947b47031d3a511f03f89645ad">GLM_CONSTEXPR</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::length</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9054662de0139020d24b73795f7b336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9054662de0139020d24b73795f7b336">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5bc7b8929e609b3f2172de98a3171695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc7b8929e609b3f2172de98a3171695">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e74ec2035c45d8fffc0080798f1a07d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e74ec2035c45d8fffc0080798f1a07d">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6990048c6ddf16f2bd84bca0b89bb808"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6990048c6ddf16f2bd84bca0b89bb808">&#9670;&nbsp;</a></span>operator*=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf26b11d8dfb7f353ab769152797ae65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf26b11d8dfb7f353ab769152797ae65">&#9670;&nbsp;</a></span>operator++()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator++</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d7dc7caf2167cf9a671eaa5032138e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d7dc7caf2167cf9a671eaa5032138e0">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a6a2f95ee79fb5d44be2302528f621d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a6a2f95ee79fb5d44be2302528f621d">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a377ac0fd8b02b5f1b6d8b4284802fcb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a377ac0fd8b02b5f1b6d8b4284802fcb1">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d63393cb6bfbbb178ea94c3f8e32a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d63393cb6bfbbb178ea94c3f8e32a33">&#9670;&nbsp;</a></span>operator+=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85bb0e7a7e92c25903e544f0bc2b0578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85bb0e7a7e92c25903e544f0bc2b0578">&#9670;&nbsp;</a></span>operator--()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator--</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a960ac7281deaadb7e51cd68e4b3ed2ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a960ac7281deaadb7e51cd68e4b3ed2ed">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19536db51bd84f4219209a0b6ef92182"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19536db51bd84f4219209a0b6ef92182">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8636caa88fa286fa0152acdba0e19884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8636caa88fa286fa0152acdba0e19884">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0eb0cfb073fa68a4d59d23c4ed753306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb0cfb073fa68a4d59d23c4ed753306">&#9670;&nbsp;</a></span>operator-=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c534e0919d17f91d6f5476afd628f0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c534e0919d17f91d6f5476afd628f0f">&#9670;&nbsp;</a></span>operator/=() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af62460353adb37ff2118b39cac0eb9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af62460353adb37ff2118b39cac0eb9d0">&#9670;&nbsp;</a></span>operator/=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bf8199d23a291f1fde6ca5424a34562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf8199d23a291f1fde6ca5424a34562">&#9670;&nbsp;</a></span>operator/=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefc88ba39684548fcdad9f02f9144b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefc88ba39684548fcdad9f02f9144b65">&#9670;&nbsp;</a></span>operator/=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">U const &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0b2468efadce20e29801a4c604b74ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0b2468efadce20e29801a4c604b74ed">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; &amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9fbbe1e38ba72329be511e3f196d8a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9fbbe1e38ba72329be511e3f196d8a6">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6cc9ed7b043e1a0e875d53fae70b9cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6cc9ed7b043e1a0e875d53fae70b9cc">&#9670;&nbsp;</a></span>operator=() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt;<a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&gt;&amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; U &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01f4a50af98bba6f10c2f3373fb86eb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f4a50af98bba6f10c2f3373fb86eb9">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> &amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a>&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fde94647d5f86250ed7f1e6c696ef72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fde94647d5f86250ed7f1e6c696ef72">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#ad0e2472707a4ef5ebdb99d01f265cfd5">col_type</a> const  &amp; <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a>&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae33289a56bcabdb12eebac93ebebf5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae33289a56bcabdb12eebac93ebebf5f3">&#9670;&nbsp;</a></span>row_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d6a/setup_8hpp.html#a33fdea6f91c5f834105f7415e2a64407">GLM_FUNC_QUALIFIER</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::<a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html#aba8dbcfaebb2bff81e45ec6a5b405629">size_type</a> <a class="el" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a>&lt; <a class="el" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &gt;::row_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов структур находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/glm/core/<a class="el" href="../../d8/dc9/type__mat2x2_8hpp_source.html">type_mat2x2.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/glm/core/<a class="el" href="../../d8/dab/type__mat3x3_8hpp_source.html">type_mat3x3.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/glm/core/<a class="el" href="../../d0/d09/type__mat3x3_8inl.html">type_mat3x3.inl</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:27. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

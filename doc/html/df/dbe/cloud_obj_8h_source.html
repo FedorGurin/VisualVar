@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/nodes/cloudObj/cloudObj.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li><li class="navelem"><a class="el" href="../../dir_6df3690b62bff8b3761d9244e124e872.html">nodes</a></li><li class="navelem"><a class="el" href="../../dir_a030bfbb467ca8ea4b289a095b98c504.html">cloudObj</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">cloudObj.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/dbe/cloud_obj_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="../../df/dbe/cloud_obj_8h.html#a525335710b53cb064ca56b936120431e">    3</a></span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSvgItem&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QSvgRenderer&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QGraphicsPixmapItem&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QGenericMatrix&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QPen&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QDomDocument&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QDomElement&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QGraphicsScene&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSceneMouseEvent&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d0b/formsettingcloud_8h.html">formsettingcloud.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../globalFunc/gl_func.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;../globalFunc/UnitsMeasure/IUnits.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../mppm/CommonEngineData.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d96/geography_mapping_8h.html">geographyMapping.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d12/setting_v_v_8h.html">settingVV.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d34/node_visual_8h.html">nodeVisual.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d0/d87/class_cloud_object.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/d87/class_cloud_object.html">CloudObject</a>:<span class="keyword">public</span> <a class="code" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;     Q_OBJECT</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d0/d87/class_cloud_object.html#a12ad1eb83510aa38b45bd27545861908">   39</a></span>&#160;    <a class="code" href="../../d0/d87/class_cloud_object.html#a12ad1eb83510aa38b45bd27545861908">CloudObject</a>(QString name_,QGraphicsItem *parent):<a class="code" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a>(name_,parent)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        setZValue(10);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        setScale(0.1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        setAcceptHoverEvents(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="../../d0/d87/class_cloud_object.html#a7c14d0ba3726a9de0ef745e29c6454e1">settings</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d15/class_form_setting_cloud.html">FormSettingCloud</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="../../d0/d87/class_cloud_object.html#a7c14d0ba3726a9de0ef745e29c6454e1">settings</a>-&gt;setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        QRectF rect1=<a class="code" href="../../dd/df9/class_object_graph_node.html#ae7970bbae78a9ce93bbca9a095e8b1fd">boundingRect</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">itemSvg</a>-&gt;setTransformOriginPoint(QPointF(rect1.width()/2.0,rect1.height()/2.0));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d0/d87/class_cloud_object.html#a094c23bcbd29de84efb2d0737cdf7753">   51</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/d87/class_cloud_object.html#a094c23bcbd29de84efb2d0737cdf7753">connectToObj</a>(<a class="code" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a> *obj){}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;signals:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d0/d87/class_cloud_object.html#ac10cf88cbf4c3f034b519fe0a1f731ef">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d87/class_cloud_object.html#ac10cf88cbf4c3f034b519fe0a1f731ef">isModifyPosition</a>(QPointF,<a class="code" href="../../d4/de1/struct___t_geo_point.html">TGeoPoint</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/d87/class_cloud_object.html#afae648e2e57a2ebad803a1df83d9a9d3">mouseMoveEvent</a> (QGraphicsSceneMouseEvent   *event);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../d0/d87/class_cloud_object.html#a7c14d0ba3726a9de0ef745e29c6454e1">   57</a></span>&#160;    <a class="code" href="../../d5/d15/class_form_setting_cloud.html">FormSettingCloud</a> *<a class="code" href="../../d0/d87/class_cloud_object.html#a7c14d0ba3726a9de0ef745e29c6454e1">settings</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d0/d87/class_cloud_object.html#a776c09f2b20c1f5e42fb108968fdc6ec">   58</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../d0/d87/class_cloud_object.html#a776c09f2b20c1f5e42fb108968fdc6ec">type</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450aa1b4c7dfb5facd1386f22985e31a1c99">E_CLOUD</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_object_graph_node_html"><div class="ttname"><a href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a></div><div class="ttdoc">основной базовый класс для всех объектов ВЦ, НЦ и т.д</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:165</div></div>
+<div class="ttc" id="aclass_cloud_object_html"><div class="ttname"><a href="../../d0/d87/class_cloud_object.html">CloudObject</a></div><div class="ttdoc">класс облачности</div><div class="ttdef"><b>Definition:</b> cloudObj.h:36</div></div>
+<div class="ttc" id="aclass_cloud_object_html_a7c14d0ba3726a9de0ef745e29c6454e1"><div class="ttname"><a href="../../d0/d87/class_cloud_object.html#a7c14d0ba3726a9de0ef745e29c6454e1">CloudObject::settings</a></div><div class="ttdeci">FormSettingCloud * settings</div><div class="ttdef"><b>Definition:</b> cloudObj.h:57</div></div>
+<div class="ttc" id="aclass_form_setting_cloud_html"><div class="ttname"><a href="../../d5/d15/class_form_setting_cloud.html">FormSettingCloud</a></div><div class="ttdef"><b>Definition:</b> formsettingcloud.h:11</div></div>
+<div class="ttc" id="aclass_cloud_object_html_ac10cf88cbf4c3f034b519fe0a1f731ef"><div class="ttname"><a href="../../d0/d87/class_cloud_object.html#ac10cf88cbf4c3f034b519fe0a1f731ef">CloudObject::isModifyPosition</a></div><div class="ttdeci">void isModifyPosition(QPointF, TGeoPoint)</div></div>
+<div class="ttc" id="aclass_graph_node_html_ab489b49b1f629bbf53a253c753b3c450aa1b4c7dfb5facd1386f22985e31a1c99"><div class="ttname"><a href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450aa1b4c7dfb5facd1386f22985e31a1c99">GraphNode::E_CLOUD</a></div><div class="ttdeci">@ E_CLOUD</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:72</div></div>
+<div class="ttc" id="aclass_cloud_object_html_a776c09f2b20c1f5e42fb108968fdc6ec"><div class="ttname"><a href="../../d0/d87/class_cloud_object.html#a776c09f2b20c1f5e42fb108968fdc6ec">CloudObject::type</a></div><div class="ttdeci">virtual int type() const</div><div class="ttdef"><b>Definition:</b> cloudObj.h:58</div></div>
+<div class="ttc" id="asetting_v_v_8h_html"><div class="ttname"><a href="../../d8/d12/setting_v_v_8h.html">settingVV.h</a></div></div>
+<div class="ttc" id="aclass_cloud_object_html_a12ad1eb83510aa38b45bd27545861908"><div class="ttname"><a href="../../d0/d87/class_cloud_object.html#a12ad1eb83510aa38b45bd27545861908">CloudObject::CloudObject</a></div><div class="ttdeci">CloudObject(QString name_, QGraphicsItem *parent)</div><div class="ttdef"><b>Definition:</b> cloudObj.h:39</div></div>
+<div class="ttc" id="aclass_cloud_object_html_a094c23bcbd29de84efb2d0737cdf7753"><div class="ttname"><a href="../../d0/d87/class_cloud_object.html#a094c23bcbd29de84efb2d0737cdf7753">CloudObject::connectToObj</a></div><div class="ttdeci">virtual void connectToObj(ObjectGraphNode *obj)</div><div class="ttdef"><b>Definition:</b> cloudObj.h:51</div></div>
+<div class="ttc" id="astruct___t_geo_point_html"><div class="ttname"><a href="../../d4/de1/struct___t_geo_point.html">_TGeoPoint</a></div><div class="ttdef"><b>Definition:</b> gl_func.h:28</div></div>
+<div class="ttc" id="anode_visual_8h_html"><div class="ttname"><a href="../../d2/d34/node_visual_8h.html">nodeVisual.h</a></div></div>
+<div class="ttc" id="aformsettingcloud_8h_html"><div class="ttname"><a href="../../d2/d0b/formsettingcloud_8h.html">formsettingcloud.h</a></div></div>
+<div class="ttc" id="aclass_cloud_object_html_afae648e2e57a2ebad803a1df83d9a9d3"><div class="ttname"><a href="../../d0/d87/class_cloud_object.html#afae648e2e57a2ebad803a1df83d9a9d3">CloudObject::mouseMoveEvent</a></div><div class="ttdeci">virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdef"><b>Definition:</b> cloudObj.cpp:3</div></div>
+<div class="ttc" id="aclass_object_graph_node_html_a483614a55eaf83221238ab4ca1667311"><div class="ttname"><a href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">ObjectGraphNode::itemSvg</a></div><div class="ttdeci">QGraphicsSvgItem * itemSvg</div><div class="ttdoc">указатель на элемент с картнкой для данного элемента</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:302</div></div>
+<div class="ttc" id="aclass_object_graph_node_html_ae7970bbae78a9ce93bbca9a095e8b1fd"><div class="ttname"><a href="../../dd/df9/class_object_graph_node.html#ae7970bbae78a9ce93bbca9a095e8b1fd">ObjectGraphNode::boundingRect</a></div><div class="ttdeci">virtual QRectF boundingRect() const</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:221</div></div>
+<div class="ttc" id="ageography_mapping_8h_html"><div class="ttname"><a href="../../dc/d96/geography_mapping_8h.html">geographyMapping.h</a></div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

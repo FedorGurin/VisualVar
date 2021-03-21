@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/SphericalHarmonic2.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SphericalHarmonic2.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/db7/_spherical_harmonic2_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_SPHERICALHARMONIC2_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_SPHERICALHARMONIC2_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d1/db8/_spherical_engine_8hpp.html">GeographicLib/SphericalEngine.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/df4/_circular_engine_8hpp.html">GeographicLib/CircularEngine.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// Don&#39;t include the GEOGRPAHIC_EXPORT because this header-only class isn&#39;t</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// used by any other classes in the library.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html">   35</a></span>&#160;  <span class="keyword">class </span><span class="comment">/*GEOGRAPHICLIB_EXPORT*/</span> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html">SphericalHarmonic2</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8be">   40</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8be">normalization</a> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">   47</a></span>&#160;      <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">FULL</a> = <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fac720ca87adfc478dbfc13a37f0cf8ba9">SphericalEngine::FULL</a>,</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea326a84d3094b558a1c43b4b61f9c2d58">   54</a></span>&#160;      <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea326a84d3094b558a1c43b4b61f9c2d58">SCHMIDT</a> = <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fa2e3db3efd68d118e3f357a97eb77a131">SphericalEngine::SCHMIDT</a>,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="comment">// These are deprecated...</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      full = <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">FULL</a>,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      schmidt = <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea326a84d3094b558a1c43b4b61f9c2d58">SCHMIDT</a>,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a> _c[3];</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    real _a;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">unsigned</span> _norm;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a897f6b15b82812e874a2b0927cfc3912">  102</a></span>&#160;    <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a897f6b15b82812e874a2b0927cfc3912">SphericalHarmonic2</a>(<span class="keyword">const</span> std::vector&lt;real&gt;&amp; C,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                       <span class="keywordtype">int</span> N,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; C1,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; S1,</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                       <span class="keywordtype">int</span> N1,</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; C2,</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; S2,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                       <span class="keywordtype">int</span> N2,</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                       real a, <span class="keywordtype">unsigned</span> norm = <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">FULL</a>)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      : _a(a)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      , _norm(norm) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keywordflow">if</span> (!(N1 &lt;= N &amp;&amp; N2 &lt;= N))</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicErr</a>(<span class="stringliteral">&quot;N1 and N2 cannot be larger that N&quot;</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      _c[0] = <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>(C, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>, N);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      _c[1] = <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>(C1, S1, N1);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      _c[2] = <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>(C2, S2, N2);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a19300de2d629c014883026bf0042b6f0">  159</a></span>&#160;    <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a19300de2d629c014883026bf0042b6f0">SphericalHarmonic2</a>(<span class="keyword">const</span> std::vector&lt;real&gt;&amp; C,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                       <span class="keywordtype">int</span> N, <span class="keywordtype">int</span> nmx, <span class="keywordtype">int</span> mmx,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; C1,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; S1,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                       <span class="keywordtype">int</span> N1, <span class="keywordtype">int</span> nmx1, <span class="keywordtype">int</span> mmx1,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; C2,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                       <span class="keyword">const</span> std::vector&lt;real&gt;&amp; S2,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                       <span class="keywordtype">int</span> N2, <span class="keywordtype">int</span> nmx2, <span class="keywordtype">int</span> mmx2,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                       real a, <span class="keywordtype">unsigned</span> norm = <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">FULL</a>)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      : _a(a)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      , _norm(norm) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      <span class="keywordflow">if</span> (!(nmx1 &lt;= nmx &amp;&amp; nmx2 &lt;= nmx))</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicErr</a>(<span class="stringliteral">&quot;nmx1 and nmx2 cannot be larger that nmx&quot;</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      <span class="keywordflow">if</span> (!(mmx1 &lt;= mmx &amp;&amp; mmx2 &lt;= mmx))</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicErr</a>(<span class="stringliteral">&quot;mmx1 and mmx2 cannot be larger that mmx&quot;</span>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      _c[0] = <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>(C, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>, N, nmx, mmx);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      _c[1] = <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>(C1, S1, N1, nmx1, mmx1);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      _c[2] = <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>(C2, S2, N2, nmx2, mmx2);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a2fad42164df6175bc376e2f78e3e0c5a">  185</a></span>&#160;    <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a2fad42164df6175bc376e2f78e3e0c5a">SphericalHarmonic2</a>() {}</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#ad9cc3402a97f3c1c834233df5dc8b97b">  200</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#ad9cc3402a97f3c1c834233df5dc8b97b">operator()</a>(real tau1, real tau2, real x, real y, real z)<span class="keyword"></span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      real f[] = {1, tau1, tau2};</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      real v = 0;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      real dummy;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <span class="keywordflow">switch</span> (_norm) {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">FULL</a>:</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        v = SphericalEngine::Value&lt;false, SphericalEngine::FULL, 3&gt;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;          (_c, f, x, y, z, _a, dummy, dummy, dummy);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea326a84d3094b558a1c43b4b61f9c2d58">SCHMIDT</a>:</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        v = SphericalEngine::Value&lt;false, SphericalEngine::SCHMIDT, 3&gt;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;          (_c, f, x, y, z, _a, dummy, dummy, dummy);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <span class="keywordflow">return</span> v;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#aee2f372cce9ff69fa4c0c37b954a954c">  237</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#aee2f372cce9ff69fa4c0c37b954a954c">operator()</a>(real tau1, real tau2, real x, real y, real z,</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                          real&amp; gradx, real&amp; grady, real&amp; gradz)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      real f[] = {1, tau1, tau2};</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      real v = 0;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <span class="keywordflow">switch</span> (_norm) {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">FULL</a>:</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        v = SphericalEngine::Value&lt;true, SphericalEngine::FULL, 3&gt;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;          (_c, f, x, y, z, _a, gradx, grady, gradz);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea326a84d3094b558a1c43b4b61f9c2d58">SCHMIDT</a>:</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        v = SphericalEngine::Value&lt;true, SphericalEngine::SCHMIDT, 3&gt;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;          (_c, f, x, y, z, _a, gradx, grady, gradz);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;      <span class="keywordflow">return</span> v;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    }</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a563d62ce3610c69586263574d529be91">  279</a></span>&#160;    <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a563d62ce3610c69586263574d529be91">Circle</a>(real tau1, real tau2, real p, real z, <span class="keywordtype">bool</span> gradp)<span class="keyword"></span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      real f[] = {1, tau1, tau2};</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      <span class="keywordflow">switch</span> (_norm) {</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">FULL</a>:</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">return</span> gradp ?</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;          SphericalEngine::Circle&lt;true, SphericalEngine::FULL, 3&gt;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;          (_c, f, p, z, _a) :</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;          SphericalEngine::Circle&lt;false, SphericalEngine::FULL, 3&gt;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;          (_c, f, p, z, _a);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;      <span class="keywordflow">case</span> <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea326a84d3094b558a1c43b4b61f9c2d58">SCHMIDT</a>:</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;      <span class="keywordflow">default</span>:                  <span class="comment">// To avoid compiler warnings</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">return</span> gradp ?</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;          SphericalEngine::Circle&lt;true, SphericalEngine::SCHMIDT, 3&gt;</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;          (_c, f, p, z, _a) :</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;          SphericalEngine::Circle&lt;false, SphericalEngine::SCHMIDT, 3&gt;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;          (_c, f, p, z, _a);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;      }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    }</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#aafa4fd8ca8dbfa626dcd7902da462fa6">  304</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>&amp; <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#aafa4fd8ca8dbfa626dcd7902da462fa6">Coefficients</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> _c[0]; }</div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a54662107426c519cfe62033b477d5fde">  309</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>&amp; <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a54662107426c519cfe62033b477d5fde">Coefficients1</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> _c[1]; }</div>
+<div class="line"><a name="l00314"></a><span class="lineno"><a class="line" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a53efb91521c53227924a60ea2e709a77">  314</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">SphericalEngine::coeff</a>&amp; <a class="code" href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a53efb91521c53227924a60ea2e709a77">Coefficients2</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> _c[2]; }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  };</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_SPHERICALHARMONIC2_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_a19300de2d629c014883026bf0042b6f0"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a19300de2d629c014883026bf0042b6f0">GeographicLib::SphericalHarmonic2::SphericalHarmonic2</a></div><div class="ttdeci">SphericalHarmonic2(const std::vector&lt; real &gt; &amp;C, const std::vector&lt; real &gt; &amp;S, int N, int nmx, int mmx, const std::vector&lt; real &gt; &amp;C1, const std::vector&lt; real &gt; &amp;S1, int N1, int nmx1, int mmx1, const std::vector&lt; real &gt; &amp;C2, const std::vector&lt; real &gt; &amp;S2, int N2, int nmx2, int mmx2, real a, unsigned norm=FULL)</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:159</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_a53efb91521c53227924a60ea2e709a77"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a53efb91521c53227924a60ea2e709a77">GeographicLib::SphericalHarmonic2::Coefficients2</a></div><div class="ttdeci">const SphericalEngine::coeff &amp; Coefficients2() const</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:314</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_a897f6b15b82812e874a2b0927cfc3912"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a897f6b15b82812e874a2b0927cfc3912">GeographicLib::SphericalHarmonic2::SphericalHarmonic2</a></div><div class="ttdeci">SphericalHarmonic2(const std::vector&lt; real &gt; &amp;C, const std::vector&lt; real &gt; &amp;S, int N, const std::vector&lt; real &gt; &amp;C1, const std::vector&lt; real &gt; &amp;S1, int N1, const std::vector&lt; real &gt; &amp;C2, const std::vector&lt; real &gt; &amp;S2, int N2, real a, unsigned norm=FULL)</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:102</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html_a5332d09191e018cbddc568c1fc71949fa2e3db3efd68d118e3f357a97eb77a131"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fa2e3db3efd68d118e3f357a97eb77a131">GeographicLib::SphericalEngine::SCHMIDT</a></div><div class="ttdeci">@ SCHMIDT</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:80</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_adbdc59ce4e6f1e4ce0fc7169c760f8be"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8be">GeographicLib::SphericalHarmonic2::normalization</a></div><div class="ttdeci">normalization</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:40</div></div>
+<div class="ttc" id="a_spherical_engine_8hpp_html"><div class="ttname"><a href="../../d1/db8/_spherical_engine_8hpp.html">SphericalEngine.hpp</a></div><div class="ttdoc">Header for GeographicLib::SphericalEngine class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">GeographicLib::CircularEngine</a></div><div class="ttdoc">Spherical harmonic sums for a circle.</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:52</div></div>
+<div class="ttc" id="a_circular_engine_8hpp_html"><div class="ttname"><a href="../../dc/df4/_circular_engine_8hpp.html">CircularEngine.hpp</a></div><div class="ttdoc">Header for GeographicLib::CircularEngine class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html_a5332d09191e018cbddc568c1fc71949fac720ca87adfc478dbfc13a37f0cf8ba9"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fac720ca87adfc478dbfc13a37f0cf8ba9">GeographicLib::SphericalEngine::FULL</a></div><div class="ttdeci">@ FULL</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:73</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_a54662107426c519cfe62033b477d5fde"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a54662107426c519cfe62033b477d5fde">GeographicLib::SphericalHarmonic2::Coefficients1</a></div><div class="ttdeci">const SphericalEngine::coeff &amp; Coefficients1() const</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:309</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">GeographicLib::SphericalEngine::coeff</a></div><div class="ttdoc">Package up coefficients for SphericalEngine.</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:100</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_aafa4fd8ca8dbfa626dcd7902da462fa6"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#aafa4fd8ca8dbfa626dcd7902da462fa6">GeographicLib::SphericalHarmonic2::Coefficients</a></div><div class="ttdeci">const SphericalEngine::coeff &amp; Coefficients() const</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:304</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geographic_err_html"><div class="ttname"><a href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicLib::GeographicErr</a></div><div class="ttdoc">Exception handling for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Constants.hpp:386</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_aee2f372cce9ff69fa4c0c37b954a954c"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#aee2f372cce9ff69fa4c0c37b954a954c">GeographicLib::SphericalHarmonic2::operator()</a></div><div class="ttdeci">Math::real operator()(real tau1, real tau2, real x, real y, real z, real &amp;gradx, real &amp;grady, real &amp;gradz) const</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:237</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">glm::S</a></div><div class="ttdeci">@ S</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:40</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html">GeographicLib::SphericalHarmonic2</a></div><div class="ttdoc">Spherical harmonic series with two corrections to the coefficients.</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:35</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_ad9cc3402a97f3c1c834233df5dc8b97b"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#ad9cc3402a97f3c1c834233df5dc8b97b">GeographicLib::SphericalHarmonic2::operator()</a></div><div class="ttdeci">Math::real operator()(real tau1, real tau2, real x, real y, real z) const</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:200</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_adbdc59ce4e6f1e4ce0fc7169c760f8bea326a84d3094b558a1c43b4b61f9c2d58"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea326a84d3094b558a1c43b4b61f9c2d58">GeographicLib::SphericalHarmonic2::SCHMIDT</a></div><div class="ttdeci">@ SCHMIDT</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:54</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_a563d62ce3610c69586263574d529be91"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a563d62ce3610c69586263574d529be91">GeographicLib::SphericalHarmonic2::Circle</a></div><div class="ttdeci">CircularEngine Circle(real tau1, real tau2, real p, real z, bool gradp) const</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:279</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#adbdc59ce4e6f1e4ce0fc7169c760f8bea4b8746ff0805a8a819130794c103e946">GeographicLib::SphericalHarmonic2::FULL</a></div><div class="ttdeci">@ FULL</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:47</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_harmonic2_html_a2fad42164df6175bc376e2f78e3e0c5a"><div class="ttname"><a href="../../d7/da3/class_geographic_lib_1_1_spherical_harmonic2.html#a2fad42164df6175bc376e2f78e3e0c5a">GeographicLib::SphericalHarmonic2::SphericalHarmonic2</a></div><div class="ttdeci">SphericalHarmonic2()</div><div class="ttdef"><b>Definition:</b> SphericalHarmonic2.hpp:185</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

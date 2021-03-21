@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/manualModify/ModelDataTable.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li><li class="navelem"><a class="el" href="../../dir_29e69a072f4f5b7de49880687d5af8dd.html">manualModify</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ModelDataTable.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/dc1/_model_data_table_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MODELDATATABLE_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MODELDATATABLE_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QAbstractTableModel&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../cl_scene.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d0/dac/class_model_data_table.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/dac/class_model_data_table.html">ModelDataTable</a>: <span class="keyword">public</span> QAbstractTableModel</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../d0/dac/class_model_data_table.html#aae905a2a1d70f7cea599ec0a81de2097">ModelDataTable</a>(QVector&lt;cl_Scene* &gt; *scenes_,QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    QModelIndex <a class="code" href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">index</a>(<span class="keywordtype">int</span> <a class="code" href="../../da/da6/group__gtc__matrix__access.html#ga7e90918d2599dfcce7cffdde61e0ecb4">row</a>,<span class="keywordtype">int</span> <a class="code" href="../../da/da6/group__gtc__matrix__access.html#ga263133e2acfc1421ab17b41d2954aa8f">column</a>, <span class="keyword">const</span> QModelIndex &amp;parent )<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/dac/class_model_data_table.html#aefb28e5d23c6f1affb3187014032a226">rowCount</a>(<span class="keyword">const</span> QModelIndex &amp;parent)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/dac/class_model_data_table.html#a311d83f92acc2d361ea9f8718edc75b1">columnCount</a>(<span class="keyword">const</span> QModelIndex &amp;parent)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">//QModelIndex parent(const QModelIndex &amp;child)const;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    QVariant <a class="code" href="../../d0/dac/class_model_data_table.html#a507374ae5ad3a4b12a590c9f6fe18d08">data</a>(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">index</a>,<span class="keywordtype">int</span> role)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    QVariant <a class="code" href="../../d0/dac/class_model_data_table.html#a837e69540363abd8acb8aa100382ab77">headerData</a>(<span class="keywordtype">int</span> section,Qt::Orientation <a class="code" href="../../df/d02/group__gtx__rotate__vector.html#ga4da5fddb2f1aa679fdb45abd344efffb">orientation</a>, <span class="keywordtype">int</span> role)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Qt::ItemFlags <a class="code" href="../../d0/dac/class_model_data_table.html#a3cfc720fc22a1c35ea1e83d705ebcf86">flags</a>(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">index</a>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d0/dac/class_model_data_table.html#ad5aaff55d4e9ab4e0c303aac1f14b0ba">setData</a>(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">index</a>, <span class="keyword">const</span> QVariant &amp;value, <span class="keywordtype">int</span> role = Qt::EditRole);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/dac/class_model_data_table.html#ae2e84f520253f01e99a0a6adf6716647">changePageIndex</a>(QModelIndex <a class="code" href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">index</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/dac/class_model_data_table.html#aac6494f49f276cb37dc29e9f28b6af19">setPageIndex</a>(<span class="keywordtype">int</span> index_);</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d0/dac/class_model_data_table.html#af545b80516243c1d62ba5f3431010531">   25</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d0/dac/class_model_data_table.html#af545b80516243c1d62ba5f3431010531">currentPageIndex</a>(){<span class="keywordflow">return</span> pageIndex;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/dac/class_model_data_table.html#ad6a65e94cb6a45ce1171fe6e9608b49f">refreshModelData</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/dac/class_model_data_table.html#ad6a65e94cb6a45ce1171fe6e9608b49f">refreshModelData</a>(QModelIndex);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QVariant <a class="code" href="../../d0/dac/class_model_data_table.html#a4cfdb5b4496358b462c344c23c26b23c">page0</a>(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">index</a>,<span class="keywordtype">int</span> role)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QVariant <a class="code" href="../../d0/dac/class_model_data_table.html#a03bbee9ce5103fde2912d1f8517f42f3">page1</a>(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">index</a>,<span class="keywordtype">int</span> role)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    QVariant <a class="code" href="../../d0/dac/class_model_data_table.html#ad97a5991625d86bfb732ef74fa4cbf51">page2</a>(<span class="keyword">const</span> QModelIndex &amp;<a class="code" href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">index</a>,<span class="keywordtype">int</span> role)<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/dac/class_model_data_table.html#a9ea6846ee0eff9f5f9f029e7dc925e38">checkPath</a>(); </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d0/dac/class_model_data_table.html#ad51250745a004de21c799fff1999b256">   37</a></span>&#160;    QString <a class="code" href="../../d0/dac/class_model_data_table.html#ad51250745a004de21c799fff1999b256">path</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d0/dac/class_model_data_table.html#a9bef144e91172621c60f823240109871">   39</a></span>&#160;    <a class="code" href="../../d6/d0f/classcl___scene.html">cl_Scene</a> *<a class="code" href="../../d0/dac/class_model_data_table.html#a9bef144e91172621c60f823240109871">currentScene</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> pageIndex;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    QVector&lt;cl_Scene* &gt; *scenes;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../df/d52/class_graph_node.html">GraphNode</a> *currentGraphNode;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif // MODELDATATABLE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_model_data_table_html_ad97a5991625d86bfb732ef74fa4cbf51"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#ad97a5991625d86bfb732ef74fa4cbf51">ModelDataTable::page2</a></div><div class="ttdeci">QVariant page2(const QModelIndex &amp;index, int role) const</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:666</div></div>
+<div class="ttc" id="aclass_model_data_table_html_ad6a65e94cb6a45ce1171fe6e9608b49f"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#ad6a65e94cb6a45ce1171fe6e9608b49f">ModelDataTable::refreshModelData</a></div><div class="ttdeci">void refreshModelData()</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:93</div></div>
+<div class="ttc" id="aclass_model_data_table_html_aefb28e5d23c6f1affb3187014032a226"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#aefb28e5d23c6f1affb3187014032a226">ModelDataTable::rowCount</a></div><div class="ttdeci">int rowCount(const QModelIndex &amp;parent) const</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:242</div></div>
+<div class="ttc" id="aclass_model_data_table_html_ad5aaff55d4e9ab4e0c303aac1f14b0ba"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#ad5aaff55d4e9ab4e0c303aac1f14b0ba">ModelDataTable::setData</a></div><div class="ttdeci">virtual bool setData(const QModelIndex &amp;index, const QVariant &amp;value, int role=Qt::EditRole)</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:101</div></div>
+<div class="ttc" id="aclass_model_data_table_html_ae2e84f520253f01e99a0a6adf6716647"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#ae2e84f520253f01e99a0a6adf6716647">ModelDataTable::changePageIndex</a></div><div class="ttdeci">void changePageIndex(QModelIndex index)</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:61</div></div>
+<div class="ttc" id="aclass_model_data_table_html"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html">ModelDataTable</a></div><div class="ttdef"><b>Definition:</b> ModelDataTable.h:9</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a9ea6846ee0eff9f5f9f029e7dc925e38"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a9ea6846ee0eff9f5f9f029e7dc925e38">ModelDataTable::checkPath</a></div><div class="ttdeci">void checkPath()</div><div class="ttdoc">отрисовка пути</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:54</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a509b39c82432636e9804f6b9ed024f52"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a509b39c82432636e9804f6b9ed024f52">ModelDataTable::index</a></div><div class="ttdeci">QModelIndex index(int row, int column, const QModelIndex &amp;parent) const</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:16</div></div>
+<div class="ttc" id="aclass_graph_node_html"><div class="ttname"><a href="../../df/d52/class_graph_node.html">GraphNode</a></div><div class="ttdoc">основной графический узел</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:47</div></div>
+<div class="ttc" id="aclass_model_data_table_html_aae905a2a1d70f7cea599ec0a81de2097"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#aae905a2a1d70f7cea599ec0a81de2097">ModelDataTable::ModelDataTable</a></div><div class="ttdeci">ModelDataTable(QVector&lt; cl_Scene * &gt; *scenes_, QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:6</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a9bef144e91172621c60f823240109871"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a9bef144e91172621c60f823240109871">ModelDataTable::currentScene</a></div><div class="ttdeci">cl_Scene * currentScene</div><div class="ttdoc">текущая сцена</div><div class="ttdef"><b>Definition:</b> ModelDataTable.h:39</div></div>
+<div class="ttc" id="agroup__gtc__matrix__access_html_ga263133e2acfc1421ab17b41d2954aa8f"><div class="ttname"><a href="../../da/da6/group__gtc__matrix__access.html#ga263133e2acfc1421ab17b41d2954aa8f">glm::column</a></div><div class="ttdeci">genType::col_type column(genType const &amp;m, int index)</div><div class="ttdef"><b>Definition:</b> matrix_access.inl:73</div></div>
+<div class="ttc" id="agroup__gtx__rotate__vector_html_ga4da5fddb2f1aa679fdb45abd344efffb"><div class="ttname"><a href="../../df/d02/group__gtx__rotate__vector.html#ga4da5fddb2f1aa679fdb45abd344efffb">glm::orientation</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; orientation(detail::tvec3&lt; T &gt; const &amp;Normal, detail::tvec3&lt; T &gt; const &amp;Up)</div><div class="ttdef"><b>Definition:</b> rotate_vector.inl:199</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a837e69540363abd8acb8aa100382ab77"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a837e69540363abd8acb8aa100382ab77">ModelDataTable::headerData</a></div><div class="ttdeci">QVariant headerData(int section, Qt::Orientation orientation, int role) const</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:285</div></div>
+<div class="ttc" id="aclass_model_data_table_html_aac6494f49f276cb37dc29e9f28b6af19"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#aac6494f49f276cb37dc29e9f28b6af19">ModelDataTable::setPageIndex</a></div><div class="ttdeci">void setPageIndex(int index_)</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:46</div></div>
+<div class="ttc" id="aclass_model_data_table_html_af545b80516243c1d62ba5f3431010531"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#af545b80516243c1d62ba5f3431010531">ModelDataTable::currentPageIndex</a></div><div class="ttdeci">int currentPageIndex()</div><div class="ttdef"><b>Definition:</b> ModelDataTable.h:25</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a311d83f92acc2d361ea9f8718edc75b1"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a311d83f92acc2d361ea9f8718edc75b1">ModelDataTable::columnCount</a></div><div class="ttdeci">int columnCount(const QModelIndex &amp;parent) const</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:232</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a4cfdb5b4496358b462c344c23c26b23c"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a4cfdb5b4496358b462c344c23c26b23c">ModelDataTable::page0</a></div><div class="ttdeci">QVariant page0(const QModelIndex &amp;index, int role) const</div><div class="ttdoc">страницы</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:395</div></div>
+<div class="ttc" id="agroup__gtc__matrix__access_html_ga7e90918d2599dfcce7cffdde61e0ecb4"><div class="ttname"><a href="../../da/da6/group__gtc__matrix__access.html#ga7e90918d2599dfcce7cffdde61e0ecb4">glm::row</a></div><div class="ttdeci">genType::row_type row(genType const &amp;m, int index)</div><div class="ttdef"><b>Definition:</b> matrix_access.inl:47</div></div>
+<div class="ttc" id="aclasscl___scene_html"><div class="ttname"><a href="../../d6/d0f/classcl___scene.html">cl_Scene</a></div><div class="ttdef"><b>Definition:</b> cl_scene.h:29</div></div>
+<div class="ttc" id="aclass_model_data_table_html_ad51250745a004de21c799fff1999b256"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#ad51250745a004de21c799fff1999b256">ModelDataTable::path</a></div><div class="ttdeci">QString path</div><div class="ttdoc">путь</div><div class="ttdef"><b>Definition:</b> ModelDataTable.h:37</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a03bbee9ce5103fde2912d1f8517f42f3"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a03bbee9ce5103fde2912d1f8517f42f3">ModelDataTable::page1</a></div><div class="ttdeci">QVariant page1(const QModelIndex &amp;index, int role) const</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:464</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a3cfc720fc22a1c35ea1e83d705ebcf86"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a3cfc720fc22a1c35ea1e83d705ebcf86">ModelDataTable::flags</a></div><div class="ttdeci">Qt::ItemFlags flags(const QModelIndex &amp;index) const</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:348</div></div>
+<div class="ttc" id="aclass_model_data_table_html_a507374ae5ad3a4b12a590c9f6fe18d08"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html#a507374ae5ad3a4b12a590c9f6fe18d08">ModelDataTable::data</a></div><div class="ttdeci">QVariant data(const QModelIndex &amp;index, int role) const</div><div class="ttdef"><b>Definition:</b> modelDataTable.cpp:384</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,0 +1,2297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::GeodesicExact</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html">GeodesicExact</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#friends">Друзья</a> &#124;
+<a href="../../d7/da4/class_geographic_lib_1_1_geodesic_exact-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::GeodesicExact</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Exact geodesic calculations.  
+ <a href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/d6c/_geodesic_exact_8hpp_source.html">GeodesicExact.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:ad3be82db37a37d06e559089649452682"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682">mask</a> { <br />
+&#160;&#160;<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a6adcc6285a8262670dc5b94c8a0578a2">NONE</a>, 
+<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682ab299a7737d11ecb9eef04d777a752519">LATITUDE</a>, 
+<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a70c81e180ff0bc5e2d22130ffb138c6d">LONGITUDE</a>, 
+<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682aa0b389c33ff904e7221af68294669f87">AZIMUTH</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a0e57c4f11696d959840a19e181d0fdba">DISTANCE</a>, 
+<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a539f991db07b86f1fcd4bf5ce1a1d48f">DISTANCE_IN</a>, 
+<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682aa2887fe1aebaf0d05f089ce32b80d717">REDUCEDLENGTH</a>, 
+<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682abb707e235cfdc83df1d4c9a699901b5a">GEODESICSCALE</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a31d2603e55c7c0b0c43625d43c858c67">AREA</a>, 
+<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a266b25fe532536a2845bca8ce2aba37b">LONG_UNROLL</a>, 
+<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a9482320df007d5723afd191f02a264e6">ALL</a>
+<br />
+ }</td></tr>
+<tr class="separator:ad3be82db37a37d06e559089649452682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Constructor</div></td></tr>
+<tr class="memitem:addcf9abb2013dc736805212354c47a1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#addcf9abb2013dc736805212354c47a1a">GeodesicExact</a> (real a, real f)</td></tr>
+<tr class="separator:addcf9abb2013dc736805212354c47a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Direct geodesic problem specified in terms of distance.</div></td></tr>
+<tr class="memitem:ac171c21cf52018c192e875321f52fdca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">Direct</a> (real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21, real &amp;S12) const</td></tr>
+<tr class="separator:ac171c21cf52018c192e875321f52fdca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace223997aadfa085726492bd3681521c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ace223997aadfa085726492bd3681521c">Direct</a> (real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2) const</td></tr>
+<tr class="separator:ace223997aadfa085726492bd3681521c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc8eb66f4b90ff0ea9577583fbdffd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a9cc8eb66f4b90ff0ea9577583fbdffd2">Direct</a> (real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2) const</td></tr>
+<tr class="separator:a9cc8eb66f4b90ff0ea9577583fbdffd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a260fb512ee93190c64c626d893c18d6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a260fb512ee93190c64c626d893c18d6b">Direct</a> (real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;m12) const</td></tr>
+<tr class="separator:a260fb512ee93190c64c626d893c18d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5e0264053dbc795865ba6c8f91c9d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a9c5e0264053dbc795865ba6c8f91c9d3">Direct</a> (real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;M12, real &amp;M21) const</td></tr>
+<tr class="separator:a9c5e0264053dbc795865ba6c8f91c9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188b3bb65e49e6e10cad7d845427fd3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a188b3bb65e49e6e10cad7d845427fd3b">Direct</a> (real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21) const</td></tr>
+<tr class="separator:a188b3bb65e49e6e10cad7d845427fd3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Direct geodesic problem specified in terms of arc length.</div></td></tr>
+<tr class="memitem:a7788d29f55288cf4fedae3b227ffbb63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7788d29f55288cf4fedae3b227ffbb63">ArcDirect</a> (real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;m12, real &amp;M12, real &amp;M21, real &amp;S12) const</td></tr>
+<tr class="separator:a7788d29f55288cf4fedae3b227ffbb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba856acd028729b2c03b18c3bb6f7a1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#aba856acd028729b2c03b18c3bb6f7a1b">ArcDirect</a> (real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2) const</td></tr>
+<tr class="separator:aba856acd028729b2c03b18c3bb6f7a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1e090bc1d068260202ddaf0544cf7c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ab1e090bc1d068260202ddaf0544cf7c3">ArcDirect</a> (real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2) const</td></tr>
+<tr class="separator:ab1e090bc1d068260202ddaf0544cf7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6256d205dbb92e92499b22c957a29706"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a6256d205dbb92e92499b22c957a29706">ArcDirect</a> (real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12) const</td></tr>
+<tr class="separator:a6256d205dbb92e92499b22c957a29706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7685f9cde0b5c8d8e58b25dd7b006ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad7685f9cde0b5c8d8e58b25dd7b006ac">ArcDirect</a> (real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;m12) const</td></tr>
+<tr class="separator:ad7685f9cde0b5c8d8e58b25dd7b006ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1da136e3cc2d78451b3c4d818db20018"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a1da136e3cc2d78451b3c4d818db20018">ArcDirect</a> (real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;M12, real &amp;M21) const</td></tr>
+<tr class="separator:a1da136e3cc2d78451b3c4d818db20018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bbbebdacb2cfe2cff6365eb08ca31d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a6bbbebdacb2cfe2cff6365eb08ca31d8">ArcDirect</a> (real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;m12, real &amp;M12, real &amp;M21) const</td></tr>
+<tr class="separator:a6bbbebdacb2cfe2cff6365eb08ca31d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">General version of the direct geodesic solution.</div></td></tr>
+<tr class="memitem:a6c3eb1ec22527f17fe61758f5a8f3f5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a6c3eb1ec22527f17fe61758f5a8f3f5a">GenDirect</a> (real lat1, real lon1, real azi1, bool arcmode, real s12_a12, unsigned outmask, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;m12, real &amp;M12, real &amp;M21, real &amp;S12) const</td></tr>
+<tr class="separator:a6c3eb1ec22527f17fe61758f5a8f3f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inverse geodesic problem.</div></td></tr>
+<tr class="memitem:a5d631c1e3013f0eed2c130510aaa474a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21, real &amp;S12) const</td></tr>
+<tr class="separator:a5d631c1e3013f0eed2c130510aaa474a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79910bd863e0d1db2d17874b4d238882"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a79910bd863e0d1db2d17874b4d238882">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;s12) const</td></tr>
+<tr class="separator:a79910bd863e0d1db2d17874b4d238882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa89fbfa264e23ad243bff285cb047d06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#aa89fbfa264e23ad243bff285cb047d06">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;azi1, real &amp;azi2) const</td></tr>
+<tr class="separator:aa89fbfa264e23ad243bff285cb047d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbfa8993b0f493b19fdf538337d73740"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#adbfa8993b0f493b19fdf538337d73740">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2) const</td></tr>
+<tr class="separator:adbfa8993b0f493b19fdf538337d73740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae8da7af5611dd3155b9db212f20735"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a8ae8da7af5611dd3155b9db212f20735">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;m12) const</td></tr>
+<tr class="separator:a8ae8da7af5611dd3155b9db212f20735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1aecd4b1f6293ebdaabcb7463bc9db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#afc1aecd4b1f6293ebdaabcb7463bc9db">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;M12, real &amp;M21) const</td></tr>
+<tr class="separator:afc1aecd4b1f6293ebdaabcb7463bc9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96121a46e048d525ec87de0d13a322ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a96121a46e048d525ec87de0d13a322ea">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21) const</td></tr>
+<tr class="separator:a96121a46e048d525ec87de0d13a322ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">General version of inverse geodesic solution.</div></td></tr>
+<tr class="memitem:aa61bde97add364a8b2bc6bcd95c7f0dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#aa61bde97add364a8b2bc6bcd95c7f0dd">GenInverse</a> (real lat1, real lon1, real lat2, real lon2, unsigned outmask, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21, real &amp;S12) const</td></tr>
+<tr class="separator:aa61bde97add364a8b2bc6bcd95c7f0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Interface to GeodesicLineExact.</div></td></tr>
+<tr class="memitem:ac9d6b847c4e6c472be66d6d6b787e898"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html">GeodesicLineExact</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac9d6b847c4e6c472be66d6d6b787e898">Line</a> (real lat1, real lon1, real azi1, unsigned caps=<a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a9482320df007d5723afd191f02a264e6">ALL</a>) const</td></tr>
+<tr class="separator:ac9d6b847c4e6c472be66d6d6b787e898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions.</div></td></tr>
+<tr class="memitem:a7d941ae571bb06e9766723bebb47e0eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7d941ae571bb06e9766723bebb47e0eb">MajorRadius</a> () const</td></tr>
+<tr class="separator:a7d941ae571bb06e9766723bebb47e0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5572f52987e1f9c00ce06b63c8a8728b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5572f52987e1f9c00ce06b63c8a8728b">Flattening</a> () const</td></tr>
+<tr class="separator:a5572f52987e1f9c00ce06b63c8a8728b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d7a9155e838a09a48dc14d0c3fac525"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a3d7a9155e838a09a48dc14d0c3fac525">EllipsoidArea</a> () const</td></tr>
+<tr class="separator:a3d7a9155e838a09a48dc14d0c3fac525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:af19342923b6fd605ffd269780dca7b38"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html">GeodesicExact</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#af19342923b6fd605ffd269780dca7b38">WGS84</a> ()</td></tr>
+<tr class="separator:af19342923b6fd605ffd269780dca7b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Друзья</h2></td></tr>
+<tr class="memitem:a7f8cae5b4519b823f3ed5f02f4d283af"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7f8cae5b4519b823f3ed5f02f4d283af">GeodesicLineExact</a></td></tr>
+<tr class="separator:a7f8cae5b4519b823f3ed5f02f4d283af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Exact geodesic calculations. </p>
+<p>The equations for geodesics on an ellipsoid can be expressed in terms of incomplete elliptic integrals. The <a class="el" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html" title="Geodesic calculations">Geodesic</a> class expands these integrals in a series in the flattening <em>f</em> and this provides an accurate solution for <em>f</em> &isin; [-0.01, 0.01]. The <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html" title="Exact geodesic calculations.">GeodesicExact</a> class computes the ellitpic integrals directly and so provides a solution which is valid for all <em>f</em>. However, in practice, its use should be limited to about <em>b</em>/<em>a</em> &isin; [0.01, 100] or <em>f</em> &isin; [-99, 0.99].</p>
+<p>For the WGS84 ellipsoid, these classes are 2&ndash;3 times <em>slower</em> than the series solution and 2&ndash;3 times <em>less</em> <em>accurate</em> (because it's less easy to control round-off errors with the elliptic integral formulation); i.e., the error is about 40 nm (40 nanometers) instead of 15 nm. However the error in the series solution scales as <em>f</em><sup>7</sup> while the error in the elliptic integral solution depends weakly on <em>f</em>. If the quarter meridian distance is 10000 km and the ratio <em>b</em>/<em>a</em> = 1 &minus; <em>f</em> is varied then the approximate maximum error (expressed as a distance) is </p><pre>
+      1 - f  error (nm)
+      1/128     387
+      1/64      345
+      1/32      269
+      1/16      210
+      1/8       115
+      1/4        69
+      1/2        36
+        1        15
+        2        25
+        4        96
+        8       318
+       16       985
+       32      2352
+       64      6008
+      128     19024
+</pre><p>The computation of the area in these classes is via a 30th order series. This gives accurate results for <em>b</em>/<em>a</em> &isin; [1/2, 2]; the accuracy is about 8 decimal digits for <em>b</em>/<em>a</em> &isin; [1/4, 4].</p>
+<p>See geodellip for the formulation. See the documentation on the <a class="el" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html" title="Geodesic calculations">Geodesic</a> class for additional information on the geodesic problems.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --><p><a href="../../GeodSolve.1.html">GeodSolve</a> is a command-line utility providing access to the functionality of <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html" title="Exact geodesic calculations.">GeodesicExact</a> and <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html" title="An exact geodesic line.">GeodesicLineExact</a> (via the -E option). </p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a id="ad3be82db37a37d06e559089649452682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3be82db37a37d06e559089649452682">&#9670;&nbsp;</a></span>mask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682">GeographicLib::GeodesicExact::mask</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bit masks for what calculations to do. These masks do double duty. They signify to the <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html#a8341b74da5f4220f66e1f4c14bfad08a">GeodesicLineExact::GeodesicLineExact</a> constructor and to <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac9d6b847c4e6c472be66d6d6b787e898">GeodesicExact::Line</a> what capabilities should be included in the <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html" title="An exact geodesic line.">GeodesicLineExact</a> object. They also specify which results to return in the general routines <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a6c3eb1ec22527f17fe61758f5a8f3f5a">GeodesicExact::GenDirect</a> and <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#aa61bde97add364a8b2bc6bcd95c7f0dd">GeodesicExact::GenInverse</a> routines. <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html#a7e4d18e189f3515bc3140db6f7f42302">GeodesicLineExact::mask</a> is a duplication of this enum. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682a6adcc6285a8262670dc5b94c8a0578a2"></a>NONE&#160;</td><td class="fielddoc"><p>No capabilities, no output. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682ab299a7737d11ecb9eef04d777a752519"></a>LATITUDE&#160;</td><td class="fielddoc"><p>Calculate latitude <em>lat2</em>. (It's not necessary to include this as a capability to <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html" title="An exact geodesic line.">GeodesicLineExact</a> because this is included by default.) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682a70c81e180ff0bc5e2d22130ffb138c6d"></a>LONGITUDE&#160;</td><td class="fielddoc"><p>Calculate longitude <em>lon2</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682aa0b389c33ff904e7221af68294669f87"></a>AZIMUTH&#160;</td><td class="fielddoc"><p>Calculate azimuths <em>azi1</em> and <em>azi2</em>. (It's not necessary to include this as a capability to <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html" title="An exact geodesic line.">GeodesicLineExact</a> because this is included by default.) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682a0e57c4f11696d959840a19e181d0fdba"></a>DISTANCE&#160;</td><td class="fielddoc"><p>Calculate distance <em>s12</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682a539f991db07b86f1fcd4bf5ce1a1d48f"></a>DISTANCE_IN&#160;</td><td class="fielddoc"><p>Allow distance <em>s12</em> to be used as input in the direct geodesic problem. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682aa2887fe1aebaf0d05f089ce32b80d717"></a>REDUCEDLENGTH&#160;</td><td class="fielddoc"><p>Calculate reduced length <em>m12</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682abb707e235cfdc83df1d4c9a699901b5a"></a>GEODESICSCALE&#160;</td><td class="fielddoc"><p>Calculate geodesic scales <em>M12</em> and <em>M21</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682a31d2603e55c7c0b0c43625d43c858c67"></a>AREA&#160;</td><td class="fielddoc"><p>Calculate area <em>S12</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682a266b25fe532536a2845bca8ce2aba37b"></a>LONG_UNROLL&#160;</td><td class="fielddoc"><p>Unroll <em>lon2</em> in the direct calculation. (This flag used to be called LONG_NOWRAP.) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ad3be82db37a37d06e559089649452682a9482320df007d5723afd191f02a264e6"></a>ALL&#160;</td><td class="fielddoc"><p>All capabilities, calculate everything. (LONG_UNROLL is not included in this mask.) </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="addcf9abb2013dc736805212354c47a1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addcf9abb2013dc736805212354c47a1a">&#9670;&nbsp;</a></span>GeodesicExact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::GeodesicExact::GeodesicExact </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor for a ellipsoid with</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>equatorial radius (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>flattening of ellipsoid. Setting <em>f</em> = 0 gives a sphere. Negative <em>f</em> gives a prolate ellipsoid. If <em>f</em> &gt; 1, set flattening to 1/<em>f</em>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>a</em> or (1 &minus; <em>f</em>) <em>a</em> is not positive. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aba856acd028729b2c03b18c3bb6f7a1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba856acd028729b2c03b18c3bb6f7a1b">&#9670;&nbsp;</a></span>ArcDirect() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeodesicExact::ArcDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7788d29f55288cf4fedae3b227ffbb63">GeodesicExact::ArcDirect</a>. </p>
+
+</div>
+</div>
+<a id="ab1e090bc1d068260202ddaf0544cf7c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1e090bc1d068260202ddaf0544cf7c3">&#9670;&nbsp;</a></span>ArcDirect() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeodesicExact::ArcDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7788d29f55288cf4fedae3b227ffbb63">GeodesicExact::ArcDirect</a>. </p>
+
+</div>
+</div>
+<a id="a6256d205dbb92e92499b22c957a29706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6256d205dbb92e92499b22c957a29706">&#9670;&nbsp;</a></span>ArcDirect() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeodesicExact::ArcDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7788d29f55288cf4fedae3b227ffbb63">GeodesicExact::ArcDirect</a>. </p>
+
+</div>
+</div>
+<a id="ad7685f9cde0b5c8d8e58b25dd7b006ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7685f9cde0b5c8d8e58b25dd7b006ac">&#9670;&nbsp;</a></span>ArcDirect() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeodesicExact::ArcDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7788d29f55288cf4fedae3b227ffbb63">GeodesicExact::ArcDirect</a>. </p>
+
+</div>
+</div>
+<a id="a6bbbebdacb2cfe2cff6365eb08ca31d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bbbebdacb2cfe2cff6365eb08ca31d8">&#9670;&nbsp;</a></span>ArcDirect() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeodesicExact::ArcDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7788d29f55288cf4fedae3b227ffbb63">GeodesicExact::ArcDirect</a>. </p>
+
+</div>
+</div>
+<a id="a7788d29f55288cf4fedae3b227ffbb63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7788d29f55288cf4fedae3b227ffbb63">&#9670;&nbsp;</a></span>ArcDirect() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeodesicExact::ArcDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Perform the direct geodesic calculation where the length of the geodesic is specified in terms of arc length.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">azi1</td><td>azimuth at point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a12</td><td>arc length between point 1 and point 2 (degrees); it can be signed. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi2</td><td>(forward) azimuth at point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s12</td><td>distance between point 1 and point 2 (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m12</td><td>reduced length of geodesic (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M12</td><td>geodesic scale of point 2 relative to point 1 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M21</td><td>geodesic scale of point 1 relative to point 2 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the geodesic (meters<sup>2</sup>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><em>lat1</em> should be in the range [&minus;90&deg;, 90&deg;]. The values of <em>lon2</em> and <em>azi2</em> returned are in the range [&minus;180&deg;, 180&deg;).</p>
+<p>If either point is at a pole, the azimuth is defined by keeping the longitude fixed, writing <em>lat</em> = &plusmn;(90&deg; &minus; &epsilon;), and taking the limit &epsilon; &rarr; 0+. An arc length greater that 180&deg; signifies a geodesic which is not a shortest path. (For a prolate ellipsoid, an additional condition is necessary for a shortest path: the longitudinal extent must not exceed of 180&deg;.)</p>
+<p>The following functions are overloaded versions of <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">GeodesicExact::Direct</a> which omit some of the output parameters. </p>
+
+</div>
+</div>
+<a id="a1da136e3cc2d78451b3c4d818db20018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da136e3cc2d78451b3c4d818db20018">&#9670;&nbsp;</a></span>ArcDirect() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeodesicExact::ArcDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7788d29f55288cf4fedae3b227ffbb63">GeodesicExact::ArcDirect</a>. </p>
+
+</div>
+</div>
+<a id="ace223997aadfa085726492bd3681521c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace223997aadfa085726492bd3681521c">&#9670;&nbsp;</a></span>Direct() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Direct </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">GeodesicExact::Direct</a>. </p>
+
+</div>
+</div>
+<a id="a9cc8eb66f4b90ff0ea9577583fbdffd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc8eb66f4b90ff0ea9577583fbdffd2">&#9670;&nbsp;</a></span>Direct() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Direct </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">GeodesicExact::Direct</a>. </p>
+
+</div>
+</div>
+<a id="a260fb512ee93190c64c626d893c18d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a260fb512ee93190c64c626d893c18d6b">&#9670;&nbsp;</a></span>Direct() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Direct </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">GeodesicExact::Direct</a>. </p>
+
+</div>
+</div>
+<a id="a188b3bb65e49e6e10cad7d845427fd3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188b3bb65e49e6e10cad7d845427fd3b">&#9670;&nbsp;</a></span>Direct() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Direct </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">GeodesicExact::Direct</a>. </p>
+
+</div>
+</div>
+<a id="ac171c21cf52018c192e875321f52fdca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac171c21cf52018c192e875321f52fdca">&#9670;&nbsp;</a></span>Direct() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Direct </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Perform the direct geodesic calculation where the length of the geodesic is specified in terms of distance.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">azi1</td><td>azimuth at point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s12</td><td>distance between point 1 and point 2 (meters); it can be signed. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi2</td><td>(forward) azimuth at point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m12</td><td>reduced length of geodesic (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M12</td><td>geodesic scale of point 2 relative to point 1 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M21</td><td>geodesic scale of point 1 relative to point 2 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the geodesic (meters<sup>2</sup>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>a12</em> arc length of between point 1 and point 2 (degrees).</dd></dl>
+<p><em>lat1</em> should be in the range [&minus;90&deg;, 90&deg;]. The values of <em>lon2</em> and <em>azi2</em> returned are in the range [&minus;180&deg;, 180&deg;).</p>
+<p>If either point is at a pole, the azimuth is defined by keeping the longitude fixed, writing <em>lat</em> = &plusmn;(90&deg; &minus; &epsilon;), and taking the limit &epsilon; &rarr; 0+. An arc length greater that 180&deg; signifies a geodesic which is not a shortest path. (For a prolate ellipsoid, an additional condition is necessary for a shortest path: the longitudinal extent must not exceed of 180&deg;.)</p>
+<p>The following functions are overloaded versions of <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">GeodesicExact::Direct</a> which omit some of the output parameters. Note, however, that the arc length is always computed and returned as the function value. </p>
+
+</div>
+</div>
+<a id="a9c5e0264053dbc795865ba6c8f91c9d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c5e0264053dbc795865ba6c8f91c9d3">&#9670;&nbsp;</a></span>Direct() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Direct </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">GeodesicExact::Direct</a>. </p>
+
+</div>
+</div>
+<a id="a3d7a9155e838a09a48dc14d0c3fac525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d7a9155e838a09a48dc14d0c3fac525">&#9670;&nbsp;</a></span>EllipsoidArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::EllipsoidArea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>total area of ellipsoid in meters<sup>2</sup>. The area of a polygon encircling a pole can be found by adding <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a3d7a9155e838a09a48dc14d0c3fac525">GeodesicExact::EllipsoidArea()</a>/2 to the sum of <em>S12</em> for each side of the polygon. </dd></dl>
+
+</div>
+</div>
+<a id="a5572f52987e1f9c00ce06b63c8a8728b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5572f52987e1f9c00ce06b63c8a8728b">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the ellipsoid. This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="a6c3eb1ec22527f17fe61758f5a8f3f5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c3eb1ec22527f17fe61758f5a8f3f5a">&#9670;&nbsp;</a></span>GenDirect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::GenDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>arcmode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12_a12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>outmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The general direct geodesic calculation. <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ac171c21cf52018c192e875321f52fdca">GeodesicExact::Direct</a> and <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a7788d29f55288cf4fedae3b227ffbb63">GeodesicExact::ArcDirect</a> are defined in terms of this function.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">azi1</td><td>azimuth at point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arcmode</td><td>boolean flag determining the meaning of the second parameter. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s12_a12</td><td>if <em>arcmode</em> is false, this is the distance between point 1 and point 2 (meters); otherwise it is the arc length between point 1 and point 2 (degrees); it can be signed. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outmask</td><td>a bitor'ed combination of <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682">GeodesicExact::mask</a> values specifying which of the following parameters should be set. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi2</td><td>(forward) azimuth at point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s12</td><td>distance between point 1 and point 2 (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m12</td><td>reduced length of geodesic (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M12</td><td>geodesic scale of point 2 relative to point 1 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M21</td><td>geodesic scale of point 1 relative to point 2 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the geodesic (meters<sup>2</sup>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>a12</em> arc length of between point 1 and point 2 (degrees).</dd></dl>
+<p>The <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682">GeodesicExact::mask</a> values possible for <em>outmask</em> are</p><ul>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682ab299a7737d11ecb9eef04d777a752519">GeodesicExact::LATITUDE</a> for the latitude <em>lat2</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a70c81e180ff0bc5e2d22130ffb138c6d">GeodesicExact::LONGITUDE</a> for the latitude <em>lon2</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682aa0b389c33ff904e7221af68294669f87">GeodesicExact::AZIMUTH</a> for the latitude <em>azi2</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a0e57c4f11696d959840a19e181d0fdba">GeodesicExact::DISTANCE</a> for the distance <em>s12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682aa2887fe1aebaf0d05f089ce32b80d717">GeodesicExact::REDUCEDLENGTH</a> for the reduced length <em>m12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682abb707e235cfdc83df1d4c9a699901b5a">GeodesicExact::GEODESICSCALE</a> for the geodesic scales <em>M12</em> and <em>M21</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a31d2603e55c7c0b0c43625d43c858c67">GeodesicExact::AREA</a> for the area <em>S12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a9482320df007d5723afd191f02a264e6">GeodesicExact::ALL</a> for all of the above;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a266b25fe532536a2845bca8ce2aba37b">GeodesicExact::LONG_UNROLL</a> to unroll <em>lon2</em> instead of wrapping it into the range [&minus;180&deg;, 180&deg;).</li>
+</ul>
+<p>The function value <em>a12</em> is always computed and returned and this equals <em>s12_a12</em> is <em>arcmode</em> is true. If <em>outmask</em> includes <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a0e57c4f11696d959840a19e181d0fdba">GeodesicExact::DISTANCE</a> and <em>arcmode</em> is false, then <em>s12</em> = <em>s12_a12</em>. It is not necessary to include <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a539f991db07b86f1fcd4bf5ce1a1d48f">GeodesicExact::DISTANCE_IN</a> in <em>outmask</em>; this is automatically included is <em>arcmode</em> is false.</p>
+<p>With the <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a266b25fe532536a2845bca8ce2aba37b">GeodesicExact::LONG_UNROLL</a> bit set, the quantity <em>lon2</em> &minus; <em>lon1</em> indicates how many times and in what sense the geodesic encircles the ellipsoid. </p>
+
+</div>
+</div>
+<a id="aa61bde97add364a8b2bc6bcd95c7f0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa61bde97add364a8b2bc6bcd95c7f0dd">&#9670;&nbsp;</a></span>GenInverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::GenInverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>outmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The general inverse geodesic calculation. <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">GeodesicExact::Inverse</a> is defined in terms of this function.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outmask</td><td>a bitor'ed combination of <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682">GeodesicExact::mask</a> values specifying which of the following parameters should be set. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s12</td><td>distance between point 1 and point 2 (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi1</td><td>azimuth at point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi2</td><td>(forward) azimuth at point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m12</td><td>reduced length of geodesic (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M12</td><td>geodesic scale of point 2 relative to point 1 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M21</td><td>geodesic scale of point 1 relative to point 2 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the geodesic (meters<sup>2</sup>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>a12</em> arc length of between point 1 and point 2 (degrees).</dd></dl>
+<p>The <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682">GeodesicExact::mask</a> values possible for <em>outmask</em> are</p><ul>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a0e57c4f11696d959840a19e181d0fdba">GeodesicExact::DISTANCE</a> for the distance <em>s12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682aa0b389c33ff904e7221af68294669f87">GeodesicExact::AZIMUTH</a> for the latitude <em>azi2</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682aa2887fe1aebaf0d05f089ce32b80d717">GeodesicExact::REDUCEDLENGTH</a> for the reduced length <em>m12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682abb707e235cfdc83df1d4c9a699901b5a">GeodesicExact::GEODESICSCALE</a> for the geodesic scales <em>M12</em> and <em>M21</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a31d2603e55c7c0b0c43625d43c858c67">GeodesicExact::AREA</a> for the area <em>S12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a9482320df007d5723afd191f02a264e6">GeodesicExact::ALL</a> for all of the above.</li>
+</ul>
+<p>The arc length is always computed and returned as the function value. </p>
+
+</div>
+</div>
+<a id="aa89fbfa264e23ad243bff285cb047d06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa89fbfa264e23ad243bff285cb047d06">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">GeodesicExact::Inverse</a>. </p>
+
+</div>
+</div>
+<a id="a79910bd863e0d1db2d17874b4d238882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79910bd863e0d1db2d17874b4d238882">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">GeodesicExact::Inverse</a>. </p>
+
+</div>
+</div>
+<a id="adbfa8993b0f493b19fdf538337d73740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbfa8993b0f493b19fdf538337d73740">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">GeodesicExact::Inverse</a>. </p>
+
+</div>
+</div>
+<a id="a8ae8da7af5611dd3155b9db212f20735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ae8da7af5611dd3155b9db212f20735">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">GeodesicExact::Inverse</a>. </p>
+
+</div>
+</div>
+<a id="a96121a46e048d525ec87de0d13a322ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96121a46e048d525ec87de0d13a322ea">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">GeodesicExact::Inverse</a>. </p>
+
+</div>
+</div>
+<a id="a5d631c1e3013f0eed2c130510aaa474a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d631c1e3013f0eed2c130510aaa474a">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Perform the inverse geodesic calculation.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s12</td><td>distance between point 1 and point 2 (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi1</td><td>azimuth at point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi2</td><td>(forward) azimuth at point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m12</td><td>reduced length of geodesic (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M12</td><td>geodesic scale of point 2 relative to point 1 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M21</td><td>geodesic scale of point 1 relative to point 2 (dimensionless). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the geodesic (meters<sup>2</sup>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>a12</em> arc length of between point 1 and point 2 (degrees).</dd></dl>
+<p><em>lat1</em> and <em>lat2</em> should be in the range [&minus;90&deg;, 90&deg;]. The values of <em>azi1</em> and <em>azi2</em> returned are in the range [&minus;180&deg;, 180&deg;).</p>
+<p>If either point is at a pole, the azimuth is defined by keeping the longitude fixed, writing <em>lat</em> = &plusmn;(90&deg; &minus; &epsilon;), and taking the limit &epsilon; &rarr; 0+.</p>
+<p>The following functions are overloaded versions of <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">GeodesicExact::Inverse</a> which omit some of the output parameters. Note, however, that the arc length is always computed and returned as the function value. </p>
+
+</div>
+</div>
+<a id="afc1aecd4b1f6293ebdaabcb7463bc9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc1aecd4b1f6293ebdaabcb7463bc9db">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>M21</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>See the documentation for <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#a5d631c1e3013f0eed2c130510aaa474a">GeodesicExact::Inverse</a>. </p>
+
+</div>
+</div>
+<a id="ac9d6b847c4e6c472be66d6d6b787e898"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9d6b847c4e6c472be66d6d6b787e898">&#9670;&nbsp;</a></span>Line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html">GeodesicLineExact</a> GeographicLib::GeodesicExact::Line </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>caps</em> = <code><a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a9482320df007d5723afd191f02a264e6">ALL</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set up to compute several points on a single geodesic.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">azi1</td><td>azimuth at point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">caps</td><td>bitor'ed combination of <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682">GeodesicExact::mask</a> values specifying the capabilities the <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html" title="An exact geodesic line.">GeodesicLineExact</a> object should possess, i.e., which quantities can be returned in calls to <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html#a3f6382a8979b841704dc9f03c0269a59">GeodesicLineExact::Position</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>a <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html" title="An exact geodesic line.">GeodesicLineExact</a> object.</dd></dl>
+<p><em>lat1</em> should be in the range [&minus;90&deg;, 90&deg;].</p>
+<p>The <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682">GeodesicExact::mask</a> values are</p><ul>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682ab299a7737d11ecb9eef04d777a752519">GeodesicExact::LATITUDE</a> for the latitude <em>lat2</em>; this is added automatically;</li>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a70c81e180ff0bc5e2d22130ffb138c6d">GeodesicExact::LONGITUDE</a> for the latitude <em>lon2</em>;</li>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682aa0b389c33ff904e7221af68294669f87">GeodesicExact::AZIMUTH</a> for the azimuth <em>azi2</em>; this is added automatically;</li>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a0e57c4f11696d959840a19e181d0fdba">GeodesicExact::DISTANCE</a> for the distance <em>s12</em>;</li>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682aa2887fe1aebaf0d05f089ce32b80d717">GeodesicExact::REDUCEDLENGTH</a> for the reduced length <em>m12</em>;</li>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682abb707e235cfdc83df1d4c9a699901b5a">GeodesicExact::GEODESICSCALE</a> for the geodesic scales <em>M12</em> and <em>M21</em>;</li>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a31d2603e55c7c0b0c43625d43c858c67">GeodesicExact::AREA</a> for the area <em>S12</em>;</li>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a539f991db07b86f1fcd4bf5ce1a1d48f">GeodesicExact::DISTANCE_IN</a> permits the length of the geodesic to be given in terms of <em>s12</em>; without this capability the length can only be specified in terms of arc length;</li>
+<li><em>caps</em> |= <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a9482320df007d5723afd191f02a264e6">GeodesicExact::ALL</a> for all of the above.</li>
+</ul>
+<p>The default value of <em>caps</em> is <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html#ad3be82db37a37d06e559089649452682a9482320df007d5723afd191f02a264e6">GeodesicExact::ALL</a> which turns on all the capabilities.</p>
+<p>If the point is at a pole, the azimuth is defined by keeping <em>lon1</em> fixed, writing <em>lat1</em> = &plusmn;(90 &minus; &epsilon;), and taking the limit &epsilon; &rarr; 0+. </p>
+
+</div>
+</div>
+<a id="a7d941ae571bb06e9766723bebb47e0eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d941ae571bb06e9766723bebb47e0eb">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeodesicExact::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the ellipsoid (meters). This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="af19342923b6fd605ffd269780dca7b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af19342923b6fd605ffd269780dca7b38">&#9670;&nbsp;</a></span>WGS84()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html">GeodesicExact</a> &amp; GeographicLib::GeodesicExact::WGS84 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A global instantiation of <a class="el" href="../../d6/d70/class_geographic_lib_1_1_geodesic_exact.html" title="Exact geodesic calculations.">GeodesicExact</a> with the parameters for the WGS84 ellipsoid. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Документация по друзьям класса и функциям, относящимся к классу</h2>
+<a id="a7f8cae5b4519b823f3ed5f02f4d283af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f8cae5b4519b823f3ed5f02f4d283af">&#9670;&nbsp;</a></span>GeodesicLineExact</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../dc/dc1/class_geographic_lib_1_1_geodesic_line_exact.html">GeodesicLineExact</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d1/d6c/_geodesic_exact_8hpp_source.html">GeodesicExact.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d8/d3e/_geodesic_exact_8cpp.html">GeodesicExact.cpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d4/dc7/_geodesic_exact_c4_8cpp.html">GeodesicExactC4.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:18. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

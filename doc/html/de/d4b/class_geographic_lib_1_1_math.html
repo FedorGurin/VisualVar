@@ -1,0 +1,1978 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::Math</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html">Math</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="../../d2/da1/class_geographic_lib_1_1_math-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::Math</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Mathematical functions needed by GeographicLib.  
+ <a href="../../de/d4b/class_geographic_lib_1_1_math.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../dc/dba/_math_8hpp_source.html">Math.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a436f350a6a9539e176dda19d0e4811f8"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a436f350a6a9539e176dda19d0e4811f8">extended</a></td></tr>
+<tr class="separator:a436f350a6a9539e176dda19d0e4811f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee4778d7cf2f9fb9648efe4911da59d"><td class="memItemLeft" align="right" valign="top">typedef double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a></td></tr>
+<tr class="separator:aeee4778d7cf2f9fb9648efe4911da59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a10056133a07facf1305146ac78a364e0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a10056133a07facf1305146ac78a364e0">digits</a> ()</td></tr>
+<tr class="separator:a10056133a07facf1305146ac78a364e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92f0f4a6e1da9c17790d7d2689128aa0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a92f0f4a6e1da9c17790d7d2689128aa0">set_digits</a> (int ndigits)</td></tr>
+<tr class="separator:a92f0f4a6e1da9c17790d7d2689128aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d5c2ed76eaee15dcbdb6b92c596cd3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a79d5c2ed76eaee15dcbdb6b92c596cd3">digits10</a> ()</td></tr>
+<tr class="separator:a79d5c2ed76eaee15dcbdb6b92c596cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c61d4b55636b16d230900733bcfdc7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a63c61d4b55636b16d230900733bcfdc7">extra_digits</a> ()</td></tr>
+<tr class="separator:a63c61d4b55636b16d230900733bcfdc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca1580c771e7019bfe826512fba9b2f1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aca1580c771e7019bfe826512fba9b2f1"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aca1580c771e7019bfe826512fba9b2f1">pi</a> ()</td></tr>
+<tr class="separator:aca1580c771e7019bfe826512fba9b2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb031de2a30d6fbac4c634b344e46df4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#abb031de2a30d6fbac4c634b344e46df4">pi</a> ()</td></tr>
+<tr class="separator:abb031de2a30d6fbac4c634b344e46df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f3b4ea16cc2cb21557555fca3b1c201"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0f3b4ea16cc2cb21557555fca3b1c201"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a0f3b4ea16cc2cb21557555fca3b1c201">degree</a> ()</td></tr>
+<tr class="separator:a0f3b4ea16cc2cb21557555fca3b1c201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb8bea024e11eb402ecbcf9bae28bb5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a5bb8bea024e11eb402ecbcf9bae28bb5">degree</a> ()</td></tr>
+<tr class="separator:a5bb8bea024e11eb402ecbcf9bae28bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a092f38e231c80a1f144814c90f1895"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6a092f38e231c80a1f144814c90f1895"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a6a092f38e231c80a1f144814c90f1895">sq</a> (T x)</td></tr>
+<tr class="separator:a6a092f38e231c80a1f144814c90f1895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62b6fca06c571481aafba3f1716a8bb2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a62b6fca06c571481aafba3f1716a8bb2"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a62b6fca06c571481aafba3f1716a8bb2">hypot</a> (T x, T y)</td></tr>
+<tr class="separator:a62b6fca06c571481aafba3f1716a8bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd4e8930d9dd953352d25fc184d843e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2fd4e8930d9dd953352d25fc184d843e"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a2fd4e8930d9dd953352d25fc184d843e">expm1</a> (T x)</td></tr>
+<tr class="separator:a2fd4e8930d9dd953352d25fc184d843e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90eddd5a6d0c9dcc4a9f18dd647ac520"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a90eddd5a6d0c9dcc4a9f18dd647ac520"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a90eddd5a6d0c9dcc4a9f18dd647ac520">log1p</a> (T x)</td></tr>
+<tr class="separator:a90eddd5a6d0c9dcc4a9f18dd647ac520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba75669f9d52fc672a8faaf69261bd8a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aba75669f9d52fc672a8faaf69261bd8a"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aba75669f9d52fc672a8faaf69261bd8a">asinh</a> (T x)</td></tr>
+<tr class="separator:aba75669f9d52fc672a8faaf69261bd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a372ac604592d9de9cf608cfdfc463447"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a372ac604592d9de9cf608cfdfc463447"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a372ac604592d9de9cf608cfdfc463447">atanh</a> (T x)</td></tr>
+<tr class="separator:a372ac604592d9de9cf608cfdfc463447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04b87b033b845f4812a5700661c64a2a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a04b87b033b845f4812a5700661c64a2a"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a04b87b033b845f4812a5700661c64a2a">cbrt</a> (T x)</td></tr>
+<tr class="separator:a04b87b033b845f4812a5700661c64a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace73342df49a32ae1b7f06b570bce9db"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ace73342df49a32ae1b7f06b570bce9db"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#ace73342df49a32ae1b7f06b570bce9db">fma</a> (T x, T y, T z)</td></tr>
+<tr class="separator:ace73342df49a32ae1b7f06b570bce9db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cece6c55a1a90d252a0ed7337421ba0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4cece6c55a1a90d252a0ed7337421ba0"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a4cece6c55a1a90d252a0ed7337421ba0">norm</a> (T &amp;x, T &amp;y)</td></tr>
+<tr class="separator:a4cece6c55a1a90d252a0ed7337421ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a756937d2acfc80f4f321111b38ac9893"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a756937d2acfc80f4f321111b38ac9893"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a756937d2acfc80f4f321111b38ac9893">sum</a> (T u, T v, T &amp;t)</td></tr>
+<tr class="separator:a756937d2acfc80f4f321111b38ac9893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb9c37659884cd544e004da2224c0ce3"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:acb9c37659884cd544e004da2224c0ce3"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#acb9c37659884cd544e004da2224c0ce3">polyval</a> (int N, const T p[], T x)</td></tr>
+<tr class="separator:acb9c37659884cd544e004da2224c0ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0747900a12e92222bb016e114eafe7ee"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0747900a12e92222bb016e114eafe7ee"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a0747900a12e92222bb016e114eafe7ee">AngNormalize</a> (T x)</td></tr>
+<tr class="separator:a0747900a12e92222bb016e114eafe7ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0590e1eaf2c4e8a7d8b1354a01f4f127"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0590e1eaf2c4e8a7d8b1354a01f4f127"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a0590e1eaf2c4e8a7d8b1354a01f4f127">AngNormalize2</a> (T x)</td></tr>
+<tr class="separator:a0590e1eaf2c4e8a7d8b1354a01f4f127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f1f676c013a1c7a7493354e4140a521"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a1f1f676c013a1c7a7493354e4140a521"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a1f1f676c013a1c7a7493354e4140a521">LatFix</a> (T x)</td></tr>
+<tr class="separator:a1f1f676c013a1c7a7493354e4140a521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a97d0b3df1dd05cdba767f03eab84c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae7a97d0b3df1dd05cdba767f03eab84c"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#ae7a97d0b3df1dd05cdba767f03eab84c">AngDiff</a> (T x, T y)</td></tr>
+<tr class="separator:ae7a97d0b3df1dd05cdba767f03eab84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9a200b1eccf392b8a527fcafae1497"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:acf9a200b1eccf392b8a527fcafae1497"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#acf9a200b1eccf392b8a527fcafae1497">AngRound</a> (T x)</td></tr>
+<tr class="separator:acf9a200b1eccf392b8a527fcafae1497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab24f0d4b506c030c1d4804e05028d3c7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab24f0d4b506c030c1d4804e05028d3c7"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#ab24f0d4b506c030c1d4804e05028d3c7">sincosd</a> (T x, T &amp;sinx, T &amp;cosx)</td></tr>
+<tr class="separator:ab24f0d4b506c030c1d4804e05028d3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8901c693dc6770dee85af53d05254461"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8901c693dc6770dee85af53d05254461"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a8901c693dc6770dee85af53d05254461">sind</a> (T x)</td></tr>
+<tr class="separator:a8901c693dc6770dee85af53d05254461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc45b2d84af7087747e53512d64a7f5f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:adc45b2d84af7087747e53512d64a7f5f"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#adc45b2d84af7087747e53512d64a7f5f">cosd</a> (T x)</td></tr>
+<tr class="separator:adc45b2d84af7087747e53512d64a7f5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841898c5ca84751e5aace698946be030"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a841898c5ca84751e5aace698946be030"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a841898c5ca84751e5aace698946be030">tand</a> (T x)</td></tr>
+<tr class="separator:a841898c5ca84751e5aace698946be030"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6971d53ec2411130ebd7e365c7ba2fbf"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a6971d53ec2411130ebd7e365c7ba2fbf"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a6971d53ec2411130ebd7e365c7ba2fbf">atan2d</a> (T y, T x)</td></tr>
+<tr class="separator:a6971d53ec2411130ebd7e365c7ba2fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc517716a1752fd4c44c0d0f4312349"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aadc517716a1752fd4c44c0d0f4312349"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aadc517716a1752fd4c44c0d0f4312349">atand</a> (T x)</td></tr>
+<tr class="separator:aadc517716a1752fd4c44c0d0f4312349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b315622b5317f5586dfa51f01f70dcf"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5b315622b5317f5586dfa51f01f70dcf"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a5b315622b5317f5586dfa51f01f70dcf">eatanhe</a> (T x, T es)</td></tr>
+<tr class="separator:a5b315622b5317f5586dfa51f01f70dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b36b079aa313edf0e977a8368a97021"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9b36b079aa313edf0e977a8368a97021"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a9b36b079aa313edf0e977a8368a97021">taupf</a> (T tau, T es)</td></tr>
+<tr class="separator:a9b36b079aa313edf0e977a8368a97021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab70251b05475c103ae70f6ce18af9774"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab70251b05475c103ae70f6ce18af9774"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#ab70251b05475c103ae70f6ce18af9774">tauf</a> (T taup, T es)</td></tr>
+<tr class="separator:ab70251b05475c103ae70f6ce18af9774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af61f7360e67c35131d80083e7b53dda8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af61f7360e67c35131d80083e7b53dda8"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#af61f7360e67c35131d80083e7b53dda8">isfinite</a> (T x)</td></tr>
+<tr class="separator:af61f7360e67c35131d80083e7b53dda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1dc13a367125d3f8d291eaa98339186"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad1dc13a367125d3f8d291eaa98339186"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">NaN</a> ()</td></tr>
+<tr class="separator:ad1dc13a367125d3f8d291eaa98339186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28304be9b5cb17eeb7413b059604a154"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a28304be9b5cb17eeb7413b059604a154">NaN</a> ()</td></tr>
+<tr class="separator:a28304be9b5cb17eeb7413b059604a154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554d35e9f54bf304447833a21ee2047c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a554d35e9f54bf304447833a21ee2047c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a554d35e9f54bf304447833a21ee2047c">isnan</a> (T x)</td></tr>
+<tr class="separator:a554d35e9f54bf304447833a21ee2047c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ccc01be301f14061c681ee93a5120b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a82ccc01be301f14061c681ee93a5120b"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a82ccc01be301f14061c681ee93a5120b">infinity</a> ()</td></tr>
+<tr class="separator:a82ccc01be301f14061c681ee93a5120b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1606218c36b8d7c60a5ad5847a94ab9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a1606218c36b8d7c60a5ad5847a94ab9c">infinity</a> ()</td></tr>
+<tr class="separator:a1606218c36b8d7c60a5ad5847a94ab9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec7f95c2bb99422f1f047cb628a232f8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aec7f95c2bb99422f1f047cb628a232f8"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aec7f95c2bb99422f1f047cb628a232f8">swab</a> (T x)</td></tr>
+<tr class="separator:aec7f95c2bb99422f1f047cb628a232f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:afbcdc19528808f00b7b78446b1552602"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#afbcdc19528808f00b7b78446b1552602">extradigits</a></td></tr>
+<tr class="separator:afbcdc19528808f00b7b78446b1552602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab14e512a1867b98ecb38e9175426596c"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#ab14e512a1867b98ecb38e9175426596c">bigendian</a> = <a class="el" href="../../dc/dba/_math_8hpp.html#a2a4e5f86d0c84b647e1bc7783cfa0d8d">GEOGRAPHICLIB_WORDS_BIGENDIAN</a></td></tr>
+<tr class="separator:ab14e512a1867b98ecb38e9175426596c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Mathematical functions needed by GeographicLib. </p>
+<p>Define mathematical functions in order to localize system dependencies and to provide generic versions of the functions. In addition define a real type to be used by GeographicLib.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --> </div><h2 class="groupheader">Определения типов</h2>
+<a id="a436f350a6a9539e176dda19d0e4811f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a436f350a6a9539e176dda19d0e4811f8">&#9670;&nbsp;</a></span>extended</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a436f350a6a9539e176dda19d0e4811f8">GeographicLib::Math::extended</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeee4778d7cf2f9fb9648efe4911da59d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeee4778d7cf2f9fb9648efe4911da59d">&#9670;&nbsp;</a></span>real</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef double <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The real type for GeographicLib. Nearly all the testing has been done with <em>real</em> = double. However, the algorithms should also work with float and long double (where available). (<b>CAUTION</b>: reasonable accuracy typically cannot be obtained using floats.) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ae7a97d0b3df1dd05cdba767f03eab84c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a97d0b3df1dd05cdba767f03eab84c">&#9670;&nbsp;</a></span>AngDiff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::AngDiff </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Difference of two angles reduced to [&minus;180&deg;, 180&deg;]</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the arguments and returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the first angle in degrees. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>the second angle in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>y</em> &minus; <em>x</em>, reduced to the range [&minus;180&deg;, 180&deg;].</dd></dl>
+<p>The result is equivalent to computing the difference exactly, reducing it to (&minus;180&deg;, 180&deg;] and rounding the result. Note that this prescription allows &minus;180&deg; to be returned (e.g., if <em>x</em> is tiny and negative and <em>y</em> = 180&deg;). </p>
+
+</div>
+</div>
+<a id="a0747900a12e92222bb016e114eafe7ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0747900a12e92222bb016e114eafe7ee">&#9670;&nbsp;</a></span>AngNormalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::AngNormalize </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Normalize an angle.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the angle in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the angle reduced to the range [&minus;180&deg;, 180&deg;).</dd></dl>
+<p>The range of <em>x</em> is unrestricted. </p>
+
+</div>
+</div>
+<a id="a0590e1eaf2c4e8a7d8b1354a01f4f127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0590e1eaf2c4e8a7d8b1354a01f4f127">&#9670;&nbsp;</a></span>AngNormalize2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::AngNormalize2 </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Normalize an arbitrary angle.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the angle in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the angle reduced to the range [&minus;180&deg;, 180&deg;).</dd></dl>
+<p><b>DEPRECATED</b>: use AngNormalize instead. </p>
+
+</div>
+</div>
+<a id="acf9a200b1eccf392b8a527fcafae1497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf9a200b1eccf392b8a527fcafae1497">&#9670;&nbsp;</a></span>AngRound()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::AngRound </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Coarsen a value close to zero.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the coarsened value.</dd></dl>
+<p>The makes the smallest gap in <em>x</em> = 1/16 - nextafter(1/16, 0) = 1/2<sup>57</sup> for reals = 0.7 pm on the earth if <em>x</em> is an angle in degrees. (This is about 1000 times more resolution than we get with angles around 90&deg;.) We use this to avoid having to deal with near singular cases when <em>x</em> is non-zero but tiny (e.g., 10<sup>&minus;200</sup>). This also converts -0 to +0. </p>
+
+</div>
+</div>
+<a id="aba75669f9d52fc672a8faaf69261bd8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba75669f9d52fc672a8faaf69261bd8a">&#9670;&nbsp;</a></span>asinh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::asinh </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The inverse hyperbolic sine function.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>asinh(<em>x</em>). </dd></dl>
+
+</div>
+</div>
+<a id="a6971d53ec2411130ebd7e365c7ba2fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6971d53ec2411130ebd7e365c7ba2fbf">&#9670;&nbsp;</a></span>atan2d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::atan2d </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the atan2 function with the result in degrees</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the arguments and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>atan2(<em>y</em>, <em>x</em>) in degrees.</dd></dl>
+<p>The result is in the range [&minus;180&deg; 180&deg;). N.B., atan2d(&plusmn;0, &minus;1) = &minus;180&deg;; atan2d(+&epsilon;, &minus;1) = +180&deg;, for &epsilon; positive and tiny; atan2d(&plusmn;0, 1) = &plusmn;0&deg;. </p>
+
+</div>
+</div>
+<a id="aadc517716a1752fd4c44c0d0f4312349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc517716a1752fd4c44c0d0f4312349">&#9670;&nbsp;</a></span>atand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::atand </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the atan function with the result in degrees</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>atan(<em>x</em>) in degrees. </dd></dl>
+
+</div>
+</div>
+<a id="a372ac604592d9de9cf608cfdfc463447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a372ac604592d9de9cf608cfdfc463447">&#9670;&nbsp;</a></span>atanh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::atanh </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The inverse hyperbolic tangent function.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>atanh(<em>x</em>). </dd></dl>
+
+</div>
+</div>
+<a id="a04b87b033b845f4812a5700661c64a2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b87b033b845f4812a5700661c64a2a">&#9670;&nbsp;</a></span>cbrt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::cbrt </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The cube root function.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the real cube root of <em>x</em>. </dd></dl>
+
+</div>
+</div>
+<a id="adc45b2d84af7087747e53512d64a7f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc45b2d84af7087747e53512d64a7f5f">&#9670;&nbsp;</a></span>cosd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::cosd </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the cosine function with the argument in degrees</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>cos(<em>x</em>). </dd></dl>
+
+</div>
+</div>
+<a id="a0f3b4ea16cc2cb21557555fca3b1c201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f3b4ea16cc2cb21557555fca3b1c201">&#9670;&nbsp;</a></span>degree() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::degree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the number of radians in a degree. </dd></dl>
+
+</div>
+</div>
+<a id="a5bb8bea024e11eb402ecbcf9bae28bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bb8bea024e11eb402ecbcf9bae28bb5">&#9670;&nbsp;</a></span>degree() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a> GeographicLib::Math::degree </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A synonym for <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a0f3b4ea16cc2cb21557555fca3b1c201">degree&lt;real&gt;()</a>. </p>
+
+</div>
+</div>
+<a id="a10056133a07facf1305146ac78a364e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10056133a07facf1305146ac78a364e0">&#9670;&nbsp;</a></span>digits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GeographicLib::Math::digits </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the number of bits of precision in a real number. </dd></dl>
+
+</div>
+</div>
+<a id="a79d5c2ed76eaee15dcbdb6b92c596cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79d5c2ed76eaee15dcbdb6b92c596cd3">&#9670;&nbsp;</a></span>digits10()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GeographicLib::Math::digits10 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the number of decimal digits of precision in a real number. </dd></dl>
+
+</div>
+</div>
+<a id="a5b315622b5317f5586dfa51f01f70dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b315622b5317f5586dfa51f01f70dcf">&#9670;&nbsp;</a></span>eatanhe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::eatanhe </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>es</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate <em>e</em> atanh(<em>e x</em>)</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">es</td><td>the signed eccentricity = sign(<em>e</em><sup>2</sup>) sqrt(|<em>e</em><sup>2</sup>|) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>e</em> atanh(<em>e x</em>)</dd></dl>
+<p>If <em>e</em><sup>2</sup> is negative (<em>e</em> is imaginary), the expression is evaluated in terms of atan. </p>
+
+</div>
+</div>
+<a id="a2fd4e8930d9dd953352d25fc184d843e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fd4e8930d9dd953352d25fc184d843e">&#9670;&nbsp;</a></span>expm1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::expm1 </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>exp(<em>x</em>) &minus; 1 accurate near <em>x</em> = 0.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>exp(<em>x</em>) &minus; 1. </dd></dl>
+
+</div>
+</div>
+<a id="a63c61d4b55636b16d230900733bcfdc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63c61d4b55636b16d230900733bcfdc7">&#9670;&nbsp;</a></span>extra_digits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GeographicLib::Math::extra_digits </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Number of additional decimal digits of precision for real relative to double (0 for float). </p>
+
+</div>
+</div>
+<a id="ace73342df49a32ae1b7f06b570bce9db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace73342df49a32ae1b7f06b570bce9db">&#9670;&nbsp;</a></span>fma()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::fma </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Fused multiply and add.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the arguments and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">z</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>xy</em> + <em>z</em>, correctly rounded (on those platforms with support for the <code>fma</code> instruction).</dd></dl>
+<p>On platforms without the <code>fma</code> instruction, no attempt is made to improve on the result of a rounded multiplication followed by a rounded addition. </p>
+
+</div>
+</div>
+<a id="a62b6fca06c571481aafba3f1716a8bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62b6fca06c571481aafba3f1716a8bb2">&#9670;&nbsp;</a></span>hypot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::hypot </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The hypotenuse function avoiding underflow and overflow.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the arguments and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>sqrt(<em>x</em><sup>2</sup> + <em>y</em><sup>2</sup>). </dd></dl>
+
+</div>
+</div>
+<a id="a82ccc01be301f14061c681ee93a5120b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82ccc01be301f14061c681ee93a5120b">&#9670;&nbsp;</a></span>infinity() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::infinity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Infinity</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>infinity if available, otherwise return the max real. </dd></dl>
+
+</div>
+</div>
+<a id="a1606218c36b8d7c60a5ad5847a94ab9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1606218c36b8d7c60a5ad5847a94ab9c">&#9670;&nbsp;</a></span>infinity() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a> GeographicLib::Math::infinity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A synonym for <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a82ccc01be301f14061c681ee93a5120b">infinity&lt;real&gt;()</a>. </p>
+
+</div>
+</div>
+<a id="af61f7360e67c35131d80083e7b53dda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af61f7360e67c35131d80083e7b53dda8">&#9670;&nbsp;</a></span>isfinite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool GeographicLib::Math::isfinite </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Test for finiteness.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true if number is finite, false if NaN or infinite. </dd></dl>
+
+</div>
+</div>
+<a id="a554d35e9f54bf304447833a21ee2047c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a554d35e9f54bf304447833a21ee2047c">&#9670;&nbsp;</a></span>isnan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool GeographicLib::Math::isnan </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Test for NaN.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true if argument is a NaN. </dd></dl>
+
+</div>
+</div>
+<a id="a1f1f676c013a1c7a7493354e4140a521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f1f676c013a1c7a7493354e4140a521">&#9670;&nbsp;</a></span>LatFix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::LatFix </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Normalize a latitude.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the angle in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>x if it is in the range [&minus;90&deg;, 90&deg;], otherwise return NaN. </dd></dl>
+
+</div>
+</div>
+<a id="a90eddd5a6d0c9dcc4a9f18dd647ac520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90eddd5a6d0c9dcc4a9f18dd647ac520">&#9670;&nbsp;</a></span>log1p()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::log1p </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>log(1 + <em>x</em>) accurate near <em>x</em> = 0.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>log(1 + <em>x</em>). </dd></dl>
+
+</div>
+</div>
+<a id="ad1dc13a367125d3f8d291eaa98339186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1dc13a367125d3f8d291eaa98339186">&#9670;&nbsp;</a></span>NaN() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::NaN </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The NaN (not a number)</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>NaN if available, otherwise return the max real of type T. </dd></dl>
+
+</div>
+</div>
+<a id="a28304be9b5cb17eeb7413b059604a154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28304be9b5cb17eeb7413b059604a154">&#9670;&nbsp;</a></span>NaN() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a> GeographicLib::Math::NaN </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A synonym for <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">NaN&lt;real&gt;()</a>. </p>
+
+</div>
+</div>
+<a id="a4cece6c55a1a90d252a0ed7337421ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cece6c55a1a90d252a0ed7337421ba0">&#9670;&nbsp;</a></span>norm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GeographicLib::Math::norm </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Normalize a two-vector.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">x</td><td>on output set to <em>x</em>/hypot(<em>x</em>, <em>y</em>). </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">y</td><td>on output set to <em>y</em>/hypot(<em>x</em>, <em>y</em>). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aca1580c771e7019bfe826512fba9b2f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca1580c771e7019bfe826512fba9b2f1">&#9670;&nbsp;</a></span>pi() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::pi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>&pi;. </dd></dl>
+
+</div>
+</div>
+<a id="abb031de2a30d6fbac4c634b344e46df4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb031de2a30d6fbac4c634b344e46df4">&#9670;&nbsp;</a></span>pi() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">real</a> GeographicLib::Math::pi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A synonym for <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aca1580c771e7019bfe826512fba9b2f1">pi&lt;real&gt;()</a>. </p>
+
+</div>
+</div>
+<a id="acb9c37659884cd544e004da2224c0ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9c37659884cd544e004da2224c0ce3">&#9670;&nbsp;</a></span>polyval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::polyval </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>N</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T&#160;</td>
+          <td class="paramname"><em>p</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate a polynomial.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the arguments and returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">N</td><td>the order of the polynomial. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>the coefficient array (of size <em>N</em> + 1). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>the variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the value of the polynomial.</dd></dl>
+<p>Evaluate <em>y</em> = &sum;<sub><em>n</em>=0..<em>N</em></sub> <em>p</em><sub><em>n</em></sub> <em>x</em><sup><em>N</em>&minus;<em>n</em></sup>. Return 0 if <em>N</em> &lt; 0. Return <em>p</em><sub>0</sub>, if <em>N</em> = 0 (even if <em>x</em> is infinite or a nan). The evaluation uses Horner's method. </p>
+
+</div>
+</div>
+<a id="a92f0f4a6e1da9c17790d7d2689128aa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f0f4a6e1da9c17790d7d2689128aa0">&#9670;&nbsp;</a></span>set_digits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GeographicLib::Math::set_digits </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ndigits</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the binary precision of a real number.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ndigits</td><td>the number of bits of precision. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the resulting number of bits of precision.</dd></dl>
+<p>This only has an effect when GEOGRAPHICLIB_PRECISION == 5. See also <a class="el" href="../../df/db2/class_geographic_lib_1_1_utility.html#ab95e26081d2c69019703adb8a4e4d3d0">Utility::set_digits</a> for caveats about when this routine should be called. </p>
+
+</div>
+</div>
+<a id="ab24f0d4b506c030c1d4804e05028d3c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab24f0d4b506c030c1d4804e05028d3c7">&#9670;&nbsp;</a></span>sincosd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GeographicLib::Math::sincosd </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>sinx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>cosx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the sine and cosine function with the argument in degrees</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>in degrees. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">sinx</td><td>sin(<em>x</em>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cosx</td><td>cos(<em>x</em>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The results obey exactly the elementary properties of the trigonometric functions, e.g., sin 9&deg; = cos 81&deg; = &minus; sin 123456789&deg;. </p>
+
+</div>
+</div>
+<a id="a8901c693dc6770dee85af53d05254461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8901c693dc6770dee85af53d05254461">&#9670;&nbsp;</a></span>sind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::sind </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the sine function with the argument in degrees</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>sin(<em>x</em>). </dd></dl>
+
+</div>
+</div>
+<a id="a6a092f38e231c80a1f144814c90f1895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a092f38e231c80a1f144814c90f1895">&#9670;&nbsp;</a></span>sq()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::sq </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Square a number.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>x</em><sup>2</sup>. </dd></dl>
+
+</div>
+</div>
+<a id="a756937d2acfc80f4f321111b38ac9893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a756937d2acfc80f4f321111b38ac9893">&#9670;&nbsp;</a></span>sum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::sum </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The error-free sum of two numbers.</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">u</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td></td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">t</td><td>the exact error given by (<em>u</em> + <em>v</em>) - <em>s</em>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>s</em> = round(<em>u</em> + <em>v</em>).</dd></dl>
+<p>See D. E. Knuth, TAOCP, Vol 2, 4.2.2, Theorem B. (Note that <em>t</em> can be the same as one of the first two arguments.) </p>
+
+</div>
+</div>
+<a id="aec7f95c2bb99422f1f047cb628a232f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec7f95c2bb99422f1f047cb628a232f8">&#9670;&nbsp;</a></span>swab()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::swab </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Swap the bytes of a quantity</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>x with its bytes swapped. </dd></dl>
+
+</div>
+</div>
+<a id="a841898c5ca84751e5aace698946be030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a841898c5ca84751e5aace698946be030">&#9670;&nbsp;</a></span>tand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::tand </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the tangent function with the argument in degrees</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>in degrees. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>tan(<em>x</em>).</dd></dl>
+<p>If <em>x</em> = &plusmn;90&deg;, then a suitably large (but finite) value is returned. </p>
+
+</div>
+</div>
+<a id="ab70251b05475c103ae70f6ce18af9774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab70251b05475c103ae70f6ce18af9774">&#9670;&nbsp;</a></span>tauf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::tauf </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>taup</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>es</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>tan&phi; in terms of tan&chi;</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">taup</td><td>&tau;&prime; = tan&chi; </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">es</td><td>the signed eccentricity = sign(<em>e</em><sup>2</sup>) sqrt(|<em>e</em><sup>2</sup>|) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>&tau; = tan&phi;</dd></dl>
+<p>See Eqs. (19&ndash;21) of C. F. F. Karney, <a href="https://dx.doi.org/10.1007/s00190-011-0445-3">Transverse Mercator with an accuracy of a few nanometers,</a> J. Geodesy 85(8), 475&ndash;485 (Aug. 2011) (preprint <a href="http://arxiv.org/abs/1002.1417">arXiv:1002.1417</a>). </p>
+
+</div>
+</div>
+<a id="a9b36b079aa313edf0e977a8368a97021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b36b079aa313edf0e977a8368a97021">&#9670;&nbsp;</a></span>taupf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T GeographicLib::Math::taupf </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>tau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>es</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>tan&chi; in terms of tan&phi;</p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the type of the argument and the returned value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tau</td><td>&tau; = tan&phi; </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">es</td><td>the signed eccentricity = sign(<em>e</em><sup>2</sup>) sqrt(|<em>e</em><sup>2</sup>|) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>&tau;&prime; = tan&chi;</dd></dl>
+<p>See Eqs. (7&ndash;9) of C. F. F. Karney, <a href="https://dx.doi.org/10.1007/s00190-011-0445-3">Transverse Mercator with an accuracy of a few nanometers,</a> J. Geodesy 85(8), 475&ndash;485 (Aug. 2011) (preprint <a href="http://arxiv.org/abs/1002.1417">arXiv:1002.1417</a>). </p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="ab14e512a1867b98ecb38e9175426596c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab14e512a1867b98ecb38e9175426596c">&#9670;&nbsp;</a></span>bigendian</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool GeographicLib::Math::bigendian = <a class="el" href="../../dc/dba/_math_8hpp.html#a2a4e5f86d0c84b647e1bc7783cfa0d8d">GEOGRAPHICLIB_WORDS_BIGENDIAN</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>true if the machine is big-endian. </p>
+
+</div>
+</div>
+<a id="afbcdc19528808f00b7b78446b1552602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbcdc19528808f00b7b78446b1552602">&#9670;&nbsp;</a></span>extradigits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int GeographicLib::Math::extradigits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Инициализатор</b><div class="fragment"><div class="line">=</div>
+<div class="line">      std::numeric_limits&lt;real&gt;::digits10 &gt;</div>
+<div class="line">      std::numeric_limits&lt;double&gt;::digits10 ?</div>
+<div class="line">      std::numeric_limits&lt;real&gt;::digits10 -</div>
+<div class="line">      std::numeric_limits&lt;double&gt;::digits10 : 0</div>
+</div><!-- fragment --><p>Number of additional decimal digits of precision of real relative to double (0 for float).</p>
+<p><b>DEPRECATED</b>: use <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#a63c61d4b55636b16d230900733bcfdc7">extra_digits()</a> instead </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../dc/dba/_math_8hpp_source.html">Math.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:19. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

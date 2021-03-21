@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/core/func_vector_relational.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_ab399c1ca414379f40fea172917efe13.html">core</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">func_vector_relational.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d8c/func__vector__relational_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef GLM_CORE_func_vector_relational</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d7/d8c/func__vector__relational_8hpp.html#a60ca2a18bebab7d1f4877cae694e6b9f">   42</a></span>&#160;<span class="preprocessor">#define GLM_CORE_func_vector_relational GLM_VERSION</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d9a/__detail_8hpp.html">_detail.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> vecType&gt; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d8/d06/group__core__func__vector__relational.html#gafce0126d7f7ed1c7a4be6ace08e1b8de">   58</a></span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> vecType::bool_type <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#gafce0126d7f7ed1c7a4be6ace08e1b8de">lessThan</a>(vecType <span class="keyword">const</span> &amp; x, vecType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> vecType&gt; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d8/d06/group__core__func__vector__relational.html#ga740b7a097435c3778e46a6fa00434ef5">   67</a></span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> vecType::bool_type <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#ga740b7a097435c3778e46a6fa00434ef5">lessThanEqual</a>(vecType <span class="keyword">const</span> &amp; x, vecType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> vecType&gt; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d8/d06/group__core__func__vector__relational.html#ga3732122bb7bd174db65715f4086cf5b7">   76</a></span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> vecType::bool_type <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#ga3732122bb7bd174db65715f4086cf5b7">greaterThan</a>(vecType <span class="keyword">const</span> &amp; x, vecType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> vecType&gt; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d8/d06/group__core__func__vector__relational.html#ga96bf9a6929aa34321f69133872053d82">   85</a></span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> vecType::bool_type <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#ga96bf9a6929aa34321f69133872053d82">greaterThanEqual</a>(vecType <span class="keyword">const</span> &amp; x, vecType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> vecType&gt; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="../../d8/d06/group__core__func__vector__relational.html#gacd3085108f3505dd5a67f4f6d3a608c2">   94</a></span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> vecType::bool_type <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#gacd3085108f3505dd5a67f4f6d3a608c2">equal</a>(vecType <span class="keyword">const</span> &amp; x, vecType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> vecType&gt; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d8/d06/group__core__func__vector__relational.html#ga0500603313f784eeeb34250887b112c7">  103</a></span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> vecType::bool_type <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#ga0500603313f784eeeb34250887b112c7">notEqual</a>(vecType <span class="keyword">const</span> &amp; x, vecType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vecType&gt; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keywordtype">bool</span> <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#gacbbe64772c2d950bd806eac4f12f8823">any</a>(vecType&lt;bool&gt; <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vecType&gt; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keywordtype">bool</span> <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#gab80f9b30c75030155590e429be597601">all</a>(vecType&lt;bool&gt; <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vecType&gt; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> vecType&lt;bool&gt; <a class="code" href="../../d8/d06/group__core__func__vector__relational.html#ga1afa54b03efff3035410a36123aeb4bf">not_</a>(vecType&lt;bool&gt; <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}<span class="comment">//namespace glm</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/da4/func__vector__relational_8inl.html">func_vector_relational.inl</a>&quot;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif//GLM_CORE_func_vector_relational</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__core__func__vector__relational_html_gacd3085108f3505dd5a67f4f6d3a608c2"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#gacd3085108f3505dd5a67f4f6d3a608c2">glm::equal</a></div><div class="ttdeci">GLM_FUNC_DECL vecType::bool_type equal(vecType const &amp;x, vecType const &amp;y)</div></div>
+<div class="ttc" id="agroup__core__func__vector__relational_html_ga740b7a097435c3778e46a6fa00434ef5"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#ga740b7a097435c3778e46a6fa00434ef5">glm::lessThanEqual</a></div><div class="ttdeci">GLM_FUNC_DECL vecType::bool_type lessThanEqual(vecType const &amp;x, vecType const &amp;y)</div></div>
+<div class="ttc" id="agroup__core__func__vector__relational_html_gacbbe64772c2d950bd806eac4f12f8823"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#gacbbe64772c2d950bd806eac4f12f8823">glm::any</a></div><div class="ttdeci">GLM_FUNC_DECL bool any(vecType&lt; bool &gt; const &amp;v)</div><div class="ttdef"><b>Definition:</b> func_vector_relational.inl:143</div></div>
+<div class="ttc" id="agroup__core__func__vector__relational_html_ga1afa54b03efff3035410a36123aeb4bf"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#ga1afa54b03efff3035410a36123aeb4bf">glm::not_</a></div><div class="ttdeci">GLM_FUNC_DECL vecType&lt; bool &gt; not_(vecType&lt; bool &gt; const &amp;v)</div><div class="ttdef"><b>Definition:</b> func_vector_relational.inl:167</div></div>
+<div class="ttc" id="agroup__core__func__vector__relational_html_ga3732122bb7bd174db65715f4086cf5b7"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#ga3732122bb7bd174db65715f4086cf5b7">glm::greaterThan</a></div><div class="ttdeci">GLM_FUNC_DECL vecType::bool_type greaterThan(vecType const &amp;x, vecType const &amp;y)</div></div>
+<div class="ttc" id="agroup__core__func__vector__relational_html_gab80f9b30c75030155590e429be597601"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#gab80f9b30c75030155590e429be597601">glm::all</a></div><div class="ttdeci">GLM_FUNC_DECL bool all(vecType&lt; bool &gt; const &amp;v)</div><div class="ttdef"><b>Definition:</b> func_vector_relational.inl:155</div></div>
+<div class="ttc" id="agroup__core__func__vector__relational_html_ga0500603313f784eeeb34250887b112c7"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#ga0500603313f784eeeb34250887b112c7">glm::notEqual</a></div><div class="ttdeci">GLM_FUNC_DECL vecType::bool_type notEqual(vecType const &amp;x, vecType const &amp;y)</div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="agroup__core__func__vector__relational_html_gafce0126d7f7ed1c7a4be6ace08e1b8de"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#gafce0126d7f7ed1c7a4be6ace08e1b8de">glm::lessThan</a></div><div class="ttdeci">GLM_FUNC_DECL vecType::bool_type lessThan(vecType const &amp;x, vecType const &amp;y)</div></div>
+<div class="ttc" id="afunc__vector__relational_8inl_html"><div class="ttname"><a href="../../db/da4/func__vector__relational_8inl.html">func_vector_relational.inl</a></div></div>
+<div class="ttc" id="agroup__core__func__vector__relational_html_ga96bf9a6929aa34321f69133872053d82"><div class="ttname"><a href="../../d8/d06/group__core__func__vector__relational.html#ga96bf9a6929aa34321f69133872053d82">glm::greaterThanEqual</a></div><div class="ttdeci">GLM_FUNC_DECL vecType::bool_type greaterThanEqual(vecType const &amp;x, vecType const &amp;y)</div></div>
+<div class="ttc" id="a__detail_8hpp_html"><div class="ttname"><a href="../../de/d9a/__detail_8hpp.html">_detail.hpp</a></div></div>
+<div class="ttc" id="asetup_8hpp_html_ab2d052de21a70539923e9bcbf6e83a51"><div class="ttname"><a href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a></div><div class="ttdeci">#define GLM_FUNC_DECL</div><div class="ttdef"><b>Definition:</b> setup.hpp:678</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

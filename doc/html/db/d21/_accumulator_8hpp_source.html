@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/Accumulator.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Accumulator.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../db/d21/_accumulator_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_ACCUMULATOR_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_ACCUMULATOR_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T = Math::real&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">   40</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">Accumulator</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// _s + _t accumulators for the sum.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> _s, _t;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Same as Math::sum, but requires abs(u) &gt;= abs(v).  This isn&#39;t currently</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// used.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> fastsum(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> u, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> v, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&amp; t) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <a class="code" href="../../dc/dba/_math_8hpp.html#a953299c4d680cef5bc84752abfd31e5c">GEOGRAPHICLIB_VOLATILE</a> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> s = u + v;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <a class="code" href="../../dc/dba/_math_8hpp.html#a953299c4d680cef5bc84752abfd31e5c">GEOGRAPHICLIB_VOLATILE</a> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> vp = s - u;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      t = v - vp;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> Add(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <span class="comment">// Here&#39;s Shewchuk&#39;s solution...</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> u;                       <span class="comment">// hold exact sum as [s, t, u]</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      y  = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a756937d2acfc80f4f321111b38ac9893">Math::sum</a>(y, _t,  u); <span class="comment">// Accumulate starting at least significant end</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      _s = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a756937d2acfc80f4f321111b38ac9893">Math::sum</a>(y, _s, _t);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="comment">// Start is _s, _t decreasing and non-adjacent.  Sum is now (s + t + u)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="comment">// exactly with s, t, u non-adjacent and in decreasing order (except for</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="comment">// possible zeros).  The following code tries to normalize the result.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="comment">// Ideally, we want _s = round(s+t+u) and _u = round(s+t+u - _s).  The</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="comment">// following does an approximate job (and maintains the decreasing</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="comment">// non-adjacent property).  Here are two &quot;failures&quot; using 3-bit floats:</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="comment">//</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      <span class="comment">// Case 1: _s is not equal to round(s+t+u) -- off by 1 ulp</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="comment">// [12, -1] - 8 -&gt; [4, 0, -1] -&gt; [4, -1] = 3 should be [3, 0] = 3</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      <span class="comment">//</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="comment">// Case 2: _s+_t is not as close to s+t+u as it shold be</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <span class="comment">// [64, 5] + 4 -&gt; [64, 8, 1] -&gt; [64,  8] = 72 (off by 1)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="comment">//                    should be [80, -7] = 73 (exact)</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <span class="comment">//</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      <span class="comment">// &quot;Fixing&quot; these problems is probably not worth the expense.  The</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="comment">// representation inevitably leads to small errors in the accumulated</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      <span class="comment">// values.  The additional errors illustrated here amount to 1 ulp of the</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      <span class="comment">// less significant word during each addition to the Accumulator and an</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <span class="comment">// additional possible error of 1 ulp in the reported sum.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="comment">//</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="comment">// Incidentally, the &quot;ideal&quot; representation described above is not</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="comment">// canonical, because _s = round(_s + _t) may not be true.  For example,</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      <span class="comment">// with 3-bit floats:</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      <span class="comment">//</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="comment">// [128, 16] + 1 -&gt; [160, -16] -- 160 = round(145).</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="comment">// But [160, 0] - 16 -&gt; [128, 16] -- 128 = round(144).</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="comment">//</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keywordflow">if</span> (_s == 0)              <span class="comment">// This implies t == 0,</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        _s = u;                 <span class="comment">// so result is u</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        _t += u;                <span class="comment">// otherwise just accumulate u to t.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> Sum(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">Accumulator</a> a(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      a.Add(y);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="keywordflow">return</span> a._s;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a14d98e366933e0997c1954290f9d0fc3">  101</a></span>&#160;    <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a14d98e366933e0997c1954290f9d0fc3">Accumulator</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y = <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>(0)) : _s(y), _t(0) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      GEOGRAPHICLIB_STATIC_ASSERT(!std::numeric_limits&lt;T&gt;::is_integer,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                  <span class="stringliteral">&quot;Accumulator type is not floating point&quot;</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#acb3c1aa458551c474bd8d487c3488789">  110</a></span>&#160;    <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">Accumulator</a>&amp; <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#acb3c1aa458551c474bd8d487c3488789">operator=</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y) { _s = y; _t = 0; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#abeecb5e10918638c53af307dfc441f73">  116</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#abeecb5e10918638c53af307dfc441f73">operator()</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _s; }</div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a0d33929445d260b16ad18c18d4112358">  123</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a0d33929445d260b16ad18c18d4112358">operator()</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Sum(y); }</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#acdefeaf2aa13cfc78109bdcf4b2cc5d9">  129</a></span>&#160;    <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">Accumulator</a>&amp; <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#acdefeaf2aa13cfc78109bdcf4b2cc5d9">operator+=</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y) { Add(y); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a1add8644c70e445b32c11f269a0345ef">  135</a></span>&#160;    <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">Accumulator</a>&amp; <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a1add8644c70e445b32c11f269a0345ef">operator-=</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y) { Add(-y); <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a400f473aa76225662c0493679c1a9072">  143</a></span>&#160;    <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">Accumulator</a>&amp; <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a400f473aa76225662c0493679c1a9072">operator*=</a>(<span class="keywordtype">int</span> n) { _s *= n; _t *= n; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#ac968bf539718c63198d3207f186abd5d">  150</a></span>&#160;    <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">Accumulator</a>&amp; <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#ac968bf539718c63198d3207f186abd5d">operator*=</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> d = _s; _s *= y;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      d = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ace73342df49a32ae1b7f06b570bce9db">Math::fma</a>(y, d, -_s); <span class="comment">// the error in the first multiplication</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      _t = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ace73342df49a32ae1b7f06b570bce9db">Math::fma</a>(y, _t, d); <span class="comment">// add error to the second term</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aad9732080ed4a52df947103e5d9914f6">  159</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aad9732080ed4a52df947103e5d9914f6">operator==</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _s == y; }</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a6306e2272d279350cf489d7dd79b52ac">  163</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a6306e2272d279350cf489d7dd79b52ac">operator!=</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _s != y; }</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aacf78ea7d481a74f0a4a56fc46999479">  167</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aacf78ea7d481a74f0a4a56fc46999479">operator&lt;</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _s &lt; y; }</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aabb122c3cfa57541cb3897b70a8af23b">  171</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aabb122c3cfa57541cb3897b70a8af23b">operator&lt;=</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _s &lt;= y; }</div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a80db69a544506c6b1e5d291e61e628c2">  175</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a80db69a544506c6b1e5d291e61e628c2">operator&gt;</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _s &gt; y; }</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a263bb3ce1f4325c7ab4fd21080d93dd8">  179</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a263bb3ce1f4325c7ab4fd21080d93dd8">operator&gt;=</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _s &gt;= y; }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  };</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_ACCUMULATOR_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">glm::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:43</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_a0d33929445d260b16ad18c18d4112358"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a0d33929445d260b16ad18c18d4112358">GeographicLib::Accumulator::operator()</a></div><div class="ttdeci">T operator()(T y) const</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:123</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_a6306e2272d279350cf489d7dd79b52ac"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a6306e2272d279350cf489d7dd79b52ac">GeographicLib::Accumulator::operator!=</a></div><div class="ttdeci">bool operator!=(T y) const</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:163</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_a14d98e366933e0997c1954290f9d0fc3"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a14d98e366933e0997c1954290f9d0fc3">GeographicLib::Accumulator::Accumulator</a></div><div class="ttdeci">Accumulator(T y=T(0))</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:101</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_ace73342df49a32ae1b7f06b570bce9db"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#ace73342df49a32ae1b7f06b570bce9db">GeographicLib::Math::fma</a></div><div class="ttdeci">static T fma(T x, T y, T z)</div><div class="ttdef"><b>Definition:</b> Math.hpp:383</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_ac968bf539718c63198d3207f186abd5d"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#ac968bf539718c63198d3207f186abd5d">GeographicLib::Accumulator::operator*=</a></div><div class="ttdeci">Accumulator &amp; operator*=(T y)</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:150</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_acdefeaf2aa13cfc78109bdcf4b2cc5d9"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#acdefeaf2aa13cfc78109bdcf4b2cc5d9">GeographicLib::Accumulator::operator+=</a></div><div class="ttdeci">Accumulator &amp; operator+=(T y)</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:129</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_a756937d2acfc80f4f321111b38ac9893"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#a756937d2acfc80f4f321111b38ac9893">GeographicLib::Math::sum</a></div><div class="ttdeci">static T sum(T u, T v, T &amp;t)</div><div class="ttdef"><b>Definition:</b> Math.hpp:413</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_a263bb3ce1f4325c7ab4fd21080d93dd8"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a263bb3ce1f4325c7ab4fd21080d93dd8">GeographicLib::Accumulator::operator&gt;=</a></div><div class="ttdeci">bool operator&gt;=(T y) const</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:179</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_a400f473aa76225662c0493679c1a9072"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a400f473aa76225662c0493679c1a9072">GeographicLib::Accumulator::operator*=</a></div><div class="ttdeci">Accumulator &amp; operator*=(int n)</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:143</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">GeographicLib::Accumulator</a></div><div class="ttdoc">An accumulator for sums.</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:40</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_aacf78ea7d481a74f0a4a56fc46999479"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aacf78ea7d481a74f0a4a56fc46999479">GeographicLib::Accumulator::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(T y) const</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:167</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_aabb122c3cfa57541cb3897b70a8af23b"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aabb122c3cfa57541cb3897b70a8af23b">GeographicLib::Accumulator::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(T y) const</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:171</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_a80db69a544506c6b1e5d291e61e628c2"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a80db69a544506c6b1e5d291e61e628c2">GeographicLib::Accumulator::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(T y) const</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:175</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_acb3c1aa458551c474bd8d487c3488789"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#acb3c1aa458551c474bd8d487c3488789">GeographicLib::Accumulator::operator=</a></div><div class="ttdeci">Accumulator &amp; operator=(T y)</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:110</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="a_math_8hpp_html_a953299c4d680cef5bc84752abfd31e5c"><div class="ttname"><a href="../../dc/dba/_math_8hpp.html#a953299c4d680cef5bc84752abfd31e5c">GEOGRAPHICLIB_VOLATILE</a></div><div class="ttdeci">#define GEOGRAPHICLIB_VOLATILE</div><div class="ttdef"><b>Definition:</b> Math.hpp:84</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_a1add8644c70e445b32c11f269a0345ef"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#a1add8644c70e445b32c11f269a0345ef">GeographicLib::Accumulator::operator-=</a></div><div class="ttdeci">Accumulator &amp; operator-=(T y)</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:135</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_abeecb5e10918638c53af307dfc441f73"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#abeecb5e10918638c53af307dfc441f73">GeographicLib::Accumulator::operator()</a></div><div class="ttdeci">T operator()() const</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:116</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html_aad9732080ed4a52df947103e5d9914f6"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html#aad9732080ed4a52df947103e5d9914f6">GeographicLib::Accumulator::operator==</a></div><div class="ttdeci">bool operator==(T y) const</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:159</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

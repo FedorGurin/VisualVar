@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/DMS.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">DMS.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/dd0/_d_m_s_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_DMS_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_DMS_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/d2c/_utility_8hpp.html">GeographicLib/Utility.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Squelch warnings about dll vs vector and constant conditional expressions</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#  pragma warning (push)</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#  pragma warning (disable: 4251 4127)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifdef NONE</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#undef NONE</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html">   38</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html">DMS</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">   45</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1">   50</a></span>&#160;      NONE = 0,</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a6b5a0451ce4c199bd82f5d87d50b523b">   55</a></span>&#160;      LATITUDE = 1,</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a321624c1b510f7f1e392e7509a85914f">   60</a></span>&#160;      LONGITUDE = 2,</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a92264580521b3a1c1df2a7421b435e24">   66</a></span>&#160;      AZIMUTH = 3,</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a5a65ec03b2682ad76873829167882518">   71</a></span>&#160;      NUMBER = 4,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09">   77</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09">component</a> {</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09a8ee59944227e74901b71f27410d70781">   82</a></span>&#160;      DEGREE = 0,</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09a9884bea675fd214061e534e76a1c15d6">   87</a></span>&#160;      MINUTE = 1,</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09a10c28c85ddfa71db5f1d46d362333075">   92</a></span>&#160;      SECOND = 2,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    };</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Replace all occurrences of pat by c</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> replace(std::string&amp; s, <span class="keyword">const</span> std::string&amp; pat, <span class="keywordtype">char</span> c) {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      std::string::size_type p = 0;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        p = s.find(pat, p);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (p == std::string::npos)</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        s.replace(p, pat.length(), 1, c);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string hemispheres_;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string signs_;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string digits_;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string dmsindicators_;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string components_[3];</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> NumMatch(<span class="keyword">const</span> std::string&amp; s);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InternalDecode(<span class="keyword">const</span> std::string&amp; dmsa, flag&amp; ind);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    DMS();                      <span class="comment">// Disable constructor</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> Decode(<span class="keyword">const</span> std::string&amp; dms, flag&amp; ind);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00227"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a4987f8eb6c1ba5402eb25d6225ab58e1">  227</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a4987f8eb6c1ba5402eb25d6225ab58e1">Decode</a>(real d, real m = 0, real s = 0)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    { <span class="keywordflow">return</span> d + (m + s / 60) / 60; }</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> Decode(<span class="keyword">const</span> std::string&amp; str)</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    { <span class="keywordflow">return</span> Utility::num&lt;real&gt;(str); }</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> DecodeFraction(<span class="keyword">const</span> std::string&amp; str)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    { <span class="keywordflow">return</span> Utility::fract&lt;real&gt;(str); }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> DecodeLatLon(<span class="keyword">const</span> std::string&amp; dmsa, <span class="keyword">const</span> std::string&amp; dmsb,</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                             real&amp; lat, real&amp; lon,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                             <span class="keywordtype">bool</span> longfirst = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> DecodeAngle(<span class="keyword">const</span> std::string&amp; angstr);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> DecodeAzimuth(<span class="keyword">const</span> std::string&amp; azistr);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keyword">static</span> std::string Encode(real <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>, component trailing, <span class="keywordtype">unsigned</span> prec,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                              flag ind = NONE, <span class="keywordtype">char</span> dmssep = <span class="keywordtype">char</span>(0));</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#aeb9d338b12e885092a611bda7e52f9f4">  358</a></span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#aeb9d338b12e885092a611bda7e52f9f4">Encode</a>(real <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>, <span class="keywordtype">unsigned</span> prec, <a class="code" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a> ind = NONE,</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                              <span class="keywordtype">char</span> dmssep = <span class="keywordtype">char</span>(0)) {</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;      <span class="keywordflow">return</span> ind == NUMBER ? <a class="code" href="../../df/db2/class_geographic_lib_1_1_utility.html#ae87a7ae2bee75f724907af9f753f03b7">Utility::str</a>(<a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>, <span class="keywordtype">int</span>(prec)) :</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        Encode(<a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>,</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;               prec &lt; 2 ? DEGREE : (prec &lt; 4 ? MINUTE : SECOND),</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;               prec &lt; 2 ? prec : (prec &lt; 4 ? prec - 2 : prec - 4),</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;               ind, dmssep);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    }</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a1ae785976e5d7c6346cfb68863884b55">  374</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a1ae785976e5d7c6346cfb68863884b55">Encode</a>(real ang, real&amp; d, real&amp; m) {</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;      d = int(ang); m = 60 * (ang - d);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno"><a class="line" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#af27df7ef6ac42bf0e6341749b4b96eec">  386</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#af27df7ef6ac42bf0e6341749b4b96eec">Encode</a>(real ang, real&amp; d, real&amp; m, real&amp; s) {</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;      d = int(ang); ang = 60 * (ang - d);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;      m = int(ang); s = 60 * (ang - m);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  };</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;<span class="preprocessor">#  pragma warning (pop)</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_DMS_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_d_m_s_html_ab9fa04b3a9156f36f18852eed9b7ce09"><div class="ttname"><a href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09">GeographicLib::DMS::component</a></div><div class="ttdeci">component</div><div class="ttdef"><b>Definition:</b> DMS.hpp:77</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_d_m_s_html_a4987f8eb6c1ba5402eb25d6225ab58e1"><div class="ttname"><a href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a4987f8eb6c1ba5402eb25d6225ab58e1">GeographicLib::DMS::Decode</a></div><div class="ttdeci">static Math::real Decode(real d, real m=0, real s=0)</div><div class="ttdef"><b>Definition:</b> DMS.hpp:227</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_utility_html_ae87a7ae2bee75f724907af9f753f03b7"><div class="ttname"><a href="../../df/db2/class_geographic_lib_1_1_utility.html#ae87a7ae2bee75f724907af9f753f03b7">GeographicLib::Utility::str</a></div><div class="ttdeci">static std::string str(T x, int p=-1)</div><div class="ttdef"><b>Definition:</b> Utility.hpp:276</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_d_m_s_html_aeb9d338b12e885092a611bda7e52f9f4"><div class="ttname"><a href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#aeb9d338b12e885092a611bda7e52f9f4">GeographicLib::DMS::Encode</a></div><div class="ttdeci">static std::string Encode(real angle, unsigned prec, flag ind=NONE, char dmssep=char(0))</div><div class="ttdef"><b>Definition:</b> DMS.hpp:358</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_d_m_s_html"><div class="ttname"><a href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html">GeographicLib::DMS</a></div><div class="ttdoc">Convert between degrees and the DMS representation.</div><div class="ttdef"><b>Definition:</b> DMS.hpp:38</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_d_m_s_html_af27df7ef6ac42bf0e6341749b4b96eec"><div class="ttname"><a href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#af27df7ef6ac42bf0e6341749b4b96eec">GeographicLib::DMS::Encode</a></div><div class="ttdeci">static void Encode(real ang, real &amp;d, real &amp;m, real &amp;s)</div><div class="ttdef"><b>Definition:</b> DMS.hpp:386</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_d_m_s_html_a7a1101fd2577636863753baae3e54869"><div class="ttname"><a href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">GeographicLib::DMS::flag</a></div><div class="ttdeci">flag</div><div class="ttdef"><b>Definition:</b> DMS.hpp:45</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_d_m_s_html_a1ae785976e5d7c6346cfb68863884b55"><div class="ttname"><a href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a1ae785976e5d7c6346cfb68863884b55">GeographicLib::DMS::Encode</a></div><div class="ttdeci">static void Encode(real ang, real &amp;d, real &amp;m)</div><div class="ttdef"><b>Definition:</b> DMS.hpp:374</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_ga69041d18bd8539fe82d6170932d28362"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">glm::angle</a></div><div class="ttdeci">valType angle(detail::tquat&lt; valType &gt; const &amp;x)</div></div>
+<div class="ttc" id="a_utility_8hpp_html"><div class="ttname"><a href="../../d4/d2c/_utility_8hpp.html">Utility.hpp</a></div><div class="ttdoc">Header for GeographicLib::Utility class.</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

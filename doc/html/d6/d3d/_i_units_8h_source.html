@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/globalFunc/UnitsMeasure/IUnits.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a91295625b6c1d91e5ab7944a56a2122.html">globalFunc</a></li><li class="navelem"><a class="el" href="../../dir_472e86d2ef1428bed729865d673b3477.html">UnitsMeasure</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">IUnits.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d3d/_i_units_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IUNITS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IUNITS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QStringList&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QDomElement&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QDomDocument&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../dc/d75/struct_t_object_unit.html">   14</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../dc/d75/struct_t_object_unit.html#ad69e9b4f3153a224024825d155ab91cb">   16</a></span>&#160;    QString <a class="code" href="../../dc/d75/struct_t_object_unit.html#ad69e9b4f3153a224024825d155ab91cb">unitname</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../dc/d75/struct_t_object_unit.html#a2b00e397d19bc1be4b45ee2deb73115d">   17</a></span>&#160;    QString <a class="code" href="../../dc/d75/struct_t_object_unit.html#a2b00e397d19bc1be4b45ee2deb73115d">unitname_rus</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../dc/d75/struct_t_object_unit.html#af3637d7b561b3174efeef0e0db31f252">   19</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../dc/d75/struct_t_object_unit.html#af3637d7b561b3174efeef0e0db31f252">factor</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../dc/d75/struct_t_object_unit.html#ab687ac6b3fe2fbcb4d996eb86065753c">   20</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../dc/d75/struct_t_object_unit.html#ab687ac6b3fe2fbcb4d996eb86065753c">e</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../dc/d75/struct_t_object_unit.html#a6527c35085eaea83e89acfdacf96d347">   22</a></span>&#160;    QString <a class="code" href="../../dc/d75/struct_t_object_unit.html#a6527c35085eaea83e89acfdacf96d347">unicode_id</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../dc/d75/struct_t_object_unit.html#ae2cb812bf407a8a8f000ed646fae574f">   23</a></span>&#160;    QString <a class="code" href="../../dc/d75/struct_t_object_unit.html#ae2cb812bf407a8a8f000ed646fae574f">unicode_rus</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}<a class="code" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d5/d90/class_t_object_property.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a>: <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d5/d90/class_t_object_property.html#ad241478c5f1ba75de26555f87ac901db">   31</a></span>&#160;    <a class="code" href="../../d5/d90/class_t_object_property.html#ad241478c5f1ba75de26555f87ac901db">TObjectProperty</a>(QObject *parent = <span class="keyword">nullptr</span>):QObject(parent)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="../../d5/d90/class_t_object_property.html#a037b3f608c53f786549681749a7aa43c">list</a>.size();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d5/d90/class_t_object_property.html#adf12179e819d979cf030508beb7061e7">   35</a></span>&#160;    <a class="code" href="../../d5/d90/class_t_object_property.html#adf12179e819d979cf030508beb7061e7">TObjectProperty</a>(QString nameFile, QString prop,QObject *parent = <span class="keyword">nullptr</span>):QObject(parent)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d5/d90/class_t_object_property.html#a037b3f608c53f786549681749a7aa43c">list</a>.size();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="../../d5/d90/class_t_object_property.html#a7c9194304ff1f1020917e3d7b1362ba4">openXMLFile</a>(nameFile,prop);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d5/d90/class_t_object_property.html#a7c9194304ff1f1020917e3d7b1362ba4">openXMLFile</a>(QString nameFile, QString prop);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d90/class_t_object_property.html#affe5e6996086b416c1da3f1d9f64288b">parseXMLFile</a>(<span class="keyword">const</span> QDomElement &amp;element,QString&amp; prop);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d5/d90/class_t_object_property.html#a94a4b234bfb289d33b54ab959062adea">convert</a>(<span class="keywordtype">double</span> valueFrom,<a class="code" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a>* from, <a class="code" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a>* to);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d5/d90/class_t_object_property.html#a94a4b234bfb289d33b54ab959062adea">convert</a>(<span class="keywordtype">double</span> valueFrom,<a class="code" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a>* from, QString to);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d5/d90/class_t_object_property.html#a94a4b234bfb289d33b54ab959062adea">convert</a>(<span class="keywordtype">double</span> valueFrom,QString from, QString to);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d5/d90/class_t_object_property.html#a94a4b234bfb289d33b54ab959062adea">convert</a>(<span class="keywordtype">double</span> valueFrom,QString from, <a class="code" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a>* to);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a>* <a class="code" href="../../d5/d90/class_t_object_property.html#a93be0e13d0eaa0952e30cc87e19c6f1b">find</a>(QString value);</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d5/d90/class_t_object_property.html#a1b3316c035745b4cf3d4a831aa32a689">   50</a></span>&#160;    QString <a class="code" href="../../d5/d90/class_t_object_property.html#a1b3316c035745b4cf3d4a831aa32a689">name</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../d5/d90/class_t_object_property.html#abd5e37adeb8f7c2e34494aba762e6037">   51</a></span>&#160;    QString <a class="code" href="../../d5/d90/class_t_object_property.html#abd5e37adeb8f7c2e34494aba762e6037">baseUnitName</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d5/d90/class_t_object_property.html#a495ab68b8b8cdb32037d6cc61642f0d8">   52</a></span>&#160;    QVector&lt;TObjectUnit&gt; <a class="code" href="../../d5/d90/class_t_object_property.html#a495ab68b8b8cdb32037d6cc61642f0d8">units</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QStringList* <a class="code" href="../../d5/d90/class_t_object_property.html#adcf51fb49d4651935db2ea120e1dfe2e">getListAvailableUnits</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../d5/d90/class_t_object_property.html#a037b3f608c53f786549681749a7aa43c">   54</a></span>&#160;    QStringList <a class="code" href="../../d5/d90/class_t_object_property.html#a037b3f608c53f786549681749a7aa43c">list</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif // IUNITS_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_t_object_unit_html_ae2cb812bf407a8a8f000ed646fae574f"><div class="ttname"><a href="../../dc/d75/struct_t_object_unit.html#ae2cb812bf407a8a8f000ed646fae574f">TObjectUnit::unicode_rus</a></div><div class="ttdeci">QString unicode_rus</div><div class="ttdef"><b>Definition:</b> IUnits.h:23</div></div>
+<div class="ttc" id="aclass_t_object_property_html_a1b3316c035745b4cf3d4a831aa32a689"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#a1b3316c035745b4cf3d4a831aa32a689">TObjectProperty::name</a></div><div class="ttdeci">QString name</div><div class="ttdef"><b>Definition:</b> IUnits.h:50</div></div>
+<div class="ttc" id="astruct_t_object_unit_html_ad69e9b4f3153a224024825d155ab91cb"><div class="ttname"><a href="../../dc/d75/struct_t_object_unit.html#ad69e9b4f3153a224024825d155ab91cb">TObjectUnit::unitname</a></div><div class="ttdeci">QString unitname</div><div class="ttdef"><b>Definition:</b> IUnits.h:16</div></div>
+<div class="ttc" id="astruct_t_object_unit_html_a6527c35085eaea83e89acfdacf96d347"><div class="ttname"><a href="../../dc/d75/struct_t_object_unit.html#a6527c35085eaea83e89acfdacf96d347">TObjectUnit::unicode_id</a></div><div class="ttdeci">QString unicode_id</div><div class="ttdef"><b>Definition:</b> IUnits.h:22</div></div>
+<div class="ttc" id="aclass_t_object_property_html_adcf51fb49d4651935db2ea120e1dfe2e"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#adcf51fb49d4651935db2ea120e1dfe2e">TObjectProperty::getListAvailableUnits</a></div><div class="ttdeci">QStringList * getListAvailableUnits(void)</div><div class="ttdef"><b>Definition:</b> IUnits.cpp:9</div></div>
+<div class="ttc" id="aclass_t_object_property_html_adf12179e819d979cf030508beb7061e7"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#adf12179e819d979cf030508beb7061e7">TObjectProperty::TObjectProperty</a></div><div class="ttdeci">TObjectProperty(QString nameFile, QString prop, QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> IUnits.h:35</div></div>
+<div class="ttc" id="aclass_t_object_property_html_a94a4b234bfb289d33b54ab959062adea"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#a94a4b234bfb289d33b54ab959062adea">TObjectProperty::convert</a></div><div class="ttdeci">double convert(double valueFrom, TObjectUnit *from, TObjectUnit *to)</div><div class="ttdef"><b>Definition:</b> IUnits.cpp:74</div></div>
+<div class="ttc" id="aclass_t_object_property_html_affe5e6996086b416c1da3f1d9f64288b"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#affe5e6996086b416c1da3f1d9f64288b">TObjectProperty::parseXMLFile</a></div><div class="ttdeci">void parseXMLFile(const QDomElement &amp;element, QString &amp;prop)</div><div class="ttdef"><b>Definition:</b> IUnits.cpp:95</div></div>
+<div class="ttc" id="astruct_t_object_unit_html_af3637d7b561b3174efeef0e0db31f252"><div class="ttname"><a href="../../dc/d75/struct_t_object_unit.html#af3637d7b561b3174efeef0e0db31f252">TObjectUnit::factor</a></div><div class="ttdeci">double factor</div><div class="ttdef"><b>Definition:</b> IUnits.h:19</div></div>
+<div class="ttc" id="aclass_t_object_property_html_ad241478c5f1ba75de26555f87ac901db"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#ad241478c5f1ba75de26555f87ac901db">TObjectProperty::TObjectProperty</a></div><div class="ttdeci">TObjectProperty(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> IUnits.h:31</div></div>
+<div class="ttc" id="astruct_t_object_unit_html"><div class="ttname"><a href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a></div><div class="ttdoc">Класс интерфейс для всех классов единиц измерения</div><div class="ttdef"><b>Definition:</b> IUnits.h:15</div></div>
+<div class="ttc" id="aclass_t_object_property_html"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html">TObjectProperty</a></div><div class="ttdef"><b>Definition:</b> IUnits.h:27</div></div>
+<div class="ttc" id="aclass_t_object_property_html_abd5e37adeb8f7c2e34494aba762e6037"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#abd5e37adeb8f7c2e34494aba762e6037">TObjectProperty::baseUnitName</a></div><div class="ttdeci">QString baseUnitName</div><div class="ttdef"><b>Definition:</b> IUnits.h:51</div></div>
+<div class="ttc" id="aclass_t_object_property_html_a495ab68b8b8cdb32037d6cc61642f0d8"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#a495ab68b8b8cdb32037d6cc61642f0d8">TObjectProperty::units</a></div><div class="ttdeci">QVector&lt; TObjectUnit &gt; units</div><div class="ttdef"><b>Definition:</b> IUnits.h:52</div></div>
+<div class="ttc" id="astruct_t_object_unit_html_a2b00e397d19bc1be4b45ee2deb73115d"><div class="ttname"><a href="../../dc/d75/struct_t_object_unit.html#a2b00e397d19bc1be4b45ee2deb73115d">TObjectUnit::unitname_rus</a></div><div class="ttdeci">QString unitname_rus</div><div class="ttdef"><b>Definition:</b> IUnits.h:17</div></div>
+<div class="ttc" id="astruct_t_object_unit_html_ab687ac6b3fe2fbcb4d996eb86065753c"><div class="ttname"><a href="../../dc/d75/struct_t_object_unit.html#ab687ac6b3fe2fbcb4d996eb86065753c">TObjectUnit::e</a></div><div class="ttdeci">double e</div><div class="ttdef"><b>Definition:</b> IUnits.h:20</div></div>
+<div class="ttc" id="aclass_t_object_property_html_a037b3f608c53f786549681749a7aa43c"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#a037b3f608c53f786549681749a7aa43c">TObjectProperty::list</a></div><div class="ttdeci">QStringList list</div><div class="ttdef"><b>Definition:</b> IUnits.h:54</div></div>
+<div class="ttc" id="aclass_t_object_property_html_a7c9194304ff1f1020917e3d7b1362ba4"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#a7c9194304ff1f1020917e3d7b1362ba4">TObjectProperty::openXMLFile</a></div><div class="ttdeci">bool openXMLFile(QString nameFile, QString prop)</div><div class="ttdef"><b>Definition:</b> IUnits.cpp:35</div></div>
+<div class="ttc" id="aclass_t_object_property_html_a93be0e13d0eaa0952e30cc87e19c6f1b"><div class="ttname"><a href="../../d5/d90/class_t_object_property.html#a93be0e13d0eaa0952e30cc87e19c6f1b">TObjectProperty::find</a></div><div class="ttdeci">TObjectUnit * find(QString value)</div><div class="ttdef"><b>Definition:</b> IUnits.cpp:22</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

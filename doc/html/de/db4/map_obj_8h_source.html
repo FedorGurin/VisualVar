@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/nodes/mapObj/mapObj.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li><li class="navelem"><a class="el" href="../../dir_6df3690b62bff8b3761d9244e124e872.html">nodes</a></li><li class="navelem"><a class="el" href="../../dir_3045a624275787cf6086c0b03e0c5fb7.html">mapObj</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">mapObj.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/db4/map_obj_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="../../de/db4/map_obj_8h.html#a525335710b53cb064ca56b936120431e">    3</a></span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSvgItem&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QSvgRenderer&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QGraphicsPixmapItem&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QGenericMatrix&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QPen&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QDomDocument&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QDomElement&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QGraphicsScene&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSceneMouseEvent&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;../globalFunc/gl_func.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../globalFunc/UnitsMeasure/IUnits.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../mppm/CommonEngineData.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d96/geography_mapping_8h.html">geographyMapping.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d12/setting_v_v_8h.html">settingVV.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d34/node_visual_8h.html">nodeVisual.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d0/da9/class_thread_load_maps.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d0/da9/class_thread_load_maps.html">ThreadLoadMaps</a>:<span class="keyword">public</span> QThread</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d0/da9/class_thread_load_maps.html#a8abe0d0e22ffc4a5bb8e307b993a435b">ThreadLoadMaps</a>(QObject* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/da9/class_thread_load_maps.html#a4a5d96328dd5803336623ddcd6e4e330">addTile</a>(QString path,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                 <span class="keywordtype">int</span> i,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                 <span class="keywordtype">int</span> j,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                 <span class="keywordtype">double</span> pixX,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                 <span class="keywordtype">double</span> pixY,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                 QString ext);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/da9/class_thread_load_maps.html#ac74dd00a7e291b93879d4307ce388e41">startLoadTile</a>(QString pref_map,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                       QString ext_map,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                       QString pref_layer,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                       QString ext_layer,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                       <span class="keywordtype">int</span> tileX0,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                       <span class="keywordtype">int</span> tileX1,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                       <span class="keywordtype">int</span> tileY0,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                       <span class="keywordtype">int</span> tileY2);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/da9/class_thread_load_maps.html#a265ea7973709576d9c6678e64add9412">run</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;signals:</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d0/da9/class_thread_load_maps.html#ae8f08b02bf3de0b66ad78f37ae1a74ed">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/da9/class_thread_load_maps.html#ae8f08b02bf3de0b66ad78f37ae1a74ed">createNewPixmapItem</a>(QByteArray byteArray,<span class="keywordtype">int</span> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>,<span class="keywordtype">int</span> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d0/da9/class_thread_load_maps.html#a29c32f1022933a4b413a275f360635d5">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/da9/class_thread_load_maps.html#a29c32f1022933a4b413a275f360635d5">finishedLoadAllTile</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../df/d52/class_graph_node.html">GraphNode</a> *graphNode;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    QString path_map;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QString ext_map;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    QString path_layer;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    QString ext_layer;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> tileX0;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> tileX1;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> tileY0;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> tileY1;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html">   78</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d54/class_geography_sys_coord.html">GeographySysCoord</a>:<span class="keyword">public</span> <a class="code" href="../../df/d52/class_graph_node.html">GraphNode</a></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">   83</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba020e1097cbe803641ea63651eb51c34e">   85</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba020e1097cbe803641ea63651eb51c34e">NO_MAP</a>,</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abaa902226385c607bf9f35c0b717ac5951">   86</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abaa902226385c607bf9f35c0b717ac5951">GOOGLE_SAT</a>,</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abac98b80e496117217800b8028c2538bf5">   87</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abac98b80e496117217800b8028c2538bf5">GOOGLE_MAP</a>,</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba9274ce2ae9312fabc7c0e1356b6d595e">   88</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba9274ce2ae9312fabc7c0e1356b6d595e">GOOGLE_LAND</a>,</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba783454274abae384a9e643e5c1503fa6">   89</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba783454274abae384a9e643e5c1503fa6">YANDEX_SAT</a>,</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba52fd9576b252cffaf75ad94508fbdbd4">   90</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba52fd9576b252cffaf75ad94508fbdbd4">YANDEX_MAP</a>,</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba64b47230d9e503d24c7cb54ed13f3bf7">   91</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba64b47230d9e503d24c7cb54ed13f3bf7">BING_SAT</a>,</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abaf6efe819b64ac0c8bad1d045f4ad4757">   92</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abaf6efe819b64ac0c8bad1d045f4ad4757">GOOGLE_SAT_EARTH</a>,</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba0bed43827c8c030b763e9b8f7fca8df7">   93</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba0bed43827c8c030b763e9b8f7fca8df7">NOKIA_MAP</a>,</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba90680dd6f2ebc1c2f873250e83406949">NOKIA_HYB</a></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba90680dd6f2ebc1c2f873250e83406949">   95</a></span>&#160;    };</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">   96</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7af913c7dcb961add31fb486e66e582205">   98</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7af913c7dcb961add31fb486e66e582205">NO_LAYER</a>,</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7ab0b2a27daaf0afd0d1bf7fd6191911fd">   99</a></span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7ab0b2a27daaf0afd0d1bf7fd6191911fd">GOOGLE_HYB</a>,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7acae4fc9eae321c16582ffc701bd5c9e1">YANDEX_HYB</a></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7acae4fc9eae321c16582ffc701bd5c9e1">  101</a></span>&#160;    };</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#aacc9fd2ac2351a018730ba8a776dcaba">  103</a></span>&#160;    <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aacc9fd2ac2351a018730ba8a776dcaba">GeographySysCoord</a>(QGraphicsItem *parent = <span class="keyword">nullptr</span>):<a class="code" href="../../df/d52/class_graph_node.html">GraphNode</a>(parent)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        itemMapNew.clear();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        itemMapOld.clear();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        ptrItemMapNew  = &amp;itemMapNew;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        ptrItemMapOld  = &amp;itemMapOld;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        currentZoom    = 3;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        typeMap        = <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba020e1097cbe803641ea63651eb51c34e">NO_MAP</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        typeLayer      = <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7af913c7dcb961add31fb486e66e582205">NO_LAYER</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        dirMaps        = <a class="code" href="../../d5/d68/gl__func_8cpp.html#a63739ef9a34275070a0e7cc9e7499d38">readParamFromXMLFile</a>(<a class="code" href="../../d5/d68/gl__func_8cpp.html#a0e77467c5ef4eeb7c48ed547fd5a37e0">nameMainFile</a>,<span class="stringliteral">&quot;VV&quot;</span>,<span class="stringliteral">&quot;DirWithMap&quot;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        threadLoadMaps = <span class="keyword">new</span> <a class="code" href="../../d0/da9/class_thread_load_maps.html">ThreadLoadMaps</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        connect(threadLoadMaps,</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                SIGNAL(createNewPixmapItem(QByteArray,<span class="keywordtype">int</span>,<span class="keywordtype">int</span>)),<span class="keyword">this</span>,</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                SLOT(<a class="code" href="../../dc/d54/class_geography_sys_coord.html#abd13bdcfc9be55f1e9b0cc2627ccb30f">slotCreatePixmapItem</a>(QByteArray,<span class="keywordtype">int</span>,<span class="keywordtype">int</span>)));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        connect(threadLoadMaps,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                SIGNAL(finishedLoadAllTile()),<span class="keyword">this</span>,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                SLOT(<a class="code" href="../../dc/d54/class_geography_sys_coord.html#a92543769c914de18b7825c7b632d99a8">slotFinishedLoadAllTile</a>()));</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a465b48e537287989694ada867f7e60ca">addTile</a>(QString prefix,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                 <span class="keywordtype">int</span> i,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                 <span class="keywordtype">int</span> j,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                 <span class="keywordtype">double</span> pixX,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                 <span class="keywordtype">double</span> pixY,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                 QString ext=<span class="stringliteral">&quot;.jpg&quot;</span>);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a35e5f26aa776e8c9c1bbbae2f6a08b76">  130</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a35e5f26aa776e8c9c1bbbae2f6a08b76">setTypeMap</a>(<a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a> value)</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        typeMap = value;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a35e5f26aa776e8c9c1bbbae2f6a08b76">setTypeMap</a>(QString value);</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a36c7cab6aaa5f6c247a9f5fe15673ba2">  135</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a36c7cab6aaa5f6c247a9f5fe15673ba2">setTypeLayer</a>(<a class="code" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a> value)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        typeLayer = value;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a36c7cab6aaa5f6c247a9f5fe15673ba2">setTypeLayer</a>(QString value);</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a8d07ca1ee26eef9db6e3e3fa67232538">  140</a></span>&#160;    <span class="keyword">virtual</span> QRectF <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a8d07ca1ee26eef9db6e3e3fa67232538">boundingRect</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">int</span> wh = 2&lt;&lt;(currentZoom-1);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span> QRectF(0.0,0.0,wh*256,wh*256);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#ac5712a546792993102710c26528bc384">setZoomLevel</a>(<span class="keywordtype">int</span> z, QRectF rectView);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a4a87ec15d2431a6ea9f2bc88d4540211">pixelXYToTileXY</a>(<span class="keywordtype">double</span> pixX, <span class="keywordtype">double</span> pixY, <span class="keywordtype">int</span> &amp;tileX, <span class="keywordtype">int</span> &amp;tileY);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a74e40860c2851d26c32de8bdb4d5818b">tileXYToPixelXY</a>(<span class="keywordtype">int</span> tileX,<span class="keywordtype">int</span> tileY,<span class="keywordtype">double</span> &amp;pixX,  <span class="keywordtype">double</span> &amp;pixY);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#ab96b58c81eb7956944d30d1ade96ef95">  149</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#ab96b58c81eb7956944d30d1ade96ef95">paint</a>(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option, QWidget *widget = 0)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        Q_UNUSED(painter);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        Q_UNUSED(option);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        Q_UNUSED(widget);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#aa5bc61ff4d739bc6cb4a98ffea8786e1">  155</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aa5bc61ff4d739bc6cb4a98ffea8786e1">addItemToScene</a>(QGraphicsPixmapItem *item)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        item-&gt;setZValue(0);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        ptrItemMapNew-&gt;push_back(item);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a468e5c0376f67e223efcf25280de43ed">  160</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a468e5c0376f67e223efcf25280de43ed">addToScene</a>(QGraphicsPixmapItem *item)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        item-&gt;setZValue(0);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        ptrItemMapNew-&gt;push_back(item);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a5ed0e18b2afa85ff85885bbab954d4ef">  165</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a5ed0e18b2afa85ff85885bbab954d4ef">type</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a67ace217e0a125a5f9b3200f278e05a3">E_MAP</a>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a42589bbc56009c679f8393cc83f29f51">  169</a></span>&#160;    <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a>     <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a42589bbc56009c679f8393cc83f29f51">isTypeMap</a>(){<span class="keywordflow">return</span> typeMap;}</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    QString     <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a7d4fa3dd7a21f0d05a2a9ad5f5299761">strTypeMap</a>();</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="../../dc/d54/class_geography_sys_coord.html#a7e5eff1cecba7bf1b5f698c16ab3dbea">  171</a></span>&#160;    <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a>   <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a7e5eff1cecba7bf1b5f698c16ab3dbea">isTypeLayer</a>(){<span class="keywordflow">return</span> typeLayer;}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    QString     <a class="code" href="../../dc/d54/class_geography_sys_coord.html#ad994582c6614215958acb17e1d8b0734">strTypeLayer</a>();</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#abd13bdcfc9be55f1e9b0cc2627ccb30f">slotCreatePixmapItem</a>(QByteArray pixmap,<span class="keywordtype">int</span> pixX,<span class="keywordtype">int</span> pixY);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a92543769c914de18b7825c7b632d99a8">slotFinishedLoadAllTile</a>();</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    QList&lt;QGraphicsPixmapItem *&gt; itemMapOld;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    QList&lt;QGraphicsPixmapItem *&gt; itemMapNew;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    QList&lt;QGraphicsPixmapItem *&gt; *ptrItemMapNew;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    QList&lt;QGraphicsPixmapItem *&gt; *ptrItemMapOld;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a> typeMap;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a> typeLayer;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">int</span> currentZoom;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    QString dirMaps;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="../../d0/da9/class_thread_load_maps.html">ThreadLoadMaps</a> *threadLoadMaps;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;};</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611aba52fd9576b252cffaf75ad94508fbdbd4"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba52fd9576b252cffaf75ad94508fbdbd4">GeographySysCoord::YANDEX_MAP</a></div><div class="ttdeci">@ YANDEX_MAP</div><div class="ttdef"><b>Definition:</b> mapObj.h:90</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_abd13bdcfc9be55f1e9b0cc2627ccb30f"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#abd13bdcfc9be55f1e9b0cc2627ccb30f">GeographySysCoord::slotCreatePixmapItem</a></div><div class="ttdeci">void slotCreatePixmapItem(QByteArray pixmap, int pixX, int pixY)</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:310</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a4a87ec15d2431a6ea9f2bc88d4540211"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a4a87ec15d2431a6ea9f2bc88d4540211">GeographySysCoord::pixelXYToTileXY</a></div><div class="ttdeci">void pixelXYToTileXY(double pixX, double pixY, int &amp;tileX, int &amp;tileY)</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:27</div></div>
+<div class="ttc" id="aclass_thread_load_maps_html_a8abe0d0e22ffc4a5bb8e307b993a435b"><div class="ttname"><a href="../../d0/da9/class_thread_load_maps.html#a8abe0d0e22ffc4a5bb8e307b993a435b">ThreadLoadMaps::ThreadLoadMaps</a></div><div class="ttdeci">ThreadLoadMaps(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:222</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a7d4fa3dd7a21f0d05a2a9ad5f5299761"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a7d4fa3dd7a21f0d05a2a9ad5f5299761">GeographySysCoord::strTypeMap</a></div><div class="ttdeci">QString strTypeMap()</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:192</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a7e5eff1cecba7bf1b5f698c16ab3dbea"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a7e5eff1cecba7bf1b5f698c16ab3dbea">GeographySysCoord::isTypeLayer</a></div><div class="ttdeci">TypeLayer isTypeLayer()</div><div class="ttdef"><b>Definition:</b> mapObj.h:171</div></div>
+<div class="ttc" id="aclass_thread_load_maps_html_ae8f08b02bf3de0b66ad78f37ae1a74ed"><div class="ttname"><a href="../../d0/da9/class_thread_load_maps.html#ae8f08b02bf3de0b66ad78f37ae1a74ed">ThreadLoadMaps::createNewPixmapItem</a></div><div class="ttdeci">void createNewPixmapItem(QByteArray byteArray, int X, int Y)</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">glm::Y</a></div><div class="ttdeci">@ Y</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:41</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a35e5f26aa776e8c9c1bbbae2f6a08b76"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a35e5f26aa776e8c9c1bbbae2f6a08b76">GeographySysCoord::setTypeMap</a></div><div class="ttdeci">void setTypeMap(TypeMAP value)</div><div class="ttdef"><b>Definition:</b> mapObj.h:130</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a5ed0e18b2afa85ff85885bbab954d4ef"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a5ed0e18b2afa85ff85885bbab954d4ef">GeographySysCoord::type</a></div><div class="ttdeci">virtual int type() const</div><div class="ttdef"><b>Definition:</b> mapObj.h:165</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_aaabb7ea30aa798675626dd3d0c6096f7acae4fc9eae321c16582ffc701bd5c9e1"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7acae4fc9eae321c16582ffc701bd5c9e1">GeographySysCoord::YANDEX_HYB</a></div><div class="ttdeci">@ YANDEX_HYB</div><div class="ttdef"><b>Definition:</b> mapObj.h:100</div></div>
+<div class="ttc" id="aclass_graph_node_html_ab489b49b1f629bbf53a253c753b3c450a67ace217e0a125a5f9b3200f278e05a3"><div class="ttname"><a href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a67ace217e0a125a5f9b3200f278e05a3">GraphNode::E_MAP</a></div><div class="ttdeci">@ E_MAP</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:59</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a8d07ca1ee26eef9db6e3e3fa67232538"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a8d07ca1ee26eef9db6e3e3fa67232538">GeographySysCoord::boundingRect</a></div><div class="ttdeci">virtual QRectF boundingRect() const</div><div class="ttdef"><b>Definition:</b> mapObj.h:140</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a36c7cab6aaa5f6c247a9f5fe15673ba2"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a36c7cab6aaa5f6c247a9f5fe15673ba2">GeographySysCoord::setTypeLayer</a></div><div class="ttdeci">void setTypeLayer(TypeLayer value)</div><div class="ttdef"><b>Definition:</b> mapObj.h:135</div></div>
+<div class="ttc" id="aclass_thread_load_maps_html_a29c32f1022933a4b413a275f360635d5"><div class="ttname"><a href="../../d0/da9/class_thread_load_maps.html#a29c32f1022933a4b413a275f360635d5">ThreadLoadMaps::finishedLoadAllTile</a></div><div class="ttdeci">void finishedLoadAllTile()</div><div class="ttdoc">сигнал о том, что все тайлы загружены</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_ab96b58c81eb7956944d30d1ade96ef95"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#ab96b58c81eb7956944d30d1ade96ef95">GeographySysCoord::paint</a></div><div class="ttdeci">void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)</div><div class="ttdef"><b>Definition:</b> mapObj.h:149</div></div>
+<div class="ttc" id="asetting_v_v_8h_html"><div class="ttname"><a href="../../d8/d12/setting_v_v_8h.html">settingVV.h</a></div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_aaabb7ea30aa798675626dd3d0c6096f7ab0b2a27daaf0afd0d1bf7fd6191911fd"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7ab0b2a27daaf0afd0d1bf7fd6191911fd">GeographySysCoord::GOOGLE_HYB</a></div><div class="ttdeci">@ GOOGLE_HYB</div><div class="ttdef"><b>Definition:</b> mapObj.h:99</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611aba9274ce2ae9312fabc7c0e1356b6d595e"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba9274ce2ae9312fabc7c0e1356b6d595e">GeographySysCoord::GOOGLE_LAND</a></div><div class="ttdeci">@ GOOGLE_LAND</div><div class="ttdef"><b>Definition:</b> mapObj.h:88</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611ab"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">GeographySysCoord::TypeMAP</a></div><div class="ttdeci">TypeMAP</div><div class="ttdef"><b>Definition:</b> mapObj.h:84</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_aaabb7ea30aa798675626dd3d0c6096f7"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">GeographySysCoord::TypeLayer</a></div><div class="ttdeci">TypeLayer</div><div class="ttdef"><b>Definition:</b> mapObj.h:97</div></div>
+<div class="ttc" id="aclass_thread_load_maps_html_a265ea7973709576d9c6678e64add9412"><div class="ttname"><a href="../../d0/da9/class_thread_load_maps.html#a265ea7973709576d9c6678e64add9412">ThreadLoadMaps::run</a></div><div class="ttdeci">virtual void run()</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:226</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a74e40860c2851d26c32de8bdb4d5818b"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a74e40860c2851d26c32de8bdb4d5818b">GeographySysCoord::tileXYToPixelXY</a></div><div class="ttdeci">void tileXYToPixelXY(int tileX, int tileY, double &amp;pixX, double &amp;pixY)</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:32</div></div>
+<div class="ttc" id="aclass_graph_node_html"><div class="ttname"><a href="../../df/d52/class_graph_node.html">GraphNode</a></div><div class="ttdoc">основной графический узел</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:47</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html">GeographySysCoord</a></div><div class="ttdoc">географическая система координат</div><div class="ttdef"><b>Definition:</b> mapObj.h:79</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_aaabb7ea30aa798675626dd3d0c6096f7af913c7dcb961add31fb486e66e582205"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7af913c7dcb961add31fb486e66e582205">GeographySysCoord::NO_LAYER</a></div><div class="ttdeci">@ NO_LAYER</div><div class="ttdef"><b>Definition:</b> mapObj.h:98</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_aacc9fd2ac2351a018730ba8a776dcaba"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#aacc9fd2ac2351a018730ba8a776dcaba">GeographySysCoord::GeographySysCoord</a></div><div class="ttdeci">GeographySysCoord(QGraphicsItem *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> mapObj.h:103</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611aba90680dd6f2ebc1c2f873250e83406949"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba90680dd6f2ebc1c2f873250e83406949">GeographySysCoord::NOKIA_HYB</a></div><div class="ttdeci">@ NOKIA_HYB</div><div class="ttdef"><b>Definition:</b> mapObj.h:94</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611abaa902226385c607bf9f35c0b717ac5951"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abaa902226385c607bf9f35c0b717ac5951">GeographySysCoord::GOOGLE_SAT</a></div><div class="ttdeci">@ GOOGLE_SAT</div><div class="ttdef"><b>Definition:</b> mapObj.h:86</div></div>
+<div class="ttc" id="aclass_thread_load_maps_html_a4a5d96328dd5803336623ddcd6e4e330"><div class="ttname"><a href="../../d0/da9/class_thread_load_maps.html#a4a5d96328dd5803336623ddcd6e4e330">ThreadLoadMaps::addTile</a></div><div class="ttdeci">void addTile(QString path, int i, int j, double pixX, double pixY, QString ext)</div><div class="ttdoc">добавить тайл</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:273</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611aba0bed43827c8c030b763e9b8f7fca8df7"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba0bed43827c8c030b763e9b8f7fca8df7">GeographySysCoord::NOKIA_MAP</a></div><div class="ttdeci">@ NOKIA_MAP</div><div class="ttdef"><b>Definition:</b> mapObj.h:93</div></div>
+<div class="ttc" id="aclass_thread_load_maps_html_ac74dd00a7e291b93879d4307ce388e41"><div class="ttname"><a href="../../d0/da9/class_thread_load_maps.html#ac74dd00a7e291b93879d4307ce388e41">ThreadLoadMaps::startLoadTile</a></div><div class="ttdeci">void startLoadTile(QString pref_map, QString ext_map, QString pref_layer, QString ext_layer, int tileX0, int tileX1, int tileY0, int tileY2)</div><div class="ttdoc">загрузка тайлов</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:248</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611aba020e1097cbe803641ea63651eb51c34e"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba020e1097cbe803641ea63651eb51c34e">GeographySysCoord::NO_MAP</a></div><div class="ttdeci">@ NO_MAP</div><div class="ttdef"><b>Definition:</b> mapObj.h:85</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_ac5712a546792993102710c26528bc384"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#ac5712a546792993102710c26528bc384">GeographySysCoord::setZoomLevel</a></div><div class="ttdeci">void setZoomLevel(int z, QRectF rectView)</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:38</div></div>
+<div class="ttc" id="anode_visual_8h_html"><div class="ttname"><a href="../../d2/d34/node_visual_8h.html">nodeVisual.h</a></div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611aba783454274abae384a9e643e5c1503fa6"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba783454274abae384a9e643e5c1503fa6">GeographySysCoord::YANDEX_SAT</a></div><div class="ttdeci">@ YANDEX_SAT</div><div class="ttdef"><b>Definition:</b> mapObj.h:89</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a468e5c0376f67e223efcf25280de43ed"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a468e5c0376f67e223efcf25280de43ed">GeographySysCoord::addToScene</a></div><div class="ttdeci">void addToScene(QGraphicsPixmapItem *item)</div><div class="ttdef"><b>Definition:</b> mapObj.h:160</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611abaf6efe819b64ac0c8bad1d045f4ad4757"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abaf6efe819b64ac0c8bad1d045f4ad4757">GeographySysCoord::GOOGLE_SAT_EARTH</a></div><div class="ttdeci">@ GOOGLE_SAT_EARTH</div><div class="ttdef"><b>Definition:</b> mapObj.h:92</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a465b48e537287989694ada867f7e60ca"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a465b48e537287989694ada867f7e60ca">GeographySysCoord::addTile</a></div><div class="ttdeci">void addTile(QString prefix, int i, int j, double pixX, double pixY, QString ext=&quot;.jpg&quot;)</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:319</div></div>
+<div class="ttc" id="ageography_mapping_8h_html"><div class="ttname"><a href="../../dc/d96/geography_mapping_8h.html">geographyMapping.h</a></div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611abac98b80e496117217800b8028c2538bf5"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abac98b80e496117217800b8028c2538bf5">GeographySysCoord::GOOGLE_MAP</a></div><div class="ttdeci">@ GOOGLE_MAP</div><div class="ttdef"><b>Definition:</b> mapObj.h:87</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a42589bbc56009c679f8393cc83f29f51"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a42589bbc56009c679f8393cc83f29f51">GeographySysCoord::isTypeMap</a></div><div class="ttdeci">TypeMAP isTypeMap()</div><div class="ttdef"><b>Definition:</b> mapObj.h:169</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">glm::X</a></div><div class="ttdeci">@ X</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:38</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_ad994582c6614215958acb17e1d8b0734"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#ad994582c6614215958acb17e1d8b0734">GeographySysCoord::strTypeLayer</a></div><div class="ttdeci">QString strTypeLayer()</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:210</div></div>
+<div class="ttc" id="agl__func_8cpp_html_a63739ef9a34275070a0e7cc9e7499d38"><div class="ttname"><a href="../../d5/d68/gl__func_8cpp.html#a63739ef9a34275070a0e7cc9e7499d38">readParamFromXMLFile</a></div><div class="ttdeci">QString readParamFromXMLFile(QString fileName, QString nameProg, QString nameAttrib)</div><div class="ttdef"><b>Definition:</b> gl_func.cpp:14</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a92543769c914de18b7825c7b632d99a8"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a92543769c914de18b7825c7b632d99a8">GeographySysCoord::slotFinishedLoadAllTile</a></div><div class="ttdeci">void slotFinishedLoadAllTile()</div><div class="ttdef"><b>Definition:</b> mapObj.cpp:300</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_aa5bc61ff4d739bc6cb4a98ffea8786e1"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#aa5bc61ff4d739bc6cb4a98ffea8786e1">GeographySysCoord::addItemToScene</a></div><div class="ttdeci">void addItemToScene(QGraphicsPixmapItem *item)</div><div class="ttdef"><b>Definition:</b> mapObj.h:155</div></div>
+<div class="ttc" id="aclass_thread_load_maps_html"><div class="ttname"><a href="../../d0/da9/class_thread_load_maps.html">ThreadLoadMaps</a></div><div class="ttdoc">поток для подгрузки карт</div><div class="ttdef"><b>Definition:</b> mapObj.h:32</div></div>
+<div class="ttc" id="agl__func_8cpp_html_a0e77467c5ef4eeb7c48ed547fd5a37e0"><div class="ttname"><a href="../../d5/d68/gl__func_8cpp.html#a0e77467c5ef4eeb7c48ed547fd5a37e0">nameMainFile</a></div><div class="ttdeci">QString nameMainFile</div><div class="ttdoc">имя файла с настройками</div><div class="ttdef"><b>Definition:</b> gl_func.cpp:12</div></div>
+<div class="ttc" id="aclass_geography_sys_coord_html_a1872d97a0e96279a940aa5f5cde611aba64b47230d9e503d24c7cb54ed13f3bf7"><div class="ttname"><a href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba64b47230d9e503d24c7cb54ed13f3bf7">GeographySysCoord::BING_SAT</a></div><div class="ttdeci">@ BING_SAT</div><div class="ttdef"><b>Definition:</b> mapObj.h:91</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

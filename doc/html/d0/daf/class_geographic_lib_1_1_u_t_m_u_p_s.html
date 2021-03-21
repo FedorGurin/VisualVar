@@ -1,0 +1,998 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::UTMUPS</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html">UTMUPS</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="../../dd/d94/class_geographic_lib_1_1_u_t_m_u_p_s-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::UTMUPS</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Convert between geographic coordinates and UTM/UPS.  
+ <a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d4/d7e/_u_t_m_u_p_s_8hpp_source.html">UTMUPS.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a0c459615da18cc899a960bdc8c5b11b7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">zonespec</a> { <br />
+&#160;&#160;<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a058ac8a834bbc78ce73d9b37a1a5dfb9">MINPSEUDOZONE</a> = -4, 
+<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aeb6750fb82edce6e5b58178a38ee8bd0">INVALID</a> = -4, 
+<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a9059a8e3b4721e27869e99ed1ae3d320">MATCH</a> = -3, 
+<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aacc8f89ac6144b1e445ca21cbe9a2533">UTM</a> = -2, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">STANDARD</a> = -1, 
+<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7ac22db7e136b6e06fba7c3c06b5888362">MAXPSEUDOZONE</a> = -1, 
+<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7af91adc987ae7295bfb6d3786b23c58e1">MINZONE</a> = 0, 
+<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a40256f9ab9f277957f8ab697bcd2fd42">UPS</a> = 0, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a1413e6cc83d4bf1eb4ad1c0f1d745eb6">MINUTMZONE</a> = 1, 
+<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7ae8e04ab8df50a062c1fe277a6880bc19">MAXUTMZONE</a> = 60, 
+<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a12dabceb6da15aa0fc94b9406aca921a">MAXZONE</a> = 60
+<br />
+ }</td></tr>
+<tr class="separator:a0c459615da18cc899a960bdc8c5b11b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a62623c295d1b43318a9fa762c3da94ea"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a62623c295d1b43318a9fa762c3da94ea">StandardZone</a> (real lat, real lon, int setzone=<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">STANDARD</a>)</td></tr>
+<tr class="separator:a62623c295d1b43318a9fa762c3da94ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a921d6c23e728e0b17651902d43fb56e8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a921d6c23e728e0b17651902d43fb56e8">Forward</a> (real lat, real lon, int &amp;zone, bool &amp;northp, real &amp;x, real &amp;y, real &amp;gamma, real &amp;k, int setzone=<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">STANDARD</a>, bool mgrslimits=false)</td></tr>
+<tr class="separator:a921d6c23e728e0b17651902d43fb56e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf417ae6bed6da324aa03fc96ee0dda4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aaf417ae6bed6da324aa03fc96ee0dda4">Reverse</a> (int zone, bool northp, real x, real y, real &amp;lat, real &amp;lon, real &amp;gamma, real &amp;k, bool mgrslimits=false)</td></tr>
+<tr class="separator:aaf417ae6bed6da324aa03fc96ee0dda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21ec1bc26f691e0a6f2ccc44debe6f0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aa21ec1bc26f691e0a6f2ccc44debe6f0">Forward</a> (real lat, real lon, int &amp;zone, bool &amp;northp, real &amp;x, real &amp;y, int setzone=<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">STANDARD</a>, bool mgrslimits=false)</td></tr>
+<tr class="separator:aa21ec1bc26f691e0a6f2ccc44debe6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8cbfd7b15c96b52b876b54ce68f7b4d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac8cbfd7b15c96b52b876b54ce68f7b4d">Reverse</a> (int zone, bool northp, real x, real y, real &amp;lat, real &amp;lon, bool mgrslimits=false)</td></tr>
+<tr class="separator:ac8cbfd7b15c96b52b876b54ce68f7b4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac333eaff84cc487fee67440de3383bf7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac333eaff84cc487fee67440de3383bf7">Transfer</a> (int zonein, bool northpin, real xin, real yin, int zoneout, bool northpout, real &amp;xout, real &amp;yout, int &amp;zone)</td></tr>
+<tr class="separator:ac333eaff84cc487fee67440de3383bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad74d52d7ebeff195019745f791f30562"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ad74d52d7ebeff195019745f791f30562">DecodeZone</a> (const std::string &amp;zonestr, int &amp;zone, bool &amp;northp)</td></tr>
+<tr class="separator:ad74d52d7ebeff195019745f791f30562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac597fc1e5176ca1ed6ef13499ec5c4bb"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac597fc1e5176ca1ed6ef13499ec5c4bb">EncodeZone</a> (int zone, bool northp, bool abbrev=true)</td></tr>
+<tr class="separator:ac597fc1e5176ca1ed6ef13499ec5c4bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad33325ea4fdb2d36ca49738dbf23773"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aad33325ea4fdb2d36ca49738dbf23773">DecodeEPSG</a> (int epsg, int &amp;zone, bool &amp;northp)</td></tr>
+<tr class="separator:aad33325ea4fdb2d36ca49738dbf23773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188cfaa3585d1337c856b1addcdf3e0c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a188cfaa3585d1337c856b1addcdf3e0c">EncodeEPSG</a> (int zone, bool northp)</td></tr>
+<tr class="separator:a188cfaa3585d1337c856b1addcdf3e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd70d3f90f5c79a09bdd217b67e6729b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#abd70d3f90f5c79a09bdd217b67e6729b">UTMShift</a> ()</td></tr>
+<tr class="separator:abd70d3f90f5c79a09bdd217b67e6729b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions</div></td></tr>
+<tr class="memitem:a293aa30508096d49db77a23917ea1092"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a293aa30508096d49db77a23917ea1092">MajorRadius</a> ()</td></tr>
+<tr class="separator:a293aa30508096d49db77a23917ea1092"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182de2e29f1181c55a266777039b8a9d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a182de2e29f1181c55a266777039b8a9d">Flattening</a> ()</td></tr>
+<tr class="separator:a182de2e29f1181c55a266777039b8a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Convert between geographic coordinates and UTM/UPS. </p>
+<p>UTM and UPS are defined</p><ul>
+<li>J. W. Hager, J. F. Behensky, and B. W. Drew, <a href="http://earth-info.nga.mil/GandG/publications/tm8358.2/TM8358_2.pdf">The Universal Grids: Universal Transverse Mercator (UTM) and Universal Polar Stereographic (UPS)</a>, Defense Mapping Agency, Technical Manual TM8358.2 (1989).</li>
+</ul>
+<p>Section 2-3 defines UTM and section 3-2.4 defines UPS. This document also includes approximate algorithms for the computation of the underlying transverse Mercator and polar stereographic projections. Here we substitute much more accurate algorithms given by <a class="el" href="../../dd/d29/namespace_geographic_lib.html" title="Namespace for GeographicLib.">GeographicLib</a>:<a class="el" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html" title="Transverse Mercator projection.">TransverseMercator</a> and <a class="el" href="../../dd/d29/namespace_geographic_lib.html" title="Namespace for GeographicLib.">GeographicLib</a>:<a class="el" href="../../d3/df2/class_geographic_lib_1_1_polar_stereographic.html" title="Polar stereographic projection.">PolarStereographic</a>. These are the algorithms recommended by the NGA document</p><ul>
+<li><a href="http://earth-info.nga.mil/GandG/publications/NGA_SIG_0012_2_0_0_UTMUPS/NGA.SIG.0012_2.0.0_UTMUPS.pdf">The Universal Grids and the Transverse Mercator and Polar Stereographic Map Projections</a>, NGA.SIG.0012_2.0.0_UTMUPS (2014).</li>
+</ul>
+<p>In this implementation, the conversions are closed, i.e., output from Forward is legal input for Reverse and vice versa. The error is about 5nm in each direction. However, the conversion from legal UTM/UPS coordinates to geographic coordinates and back might throw an error if the initial point is within 5nm of the edge of the allowed range for the UTM/UPS coordinates.</p>
+<p>The simplest way to guarantee the closed property is to define allowed ranges for the eastings and northings for UTM and UPS coordinates. The UTM boundaries are the same for all zones. (The only place the exceptional nature of the zone boundaries is evident is when converting to UTM/UPS coordinates requesting the standard zone.) The <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> lettering scheme imposes natural limits on UTM/UPS coordinates which may be converted into <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> coordinates. For the conversion to/from geographic coordinates these ranges have been extended by 100km in order to provide a generous overlap between UTM and UPS and between UTM zones.</p>
+<p>The <a href="http://www.nga.mil">NGA</a> software package <a href="http://earth-info.nga.mil/GandG/geotrans/index.html">geotrans</a> also provides conversions to and from UTM and UPS. Version 2.4.2 (and earlier) suffers from some drawbacks:</p><ul>
+<li>Inconsistent rules are used to determine the whether a particular UTM or UPS coordinate is legal. A more systematic approach is taken here.</li>
+<li>The underlying projections are not very accurately implemented.</li>
+</ul>
+<p>The <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac597fc1e5176ca1ed6ef13499ec5c4bb">GeographicLib::UTMUPS::EncodeZone</a> encodes the UTM zone and hemisphere to allow UTM/UPS coordinated to be displayed as, for example, "38N 444500
+3688500". According to NGA.SIG.0012_2.0.0_UTMUPS the use of "N" to denote "north" in the context is not allowed (since a upper case letter in this context denotes the <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> latitude band). Consequently, as of version 1.36, EncodeZone uses the lower case letters "n" and "s" to denote the hemisphere. In addition EncodeZone accepts an optional final argument <em>abbrev</em>, which, if false, results in the hemisphere being spelled out as in "38north".</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --> </div><h2 class="groupheader">Перечисления</h2>
+<a id="a0c459615da18cc899a960bdc8c5b11b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c459615da18cc899a960bdc8c5b11b7">&#9670;&nbsp;</a></span>zonespec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">GeographicLib::UTMUPS::zonespec</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>In this class we bring together the UTM and UPS coordinates systems. The UTM divides the earth between latitudes &minus;80&deg; and 84&deg; into 60 zones numbered 1 thru 60. Zone assign zone number 0 to the UPS regions, covering the two poles. Within <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html" title="Convert between geographic coordinates and UTM/UPS.">UTMUPS</a>, non-negative zone numbers refer to one of the "physical" zones, 0 for UPS and [1, 60] for UTM. Negative "pseudo-zone" numbers are used to select one of the physical zones. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7a058ac8a834bbc78ce73d9b37a1a5dfb9"></a>MINPSEUDOZONE&#160;</td><td class="fielddoc"><p>The smallest pseudo-zone number. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7aeb6750fb82edce6e5b58178a38ee8bd0"></a>INVALID&#160;</td><td class="fielddoc"><p>A marker for an undefined or invalid zone. Equivalent to NaN. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7a9059a8e3b4721e27869e99ed1ae3d320"></a>MATCH&#160;</td><td class="fielddoc"><p>If a coordinate already include zone information (e.g., it is an <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> coordinate), use that, otherwise apply the <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a> rules. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7aacc8f89ac6144b1e445ca21cbe9a2533"></a>UTM&#160;</td><td class="fielddoc"><p>Apply the standard rules for UTM zone assigment extending the UTM zone to each pole to give a zone number in [1, 60]. For example, use UTM zone 38 for longitude in [42&deg;, 48&deg;). The rules include the Norway and Svalbard exceptions. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406"></a>STANDARD&#160;</td><td class="fielddoc"><p>Apply the standard rules for zone assignment to give a zone number in [0, 60]. If the latitude is not in [&minus;80&deg;, 84&deg;), then use <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a40256f9ab9f277957f8ab697bcd2fd42">UTMUPS::UPS</a> = 0, otherwise apply the rules for <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aacc8f89ac6144b1e445ca21cbe9a2533">UTMUPS::UTM</a>. The tests on latitudes and longitudes are all closed on the lower end open on the upper. Thus for UTM zone 38, latitude is in [&minus;80&deg;, 84&deg;) and longitude is in [42&deg;, 48&deg;). </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7ac22db7e136b6e06fba7c3c06b5888362"></a>MAXPSEUDOZONE&#160;</td><td class="fielddoc"><p>The largest pseudo-zone number. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7af91adc987ae7295bfb6d3786b23c58e1"></a>MINZONE&#160;</td><td class="fielddoc"><p>The smallest physical zone number. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7a40256f9ab9f277957f8ab697bcd2fd42"></a>UPS&#160;</td><td class="fielddoc"><p>The zone number used for UPS </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7a1413e6cc83d4bf1eb4ad1c0f1d745eb6"></a>MINUTMZONE&#160;</td><td class="fielddoc"><p>The smallest UTM zone number. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7ae8e04ab8df50a062c1fe277a6880bc19"></a>MAXUTMZONE&#160;</td><td class="fielddoc"><p>The largest UTM zone number. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0c459615da18cc899a960bdc8c5b11b7a12dabceb6da15aa0fc94b9406aca921a"></a>MAXZONE&#160;</td><td class="fielddoc"><p>The largest physical zone number. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aad33325ea4fdb2d36ca49738dbf23773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad33325ea4fdb2d36ca49738dbf23773">&#9670;&nbsp;</a></span>DecodeEPSG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::UTMUPS::DecodeEPSG </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>epsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>northp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Decode EPSG.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">epsg</td><td>the EPSG code. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zone</td><td>the UTM zone (zero means UPS). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">northp</td><td>hemisphere (true means north, false means south).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>EPSG (European Petroleum Survery Group) codes are a way to refer to many different projections. DecodeEPSG decodes those refering to UTM or UPS projections for the WGS84 ellipsoid. If the code does not refer to one of these projections, <em>zone</em> is set to <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aeb6750fb82edce6e5b58178a38ee8bd0">UTMUPS::INVALID</a>. See <a href="http://spatialreference.org/ref/epsg/">http://spatialreference.org/ref/epsg/</a> </p>
+
+</div>
+</div>
+<a id="ad74d52d7ebeff195019745f791f30562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad74d52d7ebeff195019745f791f30562">&#9670;&nbsp;</a></span>DecodeZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::UTMUPS::DecodeZone </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>zonestr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>northp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Decode a UTM/UPS zone string.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zonestr</td><td>string representation of zone and hemisphere. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zone</td><td>the UTM zone (zero means UPS). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">northp</td><td>hemisphere (true means north, false means south). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zonestr</em> is malformed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>For UTM, <em>zonestr</em> has the form of a zone number in the range [<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a1413e6cc83d4bf1eb4ad1c0f1d745eb6">UTMUPS::MINUTMZONE</a>, <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7ae8e04ab8df50a062c1fe277a6880bc19">UTMUPS::MAXUTMZONE</a>] = [1, 60] followed by a hemisphere letter, n or s (or "north" or "south" spelled out). For UPS, it consists just of the hemisphere letter (or the spelled out hemisphere). The returned value of <em>zone</em> is <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a40256f9ab9f277957f8ab697bcd2fd42">UTMUPS::UPS</a> = 0 for UPS. Note well that "38s" indicates the southern hemisphere of zone 38 and not latitude band S, 32&deg; &le; <em>lat</em> &lt; 40&deg;. n, 01s, 2n, 38s, south, 3north are legal. 0n, 001s, +3n, 61n, 38P are illegal. INV is a special value for which the returned value of <em>is</em> <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aeb6750fb82edce6e5b58178a38ee8bd0">UTMUPS::INVALID</a>. </p>
+
+</div>
+</div>
+<a id="a188cfaa3585d1337c856b1addcdf3e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188cfaa3585d1337c856b1addcdf3e0c">&#9670;&nbsp;</a></span>EncodeEPSG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GeographicLib::UTMUPS::EncodeEPSG </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Encode zone as EPSG.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>the UTM zone (zero means UPS). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northp</td><td>hemisphere (true means north, false means south). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>EPSG code (or -1 if <em>zone</em> is not in the range [<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7af91adc987ae7295bfb6d3786b23c58e1">UTMUPS::MINZONE</a>, <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a12dabceb6da15aa0fc94b9406aca921a">UTMUPS::MAXZONE</a>] = [0, 60])</dd></dl>
+<p>Convert <em>zone</em> and <em>northp</em> to the corresponding EPSG (European Petroleum Survery Group) codes </p>
+
+</div>
+</div>
+<a id="ac597fc1e5176ca1ed6ef13499ec5c4bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac597fc1e5176ca1ed6ef13499ec5c4bb">&#9670;&nbsp;</a></span>EncodeZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GeographicLib::UTMUPS::EncodeZone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>abbrev</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Encode a UTM/UPS zone string.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>the UTM zone (zero means UPS). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northp</td><td>hemisphere (true means north, false means south). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">abbrev</td><td>if true (the default) use abbreviated (n/s) notation for hemisphere; otherwise spell out the hemisphere (north/south) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zone</em> is out of range (see below). </td></tr>
+    <tr><td class="paramname">std::bad_alloc</td><td>if memoy for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>string representation of zone and hemisphere.</dd></dl>
+<p><em>zone</em> must be in the range [<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7af91adc987ae7295bfb6d3786b23c58e1">UTMUPS::MINZONE</a>, <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a12dabceb6da15aa0fc94b9406aca921a">UTMUPS::MAXZONE</a>] = [0, 60] with <em>zone</em> = <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a40256f9ab9f277957f8ab697bcd2fd42">UTMUPS::UPS</a>, 0, indicating UPS (but the resulting string does not contain "0"). <em>zone</em> may also be <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aeb6750fb82edce6e5b58178a38ee8bd0">UTMUPS::INVALID</a>, in which case the returned string is "inv". This reverses <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ad74d52d7ebeff195019745f791f30562">UTMUPS::DecodeZone</a>. </p>
+
+</div>
+</div>
+<a id="a182de2e29f1181c55a266777039b8a9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182de2e29f1181c55a266777039b8a9d">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::UTMUPS::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the WGS84 ellipsoid.</dd></dl>
+<p>(The WGS84 value is returned because the UTM and UPS projections are based on this ellipsoid.) </p>
+
+</div>
+</div>
+<a id="aa21ec1bc26f691e0a6f2ccc44debe6f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21ec1bc26f691e0a6f2ccc44debe6f0">&#9670;&nbsp;</a></span>Forward() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GeographicLib::UTMUPS::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>setzone</em> = <code><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">STANDARD</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mgrslimits</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a921d6c23e728e0b17651902d43fb56e8">UTMUPS::Forward</a> without returning convergence and scale. </p>
+
+</div>
+</div>
+<a id="a921d6c23e728e0b17651902d43fb56e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a921d6c23e728e0b17651902d43fb56e8">&#9670;&nbsp;</a></span>Forward() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::UTMUPS::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>setzone</em> = <code><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">STANDARD</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mgrslimits</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Forward projection, from geographic to UTM/UPS.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zone</td><td>the UTM zone (zero means UPS). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">northp</td><td>hemisphere (true means north, false means south). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>easting of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>northing of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gamma</td><td>meridian convergence at point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">k</td><td>scale of projection at point. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">setzone</td><td>zone override (optional). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mgrslimits</td><td>if true enforce the stricter <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> limits on the coordinates (default = false). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>lat</em> is not in [&minus;90&deg;, 90&deg;]. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the resulting <em>x</em> or <em>y</em> is out of allowed range (see Reverse); in this case, these arguments are unchanged.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If <em>setzone</em> is omitted, use the standard rules for picking the zone. If <em>setzone</em> is given then use that zone if it is non-negative, otherwise apply the rules given in <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">UTMUPS::zonespec</a>. The accuracy of the conversion is about 5nm.</p>
+<p>The northing <em>y</em> jumps by <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#abd70d3f90f5c79a09bdd217b67e6729b">UTMUPS::UTMShift()</a> when crossing the equator in the southerly direction. Sometimes it is useful to remove this discontinuity in <em>y</em> by extending the "northern" hemisphere using <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac333eaff84cc487fee67440de3383bf7">UTMUPS::Transfer</a>: </p><div class="fragment"><div class="line"><span class="keywordtype">double</span> lat = -1, lon = 123;</div>
+<div class="line"><span class="keywordtype">int</span> zone;</div>
+<div class="line"><span class="keywordtype">bool</span> northp;</div>
+<div class="line"><span class="keywordtype">double</span> x, y, gamma, k;</div>
+<div class="line"><a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a921d6c23e728e0b17651902d43fb56e8">GeographicLib::UTMUPS::Forward</a>(lat, lon, zone, northp, x, y, gamma, k);</div>
+<div class="line"><a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac333eaff84cc487fee67440de3383bf7">GeographicLib::UTMUPS::Transfer</a>(zone, northp, x, y,</div>
+<div class="line">                                zone, <span class="keyword">true</span>,   x, y, zone);</div>
+<div class="line">northp = <span class="keyword">true</span>;</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a293aa30508096d49db77a23917ea1092"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a293aa30508096d49db77a23917ea1092">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::UTMUPS::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the WGS84 ellipsoid (meters).</dd></dl>
+<p>(The WGS84 value is returned because the UTM and UPS projections are based on this ellipsoid.) </p>
+
+</div>
+</div>
+<a id="ac8cbfd7b15c96b52b876b54ce68f7b4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8cbfd7b15c96b52b876b54ce68f7b4d">&#9670;&nbsp;</a></span>Reverse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GeographicLib::UTMUPS::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mgrslimits</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aaf417ae6bed6da324aa03fc96ee0dda4">UTMUPS::Reverse</a> without returning convergence and scale. </p>
+
+</div>
+</div>
+<a id="aaf417ae6bed6da324aa03fc96ee0dda4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf417ae6bed6da324aa03fc96ee0dda4">&#9670;&nbsp;</a></span>Reverse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::UTMUPS::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>k</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mgrslimits</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reverse projection, from UTM/UPS to geographic.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>the UTM zone (zero means UPS). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northp</td><td>hemisphere (true means north, false means south). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>easting of point (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>northing of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gamma</td><td>meridian convergence at point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">k</td><td>scale of projection at point. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mgrslimits</td><td>if true enforce the stricter <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> limits on the coordinates (default = false). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zone</em>, <em>x</em>, or <em>y</em> is out of allowed range; this this case the arguments are unchanged.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The accuracy of the conversion is about 5nm.</p>
+<p>UTM eastings are allowed to be in the range [0km, 1000km], northings are allowed to be in in [0km, 9600km] for the northern hemisphere and in [900km, 10000km] for the southern hemisphere. However UTM northings can be continued across the equator. So the actual limits on the northings are [-9100km, 9600km] for the "northern" hemisphere and [900km, 19600km] for the "southern" hemisphere.</p>
+<p>UPS eastings and northings are allowed to be in the range [1200km, 2800km] in the northern hemisphere and in [700km, 3300km] in the southern hemisphere.</p>
+<p>These ranges are 100km larger than allowed for the conversions to <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a>. (100km is the maximum extra padding consistent with eastings remaining non-negative.) This allows generous overlaps between zones and UTM and UPS. If <em>mgrslimits</em> = true, then all the ranges are shrunk by 100km so that they agree with the stricter <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> ranges. No checks are performed besides these (e.g., to limit the distance outside the standard zone boundaries). </p>
+
+</div>
+</div>
+<a id="a62623c295d1b43318a9fa762c3da94ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62623c295d1b43318a9fa762c3da94ea">&#9670;&nbsp;</a></span>StandardZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GeographicLib::UTMUPS::StandardZone </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>setzone</em> = <code><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">STANDARD</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The standard zone.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">setzone</td><td>zone override (optional). If omitted, use the standard rules for picking the zone. If <em>setzone</em> is given then use that zone if it is non-negative, otherwise apply the rules given in <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">UTMUPS::zonespec</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>setzone</em> is outside the range [<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a058ac8a834bbc78ce73d9b37a1a5dfb9">UTMUPS::MINPSEUDOZONE</a>, <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a12dabceb6da15aa0fc94b9406aca921a">UTMUPS::MAXZONE</a>] = [&minus;4, 60].</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This is exact. </p>
+
+</div>
+</div>
+<a id="ac333eaff84cc487fee67440de3383bf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac333eaff84cc487fee67440de3383bf7">&#9670;&nbsp;</a></span>Transfer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::UTMUPS::Transfer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zonein</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northpin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>xin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>yin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zoneout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northpout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>xout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>yout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>zone</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Transfer UTM/UPS coordinated from one zone to another.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zonein</td><td>the UTM zone for <em>xin</em> and <em>yin</em> (or zero for UPS). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northpin</td><td>hemisphere for <em>xin</em> and <em>yin</em> (true means north, false means south). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xin</td><td>easting of point (meters) in <em>zonein</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yin</td><td>northing of point (meters) in <em>zonein</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zoneout</td><td>the requested UTM zone for <em>xout</em> and <em>yout</em> (or zero for UPS). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northpout</td><td>hemisphere for <em>xout</em> output and <em>yout</em>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xout</td><td>easting of point (meters) in <em>zoneout</em>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yout</td><td>northing of point (meters) in <em>zoneout</em>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zone</td><td>the actual UTM zone for <em>xout</em> and <em>yout</em> (or zero for UPS); this equals <em>zoneout</em> if <em>zoneout</em> &ge; 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zonein</em> is out of range (see below). </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zoneout</em> is out of range (see below). </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>xin</em> or <em>yin</em> fall outside their allowed ranges (see <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aaf417ae6bed6da324aa03fc96ee0dda4">UTMUPS::Reverse</a>). </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>xout</em> or <em>yout</em> fall outside their allowed ranges (see <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aaf417ae6bed6da324aa03fc96ee0dda4">UTMUPS::Reverse</a>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><em>zonein</em> must be in the range [<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7af91adc987ae7295bfb6d3786b23c58e1">UTMUPS::MINZONE</a>, <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a12dabceb6da15aa0fc94b9406aca921a">UTMUPS::MAXZONE</a>] = [0, 60] with <em>zonein</em> = <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a40256f9ab9f277957f8ab697bcd2fd42">UTMUPS::UPS</a>, 0, indicating UPS. <em>zonein</em> may also be <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aeb6750fb82edce6e5b58178a38ee8bd0">UTMUPS::INVALID</a>.</p>
+<p><em>zoneout</em> must be in the range [<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a058ac8a834bbc78ce73d9b37a1a5dfb9">UTMUPS::MINPSEUDOZONE</a>, <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a12dabceb6da15aa0fc94b9406aca921a">UTMUPS::MAXZONE</a>] = [-4, 60]. If <em>zoneout</em> &lt; <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7af91adc987ae7295bfb6d3786b23c58e1">UTMUPS::MINZONE</a> then the rules give in the documentation of <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">UTMUPS::zonespec</a> are applied, and <em>zone</em> is set to the actual zone used for output.</p>
+<p>(<em>xout</em>, <em>yout</em>) can overlap with (<em>xin</em>, <em>yin</em>). </p>
+
+</div>
+</div>
+<a id="abd70d3f90f5c79a09bdd217b67e6729b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd70d3f90f5c79a09bdd217b67e6729b">&#9670;&nbsp;</a></span>UTMShift()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::UTMUPS::UTMShift </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>shift (meters) necessary to align north and south halves of a UTM zone (10<sup>7</sup>). </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d4/d7e/_u_t_m_u_p_s_8hpp_source.html">UTMUPS.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d8/ded/_u_t_m_u_p_s_8cpp.html">UTMUPS.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a921d6c23e728e0b17651902d43fb56e8"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a921d6c23e728e0b17651902d43fb56e8">GeographicLib::UTMUPS::Forward</a></div><div class="ttdeci">static void Forward(real lat, real lon, int &amp;zone, bool &amp;northp, real &amp;x, real &amp;y, real &amp;gamma, real &amp;k, int setzone=STANDARD, bool mgrslimits=false)</div><div class="ttdef"><b>Definition:</b> UTMUPS.cpp:66</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_ac333eaff84cc487fee67440de3383bf7"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac333eaff84cc487fee67440de3383bf7">GeographicLib::UTMUPS::Transfer</a></div><div class="ttdeci">static void Transfer(int zonein, bool northpin, real xin, real yin, int zoneout, bool northpout, real &amp;xout, real &amp;yout, int &amp;zone)</div><div class="ttdef"><b>Definition:</b> UTMUPS.cpp:172</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:20. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

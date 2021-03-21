@@ -1,0 +1,1002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::Geoid</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html">Geoid</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="../../d5/d83/class_geographic_lib_1_1_geoid-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::Geoid</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Looking up the height of the geoid above the ellipsoid.  
+ <a href="../../d3/de1/class_geographic_lib_1_1_geoid.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/d44/_geoid_8hpp_source.html">Geoid.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a58ddbd0fd48c25b361f45bdb70dadb96"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96">convertflag</a> { <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96a4a1db06e9dcfa1ebb345c616151ab70d">ELLIPSOIDTOGEOID</a> = -1, 
+<a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96a677322ba74ea5494e67478c3dc1780d5">NONE</a> = 0, 
+<a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96a96385bcbc41f3d933588f6d6a9868473">GEOIDTOELLIPSOID</a> = 1
+ }</td></tr>
+<tr class="separator:a58ddbd0fd48c25b361f45bdb70dadb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Setting up the geoid</div></td></tr>
+<tr class="memitem:ac3556c755dad0d43c3be0913df08b395"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#ac3556c755dad0d43c3be0913df08b395">Geoid</a> (const std::string &amp;name, const std::string &amp;path=&quot;&quot;, bool cubic=true, bool threadsafe=false)</td></tr>
+<tr class="separator:ac3556c755dad0d43c3be0913df08b395"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacffcd7e83eaad9266ae74ce917c54ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#aacffcd7e83eaad9266ae74ce917c54ea">CacheArea</a> (real south, real west, real north, real east) const</td></tr>
+<tr class="separator:aacffcd7e83eaad9266ae74ce917c54ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64d6dfd88efc53c689cfb09545b67ed2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a64d6dfd88efc53c689cfb09545b67ed2">CacheAll</a> () const</td></tr>
+<tr class="separator:a64d6dfd88efc53c689cfb09545b67ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11f77f9eba0e503a769d76a4afddd6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#ab11f77f9eba0e503a769d76a4afddd6e">CacheClear</a> () const</td></tr>
+<tr class="separator:ab11f77f9eba0e503a769d76a4afddd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Compute geoid heights</div></td></tr>
+<tr class="memitem:ab93330904bbfd607d6adde2cef844b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#ab93330904bbfd607d6adde2cef844b9b">operator()</a> (real lat, real lon) const</td></tr>
+<tr class="separator:ab93330904bbfd607d6adde2cef844b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52f250ffe18aa9fee6e7e4cc03071ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#aa52f250ffe18aa9fee6e7e4cc03071ae">ConvertHeight</a> (real lat, real lon, real h, <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96">convertflag</a> d) const</td></tr>
+<tr class="separator:aa52f250ffe18aa9fee6e7e4cc03071ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions</div></td></tr>
+<tr class="memitem:ad3f824b3a08cae979a59f65fb5621ea7"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#ad3f824b3a08cae979a59f65fb5621ea7">Description</a> () const</td></tr>
+<tr class="separator:ad3f824b3a08cae979a59f65fb5621ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ab390d8c0f3bbda2d2b3f02882dfd4"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a90ab390d8c0f3bbda2d2b3f02882dfd4">DateTime</a> () const</td></tr>
+<tr class="separator:a90ab390d8c0f3bbda2d2b3f02882dfd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949a21b4691bc527064dc871a3ccbff9"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a949a21b4691bc527064dc871a3ccbff9">GeoidFile</a> () const</td></tr>
+<tr class="separator:a949a21b4691bc527064dc871a3ccbff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5210627cc31f053dd5be030cf599f3c"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#af5210627cc31f053dd5be030cf599f3c">GeoidName</a> () const</td></tr>
+<tr class="separator:af5210627cc31f053dd5be030cf599f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0715b27f06318eb4d03e67aeaeb7f9d6"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a0715b27f06318eb4d03e67aeaeb7f9d6">GeoidDirectory</a> () const</td></tr>
+<tr class="separator:a0715b27f06318eb4d03e67aeaeb7f9d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a984ca5eac6c17e7584a2ed343031f32a"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a984ca5eac6c17e7584a2ed343031f32a">Interpolation</a> () const</td></tr>
+<tr class="separator:a984ca5eac6c17e7584a2ed343031f32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12668c63d8715a3ff2d9e4d9e8617f3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a12668c63d8715a3ff2d9e4d9e8617f3b">MaxError</a> () const</td></tr>
+<tr class="separator:a12668c63d8715a3ff2d9e4d9e8617f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49507be2c8320885bea6db302b3f8721"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a49507be2c8320885bea6db302b3f8721">RMSError</a> () const</td></tr>
+<tr class="separator:a49507be2c8320885bea6db302b3f8721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac01a387af5a6fe17d74bedf63ac47dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#aac01a387af5a6fe17d74bedf63ac47dd">Offset</a> () const</td></tr>
+<tr class="separator:aac01a387af5a6fe17d74bedf63ac47dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0060edb55887d0ab1bbd78ceda0e0c09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a0060edb55887d0ab1bbd78ceda0e0c09">Scale</a> () const</td></tr>
+<tr class="separator:a0060edb55887d0ab1bbd78ceda0e0c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b6229c3d11300cfec7c93176e601b6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#ac0b6229c3d11300cfec7c93176e601b6">ThreadSafe</a> () const</td></tr>
+<tr class="separator:ac0b6229c3d11300cfec7c93176e601b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39d46978c54e60c61fd4d2151e008c05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a39d46978c54e60c61fd4d2151e008c05">Cache</a> () const</td></tr>
+<tr class="separator:a39d46978c54e60c61fd4d2151e008c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d1a448f4bd37d0300321c8125a495b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#af5d1a448f4bd37d0300321c8125a495b">CacheWest</a> () const</td></tr>
+<tr class="separator:af5d1a448f4bd37d0300321c8125a495b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27da0e1d3f0bc09cab81af828fc842e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a27da0e1d3f0bc09cab81af828fc842e2">CacheEast</a> () const</td></tr>
+<tr class="separator:a27da0e1d3f0bc09cab81af828fc842e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0890021bb649965afd0d7f78d7f856f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#aa0890021bb649965afd0d7f78d7f856f">CacheNorth</a> () const</td></tr>
+<tr class="separator:aa0890021bb649965afd0d7f78d7f856f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6338896cfa5970c6193bdde60c2379e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a6338896cfa5970c6193bdde60c2379e0">CacheSouth</a> () const</td></tr>
+<tr class="separator:a6338896cfa5970c6193bdde60c2379e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cb325a5a4b1805aeb7f4217204cde56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a8cb325a5a4b1805aeb7f4217204cde56">MajorRadius</a> () const</td></tr>
+<tr class="separator:a8cb325a5a4b1805aeb7f4217204cde56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45429da51799960f722cd5d18a47b544"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a45429da51799960f722cd5d18a47b544">Flattening</a> () const</td></tr>
+<tr class="separator:a45429da51799960f722cd5d18a47b544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a2daf81f5c648cf190a83981f441ab08f"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a2daf81f5c648cf190a83981f441ab08f">DefaultGeoidPath</a> ()</td></tr>
+<tr class="separator:a2daf81f5c648cf190a83981f441ab08f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048865342b2b12ed2272e547209381fd"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a048865342b2b12ed2272e547209381fd">DefaultGeoidName</a> ()</td></tr>
+<tr class="separator:a048865342b2b12ed2272e547209381fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Looking up the height of the geoid above the ellipsoid. </p>
+<p>This class evaluates the height of one of the standard geoids, EGM84, EGM96, or EGM2008 by bilinear or cubic interpolation into a rectangular grid of data. These geoid models are documented in</p><ul>
+<li>EGM84: <a href="http://earth-info.nga.mil/GandG/wgs84/gravitymod/wgs84_180/wgs84_180.html">http://earth-info.nga.mil/GandG/wgs84/gravitymod/wgs84_180/wgs84_180.html</a></li>
+<li>EGM96: <a href="http://earth-info.nga.mil/GandG/wgs84/gravitymod/egm96/egm96.html">http://earth-info.nga.mil/GandG/wgs84/gravitymod/egm96/egm96.html</a></li>
+<li>EGM2008: <a href="http://earth-info.nga.mil/GandG/wgs84/gravitymod/egm2008">http://earth-info.nga.mil/GandG/wgs84/gravitymod/egm2008</a></li>
+</ul>
+<p>The geoids are defined in terms of spherical harmonics. However in order to provide a quick and flexible method of evaluating the geoid heights, this class evaluates the height by interpolation into a grid of precomputed values.</p>
+<p>The height of the geoid above the ellipsoid, <em>N</em>, is sometimes called the geoid undulation. It can be used to convert a height above the ellipsoid, <em>h</em>, to the corresponding height above the geoid (the orthometric height, roughly the height above mean sea level), <em>H</em>, using the relations</p>
+<p>&#160;&#160;&#160;<em>h</em> = <em>N</em> + <em>H</em>; &#160;&#160;<em>H</em> = &minus;<em>N</em> + <em>h</em>.</p>
+<p>See geoid for details of how to install the data sets, the data format, estimates of the interpolation errors, and how to use caching.</p>
+<p>This class is typically <em>not</em> thread safe in that a single instantiation cannot be safely used by multiple threads because of the way the object reads the data set and because it maintains a single-cell cache. If multiple threads need to calculate geoid heights they should all construct thread-local instantiations. Alternatively, set the optional <em>threadsafe</em> parameter to true in the constructor. This causes the constructor to read all the data into memory and to turn off the single-cell caching which results in a <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html" title="Looking up the height of the geoid above the ellipsoid.">Geoid</a> object which <em>is</em> thread safe.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --><p><a href="../../GeoidEval.1.html">GeoidEval</a> is a command-line utility providing access to the functionality of <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html" title="Looking up the height of the geoid above the ellipsoid.">Geoid</a>. </p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a id="a58ddbd0fd48c25b361f45bdb70dadb96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ddbd0fd48c25b361f45bdb70dadb96">&#9670;&nbsp;</a></span>convertflag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96">GeographicLib::Geoid::convertflag</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Flags indicating conversions between heights above the geoid and heights above the ellipsoid. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a58ddbd0fd48c25b361f45bdb70dadb96a4a1db06e9dcfa1ebb345c616151ab70d"></a>ELLIPSOIDTOGEOID&#160;</td><td class="fielddoc"><p>The multiplier for converting from heights above the geoid to heights above the ellipsoid. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ddbd0fd48c25b361f45bdb70dadb96a677322ba74ea5494e67478c3dc1780d5"></a>NONE&#160;</td><td class="fielddoc"><p>No conversion. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ddbd0fd48c25b361f45bdb70dadb96a96385bcbc41f3d933588f6d6a9868473"></a>GEOIDTOELLIPSOID&#160;</td><td class="fielddoc"><p>The multiplier for converting from heights above the ellipsoid to heights above the geoid. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ac3556c755dad0d43c3be0913df08b395"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3556c755dad0d43c3be0913df08b395">&#9670;&nbsp;</a></span>Geoid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::Geoid::Geoid </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cubic</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>threadsafe</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct a geoid.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>the name of the geoid. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>(optional) directory for data file. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cubic</td><td>(optional) interpolation method; false means bilinear, true (the default) means cubic. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">threadsafe</td><td>(optional), if true, construct a thread safe object. The default is false </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the data file cannot be found, is unreadable, or is corrupt. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>threadsafe</em> is true but the memory necessary for caching the data can't be allocated.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The data file is formed by appending ".pgm" to the name. If <em>path</em> is specified (and is non-empty), then the file is loaded from directory, <em>path</em>. Otherwise the path is given by <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a2daf81f5c648cf190a83981f441ab08f">DefaultGeoidPath()</a>. If the <em>threadsafe</em> parameter is true, the data set is read into memory, the data file is closed, and single-cell caching is turned off; this results in a <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html" title="Looking up the height of the geoid above the ellipsoid.">Geoid</a> object which <em>is</em> thread safe. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a39d46978c54e60c61fd4d2151e008c05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39d46978c54e60c61fd4d2151e008c05">&#9670;&nbsp;</a></span>Cache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GeographicLib::Geoid::Cache </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>true if a data cache is active. </dd></dl>
+
+</div>
+</div>
+<a id="a64d6dfd88efc53c689cfb09545b67ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64d6dfd88efc53c689cfb09545b67ed2">&#9670;&nbsp;</a></span>CacheAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Geoid::CacheAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Cache all the data.</p>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the memory necessary for caching the data can't be allocated (in this case, you will have no cache and can try again with a smaller area). </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if there's a problem reading the data. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if this is called on a threadsafe <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html" title="Looking up the height of the geoid above the ellipsoid.">Geoid</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>On most computers, this is fast for data sets with grid resolution of 5' or coarser. For a 1' grid, the required RAM is 450MB; a 2.5' grid needs 72MB; and a 5' grid needs 18MB. </p>
+
+</div>
+</div>
+<a id="aacffcd7e83eaad9266ae74ce917c54ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacffcd7e83eaad9266ae74ce917c54ea">&#9670;&nbsp;</a></span>CacheArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Geoid::CacheArea </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>south</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>west</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>north</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>east</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set up a cache.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">south</td><td>latitude (degrees) of the south edge of the cached area. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">west</td><td>longitude (degrees) of the west edge of the cached area. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">north</td><td>latitude (degrees) of the north edge of the cached area. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">east</td><td>longitude (degrees) of the east edge of the cached area. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the memory necessary for caching the data can't be allocated (in this case, you will have no cache and can try again with a smaller area). </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if there's a problem reading the data. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if this is called on a threadsafe <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html" title="Looking up the height of the geoid above the ellipsoid.">Geoid</a>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Cache the data for the specified "rectangular" area bounded by the parallels <em>south</em> and <em>north</em> and the meridians <em>west</em> and <em>east</em>. <em>east</em> is always interpreted as being east of <em>west</em>, if necessary by adding 360&deg; to its value. <em>south</em> and <em>north</em> should be in the range [&minus;90&deg;, 90&deg;]. </p>
+
+</div>
+</div>
+<a id="ab11f77f9eba0e503a769d76a4afddd6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11f77f9eba0e503a769d76a4afddd6e">&#9670;&nbsp;</a></span>CacheClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Geoid::CacheClear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clear the cache. This never throws an error. (This does nothing with a thread safe <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html" title="Looking up the height of the geoid above the ellipsoid.">Geoid</a>.) </p>
+
+</div>
+</div>
+<a id="a27da0e1d3f0bc09cab81af828fc842e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27da0e1d3f0bc09cab81af828fc842e2">&#9670;&nbsp;</a></span>CacheEast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::CacheEast </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>east edge of the cached area; the cache excludes this edge. </dd></dl>
+
+</div>
+</div>
+<a id="aa0890021bb649965afd0d7f78d7f856f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0890021bb649965afd0d7f78d7f856f">&#9670;&nbsp;</a></span>CacheNorth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::CacheNorth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>north edge of the cached area; the cache includes this edge. </dd></dl>
+
+</div>
+</div>
+<a id="a6338896cfa5970c6193bdde60c2379e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6338896cfa5970c6193bdde60c2379e0">&#9670;&nbsp;</a></span>CacheSouth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::CacheSouth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>south edge of the cached area; the cache excludes this edge unless it's the south pole. </dd></dl>
+
+</div>
+</div>
+<a id="af5d1a448f4bd37d0300321c8125a495b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d1a448f4bd37d0300321c8125a495b">&#9670;&nbsp;</a></span>CacheWest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::CacheWest </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>west edge of the cached area; the cache includes this edge. </dd></dl>
+
+</div>
+</div>
+<a id="aa52f250ffe18aa9fee6e7e4cc03071ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa52f250ffe18aa9fee6e7e4cc03071ae">&#9670;&nbsp;</a></span>ConvertHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::ConvertHeight </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96">convertflag</a>&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert a height above the geoid to a height above the ellipsoid and vice versa.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>height of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>a <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96">Geoid::convertflag</a> specifying the direction of the conversion; <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96a96385bcbc41f3d933588f6d6a9868473">Geoid::GEOIDTOELLIPSOID</a> means convert a height above the geoid to a height above the ellipsoid; <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html#a58ddbd0fd48c25b361f45bdb70dadb96a4a1db06e9dcfa1ebb345c616151ab70d">Geoid::ELLIPSOIDTOGEOID</a> means convert a height above the ellipsoid to a height above the geoid. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if there's a problem reading the data; this never happens if (<em>lat</em>, <em>lon</em>) is within a successfully cached area. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>converted height (meters). </dd></dl>
+
+</div>
+</div>
+<a id="a90ab390d8c0f3bbda2d2b3f02882dfd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ab390d8c0f3bbda2d2b3f02882dfd4">&#9670;&nbsp;</a></span>DateTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::Geoid::DateTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>date of the data file; if absent, return "UNKNOWN". </dd></dl>
+
+</div>
+</div>
+<a id="a048865342b2b12ed2272e547209381fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a048865342b2b12ed2272e547209381fd">&#9670;&nbsp;</a></span>DefaultGeoidName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GeographicLib::Geoid::DefaultGeoidName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the default name for the geoid.</dd></dl>
+<p>This is the value of the environment variable GEOGRAPHICLIB_GEOID_NAME, if set; otherwise, it is "egm96-5". The <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html" title="Looking up the height of the geoid above the ellipsoid.">Geoid</a> class does not use this function; it is just provided as a convenience for a calling program when constructing a <a class="el" href="../../d3/de1/class_geographic_lib_1_1_geoid.html" title="Looking up the height of the geoid above the ellipsoid.">Geoid</a> object. </p>
+
+</div>
+</div>
+<a id="a2daf81f5c648cf190a83981f441ab08f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2daf81f5c648cf190a83981f441ab08f">&#9670;&nbsp;</a></span>DefaultGeoidPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GeographicLib::Geoid::DefaultGeoidPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the default path for geoid data files.</dd></dl>
+<p>This is the value of the environment variable GEOGRAPHICLIB_GEOID_PATH, if set; otherwise, it is $GEOGRAPHICLIB_DATA/geoids if the environment variable GEOGRAPHICLIB_DATA is set; otherwise, it is a compile-time default (/usr/local/share/GeographicLib/geoids on non-Windows systems and C:/ProgramData/GeographicLib/geoids on Windows systems). </p>
+
+</div>
+</div>
+<a id="ad3f824b3a08cae979a59f65fb5621ea7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f824b3a08cae979a59f65fb5621ea7">&#9670;&nbsp;</a></span>Description()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::Geoid::Description </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>geoid description, if available, in the data file; if absent, return "NONE". </dd></dl>
+
+</div>
+</div>
+<a id="a45429da51799960f722cd5d18a47b544"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45429da51799960f722cd5d18a47b544">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the WGS84 ellipsoid.</dd></dl>
+<p>(The WGS84 value is returned because the supported geoid models are all based on this ellipsoid.) </p>
+
+</div>
+</div>
+<a id="a0715b27f06318eb4d03e67aeaeb7f9d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0715b27f06318eb4d03e67aeaeb7f9d6">&#9670;&nbsp;</a></span>GeoidDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::Geoid::GeoidDirectory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>directory used to load the geoid data. </dd></dl>
+
+</div>
+</div>
+<a id="a949a21b4691bc527064dc871a3ccbff9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949a21b4691bc527064dc871a3ccbff9">&#9670;&nbsp;</a></span>GeoidFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::Geoid::GeoidFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>full file name used to load the geoid data. </dd></dl>
+
+</div>
+</div>
+<a id="af5210627cc31f053dd5be030cf599f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5210627cc31f053dd5be030cf599f3c">&#9670;&nbsp;</a></span>GeoidName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::Geoid::GeoidName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>"name" used to load the geoid data (from the first argument of the constructor). </dd></dl>
+
+</div>
+</div>
+<a id="a984ca5eac6c17e7584a2ed343031f32a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a984ca5eac6c17e7584a2ed343031f32a">&#9670;&nbsp;</a></span>Interpolation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string GeographicLib::Geoid::Interpolation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>interpolation method ("cubic" or "bilinear"). </dd></dl>
+
+</div>
+</div>
+<a id="a8cb325a5a4b1805aeb7f4217204cde56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb325a5a4b1805aeb7f4217204cde56">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the WGS84 ellipsoid (meters).</dd></dl>
+<p>(The WGS84 value is returned because the supported geoid models are all based on this ellipsoid.) </p>
+
+</div>
+</div>
+<a id="a12668c63d8715a3ff2d9e4d9e8617f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12668c63d8715a3ff2d9e4d9e8617f3b">&#9670;&nbsp;</a></span>MaxError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::MaxError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>estimate of the maximum interpolation and quantization error (meters).</dd></dl>
+<p>This relies on the value being stored in the data file. If the value is absent, return &minus;1. </p>
+
+</div>
+</div>
+<a id="aac01a387af5a6fe17d74bedf63ac47dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac01a387af5a6fe17d74bedf63ac47dd">&#9670;&nbsp;</a></span>Offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::Offset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>offset (meters).</dd></dl>
+<p>This in used in converting from the pixel values in the data file to geoid heights. </p>
+
+</div>
+</div>
+<a id="ab93330904bbfd607d6adde2cef844b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93330904bbfd607d6adde2cef844b9b">&#9670;&nbsp;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::operator() </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compute the geoid height at a point</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of the point (degrees). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if there's a problem reading the data; this never happens if (<em>lat</em>, <em>lon</em>) is within a successfully cached area. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the height of the geoid above the ellipsoid (meters).</dd></dl>
+<p>The latitude should be in [&minus;90&deg;, 90&deg;]. </p>
+
+</div>
+</div>
+<a id="a49507be2c8320885bea6db302b3f8721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49507be2c8320885bea6db302b3f8721">&#9670;&nbsp;</a></span>RMSError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::RMSError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>estimate of the RMS interpolation and quantization error (meters).</dd></dl>
+<p>This relies on the value being stored in the data file. If the value is absent, return &minus;1. </p>
+
+</div>
+</div>
+<a id="a0060edb55887d0ab1bbd78ceda0e0c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0060edb55887d0ab1bbd78ceda0e0c09">&#9670;&nbsp;</a></span>Scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geoid::Scale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>scale (meters).</dd></dl>
+<p>This in used in converting from the pixel values in the data file to geoid heights. </p>
+
+</div>
+</div>
+<a id="ac0b6229c3d11300cfec7c93176e601b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b6229c3d11300cfec7c93176e601b6">&#9670;&nbsp;</a></span>ThreadSafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GeographicLib::Geoid::ThreadSafe </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>true if the object is constructed to be thread safe. </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d5/d44/_geoid_8hpp_source.html">Geoid.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../de/d9b/_geoid_8cpp.html">Geoid.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:19. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

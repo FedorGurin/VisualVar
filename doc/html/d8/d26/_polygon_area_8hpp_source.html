@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/PolygonArea.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">PolygonArea.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/d26/_polygon_area_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_POLYGONAREA_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_POLYGONAREA_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d9/dde/_geodesic_8hpp.html">GeographicLib/Geodesic.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d1/d6c/_geodesic_exact_8hpp.html">GeographicLib/GeodesicExact.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d6/dad/_rhumb_8hpp.html">GeographicLib/Rhumb.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../db/d21/_accumulator_8hpp.html">GeographicLib/Accumulator.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> GeodType = Geodesic&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html">   64</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html">PolygonAreaT</a> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    GeodType _earth;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    real _area0;                <span class="comment">// Full ellipsoid area</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> _polyline;             <span class="comment">// Assume polyline (don&#39;t close and skip area)</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">unsigned</span> _mask;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">unsigned</span> _num;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">int</span> _crossings;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">Accumulator&lt;&gt;</a> _areasum, _perimetersum;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    real _lat0, _lon0, _lat1, _lon1;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> transit(real lon1, real lon2) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="comment">// Return 1 or -1 if crossing prime meridian in east or west direction.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="comment">// Otherwise return zero.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="comment">// Compute lon12 the same way as Geodesic::Inverse.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      lon1 = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a0747900a12e92222bb016e114eafe7ee">Math::AngNormalize</a>(lon1);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      lon2 = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a0747900a12e92222bb016e114eafe7ee">Math::AngNormalize</a>(lon2);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      real lon12 = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ae7a97d0b3df1dd05cdba767f03eab84c">Math::AngDiff</a>(lon1, lon2);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="keywordtype">int</span> <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">cross</a> =</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        lon1 &lt; 0 &amp;&amp; lon2 &gt;= 0 &amp;&amp; lon12 &gt; 0 ? 1 :</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        (lon2 &lt; 0 &amp;&amp; lon1 &gt;= 0 &amp;&amp; lon12 &lt; 0 ? -1 : 0);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">cross</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// an alternate version of transit to deal with longitudes in the direct</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// problem.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> transitdirect(real lon1, real lon2) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="comment">// We want to compute exactly</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="comment">//   int(floor(lon2 / 360)) - int(floor(lon1 / 360))</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="comment">// Since we only need the parity of the result we can use std::remquo;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="comment">// but this is buggy with g++ 4.8.3 (glibc version &lt; 2.22), see</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="comment">//   https://sourceware.org/bugzilla/show_bug.cgi?id=17569</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      <span class="comment">// and requires C++11.  So instead we do</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#if GEOGRAPHICLIB_CXX11_MATH &amp;&amp; GEOGRAPHICLIB_PRECISION != 4</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keyword">using</span> std::remainder;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      lon1 = remainder(lon1, real(720)); lon2 = remainder(lon2, real(720));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="keywordflow">return</span> ( (lon2 &gt;= 0 &amp;&amp; lon2 &lt; 360 ? 0 : 1) -</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;               (lon1 &gt;= 0 &amp;&amp; lon1 &lt; 360 ? 0 : 1) );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">using</span> std::fmod;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      lon1 = fmod(lon1, real(720)); lon2 = fmod(lon2, real(720));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keywordflow">return</span> ( ((lon2 &gt;= 0 &amp;&amp; lon2 &lt; 360) || lon2 &lt; -360 ? 0 : 1) -</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;               ((lon1 &gt;= 0 &amp;&amp; lon1 &lt; 360) || lon1 &lt; -360 ? 0 : 1) );</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a0f7d368e1b0114b5399e96040097beb9">  117</a></span>&#160;    <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a0f7d368e1b0114b5399e96040097beb9">PolygonAreaT</a>(<span class="keyword">const</span> GeodType&amp; <a class="code" href="../../d8/dd9/mainwindow_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a>, <span class="keywordtype">bool</span> polyline = <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      : _earth(<a class="code" href="../../d8/dd9/mainwindow_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a>)</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      , _area0(_earth.EllipsoidArea())</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      , _polyline(polyline)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      , _mask(GeodType::LATITUDE | GeodType::LONGITUDE | GeodType::DISTANCE |</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;              (_polyline ? GeodType::NONE :</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;               GeodType::AREA | GeodType::LONG_UNROLL))</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    { <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a69fbe5ae478d840deb5a0077f7e6285e">Clear</a>(); }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a69fbe5ae478d840deb5a0077f7e6285e">  129</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a69fbe5ae478d840deb5a0077f7e6285e">Clear</a>() {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      _num = 0;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      _crossings = 0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      _areasum = 0;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      _perimetersum = 0;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      _lat0 = _lon0 = _lat1 = _lon1 = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a25f1dee8a894085f1090c58c913520b7">AddPoint</a>(real lat, real lon);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#ac63406e34b34a4fe40c9e0aecf31e10c">AddEdge</a>(real azi, real s);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a30dd6e03842c4c0a3c89c132905a250f">Compute</a>(<span class="keywordtype">bool</span> reverse, <span class="keywordtype">bool</span> <a class="code" href="../../d0/de3/group__core__func__common.html#gaa7afd59ab947e313d41cb6d9c655a80c">sign</a>,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                     real&amp; perimeter, real&amp; area) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#abf460fc7e536dc13f7166c28ea1eb5f1">TestPoint</a>(real lat, real lon, <span class="keywordtype">bool</span> reverse, <span class="keywordtype">bool</span> <a class="code" href="../../d0/de3/group__core__func__common.html#gaa7afd59ab947e313d41cb6d9c655a80c">sign</a>,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                       real&amp; perimeter, real&amp; area) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="keywordtype">unsigned</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#aef91207302f20a0a3cfd5969042774f3">TestEdge</a>(real azi, real s, <span class="keywordtype">bool</span> reverse, <span class="keywordtype">bool</span> <a class="code" href="../../d0/de3/group__core__func__common.html#gaa7afd59ab947e313d41cb6d9c655a80c">sign</a>,</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                      real&amp; perimeter, real&amp; area) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">unsigned</span> TestCompute(real lat, real lon, <span class="keywordtype">bool</span> reverse, <span class="keywordtype">bool</span> <a class="code" href="../../d0/de3/group__core__func__common.html#gaa7afd59ab947e313d41cb6d9c655a80c">sign</a>,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                         real&amp; perimeter, real&amp; area)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#abf460fc7e536dc13f7166c28ea1eb5f1">TestPoint</a>(lat, lon, reverse, <a class="code" href="../../d0/de3/group__core__func__common.html#gaa7afd59ab947e313d41cb6d9c655a80c">sign</a>, perimeter, area);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#adbf569aebdbfc941a5e486d10f7bacd7">  248</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#adbf569aebdbfc941a5e486d10f7bacd7">MajorRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _earth.MajorRadius(); }</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a751288e3b135b1536ca924307c2ad611">  254</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a751288e3b135b1536ca924307c2ad611">Flattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _earth.Flattening(); }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a54a318f009b6befbd70ca3d22c00ebec">  265</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a54a318f009b6befbd70ca3d22c00ebec">CurrentPoint</a>(real&amp; lat, real&amp; lon)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">    </span>{ lat = _lat1; lon = _lon1; }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  };</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160; </div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#abb067fbe12e502247771eaa1bb5adfd1">  276</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html">PolygonAreaT&lt;Geodesic&gt;</a> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#abb067fbe12e502247771eaa1bb5adfd1">PolygonArea</a>;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00285"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#ae9d04aaad8ac95b3ecdcde5b81db9979">  285</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html">PolygonAreaT&lt;GeodesicExact&gt;</a> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#ae9d04aaad8ac95b3ecdcde5b81db9979">PolygonAreaExact</a>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a42dbfa115e552473adac4151039ae49f">  292</a></span>&#160;  <span class="keyword">typedef</span> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html">PolygonAreaT&lt;Rhumb&gt;</a> <a class="code" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a42dbfa115e552473adac4151039ae49f">PolygonAreaRhumb</a>;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_POLYGONAREA_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_ac63406e34b34a4fe40c9e0aecf31e10c"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#ac63406e34b34a4fe40c9e0aecf31e10c">GeographicLib::PolygonAreaT::AddEdge</a></div><div class="ttdeci">void AddEdge(real azi, real s)</div><div class="ttdef"><b>Definition:</b> PolygonArea.cpp:37</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_a751288e3b135b1536ca924307c2ad611"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a751288e3b135b1536ca924307c2ad611">GeographicLib::PolygonAreaT::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:254</div></div>
+<div class="ttc" id="agroup__core__func__common_html_gaa7afd59ab947e313d41cb6d9c655a80c"><div class="ttname"><a href="../../d0/de3/group__core__func__common.html#gaa7afd59ab947e313d41cb6d9c655a80c">glm::sign</a></div><div class="ttdeci">GLM_FUNC_DECL genType sign(genType const &amp;x)</div></div>
+<div class="ttc" id="a_accumulator_8hpp_html"><div class="ttname"><a href="../../db/d21/_accumulator_8hpp.html">Accumulator.hpp</a></div><div class="ttdoc">Header for GeographicLib::Accumulator class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_a0747900a12e92222bb016e114eafe7ee"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#a0747900a12e92222bb016e114eafe7ee">GeographicLib::Math::AngNormalize</a></div><div class="ttdeci">static T AngNormalize(T x)</div><div class="ttdef"><b>Definition:</b> Math.hpp:451</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_ad1dc13a367125d3f8d291eaa98339186"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">GeographicLib::Math::NaN</a></div><div class="ttdeci">static T NaN()</div><div class="ttdef"><b>Definition:</b> Math.hpp:783</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_a42dbfa115e552473adac4151039ae49f"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a42dbfa115e552473adac4151039ae49f">GeographicLib::PolygonAreaT::PolygonAreaRhumb</a></div><div class="ttdeci">PolygonAreaT&lt; Rhumb &gt; PolygonAreaRhumb</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:292</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga15a920c14f06882921757e453426efbe"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">glm::cross</a></div><div class="ttdeci">GLM_FUNC_DECL detail::tvec3&lt; valType &gt; cross(detail::tvec3&lt; valType &gt; const &amp;x, detail::tvec3&lt; valType &gt; const &amp;y)</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html">GeographicLib::PolygonAreaT</a></div><div class="ttdoc">Polygon areas.</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:64</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="a_geodesic_exact_8hpp_html"><div class="ttname"><a href="../../d1/d6c/_geodesic_exact_8hpp.html">GeodesicExact.hpp</a></div><div class="ttdoc">Header for GeographicLib::GeodesicExact class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_ae7a97d0b3df1dd05cdba767f03eab84c"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#ae7a97d0b3df1dd05cdba767f03eab84c">GeographicLib::Math::AngDiff</a></div><div class="ttdeci">static T AngDiff(T x, T y)</div><div class="ttdef"><b>Definition:</b> Math.hpp:499</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_abf460fc7e536dc13f7166c28ea1eb5f1"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#abf460fc7e536dc13f7166c28ea1eb5f1">GeographicLib::PolygonAreaT::TestPoint</a></div><div class="ttdeci">unsigned TestPoint(real lat, real lon, bool reverse, bool sign, real &amp;perimeter, real &amp;area) const</div><div class="ttdef"><b>Definition:</b> PolygonArea.cpp:96</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_a30dd6e03842c4c0a3c89c132905a250f"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a30dd6e03842c4c0a3c89c132905a250f">GeographicLib::PolygonAreaT::Compute</a></div><div class="ttdeci">unsigned Compute(bool reverse, bool sign, real &amp;perimeter, real &amp;area) const</div><div class="ttdef"><b>Definition:</b> PolygonArea.cpp:54</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="amainwindow_8cpp_html_a067e27172a5bc3c47458cccfa3d2a01d"><div class="ttname"><a href="../../d8/dd9/mainwindow_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a></div><div class="ttdeci">GeographicLib::Geocentric * earth</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:17</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_a0f7d368e1b0114b5399e96040097beb9"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a0f7d368e1b0114b5399e96040097beb9">GeographicLib::PolygonAreaT::PolygonAreaT</a></div><div class="ttdeci">PolygonAreaT(const GeodType &amp;earth, bool polyline=false)</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:117</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_adbf569aebdbfc941a5e486d10f7bacd7"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#adbf569aebdbfc941a5e486d10f7bacd7">GeographicLib::PolygonAreaT::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:248</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_a69fbe5ae478d840deb5a0077f7e6285e"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a69fbe5ae478d840deb5a0077f7e6285e">GeographicLib::PolygonAreaT::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_accumulator_html"><div class="ttname"><a href="../../d8/d98/class_geographic_lib_1_1_accumulator.html">GeographicLib::Accumulator</a></div><div class="ttdoc">An accumulator for sums.</div><div class="ttdef"><b>Definition:</b> Accumulator.hpp:40</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_ae9d04aaad8ac95b3ecdcde5b81db9979"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#ae9d04aaad8ac95b3ecdcde5b81db9979">GeographicLib::PolygonAreaT::PolygonAreaExact</a></div><div class="ttdeci">PolygonAreaT&lt; GeodesicExact &gt; PolygonAreaExact</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:285</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_a25f1dee8a894085f1090c58c913520b7"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a25f1dee8a894085f1090c58c913520b7">GeographicLib::PolygonAreaT::AddPoint</a></div><div class="ttdeci">void AddPoint(real lat, real lon)</div><div class="ttdef"><b>Definition:</b> PolygonArea.cpp:17</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_aef91207302f20a0a3cfd5969042774f3"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#aef91207302f20a0a3cfd5969042774f3">GeographicLib::PolygonAreaT::TestEdge</a></div><div class="ttdeci">unsigned TestEdge(real azi, real s, bool reverse, bool sign, real &amp;perimeter, real &amp;area) const</div><div class="ttdef"><b>Definition:</b> PolygonArea.cpp:149</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_abb067fbe12e502247771eaa1bb5adfd1"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#abb067fbe12e502247771eaa1bb5adfd1">GeographicLib::PolygonAreaT::PolygonArea</a></div><div class="ttdeci">PolygonAreaT&lt; Geodesic &gt; PolygonArea</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:276</div></div>
+<div class="ttc" id="a_geodesic_8hpp_html"><div class="ttname"><a href="../../d9/dde/_geodesic_8hpp.html">Geodesic.hpp</a></div><div class="ttdoc">Header for GeographicLib::Geodesic class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_polygon_area_t_html_a54a318f009b6befbd70ca3d22c00ebec"><div class="ttname"><a href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html#a54a318f009b6befbd70ca3d22c00ebec">GeographicLib::PolygonAreaT::CurrentPoint</a></div><div class="ttdeci">void CurrentPoint(real &amp;lat, real &amp;lon) const</div><div class="ttdef"><b>Definition:</b> PolygonArea.hpp:265</div></div>
+<div class="ttc" id="a_rhumb_8hpp_html"><div class="ttname"><a href="../../d6/dad/_rhumb_8hpp.html">Rhumb.hpp</a></div><div class="ttdoc">Header for GeographicLib::Rhumb and GeographicLib::RhumbLine classes.</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

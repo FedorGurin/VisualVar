@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/CircularEngine.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CircularEngine.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/df4/_circular_engine_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_CIRCULARENGINE_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_CIRCULARENGINE_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d1/db8/_spherical_engine_8hpp.html">GeographicLib/SphericalEngine.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Squelch warnings about dll vs vector</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#  pragma warning (push)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#  pragma warning (disable: 4251)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">   52</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">enum</span> normalization {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      FULL = <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fac720ca87adfc478dbfc13a37f0cf8ba9">SphericalEngine::FULL</a>,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      SCHMIDT = <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fa2e3db3efd68d118e3f357a97eb77a131">SphericalEngine::SCHMIDT</a>,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> _M;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> _gradp;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">unsigned</span> _norm;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    real _a, _r, _u, _t;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::vector&lt;real&gt; _wc, _ws, _wrc, _wrs, _wtc, _wts;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    real _q, _uq, _uq2;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> Value(<span class="keywordtype">bool</span> gradp, real cl, real sl,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                     real&amp; gradx, real&amp; grady, real&amp; gradz) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#ab89064f7f3c32a745c72d8c3188f7485">   69</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html">SphericalEngine</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a>(<span class="keywordtype">int</span> M, <span class="keywordtype">bool</span> gradp, <span class="keywordtype">unsigned</span> norm,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                   real a, real r, real u, real t)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      : _M(M)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      , _gradp(gradp)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;      , _norm(norm)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      , _a(a)</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      , _r(r)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      , _u(u)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      , _t(t)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      , _wc(std::vector&lt;real&gt;(_M + 1, 0))</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      , _ws(std::vector&lt;real&gt;(_M + 1, 0))</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      , _wrc(std::vector&lt;real&gt;(_gradp ? _M + 1 : 0, 0))</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      , _wrs(std::vector&lt;real&gt;(_gradp ? _M + 1 : 0, 0))</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      , _wtc(std::vector&lt;real&gt;(_gradp ? _M + 1 : 0, 0))</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      , _wts(std::vector&lt;real&gt;(_gradp ? _M + 1 : 0, 0))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        _q = _a / _r;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        _uq = _u * _q;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        _uq2 = <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a6a092f38e231c80a1f144814c90f1895">Math::sq</a>(_uq);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> SetCoeff(<span class="keywordtype">int</span> m, real wc, real ws)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    { _wc[m] = wc; _ws[m] = ws; }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> SetCoeff(<span class="keywordtype">int</span> m, real wc, real ws,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                  real wrc, real wrs, real wtc, real wts) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      _wc[m] = wc; _ws[m] = ws;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keywordflow">if</span> (_gradp) {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        _wrc[m] = wrc; _wrs[m] = wrs;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        _wtc[m] = wtc; _wts[m] = wts;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a91dd2b9cc408e35f8cb6482cdf3aadbf">  110</a></span>&#160;    <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a91dd2b9cc408e35f8cb6482cdf3aadbf">CircularEngine</a>()</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      : _M(-1)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      , _gradp(true)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      , _u(0)</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      , _t(1)</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      {}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a7f1925c2aa4ea598706fbeb02a97001a">  128</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a7f1925c2aa4ea598706fbeb02a97001a">operator()</a>(real coslon, real sinlon)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      real dummy;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      <span class="keywordflow">return</span> Value(<span class="keyword">false</span>, coslon, sinlon, dummy, dummy, dummy);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a77cc9caad1f72ce2f6728f176fb2a63a">  139</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a77cc9caad1f72ce2f6728f176fb2a63a">operator()</a>(real lon)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      real coslon, sinlon;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ab24f0d4b506c030c1d4804e05028d3c7">Math::sincosd</a>(lon, sinlon, coslon);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;      <span class="keywordflow">return</span> (*<span class="keyword">this</span>)(coslon, sinlon);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a2565dd813c7c945155e1cc613a985012">  162</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a2565dd813c7c945155e1cc613a985012">operator()</a>(real coslon, real sinlon,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                          real&amp; gradx, real&amp; grady, real&amp; gradz)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <span class="keywordflow">return</span> Value(<span class="keyword">true</span>, coslon, sinlon, gradx, grady, gradz);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a75509b888fb8a04295e9d37a8b3e9cde">  181</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a75509b888fb8a04295e9d37a8b3e9cde">operator()</a>(real lon,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                          real&amp; gradx, real&amp; grady, real&amp; gradz)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      real coslon, sinlon;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ab24f0d4b506c030c1d4804e05028d3c7">Math::sincosd</a>(lon, sinlon, coslon);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      <span class="keywordflow">return</span> (*<span class="keyword">this</span>)(coslon, sinlon, gradx, grady, gradz);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  };</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#  pragma warning (pop)</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_CIRCULARENGINE_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html_a2565dd813c7c945155e1cc613a985012"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a2565dd813c7c945155e1cc613a985012">GeographicLib::CircularEngine::operator()</a></div><div class="ttdeci">Math::real operator()(real coslon, real sinlon, real &amp;gradx, real &amp;grady, real &amp;gradz) const</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:162</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_ab24f0d4b506c030c1d4804e05028d3c7"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#ab24f0d4b506c030c1d4804e05028d3c7">GeographicLib::Math::sincosd</a></div><div class="ttdeci">static void sincosd(T x, T &amp;sinx, T &amp;cosx)</div><div class="ttdef"><b>Definition:</b> Math.hpp:559</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html_a5332d09191e018cbddc568c1fc71949fa2e3db3efd68d118e3f357a97eb77a131"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fa2e3db3efd68d118e3f357a97eb77a131">GeographicLib::SphericalEngine::SCHMIDT</a></div><div class="ttdeci">@ SCHMIDT</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:80</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html_a77cc9caad1f72ce2f6728f176fb2a63a"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a77cc9caad1f72ce2f6728f176fb2a63a">GeographicLib::CircularEngine::operator()</a></div><div class="ttdeci">Math::real operator()(real lon) const</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:139</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html_a7f1925c2aa4ea598706fbeb02a97001a"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a7f1925c2aa4ea598706fbeb02a97001a">GeographicLib::CircularEngine::operator()</a></div><div class="ttdeci">Math::real operator()(real coslon, real sinlon) const</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:128</div></div>
+<div class="ttc" id="a_spherical_engine_8hpp_html"><div class="ttname"><a href="../../d1/db8/_spherical_engine_8hpp.html">SphericalEngine.hpp</a></div><div class="ttdoc">Header for GeographicLib::SphericalEngine class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">GeographicLib::CircularEngine</a></div><div class="ttdoc">Spherical harmonic sums for a circle.</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:52</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html_a5332d09191e018cbddc568c1fc71949fac720ca87adfc478dbfc13a37f0cf8ba9"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fac720ca87adfc478dbfc13a37f0cf8ba9">GeographicLib::SphericalEngine::FULL</a></div><div class="ttdeci">@ FULL</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:73</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html_a91dd2b9cc408e35f8cb6482cdf3aadbf"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a91dd2b9cc408e35f8cb6482cdf3aadbf">GeographicLib::CircularEngine::CircularEngine</a></div><div class="ttdeci">CircularEngine()</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:110</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_a6a092f38e231c80a1f144814c90f1895"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#a6a092f38e231c80a1f144814c90f1895">GeographicLib::Math::sq</a></div><div class="ttdeci">static T sq(T x)</div><div class="ttdef"><b>Definition:</b> Math.hpp:246</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html">GeographicLib::SphericalEngine</a></div><div class="ttdoc">The evaluation engine for SphericalHarmonic.</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:40</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html_a75509b888fb8a04295e9d37a8b3e9cde"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html#a75509b888fb8a04295e9d37a8b3e9cde">GeographicLib::CircularEngine::operator()</a></div><div class="ttdeci">Math::real operator()(real lon, real &amp;gradx, real &amp;grady, real &amp;gradz) const</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:181</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

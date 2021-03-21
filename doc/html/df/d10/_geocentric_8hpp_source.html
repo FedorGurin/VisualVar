@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/Geocentric.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Geocentric.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/d10/_geocentric_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_GEOCENTRIC_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_GEOCENTRIC_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">   67</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">Geocentric</a> {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a8904c4eadcf94e3803743e8cd9ffbc1c">   70</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d0/d5f/class_geographic_lib_1_1_local_cartesian.html">LocalCartesian</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a7294f6a1cc932f8fd1562a15602e9e86">   71</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">MagneticCircle</a>; <span class="comment">// MagneticCircle uses Rotation</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#af6619ebe4c078705fc49a0d9f950b431">   72</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html">MagneticModel</a>;  <span class="comment">// MagneticModel uses IntForward</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a243c90a7f9bf3f7aa96877a4b0667a89">   73</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html">GravityCircle</a>;  <span class="comment">// GravityCircle uses Rotation</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ada1db1d9f480d8044753ed869c995519">   74</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html">GravityModel</a>;   <span class="comment">// GravityModel uses IntForward</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ae7298549755c5982fe1be124d6631561">   75</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">NormalGravity</a>;  <span class="comment">// NormalGravity uses IntForward</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> dim_ = 3;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">size_t</span> dim2_ = dim_ * dim_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    real _a, _f, _e2, _e2m, _e2a, _e4a, _maxrad;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Rotation(real sphi, real cphi, real slam, real clam,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                         real M[dim2_]);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Rotate(real M[dim2_], real x, real y, real z,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                       real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      <span class="comment">// Perform [X,Y,Z]^t = M.[x,y,z]^t</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="comment">// (typically local cartesian to geocentric)</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a> = M[0] * x + M[1] * y + M[2] * z;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a> = M[3] * x + M[4] * y + M[5] * z;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a> = M[6] * x + M[7] * y + M[8] * z;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Unrotate(real M[dim2_], real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                         real&amp; x, real&amp; y, real&amp; z)  {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      <span class="comment">// Perform [x,y,z]^t = M^t.[X,Y,Z]^t</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      <span class="comment">// (typically geocentric to local cartesian)</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      x = M[0] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a> + M[3] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a> + M[6] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      y = M[1] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a> + M[4] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a> + M[7] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      z = M[2] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a> + M[5] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a> + M[8] * <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> IntForward(real lat, real lon, real h, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    real M[dim2_]) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> IntReverse(real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, real&amp; lat, real&amp; lon, real&amp; h,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    real M[dim2_]) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    Geocentric(real a, real f);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#adc92d7214526b4cfcd0b9a0171fc8448">  119</a></span>&#160;    <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#adc92d7214526b4cfcd0b9a0171fc8448">Geocentric</a>() : _a(-1) {}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a36ff62c44bb824b8e5b5048a54a30b6d">  133</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a36ff62c44bb824b8e5b5048a54a30b6d">Forward</a>(real lat, real lon, real h, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>)<span class="keyword"></span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      <span class="keywordflow">if</span> (Init())</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        IntForward(lat, lon, h, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, NULL);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ab7a9edeb22cde113f361a098b53046e4">  162</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ab7a9edeb22cde113f361a098b53046e4">Forward</a>(real lat, real lon, real h, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                 std::vector&lt;real&gt;&amp; M)<span class="keyword"></span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;      <span class="keywordflow">if</span> (!Init())</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      <span class="keywordflow">if</span> (M.end() == M.begin() + dim2_) {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        real t[dim2_];</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        IntForward(lat, lon, h, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, t);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        std::copy(t, t + dim2_, M.begin());</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        IntForward(lat, lon, h, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, NULL);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a14fde4d04f816f2d1f433590865cf16f">  195</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a14fde4d04f816f2d1f433590865cf16f">Reverse</a>(real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, real&amp; lat, real&amp; lon, real&amp; h)<span class="keyword"></span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">if</span> (Init())</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        IntReverse(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, lat, lon, h, NULL);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ab534b83ee420bd9a309bf52db5186afd">  224</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ab534b83ee420bd9a309bf52db5186afd">Reverse</a>(real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, real&amp; lat, real&amp; lon, real&amp; h,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                 std::vector&lt;real&gt;&amp; M)<span class="keyword"></span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;      <span class="keywordflow">if</span> (!Init())</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;      <span class="keywordflow">if</span> (M.end() == M.begin() + dim2_) {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        real t[dim2_];</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;        IntReverse(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, lat, lon, h, t);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        std::copy(t, t + dim2_, M.begin());</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        IntReverse(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>, lat, lon, h, NULL);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    }</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#add541816a1bec45274c18c1a187dd162">  243</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#add541816a1bec45274c18c1a187dd162">Init</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _a &gt; 0; }</div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a04802a84578797bab171fa92be2f0b43">  248</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a04802a84578797bab171fa92be2f0b43">MajorRadius</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _a : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno"><a class="line" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a86a0c618fd67eb741e534685cbc96a7c">  255</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a86a0c618fd67eb741e534685cbc96a7c">Flattening</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _f : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseFlattening()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? 1/_f : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> Geocentric&amp; WGS84();</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  };</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_GEOCENTRIC_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">glm::Y</a></div><div class="ttdeci">@ Y</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:41</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_local_cartesian_html"><div class="ttname"><a href="../../d0/d5f/class_geographic_lib_1_1_local_cartesian.html">GeographicLib::LocalCartesian</a></div><div class="ttdoc">Local cartesian coordinates.</div><div class="ttdef"><b>Definition:</b> LocalCartesian.hpp:38</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_ad1dc13a367125d3f8d291eaa98339186"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">GeographicLib::Math::NaN</a></div><div class="ttdeci">static T NaN()</div><div class="ttdef"><b>Definition:</b> Math.hpp:783</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html_a14fde4d04f816f2d1f433590865cf16f"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a14fde4d04f816f2d1f433590865cf16f">GeographicLib::Geocentric::Reverse</a></div><div class="ttdeci">void Reverse(real X, real Y, real Z, real &amp;lat, real &amp;lon, real &amp;h) const</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:195</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html_ab7a9edeb22cde113f361a098b53046e4"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ab7a9edeb22cde113f361a098b53046e4">GeographicLib::Geocentric::Forward</a></div><div class="ttdeci">void Forward(real lat, real lon, real h, real &amp;X, real &amp;Y, real &amp;Z, std::vector&lt; real &gt; &amp;M) const</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:162</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html_a86a0c618fd67eb741e534685cbc96a7c"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a86a0c618fd67eb741e534685cbc96a7c">GeographicLib::Geocentric::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:255</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">glm::Z</a></div><div class="ttdeci">@ Z</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:44</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_gravity_model_html"><div class="ttname"><a href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html">GeographicLib::GravityModel</a></div><div class="ttdoc">Model of the earth's gravity field.</div><div class="ttdef"><b>Definition:</b> GravityModel.hpp:87</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">GeographicLib::NormalGravity</a></div><div class="ttdoc">The normal gravity of the earth.</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:60</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_circle_html"><div class="ttname"><a href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">GeographicLib::MagneticCircle</a></div><div class="ttdoc">Geomagnetic field on a circle of latitude.</div><div class="ttdef"><b>Definition:</b> MagneticCircle.hpp:37</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a></div><div class="ttdoc">Geocentric coordinates</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:67</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html_a36ff62c44bb824b8e5b5048a54a30b6d"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a36ff62c44bb824b8e5b5048a54a30b6d">GeographicLib::Geocentric::Forward</a></div><div class="ttdeci">void Forward(real lat, real lon, real h, real &amp;X, real &amp;Y, real &amp;Z) const</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:133</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">glm::X</a></div><div class="ttdeci">@ X</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:38</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html_a04802a84578797bab171fa92be2f0b43"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a04802a84578797bab171fa92be2f0b43">GeographicLib::Geocentric::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:248</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html_ab534b83ee420bd9a309bf52db5186afd"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ab534b83ee420bd9a309bf52db5186afd">GeographicLib::Geocentric::Reverse</a></div><div class="ttdeci">void Reverse(real X, real Y, real Z, real &amp;lat, real &amp;lon, real &amp;h, std::vector&lt; real &gt; &amp;M) const</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:224</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_gravity_circle_html"><div class="ttname"><a href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html">GeographicLib::GravityCircle</a></div><div class="ttdoc">Gravity on a circle of latitude.</div><div class="ttdef"><b>Definition:</b> GravityCircle.hpp:41</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html_add541816a1bec45274c18c1a187dd162"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#add541816a1bec45274c18c1a187dd162">GeographicLib::Geocentric::Init</a></div><div class="ttdeci">bool Init() const</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:243</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_magnetic_model_html"><div class="ttname"><a href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html">GeographicLib::MagneticModel</a></div><div class="ttdoc">Model of the earth's magnetic field.</div><div class="ttdef"><b>Definition:</b> MagneticModel.hpp:63</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html_adc92d7214526b4cfcd0b9a0171fc8448"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#adc92d7214526b4cfcd0b9a0171fc8448">GeographicLib::Geocentric::Geocentric</a></div><div class="ttdeci">Geocentric()</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:119</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,0 +1,1437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс ObjectGraphNode</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="#pub-static-attribs">Статические открытые данные</a> &#124;
+<a href="../../dc/d76/class_object_graph_node-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс ObjectGraphNode<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>основной базовый класс для всех объектов ВЦ, НЦ и т.д  
+ <a href="../../dd/df9/class_object_graph_node.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d2/d34/node_visual_8h_source.html">nodeVisual.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:ObjectGraphNode:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../dd/df9/class_object_graph_node.png" usemap="#ObjectGraphNode_map" alt=""/>
+  <map id="ObjectGraphNode_map" name="ObjectGraphNode_map">
+<area href="../../df/d52/class_graph_node.html" title="основной графический узел" alt="GraphNode" shape="rect" coords="67,56,191,80"/>
+<area href="../../d5/d1d/class_aerodrom_object.html" title="класс аэродрома" alt="AerodromObject" shape="rect" coords="201,168,325,192"/>
+<area href="../../d6/d71/class_aircraft_object.html" title="класс с вертолета" alt="AircraftObject" shape="rect" coords="201,224,325,248"/>
+<area href="../../d7/d8a/class_air_obj.html" title="класс воздушная цель" alt="AirObj" shape="rect" coords="201,280,325,304"/>
+<area href="../../d9/d78/class_beacon_object.html" title="класс радиомаяк" alt="BeaconObject" shape="rect" coords="201,336,325,360"/>
+<area href="../../d0/d87/class_cloud_object.html" title="класс облачности" alt="CloudObject" shape="rect" coords="201,392,325,416"/>
+<area href="../../da/d03/class_fog_object.html" title="класс тумана" alt="FogObject" shape="rect" coords="201,448,325,472"/>
+<area href="../../d1/dbc/class_ground_obj.html" title="класс наземная цель" alt="GroundObj" shape="rect" coords="201,504,325,528"/>
+<area href="../../d8/d49/class_info_object.html" title="класс информационного объекта" alt="InfoObject" shape="rect" coords="201,560,325,584"/>
+<area href="../../d8/d47/class_label_object.html" alt="LabelObject" shape="rect" coords="201,616,325,640"/>
+<area href="../../de/d09/class_p_p_m_object.html" alt="PPMObject" shape="rect" coords="201,672,325,696"/>
+<area href="../../db/d78/class_route_object.html" alt="RouteObject" shape="rect" coords="201,728,325,752"/>
+<area href="../../d2/d63/class_ruler_object.html" alt="RulerObject" shape="rect" coords="201,784,325,808"/>
+<area href="../../da/dd7/class_system_coord_object.html" alt="SystemCoordObject" shape="rect" coords="201,840,325,864"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:afd87dacde7efd70fafcdf2d59b2775ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#afd87dacde7efd70fafcdf2d59b2775ce">ObjectGraphNode</a> (<a class="el" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a> *clone, QGraphicsItem *parent=nullptr)</td></tr>
+<tr class="separator:afd87dacde7efd70fafcdf2d59b2775ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac558c3ee51fc0b9fd6f3d43e2d5074de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ac558c3ee51fc0b9fd6f3d43e2d5074de">ObjectGraphNode</a> (QString fileName_, QGraphicsItem *parent=nullptr)</td></tr>
+<tr class="separator:ac558c3ee51fc0b9fd6f3d43e2d5074de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff42d71a1362d37ce13266be45b2c94"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a2ff42d71a1362d37ce13266be45b2c94">setName</a> (QString name_)</td></tr>
+<tr class="memdesc:a2ff42d71a1362d37ce13266be45b2c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать имя  <a href="../../dd/df9/class_object_graph_node.html#a2ff42d71a1362d37ce13266be45b2c94">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2ff42d71a1362d37ce13266be45b2c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77ab2c407384486d7582705ed001e139"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a77ab2c407384486d7582705ed001e139">setVisibleRotateRect</a> (bool value)</td></tr>
+<tr class="separator:a77ab2c407384486d7582705ed001e139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cbbdbff3d7940cb6f37cb2cbecc4548"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a0cbbdbff3d7940cb6f37cb2cbecc4548">refreshTrajectory</a> (int <a class="el" href="../../df/d52/class_graph_node.html#aa0a51fcedb82589114a346393b8af1f9">zoom</a>)</td></tr>
+<tr class="memdesc:a0cbbdbff3d7940cb6f37cb2cbecc4548"><td class="mdescLeft">&#160;</td><td class="mdescRight">обновить траекторию  <a href="../../dd/df9/class_object_graph_node.html#a0cbbdbff3d7940cb6f37cb2cbecc4548">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0cbbdbff3d7940cb6f37cb2cbecc4548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2f3a96954d42802479ea50d2af5cf0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a1d2f3a96954d42802479ea50d2af5cf0">setPsi</a> (double value)</td></tr>
+<tr class="separator:a1d2f3a96954d42802479ea50d2af5cf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24723f5c691f5fb371138e5d719ef140"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a24723f5c691f5fb371138e5d719ef140">setMovingObject</a> (bool move)</td></tr>
+<tr class="memdesc:a24723f5c691f5fb371138e5d719ef140"><td class="mdescLeft">&#160;</td><td class="mdescRight">признак того, что объект может перемещаться по сцене  <a href="../../dd/df9/class_object_graph_node.html#a24723f5c691f5fb371138e5d719ef140">Подробнее...</a><br /></td></tr>
+<tr class="separator:a24723f5c691f5fb371138e5d719ef140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe786da3efa2d36d5f142adf0b050f73"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#afe786da3efa2d36d5f142adf0b050f73">isMoving</a> ()</td></tr>
+<tr class="separator:afe786da3efa2d36d5f142adf0b050f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f75993b5c03979496625df10a920128"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a9f75993b5c03979496625df10a920128">setDirection</a> (QPointF pos)</td></tr>
+<tr class="separator:a9f75993b5c03979496625df10a920128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7970bbae78a9ce93bbca9a095e8b1fd"><td class="memItemLeft" align="right" valign="top">virtual QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ae7970bbae78a9ce93bbca9a095e8b1fd">boundingRect</a> () const</td></tr>
+<tr class="separator:ae7970bbae78a9ce93bbca9a095e8b1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af225a1813948f8ce8335d3eae5d4d096"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#af225a1813948f8ce8335d3eae5d4d096">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)</td></tr>
+<tr class="separator:af225a1813948f8ce8335d3eae5d4d096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1974a8523f4e227de0fc0ec3b47d88ca"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a1974a8523f4e227de0fc0ec3b47d88ca">posC</a> ()</td></tr>
+<tr class="separator:a1974a8523f4e227de0fc0ec3b47d88ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55edd2c7c0a64a3cb236f74595d9de84"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a55edd2c7c0a64a3cb236f74595d9de84">setPosC</a> (QPointF &amp;point)</td></tr>
+<tr class="separator:a55edd2c7c0a64a3cb236f74595d9de84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a45883918798de54e12490e28307bd2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a0a45883918798de54e12490e28307bd2">setPosC</a> (qreal dx, qreal dy)</td></tr>
+<tr class="memdesc:a0a45883918798de54e12490e28307bd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">задание новой позиции граф. элемента  <a href="../../dd/df9/class_object_graph_node.html#a0a45883918798de54e12490e28307bd2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0a45883918798de54e12490e28307bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd6ec43433b54469f328a08f05f9e476"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#afd6ec43433b54469f328a08f05f9e476">isRotated</a> ()</td></tr>
+<tr class="separator:afd6ec43433b54469f328a08f05f9e476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a7a422a907d24fab63a8f4c9c35f77a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a3a7a422a907d24fab63a8f4c9c35f77a">setEnable</a> (bool f)</td></tr>
+<tr class="separator:a3a7a422a907d24fab63a8f4c9c35f77a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ea5e5702ff16bf61c629bb1efd19e9f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a8ea5e5702ff16bf61c629bb1efd19e9f">isEnable</a> ()</td></tr>
+<tr class="separator:a8ea5e5702ff16bf61c629bb1efd19e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49df1d7596ac792d126ba4b86b9e9355"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a49df1d7596ac792d126ba4b86b9e9355">setAllInfo</a> (bool value)</td></tr>
+<tr class="separator:a49df1d7596ac792d126ba4b86b9e9355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a862a226395db00b388c24f4ad3a53748"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a862a226395db00b388c24f4ad3a53748">updateDToAircraft</a> ()</td></tr>
+<tr class="separator:a862a226395db00b388c24f4ad3a53748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79bb02f25eb950ee1352d7dbf1d25a11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a79bb02f25eb950ee1352d7dbf1d25a11">isAllInfo</a> (void)</td></tr>
+<tr class="separator:a79bb02f25eb950ee1352d7dbf1d25a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69bf2537a5344fd208fe99aa96baec7d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a69bf2537a5344fd208fe99aa96baec7d">currentPsi</a> ()</td></tr>
+<tr class="separator:a69bf2537a5344fd208fe99aa96baec7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace84c46817b8c920902597650ce4fbaa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ace84c46817b8c920902597650ce4fbaa">connectToObj</a> (<a class="el" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a> *obj)=0</td></tr>
+<tr class="separator:ace84c46817b8c920902597650ce4fbaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b95727479624b1f78dbd36a59903fe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a1b95727479624b1f78dbd36a59903fe5">setVisibleTraj</a> (bool value)</td></tr>
+<tr class="memdesc:a1b95727479624b1f78dbd36a59903fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">показать траекторию  <a href="../../dd/df9/class_object_graph_node.html#a1b95727479624b1f78dbd36a59903fe5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1b95727479624b1f78dbd36a59903fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed0e38b8d410d3df1805fc654f28867"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#abed0e38b8d410d3df1805fc654f28867">setTime</a> (double)</td></tr>
+<tr class="memdesc:abed0e38b8d410d3df1805fc654f28867"><td class="mdescLeft">&#160;</td><td class="mdescRight">текущее время  <a href="../../dd/df9/class_object_graph_node.html#abed0e38b8d410d3df1805fc654f28867">Подробнее...</a><br /></td></tr>
+<tr class="separator:abed0e38b8d410d3df1805fc654f28867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaed000ac6d9d3d09a24c0a98032c674"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#aeaed000ac6d9d3d09a24c0a98032c674">clearTraj</a> ()</td></tr>
+<tr class="memdesc:aeaed000ac6d9d3d09a24c0a98032c674"><td class="mdescLeft">&#160;</td><td class="mdescRight">удалить траекторию  <a href="../../dd/df9/class_object_graph_node.html#aeaed000ac6d9d3d09a24c0a98032c674">Подробнее...</a><br /></td></tr>
+<tr class="separator:aeaed000ac6d9d3d09a24c0a98032c674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac101593ada738eb5046757a8ba75f0e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ac101593ada738eb5046757a8ba75f0e9">setIndex</a> (int index_)</td></tr>
+<tr class="memdesc:ac101593ada738eb5046757a8ba75f0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">указать номер цели  <a href="../../dd/df9/class_object_graph_node.html#ac101593ada738eb5046757a8ba75f0e9">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac101593ada738eb5046757a8ba75f0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_graph_node"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_graph_node')"><img src="../../closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="../../df/d52/class_graph_node.html">GraphNode</a></td></tr>
+<tr class="memitem:a170f361361396311d32aa785a1242074 inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a170f361361396311d32aa785a1242074">GraphNode</a> (QGraphicsItem *parent=nullptr)</td></tr>
+<tr class="separator:a170f361361396311d32aa785a1242074 inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9aaae8379ca94c32f46e32179aa58d inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a8e9aaae8379ca94c32f46e32179aa58d">setZoomLevel</a> (int value)</td></tr>
+<tr class="memdesc:a8e9aaae8379ca94c32f46e32179aa58d inherit pub_methods_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">координаты положения объекта в прямоугольной СК относительно левого края карты  <a href="../../df/d52/class_graph_node.html#a8e9aaae8379ca94c32f46e32179aa58d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8e9aaae8379ca94c32f46e32179aa58d inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc7e5a9dcf7bea27b836dce854bcc4b8 inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#abc7e5a9dcf7bea27b836dce854bcc4b8">saveXML</a> (QDomDocument &amp;domDocument, QDomElement &amp;ele)</td></tr>
+<tr class="memdesc:abc7e5a9dcf7bea27b836dce854bcc4b8 inherit pub_methods_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">сохранение параметров в XML файл  <a href="../../df/d52/class_graph_node.html#abc7e5a9dcf7bea27b836dce854bcc4b8">Подробнее...</a><br /></td></tr>
+<tr class="separator:abc7e5a9dcf7bea27b836dce854bcc4b8 inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0afc8b0cd010854c24379487f605dee8 inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a0afc8b0cd010854c24379487f605dee8">saveXMLForModel</a> (QDomDocument &amp;domDocument, QDomElement &amp;ele)</td></tr>
+<tr class="memdesc:a0afc8b0cd010854c24379487f605dee8 inherit pub_methods_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">сохранение параметров в XML файл(формат для модели)  <a href="../../df/d52/class_graph_node.html#a0afc8b0cd010854c24379487f605dee8">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0afc8b0cd010854c24379487f605dee8 inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e01eb8281edc85e565566bda273e939 inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a2e01eb8281edc85e565566bda273e939">type</a> () const</td></tr>
+<tr class="separator:a2e01eb8281edc85e565566bda273e939 inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:ac0b5c80f3172f9096c7e4a7eb2678f25"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ac0b5c80f3172f9096c7e4a7eb2678f25">initObjectsProperty</a> ()</td></tr>
+<tr class="separator:ac0b5c80f3172f9096c7e4a7eb2678f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a8105e7cc2bbd266780cbef17b41fcc7c"><td class="memItemLeft" align="right" valign="top">QTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a8105e7cc2bbd266780cbef17b41fcc7c">transItem</a></td></tr>
+<tr class="memdesc:a8105e7cc2bbd266780cbef17b41fcc7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">объект трансформации  <a href="../../dd/df9/class_object_graph_node.html#a8105e7cc2bbd266780cbef17b41fcc7c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8105e7cc2bbd266780cbef17b41fcc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334bcfecbbfd700e9848ad7eca516bf8"><td class="memItemLeft" align="right" valign="top">QTransform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a334bcfecbbfd700e9848ad7eca516bf8">transName</a></td></tr>
+<tr class="separator:a334bcfecbbfd700e9848ad7eca516bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad077a224357b18127c06b4333d3424fb"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d9/da9/gl__func_8h.html#aedc65b6fee49c3e652d397d172a39cba">TGeoPoint</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ad077a224357b18127c06b4333d3424fb">trajGeoPoints</a></td></tr>
+<tr class="memdesc:ad077a224357b18127c06b4333d3424fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">хранение траектории в виде геоточек(независимо от уровня детализации)  <a href="../../dd/df9/class_object_graph_node.html#ad077a224357b18127c06b4333d3424fb">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad077a224357b18127c06b4333d3424fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02f189ee48203c2da22c2b8508b0015e"><td class="memItemLeft" align="right" valign="top">QVector&lt; QGraphicsLineItem * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a02f189ee48203c2da22c2b8508b0015e">traj</a></td></tr>
+<tr class="separator:a02f189ee48203c2da22c2b8508b0015e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82579d795e6581f3df4e0b2f004fc5c6"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a82579d795e6581f3df4e0b2f004fc5c6">fileName</a></td></tr>
+<tr class="memdesc:a82579d795e6581f3df4e0b2f004fc5c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">имя файла  <a href="../../dd/df9/class_object_graph_node.html#a82579d795e6581f3df4e0b2f004fc5c6">Подробнее...</a><br /></td></tr>
+<tr class="separator:a82579d795e6581f3df4e0b2f004fc5c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af000a5edf4f73cb8e5a631ddaec43c89"><td class="memItemLeft" align="right" valign="top">QByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#af000a5edf4f73cb8e5a631ddaec43c89">binMetaData</a></td></tr>
+<tr class="memdesc:af000a5edf4f73cb8e5a631ddaec43c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">бинарные метаданные  <a href="../../dd/df9/class_object_graph_node.html#af000a5edf4f73cb8e5a631ddaec43c89">Подробнее...</a><br /></td></tr>
+<tr class="separator:af000a5edf4f73cb8e5a631ddaec43c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebe23fd667427cf6f03027755508e4b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#aebe23fd667427cf6f03027755508e4b9">currentUnitTransPsi</a></td></tr>
+<tr class="memdesc:aebe23fd667427cf6f03027755508e4b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">объект для преобразования курса  <a href="../../dd/df9/class_object_graph_node.html#aebe23fd667427cf6f03027755508e4b9">Подробнее...</a><br /></td></tr>
+<tr class="separator:aebe23fd667427cf6f03027755508e4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b515b26fa866e5740138e11e28b850f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a0b515b26fa866e5740138e11e28b850f">currentExpTransPsi</a></td></tr>
+<tr class="separator:a0b515b26fa866e5740138e11e28b850f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f62dd051ac277041282b98e6fcf4af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d52/class_graph_node.html">GraphNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a09f62dd051ac277041282b98e6fcf4af">map</a></td></tr>
+<tr class="memdesc:a09f62dd051ac277041282b98e6fcf4af"><td class="mdescLeft">&#160;</td><td class="mdescRight">базовый объект  <a href="../../dd/df9/class_object_graph_node.html#a09f62dd051ac277041282b98e6fcf4af">Подробнее...</a><br /></td></tr>
+<tr class="separator:a09f62dd051ac277041282b98e6fcf4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a483614a55eaf83221238ab4ca1667311"><td class="memItemLeft" align="right" valign="top">QGraphicsSvgItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">itemSvg</a></td></tr>
+<tr class="memdesc:a483614a55eaf83221238ab4ca1667311"><td class="mdescLeft">&#160;</td><td class="mdescRight">указатель на элемент с картнкой для данного элемента  <a href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">Подробнее...</a><br /></td></tr>
+<tr class="separator:a483614a55eaf83221238ab4ca1667311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ab0050b59f944d24bbad95b202c5f1"><td class="memItemLeft" align="right" valign="top">QGraphicsSimpleTextItem *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a92ab0050b59f944d24bbad95b202c5f1">nameItem</a></td></tr>
+<tr class="memdesc:a92ab0050b59f944d24bbad95b202c5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">подпись к данному элементу  <a href="../../dd/df9/class_object_graph_node.html#a92ab0050b59f944d24bbad95b202c5f1">Подробнее...</a><br /></td></tr>
+<tr class="separator:a92ab0050b59f944d24bbad95b202c5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77cd5822c0ddd376d8a4c37fcec66bb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d9e/class_color_item.html">ColorItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a77cd5822c0ddd376d8a4c37fcec66bb4">colorItem</a></td></tr>
+<tr class="memdesc:a77cd5822c0ddd376d8a4c37fcec66bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">цветной прямоугольник  <a href="../../dd/df9/class_object_graph_node.html#a77cd5822c0ddd376d8a4c37fcec66bb4">Подробнее...</a><br /></td></tr>
+<tr class="separator:a77cd5822c0ddd376d8a4c37fcec66bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a456fcf69467dc4f3b530fbdba96cce85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d9e/class_color_item.html">ColorItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a456fcf69467dc4f3b530fbdba96cce85">colorName</a></td></tr>
+<tr class="memdesc:a456fcf69467dc4f3b530fbdba96cce85"><td class="mdescLeft">&#160;</td><td class="mdescRight">название  <a href="../../dd/df9/class_object_graph_node.html#a456fcf69467dc4f3b530fbdba96cce85">Подробнее...</a><br /></td></tr>
+<tr class="separator:a456fcf69467dc4f3b530fbdba96cce85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3160c624220c26ab0a18a8e444e7c695"><td class="memItemLeft" align="right" valign="top">Qt::GlobalColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a3160c624220c26ab0a18a8e444e7c695">colorTraj</a></td></tr>
+<tr class="memdesc:a3160c624220c26ab0a18a8e444e7c695"><td class="mdescLeft">&#160;</td><td class="mdescRight">цвет траектории  <a href="../../dd/df9/class_object_graph_node.html#a3160c624220c26ab0a18a8e444e7c695">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3160c624220c26ab0a18a8e444e7c695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856b5be57d8c2631364027e18c9e51a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d9e/class_rotate_object.html">RotateObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a856b5be57d8c2631364027e18c9e51a0">rotate</a></td></tr>
+<tr class="memdesc:a856b5be57d8c2631364027e18c9e51a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">элемент для вращения объекта  <a href="../../dd/df9/class_object_graph_node.html#a856b5be57d8c2631364027e18c9e51a0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a856b5be57d8c2631364027e18c9e51a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8840791c457fc12bd0fae8cbe65f5d69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a8840791c457fc12bd0fae8cbe65f5d69">moving</a></td></tr>
+<tr class="memdesc:a8840791c457fc12bd0fae8cbe65f5d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">признак того, что объект может двигаться  <a href="../../dd/df9/class_object_graph_node.html#a8840791c457fc12bd0fae8cbe65f5d69">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8840791c457fc12bd0fae8cbe65f5d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6cc763bbcfa7c56599cd59f75bf933"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#acd6cc763bbcfa7c56599cd59f75bf933">trajectory</a></td></tr>
+<tr class="memdesc:acd6cc763bbcfa7c56599cd59f75bf933"><td class="mdescLeft">&#160;</td><td class="mdescRight">разрешение на отрисовку траектории  <a href="../../dd/df9/class_object_graph_node.html#acd6cc763bbcfa7c56599cd59f75bf933">Подробнее...</a><br /></td></tr>
+<tr class="separator:acd6cc763bbcfa7c56599cd59f75bf933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab02ad76ef2c17b478ce3e5255f66772c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ab02ad76ef2c17b478ce3e5255f66772c">psi</a></td></tr>
+<tr class="memdesc:ab02ad76ef2c17b478ce3e5255f66772c"><td class="mdescLeft">&#160;</td><td class="mdescRight">курс объекта(градусы)  <a href="../../dd/df9/class_object_graph_node.html#ab02ad76ef2c17b478ce3e5255f66772c">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab02ad76ef2c17b478ce3e5255f66772c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33fab6855fba2d1552d3bf53b749508"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ad33fab6855fba2d1552d3bf53b749508">index</a></td></tr>
+<tr class="memdesc:ad33fab6855fba2d1552d3bf53b749508"><td class="mdescLeft">&#160;</td><td class="mdescRight">индекс(номер цели)  <a href="../../dd/df9/class_object_graph_node.html#ad33fab6855fba2d1552d3bf53b749508">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad33fab6855fba2d1552d3bf53b749508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e90ea1b7429d7fae952b6a993fb3aae"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a4e90ea1b7429d7fae952b6a993fb3aae">currentTime</a></td></tr>
+<tr class="memdesc:a4e90ea1b7429d7fae952b6a993fb3aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">текущее время  <a href="../../dd/df9/class_object_graph_node.html#a4e90ea1b7429d7fae952b6a993fb3aae">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4e90ea1b7429d7fae952b6a993fb3aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae545c4945c9361e0aefc9400488a4802"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#ae545c4945c9361e0aefc9400488a4802">lastTimeForTraj</a></td></tr>
+<tr class="memdesc:ae545c4945c9361e0aefc9400488a4802"><td class="mdescLeft">&#160;</td><td class="mdescRight">прошедшая отметка времени для отрисовки траектории  <a href="../../dd/df9/class_object_graph_node.html#ae545c4945c9361e0aefc9400488a4802">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae545c4945c9361e0aefc9400488a4802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_class_graph_node"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_graph_node')"><img src="../../closed.png" alt="-"/>&#160;Открытые атрибуты унаследованные от <a class="el" href="../../df/d52/class_graph_node.html">GraphNode</a></td></tr>
+<tr class="memitem:ad58f39d6e1a0d5b7388419d4931d3c3b inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#ad58f39d6e1a0d5b7388419d4931d3c3b">lat</a></td></tr>
+<tr class="separator:ad58f39d6e1a0d5b7388419d4931d3c3b inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb99e6ef66a4f36c2ed0cd86a7c07e0 inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#addb99e6ef66a4f36c2ed0cd86a7c07e0">lon</a></td></tr>
+<tr class="separator:addb99e6ef66a4f36c2ed0cd86a7c07e0 inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9d720da476e9c5d079a294bee0031b inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#abf9d720da476e9c5d079a294bee0031b">sLat</a></td></tr>
+<tr class="memdesc:abf9d720da476e9c5d079a294bee0031b inherit pub_attribs_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">строка для географическх координат  <a href="../../df/d52/class_graph_node.html#abf9d720da476e9c5d079a294bee0031b">Подробнее...</a><br /></td></tr>
+<tr class="separator:abf9d720da476e9c5d079a294bee0031b inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fa9a6ad070e5f331357dd0d976a6a16 inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a7fa9a6ad070e5f331357dd0d976a6a16">sLon</a></td></tr>
+<tr class="separator:a7fa9a6ad070e5f331357dd0d976a6a16 inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a51fcedb82589114a346393b8af1f9 inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#aa0a51fcedb82589114a346393b8af1f9">zoom</a></td></tr>
+<tr class="memdesc:aa0a51fcedb82589114a346393b8af1f9 inherit pub_attribs_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">уровень детализации на котором отображается объект  <a href="../../df/d52/class_graph_node.html#aa0a51fcedb82589114a346393b8af1f9">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa0a51fcedb82589114a346393b8af1f9 inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae421572b5888ef9475926e06a61a8bbb inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#ae421572b5888ef9475926e06a61a8bbb">name</a></td></tr>
+<tr class="memdesc:ae421572b5888ef9475926e06a61a8bbb inherit pub_attribs_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">имя объекта  <a href="../../df/d52/class_graph_node.html#ae421572b5888ef9475926e06a61a8bbb">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae421572b5888ef9475926e06a61a8bbb inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094956271712cd43eae7ec9bab20d320 inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a094956271712cd43eae7ec9bab20d320">use_russian</a></td></tr>
+<tr class="memdesc:a094956271712cd43eae7ec9bab20d320 inherit pub_attribs_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">признак для выбора единиц измерения  <a href="../../df/d52/class_graph_node.html#a094956271712cd43eae7ec9bab20d320">Подробнее...</a><br /></td></tr>
+<tr class="separator:a094956271712cd43eae7ec9bab20d320 inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Статические открытые данные</h2></td></tr>
+<tr class="memitem:a86cb4ff9aff7ae7113b43438281df15c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a86cb4ff9aff7ae7113b43438281df15c">unitAngle</a> = nullptr</td></tr>
+<tr class="separator:a86cb4ff9aff7ae7113b43438281df15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e6cd3502032dfa15ef8e2469a53771"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a62e6cd3502032dfa15ef8e2469a53771">unitSpeed</a> = nullptr</td></tr>
+<tr class="separator:a62e6cd3502032dfa15ef8e2469a53771"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ec28755f856b7c423acb5e0225f8b0b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a0ec28755f856b7c423acb5e0225f8b0b">unitLength</a> = nullptr</td></tr>
+<tr class="separator:a0ec28755f856b7c423acb5e0225f8b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a296d0a38fd769b3fdac4cf8a56ad0d12"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df9/class_object_graph_node.html#a296d0a38fd769b3fdac4cf8a56ad0d12">unitExp</a> = nullptr</td></tr>
+<tr class="separator:a296d0a38fd769b3fdac4cf8a56ad0d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pub_types_class_graph_node"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_graph_node')"><img src="../../closed.png" alt="-"/>&#160;Открытые типы унаследованные от <a class="el" href="../../df/d52/class_graph_node.html">GraphNode</a></td></tr>
+<tr class="memitem:ab489b49b1f629bbf53a253c753b3c450 inherit pub_types_class_graph_node"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450">TypeGraphNode</a> { <br />
+&#160;&#160;<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a67ace217e0a125a5f9b3200f278e05a3">E_MAP</a> = UserType + 1, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450afe5bfe95aa981af90b3707aef8ea3196">E_OBJ_G</a> = UserType + 2, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a7e982a17a1afdfe1acf465f57e279b2f">E_OBJ_V</a> = UserType + 3, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a02932ab07c918f39f4df05828f0dcf96">E_AERODROM</a> = UserType + 4, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450acdbc5305a44030f214bd9ff698802ec5">E_BEACON</a> = UserType + 5, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a4252b351c91e2b6665b22594b1d468ec">E_HELLICOPTER</a> = UserType + 8, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a2ad54221b0e0ded9cd362b0fb00cc8da">E_UNSET</a> = UserType + 7, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a5d65f2a9e3777edb217c0bc68e87ce31">E_SYSCOORD</a> = UserType + 9, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a5373a56376f9d2ac9b95bdf57d7757b4">E_INFO</a> = UserType + 10, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a3629ef766c754f504ca09dbb9f7763ed">E_ROUTE</a> = UserType + 11, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a6928cae5278590b85afecc486c1ce5fc">E_POINT</a> = UserType + 12, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a0d98867c917e43186a057b319a11d70a">E_PPM</a> = UserType + 13, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450ad2a470aac745e1b6550320ba11ba6242">E_LABEL</a> = UserType + 14, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450aa1b4c7dfb5facd1386f22985e31a1c99">E_CLOUD</a> = UserType + 15, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a7f41249f6618c954165a3a70b2e9934e">E_FOG</a> = UserType + 16
+<br />
+ }</td></tr>
+<tr class="separator:ab489b49b1f629bbf53a253c753b3c450 inherit pub_types_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>основной базовый класс для всех объектов ВЦ, НЦ и т.д </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="afd87dacde7efd70fafcdf2d59b2775ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd87dacde7efd70fafcdf2d59b2775ce">&#9670;&nbsp;</a></span>ObjectGraphNode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectGraphNode::ObjectGraphNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a> *&#160;</td>
+          <td class="paramname"><em>clone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac558c3ee51fc0b9fd6f3d43e2d5074de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac558c3ee51fc0b9fd6f3d43e2d5074de">&#9670;&nbsp;</a></span>ObjectGraphNode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObjectGraphNode::ObjectGraphNode </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fileName_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ae7970bbae78a9ce93bbca9a095e8b1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7970bbae78a9ce93bbca9a095e8b1fd">&#9670;&nbsp;</a></span>boundingRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QRectF ObjectGraphNode::boundingRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aeaed000ac6d9d3d09a24c0a98032c674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaed000ac6d9d3d09a24c0a98032c674">&#9670;&nbsp;</a></span>clearTraj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::clearTraj </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>удалить траекторию </p>
+
+</div>
+</div>
+<a id="ace84c46817b8c920902597650ce4fbaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace84c46817b8c920902597650ce4fbaa">&#9670;&nbsp;</a></span>connectToObj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::connectToObj </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещается в <a class="el" href="../../db/d78/class_route_object.html#ae9e1608aa0a3bac4f29a3e8aec30a83d">RouteObject</a>, <a class="el" href="../../d8/d49/class_info_object.html#a0dd70f5c2fdf3d6c70fe94c47aedb836">InfoObject</a>, <a class="el" href="../../d8/d47/class_label_object.html#a0bc7d8b063003419ec4ac4f4d7251603">LabelObject</a>, <a class="el" href="../../da/d03/class_fog_object.html#a9773ba71e86156ee1e562674f76417d3">FogObject</a>, <a class="el" href="../../d0/d87/class_cloud_object.html#a094c23bcbd29de84efb2d0737cdf7753">CloudObject</a>, <a class="el" href="../../d9/d78/class_beacon_object.html#af9d72adc30f88c4e8db52efa955a6d63">BeaconObject</a>, <a class="el" href="../../d5/d1d/class_aerodrom_object.html#ab1b3099b79f7247332bda3286c19a61a">AerodromObject</a>, <a class="el" href="../../d1/dbc/class_ground_obj.html#abd63b698b781e8d1f5c8c770df77a71a">GroundObj</a>, <a class="el" href="../../d7/d8a/class_air_obj.html#aacdc7ad417555a58636898b4ac8c47c1">AirObj</a> и <a class="el" href="../../d6/d71/class_aircraft_object.html#acd86e691232e724af01fb6279744255a">AircraftObject</a>.</p>
+
+</div>
+</div>
+<a id="a69bf2537a5344fd208fe99aa96baec7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69bf2537a5344fd208fe99aa96baec7d">&#9670;&nbsp;</a></span>currentPsi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ObjectGraphNode::currentPsi </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0b5c80f3172f9096c7e4a7eb2678f25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b5c80f3172f9096c7e4a7eb2678f25">&#9670;&nbsp;</a></span>initObjectsProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ObjectGraphNode::initObjectsProperty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a79bb02f25eb950ee1352d7dbf1d25a11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79bb02f25eb950ee1352d7dbf1d25a11">&#9670;&nbsp;</a></span>isAllInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ObjectGraphNode::isAllInfo </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ea5e5702ff16bf61c629bb1efd19e9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea5e5702ff16bf61c629bb1efd19e9f">&#9670;&nbsp;</a></span>isEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool ObjectGraphNode::isEnable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe786da3efa2d36d5f142adf0b050f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe786da3efa2d36d5f142adf0b050f73">&#9670;&nbsp;</a></span>isMoving()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ObjectGraphNode::isMoving </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afd6ec43433b54469f328a08f05f9e476"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd6ec43433b54469f328a08f05f9e476">&#9670;&nbsp;</a></span>isRotated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::isRotated </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переопределяется в <a class="el" href="../../d6/d71/class_aircraft_object.html#aaa1f92fc89a90c64a119ac2f88b82183">AircraftObject</a>, <a class="el" href="../../d1/dbc/class_ground_obj.html#a454e04829ed203e3267144ec75552ea1">GroundObj</a> и <a class="el" href="../../d7/d8a/class_air_obj.html#a3036450ec14bf4c3789a7a029d7ef106">AirObj</a>.</p>
+
+</div>
+</div>
+<a id="af225a1813948f8ce8335d3eae5d4d096"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af225a1813948f8ce8335d3eae5d4d096">&#9670;&nbsp;</a></span>paint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1974a8523f4e227de0fc0ec3b47d88ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1974a8523f4e227de0fc0ec3b47d88ca">&#9670;&nbsp;</a></span>posC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF ObjectGraphNode::posC </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0cbbdbff3d7940cb6f37cb2cbecc4548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cbbdbff3d7940cb6f37cb2cbecc4548">&#9670;&nbsp;</a></span>refreshTrajectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::refreshTrajectory </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zoom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>обновить траекторию </p>
+
+</div>
+</div>
+<a id="a49df1d7596ac792d126ba4b86b9e9355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49df1d7596ac792d126ba4b86b9e9355">&#9670;&nbsp;</a></span>setAllInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::setAllInfo </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f75993b5c03979496625df10a920128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f75993b5c03979496625df10a920128">&#9670;&nbsp;</a></span>setDirection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::setDirection </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переопределяет метод предка <a class="el" href="../../df/d52/class_graph_node.html#a1dc098634299c7bff1d8941d91ebce80">GraphNode</a>.</p>
+
+</div>
+</div>
+<a id="a3a7a422a907d24fab63a8f4c9c35f77a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a7a422a907d24fab63a8f4c9c35f77a">&#9670;&nbsp;</a></span>setEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::setEnable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac101593ada738eb5046757a8ba75f0e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac101593ada738eb5046757a8ba75f0e9">&#9670;&nbsp;</a></span>setIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::setIndex </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>указать номер цели </p>
+
+</div>
+</div>
+<a id="a24723f5c691f5fb371138e5d719ef140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24723f5c691f5fb371138e5d719ef140">&#9670;&nbsp;</a></span>setMovingObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::setMovingObject </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>move</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>признак того, что объект может перемещаться по сцене </p>
+
+</div>
+</div>
+<a id="a2ff42d71a1362d37ce13266be45b2c94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff42d71a1362d37ce13266be45b2c94">&#9670;&nbsp;</a></span>setName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::setName </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>задать имя </p>
+
+<p>Переопределяет метод предка <a class="el" href="../../df/d52/class_graph_node.html#a3c9f94c6bd3adf02f71ddb0ebab4108f">GraphNode</a>.</p>
+
+</div>
+</div>
+<a id="a55edd2c7c0a64a3cb236f74595d9de84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55edd2c7c0a64a3cb236f74595d9de84">&#9670;&nbsp;</a></span>setPosC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::setPosC </td>
+          <td>(</td>
+          <td class="paramtype">QPointF &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переопределяется в <a class="el" href="../../db/d78/class_route_object.html#a5d2a6ffc98f11a014913dfb4a906f26f">RouteObject</a> и <a class="el" href="../../d8/d47/class_label_object.html#af93a5ec827d3b3b415a50536a6181bf3">LabelObject</a>.</p>
+
+</div>
+</div>
+<a id="a0a45883918798de54e12490e28307bd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a45883918798de54e12490e28307bd2">&#9670;&nbsp;</a></span>setPosC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::setPosC </td>
+          <td>(</td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>dx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">qreal&#160;</td>
+          <td class="paramname"><em>dy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>задание новой позиции граф. элемента </p>
+
+<p>Переопределяется в <a class="el" href="../../db/d78/class_route_object.html#a68ee89bf65f5a8ebe0baf1df293e3209">RouteObject</a> и <a class="el" href="../../d8/d47/class_label_object.html#ae0ff307fe9c151a290dfd238c323c76f">LabelObject</a>.</p>
+
+</div>
+</div>
+<a id="a1d2f3a96954d42802479ea50d2af5cf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d2f3a96954d42802479ea50d2af5cf0">&#9670;&nbsp;</a></span>setPsi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::setPsi </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abed0e38b8d410d3df1805fc654f28867"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abed0e38b8d410d3df1805fc654f28867">&#9670;&nbsp;</a></span>setTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::setTime </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>текущее время </p>
+
+</div>
+</div>
+<a id="a77ab2c407384486d7582705ed001e139"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77ab2c407384486d7582705ed001e139">&#9670;&nbsp;</a></span>setVisibleRotateRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::setVisibleRotateRect </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b95727479624b1f78dbd36a59903fe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b95727479624b1f78dbd36a59903fe5">&#9670;&nbsp;</a></span>setVisibleTraj()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ObjectGraphNode::setVisibleTraj </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>показать траекторию </p>
+
+</div>
+</div>
+<a id="a862a226395db00b388c24f4ad3a53748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a862a226395db00b388c24f4ad3a53748">&#9670;&nbsp;</a></span>updateDToAircraft()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void ObjectGraphNode::updateDToAircraft </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переопределяется в <a class="el" href="../../d1/dbc/class_ground_obj.html#a06b576f5ac5e291d2755a68b26278d2d">GroundObj</a>, <a class="el" href="../../d7/d8a/class_air_obj.html#a59677ed612dfbc9a31e914fcdb851c1f">AirObj</a> и <a class="el" href="../../d5/d1d/class_aerodrom_object.html#a93a234970119726de6a54021182476d5">AerodromObject</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="af000a5edf4f73cb8e5a631ddaec43c89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af000a5edf4f73cb8e5a631ddaec43c89">&#9670;&nbsp;</a></span>binMetaData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QByteArray ObjectGraphNode::binMetaData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>бинарные метаданные </p>
+
+</div>
+</div>
+<a id="a77cd5822c0ddd376d8a4c37fcec66bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77cd5822c0ddd376d8a4c37fcec66bb4">&#9670;&nbsp;</a></span>colorItem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d9e/class_color_item.html">ColorItem</a>* ObjectGraphNode::colorItem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>цветной прямоугольник </p>
+
+</div>
+</div>
+<a id="a456fcf69467dc4f3b530fbdba96cce85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a456fcf69467dc4f3b530fbdba96cce85">&#9670;&nbsp;</a></span>colorName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d9e/class_color_item.html">ColorItem</a>* ObjectGraphNode::colorName</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>название </p>
+
+</div>
+</div>
+<a id="a3160c624220c26ab0a18a8e444e7c695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3160c624220c26ab0a18a8e444e7c695">&#9670;&nbsp;</a></span>colorTraj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Qt::GlobalColor ObjectGraphNode::colorTraj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>цвет траектории </p>
+
+</div>
+</div>
+<a id="a0b515b26fa866e5740138e11e28b850f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b515b26fa866e5740138e11e28b850f">&#9670;&nbsp;</a></span>currentExpTransPsi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a>* ObjectGraphNode::currentExpTransPsi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4e90ea1b7429d7fae952b6a993fb3aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e90ea1b7429d7fae952b6a993fb3aae">&#9670;&nbsp;</a></span>currentTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ObjectGraphNode::currentTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>текущее время </p>
+
+</div>
+</div>
+<a id="aebe23fd667427cf6f03027755508e4b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebe23fd667427cf6f03027755508e4b9">&#9670;&nbsp;</a></span>currentUnitTransPsi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d75/struct_t_object_unit.html">TObjectUnit</a>* ObjectGraphNode::currentUnitTransPsi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>объект для преобразования курса </p>
+
+</div>
+</div>
+<a id="a82579d795e6581f3df4e0b2f004fc5c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82579d795e6581f3df4e0b2f004fc5c6">&#9670;&nbsp;</a></span>fileName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ObjectGraphNode::fileName</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>имя файла </p>
+
+</div>
+</div>
+<a id="ad33fab6855fba2d1552d3bf53b749508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33fab6855fba2d1552d3bf53b749508">&#9670;&nbsp;</a></span>index</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ObjectGraphNode::index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>индекс(номер цели) </p>
+
+</div>
+</div>
+<a id="a483614a55eaf83221238ab4ca1667311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a483614a55eaf83221238ab4ca1667311">&#9670;&nbsp;</a></span>itemSvg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsSvgItem* ObjectGraphNode::itemSvg</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>указатель на элемент с картнкой для данного элемента </p>
+
+</div>
+</div>
+<a id="ae545c4945c9361e0aefc9400488a4802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae545c4945c9361e0aefc9400488a4802">&#9670;&nbsp;</a></span>lastTimeForTraj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ObjectGraphNode::lastTimeForTraj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>прошедшая отметка времени для отрисовки траектории </p>
+
+</div>
+</div>
+<a id="a09f62dd051ac277041282b98e6fcf4af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f62dd051ac277041282b98e6fcf4af">&#9670;&nbsp;</a></span>map</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d52/class_graph_node.html">GraphNode</a>* ObjectGraphNode::map</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>базовый объект </p>
+
+</div>
+</div>
+<a id="a8840791c457fc12bd0fae8cbe65f5d69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8840791c457fc12bd0fae8cbe65f5d69">&#9670;&nbsp;</a></span>moving</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ObjectGraphNode::moving</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>признак того, что объект может двигаться </p>
+
+</div>
+</div>
+<a id="a92ab0050b59f944d24bbad95b202c5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ab0050b59f944d24bbad95b202c5f1">&#9670;&nbsp;</a></span>nameItem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QGraphicsSimpleTextItem* ObjectGraphNode::nameItem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>подпись к данному элементу </p>
+
+</div>
+</div>
+<a id="ab02ad76ef2c17b478ce3e5255f66772c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab02ad76ef2c17b478ce3e5255f66772c">&#9670;&nbsp;</a></span>psi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ObjectGraphNode::psi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>курс объекта(градусы) </p>
+
+</div>
+</div>
+<a id="a856b5be57d8c2631364027e18c9e51a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856b5be57d8c2631364027e18c9e51a0">&#9670;&nbsp;</a></span>rotate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d9e/class_rotate_object.html">RotateObject</a>* ObjectGraphNode::rotate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>элемент для вращения объекта </p>
+
+</div>
+</div>
+<a id="a02f189ee48203c2da22c2b8508b0015e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02f189ee48203c2da22c2b8508b0015e">&#9670;&nbsp;</a></span>traj</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;QGraphicsLineItem* &gt; ObjectGraphNode::traj</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>хранение траектории в виде линии для заданного уровня детализации при смене уровня детализация нужно пересчитать эти линии </p>
+
+</div>
+</div>
+<a id="acd6cc763bbcfa7c56599cd59f75bf933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd6cc763bbcfa7c56599cd59f75bf933">&#9670;&nbsp;</a></span>trajectory</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ObjectGraphNode::trajectory</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>разрешение на отрисовку траектории </p>
+
+</div>
+</div>
+<a id="ad077a224357b18127c06b4333d3424fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad077a224357b18127c06b4333d3424fb">&#9670;&nbsp;</a></span>trajGeoPoints</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d9/da9/gl__func_8h.html#aedc65b6fee49c3e652d397d172a39cba">TGeoPoint</a>&gt; ObjectGraphNode::trajGeoPoints</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>хранение траектории в виде геоточек(независимо от уровня детализации) </p>
+
+</div>
+</div>
+<a id="a8105e7cc2bbd266780cbef17b41fcc7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8105e7cc2bbd266780cbef17b41fcc7c">&#9670;&nbsp;</a></span>transItem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTransform ObjectGraphNode::transItem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>объект трансформации </p>
+
+</div>
+</div>
+<a id="a334bcfecbbfd700e9848ad7eca516bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334bcfecbbfd700e9848ad7eca516bf8">&#9670;&nbsp;</a></span>transName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTransform ObjectGraphNode::transName</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86cb4ff9aff7ae7113b43438281df15c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86cb4ff9aff7ae7113b43438281df15c">&#9670;&nbsp;</a></span>unitAngle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> * ObjectGraphNode::unitAngle = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a296d0a38fd769b3fdac4cf8a56ad0d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a296d0a38fd769b3fdac4cf8a56ad0d12">&#9670;&nbsp;</a></span>unitExp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> * ObjectGraphNode::unitExp = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ec28755f856b7c423acb5e0225f8b0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ec28755f856b7c423acb5e0225f8b0b">&#9670;&nbsp;</a></span>unitLength</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> * ObjectGraphNode::unitLength = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62e6cd3502032dfa15ef8e2469a53771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e6cd3502032dfa15ef8e2469a53771">&#9670;&nbsp;</a></span>unitSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> * ObjectGraphNode::unitSpeed = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/<a class="el" href="../../d2/d34/node_visual_8h_source.html">nodeVisual.h</a></li>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/<a class="el" href="../../d5/df9/node_visual_8cpp.html">nodeVisual.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:09. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

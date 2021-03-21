@@ -1,0 +1,870 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::Rhumb</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html">Rhumb</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#friends">Друзья</a> &#124;
+<a href="../../d6/d7f/class_geographic_lib_1_1_rhumb-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::Rhumb</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Solve of the direct and inverse rhumb problems.  
+ <a href="../../de/daf/class_geographic_lib_1_1_rhumb.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d6/dad/_rhumb_8hpp_source.html">Rhumb.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a04b001e0f85f8b57a26e9d7995aec124"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124">mask</a> { <br />
+&#160;&#160;<a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124ad4afa0e9734bea70854ed54bf339211b">NONE</a>, 
+<a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124aae0df7b09d11a8a18434cdeffcc1cb1f">LATITUDE</a>, 
+<a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a1bb3e282da6f0a81fcbc72f5b33441e9">LONGITUDE</a>, 
+<a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a8d8c34078aed160f85772c928e0733fc">AZIMUTH</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a4db8cf0132fb4dc6da1f832854d8da0e">DISTANCE</a>, 
+<a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a9fac2f920e7821f63df6140361999b16">AREA</a>, 
+<a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124acbb8560be08ca221a253c820b621eeb5">LONG_UNROLL</a>, 
+<a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a0341b472e92905964df003eefd3875fc">ALL</a>
+<br />
+ }</td></tr>
+<tr class="separator:a04b001e0f85f8b57a26e9d7995aec124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a224571ebf2867a35b98106039f4f9e33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a224571ebf2867a35b98106039f4f9e33">Rhumb</a> (real a, real f, bool exact=true)</td></tr>
+<tr class="separator:a224571ebf2867a35b98106039f4f9e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44a91fa350a21c974c7638e4c75e7290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a44a91fa350a21c974c7638e4c75e7290">Direct</a> (real lat1, real lon1, real azi12, real s12, real &amp;lat2, real &amp;lon2, real &amp;S12) const</td></tr>
+<tr class="separator:a44a91fa350a21c974c7638e4c75e7290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99185f2715f08be7c9fe5c6049d558c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a99185f2715f08be7c9fe5c6049d558c8">Direct</a> (real lat1, real lon1, real azi12, real s12, real &amp;lat2, real &amp;lon2) const</td></tr>
+<tr class="separator:a99185f2715f08be7c9fe5c6049d558c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a412cd34c09152db69fba58531299e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#aa8a412cd34c09152db69fba58531299e">GenDirect</a> (real lat1, real lon1, real azi12, real s12, unsigned outmask, real &amp;lat2, real &amp;lon2, real &amp;S12) const</td></tr>
+<tr class="separator:aa8a412cd34c09152db69fba58531299e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774a9548b62c1eae08fe39fa5f2595a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a774a9548b62c1eae08fe39fa5f2595a0">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi12, real &amp;S12) const</td></tr>
+<tr class="separator:a774a9548b62c1eae08fe39fa5f2595a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78836f3d5e0987370e8a575fe069732d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a78836f3d5e0987370e8a575fe069732d">Inverse</a> (real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi12) const</td></tr>
+<tr class="separator:a78836f3d5e0987370e8a575fe069732d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa309f58511d19adac59740de55db35c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#aa309f58511d19adac59740de55db35c7">GenInverse</a> (real lat1, real lon1, real lat2, real lon2, unsigned outmask, real &amp;s12, real &amp;azi12, real &amp;S12) const</td></tr>
+<tr class="separator:aa309f58511d19adac59740de55db35c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af274a2dda84f694026b282844190ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/dce/class_geographic_lib_1_1_rhumb_line.html">RhumbLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a0af274a2dda84f694026b282844190ea">Line</a> (real lat1, real lon1, real azi12) const</td></tr>
+<tr class="separator:a0af274a2dda84f694026b282844190ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Друзья</h2></td></tr>
+<tr class="memitem:a29d830021a85930f5bddf917fcc5d93c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a29d830021a85930f5bddf917fcc5d93c">RhumbLine</a></td></tr>
+<tr class="separator:a29d830021a85930f5bddf917fcc5d93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ee76fdbcd574c720117bae1422c6c9e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0ee76fdbcd574c720117bae1422c6c9e"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a0ee76fdbcd574c720117bae1422c6c9e">PolygonAreaT</a></td></tr>
+<tr class="separator:a0ee76fdbcd574c720117bae1422c6c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Inspector functions.</h2></td></tr>
+<tr class="memitem:aa16da3799c97398ba7110dc9a3aa9bb0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#aa16da3799c97398ba7110dc9a3aa9bb0">MajorRadius</a> () const</td></tr>
+<tr class="separator:aa16da3799c97398ba7110dc9a3aa9bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a105e1b2ba633278e994bba05cd4e9943"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a105e1b2ba633278e994bba05cd4e9943">Flattening</a> () const</td></tr>
+<tr class="separator:a105e1b2ba633278e994bba05cd4e9943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69e0f6f93b317025c1d60ddc409831f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#ae69e0f6f93b317025c1d60ddc409831f">EllipsoidArea</a> () const</td></tr>
+<tr class="separator:ae69e0f6f93b317025c1d60ddc409831f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8020b640cca373e477f9bfc462c20a9c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html">Rhumb</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a8020b640cca373e477f9bfc462c20a9c">WGS84</a> ()</td></tr>
+<tr class="separator:a8020b640cca373e477f9bfc462c20a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Solve of the direct and inverse rhumb problems. </p>
+<p>The path of constant azimuth between two points on a ellipsoid at (<em>lat1</em>, <em>lon1</em>) and (<em>lat2</em>, <em>lon2</em>) is called the rhumb line (also called the loxodrome). Its length is <em>s12</em> and its azimuth is <em>azi12</em>. (The azimuth is the heading measured clockwise from north.)</p>
+<p>Given <em>lat1</em>, <em>lon1</em>, <em>azi12</em>, and <em>s12</em>, we can determine <em>lat2</em>, and <em>lon2</em>. This is the <em>direct</em> rhumb problem and its solution is given by the function <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a44a91fa350a21c974c7638e4c75e7290">Rhumb::Direct</a>.</p>
+<p>Given <em>lat1</em>, <em>lon1</em>, <em>lat2</em>, and <em>lon2</em>, we can determine <em>azi12</em> and <em>s12</em>. This is the <em>inverse</em> rhumb problem, whose solution is given by <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a774a9548b62c1eae08fe39fa5f2595a0">Rhumb::Inverse</a>. This finds the shortest such rhumb line, i.e., the one that wraps no more than half way around the earth. If the end points are on opposite meridians, there are two shortest rhumb lines and the east-going one is chosen.</p>
+<p>These routines also optionally calculate the area under the rhumb line, <em>S12</em>. This is the area, measured counter-clockwise, of the rhumb line quadrilateral with corners (<em>lat1</em>,<em>lon1</em>), (0,<em>lon1</em>), (0,<em>lon2</em>), and (<em>lat2</em>,<em>lon2</em>).</p>
+<p>Note that rhumb lines may be appreciably longer (up to 50%) than the corresponding <a class="el" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html" title="Geodesic calculations">Geodesic</a>. For example the distance between London Heathrow and Tokyo Narita via the rhumb line is 11400 km which is 18% longer than the geodesic distance 9600 km.</p>
+<p>For more information on rhumb lines see rhumb.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --> </div><h2 class="groupheader">Перечисления</h2>
+<a id="a04b001e0f85f8b57a26e9d7995aec124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b001e0f85f8b57a26e9d7995aec124">&#9670;&nbsp;</a></span>mask</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124">GeographicLib::Rhumb::mask</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bit masks for what calculations to do. They specify which results to return in the general routines Rhumb::GenDirect and Rhumb::GenInverse routines. <a class="el" href="../../d9/dce/class_geographic_lib_1_1_rhumb_line.html#a1016b14e551f4863939a33e67d9efc4d">RhumbLine::mask</a> is a duplication of this enum. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a04b001e0f85f8b57a26e9d7995aec124ad4afa0e9734bea70854ed54bf339211b"></a>NONE&#160;</td><td class="fielddoc"><p>No output. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04b001e0f85f8b57a26e9d7995aec124aae0df7b09d11a8a18434cdeffcc1cb1f"></a>LATITUDE&#160;</td><td class="fielddoc"><p>Calculate latitude <em>lat2</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04b001e0f85f8b57a26e9d7995aec124a1bb3e282da6f0a81fcbc72f5b33441e9"></a>LONGITUDE&#160;</td><td class="fielddoc"><p>Calculate longitude <em>lon2</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04b001e0f85f8b57a26e9d7995aec124a8d8c34078aed160f85772c928e0733fc"></a>AZIMUTH&#160;</td><td class="fielddoc"><p>Calculate azimuth <em>azi12</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04b001e0f85f8b57a26e9d7995aec124a4db8cf0132fb4dc6da1f832854d8da0e"></a>DISTANCE&#160;</td><td class="fielddoc"><p>Calculate distance <em>s12</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04b001e0f85f8b57a26e9d7995aec124a9fac2f920e7821f63df6140361999b16"></a>AREA&#160;</td><td class="fielddoc"><p>Calculate area <em>S12</em>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04b001e0f85f8b57a26e9d7995aec124acbb8560be08ca221a253c820b621eeb5"></a>LONG_UNROLL&#160;</td><td class="fielddoc"><p>Unroll <em>lon2</em> in the direct calculation. (This flag used to be called LONG_NOWRAP.) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04b001e0f85f8b57a26e9d7995aec124a0341b472e92905964df003eefd3875fc"></a>ALL&#160;</td><td class="fielddoc"><p>Calculate everything. (LONG_UNROLL is not included in this mask.) </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a224571ebf2867a35b98106039f4f9e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224571ebf2867a35b98106039f4f9e33">&#9670;&nbsp;</a></span>Rhumb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::Rhumb::Rhumb </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>exact</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor for a ellipsoid with</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>equatorial radius (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>flattening of ellipsoid. Setting <em>f</em> = 0 gives a sphere. Negative <em>f</em> gives a prolate ellipsoid. If <em>f</em> &gt; 1, set flattening to 1/<em>f</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">exact</td><td>if true (the default) use an addition theorem for elliptic integrals to compute divided differences; otherwise use series expansion (accurate for |<em>f</em>| &lt; 0.01). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>a</em> or (1 &minus; <em>f</em>) <em>a</em> is not positive.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>See rhumb, for a detailed description of the <em>exact</em> parameter. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a99185f2715f08be7c9fe5c6049d558c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99185f2715f08be7c9fe5c6049d558c8">&#9670;&nbsp;</a></span>Direct() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Rhumb::Direct </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Solve the direct rhumb problem without the area. </p>
+
+</div>
+</div>
+<a id="a44a91fa350a21c974c7638e4c75e7290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44a91fa350a21c974c7638e4c75e7290">&#9670;&nbsp;</a></span>Direct() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Rhumb::Direct </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Solve the direct rhumb problem returning also the area.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">azi12</td><td>azimuth of the rhumb line (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s12</td><td>distance between point 1 and point 2 (meters); it can be negative. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the rhumb line (meters<sup>2</sup>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><em>lat1</em> should be in the range [&minus;90&deg;, 90&deg;]. The value of <em>lon2</em> returned is in the range [&minus;180&deg;, 180&deg;).</p>
+<p>If point 1 is a pole, the cosine of its latitude is taken to be 1/&epsilon;<sup>2</sup> (where &epsilon; is 2<sup>-52</sup>). This position, which is extremely close to the actual pole, allows the calculation to be carried out in finite terms. If <em>s12</em> is large enough that the rhumb line crosses a pole, the longitude of point 2 is indeterminate (a NaN is returned for <em>lon2</em> and <em>S12</em>). </p>
+
+</div>
+</div>
+<a id="ae69e0f6f93b317025c1d60ddc409831f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69e0f6f93b317025c1d60ddc409831f">&#9670;&nbsp;</a></span>EllipsoidArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Rhumb::EllipsoidArea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a105e1b2ba633278e994bba05cd4e9943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a105e1b2ba633278e994bba05cd4e9943">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Rhumb::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the ellipsoid. This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="aa8a412cd34c09152db69fba58531299e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a412cd34c09152db69fba58531299e">&#9670;&nbsp;</a></span>GenDirect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Rhumb::GenDirect </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>outmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The general direct rhumb problem. <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a44a91fa350a21c974c7638e4c75e7290">Rhumb::Direct</a> is defined in terms of this function.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">azi12</td><td>azimuth of the rhumb line (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s12</td><td>distance between point 1 and point 2 (meters); it can be negative. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outmask</td><td>a bitor'ed combination of <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124">Rhumb::mask</a> values specifying which of the following parameters should be set. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the rhumb line (meters<sup>2</sup>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124">Rhumb::mask</a> values possible for <em>outmask</em> are</p><ul>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124aae0df7b09d11a8a18434cdeffcc1cb1f">Rhumb::LATITUDE</a> for the latitude <em>lat2</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a1bb3e282da6f0a81fcbc72f5b33441e9">Rhumb::LONGITUDE</a> for the latitude <em>lon2</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a9fac2f920e7821f63df6140361999b16">Rhumb::AREA</a> for the area <em>S12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a0341b472e92905964df003eefd3875fc">Rhumb::ALL</a> for all of the above;</li>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124acbb8560be08ca221a253c820b621eeb5">Rhumb::LONG_UNROLL</a> to unroll <em>lon2</em> instead of wrapping it into the range [&minus;180&deg;, 180&deg;).</li>
+</ul>
+<p>With the <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124acbb8560be08ca221a253c820b621eeb5">Rhumb::LONG_UNROLL</a> bit set, the quantity <em>lon2</em> &minus; <em>lon1</em> indicates how many times and in what sense the rhumb line encircles the ellipsoid. </p>
+
+</div>
+</div>
+<a id="aa309f58511d19adac59740de55db35c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa309f58511d19adac59740de55db35c7">&#9670;&nbsp;</a></span>GenInverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Rhumb::GenInverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>outmask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The general inverse rhumb problem. <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a774a9548b62c1eae08fe39fa5f2595a0">Rhumb::Inverse</a> is defined in terms of this function.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outmask</td><td>a bitor'ed combination of <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124">Rhumb::mask</a> values specifying which of the following parameters should be set. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s12</td><td>rhumb distance between point 1 and point 2 (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi12</td><td>azimuth of the rhumb line (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the rhumb line (meters<sup>2</sup>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124">Rhumb::mask</a> values possible for <em>outmask</em> are</p><ul>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a4db8cf0132fb4dc6da1f832854d8da0e">Rhumb::DISTANCE</a> for the latitude <em>s12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a8d8c34078aed160f85772c928e0733fc">Rhumb::AZIMUTH</a> for the latitude <em>azi12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a9fac2f920e7821f63df6140361999b16">Rhumb::AREA</a> for the area <em>S12</em>;</li>
+<li><em>outmask</em> |= <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html#a04b001e0f85f8b57a26e9d7995aec124a0341b472e92905964df003eefd3875fc">Rhumb::ALL</a> for all of the above; </li>
+</ul>
+
+</div>
+</div>
+<a id="a78836f3d5e0987370e8a575fe069732d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78836f3d5e0987370e8a575fe069732d">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Rhumb::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Solve the inverse rhumb problem without the area. </p>
+
+</div>
+</div>
+<a id="a774a9548b62c1eae08fe39fa5f2595a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774a9548b62c1eae08fe39fa5f2595a0">&#9670;&nbsp;</a></span>Inverse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Rhumb::Inverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>azi12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>S12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Solve the inverse rhumb problem returning also the area.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat2</td><td>latitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon2</td><td>longitude of point 2 (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s12</td><td>rhumb distance between point 1 and point 2 (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">azi12</td><td>azimuth of the rhumb line (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">S12</td><td>area under the rhumb line (meters<sup>2</sup>).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The shortest rhumb line is found. If the end points are on opposite meridians, there are two shortest rhumb lines and the east-going one is chosen. <em>lat1</em> and <em>lat2</em> should be in the range [&minus;90&deg;, 90&deg;]. The value of <em>azi12</em> returned is in the range [&minus;180&deg;, 180&deg;).</p>
+<p>If either point is a pole, the cosine of its latitude is taken to be 1/&epsilon;<sup>2</sup> (where &epsilon; is 2<sup>-52</sup>). This position, which is extremely close to the actual pole, allows the calculation to be carried out in finite terms. </p>
+
+</div>
+</div>
+<a id="a0af274a2dda84f694026b282844190ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0af274a2dda84f694026b282844190ea">&#9670;&nbsp;</a></span>Line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/dce/class_geographic_lib_1_1_rhumb_line.html">RhumbLine</a> GeographicLib::Rhumb::Line </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>azi12</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set up to compute several points on a single rhumb line.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat1</td><td>latitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon1</td><td>longitude of point 1 (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">azi12</td><td>azimuth of the rhumb line (degrees). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>a <a class="el" href="../../d9/dce/class_geographic_lib_1_1_rhumb_line.html" title="Find a sequence of points on a single rhumb line.">RhumbLine</a> object.</dd></dl>
+<p><em>lat1</em> should be in the range [&minus;90&deg;, 90&deg;].</p>
+<p>If point 1 is a pole, the cosine of its latitude is taken to be 1/&epsilon;<sup>2</sup> (where &epsilon; is 2<sup>-52</sup>). This position, which is extremely close to the actual pole, allows the calculation to be carried out in finite terms. </p>
+
+</div>
+</div>
+<a id="aa16da3799c97398ba7110dc9a3aa9bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa16da3799c97398ba7110dc9a3aa9bb0">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Rhumb::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the ellipsoid (meters). This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="a8020b640cca373e477f9bfc462c20a9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8020b640cca373e477f9bfc462c20a9c">&#9670;&nbsp;</a></span>WGS84()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html">Rhumb</a> &amp; GeographicLib::Rhumb::WGS84 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A global instantiation of <a class="el" href="../../de/daf/class_geographic_lib_1_1_rhumb.html" title="Solve of the direct and inverse rhumb problems.">Rhumb</a> with the parameters for the WGS84 ellipsoid. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Документация по друзьям класса и функциям, относящимся к классу</h2>
+<a id="a0ee76fdbcd574c720117bae1422c6c9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ee76fdbcd574c720117bae1422c6c9e">&#9670;&nbsp;</a></span>PolygonAreaT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d2/dfa/class_geographic_lib_1_1_polygon_area_t.html">PolygonAreaT</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29d830021a85930f5bddf917fcc5d93c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29d830021a85930f5bddf917fcc5d93c">&#9670;&nbsp;</a></span>RhumbLine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d9/dce/class_geographic_lib_1_1_rhumb_line.html">RhumbLine</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d6/dad/_rhumb_8hpp_source.html">Rhumb.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d0/da0/_rhumb_8cpp.html">Rhumb.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:20. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

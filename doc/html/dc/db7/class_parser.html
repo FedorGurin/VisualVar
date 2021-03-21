@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс Parser</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../de/d9d/class_parser-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс Parser</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>класс для сохранения и чтения вариантов  
+ <a href="../../dc/db7/class_parser.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/d36/parser_8h_source.html">parser.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:Parser:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../dc/db7/class_parser.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:af055815ce3f097633db02db3a073a344"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#af055815ce3f097633db02db3a073a344">Parser</a> (<a class="el" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a> *form, QVector&lt; <a class="el" href="../../d6/d0f/classcl___scene.html">cl_Scene</a> * &gt; *scenes_, <a class="el" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *typeObectsVis_)</td></tr>
+<tr class="separator:af055815ce3f097633db02db3a073a344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a777db2e3cd46cb52b6a0fd041b51ed56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a777db2e3cd46cb52b6a0fd041b51ed56">openFileVariants</a> (const QString &amp;fileName, QString *, bool &amp;useMap, uint &amp;id)</td></tr>
+<tr class="memdesc:a777db2e3cd46cb52b6a0fd041b51ed56"><td class="mdescLeft">&#160;</td><td class="mdescRight">открыть файл с вариантами  <a href="../../dc/db7/class_parser.html#a777db2e3cd46cb52b6a0fd041b51ed56">Подробнее...</a><br /></td></tr>
+<tr class="separator:a777db2e3cd46cb52b6a0fd041b51ed56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3efdc9b1d6d7746a7f89177195988e81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a3efdc9b1d6d7746a7f89177195988e81">saveVariants</a> (const QString &amp;fileName, const QString &amp;comment, bool useMap, uint id, QString nameFileSend=&quot;&quot;)</td></tr>
+<tr class="memdesc:a3efdc9b1d6d7746a7f89177195988e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">сохранить варианты в файл  <a href="../../dc/db7/class_parser.html#a3efdc9b1d6d7746a7f89177195988e81">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3efdc9b1d6d7746a7f89177195988e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56cbb86320eb9a992fbbb992e87709dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a56cbb86320eb9a992fbbb992e87709dd">createXMLForModel</a> (QByteArray *array, QString comment, bool useMap, uint id)</td></tr>
+<tr class="memdesc:a56cbb86320eb9a992fbbb992e87709dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">создать файл с вариантами для последующей передачи в целевую машину  <a href="../../dc/db7/class_parser.html#a56cbb86320eb9a992fbbb992e87709dd">Подробнее...</a><br /></td></tr>
+<tr class="separator:a56cbb86320eb9a992fbbb992e87709dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa63fa31967986012b3cfb0170371fb68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#aa63fa31967986012b3cfb0170371fb68">createXMLForModel</a> (QString comment, bool useMap, uint id)</td></tr>
+<tr class="memdesc:aa63fa31967986012b3cfb0170371fb68"><td class="mdescLeft">&#160;</td><td class="mdescRight">создать файл с вариантами в формате целевой машины  <a href="../../dc/db7/class_parser.html#aa63fa31967986012b3cfb0170371fb68">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa63fa31967986012b3cfb0170371fb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9196b20c82d5f70a344cf6bca5b30e0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a9196b20c82d5f70a344cf6bca5b30e0f">parseVariant</a> (const QDomElement &amp;element)</td></tr>
+<tr class="memdesc:a9196b20c82d5f70a344cf6bca5b30e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция чтения(разбора) данных  <a href="../../dc/db7/class_parser.html#a9196b20c82d5f70a344cf6bca5b30e0f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9196b20c82d5f70a344cf6bca5b30e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1948d28176a9b080672c5352b54ff7f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a1948d28176a9b080672c5352b54ff7f2">sortScenesObjects</a> ()</td></tr>
+<tr class="memdesc:a1948d28176a9b080672c5352b54ff7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">отсортировать общий список объектов  <a href="../../dc/db7/class_parser.html#a1948d28176a9b080672c5352b54ff7f2">Подробнее...</a><br /></td></tr>
+<tr class="separator:a1948d28176a9b080672c5352b54ff7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cea264915fe2b1240549d076f21ca2c"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a3cea264915fe2b1240549d076f21ca2c">readLastNameFile</a> (const QString &amp;fileName)</td></tr>
+<tr class="memdesc:a3cea264915fe2b1240549d076f21ca2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">прочитать последний загруженный файл  <a href="../../dc/db7/class_parser.html#a3cea264915fe2b1240549d076f21ca2c">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3cea264915fe2b1240549d076f21ca2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:ab6fdea0a54622a5e1d742186cedc401f"><td class="memItemLeft" align="right" valign="top">QDomDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#ab6fdea0a54622a5e1d742186cedc401f">domVariants</a></td></tr>
+<tr class="separator:ab6fdea0a54622a5e1d742186cedc401f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30d70cb5632f89f38b53ed81a65c4d68"><td class="memItemLeft" align="right" valign="top">QDomDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a30d70cb5632f89f38b53ed81a65c4d68">saveDomVariants</a></td></tr>
+<tr class="separator:a30d70cb5632f89f38b53ed81a65c4d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2c502eec7ed3a0a07c85a3913d51e90"><td class="memItemLeft" align="right" valign="top">QDomElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#ae2c502eec7ed3a0a07c85a3913d51e90">rootNode</a></td></tr>
+<tr class="separator:ae2c502eec7ed3a0a07c85a3913d51e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab025e56fdc2e328ee10dfd594dc18141"><td class="memItemLeft" align="right" valign="top">QDomDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#ab025e56fdc2e328ee10dfd594dc18141">domVariantsForModel</a></td></tr>
+<tr class="separator:ab025e56fdc2e328ee10dfd594dc18141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d0c51f6630833c721a92baa11acfbd"><td class="memItemLeft" align="right" valign="top">QDomDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a29d0c51f6630833c721a92baa11acfbd">saveDomVariantsForModel</a></td></tr>
+<tr class="separator:a29d0c51f6630833c721a92baa11acfbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99f7f2411b83c4d0b92a285ef30baa31"><td class="memItemLeft" align="right" valign="top">QDomElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db7/class_parser.html#a99f7f2411b83c4d0b92a285ef30baa31">rootNodeForModel</a></td></tr>
+<tr class="separator:a99f7f2411b83c4d0b92a285ef30baa31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>класс для сохранения и чтения вариантов </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="af055815ce3f097633db02db3a073a344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af055815ce3f097633db02db3a073a344">&#9670;&nbsp;</a></span>Parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Parser::Parser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a> *&#160;</td>
+          <td class="paramname"><em>form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QVector&lt; <a class="el" href="../../d6/d0f/classcl___scene.html">cl_Scene</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>scenes_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *&#160;</td>
+          <td class="paramname"><em>typeObectsVis_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a56cbb86320eb9a992fbbb992e87709dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56cbb86320eb9a992fbbb992e87709dd">&#9670;&nbsp;</a></span>createXMLForModel() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::createXMLForModel </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray *&#160;</td>
+          <td class="paramname"><em>array</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>comment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>создать файл с вариантами для последующей передачи в целевую машину </p>
+
+</div>
+</div>
+<a id="aa63fa31967986012b3cfb0170371fb68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa63fa31967986012b3cfb0170371fb68">&#9670;&nbsp;</a></span>createXMLForModel() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::createXMLForModel </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>comment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>создать файл с вариантами в формате целевой машины </p>
+
+</div>
+</div>
+<a id="a777db2e3cd46cb52b6a0fd041b51ed56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a777db2e3cd46cb52b6a0fd041b51ed56">&#9670;&nbsp;</a></span>openFileVariants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Parser::openFileVariants </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>useMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint &amp;&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>открыть файл с вариантами </p>
+
+</div>
+</div>
+<a id="a9196b20c82d5f70a344cf6bca5b30e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9196b20c82d5f70a344cf6bca5b30e0f">&#9670;&nbsp;</a></span>parseVariant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::parseVariant </td>
+          <td>(</td>
+          <td class="paramtype">const QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>функция чтения(разбора) данных </p>
+
+</div>
+</div>
+<a id="a3cea264915fe2b1240549d076f21ca2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cea264915fe2b1240549d076f21ca2c">&#9670;&nbsp;</a></span>readLastNameFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString Parser::readLastNameFile </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>прочитать последний загруженный файл </p>
+
+</div>
+</div>
+<a id="a3efdc9b1d6d7746a7f89177195988e81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3efdc9b1d6d7746a7f89177195988e81">&#9670;&nbsp;</a></span>saveVariants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::saveVariants </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>comment</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useMap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nameFileSend</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>сохранить варианты в файл </p>
+
+</div>
+</div>
+<a id="a1948d28176a9b080672c5352b54ff7f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1948d28176a9b080672c5352b54ff7f2">&#9670;&nbsp;</a></span>sortScenesObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Parser::sortScenesObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>отсортировать общий список объектов </p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="ab6fdea0a54622a5e1d742186cedc401f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6fdea0a54622a5e1d742186cedc401f">&#9670;&nbsp;</a></span>domVariants</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomDocument Parser::domVariants</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab025e56fdc2e328ee10dfd594dc18141"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab025e56fdc2e328ee10dfd594dc18141">&#9670;&nbsp;</a></span>domVariantsForModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomDocument Parser::domVariantsForModel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2c502eec7ed3a0a07c85a3913d51e90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2c502eec7ed3a0a07c85a3913d51e90">&#9670;&nbsp;</a></span>rootNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomElement Parser::rootNode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a99f7f2411b83c4d0b92a285ef30baa31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99f7f2411b83c4d0b92a285ef30baa31">&#9670;&nbsp;</a></span>rootNodeForModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomElement Parser::rootNodeForModel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a30d70cb5632f89f38b53ed81a65c4d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30d70cb5632f89f38b53ed81a65c4d68">&#9670;&nbsp;</a></span>saveDomVariants</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomDocument Parser::saveDomVariants</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a29d0c51f6630833c721a92baa11acfbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29d0c51f6630833c721a92baa11acfbd">&#9670;&nbsp;</a></span>saveDomVariantsForModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomDocument Parser::saveDomVariantsForModel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/<a class="el" href="../../d5/d36/parser_8h_source.html">parser.h</a></li>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/<a class="el" href="../../dc/ddd/parser_8cpp.html">parser.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:09. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

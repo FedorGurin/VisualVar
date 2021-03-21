@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/messureUnits.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">messureUnits.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/d2d/messure_units_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MESSUREUNITS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MESSUREUNITS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../db/d80/struct_t_table_messure.html">    7</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../db/d80/struct_t_table_messure.html#aa8ac50d291a1fa9c49bfc0ad54fc1341">   10</a></span>&#160;    QString <a class="code" href="../../db/d80/struct_t_table_messure.html#aa8ac50d291a1fa9c49bfc0ad54fc1341">name</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../db/d80/struct_t_table_messure.html#a49d93e0ab89cafbece4d777ce8bd329f">   12</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d80/struct_t_table_messure.html#a49d93e0ab89cafbece4d777ce8bd329f">k</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../db/d80/struct_t_table_messure.html#ad1c5010cfca41b31859ffa8f9d42017d">   14</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d80/struct_t_table_messure.html#ad1c5010cfca41b31859ffa8f9d42017d">min</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../db/d80/struct_t_table_messure.html#a624267d2e78f41c0b30faf6775dd8392">   15</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d80/struct_t_table_messure.html#a624267d2e78f41c0b30faf6775dd8392">max</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../db/d80/struct_t_table_messure.html#acc6d6ec944a04830cab7c3b5a4d54710">   17</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d80/struct_t_table_messure.html#acc6d6ec944a04830cab7c3b5a4d54710">singleStep</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}<a class="code" href="../../db/d80/struct_t_table_messure.html">TTableMessure</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../dc/d95/class_messure_units.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/d95/class_messure_units.html">MessureUnits</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../dc/d95/class_messure_units.html#a012cb650dac120dafe4011b9ec04a5e0">MessureUnits</a>(QObject *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a19c4c3b3dbd18d874c476a350993fc77">toStandartUnitSpeed</a>(<span class="keywordtype">double</span> value,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                             QString messure,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                             <span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a6beb8dd02c9e140b72a535df0ed55aa7">toStandartUnitAlt</a>(<span class="keywordtype">double</span> value,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                           QString messure,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                           <span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a91b2dd6914252c93315f5f6c5014c44c">toStandartUnitAngle</a>(<span class="keywordtype">double</span> value,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                             QString messure,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                             <span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#ae88a3b877200116a075073b3a62a81d4">fromStandartUnitSpeed</a>(<span class="keywordtype">double</span> value,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                               QString messure,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                               <span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#ae29eb5f7df53bb5477bcac183f1437e9">fromStandartUnitAlt</a>(<span class="keywordtype">double</span> value,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                             QString messure,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                             <span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a1084ad2c367909a95740fcbba25a7998">fromStandartUnitAngle</a>(<span class="keywordtype">double</span> value,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                               QString messure,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                               <span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a5341b3de290576fda9e2e1f70cca0f27">convertSpeed</a>(<span class="keywordtype">double</span> value,QString messureCurrent,QString messureLast,<span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a578a15aff0be46387508bd2b70425fd2">convertAlt</a>(<span class="keywordtype">double</span> value,QString messureCurrent,QString messureLast,<span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#ac27f0bf43f058c0f13ff6b06e74230d4">convertAngle</a>(<span class="keywordtype">double</span> value,QString messureCurrent,QString messureLast,<span class="keywordtype">double</span> &amp;outValue);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a239838cd05d444077f82147f09ca025f">minmaxSpeed</a>(QString,<span class="keywordtype">double</span> &amp;<a class="code" href="../../d0/de3/group__core__func__common.html#ga3dc90dbd66c9ca1dd5625c93d9c50f02">min</a>,<span class="keywordtype">double</span> &amp;<a class="code" href="../../d0/de3/group__core__func__common.html#gaa228561a9da55898f8f72ad2403fafac">max</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a79309698f6ed9ad30915e139a5e90603">minmaxAlt</a>(QString,<span class="keywordtype">double</span> &amp;<a class="code" href="../../d0/de3/group__core__func__common.html#ga3dc90dbd66c9ca1dd5625c93d9c50f02">min</a>,<span class="keywordtype">double</span> &amp;<a class="code" href="../../d0/de3/group__core__func__common.html#gaa228561a9da55898f8f72ad2403fafac">max</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/d95/class_messure_units.html#a052af31a56476385d949716a5ef1be02">minmaxAngle</a>(QString,<span class="keywordtype">double</span> &amp;<a class="code" href="../../d0/de3/group__core__func__common.html#ga3dc90dbd66c9ca1dd5625c93d9c50f02">min</a>,<span class="keywordtype">double</span> &amp;<a class="code" href="../../d0/de3/group__core__func__common.html#gaa228561a9da55898f8f72ad2403fafac">max</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;signals:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    QVector&lt;TTableMessure&gt; forSpeed;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    QVector&lt;TTableMessure&gt; forAlt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    QVector&lt;TTableMessure&gt; forAngle;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif // MESSUREUNITS_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__core__func__common_html_ga3dc90dbd66c9ca1dd5625c93d9c50f02"><div class="ttname"><a href="../../d0/de3/group__core__func__common.html#ga3dc90dbd66c9ca1dd5625c93d9c50f02">glm::min</a></div><div class="ttdeci">GLM_FUNC_DECL genType min(genType const &amp;x, genType const &amp;y)</div><div class="ttdef"><b>Definition:</b> func_common.inl:286</div></div>
+<div class="ttc" id="astruct_t_table_messure_html_acc6d6ec944a04830cab7c3b5a4d54710"><div class="ttname"><a href="../../db/d80/struct_t_table_messure.html#acc6d6ec944a04830cab7c3b5a4d54710">TTableMessure::singleStep</a></div><div class="ttdeci">double singleStep</div><div class="ttdef"><b>Definition:</b> messureUnits.h:17</div></div>
+<div class="ttc" id="aclass_messure_units_html_a1084ad2c367909a95740fcbba25a7998"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a1084ad2c367909a95740fcbba25a7998">MessureUnits::fromStandartUnitAngle</a></div><div class="ttdeci">bool fromStandartUnitAngle(double value, QString messure, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:225</div></div>
+<div class="ttc" id="aclass_messure_units_html_a6beb8dd02c9e140b72a535df0ed55aa7"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a6beb8dd02c9e140b72a535df0ed55aa7">MessureUnits::toStandartUnitAlt</a></div><div class="ttdeci">bool toStandartUnitAlt(double value, QString messure, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:126</div></div>
+<div class="ttc" id="aclass_messure_units_html_a91b2dd6914252c93315f5f6c5014c44c"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a91b2dd6914252c93315f5f6c5014c44c">MessureUnits::toStandartUnitAngle</a></div><div class="ttdeci">bool toStandartUnitAngle(double value, QString messure, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:142</div></div>
+<div class="ttc" id="astruct_t_table_messure_html_ad1c5010cfca41b31859ffa8f9d42017d"><div class="ttname"><a href="../../db/d80/struct_t_table_messure.html#ad1c5010cfca41b31859ffa8f9d42017d">TTableMessure::min</a></div><div class="ttdeci">double min</div><div class="ttdef"><b>Definition:</b> messureUnits.h:14</div></div>
+<div class="ttc" id="aclass_messure_units_html_ac27f0bf43f058c0f13ff6b06e74230d4"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#ac27f0bf43f058c0f13ff6b06e74230d4">MessureUnits::convertAngle</a></div><div class="ttdeci">bool convertAngle(double value, QString messureCurrent, QString messureLast, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:181</div></div>
+<div class="ttc" id="aclass_messure_units_html_a19c4c3b3dbd18d874c476a350993fc77"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a19c4c3b3dbd18d874c476a350993fc77">MessureUnits::toStandartUnitSpeed</a></div><div class="ttdeci">bool toStandartUnitSpeed(double value, QString messure, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:111</div></div>
+<div class="ttc" id="aclass_messure_units_html_a578a15aff0be46387508bd2b70425fd2"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a578a15aff0be46387508bd2b70425fd2">MessureUnits::convertAlt</a></div><div class="ttdeci">bool convertAlt(double value, QString messureCurrent, QString messureLast, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:170</div></div>
+<div class="ttc" id="aclass_messure_units_html_a79309698f6ed9ad30915e139a5e90603"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a79309698f6ed9ad30915e139a5e90603">MessureUnits::minmaxAlt</a></div><div class="ttdeci">bool minmaxAlt(QString, double &amp;min, double &amp;max)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:81</div></div>
+<div class="ttc" id="aclass_messure_units_html_a012cb650dac120dafe4011b9ec04a5e0"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a012cb650dac120dafe4011b9ec04a5e0">MessureUnits::MessureUnits</a></div><div class="ttdeci">MessureUnits(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:3</div></div>
+<div class="ttc" id="agroup__core__func__common_html_gaa228561a9da55898f8f72ad2403fafac"><div class="ttname"><a href="../../d0/de3/group__core__func__common.html#gaa228561a9da55898f8f72ad2403fafac">glm::max</a></div><div class="ttdeci">GLM_FUNC_DECL genType max(genType const &amp;x, genType const &amp;y)</div><div class="ttdef"><b>Definition:</b> func_common.inl:305</div></div>
+<div class="ttc" id="astruct_t_table_messure_html_a49d93e0ab89cafbece4d777ce8bd329f"><div class="ttname"><a href="../../db/d80/struct_t_table_messure.html#a49d93e0ab89cafbece4d777ce8bd329f">TTableMessure::k</a></div><div class="ttdeci">double k</div><div class="ttdoc">коэффициент пересчета</div><div class="ttdef"><b>Definition:</b> messureUnits.h:12</div></div>
+<div class="ttc" id="aclass_messure_units_html_a052af31a56476385d949716a5ef1be02"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a052af31a56476385d949716a5ef1be02">MessureUnits::minmaxAngle</a></div><div class="ttdeci">bool minmaxAngle(QString, double &amp;min, double &amp;max)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:96</div></div>
+<div class="ttc" id="aclass_messure_units_html_ae29eb5f7df53bb5477bcac183f1437e9"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#ae29eb5f7df53bb5477bcac183f1437e9">MessureUnits::fromStandartUnitAlt</a></div><div class="ttdeci">bool fromStandartUnitAlt(double value, QString messure, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:209</div></div>
+<div class="ttc" id="astruct_t_table_messure_html_aa8ac50d291a1fa9c49bfc0ad54fc1341"><div class="ttname"><a href="../../db/d80/struct_t_table_messure.html#aa8ac50d291a1fa9c49bfc0ad54fc1341">TTableMessure::name</a></div><div class="ttdeci">QString name</div><div class="ttdoc">имя единицы измерения</div><div class="ttdef"><b>Definition:</b> messureUnits.h:10</div></div>
+<div class="ttc" id="aclass_messure_units_html_ae88a3b877200116a075073b3a62a81d4"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#ae88a3b877200116a075073b3a62a81d4">MessureUnits::fromStandartUnitSpeed</a></div><div class="ttdeci">bool fromStandartUnitSpeed(double value, QString messure, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:193</div></div>
+<div class="ttc" id="aclass_messure_units_html_a5341b3de290576fda9e2e1f70cca0f27"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a5341b3de290576fda9e2e1f70cca0f27">MessureUnits::convertSpeed</a></div><div class="ttdeci">bool convertSpeed(double value, QString messureCurrent, QString messureLast, double &amp;outValue)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:158</div></div>
+<div class="ttc" id="aclass_messure_units_html"><div class="ttname"><a href="../../dc/d95/class_messure_units.html">MessureUnits</a></div><div class="ttdef"><b>Definition:</b> messureUnits.h:22</div></div>
+<div class="ttc" id="aclass_messure_units_html_a239838cd05d444077f82147f09ca025f"><div class="ttname"><a href="../../dc/d95/class_messure_units.html#a239838cd05d444077f82147f09ca025f">MessureUnits::minmaxSpeed</a></div><div class="ttdeci">bool minmaxSpeed(QString, double &amp;min, double &amp;max)</div><div class="ttdef"><b>Definition:</b> messureUnits.cpp:67</div></div>
+<div class="ttc" id="astruct_t_table_messure_html"><div class="ttname"><a href="../../db/d80/struct_t_table_messure.html">TTableMessure</a></div><div class="ttdef"><b>Definition:</b> messureUnits.h:8</div></div>
+<div class="ttc" id="astruct_t_table_messure_html_a624267d2e78f41c0b30faf6775dd8392"><div class="ttname"><a href="../../db/d80/struct_t_table_messure.html#a624267d2e78f41c0b30faf6775dd8392">TTableMessure::max</a></div><div class="ttdeci">double max</div><div class="ttdef"><b>Definition:</b> messureUnits.h:15</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

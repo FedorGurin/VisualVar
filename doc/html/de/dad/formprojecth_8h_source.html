@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/formprojecth.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">formprojecth.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../de/dad/formprojecth_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FORMPROJECTH_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FORMPROJECTH_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QGraphicsScene&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSvgItem&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/da3/cl__scene_8h.html">cl_scene.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dc/df0/namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d87/class_form_project_h.html">FormProjectH</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d5/d68/class_graph_object.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d68/class_graph_object.html">GraphObject</a>:<span class="keyword">public</span> QGraphicsSvgItem</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d5/d68/class_graph_object.html#a37484b7298d4069edee9b1ed81bda407">   16</a></span>&#160;    <a class="code" href="../../d5/d68/class_graph_object.html#a37484b7298d4069edee9b1ed81bda407">GraphObject</a>(QString name_,QString nameFile,QGraphicsItem *parent):QGraphicsSvgItem(nameFile,parent)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        name=<span class="keyword">new</span> QGraphicsTextItem(name_,<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        name-&gt;setScale(20.0);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        name-&gt;setPos(0.0,270);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QGraphicsTextItem *name;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d7/d87/class_form_project_h.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d7/d87/class_form_project_h.html">FormProjectH</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../d7/d87/class_form_project_h.html#acc63daeff11236a76dcc869f1bf51cf2">FormProjectH</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../d7/d87/class_form_project_h.html#a061ebce0809ff54191a73ab9413e71c4">~FormProjectH</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d87/class_form_project_h.html#a042892bf05aa614bb131f1e04637c6e8">setCurrentScene</a>(<a class="code" href="../../d6/d0f/classcl___scene.html">cl_Scene</a>* scene_);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d87/class_form_project_h.html#a1c167c14524d697f573540f6c79c9809">moveToH</a>(<a class="code" href="../../d5/d68/class_graph_object.html">GraphObject</a>* obj, <span class="keywordtype">double</span> h, <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d87/class_form_project_h.html#a8d07d879cd6269ef700c83f7c062c2bf">clearObj</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d87/class_form_project_h.html#ad331527e0b8780e6e12d7305bd9ea54c">calcMaxScale</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d7/d87/class_form_project_h.html#a543054de048484be1f5d99d9e618a5e8">updateScene</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    Ui::FormProjectH *ui;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    QGraphicsScene *scene;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    QGraphicsSvgItem *svgItem;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    QGraphicsTextItem *textScale;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../d6/d0f/classcl___scene.html">cl_Scene</a>* currentScene;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../d5/d68/class_graph_object.html">GraphObject</a> *aircraft;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QVector&lt;GraphObject* &gt; airtarget;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span> maxScale;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // FORMPROJECTH_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_graph_object_html_a37484b7298d4069edee9b1ed81bda407"><div class="ttname"><a href="../../d5/d68/class_graph_object.html#a37484b7298d4069edee9b1ed81bda407">GraphObject::GraphObject</a></div><div class="ttdeci">GraphObject(QString name_, QString nameFile, QGraphicsItem *parent)</div><div class="ttdef"><b>Definition:</b> formprojecth.h:16</div></div>
+<div class="ttc" id="aclass_form_project_h_html_a8d07d879cd6269ef700c83f7c062c2bf"><div class="ttname"><a href="../../d7/d87/class_form_project_h.html#a8d07d879cd6269ef700c83f7c062c2bf">FormProjectH::clearObj</a></div><div class="ttdeci">void clearObj()</div><div class="ttdoc">очистка объектов</div><div class="ttdef"><b>Definition:</b> formprojecth.cpp:81</div></div>
+<div class="ttc" id="acl__scene_8h_html"><div class="ttname"><a href="../../d2/da3/cl__scene_8h.html">cl_scene.h</a></div></div>
+<div class="ttc" id="aclass_form_project_h_html_a061ebce0809ff54191a73ab9413e71c4"><div class="ttname"><a href="../../d7/d87/class_form_project_h.html#a061ebce0809ff54191a73ab9413e71c4">FormProjectH::~FormProjectH</a></div><div class="ttdeci">~FormProjectH()</div><div class="ttdef"><b>Definition:</b> formprojecth.cpp:96</div></div>
+<div class="ttc" id="aclass_form_project_h_html"><div class="ttname"><a href="../../d7/d87/class_form_project_h.html">FormProjectH</a></div><div class="ttdef"><b>Definition:</b> formprojecth.h:27</div></div>
+<div class="ttc" id="aclass_form_project_h_html_a042892bf05aa614bb131f1e04637c6e8"><div class="ttname"><a href="../../d7/d87/class_form_project_h.html#a042892bf05aa614bb131f1e04637c6e8">FormProjectH::setCurrentScene</a></div><div class="ttdeci">void setCurrentScene(cl_Scene *scene_)</div><div class="ttdoc">указатель на текущую сцену</div><div class="ttdef"><b>Definition:</b> formprojecth.cpp:48</div></div>
+<div class="ttc" id="aclass_form_project_h_html_ad331527e0b8780e6e12d7305bd9ea54c"><div class="ttname"><a href="../../d7/d87/class_form_project_h.html#ad331527e0b8780e6e12d7305bd9ea54c">FormProjectH::calcMaxScale</a></div><div class="ttdeci">void calcMaxScale()</div><div class="ttdoc">расчитать масштаб по высоте</div><div class="ttdef"><b>Definition:</b> formprojecth.cpp:55</div></div>
+<div class="ttc" id="aclass_form_project_h_html_acc63daeff11236a76dcc869f1bf51cf2"><div class="ttname"><a href="../../d7/d87/class_form_project_h.html#acc63daeff11236a76dcc869f1bf51cf2">FormProjectH::FormProjectH</a></div><div class="ttdeci">FormProjectH(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> formprojecth.cpp:4</div></div>
+<div class="ttc" id="aclass_form_project_h_html_a543054de048484be1f5d99d9e618a5e8"><div class="ttname"><a href="../../d7/d87/class_form_project_h.html#a543054de048484be1f5d99d9e618a5e8">FormProjectH::updateScene</a></div><div class="ttdeci">void updateScene()</div><div class="ttdoc">обновить форму</div><div class="ttdef"><b>Definition:</b> formprojecth.cpp:27</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="../../dc/df0/namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> dialogsavecurvar.h:6</div></div>
+<div class="ttc" id="aclass_form_project_h_html_a1c167c14524d697f573540f6c79c9809"><div class="ttname"><a href="../../d7/d87/class_form_project_h.html#a1c167c14524d697f573540f6c79c9809">FormProjectH::moveToH</a></div><div class="ttdeci">void moveToH(GraphObject *obj, double h, int index)</div><div class="ttdoc">переместить объект на указанную высоту</div><div class="ttdef"><b>Definition:</b> formprojecth.cpp:90</div></div>
+<div class="ttc" id="aclasscl___scene_html"><div class="ttname"><a href="../../d6/d0f/classcl___scene.html">cl_Scene</a></div><div class="ttdef"><b>Definition:</b> cl_scene.h:29</div></div>
+<div class="ttc" id="aclass_graph_object_html"><div class="ttname"><a href="../../d5/d68/class_graph_object.html">GraphObject</a></div><div class="ttdef"><b>Definition:</b> formprojecth.h:14</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

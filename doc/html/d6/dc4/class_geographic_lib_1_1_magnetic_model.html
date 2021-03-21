@@ -1,0 +1,995 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::MagneticModel</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html">MagneticModel</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="../../d0/dba/class_geographic_lib_1_1_magnetic_model-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::MagneticModel</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Model of the earth's magnetic field.  
+ <a href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d6/d8c/_magnetic_model_8hpp_source.html">MagneticModel.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Setting up the magnetic model</div></td></tr>
+<tr class="memitem:a48fa9dc8633743c430c6c492bfe66f1a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a48fa9dc8633743c430c6c492bfe66f1a">MagneticModel</a> (const std::string &amp;name, const std::string &amp;path=&quot;&quot;, const <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">Geocentric</a> &amp;<a class="el" href="../../d5/df9/node_visual_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a>=<a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#af6e84e6d9d7967df6ba13cae1814cb7b">Geocentric::WGS84</a>())</td></tr>
+<tr class="separator:a48fa9dc8633743c430c6c492bfe66f1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions</div></td></tr>
+<tr class="memitem:a33bea360ec0176aacbc64f42a2991211"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a33bea360ec0176aacbc64f42a2991211">Description</a> () const</td></tr>
+<tr class="separator:a33bea360ec0176aacbc64f42a2991211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09084fdfe612bf18f4d56a285667881e"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a09084fdfe612bf18f4d56a285667881e">DateTime</a> () const</td></tr>
+<tr class="separator:a09084fdfe612bf18f4d56a285667881e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d3c185447c8c187c6d855269fa17d2"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#aa0d3c185447c8c187c6d855269fa17d2">MagneticFile</a> () const</td></tr>
+<tr class="separator:aa0d3c185447c8c187c6d855269fa17d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc550a654e5a22fd173240d6d3d9cbb0"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#abc550a654e5a22fd173240d6d3d9cbb0">MagneticModelName</a> () const</td></tr>
+<tr class="separator:abc550a654e5a22fd173240d6d3d9cbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef7d66c0273f69ae7df821089784670"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a6ef7d66c0273f69ae7df821089784670">MagneticModelDirectory</a> () const</td></tr>
+<tr class="separator:a6ef7d66c0273f69ae7df821089784670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbdae60f4c9443ffdf5cf829f91f1012"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#abbdae60f4c9443ffdf5cf829f91f1012">MinHeight</a> () const</td></tr>
+<tr class="separator:abbdae60f4c9443ffdf5cf829f91f1012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d6ade6d4e83a5044f2256ab108d0d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a91d6ade6d4e83a5044f2256ab108d0d4">MaxHeight</a> () const</td></tr>
+<tr class="separator:a91d6ade6d4e83a5044f2256ab108d0d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d97a780b635317b3749a68cf6c7aed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a76d97a780b635317b3749a68cf6c7aed">MinTime</a> () const</td></tr>
+<tr class="separator:a76d97a780b635317b3749a68cf6c7aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ecb06689791ecf7dab268bdddfaa385"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a8ecb06689791ecf7dab268bdddfaa385">MaxTime</a> () const</td></tr>
+<tr class="separator:a8ecb06689791ecf7dab268bdddfaa385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9f7d8203d789d35710a16dc801fb7a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a6c9f7d8203d789d35710a16dc801fb7a">MajorRadius</a> () const</td></tr>
+<tr class="separator:a6c9f7d8203d789d35710a16dc801fb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7fd04561f79ab5136d736e3d9e4cabd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#ab7fd04561f79ab5136d736e3d9e4cabd">Flattening</a> () const</td></tr>
+<tr class="separator:ab7fd04561f79ab5136d736e3d9e4cabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a469db97d257876c1abafa3da3c5f0f7e"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a469db97d257876c1abafa3da3c5f0f7e">DefaultMagneticPath</a> ()</td></tr>
+<tr class="separator:a469db97d257876c1abafa3da3c5f0f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2ac8cc598c0d9a6b448c9a45e9642d9"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#ab2ac8cc598c0d9a6b448c9a45e9642d9">DefaultMagneticName</a> ()</td></tr>
+<tr class="separator:ab2ac8cc598c0d9a6b448c9a45e9642d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Compute the magnetic field</h2></td></tr>
+<tr class="memitem:a6926b87c45184af8664f047c047d3b98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a6926b87c45184af8664f047c047d3b98">operator()</a> (real t, real lat, real lon, real h, real &amp;Bx, real &amp;By, real &amp;Bz) const</td></tr>
+<tr class="separator:a6926b87c45184af8664f047c047d3b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae99b6cc47355e452c398eb3cf7cab0e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#ae99b6cc47355e452c398eb3cf7cab0e6">operator()</a> (real t, real lat, real lon, real h, real &amp;Bx, real &amp;By, real &amp;Bz, real &amp;Bxt, real &amp;Byt, real &amp;Bzt) const</td></tr>
+<tr class="separator:ae99b6cc47355e452c398eb3cf7cab0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1370895f4938c5cd2aa44b06951b2491"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">MagneticCircle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a1370895f4938c5cd2aa44b06951b2491">Circle</a> (real t, real lat, real h) const</td></tr>
+<tr class="separator:a1370895f4938c5cd2aa44b06951b2491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af553c42337b9a9a1d51b81fea7083ea2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#af553c42337b9a9a1d51b81fea7083ea2">FieldComponents</a> (real Bx, real By, real Bz, real &amp;H, real &amp;F, real &amp;D, real &amp;I)</td></tr>
+<tr class="separator:af553c42337b9a9a1d51b81fea7083ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54aa849393ab2a7e37aa1f086e64cffb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a54aa849393ab2a7e37aa1f086e64cffb">FieldComponents</a> (real Bx, real By, real Bz, real Bxt, real Byt, real Bzt, real &amp;H, real &amp;F, real &amp;D, real &amp;I, real &amp;Ht, real &amp;Ft, real &amp;Dt, real &amp;It)</td></tr>
+<tr class="separator:a54aa849393ab2a7e37aa1f086e64cffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Model of the earth's magnetic field. </p>
+<p>Evaluate the earth's magnetic field according to a model. At present only internal magnetic fields are handled. These are due to the earth's code and crust; these vary slowly (over many years). Excluded are the effects of currents in the ionosphere and magnetosphere which have daily and annual variations.</p>
+<p>See magnetic for details of how to install the magnetic models and the data format.</p>
+<p>See</p><ul>
+<li>General information:<ul>
+<li><a href="http://geomag.org/models/index.html">http://geomag.org/models/index.html</a></li>
+</ul>
+</li>
+<li>WMM2010:<ul>
+<li><a href="http://ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml">http://ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml</a></li>
+<li><a href="http://ngdc.noaa.gov/geomag/WMM/data/WMM2010/WMM2010COF.zip">http://ngdc.noaa.gov/geomag/WMM/data/WMM2010/WMM2010COF.zip</a></li>
+</ul>
+</li>
+<li>WMM2015:<ul>
+<li><a href="http://ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml">http://ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml</a></li>
+<li><a href="http://ngdc.noaa.gov/geomag/WMM/data/WMM2015/WMM2015COF.zip">http://ngdc.noaa.gov/geomag/WMM/data/WMM2015/WMM2015COF.zip</a></li>
+</ul>
+</li>
+<li>IGRF11:<ul>
+<li><a href="http://ngdc.noaa.gov/IAGA/vmod/igrf.html">http://ngdc.noaa.gov/IAGA/vmod/igrf.html</a></li>
+<li><a href="http://ngdc.noaa.gov/IAGA/vmod/igrf11coeffs.txt">http://ngdc.noaa.gov/IAGA/vmod/igrf11coeffs.txt</a></li>
+<li><a href="http://ngdc.noaa.gov/IAGA/vmod/geomag70_linux.tar.gz">http://ngdc.noaa.gov/IAGA/vmod/geomag70_linux.tar.gz</a></li>
+</ul>
+</li>
+<li>EMM2010:<ul>
+<li><a href="http://ngdc.noaa.gov/geomag/EMM/index.html">http://ngdc.noaa.gov/geomag/EMM/index.html</a></li>
+<li><a href="http://ngdc.noaa.gov/geomag/EMM/data/geomag/EMM2010_Sph_Windows_Linux.zip">http://ngdc.noaa.gov/geomag/EMM/data/geomag/EMM2010_Sph_Windows_Linux.zip</a></li>
+</ul>
+</li>
+</ul>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --><p><a href="../../MagneticField.1.html">MagneticField</a> is a command-line utility providing access to the functionality of <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html" title="Model of the earth&#39;s magnetic field.">MagneticModel</a> and <a class="el" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html" title="Geomagnetic field on a circle of latitude.">MagneticCircle</a>. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a48fa9dc8633743c430c6c492bfe66f1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48fa9dc8633743c430c6c492bfe66f1a">&#9670;&nbsp;</a></span>MagneticModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::MagneticModel::MagneticModel </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">Geocentric</a> &amp;&#160;</td>
+          <td class="paramname"><em>earth</em> = <code><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#af6e84e6d9d7967df6ba13cae1814cb7b">Geocentric::WGS84</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct a magnetic model.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>the name of the model. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>(optional) directory for data file. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">earth</td><td>(optional) <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html" title="Geocentric coordinates">Geocentric</a> object for converting coordinates; default <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#af6e84e6d9d7967df6ba13cae1814cb7b">Geocentric::WGS84()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the data file cannot be found, is unreadable, or is corrupt. </td></tr>
+    <tr><td class="paramname">std::bad_alloc</td><td>if the memory necessary for storing the model can't be allocated.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>A filename is formed by appending ".wmm" (World Magnetic Model) to the name. If <em>path</em> is specified (and is non-empty), then the file is loaded from directory, <em>path</em>. Otherwise the path is given by the <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a469db97d257876c1abafa3da3c5f0f7e">DefaultMagneticPath()</a>.</p>
+<p>This file contains the metadata which specifies the properties of the model. The coefficients for the spherical harmonic sums are obtained from a file obtained by appending ".cof" to metadata file (so the filename ends in ".wwm.cof").</p>
+<p>The model is not tied to a particular ellipsoidal model of the earth. The final earth argument to the constructor specifies an ellipsoid to allow geodetic coordinates to the transformed into the spherical coordinates used in the spherical harmonic sum. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a1370895f4938c5cd2aa44b06951b2491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1370895f4938c5cd2aa44b06951b2491">&#9670;&nbsp;</a></span>Circle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">MagneticCircle</a> GeographicLib::MagneticModel::Circle </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create a <a class="el" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html" title="Geomagnetic field on a circle of latitude.">MagneticCircle</a> object to allow the geomagnetic field at many points with constant <em>lat</em>, <em>h</em>, and <em>t</em> and varying <em>lon</em> to be computed efficiently.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>the time (years). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the point above the ellipsoid (meters). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if the memory necessary for creating a <a class="el" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html" title="Geomagnetic field on a circle of latitude.">MagneticCircle</a> can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>a <a class="el" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html" title="Geomagnetic field on a circle of latitude.">MagneticCircle</a> object whose MagneticCircle::operator()(real lon) member function computes the field at particular values of <em>lon</em>.</dd></dl>
+<p>If the field at several points on a circle of latitude need to be calculated then creating a <a class="el" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html" title="Geomagnetic field on a circle of latitude.">MagneticCircle</a> and using its member functions will be substantially faster, especially for high-degree models. </p>
+
+</div>
+</div>
+<a id="a09084fdfe612bf18f4d56a285667881e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09084fdfe612bf18f4d56a285667881e">&#9670;&nbsp;</a></span>DateTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::MagneticModel::DateTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>date of the model, if available, from the ReleaseDate field in the data file; if absent, return "UNKNOWN". </dd></dl>
+
+</div>
+</div>
+<a id="ab2ac8cc598c0d9a6b448c9a45e9642d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2ac8cc598c0d9a6b448c9a45e9642d9">&#9670;&nbsp;</a></span>DefaultMagneticName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GeographicLib::MagneticModel::DefaultMagneticName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the default name for the magnetic model.</dd></dl>
+<p>This is the value of the environment variable GEOGRAPHICLIB_MAGNETIC_NAME, if set; otherwise, it is "wmm2015". The <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html" title="Model of the earth&#39;s magnetic field.">MagneticModel</a> class does not use this function; it is just provided as a convenience for a calling program when constructing a <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html" title="Model of the earth&#39;s magnetic field.">MagneticModel</a> object. </p>
+
+</div>
+</div>
+<a id="a469db97d257876c1abafa3da3c5f0f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a469db97d257876c1abafa3da3c5f0f7e">&#9670;&nbsp;</a></span>DefaultMagneticPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GeographicLib::MagneticModel::DefaultMagneticPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the default path for magnetic model data files.</dd></dl>
+<p>This is the value of the environment variable GEOGRAPHICLIB_MAGNETIC_PATH, if set; otherwise, it is $GEOGRAPHICLIB_DATA/magnetic if the environment variable GEOGRAPHICLIB_DATA is set; otherwise, it is a compile-time default (/usr/local/share/GeographicLib/magnetic on non-Windows systems and C:/ProgramData/GeographicLib/magnetic on Windows systems). </p>
+
+</div>
+</div>
+<a id="a33bea360ec0176aacbc64f42a2991211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33bea360ec0176aacbc64f42a2991211">&#9670;&nbsp;</a></span>Description()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::MagneticModel::Description </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the description of the magnetic model, if available, from the Description file in the data file; if absent, return "NONE". </dd></dl>
+
+</div>
+</div>
+<a id="af553c42337b9a9a1d51b81fea7083ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af553c42337b9a9a1d51b81fea7083ea2">&#9670;&nbsp;</a></span>FieldComponents() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GeographicLib::MagneticModel::FieldComponents </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>By</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Bz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>H</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>I</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compute various quantities dependent on the magnetic field.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Bx</td><td>the <em>x</em> (easterly) component of the magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">By</td><td>the <em>y</em> (northerly) component of the magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Bz</td><td>the <em>z</em> (vertical, up positive) component of the magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">H</td><td>the horizontal magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">F</td><td>the total magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>the declination of the field (degrees east of north). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>the inclination of the field (degrees down from horizontal). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a54aa849393ab2a7e37aa1f086e64cffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54aa849393ab2a7e37aa1f086e64cffb">&#9670;&nbsp;</a></span>FieldComponents() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::MagneticModel::FieldComponents </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>By</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Bz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Bxt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Byt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Bzt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>H</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>F</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>D</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>I</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Ht</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Ft</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>It</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Compute various quantities dependent on the magnetic field and its rate of change.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">Bx</td><td>the <em>x</em> (easterly) component of the magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">By</td><td>the <em>y</em> (northerly) component of the magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Bz</td><td>the <em>z</em> (vertical, up positive) component of the magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Bxt</td><td>the rate of change of <em>Bx</em> (nT/yr). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Byt</td><td>the rate of change of <em>By</em> (nT/yr). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Bzt</td><td>the rate of change of <em>Bz</em> (nT/yr). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">H</td><td>the horizontal magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">F</td><td>the total magnetic field (nT). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">D</td><td>the declination of the field (degrees east of north). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">I</td><td>the inclination of the field (degrees down from horizontal). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Ht</td><td>the rate of change of <em>H</em> (nT/yr). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Ft</td><td>the rate of change of <em>F</em> (nT/yr). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Dt</td><td>the rate of change of <em>D</em> (degrees/yr). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">It</td><td>the rate of change of <em>I</em> (degrees/yr). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab7fd04561f79ab5136d736e3d9e4cabd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7fd04561f79ab5136d736e3d9e4cabd">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::MagneticModel::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the ellipsoid. This is the value inherited from the <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html" title="Geocentric coordinates">Geocentric</a> object used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="aa0d3c185447c8c187c6d855269fa17d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d3c185447c8c187c6d855269fa17d2">&#9670;&nbsp;</a></span>MagneticFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::MagneticModel::MagneticFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>full file name used to load the magnetic model. </dd></dl>
+
+</div>
+</div>
+<a id="a6ef7d66c0273f69ae7df821089784670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef7d66c0273f69ae7df821089784670">&#9670;&nbsp;</a></span>MagneticModelDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::MagneticModel::MagneticModelDirectory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>directory used to load the magnetic model. </dd></dl>
+
+</div>
+</div>
+<a id="abc550a654e5a22fd173240d6d3d9cbb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc550a654e5a22fd173240d6d3d9cbb0">&#9670;&nbsp;</a></span>MagneticModelName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; GeographicLib::MagneticModel::MagneticModelName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>"name" used to load the magnetic model (from the first argument of the constructor, but this may be overridden by the model file). </dd></dl>
+
+</div>
+</div>
+<a id="a6c9f7d8203d789d35710a16dc801fb7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9f7d8203d789d35710a16dc801fb7a">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::MagneticModel::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the ellipsoid (meters). This is the value of <em>a</em> inherited from the <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html" title="Geocentric coordinates">Geocentric</a> object used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="a91d6ade6d4e83a5044f2256ab108d0d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91d6ade6d4e83a5044f2256ab108d0d4">&#9670;&nbsp;</a></span>MaxHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::MagneticModel::MaxHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the maximum height above the ellipsoid (in meters) for which this <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html" title="Model of the earth&#39;s magnetic field.">MagneticModel</a> should be used.</dd></dl>
+<p>Because the model will typically provide useful results slightly outside the range of allowed heights, no check of <em>t</em> argument is made by <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a6926b87c45184af8664f047c047d3b98">MagneticModel::operator()()</a> or <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a1370895f4938c5cd2aa44b06951b2491">MagneticModel::Circle</a>. </p>
+
+</div>
+</div>
+<a id="a8ecb06689791ecf7dab268bdddfaa385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ecb06689791ecf7dab268bdddfaa385">&#9670;&nbsp;</a></span>MaxTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::MagneticModel::MaxTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the maximum time (in years) for which this <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html" title="Model of the earth&#39;s magnetic field.">MagneticModel</a> should be used.</dd></dl>
+<p>Because the model will typically provide useful results slightly outside the range of allowed times, no check of <em>t</em> argument is made by <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a6926b87c45184af8664f047c047d3b98">MagneticModel::operator()()</a> or <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a1370895f4938c5cd2aa44b06951b2491">MagneticModel::Circle</a>. </p>
+
+</div>
+</div>
+<a id="abbdae60f4c9443ffdf5cf829f91f1012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbdae60f4c9443ffdf5cf829f91f1012">&#9670;&nbsp;</a></span>MinHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::MagneticModel::MinHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the minimum height above the ellipsoid (in meters) for which this <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html" title="Model of the earth&#39;s magnetic field.">MagneticModel</a> should be used.</dd></dl>
+<p>Because the model will typically provide useful results slightly outside the range of allowed heights, no check of <em>t</em> argument is made by <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a6926b87c45184af8664f047c047d3b98">MagneticModel::operator()()</a> or <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a1370895f4938c5cd2aa44b06951b2491">MagneticModel::Circle</a>. </p>
+
+</div>
+</div>
+<a id="a76d97a780b635317b3749a68cf6c7aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d97a780b635317b3749a68cf6c7aed">&#9670;&nbsp;</a></span>MinTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::MagneticModel::MinTime </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the minimum time (in years) for which this <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html" title="Model of the earth&#39;s magnetic field.">MagneticModel</a> should be used.</dd></dl>
+<p>Because the model will typically provide useful results slightly outside the range of allowed times, no check of <em>t</em> argument is made by <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a6926b87c45184af8664f047c047d3b98">MagneticModel::operator()()</a> or <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html#a1370895f4938c5cd2aa44b06951b2491">MagneticModel::Circle</a>. </p>
+
+</div>
+</div>
+<a id="a6926b87c45184af8664f047c047d3b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6926b87c45184af8664f047c047d3b98">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::MagneticModel::operator() </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>By</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Bz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the components of the geomagnetic field.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>the time (years). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the point above the ellipsoid (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Bx</td><td>the easterly component of the magnetic field (nanotesla). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">By</td><td>the northerly component of the magnetic field (nanotesla). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Bz</td><td>the vertical (up) component of the magnetic field (nanotesla). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae99b6cc47355e452c398eb3cf7cab0e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae99b6cc47355e452c398eb3cf7cab0e6">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::MagneticModel::operator() </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Bx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>By</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Bz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Bxt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Byt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Bzt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the components of the geomagnetic field and their time derivatives</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>the time (years). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of the point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>the height of the point above the ellipsoid (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Bx</td><td>the easterly component of the magnetic field (nanotesla). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">By</td><td>the northerly component of the magnetic field (nanotesla). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Bz</td><td>the vertical (up) component of the magnetic field (nanotesla). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Bxt</td><td>the rate of change of <em>Bx</em> (nT/yr). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Byt</td><td>the rate of change of <em>By</em> (nT/yr). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Bzt</td><td>the rate of change of <em>Bz</em> (nT/yr). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d6/d8c/_magnetic_model_8hpp_source.html">MagneticModel.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d7/d09/_magnetic_model_8cpp.html">MagneticModel.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:19. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

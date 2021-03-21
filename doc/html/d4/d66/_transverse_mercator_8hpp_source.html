@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/TransverseMercator.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">TransverseMercator.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d66/_transverse_mercator_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_TRANSVERSEMERCATOR_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_TRANSVERSEMERCATOR_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_TRANSVERSEMERCATOR_ORDER)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d4/d66/_transverse_mercator_8hpp.html#ad5b8fc10f1920eabbf36b2b34a3fcbda">   20</a></span>&#160;<span class="preprocessor">#  define GEOGRAPHICLIB_TRANSVERSEMERCATOR_ORDER \</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">  (GEOGRAPHICLIB_PRECISION == 2 ? 6 : \</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">   (GEOGRAPHICLIB_PRECISION == 1 ? 4 : 8))</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">   89</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">TransverseMercator</a> {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> maxpow_ = <a class="code" href="../../d4/d66/_transverse_mercator_8hpp.html#ad5b8fc10f1920eabbf36b2b34a3fcbda">GEOGRAPHICLIB_TRANSVERSEMERCATOR_ORDER</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> numit_ = 5;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    real _a, _f, _k0, _e2, _es, _e2m,  _c, _n;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// _alp[0] and _bet[0] unused</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    real _a1, _b1, _alp[maxpow_ + 1], _bet[maxpow_ + 1];</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#a26de2ba48553f37df3a39cf643961b51">   97</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html">Ellipsoid</a>;           <span class="comment">// For access to taupf, tauf.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">TransverseMercator</a>(real a, real f, real k0);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> Forward(real lon0, real lat, real lon,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                 real&amp; x, real&amp; y, real&amp; gamma, real&amp; k) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> Reverse(real lon0, real x, real y,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                 real&amp; lat, real&amp; lon, real&amp; gamma, real&amp; k) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ae3b2b689bda7d48999c2a6f1cf3e1be0">  150</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ae3b2b689bda7d48999c2a6f1cf3e1be0">Forward</a>(real lon0, real lat, real lon,</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                 real&amp; x, real&amp; y)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      real gamma, k;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      Forward(lon0, lat, lon, x, y, gamma, k);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ab51d3f106e022bc128b2a640c01ec6e1">  159</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ab51d3f106e022bc128b2a640c01ec6e1">Reverse</a>(real lon0, real x, real y,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                 real&amp; lat, real&amp; lon)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      real gamma, k;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      Reverse(lon0, x, y, lat, lon, gamma, k);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#abae933dd18c4495489b3f35349312408">  172</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#abae933dd18c4495489b3f35349312408">MajorRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _a; }</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#a7fc0adc7c3812ca133937461fb534f1c">  178</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#a7fc0adc7c3812ca133937461fb534f1c">Flattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _f; }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseFlattening()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 1/_f; }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ac19069d4f246c3a01029826e72c99f56">  192</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ac19069d4f246c3a01029826e72c99f56">CentralScale</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _k0; }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">TransverseMercator</a>&amp; UTM();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  };</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_TRANSVERSEMERCATOR_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="a_transverse_mercator_8hpp_html_ad5b8fc10f1920eabbf36b2b34a3fcbda"><div class="ttname"><a href="../../d4/d66/_transverse_mercator_8hpp.html#ad5b8fc10f1920eabbf36b2b34a3fcbda">GEOGRAPHICLIB_TRANSVERSEMERCATOR_ORDER</a></div><div class="ttdeci">#define GEOGRAPHICLIB_TRANSVERSEMERCATOR_ORDER</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:20</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html_ab51d3f106e022bc128b2a640c01ec6e1"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ab51d3f106e022bc128b2a640c01ec6e1">GeographicLib::TransverseMercator::Reverse</a></div><div class="ttdeci">void Reverse(real lon0, real x, real y, real &amp;lat, real &amp;lon) const</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:159</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html_ae3b2b689bda7d48999c2a6f1cf3e1be0"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ae3b2b689bda7d48999c2a6f1cf3e1be0">GeographicLib::TransverseMercator::Forward</a></div><div class="ttdeci">void Forward(real lon0, real lat, real lon, real &amp;x, real &amp;y) const</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:150</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html_ac19069d4f246c3a01029826e72c99f56"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#ac19069d4f246c3a01029826e72c99f56">GeographicLib::TransverseMercator::CentralScale</a></div><div class="ttdeci">Math::real CentralScale() const</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:192</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html">GeographicLib::Ellipsoid</a></div><div class="ttdoc">Properties of an ellipsoid.</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:39</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html_a7fc0adc7c3812ca133937461fb534f1c"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#a7fc0adc7c3812ca133937461fb534f1c">GeographicLib::TransverseMercator::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:178</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html_abae933dd18c4495489b3f35349312408"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#abae933dd18c4495489b3f35349312408">GeographicLib::TransverseMercator::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:172</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">GeographicLib::TransverseMercator</a></div><div class="ttdoc">Transverse Mercator projection.</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:89</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

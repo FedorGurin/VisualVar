@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/core/func_geometric.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_ab399c1ca414379f40fea172917efe13.html">core</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">func_geometric.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/dad/func__geometric_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifndef glm_core_func_geometric</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d3/dad/func__geometric_8hpp.html#a96fbbb9ea9e6f562b11c2b501aa7049e">   37</a></span>&#160;<span class="preprocessor">#define glm_core_func_geometric GLM_VERSION</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> genType::value_type <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga03b2831439defb8922832b540b91b8a7">length</a>(</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        genType <span class="keyword">const</span> &amp; x); </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> genType::value_type <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga00716eae37e8ae2a76ca7799f9c75682">distance</a>(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        genType <span class="keyword">const</span> &amp; p0, </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        genType <span class="keyword">const</span> &amp; p1);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <span class="keyword">typename</span> genType::value_type <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga05244a4e222740e5e38abe91fc51df79">dot</a>(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        genType <span class="keyword">const</span> &amp; x, </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        genType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">   83</a></span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> <a class="code" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">detail::tvec3&lt;valType&gt;</a> <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">cross</a>(</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">detail::tvec3&lt;valType&gt;</a> <span class="keyword">const</span> &amp; x, </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">detail::tvec3&lt;valType&gt;</a> <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> genType <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga15aa87101457e41663b08a8dcc3357f8">normalize</a>(</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        genType <span class="keyword">const</span> &amp; x);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> genType <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga4bbb036ef9527ee9f67384233029ed9b">faceforward</a>(</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        genType <span class="keyword">const</span> &amp; N, </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        genType <span class="keyword">const</span> &amp; I, </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        genType <span class="keyword">const</span> &amp; Nref);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> genType <a class="code" href="../../d6/da9/group__core__func__geometric.html#gab63646fc36b81cf69d3ce123a72f76f2">reflect</a>(</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        genType <span class="keyword">const</span> &amp; I, </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        genType <span class="keyword">const</span> &amp; N);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a> genType <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga36fed34a95462694bab6d58cb32f6dc4">refract</a>(</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        genType <span class="keyword">const</span> &amp; I, </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        genType <span class="keyword">const</span> &amp; N, </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keyword">typename</span> genType::value_type <span class="keyword">const</span> &amp; eta);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}<span class="comment">//namespace glm</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d55/func__geometric_8inl.html">func_geometric.inl</a>&quot;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif//glm_core_func_geometric</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__core__func__geometric_html_ga03b2831439defb8922832b540b91b8a7"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga03b2831439defb8922832b540b91b8a7">glm::length</a></div><div class="ttdeci">GLM_FUNC_DECL genType::value_type length(genType const &amp;x)</div><div class="ttdef"><b>Definition:</b> func_geometric.inl:34</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga36fed34a95462694bab6d58cb32f6dc4"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga36fed34a95462694bab6d58cb32f6dc4">glm::refract</a></div><div class="ttdeci">GLM_FUNC_DECL genType refract(genType const &amp;I, genType const &amp;N, typename genType::value_type const &amp;eta)</div><div class="ttdef"><b>Definition:</b> func_geometric.inl:304</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga15a920c14f06882921757e453426efbe"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">glm::cross</a></div><div class="ttdeci">GLM_FUNC_DECL detail::tvec3&lt; valType &gt; cross(detail::tvec3&lt; valType &gt; const &amp;x, detail::tvec3&lt; valType &gt; const &amp;y)</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga15aa87101457e41663b08a8dcc3357f8"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga15aa87101457e41663b08a8dcc3357f8">glm::normalize</a></div><div class="ttdeci">GLM_FUNC_DECL genType normalize(genType const &amp;x)</div><div class="ttdef"><b>Definition:</b> func_geometric.inl:213</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_gab63646fc36b81cf69d3ce123a72f76f2"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#gab63646fc36b81cf69d3ce123a72f76f2">glm::reflect</a></div><div class="ttdeci">GLM_FUNC_DECL genType reflect(genType const &amp;I, genType const &amp;N)</div><div class="ttdef"><b>Definition:</b> func_geometric.inl:274</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga00716eae37e8ae2a76ca7799f9c75682"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga00716eae37e8ae2a76ca7799f9c75682">glm::distance</a></div><div class="ttdeci">GLM_FUNC_DECL genType::value_type distance(genType const &amp;p0, genType const &amp;p1)</div><div class="ttdef"><b>Definition:</b> func_geometric.inl:83</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tvec3_html"><div class="ttname"><a href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">glm::detail::tvec3</a></div><div class="ttdef"><b>Definition:</b> type_vec3.hpp:49</div></div>
+<div class="ttc" id="afunc__geometric_8inl_html"><div class="ttname"><a href="../../d3/d55/func__geometric_8inl.html">func_geometric.inl</a></div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="asetup_8hpp_html_ab2d052de21a70539923e9bcbf6e83a51"><div class="ttname"><a href="../../d2/d6a/setup_8hpp.html#ab2d052de21a70539923e9bcbf6e83a51">GLM_FUNC_DECL</a></div><div class="ttdeci">#define GLM_FUNC_DECL</div><div class="ttdef"><b>Definition:</b> setup.hpp:678</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga4bbb036ef9527ee9f67384233029ed9b"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga4bbb036ef9527ee9f67384233029ed9b">glm::faceforward</a></div><div class="ttdeci">GLM_FUNC_DECL genType faceforward(genType const &amp;N, genType const &amp;I, genType const &amp;Nref)</div><div class="ttdef"><b>Definition:</b> func_geometric.inl:262</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga05244a4e222740e5e38abe91fc51df79"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga05244a4e222740e5e38abe91fc51df79">glm::dot</a></div><div class="ttdeci">GLM_FUNC_DECL genType::value_type dot(genType const &amp;x, genType const &amp;y)</div><div class="ttdef"><b>Definition:</b> func_geometric.inl:132</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

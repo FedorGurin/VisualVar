@@ -1,0 +1,750 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::Geocentric</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">Geocentric</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#friends">Друзья</a> &#124;
+<a href="../../dd/df2/class_geographic_lib_1_1_geocentric-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::Geocentric</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Geocentric coordinates  
+ <a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../df/d10/_geocentric_8hpp_source.html">Geocentric.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a6527d3ab1df78de8277122581dbcdaff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a6527d3ab1df78de8277122581dbcdaff">Geocentric</a> (real a, real f)</td></tr>
+<tr class="separator:a6527d3ab1df78de8277122581dbcdaff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc92d7214526b4cfcd0b9a0171fc8448"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#adc92d7214526b4cfcd0b9a0171fc8448">Geocentric</a> ()</td></tr>
+<tr class="separator:adc92d7214526b4cfcd0b9a0171fc8448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ff62c44bb824b8e5b5048a54a30b6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a36ff62c44bb824b8e5b5048a54a30b6d">Forward</a> (real lat, real lon, real h, real &amp;X, real &amp;Y, real &amp;Z) const</td></tr>
+<tr class="separator:a36ff62c44bb824b8e5b5048a54a30b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a9edeb22cde113f361a098b53046e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ab7a9edeb22cde113f361a098b53046e4">Forward</a> (real lat, real lon, real h, real &amp;X, real &amp;Y, real &amp;Z, std::vector&lt; real &gt; &amp;M) const</td></tr>
+<tr class="separator:ab7a9edeb22cde113f361a098b53046e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14fde4d04f816f2d1f433590865cf16f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a14fde4d04f816f2d1f433590865cf16f">Reverse</a> (real X, real Y, real Z, real &amp;lat, real &amp;lon, real &amp;h) const</td></tr>
+<tr class="separator:a14fde4d04f816f2d1f433590865cf16f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab534b83ee420bd9a309bf52db5186afd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ab534b83ee420bd9a309bf52db5186afd">Reverse</a> (real X, real Y, real Z, real &amp;lat, real &amp;lon, real &amp;h, std::vector&lt; real &gt; &amp;M) const</td></tr>
+<tr class="separator:ab534b83ee420bd9a309bf52db5186afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions</div></td></tr>
+<tr class="memitem:add541816a1bec45274c18c1a187dd162"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#add541816a1bec45274c18c1a187dd162">Init</a> () const</td></tr>
+<tr class="separator:add541816a1bec45274c18c1a187dd162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04802a84578797bab171fa92be2f0b43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a04802a84578797bab171fa92be2f0b43">MajorRadius</a> () const</td></tr>
+<tr class="separator:a04802a84578797bab171fa92be2f0b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86a0c618fd67eb741e534685cbc96a7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a86a0c618fd67eb741e534685cbc96a7c">Flattening</a> () const</td></tr>
+<tr class="separator:a86a0c618fd67eb741e534685cbc96a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:af6e84e6d9d7967df6ba13cae1814cb7b"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">Geocentric</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#af6e84e6d9d7967df6ba13cae1814cb7b">WGS84</a> ()</td></tr>
+<tr class="separator:af6e84e6d9d7967df6ba13cae1814cb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Друзья</h2></td></tr>
+<tr class="memitem:a8904c4eadcf94e3803743e8cd9ffbc1c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a8904c4eadcf94e3803743e8cd9ffbc1c">LocalCartesian</a></td></tr>
+<tr class="separator:a8904c4eadcf94e3803743e8cd9ffbc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7294f6a1cc932f8fd1562a15602e9e86"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a7294f6a1cc932f8fd1562a15602e9e86">MagneticCircle</a></td></tr>
+<tr class="separator:a7294f6a1cc932f8fd1562a15602e9e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6619ebe4c078705fc49a0d9f950b431"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#af6619ebe4c078705fc49a0d9f950b431">MagneticModel</a></td></tr>
+<tr class="separator:af6619ebe4c078705fc49a0d9f950b431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a243c90a7f9bf3f7aa96877a4b0667a89"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#a243c90a7f9bf3f7aa96877a4b0667a89">GravityCircle</a></td></tr>
+<tr class="separator:a243c90a7f9bf3f7aa96877a4b0667a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1db1d9f480d8044753ed869c995519"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ada1db1d9f480d8044753ed869c995519">GravityModel</a></td></tr>
+<tr class="separator:ada1db1d9f480d8044753ed869c995519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7298549755c5982fe1be124d6631561"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html#ae7298549755c5982fe1be124d6631561">NormalGravity</a></td></tr>
+<tr class="separator:ae7298549755c5982fe1be124d6631561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Geocentric coordinates </p>
+<p>Convert between geodetic coordinates latitude = <em>lat</em>, longitude = <em>lon</em>, height = <em>h</em> (measured vertically from the surface of the ellipsoid) to geocentric coordinates (<em>X</em>, <em>Y</em>, <em>Z</em>). The origin of geocentric coordinates is at the center of the earth. The <em>Z</em> axis goes thru the north pole, <em>lat</em> = 90&deg;. The <em>X</em> axis goes thru <em>lat</em> = 0, <em>lon</em> = 0. Geocentric coordinates are also known as earth centered, earth fixed (ECEF) coordinates.</p>
+<p>The conversion from geographic to geocentric coordinates is straightforward. For the reverse transformation we use</p><ul>
+<li>H. Vermeille, <a href="https://dx.doi.org/10.1007/s00190-002-0273-6">Direct transformation from geocentric coordinates to geodetic coordinates</a>, J. Geodesy 76, 451&ndash;454 (2002).</li>
+</ul>
+<p>Several changes have been made to ensure that the method returns accurate results for all finite inputs (even if <em>h</em> is infinite). The changes are described in Appendix B of</p><ul>
+<li>C. F. F. Karney, <a href="http://arxiv.org/abs/1102.1215v1">Geodesics on an ellipsoid of revolution</a>, Feb. 2011; preprint <a href="http://arxiv.org/abs/1102.1215v1">arxiv:1102.1215v1</a>.</li>
+</ul>
+<p>Vermeille similarly updated his method in</p><ul>
+<li>H. Vermeille, <a href="https://dx.doi.org/10.1007/s00190-010-0419-x">An analytical method to transform geocentric into geodetic coordinates</a>, J. Geodesy 85, 105&ndash;117 (2011).</li>
+</ul>
+<p>See geocentric for more information.</p>
+<p>The errors in these routines are close to round-off. Specifically, for points within 5000 km of the surface of the ellipsoid (either inside or outside the ellipsoid), the error is bounded by 7 nm (7 nanometers) for the WGS84 ellipsoid. See geocentric for further information on the errors.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --><p><a href="../../CartConvert.1.html">CartConvert</a> is a command-line utility providing access to the functionality of <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html" title="Geocentric coordinates">Geocentric</a> and <a class="el" href="../../d0/d5f/class_geographic_lib_1_1_local_cartesian.html" title="Local cartesian coordinates.">LocalCartesian</a>. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a6527d3ab1df78de8277122581dbcdaff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6527d3ab1df78de8277122581dbcdaff">&#9670;&nbsp;</a></span>Geocentric() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::Geocentric::Geocentric </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor for a ellipsoid with</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>equatorial radius (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>flattening of ellipsoid. Setting <em>f</em> = 0 gives a sphere. Negative <em>f</em> gives a prolate ellipsoid. If <em>f</em> &gt; 1, set flattening to 1/<em>f</em>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>a</em> or (1 &minus; <em>f</em>) <em>a</em> is not positive. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adc92d7214526b4cfcd0b9a0171fc8448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc92d7214526b4cfcd0b9a0171fc8448">&#9670;&nbsp;</a></span>Geocentric() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::Geocentric::Geocentric </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A default constructor (for use by <a class="el" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html" title="The normal gravity of the earth.">NormalGravity</a>). </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a86a0c618fd67eb741e534685cbc96a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86a0c618fd67eb741e534685cbc96a7c">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geocentric::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the ellipsoid. This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="a36ff62c44bb824b8e5b5048a54a30b6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ff62c44bb824b8e5b5048a54a30b6d">&#9670;&nbsp;</a></span>Forward() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Geocentric::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert from geodetic to geocentric coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>height of point above the ellipsoid (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">X</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Y</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Z</td><td>geocentric coordinate (meters).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><em>lat</em> should be in the range [&minus;90&deg;, 90&deg;]. </p>
+
+</div>
+</div>
+<a id="ab7a9edeb22cde113f361a098b53046e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7a9edeb22cde113f361a098b53046e4">&#9670;&nbsp;</a></span>Forward() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Geocentric::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert from geodetic to geocentric coordinates and return rotation matrix.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>height of point above the ellipsoid (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">X</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Y</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Z</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M</td><td>if the length of the vector is 9, fill with the rotation matrix in row-major order.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Let <em>v</em> be a unit vector located at (<em>lat</em>, <em>lon</em>, <em>h</em>). We can express <em>v</em> as <em>column</em> vectors in one of two ways</p><ul>
+<li>in east, north, up coordinates (where the components are relative to a local coordinate system at (<em>lat</em>, <em>lon</em>, <em>h</em>)); call this representation <em>v1</em>.</li>
+<li>in geocentric <em>X</em>, <em>Y</em>, <em>Z</em> coordinates; call this representation <em>v0</em>.</li>
+</ul>
+<p>Then we have <em>v0</em> = <em>M</em> &sdot; <em>v1</em>. </p>
+
+</div>
+</div>
+<a id="add541816a1bec45274c18c1a187dd162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add541816a1bec45274c18c1a187dd162">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GeographicLib::Geocentric::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>true if the object has been initialized. </dd></dl>
+
+</div>
+</div>
+<a id="a04802a84578797bab171fa92be2f0b43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04802a84578797bab171fa92be2f0b43">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Geocentric::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the ellipsoid (meters). This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="a14fde4d04f816f2d1f433590865cf16f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14fde4d04f816f2d1f433590865cf16f">&#9670;&nbsp;</a></span>Reverse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Geocentric::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert from geocentric to geodetic to coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Y</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Z</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>height of point above the ellipsoid (meters).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>In general there are multiple solutions and the result which maximizes <em>h</em> is returned. If there are still multiple solutions with different latitudes (applies only if <em>Z</em> = 0), then the solution with <em>lat</em> &gt; 0 is returned. If there are still multiple solutions with different longitudes (applies only if <em>X</em> = <em>Y</em> = 0) then <em>lon</em> = 0 is returned. The value of <em>h</em> returned satisfies <em>h</em> &ge; &minus; <em>a</em> (1 &minus; <em>e</em><sup>2</sup>) / sqrt(1 &minus; <em>e</em><sup>2</sup> sin<sup>2</sup><em>lat</em>). The value of <em>lon</em> returned is in the range [&minus;180&deg;, 180&deg;). </p>
+
+</div>
+</div>
+<a id="ab534b83ee420bd9a309bf52db5186afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab534b83ee420bd9a309bf52db5186afd">&#9670;&nbsp;</a></span>Reverse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Geocentric::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>Z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; real &gt; &amp;&#160;</td>
+          <td class="paramname"><em>M</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert from geocentric to geodetic to coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">X</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Y</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Z</td><td>geocentric coordinate (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">h</td><td>height of point above the ellipsoid (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">M</td><td>if the length of the vector is 9, fill with the rotation matrix in row-major order.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Let <em>v</em> be a unit vector located at (<em>lat</em>, <em>lon</em>, <em>h</em>). We can express <em>v</em> as <em>column</em> vectors in one of two ways</p><ul>
+<li>in east, north, up coordinates (where the components are relative to a local coordinate system at (<em>lat</em>, <em>lon</em>, <em>h</em>)); call this representation <em>v1</em>.</li>
+<li>in geocentric <em>X</em>, <em>Y</em>, <em>Z</em> coordinates; call this representation <em>v0</em>.</li>
+</ul>
+<p>Then we have <em>v1</em> = <em>M</em><sup>T</sup> &sdot; <em>v0</em>, where <em>M</em><sup>T</sup> is the transpose of <em>M</em>. </p>
+
+</div>
+</div>
+<a id="af6e84e6d9d7967df6ba13cae1814cb7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e84e6d9d7967df6ba13cae1814cb7b">&#9670;&nbsp;</a></span>WGS84()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">Geocentric</a> &amp; GeographicLib::Geocentric::WGS84 </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A global instantiation of <a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html" title="Geocentric coordinates">Geocentric</a> with the parameters for the WGS84 ellipsoid. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Документация по друзьям класса и функциям, относящимся к классу</h2>
+<a id="a243c90a7f9bf3f7aa96877a4b0667a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a243c90a7f9bf3f7aa96877a4b0667a89">&#9670;&nbsp;</a></span>GravityCircle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html">GravityCircle</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada1db1d9f480d8044753ed869c995519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1db1d9f480d8044753ed869c995519">&#9670;&nbsp;</a></span>GravityModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html">GravityModel</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8904c4eadcf94e3803743e8cd9ffbc1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8904c4eadcf94e3803743e8cd9ffbc1c">&#9670;&nbsp;</a></span>LocalCartesian</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d0/d5f/class_geographic_lib_1_1_local_cartesian.html">LocalCartesian</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7294f6a1cc932f8fd1562a15602e9e86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7294f6a1cc932f8fd1562a15602e9e86">&#9670;&nbsp;</a></span>MagneticCircle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d1/d74/class_geographic_lib_1_1_magnetic_circle.html">MagneticCircle</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6619ebe4c078705fc49a0d9f950b431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6619ebe4c078705fc49a0d9f950b431">&#9670;&nbsp;</a></span>MagneticModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d6/dc4/class_geographic_lib_1_1_magnetic_model.html">MagneticModel</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7298549755c5982fe1be124d6631561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7298549755c5982fe1be124d6631561">&#9670;&nbsp;</a></span>NormalGravity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">NormalGravity</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../df/d10/_geocentric_8hpp_source.html">Geocentric.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d2/dd4/_geocentric_8cpp.html">Geocentric.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:18. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

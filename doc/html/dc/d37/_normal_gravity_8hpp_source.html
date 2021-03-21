@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/NormalGravity.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">NormalGravity.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d37/_normal_gravity_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_NORMALGRAVITY_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_NORMALGRAVITY_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../df/d10/_geocentric_8hpp.html">GeographicLib/Geocentric.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">   60</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">NormalGravity</a> {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> maxit_ = 10;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ada1db1d9f480d8044753ed869c995519">   64</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html">GravityModel</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    real _a, _GM, _omega, _f, _J2, _omega2, _aomega2;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    real _e2, _ep2, _b, _E, _U0, _gammae, _gammap, _q0, _m, _k, _fstar;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">Geocentric</a> _earth;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// (atan(y)-(y-y^3/3))/y^5 (y = sqrt(x)) = 1/5-y/7+y^2/9-y^3/11...</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">static</span> real atan5(real x);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// (atan(y)-(y-y^3/3+y^5/5))/y^7 (y = sqrt(x)) = -1/7+x/9-x^2/11+x^3/13...</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">static</span> real atan7(real x);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">static</span> real qf(real ep2);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">static</span> real dq(real ep2);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> real qpf(real ep2);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    real Jn(<span class="keywordtype">int</span> n) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">NormalGravity</a>(real a, real GM, real omega, real f, real J2);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a55f749c3bb3e9d19626105041bf1b6fb">  116</a></span>&#160;    <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a55f749c3bb3e9d19626105041bf1b6fb">NormalGravity</a>() : _a(-1) {}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> SurfaceGravity(real lat) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> Gravity(real lat, real h, real&amp; gammay, real&amp; gammaz)</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> U(real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>,</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                 real&amp; gammaX, real&amp; gammaY, real&amp; gammaZ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> V0(real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">Z</a>,</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                  real&amp; GammaX, real&amp; GammaY, real&amp; GammaZ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> Phi(real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">X</a>, real <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">Y</a>, real&amp; fX, real&amp; fY) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#aaa5da0ad63a61ea7bdcc1bccdea8a99d">  229</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#aaa5da0ad63a61ea7bdcc1bccdea8a99d">Init</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _a &gt; 0; }</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a6c7216cec8973a298df76766130288ca">  235</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a6c7216cec8973a298df76766130288ca">MajorRadius</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _a : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00243"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ab65f5d05a923e8a20b3ba1766ce35678">  243</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ab65f5d05a923e8a20b3ba1766ce35678">MassConstant</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _GM : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a86e7bcd65613194dbd2d1a5045f4ac04">  258</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a86e7bcd65613194dbd2d1a5045f4ac04">DynamicalFormFactor</a>(<span class="keywordtype">int</span> n = 2)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? ( n == 2 ? _J2 : Jn(n)) : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a8a990fefa65ab65e4d17d4766c71dc1a">  265</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a8a990fefa65ab65e4d17d4766c71dc1a">AngularVelocity</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _omega : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a1f3a1edc25997ab831c4d2a677183bd9">  272</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a1f3a1edc25997ab831c4d2a677183bd9">Flattening</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _f : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#af4e51c8e0702271b03b513449e0cf558">  279</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#af4e51c8e0702271b03b513449e0cf558">EquatorialGravity</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _gammae : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a73537747dbda9cc82af1af255a3d52cd">  286</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a73537747dbda9cc82af1af255a3d52cd">PolarGravity</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _gammap : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00293"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ab73c9c8bcb0d755faee378fa162ba359">  293</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ab73c9c8bcb0d755faee378fa162ba359">GravityFlattening</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _fstar : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ad32e7902482d8bca27c98dd814c2616b">  300</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ad32e7902482d8bca27c98dd814c2616b">SurfacePotential</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> Init() ? _U0 : <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">Math::NaN</a>(); }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="line" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ae046f5daa786ac26bf6ef95b55660b6c">  306</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">Geocentric</a>&amp; <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ae046f5daa786ac26bf6ef95b55660b6c">Earth</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _earth; }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">NormalGravity</a>&amp; WGS84();</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">NormalGravity</a>&amp; GRS80();</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> J2ToFlattening(real a, real GM, real omega, real J2);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> FlatteningToJ2(real a, real GM, real omega, real f);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  };</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160; </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_NORMALGRAVITY_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_a1f3a1edc25997ab831c4d2a677183bd9"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a1f3a1edc25997ab831c4d2a677183bd9">GeographicLib::NormalGravity::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:272</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_aaa5da0ad63a61ea7bdcc1bccdea8a99d"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#aaa5da0ad63a61ea7bdcc1bccdea8a99d">GeographicLib::NormalGravity::Init</a></div><div class="ttdeci">bool Init() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:229</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca93e5fa68d98ccd1ca911ba35bdb97fb1">glm::Y</a></div><div class="ttdeci">@ Y</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:41</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_a86e7bcd65613194dbd2d1a5045f4ac04"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a86e7bcd65613194dbd2d1a5045f4ac04">GeographicLib::NormalGravity::DynamicalFormFactor</a></div><div class="ttdeci">Math::real DynamicalFormFactor(int n=2) const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:258</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_ad1dc13a367125d3f8d291eaa98339186"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#ad1dc13a367125d3f8d291eaa98339186">GeographicLib::Math::NaN</a></div><div class="ttdeci">static T NaN()</div><div class="ttdef"><b>Definition:</b> Math.hpp:783</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_a6c7216cec8973a298df76766130288ca"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a6c7216cec8973a298df76766130288ca">GeographicLib::NormalGravity::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:235</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_af4e51c8e0702271b03b513449e0cf558"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#af4e51c8e0702271b03b513449e0cf558">GeographicLib::NormalGravity::EquatorialGravity</a></div><div class="ttdeci">Math::real EquatorialGravity() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:279</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_a8a990fefa65ab65e4d17d4766c71dc1a"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a8a990fefa65ab65e4d17d4766c71dc1a">GeographicLib::NormalGravity::AngularVelocity</a></div><div class="ttdeci">Math::real AngularVelocity() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:265</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca17841f41d3bb194d308976f76ed5c278">glm::Z</a></div><div class="ttdeci">@ Z</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:44</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_gravity_model_html"><div class="ttname"><a href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html">GeographicLib::GravityModel</a></div><div class="ttdoc">Model of the earth's gravity field.</div><div class="ttdef"><b>Definition:</b> GravityModel.hpp:87</div></div>
+<div class="ttc" id="a_geocentric_8hpp_html"><div class="ttname"><a href="../../df/d10/_geocentric_8hpp.html">Geocentric.hpp</a></div><div class="ttdoc">Header for GeographicLib::Geocentric class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_ad32e7902482d8bca27c98dd814c2616b"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ad32e7902482d8bca27c98dd814c2616b">GeographicLib::NormalGravity::SurfacePotential</a></div><div class="ttdeci">Math::real SurfacePotential() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:300</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html">GeographicLib::NormalGravity</a></div><div class="ttdoc">The normal gravity of the earth.</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:60</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_ab65f5d05a923e8a20b3ba1766ce35678"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ab65f5d05a923e8a20b3ba1766ce35678">GeographicLib::NormalGravity::MassConstant</a></div><div class="ttdeci">Math::real MassConstant() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:243</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a></div><div class="ttdoc">Geocentric coordinates</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:67</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becad19903ff4c8906b7f689596dae90097e">glm::X</a></div><div class="ttdeci">@ X</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:38</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_a73537747dbda9cc82af1af255a3d52cd"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a73537747dbda9cc82af1af255a3d52cd">GeographicLib::NormalGravity::PolarGravity</a></div><div class="ttdeci">Math::real PolarGravity() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:286</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_ae046f5daa786ac26bf6ef95b55660b6c"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ae046f5daa786ac26bf6ef95b55660b6c">GeographicLib::NormalGravity::Earth</a></div><div class="ttdeci">const Geocentric &amp; Earth() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:306</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_ab73c9c8bcb0d755faee378fa162ba359"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#ab73c9c8bcb0d755faee378fa162ba359">GeographicLib::NormalGravity::GravityFlattening</a></div><div class="ttdeci">Math::real GravityFlattening() const</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:293</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_normal_gravity_html_a55f749c3bb3e9d19626105041bf1b6fb"><div class="ttname"><a href="../../d0/da3/class_geographic_lib_1_1_normal_gravity.html#a55f749c3bb3e9d19626105041bf1b6fb">GeographicLib::NormalGravity::NormalGravity</a></div><div class="ttdeci">NormalGravity()</div><div class="ttdef"><b>Definition:</b> NormalGravity.hpp:116</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

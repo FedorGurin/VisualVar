@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/CassiniSoldner.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">CassiniSoldner.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d6e/_cassini_soldner_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_CASSINISOLDNER_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_CASSINISOLDNER_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d9/dde/_geodesic_8hpp.html">GeographicLib/Geodesic.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/df1/_geodesic_line_8hpp.html">GeographicLib/GeodesicLine.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html">   69</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html">CassiniSoldner</a> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">Geodesic</a> _earth;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html">GeodesicLine</a> _meridian;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    real _sbet0, _cbet0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> maxit_ = 10;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html">CassiniSoldner</a>(<span class="keyword">const</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">Geodesic</a>&amp; <a class="code" href="../../d8/dd9/mainwindow_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a> = <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a479d30b83e1d2d32ad31c96b4df1543a">Geodesic::WGS84</a>());</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html">CassiniSoldner</a>(real lat0, real lon0,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                   <span class="keyword">const</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">Geodesic</a>&amp; <a class="code" href="../../d8/dd9/mainwindow_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a> = <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a479d30b83e1d2d32ad31c96b4df1543a">Geodesic::WGS84</a>());</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> Reset(real lat0, real lon0);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">void</span> Forward(real lat, real lon,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                 real&amp; x, real&amp; y, real&amp; azi, real&amp; rk) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span> Reverse(real x, real y,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                 real&amp; lat, real&amp; lon, real&amp; azi, real&amp; rk) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ac08c96828dd21d0805608d15020de870">  152</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ac08c96828dd21d0805608d15020de870">Forward</a>(real lat, real lon,</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                 real&amp; x, real&amp; y)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      real azi, rk;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      Forward(lat, lon, x, y, azi, rk);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a6c7f42e5f1ab61cedd987e508169736c">  161</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a6c7f42e5f1ab61cedd987e508169736c">Reverse</a>(real x, real y,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                 real&amp; lat, real&amp; lon)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      real azi, rk;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      Reverse(x, y, lat, lon, azi, rk);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a7fb806ea0e14cd9d22e62398b7f556f7">  173</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a7fb806ea0e14cd9d22e62398b7f556f7">Init</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _meridian.<a class="code" href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html#a2105489769fc87af17fd893f2a9405aa">Init</a>(); }</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a1a4e4120796d1891f042a37189abfa5d">  178</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a1a4e4120796d1891f042a37189abfa5d">LatitudeOrigin</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> _meridian.<a class="code" href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html#a4afb17f41ec79d36d6284af5762b72ee">Latitude</a>(); }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ada0b22054f9c2843111326d1df703e17">  184</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ada0b22054f9c2843111326d1df703e17">LongitudeOrigin</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> _meridian.<a class="code" href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html#af11e7cd792a0d25d9192ac98806886d8">Longitude</a>(); }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#af9a342663f5dfed45db125c8183545bc">  191</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#af9a342663f5dfed45db125c8183545bc">MajorRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _earth.<a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a06b6dac507494b480e26887fa0832d22">MajorRadius</a>(); }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ab070c6065dee563cfd299031672c2ba9">  197</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ab070c6065dee563cfd299031672c2ba9">Flattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _earth.<a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a2b5c1649b624d214943878fe97f2b438">Flattening</a>(); }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseFlattening()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> _earth.InverseFlattening(); }</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  };</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_CASSINISOLDNER_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a06b6dac507494b480e26887fa0832d22"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a06b6dac507494b480e26887fa0832d22">GeographicLib::Geodesic::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:856</div></div>
+<div class="ttc" id="a_geodesic_line_8hpp_html"><div class="ttname"><a href="../../dc/df1/_geodesic_line_8hpp.html">GeodesicLine.hpp</a></div><div class="ttdoc">Header for GeographicLib::GeodesicLine class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_cassini_soldner_html_ac08c96828dd21d0805608d15020de870"><div class="ttname"><a href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ac08c96828dd21d0805608d15020de870">GeographicLib::CassiniSoldner::Forward</a></div><div class="ttdeci">void Forward(real lat, real lon, real &amp;x, real &amp;y) const</div><div class="ttdef"><b>Definition:</b> CassiniSoldner.hpp:152</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_cassini_soldner_html"><div class="ttname"><a href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html">GeographicLib::CassiniSoldner</a></div><div class="ttdoc">Cassini-Soldner projection.</div><div class="ttdef"><b>Definition:</b> CassiniSoldner.hpp:69</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a2b5c1649b624d214943878fe97f2b438"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a2b5c1649b624d214943878fe97f2b438">GeographicLib::Geodesic::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:862</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_cassini_soldner_html_ab070c6065dee563cfd299031672c2ba9"><div class="ttname"><a href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ab070c6065dee563cfd299031672c2ba9">GeographicLib::CassiniSoldner::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> CassiniSoldner.hpp:197</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_line_html"><div class="ttname"><a href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html">GeographicLib::GeodesicLine</a></div><div class="ttdoc">A geodesic line.</div><div class="ttdef"><b>Definition:</b> GeodesicLine.hpp:63</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_line_html_af11e7cd792a0d25d9192ac98806886d8"><div class="ttname"><a href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html#af11e7cd792a0d25d9192ac98806886d8">GeographicLib::GeodesicLine::Longitude</a></div><div class="ttdeci">Math::real Longitude() const</div><div class="ttdef"><b>Definition:</b> GeodesicLine.hpp:549</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_cassini_soldner_html_ada0b22054f9c2843111326d1df703e17"><div class="ttname"><a href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#ada0b22054f9c2843111326d1df703e17">GeographicLib::CassiniSoldner::LongitudeOrigin</a></div><div class="ttdeci">Math::real LongitudeOrigin() const</div><div class="ttdef"><b>Definition:</b> CassiniSoldner.hpp:184</div></div>
+<div class="ttc" id="amainwindow_8cpp_html_a067e27172a5bc3c47458cccfa3d2a01d"><div class="ttname"><a href="../../d8/dd9/mainwindow_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a></div><div class="ttdeci">GeographicLib::Geocentric * earth</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:17</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_cassini_soldner_html_af9a342663f5dfed45db125c8183545bc"><div class="ttname"><a href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#af9a342663f5dfed45db125c8183545bc">GeographicLib::CassiniSoldner::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> CassiniSoldner.hpp:191</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_cassini_soldner_html_a1a4e4120796d1891f042a37189abfa5d"><div class="ttname"><a href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a1a4e4120796d1891f042a37189abfa5d">GeographicLib::CassiniSoldner::LatitudeOrigin</a></div><div class="ttdeci">Math::real LatitudeOrigin() const</div><div class="ttdef"><b>Definition:</b> CassiniSoldner.hpp:178</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">GeographicLib::Geodesic</a></div><div class="ttdoc">Geodesic calculations</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:175</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a479d30b83e1d2d32ad31c96b4df1543a"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a479d30b83e1d2d32ad31c96b4df1543a">GeographicLib::Geodesic::WGS84</a></div><div class="ttdeci">static const Geodesic &amp; WGS84()</div><div class="ttdef"><b>Definition:</b> Geodesic.cpp:89</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_line_html_a2105489769fc87af17fd893f2a9405aa"><div class="ttname"><a href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html#a2105489769fc87af17fd893f2a9405aa">GeographicLib::GeodesicLine::Init</a></div><div class="ttdeci">bool Init() const</div><div class="ttdef"><b>Definition:</b> GeodesicLine.hpp:538</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_cassini_soldner_html_a6c7f42e5f1ab61cedd987e508169736c"><div class="ttname"><a href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a6c7f42e5f1ab61cedd987e508169736c">GeographicLib::CassiniSoldner::Reverse</a></div><div class="ttdeci">void Reverse(real x, real y, real &amp;lat, real &amp;lon) const</div><div class="ttdef"><b>Definition:</b> CassiniSoldner.hpp:161</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="a_geodesic_8hpp_html"><div class="ttname"><a href="../../d9/dde/_geodesic_8hpp.html">Geodesic.hpp</a></div><div class="ttdoc">Header for GeographicLib::Geodesic class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_line_html_a4afb17f41ec79d36d6284af5762b72ee"><div class="ttname"><a href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html#a4afb17f41ec79d36d6284af5762b72ee">GeographicLib::GeodesicLine::Latitude</a></div><div class="ttdeci">Math::real Latitude() const</div><div class="ttdef"><b>Definition:</b> GeodesicLine.hpp:543</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_cassini_soldner_html_a7fb806ea0e14cd9d22e62398b7f556f7"><div class="ttname"><a href="../../d0/d66/class_geographic_lib_1_1_cassini_soldner.html#a7fb806ea0e14cd9d22e62398b7f556f7">GeographicLib::CassiniSoldner::Init</a></div><div class="ttdeci">bool Init() const</div><div class="ttdef"><b>Definition:</b> CassiniSoldner.hpp:173</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

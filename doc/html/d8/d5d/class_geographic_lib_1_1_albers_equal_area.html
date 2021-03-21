@@ -1,0 +1,828 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::AlbersEqualArea</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">AlbersEqualArea</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="#friends">Друзья</a> &#124;
+<a href="../../da/dee/class_geographic_lib_1_1_albers_equal_area-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::AlbersEqualArea</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Albers equal area conic projection.  
+ <a href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d6/db1/_albers_equal_area_8hpp_source.html">AlbersEqualArea.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a08edd228ba175a5ae71d783c4a712e50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a08edd228ba175a5ae71d783c4a712e50">AlbersEqualArea</a> (real a, real f, real stdlat, real k0)</td></tr>
+<tr class="separator:a08edd228ba175a5ae71d783c4a712e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3851897cd1944503f81b46b7ce372d2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a3851897cd1944503f81b46b7ce372d2a">AlbersEqualArea</a> (real a, real f, real stdlat1, real stdlat2, real k1)</td></tr>
+<tr class="separator:a3851897cd1944503f81b46b7ce372d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58535d87e148d0cc474f3139c5188371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a58535d87e148d0cc474f3139c5188371">AlbersEqualArea</a> (real a, real f, real sinlat1, real coslat1, real sinlat2, real coslat2, real k1)</td></tr>
+<tr class="separator:a58535d87e148d0cc474f3139c5188371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c00022edeb6b67dcd4e00f087b412c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a0c00022edeb6b67dcd4e00f087b412c4">SetScale</a> (real lat, real k=real(1))</td></tr>
+<tr class="separator:a0c00022edeb6b67dcd4e00f087b412c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9719f9f60744b9fc53ba21fa5f7eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#abf9719f9f60744b9fc53ba21fa5f7eed">Forward</a> (real lon0, real lat, real lon, real &amp;x, real &amp;y, real &amp;gamma, real &amp;k) const</td></tr>
+<tr class="separator:abf9719f9f60744b9fc53ba21fa5f7eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a043f6fbf1fd3125dca422a5b3ab3108b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a043f6fbf1fd3125dca422a5b3ab3108b">Reverse</a> (real lon0, real x, real y, real &amp;lat, real &amp;lon, real &amp;gamma, real &amp;k) const</td></tr>
+<tr class="separator:a043f6fbf1fd3125dca422a5b3ab3108b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbf1a1a3fa28045fc9e05c95f3da0457"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#abbf1a1a3fa28045fc9e05c95f3da0457">Forward</a> (real lon0, real lat, real lon, real &amp;x, real &amp;y) const</td></tr>
+<tr class="separator:abbf1a1a3fa28045fc9e05c95f3da0457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea0a2761930b3198582b0f32f3c0e06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a3ea0a2761930b3198582b0f32f3c0e06">Reverse</a> (real lon0, real x, real y, real &amp;lat, real &amp;lon) const</td></tr>
+<tr class="separator:a3ea0a2761930b3198582b0f32f3c0e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions</div></td></tr>
+<tr class="memitem:a8968df286736241a4410c8fdeaaa926a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a8968df286736241a4410c8fdeaaa926a">MajorRadius</a> () const</td></tr>
+<tr class="separator:a8968df286736241a4410c8fdeaaa926a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9391ec6f5073560b5f345382cbf9bbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#ad9391ec6f5073560b5f345382cbf9bbd">Flattening</a> () const</td></tr>
+<tr class="separator:ad9391ec6f5073560b5f345382cbf9bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ff1a0b0cb655832a2940c735f6da995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a4ff1a0b0cb655832a2940c735f6da995">OriginLatitude</a> () const</td></tr>
+<tr class="separator:a4ff1a0b0cb655832a2940c735f6da995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43960d73b51ec53641f0882835807dfa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a43960d73b51ec53641f0882835807dfa">CentralScale</a> () const</td></tr>
+<tr class="separator:a43960d73b51ec53641f0882835807dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a8f3bd86c331dfa3daa7ee3ed01963c1a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">AlbersEqualArea</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a8f3bd86c331dfa3daa7ee3ed01963c1a">CylindricalEqualArea</a> ()</td></tr>
+<tr class="separator:a8f3bd86c331dfa3daa7ee3ed01963c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a915063ccc0bacbca271d281785b58b8a"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">AlbersEqualArea</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a915063ccc0bacbca271d281785b58b8a">AzimuthalEqualAreaNorth</a> ()</td></tr>
+<tr class="separator:a915063ccc0bacbca271d281785b58b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd1f7bd5523a4943f441884d66797cd"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">AlbersEqualArea</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a9bd1f7bd5523a4943f441884d66797cd">AzimuthalEqualAreaSouth</a> ()</td></tr>
+<tr class="separator:a9bd1f7bd5523a4943f441884d66797cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Друзья</h2></td></tr>
+<tr class="memitem:a26de2ba48553f37df3a39cf643961b51"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a26de2ba48553f37df3a39cf643961b51">Ellipsoid</a></td></tr>
+<tr class="separator:a26de2ba48553f37df3a39cf643961b51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Albers equal area conic projection. </p>
+<p>Implementation taken from the report,</p><ul>
+<li>J. P. Snyder, <a href="http://pubs.er.usgs.gov/usgspubs/pp/pp1395">Map Projections: A Working Manual</a>, USGS Professional Paper 1395 (1987), pp. 101&ndash;102.</li>
+</ul>
+<p>This is a implementation of the equations in Snyder except that divided differences will be [have been] used to transform the expressions into ones which may be evaluated accurately. [In this implementation, the projection correctly becomes the cylindrical equal area or the azimuthal equal area projection when the standard latitude is the equator or a pole.]</p>
+<p>The ellipsoid parameters, the standard parallels, and the scale on the standard parallels are set in the constructor. Internally, the case with two standard parallels is converted into a single standard parallel, the latitude of minimum azimuthal scale, with an azimuthal scale specified on this parallel. This latitude is also used as the latitude of origin which is returned by <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a4ff1a0b0cb655832a2940c735f6da995">AlbersEqualArea::OriginLatitude</a>. The azimuthal scale on the latitude of origin is given by <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a43960d73b51ec53641f0882835807dfa">AlbersEqualArea::CentralScale</a>. The case with two standard parallels at opposite poles is singular and is disallowed. The central meridian (which is a trivial shift of the longitude) is specified as the <em>lon0</em> argument of the <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#abf9719f9f60744b9fc53ba21fa5f7eed">AlbersEqualArea::Forward</a> and <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a043f6fbf1fd3125dca422a5b3ab3108b">AlbersEqualArea::Reverse</a> functions. <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#abf9719f9f60744b9fc53ba21fa5f7eed">AlbersEqualArea::Forward</a> and <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a043f6fbf1fd3125dca422a5b3ab3108b">AlbersEqualArea::Reverse</a> also return the meridian convergence, &gamma;, and azimuthal scale, <em>k</em>. A small square aligned with the cardinal directions is projected to a rectangle with dimensions <em>k</em> (in the E-W direction) and 1/<em>k</em> (in the N-S direction). The E-W sides of the rectangle are oriented &gamma; degrees counter-clockwise from the <em>x</em> axis. There is no provision in this class for specifying a false easting or false northing or a different latitude of origin.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --><p><a href="../../ConicProj.1.html">ConicProj</a> is a command-line utility providing access to the functionality of <a class="el" href="../../d2/d56/class_geographic_lib_1_1_lambert_conformal_conic.html" title="Lambert conformal conic projection.">LambertConformalConic</a> and <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html" title="Albers equal area conic projection.">AlbersEqualArea</a>. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a08edd228ba175a5ae71d783c4a712e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08edd228ba175a5ae71d783c4a712e50">&#9670;&nbsp;</a></span>AlbersEqualArea() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::AlbersEqualArea::AlbersEqualArea </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>stdlat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>k0</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor with a single standard parallel.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>equatorial radius of ellipsoid (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>flattening of ellipsoid. Setting <em>f</em> = 0 gives a sphere. Negative <em>f</em> gives a prolate ellipsoid. If <em>f</em> &gt; 1, set flattening to 1/<em>f</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stdlat</td><td>standard parallel (degrees), the circle of tangency. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">k0</td><td>azimuthal scale on the standard parallel. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>a</em>, (1 &minus; <em>f</em>) <em>a</em>, or <em>k0</em> is not positive. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>stdlat</em> is not in [&minus;90&deg;, 90&deg;]. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3851897cd1944503f81b46b7ce372d2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3851897cd1944503f81b46b7ce372d2a">&#9670;&nbsp;</a></span>AlbersEqualArea() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::AlbersEqualArea::AlbersEqualArea </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>stdlat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>stdlat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>k1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor with two standard parallels.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>equatorial radius of ellipsoid (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>flattening of ellipsoid. Setting <em>f</em> = 0 gives a sphere. Negative <em>f</em> gives a prolate ellipsoid. If <em>f</em> &gt; 1, set flattening to 1/<em>f</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stdlat1</td><td>first standard parallel (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stdlat2</td><td>second standard parallel (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">k1</td><td>azimuthal scale on the standard parallels. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>a</em>, (1 &minus; <em>f</em>) <em>a</em>, or <em>k1</em> is not positive. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>stdlat1</em> or <em>stdlat2</em> is not in [&minus;90&deg;, 90&deg;], or if <em>stdlat1</em> and <em>stdlat2</em> are opposite poles. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a58535d87e148d0cc474f3139c5188371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58535d87e148d0cc474f3139c5188371">&#9670;&nbsp;</a></span>AlbersEqualArea() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::AlbersEqualArea::AlbersEqualArea </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>sinlat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>coslat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>sinlat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>coslat2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>k1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor with two standard parallels specified by sines and cosines.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>equatorial radius of ellipsoid (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>flattening of ellipsoid. Setting <em>f</em> = 0 gives a sphere. Negative <em>f</em> gives a prolate ellipsoid. If <em>f</em> &gt; 1, set flattening to 1/<em>f</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sinlat1</td><td>sine of first standard parallel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coslat1</td><td>cosine of first standard parallel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sinlat2</td><td>sine of second standard parallel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coslat2</td><td>cosine of second standard parallel. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">k1</td><td>azimuthal scale on the standard parallels. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>a</em>, (1 &minus; <em>f</em>) <em>a</em>, or <em>k1</em> is not positive. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>stdlat1</em> or <em>stdlat2</em> is not in [&minus;90&deg;, 90&deg;], or if <em>stdlat1</em> and <em>stdlat2</em> are opposite poles.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This allows parallels close to the poles to be specified accurately. This routine computes the latitude of origin and the azimuthal scale at this latitude. If <em>dlat</em> = abs(<em>lat2</em> &minus; <em>lat1</em>) &le; 160&deg;, then the error in the latitude of origin is less than 4.5 &times; 10<sup>&minus;14</sup>d;. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a915063ccc0bacbca271d281785b58b8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a915063ccc0bacbca271d281785b58b8a">&#9670;&nbsp;</a></span>AzimuthalEqualAreaNorth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">AlbersEqualArea</a> &amp; GeographicLib::AlbersEqualArea::AzimuthalEqualAreaNorth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A global instantiation of <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html" title="Albers equal area conic projection.">AlbersEqualArea</a> with the WGS84 ellipsoid, <em>stdlat</em> = 90&deg;, and <em>k0</em> = 1. This degenerates to the Lambert azimuthal equal area projection. </p>
+
+</div>
+</div>
+<a id="a9bd1f7bd5523a4943f441884d66797cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd1f7bd5523a4943f441884d66797cd">&#9670;&nbsp;</a></span>AzimuthalEqualAreaSouth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">AlbersEqualArea</a> &amp; GeographicLib::AlbersEqualArea::AzimuthalEqualAreaSouth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A global instantiation of <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html" title="Albers equal area conic projection.">AlbersEqualArea</a> with the WGS84 ellipsoid, <em>stdlat</em> = &minus;90&deg;, and <em>k0</em> = 1. This degenerates to the Lambert azimuthal equal area projection. </p>
+
+</div>
+</div>
+<a id="a43960d73b51ec53641f0882835807dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43960d73b51ec53641f0882835807dfa">&#9670;&nbsp;</a></span>CentralScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::AlbersEqualArea::CentralScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>central scale for the projection. This is the azimuthal scale on the latitude of origin. </dd></dl>
+
+</div>
+</div>
+<a id="a8f3bd86c331dfa3daa7ee3ed01963c1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f3bd86c331dfa3daa7ee3ed01963c1a">&#9670;&nbsp;</a></span>CylindricalEqualArea()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">AlbersEqualArea</a> &amp; GeographicLib::AlbersEqualArea::CylindricalEqualArea </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A global instantiation of <a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html" title="Albers equal area conic projection.">AlbersEqualArea</a> with the WGS84 ellipsoid, <em>stdlat</em> = 0, and <em>k0</em> = 1. This degenerates to the cylindrical equal area projection. </p>
+
+</div>
+</div>
+<a id="ad9391ec6f5073560b5f345382cbf9bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9391ec6f5073560b5f345382cbf9bbd">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::AlbersEqualArea::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the ellipsoid. This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="abbf1a1a3fa28045fc9e05c95f3da0457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbf1a1a3fa28045fc9e05c95f3da0457">&#9670;&nbsp;</a></span>Forward() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::AlbersEqualArea::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#abf9719f9f60744b9fc53ba21fa5f7eed">AlbersEqualArea::Forward</a> without returning the convergence and scale. </p>
+
+</div>
+</div>
+<a id="abf9719f9f60744b9fc53ba21fa5f7eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9719f9f60744b9fc53ba21fa5f7eed">&#9670;&nbsp;</a></span>Forward() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::AlbersEqualArea::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Forward projection, from geographic to Lambert conformal conic.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon0</td><td>central meridian longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>easting of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>northing of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gamma</td><td>meridian convergence at point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">k</td><td>azimuthal scale of projection at point; the radial scale is the 1/<em>k</em>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The latitude origin is given by AlbersEqualArea::LatitudeOrigin(). No false easting or northing is added and <em>lat</em> should be in the range [&minus;90&deg;, 90&deg;]. The values of <em>x</em> and <em>y</em> returned for points which project to infinity (i.e., one or both of the poles) will be large but finite. </p>
+
+</div>
+</div>
+<a id="a8968df286736241a4410c8fdeaaa926a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8968df286736241a4410c8fdeaaa926a">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::AlbersEqualArea::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the ellipsoid (meters). This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="a4ff1a0b0cb655832a2940c735f6da995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ff1a0b0cb655832a2940c735f6da995">&#9670;&nbsp;</a></span>OriginLatitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::AlbersEqualArea::OriginLatitude </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>latitude of the origin for the projection (degrees).</dd></dl>
+<p>This is the latitude of minimum azimuthal scale and equals the <em>stdlat</em> in the 1-parallel constructor and lies between <em>stdlat1</em> and <em>stdlat2</em> in the 2-parallel constructors. </p>
+
+</div>
+</div>
+<a id="a3ea0a2761930b3198582b0f32f3c0e06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea0a2761930b3198582b0f32f3c0e06">&#9670;&nbsp;</a></span>Reverse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::AlbersEqualArea::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html#a043f6fbf1fd3125dca422a5b3ab3108b">AlbersEqualArea::Reverse</a> without returning the convergence and scale. </p>
+
+</div>
+</div>
+<a id="a043f6fbf1fd3125dca422a5b3ab3108b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a043f6fbf1fd3125dca422a5b3ab3108b">&#9670;&nbsp;</a></span>Reverse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::AlbersEqualArea::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reverse projection, from Lambert conformal conic to geographic.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon0</td><td>central meridian longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>easting of point (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>northing of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gamma</td><td>meridian convergence at point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">k</td><td>azimuthal scale of projection at point; the radial scale is the 1/<em>k</em>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The latitude origin is given by AlbersEqualArea::LatitudeOrigin(). No false easting or northing is added. The value of <em>lon</em> returned is in the range [&minus;180&deg;, 180&deg;). The value of <em>lat</em> returned is in the range [&minus;90&deg;, 90&deg;]. If the input point is outside the legal projected space the nearest pole is returned. </p>
+
+</div>
+</div>
+<a id="a0c00022edeb6b67dcd4e00f087b412c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c00022edeb6b67dcd4e00f087b412c4">&#9670;&nbsp;</a></span>SetScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::AlbersEqualArea::SetScale </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>k</em> = <code>real(1)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the azimuthal scale for the projection.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>(degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">k</td><td>azimuthal scale at latitude <em>lat</em> (default 1). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td><em>k</em> is not positive. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>lat</em> is not in (&minus;90&deg;, 90&deg;).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This allows a "latitude of conformality" to be specified. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Документация по друзьям класса и функциям, относящимся к классу</h2>
+<a id="a26de2ba48553f37df3a39cf643961b51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26de2ba48553f37df3a39cf643961b51">&#9670;&nbsp;</a></span>Ellipsoid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html">Ellipsoid</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d6/db1/_albers_equal_area_8hpp_source.html">AlbersEqualArea.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../da/dfe/_albers_equal_area_8cpp.html">AlbersEqualArea.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:18. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

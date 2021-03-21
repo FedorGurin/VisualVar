@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/gtx/matrix_interpolation.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_e20a439b6cdbf5d4e02750a868806e68.html">gtx</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">matrix_interpolation.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/ddf/matrix__interpolation_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifndef GLM_GTX_matrix_interpolation</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d1/ddf/matrix__interpolation_8hpp.html#aac81a4099c6b9f21b64aa6283644b02f">   39</a></span>&#160;<span class="preprocessor">#define GLM_GTX_matrix_interpolation GLM_VERSION</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Dependency:</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//#include &quot;../glm.hpp&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#if(defined(GLM_MESSAGES) &amp;&amp; !defined(glm_ext))</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#   pragma message(&quot;GLM: GLM_GTX_matrix_interpolation extension included&quot;)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/dc8/group__gtx__matrix__interpolation.html#ga9d83dd69424140379624d570b0a6c238">axisAngle</a>(</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        detail::tmat4x4&lt;T&gt; <span class="keyword">const</span> &amp; mat,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        detail::tvec3&lt;T&gt; &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga72457604550d0414e522dbec0d98f276">axis</a>,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../da/dc8/group__gtx__matrix__interpolation.html#ga9c35118f46d7e7baf93b63612628b600">axisAngleMatrix</a>(</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        detail::tvec3&lt;T&gt; <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga72457604550d0414e522dbec0d98f276">axis</a>,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <span class="keyword">const</span> <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../da/dc8/group__gtx__matrix__interpolation.html#ga67504746efa8e5f643498a2223a437ce">extractMatrixRotation</a>(</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        detail::tmat4x4&lt;T&gt; <span class="keyword">const</span> &amp; mat);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../da/dc8/group__gtx__matrix__interpolation.html#ga797ad3192e9cfb80840a93a20b55896a">interpolate</a>(</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        detail::tmat4x4&lt;T&gt; <span class="keyword">const</span> &amp; m1,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        detail::tmat4x4&lt;T&gt; <span class="keyword">const</span> &amp; m2,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <span class="keyword">const</span> delta);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}<span class="comment">//namespace glm</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d2e/matrix__interpolation_8inl.html">matrix_interpolation.inl</a>&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif//GLM_GTX_matrix_interpolation</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__gtx__matrix__interpolation_html_ga9d83dd69424140379624d570b0a6c238"><div class="ttname"><a href="../../da/dc8/group__gtx__matrix__interpolation.html#ga9d83dd69424140379624d570b0a6c238">glm::axisAngle</a></div><div class="ttdeci">void axisAngle(detail::tmat4x4&lt; T &gt; const &amp;mat, detail::tvec3&lt; T &gt; &amp;axis, T &amp;angle)</div><div class="ttdef"><b>Definition:</b> matrix_interpolation.inl:14</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">glm::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:43</div></div>
+<div class="ttc" id="agroup__gtx__matrix__interpolation_html_ga797ad3192e9cfb80840a93a20b55896a"><div class="ttname"><a href="../../da/dc8/group__gtx__matrix__interpolation.html#ga797ad3192e9cfb80840a93a20b55896a">glm::interpolate</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; interpolate(detail::tmat4x4&lt; T &gt; const &amp;m1, detail::tmat4x4&lt; T &gt; const &amp;m2, T const delta)</div><div class="ttdef"><b>Definition:</b> matrix_interpolation.inl:114</div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="amatrix__interpolation_8inl_html"><div class="ttname"><a href="../../d8/d2e/matrix__interpolation_8inl.html">matrix_interpolation.inl</a></div></div>
+<div class="ttc" id="agroup__gtx__matrix__interpolation_html_ga9c35118f46d7e7baf93b63612628b600"><div class="ttname"><a href="../../da/dc8/group__gtx__matrix__interpolation.html#ga9c35118f46d7e7baf93b63612628b600">glm::axisAngleMatrix</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; axisAngleMatrix(detail::tvec3&lt; T &gt; const &amp;axis, T const angle)</div><div class="ttdef"><b>Definition:</b> matrix_interpolation.inl:82</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_ga72457604550d0414e522dbec0d98f276"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#ga72457604550d0414e522dbec0d98f276">glm::axis</a></div><div class="ttdeci">detail::tvec3&lt; valType &gt; axis(detail::tquat&lt; valType &gt; const &amp;x)</div></div>
+<div class="ttc" id="agroup__gtx__matrix__interpolation_html_ga67504746efa8e5f643498a2223a437ce"><div class="ttname"><a href="../../da/dc8/group__gtx__matrix__interpolation.html#ga67504746efa8e5f643498a2223a437ce">glm::extractMatrixRotation</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; extractMatrixRotation(detail::tmat4x4&lt; T &gt; const &amp;mat)</div><div class="ttdef"><b>Definition:</b> matrix_interpolation.inl:101</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_ga69041d18bd8539fe82d6170932d28362"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">glm::angle</a></div><div class="ttdeci">valType angle(detail::tquat&lt; valType &gt; const &amp;x)</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

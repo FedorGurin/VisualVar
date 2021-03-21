@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/GeoCoords.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">GeoCoords.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d43/_geo_coords_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_GEOCOORDS_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_GEOCOORDS_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/d7e/_u_t_m_u_p_s_8hpp.html">GeographicLib/UTMUPS.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html">   49</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html">GeoCoords</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    real _lat, _long, _easting, _northing, _gamma, _k;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">bool</span> _northp;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> _zone;                  <span class="comment">// See UTMUPS::zonespec</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">mutable</span> real _alt_easting, _alt_northing, _alt_gamma, _alt_k;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">mutable</span> <span class="keywordtype">int</span> _alt_zone;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> CopyToAlt()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      _alt_easting = _easting;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      _alt_northing = _northing;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      _alt_gamma = _gamma;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      _alt_k = _k;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      _alt_zone = _zone;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> UTMUPSString(<span class="keywordtype">int</span> zone, <span class="keywordtype">bool</span> northp, real easting, real northing,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                             <span class="keywordtype">int</span> prec, <span class="keywordtype">bool</span> abbrev, std::string&amp; utm);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> FixHemisphere();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a8b3f4a919ba4478c4fec0e7b01e84c57">   76</a></span>&#160;    <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a8b3f4a919ba4478c4fec0e7b01e84c57">GeoCoords</a>()</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      : _lat(<a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html">Math</a>::NaN())</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      , _long(<a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html">Math</a>::NaN())</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      , _easting(<a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html">Math</a>::NaN())</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      , _northing(<a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html">Math</a>::NaN())</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      , _gamma(<a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html">Math</a>::NaN())</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      , _k(<a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html">Math</a>::NaN())</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      , _northp(false)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      , _zone(<a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html">UTMUPS</a>::INVALID)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    { CopyToAlt(); }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a38b3b49fd46e3f517b44c1394b44ca1e">  178</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a38b3b49fd46e3f517b44c1394b44ca1e">GeoCoords</a>(<span class="keyword">const</span> std::string&amp; s,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                       <span class="keywordtype">bool</span> centerp = <span class="keyword">true</span>, <span class="keywordtype">bool</span> longfirst = <span class="keyword">false</span>)</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    { Reset(s, centerp, longfirst); }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7bde6a5cba74adf66d831788e6be8e65">  193</a></span>&#160;    <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7bde6a5cba74adf66d831788e6be8e65">GeoCoords</a>(real latitude, real longitude, <span class="keywordtype">int</span> zone = <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a>) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      Reset(latitude, longitude, zone);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aaab765054416e1243f2d7b36edc8e0d4">  207</a></span>&#160;    <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aaab765054416e1243f2d7b36edc8e0d4">GeoCoords</a>(<span class="keywordtype">int</span> zone, <span class="keywordtype">bool</span> northp, real easting, real northing) {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      Reset(zone, northp, easting, northing);</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordtype">void</span> Reset(<span class="keyword">const</span> std::string&amp; s,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;               <span class="keywordtype">bool</span> centerp = <span class="keyword">true</span>, <span class="keywordtype">bool</span> longfirst = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a0cbbebaa7bb77f91f3f8dbbadfd6532a">  237</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a0cbbebaa7bb77f91f3f8dbbadfd6532a">Reset</a>(real latitude, real longitude, <span class="keywordtype">int</span> zone = <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a>) {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a921d6c23e728e0b17651902d43fb56e8">UTMUPS::Forward</a>(latitude, longitude,</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                      _zone, _northp, _easting, _northing, _gamma, _k,</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                      zone);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      _lat = latitude;</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      _long = longitude;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <span class="keywordflow">if</span> (_long &gt;= 180) _long -= 360;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_long &lt; -180) _long += 360;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      CopyToAlt();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00259"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ab072761684d992f508b5a3b9440653fb">  259</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ab072761684d992f508b5a3b9440653fb">Reset</a>(<span class="keywordtype">int</span> zone, <span class="keywordtype">bool</span> northp, real easting, real northing) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aaf417ae6bed6da324aa03fc96ee0dda4">UTMUPS::Reverse</a>(zone, northp, easting, northing,</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                      _lat, _long, _gamma, _k);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      _zone = zone;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      _northp = northp;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;      _easting = easting;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      _northing = northing;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;      FixHemisphere();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;      CopyToAlt();</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a73e01ea96a18329eb3c342e34dd3b258">  277</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a73e01ea96a18329eb3c342e34dd3b258">Latitude</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _lat; }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aac602348c6133c0f891eba4903d47615">  282</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aac602348c6133c0f891eba4903d47615">Longitude</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _long; }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aa508a1d251395dc974105b85c3811cce">  287</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aa508a1d251395dc974105b85c3811cce">Easting</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _easting; }</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
+<div class="line"><a name="l00292"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a0f406594448a67cc988655d9bc66e1ca">  292</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a0f406594448a67cc988655d9bc66e1ca">Northing</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _northing; }</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a5fa2e635848933b4fbadab589fad344d">  297</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a5fa2e635848933b4fbadab589fad344d">Convergence</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _gamma; }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160; </div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ac2a15bd4fa82e372ff8e9a4dcff33fc1">  302</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ac2a15bd4fa82e372ff8e9a4dcff33fc1">Scale</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _k; }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a9a2d60909e229f83197d73e84b889327">  307</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a9a2d60909e229f83197d73e84b889327">Northp</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _northp; }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7c8169a884094165cd55f06a2d559e87">  312</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7c8169a884094165cd55f06a2d559e87">Hemisphere</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _northp ? <span class="charliteral">&#39;n&#39;</span> : <span class="charliteral">&#39;s&#39;</span>; }</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00317"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#abb146874516a2beafd97113667eb0974">  317</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#abb146874516a2beafd97113667eb0974">Zone</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _zone; }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a78fa80051e065c9a6e1d0c2381727a06">  336</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a78fa80051e065c9a6e1d0c2381727a06">SetAltZone</a>(<span class="keywordtype">int</span> zone = <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a>)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;      <span class="keywordflow">if</span> (zone == <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a9059a8e3b4721e27869e99ed1ae3d320">UTMUPS::MATCH</a>)</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;      zone = <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a62623c295d1b43318a9fa762c3da94ea">UTMUPS::StandardZone</a>(_lat, _long, zone);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;      <span class="keywordflow">if</span> (zone == _zone)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        CopyToAlt();</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;      <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordtype">bool</span> northp;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a921d6c23e728e0b17651902d43fb56e8">UTMUPS::Forward</a>(_lat, _long,</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;                        _alt_zone, northp,</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                        _alt_easting, _alt_northing, _alt_gamma, _alt_k,</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                        zone);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;      }</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a111d529da067d11e66ac1fbb1e63bb6b">  354</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a111d529da067d11e66ac1fbb1e63bb6b">AltZone</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _alt_zone; }</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a962580d4647fcc2dda330dde726abae9">  359</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a962580d4647fcc2dda330dde726abae9">AltEasting</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _alt_easting; }</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aadae867ffe502d7643b12c6cdffd83d6">  364</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aadae867ffe502d7643b12c6cdffd83d6">AltNorthing</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _alt_northing; }</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#abdf26c6324396ce0cb8031bd8d7ae2dd">  369</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#abdf26c6324396ce0cb8031bd8d7ae2dd">AltConvergence</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _alt_gamma; }</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#af34328a442c6385d3bd986f2d90ce463">  374</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#af34328a442c6385d3bd986f2d90ce463">AltScale</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _alt_k; }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    std::string GeoRepresentation(<span class="keywordtype">int</span> prec = 0, <span class="keywordtype">bool</span> longfirst = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    std::string DMSRepresentation(<span class="keywordtype">int</span> prec = 0, <span class="keywordtype">bool</span> longfirst = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;                                  <span class="keywordtype">char</span> dmssep = <span class="keywordtype">char</span>(0))</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;      <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    std::string MGRSRepresentation(<span class="keywordtype">int</span> prec = 0) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    std::string UTMUPSRepresentation(<span class="keywordtype">int</span> prec = 0, <span class="keywordtype">bool</span> abbrev = <span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160; </div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    std::string UTMUPSRepresentation(<span class="keywordtype">bool</span> northp, <span class="keywordtype">int</span> prec = 0,</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;                                     <span class="keywordtype">bool</span> abbrev = <span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    std::string AltMGRSRepresentation(<span class="keywordtype">int</span> prec = 0) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    std::string AltUTMUPSRepresentation(<span class="keywordtype">int</span> prec = 0, <span class="keywordtype">bool</span> abbrev = <span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    std::string AltUTMUPSRepresentation(<span class="keywordtype">bool</span> northp, <span class="keywordtype">int</span> prec = 0,</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                                        <span class="keywordtype">bool</span> abbrev = <span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
+<div class="line"><a name="l00529"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a036c3dff734f5a9d89ebc742fc49d6d1">  529</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a036c3dff734f5a9d89ebc742fc49d6d1">MajorRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a293aa30508096d49db77a23917ea1092">UTMUPS::MajorRadius</a>(); }</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160; </div>
+<div class="line"><a name="l00537"></a><span class="lineno"><a class="line" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a3238f51b85207c01bb77dbd5e1ac3975">  537</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a3238f51b85207c01bb77dbd5e1ac3975">Flattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a182de2e29f1181c55a266777039b8a9d">UTMUPS::Flattening</a>(); }</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseFlattening()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> UTMUPS::InverseFlattening(); }</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;  };</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160; </div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_GEOCOORDS_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">GeographicLib::UTMUPS::STANDARD</a></div><div class="ttdeci">@ STANDARD</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:138</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a962580d4647fcc2dda330dde726abae9"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a962580d4647fcc2dda330dde726abae9">GeographicLib::GeoCoords::AltEasting</a></div><div class="ttdeci">Math::real AltEasting() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:359</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_aac602348c6133c0f891eba4903d47615"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aac602348c6133c0f891eba4903d47615">GeographicLib::GeoCoords::Longitude</a></div><div class="ttdeci">Math::real Longitude() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:282</div></div>
+<div class="ttc" id="a_u_t_m_u_p_s_8hpp_html"><div class="ttname"><a href="../../d4/d7e/_u_t_m_u_p_s_8hpp.html">UTMUPS.hpp</a></div><div class="ttdoc">Header for GeographicLib::UTMUPS class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a7c8169a884094165cd55f06a2d559e87"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7c8169a884094165cd55f06a2d559e87">GeographicLib::GeoCoords::Hemisphere</a></div><div class="ttdeci">char Hemisphere() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:312</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html">GeographicLib::UTMUPS</a></div><div class="ttdoc">Convert between geographic coordinates and UTM/UPS.</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:75</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a0f406594448a67cc988655d9bc66e1ca"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a0f406594448a67cc988655d9bc66e1ca">GeographicLib::GeoCoords::Northing</a></div><div class="ttdeci">Math::real Northing() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:292</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a5fa2e635848933b4fbadab589fad344d"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a5fa2e635848933b4fbadab589fad344d">GeographicLib::GeoCoords::Convergence</a></div><div class="ttdeci">Math::real Convergence() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:297</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a0c459615da18cc899a960bdc8c5b11b7a9059a8e3b4721e27869e99ed1ae3d320"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a9059a8e3b4721e27869e99ed1ae3d320">GeographicLib::UTMUPS::MATCH</a></div><div class="ttdeci">@ MATCH</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:122</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a62623c295d1b43318a9fa762c3da94ea"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a62623c295d1b43318a9fa762c3da94ea">GeographicLib::UTMUPS::StandardZone</a></div><div class="ttdeci">static int StandardZone(real lat, real lon, int setzone=STANDARD)</div><div class="ttdef"><b>Definition:</b> UTMUPS.cpp:42</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a921d6c23e728e0b17651902d43fb56e8"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a921d6c23e728e0b17651902d43fb56e8">GeographicLib::UTMUPS::Forward</a></div><div class="ttdeci">static void Forward(real lat, real lon, int &amp;zone, bool &amp;northp, real &amp;x, real &amp;y, real &amp;gamma, real &amp;k, int setzone=STANDARD, bool mgrslimits=false)</div><div class="ttdef"><b>Definition:</b> UTMUPS.cpp:66</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a036c3dff734f5a9d89ebc742fc49d6d1"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a036c3dff734f5a9d89ebc742fc49d6d1">GeographicLib::GeoCoords::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:529</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_af34328a442c6385d3bd986f2d90ce463"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#af34328a442c6385d3bd986f2d90ce463">GeographicLib::GeoCoords::AltScale</a></div><div class="ttdeci">Math::real AltScale() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:374</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_ab072761684d992f508b5a3b9440653fb"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ab072761684d992f508b5a3b9440653fb">GeographicLib::GeoCoords::Reset</a></div><div class="ttdeci">void Reset(int zone, bool northp, real easting, real northing)</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:259</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a9a2d60909e229f83197d73e84b889327"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a9a2d60909e229f83197d73e84b889327">GeographicLib::GeoCoords::Northp</a></div><div class="ttdeci">bool Northp() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:307</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a8b3f4a919ba4478c4fec0e7b01e84c57"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a8b3f4a919ba4478c4fec0e7b01e84c57">GeographicLib::GeoCoords::GeoCoords</a></div><div class="ttdeci">GeoCoords()</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:76</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a73e01ea96a18329eb3c342e34dd3b258"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a73e01ea96a18329eb3c342e34dd3b258">GeographicLib::GeoCoords::Latitude</a></div><div class="ttdeci">Math::real Latitude() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:277</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a7bde6a5cba74adf66d831788e6be8e65"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7bde6a5cba74adf66d831788e6be8e65">GeographicLib::GeoCoords::GeoCoords</a></div><div class="ttdeci">GeoCoords(real latitude, real longitude, int zone=UTMUPS::STANDARD)</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:193</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a182de2e29f1181c55a266777039b8a9d"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a182de2e29f1181c55a266777039b8a9d">GeographicLib::UTMUPS::Flattening</a></div><div class="ttdeci">static Math::real Flattening()</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:413</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_abb146874516a2beafd97113667eb0974"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#abb146874516a2beafd97113667eb0974">GeographicLib::GeoCoords::Zone</a></div><div class="ttdeci">int Zone() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:317</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a293aa30508096d49db77a23917ea1092"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a293aa30508096d49db77a23917ea1092">GeographicLib::UTMUPS::MajorRadius</a></div><div class="ttdeci">static Math::real MajorRadius()</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:404</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_ac2a15bd4fa82e372ff8e9a4dcff33fc1"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ac2a15bd4fa82e372ff8e9a4dcff33fc1">GeographicLib::GeoCoords::Scale</a></div><div class="ttdeci">Math::real Scale() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:302</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html">GeographicLib::GeoCoords</a></div><div class="ttdoc">Conversion between geographic coordinates.</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:49</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html">GeographicLib::Math</a></div><div class="ttdoc">Mathematical functions needed by GeographicLib.</div><div class="ttdef"><b>Definition:</b> Math.hpp:102</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_aaf417ae6bed6da324aa03fc96ee0dda4"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aaf417ae6bed6da324aa03fc96ee0dda4">GeographicLib::UTMUPS::Reverse</a></div><div class="ttdeci">static void Reverse(int zone, bool northp, real x, real y, real &amp;lat, real &amp;lon, real &amp;gamma, real &amp;k, bool mgrslimits=false)</div><div class="ttdef"><b>Definition:</b> UTMUPS.cpp:119</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_aadae867ffe502d7643b12c6cdffd83d6"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aadae867ffe502d7643b12c6cdffd83d6">GeographicLib::GeoCoords::AltNorthing</a></div><div class="ttdeci">Math::real AltNorthing() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:364</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_aaab765054416e1243f2d7b36edc8e0d4"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aaab765054416e1243f2d7b36edc8e0d4">GeographicLib::GeoCoords::GeoCoords</a></div><div class="ttdeci">GeoCoords(int zone, bool northp, real easting, real northing)</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:207</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a78fa80051e065c9a6e1d0c2381727a06"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a78fa80051e065c9a6e1d0c2381727a06">GeographicLib::GeoCoords::SetAltZone</a></div><div class="ttdeci">void SetAltZone(int zone=UTMUPS::STANDARD) const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:336</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a38b3b49fd46e3f517b44c1394b44ca1e"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a38b3b49fd46e3f517b44c1394b44ca1e">GeographicLib::GeoCoords::GeoCoords</a></div><div class="ttdeci">GeoCoords(const std::string &amp;s, bool centerp=true, bool longfirst=false)</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:178</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a111d529da067d11e66ac1fbb1e63bb6b"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a111d529da067d11e66ac1fbb1e63bb6b">GeographicLib::GeoCoords::AltZone</a></div><div class="ttdeci">int AltZone() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:354</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a3238f51b85207c01bb77dbd5e1ac3975"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a3238f51b85207c01bb77dbd5e1ac3975">GeographicLib::GeoCoords::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:537</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_aa508a1d251395dc974105b85c3811cce"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aa508a1d251395dc974105b85c3811cce">GeographicLib::GeoCoords::Easting</a></div><div class="ttdeci">Math::real Easting() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:287</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_abdf26c6324396ce0cb8031bd8d7ae2dd"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#abdf26c6324396ce0cb8031bd8d7ae2dd">GeographicLib::GeoCoords::AltConvergence</a></div><div class="ttdeci">Math::real AltConvergence() const</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:369</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geo_coords_html_a0cbbebaa7bb77f91f3f8dbbadfd6532a"><div class="ttname"><a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a0cbbebaa7bb77f91f3f8dbbadfd6532a">GeographicLib::GeoCoords::Reset</a></div><div class="ttdeci">void Reset(real latitude, real longitude, int zone=UTMUPS::STANDARD)</div><div class="ttdef"><b>Definition:</b> GeoCoords.hpp:237</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

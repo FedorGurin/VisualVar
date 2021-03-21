@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/gtx/euler_angles.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_e20a439b6cdbf5d4e02750a868806e68.html">gtx</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">euler_angles.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d0/dd4/euler__angles_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef GLM_GTX_euler_angles</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d0/dd4/euler__angles_8hpp.html#a51a8a72bf6efce76888b251a7563af35">   40</a></span>&#160;<span class="preprocessor">#define GLM_GTX_euler_angles GLM_VERSION</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Dependency:</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;../glm.hpp&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;../gtc/half_float.hpp&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if(defined(GLM_MESSAGES) &amp;&amp; !defined(glm_ext))</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#   pragma message(&quot;GLM: GLM_GTX_euler_angles extension included&quot;)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    detail::tmat4x4&lt;valType&gt; <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#gaac45eaecc2f40ecdda03a7112693dabf">eulerAngleX</a>(</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        valType <span class="keyword">const</span> &amp; angleX);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    detail::tmat4x4&lt;valType&gt; <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#gae31b378f18fb01ed6d44c3f92f76eba5">eulerAngleY</a>(</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        valType <span class="keyword">const</span> &amp; angleY);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    detail::tmat4x4&lt;valType&gt; <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#gaa309eabf292cab65cde623f398910685">eulerAngleZ</a>(</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        valType <span class="keyword">const</span> &amp; angleZ);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    detail::tmat4x4&lt;valType&gt; <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#ga943a94f69965d594efde254c139aaae8">eulerAngleXY</a>(</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        valType <span class="keyword">const</span> &amp; angleX, </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        valType <span class="keyword">const</span> &amp; angleY);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    detail::tmat4x4&lt;valType&gt; <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#gaac8d93a4b3ae4014ff8f1c5a5a793236">eulerAngleYX</a>(</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        valType <span class="keyword">const</span> &amp; angleY, </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        valType <span class="keyword">const</span> &amp; angleX);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    detail::tmat4x4&lt;valType&gt; <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#gafc6f582fa044bcece3506ffd6d31ef59">eulerAngleXZ</a>(</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        valType <span class="keyword">const</span> &amp; angleX, </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        valType <span class="keyword">const</span> &amp; angleZ);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    detail::tmat4x4&lt;valType&gt; <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#ga630d8b3aadde3c890251deba896c9946">eulerAngleZX</a>(</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        valType <span class="keyword">const</span> &amp; angleZ, </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        valType <span class="keyword">const</span> &amp; angleX);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="../../d2/d7e/group__gtx__euler__angles.html#ga99f4bb03efd91aac95be4ce38a5f44ce">  104</a></span>&#160;    <a class="code" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">detail::tmat4x4&lt;valType&gt;</a> <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#ga99f4bb03efd91aac95be4ce38a5f44ce">eulerAngleYZ</a>(</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        valType <span class="keyword">const</span> &amp; angleY, </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        valType <span class="keyword">const</span> &amp; angleZ);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="../../d2/d7e/group__gtx__euler__angles.html#ga6fb1d08bf5eb9320eb6520e9c27f0e80">  111</a></span>&#160;    <a class="code" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">detail::tmat4x4&lt;valType&gt;</a> <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#ga6fb1d08bf5eb9320eb6520e9c27f0e80">eulerAngleZY</a>(</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        valType <span class="keyword">const</span> &amp; angleZ, </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        valType <span class="keyword">const</span> &amp; angleY);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">detail::tmat4x4&lt;valType&gt;</a> <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#gab2c29b80a86caa83f6b550de31e6889f">eulerAngleYXZ</a>(</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#gaac012c1a6bc37ce07a87745d9c596eed">yaw</a>, </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#gaf2a0323dbf6c6fb3f37b445aa899c1c7">pitch</a>, </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga7ef4c8c1ce1ca988add2f73392db0a06">roll</a>);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">detail::tmat4x4&lt;valType&gt;</a> <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#ga4c297724e663cb77cc2cf7e4ab89b77e">yawPitchRoll</a>(</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#gaac012c1a6bc37ce07a87745d9c596eed">yaw</a>, </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#gaf2a0323dbf6c6fb3f37b445aa899c1c7">pitch</a>, </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga7ef4c8c1ce1ca988add2f73392db0a06">roll</a>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="../../d2/d7e/group__gtx__euler__angles.html#ga381a4208b916cabe7244b1b77b0ea6c2">  134</a></span>&#160;    <a class="code" href="../../db/dec/structglm_1_1detail_1_1tmat2x2.html">detail::tmat2x2&lt;T&gt;</a> <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#ga381a4208b916cabe7244b1b77b0ea6c2">orientate2</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="../../d2/d7e/group__gtx__euler__angles.html#ga745f26f19b9c0e35c22e634e7f0c1721">  139</a></span>&#160;    <a class="code" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">detail::tmat3x3&lt;T&gt;</a> <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#ga745f26f19b9c0e35c22e634e7f0c1721">orientate3</a>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <span class="keyword">const</span> &amp; <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="../../d2/d7e/group__gtx__euler__angles.html#gadfb25615afc286d77558384ae7b367d6">  144</a></span>&#160;    <a class="code" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">detail::tmat3x3&lt;T&gt;</a> <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#ga745f26f19b9c0e35c22e634e7f0c1721">orientate3</a>(<a class="code" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">detail::tvec3&lt;T&gt;</a> <span class="keyword">const</span> &amp; angles);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../d2/d7e/group__gtx__euler__angles.html#gabbba69e91bb14442bb1b4d330235c550">  149</a></span>&#160;    <a class="code" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">detail::tmat4x4&lt;T&gt;</a> <a class="code" href="../../d2/d7e/group__gtx__euler__angles.html#gabbba69e91bb14442bb1b4d330235c550">orientate4</a>(<a class="code" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">detail::tvec3&lt;T&gt;</a> <span class="keyword">const</span> &amp; angles);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}<span class="comment">//namespace glm</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d61/euler__angles_8inl.html">euler_angles.inl</a>&quot;</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif//GLM_GTX_euler_angles</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astructglm_1_1detail_1_1tmat3x3_html"><div class="ttname"><a href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a></div><div class="ttdef"><b>Definition:</b> type_mat3x3.hpp:53</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">glm::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:43</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_ga630d8b3aadde3c890251deba896c9946"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#ga630d8b3aadde3c890251deba896c9946">glm::eulerAngleZX</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleZX(valType const &amp;angleZ, valType const &amp;angleX)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:110</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_ga4c297724e663cb77cc2cf7e4ab89b77e"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#ga4c297724e663cb77cc2cf7e4ab89b77e">glm::yawPitchRoll</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; yawPitchRoll(valType const &amp;yaw, valType const &amp;pitch, valType const &amp;roll)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:155</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tmat2x2_html"><div class="ttname"><a href="../../db/dec/structglm_1_1detail_1_1tmat2x2.html">glm::detail::tmat2x2</a></div><div class="ttdef"><b>Definition:</b> type_mat2x2.hpp:53</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_ga381a4208b916cabe7244b1b77b0ea6c2"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#ga381a4208b916cabe7244b1b77b0ea6c2">glm::orientate2</a></div><div class="ttdeci">detail::tmat2x2&lt; T &gt; orientate2(T const &amp;angle)</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tvec3_html"><div class="ttname"><a href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">glm::detail::tvec3</a></div><div class="ttdef"><b>Definition:</b> type_vec3.hpp:49</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_gaac012c1a6bc37ce07a87745d9c596eed"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#gaac012c1a6bc37ce07a87745d9c596eed">glm::yaw</a></div><div class="ttdeci">valType yaw(detail::tquat&lt; valType &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.inl:614</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tmat4x4_html"><div class="ttname"><a href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">glm::detail::tmat4x4</a></div><div class="ttdef"><b>Definition:</b> type_mat4x4.hpp:53</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_gaf2a0323dbf6c6fb3f37b445aa899c1c7"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#gaf2a0323dbf6c6fb3f37b445aa899c1c7">glm::pitch</a></div><div class="ttdeci">valType pitch(detail::tquat&lt; valType &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.inl:601</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_gaac45eaecc2f40ecdda03a7112693dabf"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#gaac45eaecc2f40ecdda03a7112693dabf">glm::eulerAngleX</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleX(valType const &amp;angleX)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:14</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_ga7ef4c8c1ce1ca988add2f73392db0a06"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#ga7ef4c8c1ce1ca988add2f73392db0a06">glm::roll</a></div><div class="ttdeci">valType roll(detail::tquat&lt; valType &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.inl:588</div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_gaa309eabf292cab65cde623f398910685"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#gaa309eabf292cab65cde623f398910685">glm::eulerAngleZ</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleZ(valType const &amp;angleZ)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:46</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_gab2c29b80a86caa83f6b550de31e6889f"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#gab2c29b80a86caa83f6b550de31e6889f">glm::eulerAngleYXZ</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleYXZ(valType const &amp;yaw, valType const &amp;pitch, valType const &amp;roll)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:120</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_ga745f26f19b9c0e35c22e634e7f0c1721"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#ga745f26f19b9c0e35c22e634e7f0c1721">glm::orientate3</a></div><div class="ttdeci">detail::tmat3x3&lt; T &gt; orientate3(T const &amp;angle)</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_gaac8d93a4b3ae4014ff8f1c5a5a793236"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#gaac8d93a4b3ae4014ff8f1c5a5a793236">glm::eulerAngleYX</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleYX(valType const &amp;angleY, valType const &amp;angleX)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:81</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_gabbba69e91bb14442bb1b4d330235c550"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#gabbba69e91bb14442bb1b4d330235c550">glm::orientate4</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; orientate4(detail::tvec3&lt; T &gt; const &amp;angles)</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_gafc6f582fa044bcece3506ffd6d31ef59"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#gafc6f582fa044bcece3506ffd6d31ef59">glm::eulerAngleXZ</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleXZ(valType const &amp;angleX, valType const &amp;angleZ)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:100</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_ga6fb1d08bf5eb9320eb6520e9c27f0e80"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#ga6fb1d08bf5eb9320eb6520e9c27f0e80">glm::eulerAngleZY</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleZY(valType const &amp;angleZ, valType const &amp;angleY)</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_ga69041d18bd8539fe82d6170932d28362"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">glm::angle</a></div><div class="ttdeci">valType angle(detail::tquat&lt; valType &gt; const &amp;x)</div></div>
+<div class="ttc" id="aeuler__angles_8inl_html"><div class="ttname"><a href="../../da/d61/euler__angles_8inl.html">euler_angles.inl</a></div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_gae31b378f18fb01ed6d44c3f92f76eba5"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#gae31b378f18fb01ed6d44c3f92f76eba5">glm::eulerAngleY</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleY(valType const &amp;angleY)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:30</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_ga99f4bb03efd91aac95be4ce38a5f44ce"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#ga99f4bb03efd91aac95be4ce38a5f44ce">glm::eulerAngleYZ</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleYZ(valType const &amp;angleY, valType const &amp;angleZ)</div></div>
+<div class="ttc" id="agroup__gtx__euler__angles_html_ga943a94f69965d594efde254c139aaae8"><div class="ttname"><a href="../../d2/d7e/group__gtx__euler__angles.html#ga943a94f69965d594efde254c139aaae8">glm::eulerAngleXY</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; eulerAngleXY(valType const &amp;angleX, valType const &amp;angleY)</div><div class="ttdef"><b>Definition:</b> euler_angles.inl:62</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

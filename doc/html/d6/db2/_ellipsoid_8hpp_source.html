@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/Ellipsoid.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Ellipsoid.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/db2/_ellipsoid_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_ELLIPSOID_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_ELLIPSOID_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/d66/_transverse_mercator_8hpp.html">GeographicLib/TransverseMercator.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d5/da3/_elliptic_function_8hpp.html">GeographicLib/EllipticFunction.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d6/db1/_albers_equal_area_8hpp.html">GeographicLib/AlbersEqualArea.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html">   39</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html">Ellipsoid</a> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> numit_ = 10;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    real stol_;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    real _a, _f, _f1, _f12, _e2, _es, _e12, _n, _b;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">TransverseMercator</a> _tm;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../d8/de6/class_geographic_lib_1_1_elliptic_function.html">EllipticFunction</a> _ell;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">AlbersEqualArea</a> _au;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// These are the alpha and beta coefficients in the Krueger series from</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// TransverseMercator.  Thy are used by RhumbSolve to compute</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// (psi2-psi1)/(mu2-mu1).</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>* ConformalToRectifyingCoeffs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _tm._alp; }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>* RectifyingToConformalCoeffs()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _tm._bet; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a29d830021a85930f5bddf917fcc5d93c">   54</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../de/daf/class_geographic_lib_1_1_rhumb.html">Rhumb</a>; <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d9/dce/class_geographic_lib_1_1_rhumb_line.html">RhumbLine</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html">Ellipsoid</a>(real a, real f);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a8add5b47632122eeec068f833445065f">   81</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a8add5b47632122eeec068f833445065f">MajorRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _a; }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a3079e9c5c331afc487a79a43253413e7">   86</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a3079e9c5c331afc487a79a43253413e7">MinorRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _b; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> QuarterMeridian() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> Area() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a974c00e91aa554767cbf310e14721ee7">  107</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a974c00e91aa554767cbf310e14721ee7">Volume</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> (4 * <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aca1580c771e7019bfe826512fba9b2f1">Math::pi</a>()) * <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a6a092f38e231c80a1f144814c90f1895">Math::sq</a>(_a) * _b / 3; }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a6f45d56feb837530190c648e5d4783df">  121</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a6f45d56feb837530190c648e5d4783df">Flattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _f; }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#af60b8d4ee50bc3b157b4e5d5df7d90d7">  128</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#af60b8d4ee50bc3b157b4e5d5df7d90d7">SecondFlattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _f / (1 - _f); }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#aea3a8e8033a74f2208137ed25a414d4a">  135</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#aea3a8e8033a74f2208137ed25a414d4a">ThirdFlattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _n; }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a0d26b13b5712575c09c2da24a9d1ee0d">  143</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a0d26b13b5712575c09c2da24a9d1ee0d">EccentricitySq</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _e2; }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a6cabba8e89cbe49dbd790b4e42e7075e">  151</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a6cabba8e89cbe49dbd790b4e42e7075e">SecondEccentricitySq</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _e12; }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a64488fd29adca8bfb059d1d304bc2a1d">  160</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a64488fd29adca8bfb059d1d304bc2a1d">ThirdEccentricitySq</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _e2 / (2 - _e2); }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> ParametricLatitude(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseParametricLatitude(real beta) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeocentricLatitude(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseGeocentricLatitude(real theta) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> RectifyingLatitude(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseRectifyingLatitude(real mu) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> AuthalicLatitude(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseAuthalicLatitude(real xi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> ConformalLatitude(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseConformalLatitude(real chi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> IsometricLatitude(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseIsometricLatitude(real psi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> CircleRadius(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> CircleHeight(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> MeridianDistance(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> MeridionalCurvatureRadius(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> TransverseCurvatureRadius(real phi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> NormalCurvatureRadius(real phi, real azi) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00417"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#ab65f55e2248ab7e79630a02198111a1b">  417</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#ab65f55e2248ab7e79630a02198111a1b">SecondFlatteningToFlattening</a>(real fp)</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    { <span class="keywordflow">return</span> fp / (1 + fp); }</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a561926e53556deeed21c8dd7aee2e0ba">  427</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a561926e53556deeed21c8dd7aee2e0ba">FlatteningToSecondFlattening</a>(real f)</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    { <span class="keywordflow">return</span> f / (1 - f); }</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a07eee0a85c57b2f71e6b2f5cc2799c15">  438</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a07eee0a85c57b2f71e6b2f5cc2799c15">ThirdFlatteningToFlattening</a>(real n)</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    { <span class="keywordflow">return</span> 2 * n / (1 + n); }</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
+<div class="line"><a name="l00449"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a4f73302cc829b06a65c9f52ce15362bf">  449</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a4f73302cc829b06a65c9f52ce15362bf">FlatteningToThirdFlattening</a>(real f)</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    { <span class="keywordflow">return</span> f / (2 - f); }</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a04636791d70da86fffd97cd6e708f771">  461</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a04636791d70da86fffd97cd6e708f771">EccentricitySqToFlattening</a>(real e2)</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    { <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">std::sqrt</a>; <span class="keywordflow">return</span> e2 / (<a class="code" href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">sqrt</a>(1 - e2) + 1); }</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
+<div class="line"><a name="l00473"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a57767e6ddae834cc470ed7cda9559891">  473</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a57767e6ddae834cc470ed7cda9559891">FlatteningToEccentricitySq</a>(real f)</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    { <span class="keywordflow">return</span> f * (2 - f); }</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
+<div class="line"><a name="l00485"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a4646b294883d5ebfaf697707795c1b75">  485</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a4646b294883d5ebfaf697707795c1b75">SecondEccentricitySqToFlattening</a>(real ep2)</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    { <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">std::sqrt</a>; <span class="keywordflow">return</span> ep2 / (<a class="code" href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">sqrt</a>(1 + ep2) + 1 + ep2); }</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160; </div>
+<div class="line"><a name="l00497"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a69c99a88bf12c40856b7b830174c1728">  497</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a69c99a88bf12c40856b7b830174c1728">FlatteningToSecondEccentricitySq</a>(real f)</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    { <span class="keywordflow">return</span> f * (2 - f) / <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a6a092f38e231c80a1f144814c90f1895">Math::sq</a>(1 - f); }</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
+<div class="line"><a name="l00509"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a82b34bd4fad7ae934d619037f6089a65">  509</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a82b34bd4fad7ae934d619037f6089a65">ThirdEccentricitySqToFlattening</a>(real epp2)</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    { <span class="keywordflow">return</span> 2 * epp2 / (<a class="code" href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">sqrt</a>((1 - epp2) * (1 + epp2)) + 1 + epp2); }</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
+<div class="line"><a name="l00521"></a><span class="lineno"><a class="line" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#aa5a2899df3458ebccfa64e20e46cfc21">  521</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#aa5a2899df3458ebccfa64e20e46cfc21">FlatteningToThirdEccentricitySq</a>(real f)</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    { <span class="keywordflow">return</span> f * (2 - f) / (1 + <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#a6a092f38e231c80a1f144814c90f1895">Math::sq</a>(1 - f)); }</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html">Ellipsoid</a>&amp; WGS84();</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;  };</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_ELLIPSOID_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aca1580c771e7019bfe826512fba9b2f1"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aca1580c771e7019bfe826512fba9b2f1">GeographicLib::Math::pi</a></div><div class="ttdeci">static T pi()</div><div class="ttdef"><b>Definition:</b> Math.hpp:216</div></div>
+<div class="ttc" id="agroup__core__func__exponential_html_ga2317d4ff45af448b8402431afa0711f3"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">glm::sqrt</a></div><div class="ttdeci">GLM_FUNC_DECL genType sqrt(genType const &amp;x)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:131</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_elliptic_function_html"><div class="ttname"><a href="../../d8/de6/class_geographic_lib_1_1_elliptic_function.html">GeographicLib::EllipticFunction</a></div><div class="ttdoc">Elliptic integrals and functions.</div><div class="ttdef"><b>Definition:</b> EllipticFunction.hpp:62</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a8add5b47632122eeec068f833445065f"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a8add5b47632122eeec068f833445065f">GeographicLib::Ellipsoid::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:81</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a69c99a88bf12c40856b7b830174c1728"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a69c99a88bf12c40856b7b830174c1728">GeographicLib::Ellipsoid::FlatteningToSecondEccentricitySq</a></div><div class="ttdeci">static Math::real FlatteningToSecondEccentricitySq(real f)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:497</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a974c00e91aa554767cbf310e14721ee7"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a974c00e91aa554767cbf310e14721ee7">GeographicLib::Ellipsoid::Volume</a></div><div class="ttdeci">Math::real Volume() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:107</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a4f73302cc829b06a65c9f52ce15362bf"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a4f73302cc829b06a65c9f52ce15362bf">GeographicLib::Ellipsoid::FlatteningToThirdFlattening</a></div><div class="ttdeci">static Math::real FlatteningToThirdFlattening(real f)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:449</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a4646b294883d5ebfaf697707795c1b75"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a4646b294883d5ebfaf697707795c1b75">GeographicLib::Ellipsoid::SecondEccentricitySqToFlattening</a></div><div class="ttdeci">static Math::real SecondEccentricitySqToFlattening(real ep2)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:485</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a07eee0a85c57b2f71e6b2f5cc2799c15"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a07eee0a85c57b2f71e6b2f5cc2799c15">GeographicLib::Ellipsoid::ThirdFlatteningToFlattening</a></div><div class="ttdeci">static Math::real ThirdFlatteningToFlattening(real n)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:438</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a82b34bd4fad7ae934d619037f6089a65"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a82b34bd4fad7ae934d619037f6089a65">GeographicLib::Ellipsoid::ThirdEccentricitySqToFlattening</a></div><div class="ttdeci">static Math::real ThirdEccentricitySqToFlattening(real epp2)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:509</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html">GeographicLib::Ellipsoid</a></div><div class="ttdoc">Properties of an ellipsoid.</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:39</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_albers_equal_area_html"><div class="ttname"><a href="../../d8/d5d/class_geographic_lib_1_1_albers_equal_area.html">GeographicLib::AlbersEqualArea</a></div><div class="ttdoc">Albers equal area conic projection.</div><div class="ttdef"><b>Definition:</b> AlbersEqualArea.hpp:60</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a561926e53556deeed21c8dd7aee2e0ba"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a561926e53556deeed21c8dd7aee2e0ba">GeographicLib::Ellipsoid::FlatteningToSecondFlattening</a></div><div class="ttdeci">static Math::real FlatteningToSecondFlattening(real f)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:427</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_a6a092f38e231c80a1f144814c90f1895"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#a6a092f38e231c80a1f144814c90f1895">GeographicLib::Math::sq</a></div><div class="ttdeci">static T sq(T x)</div><div class="ttdef"><b>Definition:</b> Math.hpp:246</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_aea3a8e8033a74f2208137ed25a414d4a"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#aea3a8e8033a74f2208137ed25a414d4a">GeographicLib::Ellipsoid::ThirdFlattening</a></div><div class="ttdeci">Math::real ThirdFlattening() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:135</div></div>
+<div class="ttc" id="a_transverse_mercator_8hpp_html"><div class="ttname"><a href="../../d4/d66/_transverse_mercator_8hpp.html">TransverseMercator.hpp</a></div><div class="ttdoc">Header for GeographicLib::TransverseMercator class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a0d26b13b5712575c09c2da24a9d1ee0d"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a0d26b13b5712575c09c2da24a9d1ee0d">GeographicLib::Ellipsoid::EccentricitySq</a></div><div class="ttdeci">Math::real EccentricitySq() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:143</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_rhumb_html"><div class="ttname"><a href="../../de/daf/class_geographic_lib_1_1_rhumb.html">GeographicLib::Rhumb</a></div><div class="ttdoc">Solve of the direct and inverse rhumb problems.</div><div class="ttdef"><b>Definition:</b> Rhumb.hpp:70</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a57767e6ddae834cc470ed7cda9559891"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a57767e6ddae834cc470ed7cda9559891">GeographicLib::Ellipsoid::FlatteningToEccentricitySq</a></div><div class="ttdeci">static Math::real FlatteningToEccentricitySq(real f)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:473</div></div>
+<div class="ttc" id="a_albers_equal_area_8hpp_html"><div class="ttname"><a href="../../d6/db1/_albers_equal_area_8hpp.html">AlbersEqualArea.hpp</a></div><div class="ttdoc">Header for GeographicLib::AlbersEqualArea class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a64488fd29adca8bfb059d1d304bc2a1d"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a64488fd29adca8bfb059d1d304bc2a1d">GeographicLib::Ellipsoid::ThirdEccentricitySq</a></div><div class="ttdeci">Math::real ThirdEccentricitySq() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:160</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a6cabba8e89cbe49dbd790b4e42e7075e"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a6cabba8e89cbe49dbd790b4e42e7075e">GeographicLib::Ellipsoid::SecondEccentricitySq</a></div><div class="ttdeci">Math::real SecondEccentricitySq() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:151</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_ab65f55e2248ab7e79630a02198111a1b"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#ab65f55e2248ab7e79630a02198111a1b">GeographicLib::Ellipsoid::SecondFlatteningToFlattening</a></div><div class="ttdeci">static Math::real SecondFlatteningToFlattening(real fp)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:417</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a3079e9c5c331afc487a79a43253413e7"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a3079e9c5c331afc487a79a43253413e7">GeographicLib::Ellipsoid::MinorRadius</a></div><div class="ttdeci">Math::real MinorRadius() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:86</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_rhumb_line_html"><div class="ttname"><a href="../../d9/dce/class_geographic_lib_1_1_rhumb_line.html">GeographicLib::RhumbLine</a></div><div class="ttdoc">Find a sequence of points on a single rhumb line.</div><div class="ttdef"><b>Definition:</b> Rhumb.hpp:445</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">GeographicLib::TransverseMercator</a></div><div class="ttdoc">Transverse Mercator projection.</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:89</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a6f45d56feb837530190c648e5d4783df"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a6f45d56feb837530190c648e5d4783df">GeographicLib::Ellipsoid::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:121</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_aa5a2899df3458ebccfa64e20e46cfc21"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#aa5a2899df3458ebccfa64e20e46cfc21">GeographicLib::Ellipsoid::FlatteningToThirdEccentricitySq</a></div><div class="ttdeci">static Math::real FlatteningToThirdEccentricitySq(real f)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:521</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_af60b8d4ee50bc3b157b4e5d5df7d90d7"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#af60b8d4ee50bc3b157b4e5d5df7d90d7">GeographicLib::Ellipsoid::SecondFlattening</a></div><div class="ttdeci">Math::real SecondFlattening() const</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:128</div></div>
+<div class="ttc" id="a_elliptic_function_8hpp_html"><div class="ttname"><a href="../../d5/da3/_elliptic_function_8hpp.html">EllipticFunction.hpp</a></div><div class="ttdoc">Header for GeographicLib::EllipticFunction class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_ellipsoid_html_a04636791d70da86fffd97cd6e708f771"><div class="ttname"><a href="../../dd/dbf/class_geographic_lib_1_1_ellipsoid.html#a04636791d70da86fffd97cd6e708f771">GeographicLib::Ellipsoid::EccentricitySqToFlattening</a></div><div class="ttdeci">static Math::real EccentricitySqToFlattening(real e2)</div><div class="ttdef"><b>Definition:</b> Ellipsoid.hpp:461</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

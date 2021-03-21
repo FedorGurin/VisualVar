@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/gtx/transform.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_e20a439b6cdbf5d4e02750a868806e68.html">gtx</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">transform.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/deb/transform_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef GLM_GTX_transform </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d6/deb/transform_8hpp.html#a25349db62cc1e5a908600b8cfb675a73">   42</a></span>&#160;<span class="preprocessor">#define GLM_GTX_transform GLM_VERSION</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// Dependency:</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;../glm.hpp&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;../gtc/matrix_transform.hpp&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#if(defined(GLM_MESSAGES) &amp;&amp; !defined(glm_ext))</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#   pragma message(&quot;GLM: GLM_GTX_transform extension included&quot;)</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// - See also: \link glm::translate GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#ga8925161ecc1767957900c5ca8b922dc4">translate</a>(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> x, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> z);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// - See also: \link glm::translate GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#ga8925161ecc1767957900c5ca8b922dc4">translate</a>(</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        detail::tmat4x4&lt;T&gt; <span class="keyword">const</span> &amp; m, </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> x, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> z);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// - See also: \link glm::translate GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#ga8925161ecc1767957900c5ca8b922dc4">translate</a>(</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        detail::tvec3&lt;T&gt; <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// - See also: \link glm::rotate GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#gaacb9cbe8f93a8fef9dc3e25559df19c0">rotate</a>(</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>, </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> x, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> z);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// - See also: \link glm::rotate GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#gaacb9cbe8f93a8fef9dc3e25559df19c0">rotate</a>(</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>, </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        detail::tvec3&lt;T&gt; <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// - See also: \link glm::rotate GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#gaacb9cbe8f93a8fef9dc3e25559df19c0">rotate</a>(</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        detail::tmat4x4&lt;T&gt; <span class="keyword">const</span> &amp; m, </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">angle</a>, </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> x, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> z);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// - See also: \link glm::scale GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#ga223e08009f1cab54651200b81e91981c">scale</a>(</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> x, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> z);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// - See also: \link glm::scale GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#ga223e08009f1cab54651200b81e91981c">scale</a>(</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        detail::tmat4x4&lt;T&gt; <span class="keyword">const</span> &amp; m, </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> x, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> y, <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> z);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// - See also: \link glm::scale GLM_GTC_matrix_transform \endlink</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    detail::tmat4x4&lt;T&gt; <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#ga223e08009f1cab54651200b81e91981c">scale</a>(</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        detail::tvec3&lt;T&gt; <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}<span class="comment">// namespace glm</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dbd/transform_8inl.html">transform.inl</a>&quot;</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#endif//GLM_GTX_transform</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__gtc__matrix__transform_html_gaacb9cbe8f93a8fef9dc3e25559df19c0"><div class="ttname"><a href="../../dc/d1c/group__gtc__matrix__transform.html#gaacb9cbe8f93a8fef9dc3e25559df19c0">glm::rotate</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; rotate(detail::tmat4x4&lt; T &gt; const &amp;m, T const &amp;angle, detail::tvec3&lt; T &gt; const &amp;axis)</div><div class="ttdef"><b>Definition:</b> matrix_transform.inl:45</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">glm::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:43</div></div>
+<div class="ttc" id="agroup__gtc__matrix__transform_html_ga223e08009f1cab54651200b81e91981c"><div class="ttname"><a href="../../dc/d1c/group__gtc__matrix__transform.html#ga223e08009f1cab54651200b81e91981c">glm::scale</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; scale(detail::tmat4x4&lt; T &gt; const &amp;m, detail::tvec3&lt; T &gt; const &amp;v)</div><div class="ttdef"><b>Definition:</b> matrix_transform.inl:86</div></div>
+<div class="ttc" id="agroup__gtc__matrix__transform_html_ga8925161ecc1767957900c5ca8b922dc4"><div class="ttname"><a href="../../dc/d1c/group__gtc__matrix__transform.html#ga8925161ecc1767957900c5ca8b922dc4">glm::translate</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; translate(detail::tmat4x4&lt; T &gt; const &amp;m, detail::tvec3&lt; T &gt; const &amp;v)</div><div class="ttdef"><b>Definition:</b> matrix_transform.inl:33</div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="atransform_8inl_html"><div class="ttname"><a href="../../d5/dbd/transform_8inl.html">transform.inl</a></div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_ga69041d18bd8539fe82d6170932d28362"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#ga69041d18bd8539fe82d6170932d28362">glm::angle</a></div><div class="ttdeci">valType angle(detail::tquat&lt; valType &gt; const &amp;x)</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

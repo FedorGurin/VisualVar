@@ -1,0 +1,735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::DMS</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html">DMS</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="../../dc/d66/class_geographic_lib_1_1_d_m_s-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::DMS</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Convert between degrees and the DMS representation.  
+ <a href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/dd0/_d_m_s_8hpp_source.html">DMS.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a7a1101fd2577636863753baae3e54869"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a> { <br />
+&#160;&#160;<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1">NONE</a>, 
+<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a6b5a0451ce4c199bd82f5d87d50b523b">LATITUDE</a>, 
+<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a321624c1b510f7f1e392e7509a85914f">LONGITUDE</a>, 
+<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a92264580521b3a1c1df2a7421b435e24">AZIMUTH</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a5a65ec03b2682ad76873829167882518">NUMBER</a>
+<br />
+ }</td></tr>
+<tr class="separator:a7a1101fd2577636863753baae3e54869"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9fa04b3a9156f36f18852eed9b7ce09"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09">component</a> { <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09a8ee59944227e74901b71f27410d70781">DEGREE</a>, 
+<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09a9884bea675fd214061e534e76a1c15d6">MINUTE</a>, 
+<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09a10c28c85ddfa71db5f1d46d362333075">SECOND</a>
+ }</td></tr>
+<tr class="separator:ab9fa04b3a9156f36f18852eed9b7ce09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:ae802c666ad53884ce062281409bd78b4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ae802c666ad53884ce062281409bd78b4">Decode</a> (const std::string &amp;dms, <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a> &amp;ind)</td></tr>
+<tr class="separator:ae802c666ad53884ce062281409bd78b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4987f8eb6c1ba5402eb25d6225ab58e1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a4987f8eb6c1ba5402eb25d6225ab58e1">Decode</a> (real d, real m=0, real s=0)</td></tr>
+<tr class="separator:a4987f8eb6c1ba5402eb25d6225ab58e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53465a8c059943ae790a0433c1b78c5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ac53465a8c059943ae790a0433c1b78c5">DecodeLatLon</a> (const std::string &amp;dmsa, const std::string &amp;dmsb, real &amp;lat, real &amp;lon, bool longfirst=false)</td></tr>
+<tr class="separator:ac53465a8c059943ae790a0433c1b78c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868248d72f6b0bf2dae18a15d741ac43"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a868248d72f6b0bf2dae18a15d741ac43">DecodeAngle</a> (const std::string &amp;angstr)</td></tr>
+<tr class="separator:a868248d72f6b0bf2dae18a15d741ac43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0512cc1275e089138e1550efbee421d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a0512cc1275e089138e1550efbee421d9">DecodeAzimuth</a> (const std::string &amp;azistr)</td></tr>
+<tr class="separator:a0512cc1275e089138e1550efbee421d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0eeff1b7c77352d9fd22e34959a7dcc"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ac0eeff1b7c77352d9fd22e34959a7dcc">Encode</a> (real angle, <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09">component</a> trailing, unsigned prec, <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a> ind=<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1">NONE</a>, char dmssep=char(0))</td></tr>
+<tr class="separator:ac0eeff1b7c77352d9fd22e34959a7dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9d338b12e885092a611bda7e52f9f4"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#aeb9d338b12e885092a611bda7e52f9f4">Encode</a> (real angle, unsigned prec, <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a> ind=<a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1">NONE</a>, char dmssep=char(0))</td></tr>
+<tr class="separator:aeb9d338b12e885092a611bda7e52f9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae785976e5d7c6346cfb68863884b55"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a1ae785976e5d7c6346cfb68863884b55">Encode</a> (real ang, real &amp;d, real &amp;m)</td></tr>
+<tr class="separator:a1ae785976e5d7c6346cfb68863884b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27df7ef6ac42bf0e6341749b4b96eec"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#af27df7ef6ac42bf0e6341749b4b96eec">Encode</a> (real ang, real &amp;d, real &amp;m, real &amp;s)</td></tr>
+<tr class="separator:af27df7ef6ac42bf0e6341749b4b96eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Convert between degrees and the DMS representation. </p>
+<p>Parse a string representing degree, minutes, and seconds and return the angle in degrees and format an angle in degrees as degree, minutes, and seconds. In addition, handle NANs and infinities on input and output.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --> </div><h2 class="groupheader">Перечисления</h2>
+<a id="ab9fa04b3a9156f36f18852eed9b7ce09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9fa04b3a9156f36f18852eed9b7ce09">&#9670;&nbsp;</a></span>component</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09">GeographicLib::DMS::component</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicator for trailing units on an angle. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="ab9fa04b3a9156f36f18852eed9b7ce09a8ee59944227e74901b71f27410d70781"></a>DEGREE&#160;</td><td class="fielddoc"><p>Trailing unit is degrees. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab9fa04b3a9156f36f18852eed9b7ce09a9884bea675fd214061e534e76a1c15d6"></a>MINUTE&#160;</td><td class="fielddoc"><p>Trailing unit is arc minutes. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ab9fa04b3a9156f36f18852eed9b7ce09a10c28c85ddfa71db5f1d46d362333075"></a>SECOND&#160;</td><td class="fielddoc"><p>Trailing unit is arc seconds. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<a id="a7a1101fd2577636863753baae3e54869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a1101fd2577636863753baae3e54869">&#9670;&nbsp;</a></span>flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">GeographicLib::DMS::flag</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Indicator for presence of hemisphere indicator (N/S/E/W) on latitudes and longitudes. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1"></a>NONE&#160;</td><td class="fielddoc"><p>No indicator present. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a1101fd2577636863753baae3e54869a6b5a0451ce4c199bd82f5d87d50b523b"></a>LATITUDE&#160;</td><td class="fielddoc"><p>Latitude indicator (N/S) present. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a1101fd2577636863753baae3e54869a321624c1b510f7f1e392e7509a85914f"></a>LONGITUDE&#160;</td><td class="fielddoc"><p>Longitude indicator (E/W) present. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a1101fd2577636863753baae3e54869a92264580521b3a1c1df2a7421b435e24"></a>AZIMUTH&#160;</td><td class="fielddoc"><p>Used in Encode to indicate output of an azimuth in [000, 360) with no letter indicator. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7a1101fd2577636863753baae3e54869a5a65ec03b2682ad76873829167882518"></a>NUMBER&#160;</td><td class="fielddoc"><p>Used in Encode to indicate output of a plain number. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ae802c666ad53884ce062281409bd78b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae802c666ad53884ce062281409bd78b4">&#9670;&nbsp;</a></span>Decode() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::DMS::Decode </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dms</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a> &amp;&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert a string in <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html" title="Convert between degrees and the DMS representation.">DMS</a> to an angle.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dms</td><td>string input. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ind</td><td>a <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">DMS::flag</a> value signaling the presence of a hemisphere indicator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>dms</em> is malformed (see below). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>angle (degrees).</dd></dl>
+<p>Degrees, minutes, and seconds are indicated by the characters d, ' (single quote), &quot; (double quote), and these components may only be given in this order. Any (but not all) components may be omitted and other symbols (e.g., the &deg; symbol for degrees and the unicode prime and double prime symbols for minutes and seconds) may be substituted; two single quotes can be used instead of &quot;. The last component indicator may be omitted and is assumed to be the next smallest unit (thus 33d10 is interpreted as 33d10'). The final component may be a decimal fraction but the non-final components must be integers. Instead of using d, ', and &quot; to indicate degrees, minutes, and seconds, : (colon) may be used to <em>separate</em> these components (numbers must appear before and after each colon); thus 50d30'10.3&quot; may be written as 50:30:10.3, 5.5' may be written 0:5.5, and so on. The integer parts of the minutes and seconds components must be less than 60. A single leading sign is permitted. A hemisphere designator (N, E, W, S) may be added to the beginning or end of the string. The result is multiplied by the implied sign of the hemisphere designator (negative for S and W). In addition <em>ind</em> is set to <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a6b5a0451ce4c199bd82f5d87d50b523b">DMS::LATITUDE</a> if N or S is present, to <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a321624c1b510f7f1e392e7509a85914f">DMS::LONGITUDE</a> if E or W is present, and to <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1">DMS::NONE</a> otherwise. Throws an error on a malformed string. No check is performed on the range of the result. Examples of legal and illegal strings are</p><ul>
+<li><em>LEGAL</em> (all the entries on each line are equivalent)<ul>
+<li>-20.51125, 20d30'40.5&quot;S, -20&deg;30'40.5, -20d30.675, N-20d30'40.5&quot;, -20:30:40.5</li>
+<li>4d0'9, 4d9&quot;, 4d9'', 4:0:9, 004:00:09, 4.0025, 4.0025d, 4d0.15, 04:.15</li>
+<li>4:59.99999999999999, 4:60.0, 4:59:59.9999999999999, 4:59:60.0, 5</li>
+</ul>
+</li>
+<li><em>ILLEGAL</em> (the exception thrown explains the problem)<ul>
+<li>4d5&quot;4', 4::5, 4:5:, :4:5, 4d4.5'4&quot;, -N20.5, 1.8e2d, 4:60, 4:59:60</li>
+</ul>
+</li>
+</ul>
+<p>The decoding operation can also perform addition and subtraction operations. If the string includes <em>internal</em> signs (i.e., not at the beginning nor immediately after an initial hemisphere designator), then the string is split immediately before such signs and each piece is decoded according to the above rules and the results added; thus <code>S3-2.5+4.1N</code> is parsed as the sum of <code>S3</code>, <code>-2.5</code>, <code>+4.1N</code>. Any piece can include a hemisphere designator; however, if multiple designators are given, they must compatible; e.g., you cannot mix N and E. In addition, the designator can appear at the beginning or end of the first piece, but must be at the end of all subsequent pieces (a hemisphere designator is not allowed after the initial sign). Examples of legal and illegal combinations are</p><ul>
+<li><em>LEGAL</em> (these are all equivalent)<ul>
+<li>070:00:45, 70:01:15W+0:0.5, 70:01:15W-0:0:30W, W70:01:15+0:0:30E</li>
+</ul>
+</li>
+<li><em>ILLEGAL</em> (the exception thrown explains the problem)<ul>
+<li>70:01:15W+0:0:15N, W70:01:15+W0:0:15</li>
+</ul>
+</li>
+</ul>
+<p><b>WARNING:</b> "Exponential" notation is not recognized. Thus <code>7.0E1</code> is illegal, while <code>7.0E+1</code> is parsed as <code>(7.0E) + (+1)</code>, yielding the same result as <code>8.0E</code>.</p>
+<p><b>NOTE:</b> At present, all the string handling in the C++ implementation GeographicLib is with 8-bit characters. The support for unicode symbols for degrees, minutes, and seconds is therefore via the <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> encoding. (The JavaScript implementation of this class uses unicode natively, of course.)</p>
+<p>Here is the list of Unicode symbols supported for degrees, minutes, seconds, and the sign:</p><ul>
+<li>degrees:<ul>
+<li>d, D lower and upper case letters</li>
+<li>U+00b0 degree symbol (&deg;)</li>
+<li>U+00ba masculine ordinal indicator</li>
+<li>U+2070 superscript zero</li>
+<li>U+02da ring above</li>
+</ul>
+</li>
+<li>minutes:<ul>
+<li>' apostrophe</li>
+<li>U+2032 prime (&prime;)</li>
+<li>U+00b4 acute accent</li>
+<li>U+2019 right single quote (&rsquo;)</li>
+</ul>
+</li>
+<li>seconds:<ul>
+<li>&quot; quotation mark</li>
+<li>U+2033 double prime (&Prime;)</li>
+<li>U+201d right double quote (&rdquo;)</li>
+<li>'&#160;' any two consecutive symbols for minutes</li>
+</ul>
+</li>
+<li>leading sign:<ul>
+<li>U+2212 minus sign (&minus;)</li>
+</ul>
+</li>
+</ul>
+<p>The codes with a leading zero byte, e.g., U+00b0, are accepted in their UTF-8 coded form 0xc2 0xb0 and as a single byte 0xb0. </p>
+
+</div>
+</div>
+<a id="a4987f8eb6c1ba5402eb25d6225ab58e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4987f8eb6c1ba5402eb25d6225ab58e1">&#9670;&nbsp;</a></span>Decode() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::DMS::Decode </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>m</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>s</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html" title="Convert between degrees and the DMS representation.">DMS</a> to an angle.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>degrees. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>arc minutes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>arc seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>angle (degrees)</dd></dl>
+<p>This does not propagate the sign on <em>d</em> to the other components, so -3d20' would need to be represented as - <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ae802c666ad53884ce062281409bd78b4">DMS::Decode</a>(3.0, 20.0) or <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ae802c666ad53884ce062281409bd78b4">DMS::Decode</a>(-3.0, -20.0). </p>
+
+</div>
+</div>
+<a id="a868248d72f6b0bf2dae18a15d741ac43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868248d72f6b0bf2dae18a15d741ac43">&#9670;&nbsp;</a></span>DecodeAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::DMS::DecodeAngle </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>angstr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert a string to an angle in degrees.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">angstr</td><td>input string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>angstr</em> is malformed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>angstr</em> includes a hemisphere designator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>angle (degrees)</dd></dl>
+<p>No hemisphere designator is allowed and no check is done on the range of the result. </p>
+
+</div>
+</div>
+<a id="a0512cc1275e089138e1550efbee421d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0512cc1275e089138e1550efbee421d9">&#9670;&nbsp;</a></span>DecodeAzimuth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::DMS::DecodeAzimuth </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>azistr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert a string to an azimuth in degrees.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">azistr</td><td>input string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>azistr</em> is malformed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>azistr</em> includes a N/S designator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>azimuth (degrees) reduced to the range [&minus;180&deg;, 180&deg;).</dd></dl>
+<p>A hemisphere designator E/W can be used; the result is multiplied by &minus;1 if W is present. </p>
+
+</div>
+</div>
+<a id="ac53465a8c059943ae790a0433c1b78c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac53465a8c059943ae790a0433c1b78c5">&#9670;&nbsp;</a></span>DecodeLatLon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::DMS::DecodeLatLon </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dmsa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dmsb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>longfirst</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert a pair of strings to latitude and longitude.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dmsa</td><td>first string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dmsb</td><td>second string. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat</td><td>latitude (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon</td><td>longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longfirst</td><td>if true assume longitude is given before latitude in the absence of hemisphere designators (default false). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>dmsa</em> or <em>dmsb</em> is malformed. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>dmsa</em> and <em>dmsb</em> are both interpreted as latitudes. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>dmsa</em> and <em>dmsb</em> are both interpreted as longitudes. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if decoded latitude is not in [&minus;90&deg;, 90&deg;].</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>By default, the <em>lat</em> (resp., <em>lon</em>) is assigned to the results of decoding <em>dmsa</em> (resp., <em>dmsb</em>). However this is overridden if either <em>dmsa</em> or <em>dmsb</em> contain a latitude or longitude hemisphere designator (N, S, E, W). If an exception is thrown, <em>lat</em> and <em>lon</em> are unchanged. </p>
+
+</div>
+</div>
+<a id="a1ae785976e5d7c6346cfb68863884b55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ae785976e5d7c6346cfb68863884b55">&#9670;&nbsp;</a></span>Encode() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GeographicLib::DMS::Encode </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>ang</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Split angle into degrees and minutes</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ang</td><td>angle (degrees) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">d</td><td>degrees (an integer returned as a real) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>arc minutes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af27df7ef6ac42bf0e6341749b4b96eec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27df7ef6ac42bf0e6341749b4b96eec">&#9670;&nbsp;</a></span>Encode() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void GeographicLib::DMS::Encode </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>ang</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Split angle into degrees and minutes and seconds.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ang</td><td>angle (degrees) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">d</td><td>degrees (an integer returned as a real) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>arc minutes (an integer returned as a real) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">s</td><td>arc seconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac0eeff1b7c77352d9fd22e34959a7dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0eeff1b7c77352d9fd22e34959a7dcc">&#9670;&nbsp;</a></span>Encode() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeographicLib::DMS::Encode </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09">component</a>&#160;</td>
+          <td class="paramname"><em>trailing</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>prec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a>&#160;</td>
+          <td class="paramname"><em>ind</em> = <code><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1">NONE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>dmssep</em> = <code>char(0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert angle (in degrees) into a <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html" title="Convert between degrees and the DMS representation.">DMS</a> string (using d, ', and &quot;).</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td>input angle (degrees) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">trailing</td><td><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ab9fa04b3a9156f36f18852eed9b7ce09">DMS::component</a> value indicating the trailing units of the string (this component is given as a decimal number if necessary). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>the number of digits after the decimal point for the trailing component. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ind</td><td><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">DMS::flag</a> value indicated additional formatting. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dmssep</td><td>if non-null, use as the <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html" title="Convert between degrees and the DMS representation.">DMS</a> separator character (instead of d, ', &quot; delimiters). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>formatted string</dd></dl>
+<p>The interpretation of <em>ind</em> is as follows:</p><ul>
+<li>ind == <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1">DMS::NONE</a>, signed result no leading zeros on degrees except in the units place, e.g., -8d03'.</li>
+<li>ind == <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a6b5a0451ce4c199bd82f5d87d50b523b">DMS::LATITUDE</a>, trailing N or S hemisphere designator, no sign, pad degrees to 2 digits, e.g., 08d03'S.</li>
+<li>ind == <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a321624c1b510f7f1e392e7509a85914f">DMS::LONGITUDE</a>, trailing E or W hemisphere designator, no sign, pad degrees to 3 digits, e.g., 008d03'W.</li>
+<li>ind == <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a92264580521b3a1c1df2a7421b435e24">DMS::AZIMUTH</a>, convert to the range [0, 360&deg;), no sign, pad degrees to 3 digits, , e.g., 351d57'.</li>
+</ul>
+<p>The integer parts of the minutes and seconds components are always given with 2 digits. </p>
+
+</div>
+</div>
+<a id="aeb9d338b12e885092a611bda7e52f9f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb9d338b12e885092a611bda7e52f9f4">&#9670;&nbsp;</a></span>Encode() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string GeographicLib::DMS::Encode </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>angle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>prec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">flag</a>&#160;</td>
+          <td class="paramname"><em>ind</em> = <code><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869adc80eee37727cca42f9805cfefb83fc1">NONE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>dmssep</em> = <code>char(0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert angle into a <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html" title="Convert between degrees and the DMS representation.">DMS</a> string (using d, ', and &quot;) selecting the trailing component based on the precision.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">angle</td><td>input angle (degrees) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>the precision relative to 1 degree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ind</td><td><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869">DMS::flag</a> value indicated additional formatting. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dmssep</td><td>if non-null, use as the <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html" title="Convert between degrees and the DMS representation.">DMS</a> separator character (instead of d, ', &quot; delimiters). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>formatted string</dd></dl>
+<p><em>prec</em> indicates the precision relative to 1 degree, e.g., <em>prec</em> = 3 gives a result accurate to 0.1' and <em>prec</em> = 4 gives a result accurate to 1&quot;. <em>ind</em> is interpreted as in <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ac0eeff1b7c77352d9fd22e34959a7dcc">DMS::Encode</a> with the additional facility that <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#a7a1101fd2577636863753baae3e54869a5a65ec03b2682ad76873829167882518">DMS::NUMBER</a> represents <em>angle</em> as a number in fixed format with precision <em>prec</em>. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d5/dd0/_d_m_s_8hpp_source.html">DMS.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../dd/d43/_d_m_s_8cpp.html">DMS.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:18. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

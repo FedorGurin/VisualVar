@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/formaddlabelmap.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">formaddlabelmap.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/d77/formaddlabelmap_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FORMADDLABELMAP_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FORMADDLABELMAP_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDomElement&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QDomDocument&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QTextStream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;NodeVisual.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dc/df0/namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d33/class_form_add_label_map.html">FormAddLabelMap</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d3/d33/class_form_add_label_map.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d33/class_form_add_label_map.html">FormAddLabelMap</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">explicit</span>  <a class="code" href="../../d3/d33/class_form_add_label_map.html#a51a8c2c53760ff8ef0be8287665efac1">FormAddLabelMap</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a8ecc954187b4f288386e79d9b0405266">addNewLabel</a>(<span class="keywordtype">double</span> lat,<span class="keywordtype">double</span> lon);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a8ecc954187b4f288386e79d9b0405266">addNewLabel</a>(QString name,<span class="keywordtype">double</span> lat,<span class="keywordtype">double</span> lon);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a9c9897a44c44cd311d6982d25e2f2b0d">parseXML</a>(<span class="keyword">const</span> QDomElement&amp; element);<span class="comment">//рекурсивная</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a26d4e74f1c93f602cc71e4c5f85f635c">openXML</a>(<span class="keyword">const</span> QString &amp;fileName);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a1faf840a204124b4494ce8c2f20f7a61">saveXML</a>(<span class="keyword">const</span> QString &amp;fileName);</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d3/d33/class_form_add_label_map.html#a91372ac5a3ae54626678d6d5dc0d1f89">   32</a></span>&#160;    QDomDocument <a class="code" href="../../d3/d33/class_form_add_label_map.html#a91372ac5a3ae54626678d6d5dc0d1f89">domLabels</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d3/d33/class_form_add_label_map.html#a71fd34e82c9fc526e8d78075d379ee5e">   33</a></span>&#160;    QDomDocument <a class="code" href="../../d3/d33/class_form_add_label_map.html#a71fd34e82c9fc526e8d78075d379ee5e">saveDomLabels</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d3/d33/class_form_add_label_map.html#a0de942ab135990bd7e1cfdcf8fec1519">   34</a></span>&#160;    QDomElement  <a class="code" href="../../d3/d33/class_form_add_label_map.html#a0de942ab135990bd7e1cfdcf8fec1519">rootNode</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d3/d33/class_form_add_label_map.html#ae3598d712eb3ca5a0f4aaad31ef62dca">   35</a></span>&#160;    QList&lt;LabelObject* &gt;    <a class="code" href="../../d3/d33/class_form_add_label_map.html#ae3598d712eb3ca5a0f4aaad31ef62dca">labelObjects</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a9607ccee1c29d77a0091740b956ec851">event</a>(QEvent *<a class="code" href="../../d3/d33/class_form_add_label_map.html#a9607ccee1c29d77a0091740b956ec851">event</a>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d3/d33/class_form_add_label_map.html#a4e24691c12e61033f561af75468ead8e">~FormAddLabelMap</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#ae11c97568c08a7cbb2cfd2b7fe2305aa">slotCancel</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a92ef03a35f2c64b8c01381b455e5d6ce">slotAdd</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a8f8402a174c1c7bb6fa930711dd6108e">slotGoto</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a9d78d5347b8ec57c35320f7d3aa8ec85">slotDelete</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a46fbcddaa011fa00a17132e3f3fe1e9c">slotCellChanged</a>(<span class="keywordtype">int</span> <a class="code" href="../../da/da6/group__gtc__matrix__access.html#ga7e90918d2599dfcce7cffdde61e0ecb4">row</a>,<span class="keywordtype">int</span> <a class="code" href="../../da/da6/group__gtc__matrix__access.html#ga263133e2acfc1421ab17b41d2954aa8f">column</a>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;signals:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d3/d33/class_form_add_label_map.html#a2c0a6393908096264037cd919d0a765b">   47</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#a2c0a6393908096264037cd919d0a765b">gotoLatLon</a>(<span class="keywordtype">double</span> lat,<span class="keywordtype">double</span> lon);</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d3/d33/class_form_add_label_map.html#ad7e3128d2ef250e1c35e4aa13daa9274">   48</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d33/class_form_add_label_map.html#ad7e3128d2ef250e1c35e4aa13daa9274">deleteLabel</a>(<a class="code" href="../../d8/d47/class_label_object.html">LabelObject</a>*);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Ui::FormAddLabelMap *ui;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif // FORMADDLABELMAP_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_form_add_label_map_html_ae11c97568c08a7cbb2cfd2b7fe2305aa"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#ae11c97568c08a7cbb2cfd2b7fe2305aa">FormAddLabelMap::slotCancel</a></div><div class="ttdeci">void slotCancel()</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:165</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a92ef03a35f2c64b8c01381b455e5d6ce"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a92ef03a35f2c64b8c01381b455e5d6ce">FormAddLabelMap::slotAdd</a></div><div class="ttdeci">void slotAdd()</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:183</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a91372ac5a3ae54626678d6d5dc0d1f89"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a91372ac5a3ae54626678d6d5dc0d1f89">FormAddLabelMap::domLabels</a></div><div class="ttdeci">QDomDocument domLabels</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.h:32</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a2c0a6393908096264037cd919d0a765b"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a2c0a6393908096264037cd919d0a765b">FormAddLabelMap::gotoLatLon</a></div><div class="ttdeci">void gotoLatLon(double lat, double lon)</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_ad7e3128d2ef250e1c35e4aa13daa9274"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#ad7e3128d2ef250e1c35e4aa13daa9274">FormAddLabelMap::deleteLabel</a></div><div class="ttdeci">void deleteLabel(LabelObject *)</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a4e24691c12e61033f561af75468ead8e"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a4e24691c12e61033f561af75468ead8e">FormAddLabelMap::~FormAddLabelMap</a></div><div class="ttdeci">~FormAddLabelMap()</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:211</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a0de942ab135990bd7e1cfdcf8fec1519"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a0de942ab135990bd7e1cfdcf8fec1519">FormAddLabelMap::rootNode</a></div><div class="ttdeci">QDomElement rootNode</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.h:34</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a8f8402a174c1c7bb6fa930711dd6108e"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a8f8402a174c1c7bb6fa930711dd6108e">FormAddLabelMap::slotGoto</a></div><div class="ttdeci">void slotGoto()</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:170</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a46fbcddaa011fa00a17132e3f3fe1e9c"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a46fbcddaa011fa00a17132e3f3fe1e9c">FormAddLabelMap::slotCellChanged</a></div><div class="ttdeci">void slotCellChanged(int row, int column)</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:26</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html">FormAddLabelMap</a></div><div class="ttdef"><b>Definition:</b> formaddlabelmap.h:19</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a1faf840a204124b4494ce8c2f20f7a61"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a1faf840a204124b4494ce8c2f20f7a61">FormAddLabelMap::saveXML</a></div><div class="ttdeci">void saveXML(const QString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:88</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_ae3598d712eb3ca5a0f4aaad31ef62dca"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#ae3598d712eb3ca5a0f4aaad31ef62dca">FormAddLabelMap::labelObjects</a></div><div class="ttdeci">QList&lt; LabelObject * &gt; labelObjects</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.h:35</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a8ecc954187b4f288386e79d9b0405266"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a8ecc954187b4f288386e79d9b0405266">FormAddLabelMap::addNewLabel</a></div><div class="ttdeci">void addNewLabel(double lat, double lon)</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:61</div></div>
+<div class="ttc" id="agroup__gtc__matrix__access_html_ga263133e2acfc1421ab17b41d2954aa8f"><div class="ttname"><a href="../../da/da6/group__gtc__matrix__access.html#ga263133e2acfc1421ab17b41d2954aa8f">glm::column</a></div><div class="ttdeci">genType::col_type column(genType const &amp;m, int index)</div><div class="ttdef"><b>Definition:</b> matrix_access.inl:73</div></div>
+<div class="ttc" id="aclass_label_object_html"><div class="ttname"><a href="../../d8/d47/class_label_object.html">LabelObject</a></div><div class="ttdef"><b>Definition:</b> nodeVisual.h:368</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="../../dc/df0/namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> dialogsavecurvar.h:6</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a71fd34e82c9fc526e8d78075d379ee5e"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a71fd34e82c9fc526e8d78075d379ee5e">FormAddLabelMap::saveDomLabels</a></div><div class="ttdeci">QDomDocument saveDomLabels</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.h:33</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a9d78d5347b8ec57c35320f7d3aa8ec85"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a9d78d5347b8ec57c35320f7d3aa8ec85">FormAddLabelMap::slotDelete</a></div><div class="ttdeci">void slotDelete()</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:187</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a26d4e74f1c93f602cc71e4c5f85f635c"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a26d4e74f1c93f602cc71e4c5f85f635c">FormAddLabelMap::openXML</a></div><div class="ttdeci">bool openXML(const QString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:121</div></div>
+<div class="ttc" id="agroup__gtc__matrix__access_html_ga7e90918d2599dfcce7cffdde61e0ecb4"><div class="ttname"><a href="../../da/da6/group__gtc__matrix__access.html#ga7e90918d2599dfcce7cffdde61e0ecb4">glm::row</a></div><div class="ttdeci">genType::row_type row(genType const &amp;m, int index)</div><div class="ttdef"><b>Definition:</b> matrix_access.inl:47</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a51a8c2c53760ff8ef0be8287665efac1"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a51a8c2c53760ff8ef0be8287665efac1">FormAddLabelMap::FormAddLabelMap</a></div><div class="ttdeci">FormAddLabelMap(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:7</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a9c9897a44c44cd311d6982d25e2f2b0d"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a9c9897a44c44cd311d6982d25e2f2b0d">FormAddLabelMap::parseXML</a></div><div class="ttdeci">void parseXML(const QDomElement &amp;element)</div><div class="ttdoc">разбор XML с данными</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:151</div></div>
+<div class="ttc" id="aclass_form_add_label_map_html_a9607ccee1c29d77a0091740b956ec851"><div class="ttname"><a href="../../d3/d33/class_form_add_label_map.html#a9607ccee1c29d77a0091740b956ec851">FormAddLabelMap::event</a></div><div class="ttdeci">virtual bool event(QEvent *event)</div><div class="ttdef"><b>Definition:</b> formaddlabelmap.cpp:196</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

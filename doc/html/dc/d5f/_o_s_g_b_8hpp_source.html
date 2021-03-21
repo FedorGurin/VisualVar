@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/OSGB.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">OSGB.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d5f/_o_s_g_b_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_OSGB_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_OSGB_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d4/d66/_transverse_mercator_8hpp.html">GeographicLib/TransverseMercator.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Squelch warnings about dll vs string</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#  pragma warning (push)</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#  pragma warning (disable: 4251)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html">   44</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html">OSGB</a> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string letters_;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::string digits_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">TransverseMercator</a>&amp; OSGBTM();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      base_ = 10,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      tile_ = 100000,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      tilelevel_ = 5,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      tilegrid_ = 5,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      tileoffx_ = 2 * tilegrid_,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      tileoffy_ = 1 * tilegrid_,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      minx_ = - tileoffx_ * tile_,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      miny_ = - tileoffy_ * tile_,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      maxx_ = (tilegrid_*tilegrid_ - tileoffx_) * tile_,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      maxy_ = (tilegrid_*tilegrid_ - tileoffy_) * tile_,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="comment">// Maximum precision is um</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      maxprec_ = 5 + 6,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    };</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> real computenorthoffset();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> CheckCoords(real x, real y);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html">OSGB</a>();                     <span class="comment">// Disable constructor</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a92618eea9870908e11446875d80aab6b">   81</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a92618eea9870908e11446875d80aab6b">Forward</a>(real lat, real lon,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                        real&amp; x, real&amp; y, real&amp; gamma, real&amp; k) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      OSGBTM().<a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#af9df4fa6a1d1889d27e0cf6b21bf12c9">Forward</a>(OriginLongitude(), lat, lon, x, y, gamma, k);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      x += FalseEasting();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      y += computenorthoffset();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ae006380e574858a81011752dd1d4af60">  102</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ae006380e574858a81011752dd1d4af60">Reverse</a>(real x, real y,</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                        real&amp; lat, real&amp; lon, real&amp; gamma, real&amp; k) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      x -= FalseEasting();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      y -= computenorthoffset();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      OSGBTM().<a class="code" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#a4deee8457dd5c5abbfce49beeeddc489">Reverse</a>(OriginLongitude(), x, y, lat, lon, gamma, k);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a0f705bee98c6669ca7a95394712fd758">  112</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a0f705bee98c6669ca7a95394712fd758">Forward</a>(real lat, real lon, real&amp; x, real&amp; y) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      real gamma, k;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      Forward(lat, lon, x, y, gamma, k);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ab804929a4126ed390a40d35e837b4001">  120</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ab804929a4126ed390a40d35e837b4001">Reverse</a>(real x, real y, real&amp; lat, real&amp; lon) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      real gamma, k;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      Reverse(x, y, lat, lon, gamma, k);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> GridReference(real x, real y, <span class="keywordtype">int</span> prec, std::string&amp; gridref);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> GridReference(<span class="keyword">const</span> std::string&amp; gridref,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                              real&amp; x, real&amp; y, <span class="keywordtype">int</span>&amp; prec,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                              <span class="keywordtype">bool</span> centerp = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a9bb3b0ff55a462ac2ebcd0cfd446d811">  190</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a9bb3b0ff55a462ac2ebcd0cfd446d811">MajorRadius</a>() {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// result is about 6377563.3960320664406 m</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">std::pow</a>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">pow</a>(real(10), real(48401603 - 100000000) / 100000000)</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        * 20923713;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#aae688ebd8c126f22517eaa0a01d659f8">  205</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#aae688ebd8c126f22517eaa0a01d659f8">Flattening</a>()</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    { <span class="keywordflow">return</span> real(20923713 - 20853810) / 20923713; }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseFlattening() { <span class="keywordflow">return</span> 1/Flattening(); }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a65210bfdcac362f393a8f81f28259ad0">  222</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a65210bfdcac362f393a8f81f28259ad0">CentralScale</a>() {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">std::pow</a>;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">pow</a>(real(10), real(9998268 - 10000000) / 10000000);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ad6bcef7e2dcc2992831e101bf0b05fa8">  230</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ad6bcef7e2dcc2992831e101bf0b05fa8">OriginLatitude</a>() { <span class="keywordflow">return</span> real(49); }</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a4eb3b20734af47c9661d40581555c345">  236</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a4eb3b20734af47c9661d40581555c345">OriginLongitude</a>() { <span class="keywordflow">return</span> real(-2); }</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a74072d4e62fcd4ca679b222716b6a6a1">  241</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a74072d4e62fcd4ca679b222716b6a6a1">FalseNorthing</a>() { <span class="keywordflow">return</span> real(-100000); }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ab27e19f7688f6b472d217b31aeae079c">  246</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ab27e19f7688f6b472d217b31aeae079c">FalseEasting</a>() { <span class="keywordflow">return</span> real(400000); }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  };</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">#  pragma warning (pop)</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_OSGB_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_a0f705bee98c6669ca7a95394712fd758"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a0f705bee98c6669ca7a95394712fd758">GeographicLib::OSGB::Forward</a></div><div class="ttdeci">static void Forward(real lat, real lon, real &amp;x, real &amp;y)</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:112</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_ab804929a4126ed390a40d35e837b4001"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ab804929a4126ed390a40d35e837b4001">GeographicLib::OSGB::Reverse</a></div><div class="ttdeci">static void Reverse(real x, real y, real &amp;lat, real &amp;lon)</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:120</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_aae688ebd8c126f22517eaa0a01d659f8"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#aae688ebd8c126f22517eaa0a01d659f8">GeographicLib::OSGB::Flattening</a></div><div class="ttdeci">static Math::real Flattening()</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:205</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_a4eb3b20734af47c9661d40581555c345"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a4eb3b20734af47c9661d40581555c345">GeographicLib::OSGB::OriginLongitude</a></div><div class="ttdeci">static Math::real OriginLongitude()</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:236</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_a9bb3b0ff55a462ac2ebcd0cfd446d811"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a9bb3b0ff55a462ac2ebcd0cfd446d811">GeographicLib::OSGB::MajorRadius</a></div><div class="ttdeci">static Math::real MajorRadius()</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:190</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_ad6bcef7e2dcc2992831e101bf0b05fa8"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ad6bcef7e2dcc2992831e101bf0b05fa8">GeographicLib::OSGB::OriginLatitude</a></div><div class="ttdeci">static Math::real OriginLatitude()</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:230</div></div>
+<div class="ttc" id="agroup__core__func__exponential_html_ga1ce4b2fddd26d0d3a35a8d98f37f3ac0"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">glm::pow</a></div><div class="ttdeci">GLM_FUNC_DECL genType pow(genType const &amp;base, genType const &amp;exponent)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:34</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_a92618eea9870908e11446875d80aab6b"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a92618eea9870908e11446875d80aab6b">GeographicLib::OSGB::Forward</a></div><div class="ttdeci">static void Forward(real lat, real lon, real &amp;x, real &amp;y, real &amp;gamma, real &amp;k)</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:81</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_a74072d4e62fcd4ca679b222716b6a6a1"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a74072d4e62fcd4ca679b222716b6a6a1">GeographicLib::OSGB::FalseNorthing</a></div><div class="ttdeci">static Math::real FalseNorthing()</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:241</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html_a4deee8457dd5c5abbfce49beeeddc489"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#a4deee8457dd5c5abbfce49beeeddc489">GeographicLib::TransverseMercator::Reverse</a></div><div class="ttdeci">void Reverse(real lon0, real x, real y, real &amp;lat, real &amp;lon, real &amp;gamma, real &amp;k) const</div><div class="ttdef"><b>Definition:</b> TransverseMercator.cpp:515</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html">GeographicLib::OSGB</a></div><div class="ttdoc">Ordnance Survey grid system for Great Britain.</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:44</div></div>
+<div class="ttc" id="a_transverse_mercator_8hpp_html"><div class="ttname"><a href="../../d4/d66/_transverse_mercator_8hpp.html">TransverseMercator.hpp</a></div><div class="ttdoc">Header for GeographicLib::TransverseMercator class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_ab27e19f7688f6b472d217b31aeae079c"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ab27e19f7688f6b472d217b31aeae079c">GeographicLib::OSGB::FalseEasting</a></div><div class="ttdeci">static Math::real FalseEasting()</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:246</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html_af9df4fa6a1d1889d27e0cf6b21bf12c9"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html#af9df4fa6a1d1889d27e0cf6b21bf12c9">GeographicLib::TransverseMercator::Forward</a></div><div class="ttdeci">void Forward(real lon0, real lat, real lon, real &amp;x, real &amp;y, real &amp;gamma, real &amp;k) const</div><div class="ttdef"><b>Definition:</b> TransverseMercator.cpp:353</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_transverse_mercator_html"><div class="ttname"><a href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html">GeographicLib::TransverseMercator</a></div><div class="ttdoc">Transverse Mercator projection.</div><div class="ttdef"><b>Definition:</b> TransverseMercator.hpp:89</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_ae006380e574858a81011752dd1d4af60"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#ae006380e574858a81011752dd1d4af60">GeographicLib::OSGB::Reverse</a></div><div class="ttdeci">static void Reverse(real x, real y, real &amp;lat, real &amp;lon, real &amp;gamma, real &amp;k)</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:102</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_o_s_g_b_html_a65210bfdcac362f393a8f81f28259ad0"><div class="ttname"><a href="../../dd/d26/class_geographic_lib_1_1_o_s_g_b.html#a65210bfdcac362f393a8f81f28259ad0">GeographicLib::OSGB::CentralScale</a></div><div class="ttdeci">static Math::real CentralScale()</div><div class="ttdef"><b>Definition:</b> OSGB.hpp:222</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,0 +1,1425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::GeoCoords</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html">GeoCoords</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="../../de/d5d/class_geographic_lib_1_1_geo_coords-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::GeoCoords</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Conversion between geographic coordinates.  
+ <a href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/d43/_geo_coords_8hpp_source.html">GeoCoords.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr><td colspan="2"><div class="groupHeader">Initializing the GeoCoords object</div></td></tr>
+<tr class="memitem:a8b3f4a919ba4478c4fec0e7b01e84c57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a8b3f4a919ba4478c4fec0e7b01e84c57">GeoCoords</a> ()</td></tr>
+<tr class="separator:a8b3f4a919ba4478c4fec0e7b01e84c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38b3b49fd46e3f517b44c1394b44ca1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a38b3b49fd46e3f517b44c1394b44ca1e">GeoCoords</a> (const std::string &amp;s, bool centerp=true, bool longfirst=false)</td></tr>
+<tr class="separator:a38b3b49fd46e3f517b44c1394b44ca1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bde6a5cba74adf66d831788e6be8e65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7bde6a5cba74adf66d831788e6be8e65">GeoCoords</a> (real latitude, real longitude, int zone=<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a>)</td></tr>
+<tr class="separator:a7bde6a5cba74adf66d831788e6be8e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaab765054416e1243f2d7b36edc8e0d4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aaab765054416e1243f2d7b36edc8e0d4">GeoCoords</a> (int zone, bool northp, real easting, real northing)</td></tr>
+<tr class="separator:aaab765054416e1243f2d7b36edc8e0d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3a0c947b336f58ce431e0bbfbc9ee8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aeb3a0c947b336f58ce431e0bbfbc9ee8">Reset</a> (const std::string &amp;s, bool centerp=true, bool longfirst=false)</td></tr>
+<tr class="separator:aeb3a0c947b336f58ce431e0bbfbc9ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cbbebaa7bb77f91f3f8dbbadfd6532a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a0cbbebaa7bb77f91f3f8dbbadfd6532a">Reset</a> (real latitude, real longitude, int zone=<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a>)</td></tr>
+<tr class="separator:a0cbbebaa7bb77f91f3f8dbbadfd6532a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab072761684d992f508b5a3b9440653fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ab072761684d992f508b5a3b9440653fb">Reset</a> (int zone, bool northp, real easting, real northing)</td></tr>
+<tr class="separator:ab072761684d992f508b5a3b9440653fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Querying the GeoCoords object</div></td></tr>
+<tr class="memitem:a73e01ea96a18329eb3c342e34dd3b258"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a73e01ea96a18329eb3c342e34dd3b258">Latitude</a> () const</td></tr>
+<tr class="separator:a73e01ea96a18329eb3c342e34dd3b258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac602348c6133c0f891eba4903d47615"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aac602348c6133c0f891eba4903d47615">Longitude</a> () const</td></tr>
+<tr class="separator:aac602348c6133c0f891eba4903d47615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa508a1d251395dc974105b85c3811cce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aa508a1d251395dc974105b85c3811cce">Easting</a> () const</td></tr>
+<tr class="separator:aa508a1d251395dc974105b85c3811cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f406594448a67cc988655d9bc66e1ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a0f406594448a67cc988655d9bc66e1ca">Northing</a> () const</td></tr>
+<tr class="separator:a0f406594448a67cc988655d9bc66e1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa2e635848933b4fbadab589fad344d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a5fa2e635848933b4fbadab589fad344d">Convergence</a> () const</td></tr>
+<tr class="separator:a5fa2e635848933b4fbadab589fad344d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2a15bd4fa82e372ff8e9a4dcff33fc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ac2a15bd4fa82e372ff8e9a4dcff33fc1">Scale</a> () const</td></tr>
+<tr class="separator:ac2a15bd4fa82e372ff8e9a4dcff33fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a2d60909e229f83197d73e84b889327"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a9a2d60909e229f83197d73e84b889327">Northp</a> () const</td></tr>
+<tr class="separator:a9a2d60909e229f83197d73e84b889327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c8169a884094165cd55f06a2d559e87"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7c8169a884094165cd55f06a2d559e87">Hemisphere</a> () const</td></tr>
+<tr class="separator:a7c8169a884094165cd55f06a2d559e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb146874516a2beafd97113667eb0974"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#abb146874516a2beafd97113667eb0974">Zone</a> () const</td></tr>
+<tr class="separator:abb146874516a2beafd97113667eb0974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Setting and querying the alternate zone</div></td></tr>
+<tr class="memitem:a78fa80051e065c9a6e1d0c2381727a06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a78fa80051e065c9a6e1d0c2381727a06">SetAltZone</a> (int zone=<a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a>) const</td></tr>
+<tr class="separator:a78fa80051e065c9a6e1d0c2381727a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111d529da067d11e66ac1fbb1e63bb6b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a111d529da067d11e66ac1fbb1e63bb6b">AltZone</a> () const</td></tr>
+<tr class="separator:a111d529da067d11e66ac1fbb1e63bb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a962580d4647fcc2dda330dde726abae9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a962580d4647fcc2dda330dde726abae9">AltEasting</a> () const</td></tr>
+<tr class="separator:a962580d4647fcc2dda330dde726abae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadae867ffe502d7643b12c6cdffd83d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aadae867ffe502d7643b12c6cdffd83d6">AltNorthing</a> () const</td></tr>
+<tr class="separator:aadae867ffe502d7643b12c6cdffd83d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdf26c6324396ce0cb8031bd8d7ae2dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#abdf26c6324396ce0cb8031bd8d7ae2dd">AltConvergence</a> () const</td></tr>
+<tr class="separator:abdf26c6324396ce0cb8031bd8d7ae2dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34328a442c6385d3bd986f2d90ce463"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#af34328a442c6385d3bd986f2d90ce463">AltScale</a> () const</td></tr>
+<tr class="separator:af34328a442c6385d3bd986f2d90ce463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">String representations of the GeoCoords object</div></td></tr>
+<tr class="memitem:ad239b90e86e70dab5b92b4c532019307"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ad239b90e86e70dab5b92b4c532019307">GeoRepresentation</a> (int prec=0, bool longfirst=false) const</td></tr>
+<tr class="separator:ad239b90e86e70dab5b92b4c532019307"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557fae84fcf6783225fcbd80f2a2b35c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a557fae84fcf6783225fcbd80f2a2b35c">DMSRepresentation</a> (int prec=0, bool longfirst=false, char dmssep=char(0)) const</td></tr>
+<tr class="separator:a557fae84fcf6783225fcbd80f2a2b35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace88e379082ff31187aff82134d95f56"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ace88e379082ff31187aff82134d95f56">MGRSRepresentation</a> (int prec=0) const</td></tr>
+<tr class="separator:ace88e379082ff31187aff82134d95f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f678ebdfff393a7a38b68c0d1eb64ae"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a6f678ebdfff393a7a38b68c0d1eb64ae">UTMUPSRepresentation</a> (int prec=0, bool abbrev=true) const</td></tr>
+<tr class="separator:a6f678ebdfff393a7a38b68c0d1eb64ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a546e821d93412b7d59649c58ef65d607"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a546e821d93412b7d59649c58ef65d607">UTMUPSRepresentation</a> (bool northp, int prec=0, bool abbrev=true) const</td></tr>
+<tr class="separator:a546e821d93412b7d59649c58ef65d607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f3d526c78e2ae59a5e51c17728d56f6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a5f3d526c78e2ae59a5e51c17728d56f6">AltMGRSRepresentation</a> (int prec=0) const</td></tr>
+<tr class="separator:a5f3d526c78e2ae59a5e51c17728d56f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e4dedbd9cdde381b9a9b02c2ea6aa0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ad2e4dedbd9cdde381b9a9b02c2ea6aa0">AltUTMUPSRepresentation</a> (int prec=0, bool abbrev=true) const</td></tr>
+<tr class="separator:ad2e4dedbd9cdde381b9a9b02c2ea6aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec6e38ae39af5e1bda6e66b9821ab33"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#adec6e38ae39af5e1bda6e66b9821ab33">AltUTMUPSRepresentation</a> (bool northp, int prec=0, bool abbrev=true) const</td></tr>
+<tr class="separator:adec6e38ae39af5e1bda6e66b9821ab33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions</div></td></tr>
+<tr class="memitem:a036c3dff734f5a9d89ebc742fc49d6d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a036c3dff734f5a9d89ebc742fc49d6d1">MajorRadius</a> () const</td></tr>
+<tr class="separator:a036c3dff734f5a9d89ebc742fc49d6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3238f51b85207c01bb77dbd5e1ac3975"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a3238f51b85207c01bb77dbd5e1ac3975">Flattening</a> () const</td></tr>
+<tr class="separator:a3238f51b85207c01bb77dbd5e1ac3975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Conversion between geographic coordinates. </p>
+<p>This class stores a geographic position which may be set via the constructors or Reset via</p><ul>
+<li>latitude and longitude</li>
+<li>UTM or UPS coordinates</li>
+<li>a string representation of these or an <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> coordinate string</li>
+</ul>
+<p>The state consists of the latitude and longitude and the supplied UTM or UPS coordinates (possibly derived from the <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> coordinates). If latitude and longitude were given then the UTM/UPS coordinates follows the standard conventions.</p>
+<p>The mutable state consists of the UTM or UPS coordinates for a alternate zone. A method SetAltZone is provided to set the alternate UPS/UTM zone.</p>
+<p>Methods are provided to return the geographic coordinates, the input UTM or UPS coordinates (and associated meridian convergence and scale), or alternate UTM or UPS coordinates (and their associated meridian convergence and scale).</p>
+<p>Once the input string has been parsed, you can print the result out in any of the formats, decimal degrees, degrees minutes seconds, <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a>, UTM/UPS.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --><p><a href="../../GeoConvert.1.html">GeoConvert</a> is a command-line utility providing access to the functionality of <a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html" title="Conversion between geographic coordinates.">GeoCoords</a>. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a8b3f4a919ba4478c4fec0e7b01e84c57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b3f4a919ba4478c4fec0e7b01e84c57">&#9670;&nbsp;</a></span>GeoCoords() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::GeoCoords::GeoCoords </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The default constructor sets the coordinate as undefined. </p>
+
+</div>
+</div>
+<a id="a38b3b49fd46e3f517b44c1394b44ca1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38b3b49fd46e3f517b44c1394b44ca1e">&#9670;&nbsp;</a></span>GeoCoords() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::GeoCoords::GeoCoords </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>centerp</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>longfirst</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct from a string.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>1-element, 2-element, or 3-element string representation of the position. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">centerp</td><td>governs the interpretation of <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> coordinates (see below). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longfirst</td><td>governs the interpretation of geographic coordinates (see below). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the <em>s</em> is malformed (see below).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Parse as a string and interpret it as a geographic position. The input string is broken into space (or comma) separated pieces and Basic decision on which format is based on number of components</p><ol type="1">
+<li><a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a></li>
+<li>"Lat Long" or "Long Lat"</li>
+<li>"Zone Easting Northing" or "Easting Northing Zone"</li>
+</ol>
+<p>The following inputs are approximately the same (Ar Ramadi Bridge, Iraq)</p><ul>
+<li>Latitude and Longitude<ul>
+<li>33.44 43.27</li>
+<li>N33d26.4' E43d16.2'</li>
+<li>43d16'12&quot;E 33d26'24&quot;N</li>
+<li>43:16:12E 33:26:24</li>
+</ul>
+</li>
+<li><a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a><ul>
+<li>38SLC30</li>
+<li>38SLC391014</li>
+<li>38SLC3918701405</li>
+<li>37SHT9708</li>
+</ul>
+</li>
+<li>UTM<ul>
+<li>38n 339188 3701405</li>
+<li>897039 3708229 37n</li>
+</ul>
+</li>
+</ul>
+<p><b>Latitude and Longitude parsing</b>: Latitude precedes longitude, unless a N, S, E, W hemisphere designator is used on one or both coordinates. If <em>longfirst</em> = true (default is false), then longitude precedes latitude in the absence of a hemisphere designator. Thus (with <em>longfirst</em> = false)</p><ul>
+<li>40 -75</li>
+<li>N40 W75</li>
+<li>-75 N40</li>
+<li>75W 40N</li>
+<li>E-75 -40S</li>
+</ul>
+<p>are all the same position. The coordinates may be given in decimal degrees, degrees and decimal minutes, degrees, minutes, seconds, etc. Use d, ', and &quot; to mark off the degrees, minutes and seconds. Various alternative symbols for degrees, minutes, and seconds are allowed. Alternatively, use : to separate these components. A single addition or subtraction is allowed. (See <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html#ae802c666ad53884ce062281409bd78b4">DMS::Decode</a> for details.) Thus</p><ul>
+<li>40d30'30&quot;</li>
+<li>40d30'30</li>
+<li>40&deg;30'30</li>
+<li>40d30.5'</li>
+<li>40d30.5</li>
+<li>40:30:30</li>
+<li>40:30.5</li>
+<li>40.508333333</li>
+<li>40:30+0:0:30</li>
+<li>40:31-0:0.5</li>
+</ul>
+<p>all specify the same angle. The leading sign applies to the following components so -1d30 is -(1+30/60) = &minus;1.5. However, note that -1:30-0:0:15 is parsed as (-1:30) + (-0:0:15) = &minus;(1+30/60) &minus; (15/3600). Latitudes must be in the range [&minus;90&deg;, 90&deg;]. Internally longitudes are reduced to the range [&minus;180&deg;, 180&deg;).</p>
+<p><b>UTM/UPS parsing</b>: For UTM zones (&minus;80&deg; &le; Lat &lt; 84&deg;), the zone designator is made up of a zone number (for 1 to 60) and a hemisphere letter (n or s), e.g., 38n (38north can also be used). The latitude band designer ([C&ndash;M] in the southern hemisphere and [N&ndash;X] in the northern) should NOT be used. (This is part of the <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> coordinate.) The zone designator for the poles (where UPS is employed) is a hemisphere letter by itself, i.e., n or s (north or south can also be used).</p>
+<p><b><a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> parsing</b> interprets the grid references as square area at the specified precision (1m, 10m, 100m, etc.). If <em>centerp</em> = true (the default), the center of this square is then taken to be the precise position; thus:</p><ul>
+<li>38SMB = 38n 450000 3650000</li>
+<li>38SMB4484 = 38n 444500 3684500</li>
+<li>38SMB44148470 = 38n 444145 3684705</li>
+</ul>
+<p>Otherwise, the "south-west" corner of the square is used, i.e.,</p><ul>
+<li>38SMB = 38n 400000 3600000</li>
+<li>38SMB4484 = 38n 444000 3684000</li>
+<li>38SMB44148470 = 38n 444140 3684700 </li>
+</ul>
+
+</div>
+</div>
+<a id="a7bde6a5cba74adf66d831788e6be8e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bde6a5cba74adf66d831788e6be8e65">&#9670;&nbsp;</a></span>GeoCoords() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::GeoCoords::GeoCoords </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>longitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em> = <code><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct from geographic coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>(degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>(degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>if specified, force the UTM/UPS representation to use a specified zone using the rules given in <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">UTMUPS::zonespec</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>latitude</em> is not in [&minus;90&deg;, 90&deg;]. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zone</em> cannot be used for this location. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaab765054416e1243f2d7b36edc8e0d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab765054416e1243f2d7b36edc8e0d4">&#9670;&nbsp;</a></span>GeoCoords() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::GeoCoords::GeoCoords </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>easting</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>northing</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Construct from UTM/UPS coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>UTM zone (zero means UPS). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northp</td><td>hemisphere (true means north, false means south). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">easting</td><td>(meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northing</td><td>(meters). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zone</em>, <em>easting</em>, or <em>northing</em> is outside its allowed range. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="abdf26c6324396ce0cb8031bd8d7ae2dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdf26c6324396ce0cb8031bd8d7ae2dd">&#9670;&nbsp;</a></span>AltConvergence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::AltConvergence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>meridian convergence (degrees) for alternate zone. </dd></dl>
+
+</div>
+</div>
+<a id="a962580d4647fcc2dda330dde726abae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a962580d4647fcc2dda330dde726abae9">&#9670;&nbsp;</a></span>AltEasting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::AltEasting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>easting (meters) for alternate zone. </dd></dl>
+
+</div>
+</div>
+<a id="a5f3d526c78e2ae59a5e51c17728d56f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f3d526c78e2ae59a5e51c17728d56f6">&#9670;&nbsp;</a></span>AltMGRSRepresentation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeoCoords::AltMGRSRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> string for the alternate zone. See <a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#ace88e379082ff31187aff82134d95f56">GeoCoords::MGRSRepresentation</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>precision (relative to about 1m). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> string. </dd></dl>
+
+</div>
+</div>
+<a id="aadae867ffe502d7643b12c6cdffd83d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadae867ffe502d7643b12c6cdffd83d6">&#9670;&nbsp;</a></span>AltNorthing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::AltNorthing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>northing (meters) for alternate zone. </dd></dl>
+
+</div>
+</div>
+<a id="af34328a442c6385d3bd986f2d90ce463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34328a442c6385d3bd986f2d90ce463">&#9670;&nbsp;</a></span>AltScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::AltScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>scale for alternate zone. </dd></dl>
+
+</div>
+</div>
+<a id="adec6e38ae39af5e1bda6e66b9821ab33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec6e38ae39af5e1bda6e66b9821ab33">&#9670;&nbsp;</a></span>AltUTMUPSRepresentation() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeoCoords::AltUTMUPSRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>abbrev</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>UTM/UPS string for the alternate zone, with hemisphere override.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">northp</td><td>hemisphere override </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>precision (relative to about 1m) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">abbrev</td><td>if true (the default) use abbreviated (n/s) notation for hemisphere; otherwise spell out the hemisphere (north/south) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the hemisphere override attempts to change UPS n to UPS s or vice verse. </td></tr>
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>UTM/UPS string representation: zone designator, easting, and northing. </dd></dl>
+
+</div>
+</div>
+<a id="ad2e4dedbd9cdde381b9a9b02c2ea6aa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e4dedbd9cdde381b9a9b02c2ea6aa0">&#9670;&nbsp;</a></span>AltUTMUPSRepresentation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeoCoords::AltUTMUPSRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>abbrev</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>UTM/UPS string for the alternate zone. See <a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a6f678ebdfff393a7a38b68c0d1eb64ae">GeoCoords::UTMUPSRepresentation</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>precision (relative to about 1m) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">abbrev</td><td>if true (the default) use abbreviated (n/s) notation for hemisphere; otherwise spell out the hemisphere (north/south) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>UTM/UPS string representation: zone designator, easting, and northing. </dd></dl>
+
+</div>
+</div>
+<a id="a111d529da067d11e66ac1fbb1e63bb6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a111d529da067d11e66ac1fbb1e63bb6b">&#9670;&nbsp;</a></span>AltZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GeographicLib::GeoCoords::AltZone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>current alternate zone (return 0 for UPS). </dd></dl>
+
+</div>
+</div>
+<a id="a5fa2e635848933b4fbadab589fad344d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa2e635848933b4fbadab589fad344d">&#9670;&nbsp;</a></span>Convergence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::Convergence </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>meridian convergence (degrees) for the UTM/UPS projection. </dd></dl>
+
+</div>
+</div>
+<a id="a557fae84fcf6783225fcbd80f2a2b35c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557fae84fcf6783225fcbd80f2a2b35c">&#9670;&nbsp;</a></span>DMSRepresentation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeoCoords::DMSRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>longfirst</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>dmssep</em> = <code>char(0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>String representation with latitude and longitude as degrees, minutes, seconds, and hemisphere.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>precision (relative to about 1m) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longfirst</td><td>if true give longitude first (default = false) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dmssep</td><td>if non-null, use as the <a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html" title="Convert between degrees and the DMS representation.">DMS</a> separator character (instead of d, ', &quot; delimiters). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="../../d6/d19/class_geographic_lib_1_1_d_m_s.html" title="Convert between degrees and the DMS representation.">DMS</a> latitude/longitude string representation.</dd></dl>
+<p>Precision specifies accuracy of representation as follows:</p><ul>
+<li>prec = &minus;5 (min), 1&deg;</li>
+<li>prec = &minus;4, 0.1&deg;</li>
+<li>prec = &minus;3, 1'</li>
+<li>prec = &minus;2, 0.1'</li>
+<li>prec = &minus;1, 1&quot;</li>
+<li>prec = 0, 0.1&quot; (about 3m)</li>
+<li>prec = 1, 0.01&quot;</li>
+<li>prec = 10 (max), 10<sup>&minus;11</sup>&quot; </li>
+</ul>
+
+</div>
+</div>
+<a id="aa508a1d251395dc974105b85c3811cce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa508a1d251395dc974105b85c3811cce">&#9670;&nbsp;</a></span>Easting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::Easting </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>easting (meters) </dd></dl>
+
+</div>
+</div>
+<a id="a3238f51b85207c01bb77dbd5e1ac3975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3238f51b85207c01bb77dbd5e1ac3975">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the WGS84 ellipsoid.</dd></dl>
+<p>(The WGS84 value is returned because the UTM and UPS projections are based on this ellipsoid.) </p>
+
+</div>
+</div>
+<a id="ad239b90e86e70dab5b92b4c532019307"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad239b90e86e70dab5b92b4c532019307">&#9670;&nbsp;</a></span>GeoRepresentation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeoCoords::GeoRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>longfirst</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>String representation with latitude and longitude as signed decimal degrees.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>precision (relative to about 1m). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longfirst</td><td>if true give longitude first (default = false) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>decimal latitude/longitude string representation.</dd></dl>
+<p>Precision specifies accuracy of representation as follows:</p><ul>
+<li>prec = &minus;5 (min), 1&deg;</li>
+<li>prec = 0, 10<sup>&minus;5</sup>&deg; (about 1m)</li>
+<li>prec = 3, 10<sup>&minus;8</sup>&deg;</li>
+<li>prec = 9 (max), 10<sup>&minus;14</sup>&deg; </li>
+</ul>
+
+</div>
+</div>
+<a id="a7c8169a884094165cd55f06a2d559e87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c8169a884094165cd55f06a2d559e87">&#9670;&nbsp;</a></span>Hemisphere()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char GeographicLib::GeoCoords::Hemisphere </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>hemisphere letter n or s. </dd></dl>
+
+</div>
+</div>
+<a id="a73e01ea96a18329eb3c342e34dd3b258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e01ea96a18329eb3c342e34dd3b258">&#9670;&nbsp;</a></span>Latitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::Latitude </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>latitude (degrees) </dd></dl>
+
+</div>
+</div>
+<a id="aac602348c6133c0f891eba4903d47615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac602348c6133c0f891eba4903d47615">&#9670;&nbsp;</a></span>Longitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::Longitude </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>longitude (degrees) </dd></dl>
+
+</div>
+</div>
+<a id="a036c3dff734f5a9d89ebc742fc49d6d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a036c3dff734f5a9d89ebc742fc49d6d1">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the WGS84 ellipsoid (meters).</dd></dl>
+<p>(The WGS84 value is returned because the UTM and UPS projections are based on this ellipsoid.) </p>
+
+</div>
+</div>
+<a id="ace88e379082ff31187aff82134d95f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace88e379082ff31187aff82134d95f56">&#9670;&nbsp;</a></span>MGRSRepresentation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeoCoords::MGRSRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p><a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> string.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>precision (relative to about 1m). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> string.</dd></dl>
+<p>This gives the coordinates of the enclosing grid square with size given by the precision. Thus 38n 444180 3684790 converted to a <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> coordinate at precision &minus;2 (100m) is 38SMB441847 and not 38SMB442848. <em>prec</em> specifies the precision of the <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> string as follows:</p><ul>
+<li>prec = &minus;5 (min), 100km</li>
+<li>prec = &minus;4, 10km</li>
+<li>prec = &minus;3, 1km</li>
+<li>prec = &minus;2, 100m</li>
+<li>prec = &minus;1, 10m</li>
+<li>prec = 0, 1m</li>
+<li>prec = 1, 0.1m</li>
+<li>prec = 6 (max), 1&mu;m </li>
+</ul>
+
+</div>
+</div>
+<a id="a0f406594448a67cc988655d9bc66e1ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f406594448a67cc988655d9bc66e1ca">&#9670;&nbsp;</a></span>Northing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::Northing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>northing (meters) </dd></dl>
+
+</div>
+</div>
+<a id="a9a2d60909e229f83197d73e84b889327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a2d60909e229f83197d73e84b889327">&#9670;&nbsp;</a></span>Northp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GeographicLib::GeoCoords::Northp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>hemisphere (false means south, true means north). </dd></dl>
+
+</div>
+</div>
+<a id="aeb3a0c947b336f58ce431e0bbfbc9ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3a0c947b336f58ce431e0bbfbc9ee8">&#9670;&nbsp;</a></span>Reset() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeoCoords::Reset </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>centerp</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>longfirst</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reset the location from a string. See <a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a38b3b49fd46e3f517b44c1394b44ca1e">GeoCoords(const std::string&amp; s, bool centerp, bool longfirst)</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>1-element, 2-element, or 3-element string representation of the position. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">centerp</td><td>governs the interpretation of <a class="el" href="../../df/d62/class_geographic_lib_1_1_m_g_r_s.html" title="Convert between UTM/UPS and MGRS.">MGRS</a> coordinates. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longfirst</td><td>governs the interpretation of geographic coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the <em>s</em> is malformed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab072761684d992f508b5a3b9440653fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab072761684d992f508b5a3b9440653fb">&#9670;&nbsp;</a></span>Reset() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeoCoords::Reset </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>easting</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>northing</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reset the location in terms of UPS/UPS coordinates. See <a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#aaab765054416e1243f2d7b36edc8e0d4">GeoCoords(int zone, bool northp, real easting, real northing)</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>UTM zone (zero means UPS). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northp</td><td>hemisphere (true means north, false means south). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">easting</td><td>(meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">northing</td><td>(meters). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zone</em>, <em>easting</em>, or <em>northing</em> is outside its allowed range. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0cbbebaa7bb77f91f3f8dbbadfd6532a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cbbebaa7bb77f91f3f8dbbadfd6532a">&#9670;&nbsp;</a></span>Reset() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeoCoords::Reset </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>longitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em> = <code><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Reset the location in terms of geographic coordinates. See <a class="el" href="../../d4/dc6/class_geographic_lib_1_1_geo_coords.html#a7bde6a5cba74adf66d831788e6be8e65">GeoCoords(real latitude, real longitude, int zone)</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>(degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>(degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>if specified, force the UTM/UPS representation to use a specified zone using the rules given in <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">UTMUPS::zonespec</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>latitude</em> is not in [&minus;90&deg;, 90&deg;]. </td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zone</em> cannot be used for this location. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac2a15bd4fa82e372ff8e9a4dcff33fc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2a15bd4fa82e372ff8e9a4dcff33fc1">&#9670;&nbsp;</a></span>Scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GeoCoords::Scale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>scale for the UTM/UPS projection. </dd></dl>
+
+</div>
+</div>
+<a id="a78fa80051e065c9a6e1d0c2381727a06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78fa80051e065c9a6e1d0c2381727a06">&#9670;&nbsp;</a></span>SetAltZone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GeoCoords::SetAltZone </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>zone</em> = <code><a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a></code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Specify alternate zone number.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zone</td><td>zone number for the alternate representation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>zone</em> cannot be used for this location.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>See <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">UTMUPS::zonespec</a> for more information on the interpretation of <em>zone</em>. Note that <em>zone</em> == <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">UTMUPS::STANDARD</a> (the default) use the standard UPS or UTM zone, <a class="el" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a9059a8e3b4721e27869e99ed1ae3d320">UTMUPS::MATCH</a> does nothing retaining the existing alternate representation. Before this is called the alternate zone is the input zone. </p>
+
+</div>
+</div>
+<a id="a546e821d93412b7d59649c58ef65d607"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a546e821d93412b7d59649c58ef65d607">&#9670;&nbsp;</a></span>UTMUPSRepresentation() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeoCoords::UTMUPSRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>northp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>abbrev</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>UTM/UPS string with hemisphere override.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">northp</td><td>hemisphere override </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>precision (relative to about 1m) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">abbrev</td><td>if true (the default) use abbreviated (n/s) notation for hemisphere; otherwise spell out the hemisphere (north/south) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if the hemisphere override attempts to change UPS N to UPS S or vice versa. </td></tr>
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>UTM/UPS string representation: zone designator, easting, and northing. </dd></dl>
+
+</div>
+</div>
+<a id="a6f678ebdfff393a7a38b68c0d1eb64ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f678ebdfff393a7a38b68c0d1eb64ae">&#9670;&nbsp;</a></span>UTMUPSRepresentation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string GeoCoords::UTMUPSRepresentation </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>abbrev</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>UTM/UPS string.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>precision (relative to about 1m) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">abbrev</td><td>if true (the default) use abbreviated (n/s) notation for hemisphere; otherwise spell out the hemisphere (north/south) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for the string can't be allocated. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>UTM/UPS string representation: zone designator, easting, and northing.</dd></dl>
+<p>Precision specifies accuracy of representation as follows:</p><ul>
+<li>prec = &minus;5 (min), 100km</li>
+<li>prec = &minus;3, 1km</li>
+<li>prec = 0, 1m</li>
+<li>prec = 3, 1mm</li>
+<li>prec = 6, 1&mu;m</li>
+<li>prec = 9 (max), 1nm </li>
+</ul>
+
+</div>
+</div>
+<a id="abb146874516a2beafd97113667eb0974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb146874516a2beafd97113667eb0974">&#9670;&nbsp;</a></span>Zone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GeographicLib::GeoCoords::Zone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the zone corresponding to the input (return 0 for UPS). </dd></dl>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d5/d43/_geo_coords_8hpp_source.html">GeoCoords.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d4/d8f/_geo_coords_8cpp.html">GeoCoords.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:18. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,0 +1,751 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::GravityCircle</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html">GravityCircle</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#friends">Друзья</a> &#124;
+<a href="../../da/d8a/class_geographic_lib_1_1_gravity_circle-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::GravityCircle</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gravity on a circle of latitude.  
+ <a href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/deb/_gravity_circle_8hpp_source.html">GravityCircle.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a4a000e07f0856a130ab11f1b26c933ed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#a4a000e07f0856a130ab11f1b26c933ed">GravityCircle</a> ()</td></tr>
+<tr class="separator:a4a000e07f0856a130ab11f1b26c933ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Compute the gravitational field</div></td></tr>
+<tr class="memitem:a16e8f04cc42d1d3ccc67444104cb64d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#a16e8f04cc42d1d3ccc67444104cb64d3">Gravity</a> (real lon, real &amp;gx, real &amp;gy, real &amp;gz) const</td></tr>
+<tr class="separator:a16e8f04cc42d1d3ccc67444104cb64d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c6e9491c5e24b02f9b26354831e231c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#a6c6e9491c5e24b02f9b26354831e231c">Disturbance</a> (real lon, real &amp;deltax, real &amp;deltay, real &amp;deltaz) const</td></tr>
+<tr class="separator:a6c6e9491c5e24b02f9b26354831e231c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae99550892c86132f056d08caf6b5e18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#aae99550892c86132f056d08caf6b5e18">GeoidHeight</a> (real lon) const</td></tr>
+<tr class="separator:aae99550892c86132f056d08caf6b5e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac745d0c2fc4748e1d66d6991d6f6a0f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#ac745d0c2fc4748e1d66d6991d6f6a0f3">SphericalAnomaly</a> (real lon, real &amp;Dg01, real &amp;xi, real &amp;eta) const</td></tr>
+<tr class="separator:ac745d0c2fc4748e1d66d6991d6f6a0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a758c31e6b8c87a4acfaf09541ef11757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#a758c31e6b8c87a4acfaf09541ef11757">W</a> (real lon, real &amp;gX, real &amp;gY, real &amp;gZ) const</td></tr>
+<tr class="separator:a758c31e6b8c87a4acfaf09541ef11757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a482625996e92cfc7a753b6b5a109bb98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#a482625996e92cfc7a753b6b5a109bb98">V</a> (real lon, real &amp;GX, real &amp;GY, real &amp;GZ) const</td></tr>
+<tr class="separator:a482625996e92cfc7a753b6b5a109bb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12fb5df6a3e41ac0d4a7986f566cf5a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#ad12fb5df6a3e41ac0d4a7986f566cf5a">T</a> (real lon, real &amp;deltaX, real &amp;deltaY, real &amp;deltaZ) const</td></tr>
+<tr class="separator:ad12fb5df6a3e41ac0d4a7986f566cf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97992c0fb748c2efdd7580b293f0f9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#af97992c0fb748c2efdd7580b293f0f9d">T</a> (real lon) const</td></tr>
+<tr class="separator:af97992c0fb748c2efdd7580b293f0f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions</div></td></tr>
+<tr class="memitem:a3f8bb1fab70b68fe5a7743b0e5b8c97e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#a3f8bb1fab70b68fe5a7743b0e5b8c97e">Init</a> () const</td></tr>
+<tr class="separator:a3f8bb1fab70b68fe5a7743b0e5b8c97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab0b6484d3a31a79f4c826bfd4e3f93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#abab0b6484d3a31a79f4c826bfd4e3f93">MajorRadius</a> () const</td></tr>
+<tr class="separator:abab0b6484d3a31a79f4c826bfd4e3f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4dc1d88119d1607e90e2be4cd62880d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#ac4dc1d88119d1607e90e2be4cd62880d">Flattening</a> () const</td></tr>
+<tr class="separator:ac4dc1d88119d1607e90e2be4cd62880d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4151039a0b102c59fdc2a378e4fcf26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#ac4151039a0b102c59fdc2a378e4fcf26">Latitude</a> () const</td></tr>
+<tr class="separator:ac4151039a0b102c59fdc2a378e4fcf26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b910ff3f07549884746165cdd738fb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#a6b910ff3f07549884746165cdd738fb6">Height</a> () const</td></tr>
+<tr class="separator:a6b910ff3f07549884746165cdd738fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a055fcad2b4d7b66b8dfee9613cb7f68b"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#a055fcad2b4d7b66b8dfee9613cb7f68b">Capabilities</a> () const</td></tr>
+<tr class="separator:a055fcad2b4d7b66b8dfee9613cb7f68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2324680bf99f7f3b8b99d9f6c1c923f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#ad2324680bf99f7f3b8b99d9f6c1c923f">Capabilities</a> (unsigned testcaps) const</td></tr>
+<tr class="separator:ad2324680bf99f7f3b8b99d9f6c1c923f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Друзья</h2></td></tr>
+<tr class="memitem:ada1db1d9f480d8044753ed869c995519"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html#ada1db1d9f480d8044753ed869c995519">GravityModel</a></td></tr>
+<tr class="separator:ada1db1d9f480d8044753ed869c995519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Gravity on a circle of latitude. </p>
+<p>Evaluate the earth's gravity field on a circle of constant height and latitude. This uses a <a class="el" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html" title="Spherical harmonic sums for a circle.">CircularEngine</a> to pre-evaluate the inner sum of the spherical harmonic sum, allowing the values of the field at several different longitudes to be evaluated rapidly.</p>
+<p>Use <a class="el" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html#a343452139378feab715d2ac8d02b4980">GravityModel::Circle</a> to create a <a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html" title="Gravity on a circle of latitude.">GravityCircle</a> object. (The constructor for this class is private.)</p>
+<p>See gravityparallel for an example of using <a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html" title="Gravity on a circle of latitude.">GravityCircle</a> (together with OpenMP) to speed up the computation of geoid heights.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --><p><a href="../../Gravity.1.html">Gravity</a> is a command-line utility providing access to the functionality of <a class="el" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html" title="Model of the earth&#39;s gravity field.">GravityModel</a> and <a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html" title="Gravity on a circle of latitude.">GravityCircle</a>. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a4a000e07f0856a130ab11f1b26c933ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a000e07f0856a130ab11f1b26c933ed">&#9670;&nbsp;</a></span>GravityCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::GravityCircle::GravityCircle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A default constructor for the normal gravity. This sets up an uninitialized object which can be later replaced by the <a class="el" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html#a343452139378feab715d2ac8d02b4980">GravityModel::Circle</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a055fcad2b4d7b66b8dfee9613cb7f68b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a055fcad2b4d7b66b8dfee9613cb7f68b">&#9670;&nbsp;</a></span>Capabilities() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned GeographicLib::GravityCircle::Capabilities </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>caps</em> the computational capabilities that this object was constructed with. </dd></dl>
+
+</div>
+</div>
+<a id="ad2324680bf99f7f3b8b99d9f6c1c923f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2324680bf99f7f3b8b99d9f6c1c923f">&#9670;&nbsp;</a></span>Capabilities() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GeographicLib::GravityCircle::Capabilities </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>testcaps</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">testcaps</td><td>a set of bitor'ed <a class="el" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html#af8691d0f13d6d42278cd1e615903d365">GravityModel::mask</a> values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true if the <a class="el" href="../../df/d06/class_geographic_lib_1_1_gravity_circle.html" title="Gravity on a circle of latitude.">GravityCircle</a> object has all these capabilities. </dd></dl>
+
+</div>
+</div>
+<a id="a6c6e9491c5e24b02f9b26354831e231c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c6e9491c5e24b02f9b26354831e231c">&#9670;&nbsp;</a></span>Disturbance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::Disturbance </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>deltax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>deltay</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>deltaz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evaluate the gravity disturbance vector.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>the geographic longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">deltax</td><td>the easterly component of the disturbance vector (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">deltay</td><td>the northerly component of the disturbance vector (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">deltaz</td><td>the upward component of the disturbance vector (m s<sup>&minus;2</sup>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>T</em> the corresponding disturbing potential. </dd></dl>
+
+</div>
+</div>
+<a id="ac4dc1d88119d1607e90e2be4cd62880d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4dc1d88119d1607e90e2be4cd62880d">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the ellipsoid. This is the value inherited from the <a class="el" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html" title="Model of the earth&#39;s gravity field.">GravityModel</a> object used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="aae99550892c86132f056d08caf6b5e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae99550892c86132f056d08caf6b5e18">&#9670;&nbsp;</a></span>GeoidHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::GeoidHeight </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evaluate the geoid height.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>the geographic longitude (degrees). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>N</em> the height of the geoid above the reference ellipsoid (meters).</dd></dl>
+<p>Some approximations are made in computing the geoid height so that the results of the NGA codes are reproduced accurately. Details are given in gravitygeoid. </p>
+
+</div>
+</div>
+<a id="a16e8f04cc42d1d3ccc67444104cb64d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e8f04cc42d1d3ccc67444104cb64d3">&#9670;&nbsp;</a></span>Gravity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::Gravity </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evaluate the gravity.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>the geographic longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gx</td><td>the easterly component of the acceleration (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gy</td><td>the northerly component of the acceleration (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gz</td><td>the upward component of the acceleration (m s<sup>&minus;2</sup>); this is usually negative. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>W</em> the sum of the gravitational and centrifugal potentials.</dd></dl>
+<p>The function includes the effects of the earth's rotation. </p>
+
+</div>
+</div>
+<a id="a6b910ff3f07549884746165cdd738fb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b910ff3f07549884746165cdd738fb6">&#9670;&nbsp;</a></span>Height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::Height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the height of the circle (meters). </dd></dl>
+
+</div>
+</div>
+<a id="a3f8bb1fab70b68fe5a7743b0e5b8c97e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8bb1fab70b68fe5a7743b0e5b8c97e">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GeographicLib::GravityCircle::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>true if the object has been initialized. </dd></dl>
+
+</div>
+</div>
+<a id="ac4151039a0b102c59fdc2a378e4fcf26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4151039a0b102c59fdc2a378e4fcf26">&#9670;&nbsp;</a></span>Latitude()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::Latitude </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd>the latitude of the circle (degrees). </dd></dl>
+
+</div>
+</div>
+<a id="abab0b6484d3a31a79f4c826bfd4e3f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab0b6484d3a31a79f4c826bfd4e3f93">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the ellipsoid (meters). This is the value inherited from the <a class="el" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html" title="Model of the earth&#39;s gravity field.">GravityModel</a> object used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="ac745d0c2fc4748e1d66d6991d6f6a0f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac745d0c2fc4748e1d66d6991d6f6a0f3">&#9670;&nbsp;</a></span>SphericalAnomaly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::GravityCircle::SphericalAnomaly </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>Dg01</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>xi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>eta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Evaluate the components of the gravity anomaly vector using the spherical approximation.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>the geographic longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">Dg01</td><td>the gravity anomaly (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xi</td><td>the northerly component of the deflection of the vertical (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">eta</td><td>the easterly component of the deflection of the vertical (degrees).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The spherical approximation (see Heiskanen and Moritz, Sec 2-14) is used so that the results of the NGA codes are reproduced accurately. approximations used here. Details are given in gravitygeoid. </p>
+
+</div>
+</div>
+<a id="af97992c0fb748c2efdd7580b293f0f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af97992c0fb748c2efdd7580b293f0f9d">&#9670;&nbsp;</a></span>T() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::T </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate disturbing potential in geocentric coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>the geographic longitude (degrees). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>T</em> = <em>W</em> - <em>U</em> the disturbing potential (also called the anomalous potential) (m<sup>2</sup> s<sup>&minus;2</sup>). </dd></dl>
+
+</div>
+</div>
+<a id="ad12fb5df6a3e41ac0d4a7986f566cf5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12fb5df6a3e41ac0d4a7986f566cf5a">&#9670;&nbsp;</a></span>T() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::T </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>deltaX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>deltaY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>deltaZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the components of the gravity disturbance in geocentric coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>the geographic longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">deltaX</td><td>the <em>X</em> component of the gravity disturbance (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">deltaY</td><td>the <em>Y</em> component of the gravity disturbance (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">deltaZ</td><td>the <em>Z</em> component of the gravity disturbance (m s<sup>&minus;2</sup>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>T</em> = <em>W</em> - <em>U</em> the disturbing potential (also called the anomalous potential) (m<sup>2</sup> s<sup>&minus;2</sup>). </dd></dl>
+
+</div>
+</div>
+<a id="a482625996e92cfc7a753b6b5a109bb98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a482625996e92cfc7a753b6b5a109bb98">&#9670;&nbsp;</a></span>V()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::V </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>GX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>GY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>GZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the components of the acceleration due to gravity in geocentric coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>the geographic longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">GX</td><td>the <em>X</em> component of the acceleration (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">GY</td><td>the <em>Y</em> component of the acceleration (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">GZ</td><td>the <em>Z</em> component of the acceleration (m s<sup>&minus;2</sup>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>V</em> = <em>W</em> - &Phi; the gravitational potential (m<sup>2</sup> s<sup>&minus;2</sup>). </dd></dl>
+
+</div>
+</div>
+<a id="a758c31e6b8c87a4acfaf09541ef11757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a758c31e6b8c87a4acfaf09541ef11757">&#9670;&nbsp;</a></span>W()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::GravityCircle::W </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Evaluate the components of the acceleration due to gravity and the centrifugal acceleration in geocentric coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>the geographic longitude (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gX</td><td>the <em>X</em> component of the acceleration (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gY</td><td>the <em>Y</em> component of the acceleration (m s<sup>&minus;2</sup>). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gZ</td><td>the <em>Z</em> component of the acceleration (m s<sup>&minus;2</sup>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><em>W</em> = <em>V</em> + &Phi; the sum of the gravitational and centrifugal potentials (m<sup>2</sup> s<sup>&minus;2</sup>). </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Документация по друзьям класса и функциям, относящимся к классу</h2>
+<a id="ada1db1d9f480d8044753ed869c995519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1db1d9f480d8044753ed869c995519">&#9670;&nbsp;</a></span>GravityModel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="../../d2/d04/class_geographic_lib_1_1_gravity_model.html">GravityModel</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../db/deb/_gravity_circle_8hpp_source.html">GravityCircle.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d5/d04/_gravity_circle_8cpp.html">GravityCircle.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:19. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

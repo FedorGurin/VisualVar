@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/gtx/fast_exponential.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_e20a439b6cdbf5d4e02750a868806e68.html">gtx</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">fast_exponential.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/d2c/fast__exponential_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef GLM_GTX_fast_exponential</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d1/d2c/fast__exponential_8hpp.html#a920a39b952f30a8fe7cd6eab1c364bbe">   40</a></span>&#160;<span class="preprocessor">#define GLM_GTX_fast_exponential GLM_VERSION</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Dependency:</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;../glm.hpp&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;../gtc/half_float.hpp&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if(defined(GLM_MESSAGES) &amp;&amp; !defined(glm_ext))</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#   pragma message(&quot;GLM: GLM_GTX_fast_exponential extension included&quot;)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    genType <a class="code" href="../../da/df6/group__gtx__fast__exponential.html#ga0ecbe429c87b820368f425ee8d22841a">fastPow</a>(</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        genType <span class="keyword">const</span> &amp; x, </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        genType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genTypeT, <span class="keyword">typename</span> genTypeU&gt; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../da/df6/group__gtx__fast__exponential.html#ga3afd7b7f1ac505ca9247dc6ffa0c25cb">   65</a></span>&#160;    genTypeT <a class="code" href="../../da/df6/group__gtx__fast__exponential.html#ga0ecbe429c87b820368f425ee8d22841a">fastPow</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        genTypeT <span class="keyword">const</span> &amp; x, </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        genTypeU <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../da/df6/group__gtx__fast__exponential.html#ga81550f837781889cc21fe49852102ea0">   72</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../da/df6/group__gtx__fast__exponential.html#ga81550f837781889cc21fe49852102ea0">fastExp</a>(<span class="keyword">const</span> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&amp; x);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../da/df6/group__gtx__fast__exponential.html#ga784a80d571f0f596d438863775827cd0">   77</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../da/df6/group__gtx__fast__exponential.html#ga784a80d571f0f596d438863775827cd0">fastLog</a>(<span class="keyword">const</span> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&amp; x);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="../../da/df6/group__gtx__fast__exponential.html#ga27ffd3d58db8a5309300f16cc5d9284c">   82</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../da/df6/group__gtx__fast__exponential.html#ga27ffd3d58db8a5309300f16cc5d9284c">fastExp2</a>(<span class="keyword">const</span> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&amp; x);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../da/df6/group__gtx__fast__exponential.html#gac516a11818384b9392412ac199044cf6">   87</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../da/df6/group__gtx__fast__exponential.html#gac516a11818384b9392412ac199044cf6">fastLog2</a>(<span class="keyword">const</span> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&amp; x);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../da/df6/group__gtx__fast__exponential.html#gaddd4e635f1c3168122fe7b14753935b9">   92</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../da/df6/group__gtx__fast__exponential.html#gaddd4e635f1c3168122fe7b14753935b9">fastLn</a>(<span class="keyword">const</span> <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a>&amp; x);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}<span class="comment">//namespace glm</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d40/fast__exponential_8inl.html">fast_exponential.inl</a>&quot;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif//GLM_GTX_fast_exponential</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__gtx__fast__exponential_html_ga784a80d571f0f596d438863775827cd0"><div class="ttname"><a href="../../da/df6/group__gtx__fast__exponential.html#ga784a80d571f0f596d438863775827cd0">glm::fastLog</a></div><div class="ttdeci">T fastLog(const T &amp;x)</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">glm::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:43</div></div>
+<div class="ttc" id="agroup__gtx__fast__exponential_html_gac516a11818384b9392412ac199044cf6"><div class="ttname"><a href="../../da/df6/group__gtx__fast__exponential.html#gac516a11818384b9392412ac199044cf6">glm::fastLog2</a></div><div class="ttdeci">T fastLog2(const T &amp;x)</div></div>
+<div class="ttc" id="afast__exponential_8inl_html"><div class="ttname"><a href="../../d9/d40/fast__exponential_8inl.html">fast_exponential.inl</a></div></div>
+<div class="ttc" id="agroup__gtx__fast__exponential_html_ga27ffd3d58db8a5309300f16cc5d9284c"><div class="ttname"><a href="../../da/df6/group__gtx__fast__exponential.html#ga27ffd3d58db8a5309300f16cc5d9284c">glm::fastExp2</a></div><div class="ttdeci">T fastExp2(const T &amp;x)</div></div>
+<div class="ttc" id="agroup__gtx__fast__exponential_html_gaddd4e635f1c3168122fe7b14753935b9"><div class="ttname"><a href="../../da/df6/group__gtx__fast__exponential.html#gaddd4e635f1c3168122fe7b14753935b9">glm::fastLn</a></div><div class="ttdeci">T fastLn(const T &amp;x)</div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="agroup__gtx__fast__exponential_html_ga0ecbe429c87b820368f425ee8d22841a"><div class="ttname"><a href="../../da/df6/group__gtx__fast__exponential.html#ga0ecbe429c87b820368f425ee8d22841a">glm::fastPow</a></div><div class="ttdeci">genType fastPow(genType const &amp;x, genType const &amp;y)</div><div class="ttdef"><b>Definition:</b> fast_exponential.inl:14</div></div>
+<div class="ttc" id="agroup__gtx__fast__exponential_html_ga81550f837781889cc21fe49852102ea0"><div class="ttname"><a href="../../da/df6/group__gtx__fast__exponential.html#ga81550f837781889cc21fe49852102ea0">glm::fastExp</a></div><div class="ttdeci">T fastExp(const T &amp;x)</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

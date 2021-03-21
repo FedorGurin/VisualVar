@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Файл D:/MyProg/226/ui/VisualVar/globalFunc/mercator.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a91295625b6c1d91e5ab7944a56a2122.html">globalFunc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Макросы</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл mercator.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d7/d1e/mercator_8h_source.html">mercator.h</a>&quot;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a525335710b53cb064ca56b936120431e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a525335710b53cb064ca56b936120431e">_USE_MATH_DEFINES</a></td></tr>
+<tr class="separator:a525335710b53cb064ca56b936120431e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96d3ed094cee215a1c3806455ecfc4d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a96d3ed094cee215a1c3806455ecfc4d2">D_R</a>&#160;&#160;&#160;(<a class="el" href="../../d2/d49/global_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / 180.0)</td></tr>
+<tr class="separator:a96d3ed094cee215a1c3806455ecfc4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889bf56acf54b10779b3192f4f4a9c0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a889bf56acf54b10779b3192f4f4a9c0c">R_D</a>&#160;&#160;&#160;(180.0 / <a class="el" href="../../d2/d49/global_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>)</td></tr>
+<tr class="separator:a889bf56acf54b10779b3192f4f4a9c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a829002fc4dfdb3d37fa2d2e8ca61d2cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a829002fc4dfdb3d37fa2d2e8ca61d2cf">R_MAJOR</a>&#160;&#160;&#160;6378137.0</td></tr>
+<tr class="separator:a829002fc4dfdb3d37fa2d2e8ca61d2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaed2746737d8a4ae298ef4c61d58a1eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#aaed2746737d8a4ae298ef4c61d58a1eb">R_MINOR</a>&#160;&#160;&#160;6356752.3142</td></tr>
+<tr class="separator:aaed2746737d8a4ae298ef4c61d58a1eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8b3c8482e593df0ace933ad3de22ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a7e8b3c8482e593df0ace933ad3de22ee">RATIO</a>&#160;&#160;&#160;(<a class="el" href="../../d4/d59/mercator_8cpp.html#aaed2746737d8a4ae298ef4c61d58a1eb">R_MINOR</a>/<a class="el" href="../../d4/d59/mercator_8cpp.html#a829002fc4dfdb3d37fa2d2e8ca61d2cf">R_MAJOR</a>)</td></tr>
+<tr class="separator:a7e8b3c8482e593df0ace933ad3de22ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8637818fcb5466c85681cabd563e88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a6e8637818fcb5466c85681cabd563e88">ECCENT</a>&#160;&#160;&#160;(sqrt(1.0 - (<a class="el" href="../../d4/d59/mercator_8cpp.html#a7e8b3c8482e593df0ace933ad3de22ee">RATIO</a> * <a class="el" href="../../d4/d59/mercator_8cpp.html#a7e8b3c8482e593df0ace933ad3de22ee">RATIO</a>)))</td></tr>
+<tr class="separator:a6e8637818fcb5466c85681cabd563e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1557807c0d07a5b03c12753033006bdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a1557807c0d07a5b03c12753033006bdb">COM</a>&#160;&#160;&#160;(0.5 * <a class="el" href="../../d4/d59/mercator_8cpp.html#a6e8637818fcb5466c85681cabd563e88">ECCENT</a>)</td></tr>
+<tr class="separator:a1557807c0d07a5b03c12753033006bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:af0a18b3ac9e461ac48b4cfffb4945a84"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#af0a18b3ac9e461ac48b4cfffb4945a84">fmin</a> (double x, double y)</td></tr>
+<tr class="separator:af0a18b3ac9e461ac48b4cfffb4945a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e041615ac931b4d848a7b173049301"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a35e041615ac931b4d848a7b173049301">fmax</a> (double x, double y)</td></tr>
+<tr class="separator:a35e041615ac931b4d848a7b173049301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e9f74e208f44e68882d52d634b7784"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#aa6e9f74e208f44e68882d52d634b7784">deg_rad</a> (double ang)</td></tr>
+<tr class="separator:aa6e9f74e208f44e68882d52d634b7784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09bd80e7f97df55fc7dd3b9ce74ea86f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a09bd80e7f97df55fc7dd3b9ce74ea86f">merc_x</a> (double lon)</td></tr>
+<tr class="separator:a09bd80e7f97df55fc7dd3b9ce74ea86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a9314662f0e2072e5f3ee41ac6fa3a0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a8a9314662f0e2072e5f3ee41ac6fa3a0">merc_y</a> (double lat)</td></tr>
+<tr class="separator:a8a9314662f0e2072e5f3ee41ac6fa3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67400e4bd3dba0d616d73b67a2b7f8f1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a67400e4bd3dba0d616d73b67a2b7f8f1">rad_deg</a> (double ang)</td></tr>
+<tr class="separator:a67400e4bd3dba0d616d73b67a2b7f8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41dca759081d16b9a0d3a9750971a4ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a41dca759081d16b9a0d3a9750971a4ff">merc_lon</a> (double x)</td></tr>
+<tr class="separator:a41dca759081d16b9a0d3a9750971a4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87abf24a6a0dffa91e4b23995f36444c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a87abf24a6a0dffa91e4b23995f36444c">merc_lat</a> (double y)</td></tr>
+<tr class="separator:a87abf24a6a0dffa91e4b23995f36444c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7be11ad108c41586b46e82cb9bdc13dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a7be11ad108c41586b46e82cb9bdc13dd">mercXYtoLonLat</a> (double x, double y, double &amp;lon, double &amp;lat)</td></tr>
+<tr class="separator:a7be11ad108c41586b46e82cb9bdc13dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1628340980cd4300314094924a1181be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d59/mercator_8cpp.html#a1628340980cd4300314094924a1181be">mercLonLattoXY</a> (double lon, double lat, double &amp;x, double &amp;y)</td></tr>
+<tr class="separator:a1628340980cd4300314094924a1181be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="a525335710b53cb064ca56b936120431e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a525335710b53cb064ca56b936120431e">&#9670;&nbsp;</a></span>_USE_MATH_DEFINES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _USE_MATH_DEFINES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1557807c0d07a5b03c12753033006bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1557807c0d07a5b03c12753033006bdb">&#9670;&nbsp;</a></span>COM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COM&#160;&#160;&#160;(0.5 * <a class="el" href="../../d4/d59/mercator_8cpp.html#a6e8637818fcb5466c85681cabd563e88">ECCENT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96d3ed094cee215a1c3806455ecfc4d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96d3ed094cee215a1c3806455ecfc4d2">&#9670;&nbsp;</a></span>D_R</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define D_R&#160;&#160;&#160;(<a class="el" href="../../d2/d49/global_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a> / 180.0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e8637818fcb5466c85681cabd563e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e8637818fcb5466c85681cabd563e88">&#9670;&nbsp;</a></span>ECCENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ECCENT&#160;&#160;&#160;(sqrt(1.0 - (<a class="el" href="../../d4/d59/mercator_8cpp.html#a7e8b3c8482e593df0ace933ad3de22ee">RATIO</a> * <a class="el" href="../../d4/d59/mercator_8cpp.html#a7e8b3c8482e593df0ace933ad3de22ee">RATIO</a>)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a889bf56acf54b10779b3192f4f4a9c0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889bf56acf54b10779b3192f4f4a9c0c">&#9670;&nbsp;</a></span>R_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define R_D&#160;&#160;&#160;(180.0 / <a class="el" href="../../d2/d49/global_8h.html#ae71449b1cc6e6250b91f539153a7a0d3">M_PI</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a829002fc4dfdb3d37fa2d2e8ca61d2cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a829002fc4dfdb3d37fa2d2e8ca61d2cf">&#9670;&nbsp;</a></span>R_MAJOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define R_MAJOR&#160;&#160;&#160;6378137.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaed2746737d8a4ae298ef4c61d58a1eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaed2746737d8a4ae298ef4c61d58a1eb">&#9670;&nbsp;</a></span>R_MINOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define R_MINOR&#160;&#160;&#160;6356752.3142</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e8b3c8482e593df0ace933ad3de22ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8b3c8482e593df0ace933ad3de22ee">&#9670;&nbsp;</a></span>RATIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RATIO&#160;&#160;&#160;(<a class="el" href="../../d4/d59/mercator_8cpp.html#aaed2746737d8a4ae298ef4c61d58a1eb">R_MINOR</a>/<a class="el" href="../../d4/d59/mercator_8cpp.html#a829002fc4dfdb3d37fa2d2e8ca61d2cf">R_MAJOR</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Функции</h2>
+<a id="aa6e9f74e208f44e68882d52d634b7784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6e9f74e208f44e68882d52d634b7784">&#9670;&nbsp;</a></span>deg_rad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double deg_rad </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ang</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35e041615ac931b4d848a7b173049301"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e041615ac931b4d848a7b173049301">&#9670;&nbsp;</a></span>fmax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double fmax </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0a18b3ac9e461ac48b4cfffb4945a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0a18b3ac9e461ac48b4cfffb4945a84">&#9670;&nbsp;</a></span>fmin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double fmin </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87abf24a6a0dffa91e4b23995f36444c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87abf24a6a0dffa91e4b23995f36444c">&#9670;&nbsp;</a></span>merc_lat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double merc_lat </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41dca759081d16b9a0d3a9750971a4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41dca759081d16b9a0d3a9750971a4ff">&#9670;&nbsp;</a></span>merc_lon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double merc_lon </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a09bd80e7f97df55fc7dd3b9ce74ea86f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09bd80e7f97df55fc7dd3b9ce74ea86f">&#9670;&nbsp;</a></span>merc_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double merc_x </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a9314662f0e2072e5f3ee41ac6fa3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a9314662f0e2072e5f3ee41ac6fa3a0">&#9670;&nbsp;</a></span>merc_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double merc_y </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1628340980cd4300314094924a1181be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1628340980cd4300314094924a1181be">&#9670;&nbsp;</a></span>mercLonLattoXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mercLonLattoXY </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7be11ad108c41586b46e82cb9bdc13dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7be11ad108c41586b46e82cb9bdc13dd">&#9670;&nbsp;</a></span>mercXYtoLonLat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mercXYtoLonLat </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67400e4bd3dba0d616d73b67a2b7f8f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67400e4bd3dba0d616d73b67a2b7f8f1">&#9670;&nbsp;</a></span>rad_deg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double rad_deg </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ang</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:34. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

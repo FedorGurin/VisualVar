@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/SphericalEngine.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">SphericalEngine.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d1/db8/_spherical_engine_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_SPHERICALENGINE_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_SPHERICALENGINE_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;istream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">// Squelch warnings about dll vs vector</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#  pragma warning (push)</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#  pragma warning (disable: 4251)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">class </span>CircularEngine;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html">   40</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html">SphericalEngine</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// A table of the square roots of integers</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> std::vector&lt;real&gt; root_;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a0c689dbf7b6bf2fb4cffb109085b1d3b">   45</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a>; <span class="comment">// CircularEngine needs access to root_, scale_</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// An internal scaling of the coefficients to avoid overflow in</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// intermediate calculations.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> real <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#ga223e08009f1cab54651200b81e91981c">scale</a>() {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">std::pow</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">pow</a>(real(std::numeric_limits&lt;real&gt;::radix),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                 -3 * (std::numeric_limits&lt;real&gt;::max_exponent &lt; (1&lt;&lt;14) ?</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                       std::numeric_limits&lt;real&gt;::max_exponent : (1&lt;&lt;14)) / 5);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Move latitudes near the pole off the axis by this amount.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">static</span> real eps() {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keyword">using</span> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">std::sqrt</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">std::numeric_limits&lt;real&gt;::epsilon</a>() *</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">sqrt</a>(<a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">std::numeric_limits&lt;real&gt;::epsilon</a>());</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> std::vector&lt;real&gt; Z_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    SphericalEngine();          <span class="comment">// Disable constructor</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949f">   66</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949f">normalization</a> {</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fac720ca87adfc478dbfc13a37f0cf8ba9">   73</a></span>&#160;      FULL = 0,</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949fa2e3db3efd68d118e3f357a97eb77a131">   80</a></span>&#160;      SCHMIDT = 1,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;      <span class="comment">// These are deprecated...</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;      full = FULL,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      schmidt = SCHMIDT,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    };</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">  100</a></span>&#160;    <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">coeff</a> {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordtype">int</span> _Nx, _nmx, _mmx;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      std::vector&lt;real&gt;::const_iterator _Cnm;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      std::vector&lt;real&gt;::const_iterator _Snm;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a98ee0fd797434667a8cb5093d7644af4">  109</a></span>&#160;      <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a98ee0fd797434667a8cb5093d7644af4">coeff</a>()</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        : _Nx(-1)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        , _nmx(-1)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        , _mmx(-1)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        , _Cnm(Z_.begin())</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        , _Snm(Z_.begin()) {}</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a45a4378903a4f3ee817c47b72d086183">  130</a></span>&#160;      <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a45a4378903a4f3ee817c47b72d086183">coeff</a>(<span class="keyword">const</span> std::vector&lt;real&gt;&amp; C,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keyword">const</span> std::vector&lt;real&gt;&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            <span class="keywordtype">int</span> N, <span class="keywordtype">int</span> nmx, <span class="keywordtype">int</span> mmx)</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        : _Nx(N)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        , _nmx(nmx)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        , _mmx(mmx)</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        , _Cnm(C.begin())</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        , _Snm(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>.begin())</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">if</span> (!(_Nx &gt;= _nmx &amp;&amp; _nmx &gt;= _mmx &amp;&amp; _mmx &gt;= -1))</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;          <span class="keywordflow">throw</span> <a class="code" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicErr</a>(<span class="stringliteral">&quot;Bad indices for coeff&quot;</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">if</span> (!(index(_nmx, _mmx) &lt; <span class="keywordtype">int</span>(C.size()) &amp;&amp;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;              index(_nmx, _mmx) &lt; <span class="keywordtype">int</span>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>.size()) + (_Nx + 1)))</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;          <span class="keywordflow">throw</span> <a class="code" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicErr</a>(<span class="stringliteral">&quot;Arrays too small in coeff&quot;</span>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a7fac63262c0a8bb18aee8c962a08d429">SphericalEngine::RootTable</a>(_nmx);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      }</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a2f453e210345b33a364bf5a3bee84b7b">  158</a></span>&#160;      <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a2f453e210345b33a364bf5a3bee84b7b">coeff</a>(<span class="keyword">const</span> std::vector&lt;real&gt;&amp; C,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <span class="keyword">const</span> std::vector&lt;real&gt;&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordtype">int</span> N)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        : _Nx(N)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        , _nmx(N)</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        , _mmx(N)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        , _Cnm(C.begin())</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        , _Snm(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>.begin())</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">if</span> (!(_Nx &gt;= -1))</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;          <span class="keywordflow">throw</span> <a class="code" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicErr</a>(<span class="stringliteral">&quot;Bad indices for coeff&quot;</span>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">if</span> (!(index(_nmx, _mmx) &lt; <span class="keywordtype">int</span>(C.size()) &amp;&amp;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;              index(_nmx, _mmx) &lt; <span class="keywordtype">int</span>(<a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>.size()) + (_Nx + 1)))</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;          <span class="keywordflow">throw</span> <a class="code" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicErr</a>(<span class="stringliteral">&quot;Arrays too small in coeff&quot;</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a7fac63262c0a8bb18aee8c962a08d429">SphericalEngine::RootTable</a>(_nmx);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      }</div>
+<div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a6b7e428b6a0b86fbd4c3a3bbc3025bba">  177</a></span>&#160;      <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a6b7e428b6a0b86fbd4c3a3bbc3025bba">N</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _Nx; }</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aab573e0fcc801b299ae1b2f386d87a92">  181</a></span>&#160;      <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aab573e0fcc801b299ae1b2f386d87a92">nmx</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _nmx; }</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#ae5df5c92579ce0fcac640f8bebc6675a">  185</a></span>&#160;      <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#ae5df5c92579ce0fcac640f8bebc6675a">mmx</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _mmx; }</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aa49816b349c81bea0d01437b4346a535">  193</a></span>&#160;      <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aa49816b349c81bea0d01437b4346a535">index</a>(<span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keyword">      </span>{ <span class="keywordflow">return</span> m * _Nx - m * (m - 1) / 2 + n; }</div>
+<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#ae70bc4fa6479a5659d465a5623ece4ed">  201</a></span>&#160;      <span class="keyword">inline</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#ae70bc4fa6479a5659d465a5623ece4ed">Cv</a>(<span class="keywordtype">int</span> k)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *(_Cnm + k); }</div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a820327af624c8a161b75b2986885c4f3">  208</a></span>&#160;      <span class="keyword">inline</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a820327af624c8a161b75b2986885c4f3">Sv</a>(<span class="keywordtype">int</span> k)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> *(_Snm + (k - (_Nx + 1))); }</div>
+<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aa31b436bc3f412f4d16bf9ee8b221389">  219</a></span>&#160;      <span class="keyword">inline</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aa31b436bc3f412f4d16bf9ee8b221389">Cv</a>(<span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m, real f)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">      </span>{ <span class="keywordflow">return</span> m &gt; _mmx || n &gt; _nmx ? 0 : *(_Cnm + k) * f; }</div>
+<div class="line"><a name="l00231"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a84f27868edd226e2b4a016a65ad855e8">  231</a></span>&#160;      <span class="keyword">inline</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a84f27868edd226e2b4a016a65ad855e8">Sv</a>(<span class="keywordtype">int</span> k, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span> m, real f)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="keyword">      </span>{ <span class="keywordflow">return</span> m &gt; _mmx || n &gt; _nmx ? 0 : *(_Snm + (k - (_Nx + 1))) * f; }</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a8a126c9790a7a1609046fbae7934e587">  242</a></span>&#160;      <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a8a126c9790a7a1609046fbae7934e587">Csize</a>(<span class="keywordtype">int</span> N, <span class="keywordtype">int</span> M)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      { <span class="keywordflow">return</span> (M + 1) * (2 * N - M + 2) / 2; }</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a98a75827d68247cf5ad1843d9d68b222">  253</a></span>&#160;      <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a98a75827d68247cf5ad1843d9d68b222">Ssize</a>(<span class="keywordtype">int</span> N, <span class="keywordtype">int</span> M)</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      { <span class="keywordflow">return</span> Csize(N, M) - (N + 1); }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;      <span class="keyword">static</span> <span class="keywordtype">void</span> readcoeffs(std::istream&amp; stream, <span class="keywordtype">int</span>&amp; N, <span class="keywordtype">int</span>&amp; M,</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                             std::vector&lt;real&gt;&amp; C, std::vector&lt;real&gt;&amp; <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">S</a>);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    };</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> gradp, normalization norm, <span class="keywordtype">int</span> L&gt;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;      <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> Value(<span class="keyword">const</span> coeff c[], <span class="keyword">const</span> real f[],</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                              real x, real y, real z, real a,</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                              real&amp; gradx, real&amp; grady, real&amp; gradz);</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> gradp, normalization norm, <span class="keywordtype">int</span> L&gt;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;      <span class="keyword">static</span> <a class="code" href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">CircularEngine</a> Circle(<span class="keyword">const</span> coeff c[], <span class="keyword">const</span> real f[],</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;                                   real p, real z, real a);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> RootTable(<span class="keywordtype">int</span> N);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#ab3fb8f933adb257df6b7537268d55a75">  369</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#ab3fb8f933adb257df6b7537268d55a75">ClearRootTable</a>() {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;      std::vector&lt;real&gt; temp(0);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;      root_.swap(temp);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  };</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160; </div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;<span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;<span class="preprocessor">#  pragma warning (pop)</span></div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_SPHERICALENGINE_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__core__func__exponential_html_ga2317d4ff45af448b8402431afa0711f3"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#ga2317d4ff45af448b8402431afa0711f3">glm::sqrt</a></div><div class="ttdeci">GLM_FUNC_DECL genType sqrt(genType const &amp;x)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:131</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_aab573e0fcc801b299ae1b2f386d87a92"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aab573e0fcc801b299ae1b2f386d87a92">GeographicLib::SphericalEngine::coeff::nmx</a></div><div class="ttdeci">int nmx() const</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:181</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_a6b7e428b6a0b86fbd4c3a3bbc3025bba"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a6b7e428b6a0b86fbd4c3a3bbc3025bba">GeographicLib::SphericalEngine::coeff::N</a></div><div class="ttdeci">int N() const</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:177</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="agroup__gtc__matrix__transform_html_ga223e08009f1cab54651200b81e91981c"><div class="ttname"><a href="../../dc/d1c/group__gtc__matrix__transform.html#ga223e08009f1cab54651200b81e91981c">glm::scale</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; scale(detail::tmat4x4&lt; T &gt; const &amp;m, detail::tvec3&lt; T &gt; const &amp;v)</div><div class="ttdef"><b>Definition:</b> matrix_transform.inl:86</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_circular_engine_html"><div class="ttname"><a href="../../db/de8/class_geographic_lib_1_1_circular_engine.html">GeographicLib::CircularEngine</a></div><div class="ttdoc">Spherical harmonic sums for a circle.</div><div class="ttdef"><b>Definition:</b> CircularEngine.hpp:52</div></div>
+<div class="ttc" id="agroup__core__func__exponential_html_ga1ce4b2fddd26d0d3a35a8d98f37f3ac0"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">glm::pow</a></div><div class="ttdeci">GLM_FUNC_DECL genType pow(genType const &amp;base, genType const &amp;exponent)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:34</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_a84f27868edd226e2b4a016a65ad855e8"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a84f27868edd226e2b4a016a65ad855e8">GeographicLib::SphericalEngine::coeff::Sv</a></div><div class="ttdeci">Math::real Sv(int k, int n, int m, real f) const</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:231</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_a98a75827d68247cf5ad1843d9d68b222"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a98a75827d68247cf5ad1843d9d68b222">GeographicLib::SphericalEngine::coeff::Ssize</a></div><div class="ttdeci">static int Ssize(int N, int M)</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:253</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_a45a4378903a4f3ee817c47b72d086183"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a45a4378903a4f3ee817c47b72d086183">GeographicLib::SphericalEngine::coeff::coeff</a></div><div class="ttdeci">coeff(const std::vector&lt; real &gt; &amp;C, const std::vector&lt; real &gt; &amp;S, int N, int nmx, int mmx)</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:130</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_ae70bc4fa6479a5659d465a5623ece4ed"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#ae70bc4fa6479a5659d465a5623ece4ed">GeographicLib::SphericalEngine::coeff::Cv</a></div><div class="ttdeci">Math::real Cv(int k) const</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:201</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_a2f453e210345b33a364bf5a3bee84b7b"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a2f453e210345b33a364bf5a3bee84b7b">GeographicLib::SphericalEngine::coeff::coeff</a></div><div class="ttdeci">coeff(const std::vector&lt; real &gt; &amp;C, const std::vector&lt; real &gt; &amp;S, int N)</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:158</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_a98ee0fd797434667a8cb5093d7644af4"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a98ee0fd797434667a8cb5093d7644af4">GeographicLib::SphericalEngine::coeff::coeff</a></div><div class="ttdeci">coeff()</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:109</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="agroup__gtc__constants_html_gacb41049b8d22c8aa90e362b96c524feb"><div class="ttname"><a href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">glm::epsilon</a></div><div class="ttdeci">GLM_FUNC_DECL genType epsilon()</div><div class="ttdef"><b>Definition:</b> constants.inl:32</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_ae5df5c92579ce0fcac640f8bebc6675a"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#ae5df5c92579ce0fcac640f8bebc6675a">GeographicLib::SphericalEngine::coeff::mmx</a></div><div class="ttdeci">int mmx() const</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:185</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_aa31b436bc3f412f4d16bf9ee8b221389"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aa31b436bc3f412f4d16bf9ee8b221389">GeographicLib::SphericalEngine::coeff::Cv</a></div><div class="ttdeci">Math::real Cv(int k, int n, int m, real f) const</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:219</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html">GeographicLib::SphericalEngine::coeff</a></div><div class="ttdoc">Package up coefficients for SphericalEngine.</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:100</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html">GeographicLib::SphericalEngine</a></div><div class="ttdoc">The evaluation engine for SphericalHarmonic.</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:40</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html_a5332d09191e018cbddc568c1fc71949f"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a5332d09191e018cbddc568c1fc71949f">GeographicLib::SphericalEngine::normalization</a></div><div class="ttdeci">normalization</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:66</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geographic_err_html"><div class="ttname"><a href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html">GeographicLib::GeographicErr</a></div><div class="ttdoc">Exception handling for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Constants.hpp:386</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html_ab3fb8f933adb257df6b7537268d55a75"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#ab3fb8f933adb257df6b7537268d55a75">GeographicLib::SphericalEngine::ClearRootTable</a></div><div class="ttdeci">static void ClearRootTable()</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:369</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_a820327af624c8a161b75b2986885c4f3"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a820327af624c8a161b75b2986885c4f3">GeographicLib::SphericalEngine::coeff::Sv</a></div><div class="ttdeci">Math::real Sv(int k) const</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:208</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3becaf5b3da43a0ae7ddf1530dc4a0c86eeae">glm::S</a></div><div class="ttdeci">@ S</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:40</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_html_a7fac63262c0a8bb18aee8c962a08d429"><div class="ttname"><a href="../../db/da5/class_geographic_lib_1_1_spherical_engine.html#a7fac63262c0a8bb18aee8c962a08d429">GeographicLib::SphericalEngine::RootTable</a></div><div class="ttdeci">static void RootTable(int N)</div><div class="ttdef"><b>Definition:</b> SphericalEngine.cpp:370</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_aa49816b349c81bea0d01437b4346a535"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#aa49816b349c81bea0d01437b4346a535">GeographicLib::SphericalEngine::coeff::index</a></div><div class="ttdeci">int index(int n, int m) const</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:193</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_spherical_engine_1_1coeff_html_a8a126c9790a7a1609046fbae7934e587"><div class="ttname"><a href="../../d3/d08/class_geographic_lib_1_1_spherical_engine_1_1coeff.html#a8a126c9790a7a1609046fbae7934e587">GeographicLib::SphericalEngine::coeff::Csize</a></div><div class="ttdeci">static int Csize(int N, int M)</div><div class="ttdef"><b>Definition:</b> SphericalEngine.hpp:242</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

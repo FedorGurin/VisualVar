@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/parser.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">parser.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/d36/parser_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Parser.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: 17.06.2009</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: Fedor</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef PARSER_H_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define PARSER_H_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QFile&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QDomElement&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QDomDocument&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QTextStream&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/da3/cl__scene_8h.html">cl_scene.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;TypeObjectsVis.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../dc/db7/class_parser.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/db7/class_parser.html">Parser</a> :<span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../dc/db7/class_parser.html#af055815ce3f097633db02db3a073a344">Parser</a>(<a class="code" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a>* form,QVector&lt;cl_Scene* &gt; *scenes_,<a class="code" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *typeObectsVis_);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../dc/db7/class_parser.html#ab6fdea0a54622a5e1d742186cedc401f">   26</a></span>&#160;    QDomDocument <a class="code" href="../../dc/db7/class_parser.html#ab6fdea0a54622a5e1d742186cedc401f">domVariants</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../dc/db7/class_parser.html#a30d70cb5632f89f38b53ed81a65c4d68">   27</a></span>&#160;    QDomDocument <a class="code" href="../../dc/db7/class_parser.html#a30d70cb5632f89f38b53ed81a65c4d68">saveDomVariants</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../dc/db7/class_parser.html#ae2c502eec7ed3a0a07c85a3913d51e90">   28</a></span>&#160;    QDomElement  <a class="code" href="../../dc/db7/class_parser.html#ae2c502eec7ed3a0a07c85a3913d51e90">rootNode</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../dc/db7/class_parser.html#ab025e56fdc2e328ee10dfd594dc18141">   30</a></span>&#160;    QDomDocument <a class="code" href="../../dc/db7/class_parser.html#ab025e56fdc2e328ee10dfd594dc18141">domVariantsForModel</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../dc/db7/class_parser.html#a29d0c51f6630833c721a92baa11acfbd">   31</a></span>&#160;    QDomDocument <a class="code" href="../../dc/db7/class_parser.html#a29d0c51f6630833c721a92baa11acfbd">saveDomVariantsForModel</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../dc/db7/class_parser.html#a99f7f2411b83c4d0b92a285ef30baa31">   32</a></span>&#160;    QDomElement  <a class="code" href="../../dc/db7/class_parser.html#a99f7f2411b83c4d0b92a285ef30baa31">rootNodeForModel</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/db7/class_parser.html#a777db2e3cd46cb52b6a0fd041b51ed56">openFileVariants</a>(<span class="keyword">const</span> QString &amp;fileName, QString *,<span class="keywordtype">bool</span> &amp;useMap,<a class="code" href="../../d3/dab/group__core__precision.html#ga483f6011e60602f0b73bfd0acad0f04c">uint</a> &amp;<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/db7/class_parser.html#a3efdc9b1d6d7746a7f89177195988e81">saveVariants</a>(<span class="keyword">const</span> QString &amp;fileName, <span class="keyword">const</span> QString &amp;comment, <span class="keywordtype">bool</span> useMap,<a class="code" href="../../d3/dab/group__core__precision.html#ga483f6011e60602f0b73bfd0acad0f04c">uint</a> <span class="keywordtype">id</span>, QString nameFileSend = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/db7/class_parser.html#a56cbb86320eb9a992fbbb992e87709dd">createXMLForModel</a>(QByteArray *array,QString comment,<span class="keywordtype">bool</span> useMap,<a class="code" href="../../d3/dab/group__core__precision.html#ga483f6011e60602f0b73bfd0acad0f04c">uint</a> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/db7/class_parser.html#a56cbb86320eb9a992fbbb992e87709dd">createXMLForModel</a>(QString comment,<span class="keywordtype">bool</span> useMap,<a class="code" href="../../d3/dab/group__core__precision.html#ga483f6011e60602f0b73bfd0acad0f04c">uint</a> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/db7/class_parser.html#a9196b20c82d5f70a344cf6bca5b30e0f">parseVariant</a>(<span class="keyword">const</span> QDomElement&amp; element);<span class="comment">//рекурсивная</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dc/db7/class_parser.html#a1948d28176a9b080672c5352b54ff7f2">sortScenesObjects</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    QString <a class="code" href="../../dc/db7/class_parser.html#a3cea264915fe2b1240549d076f21ca2c">readLastNameFile</a>(<span class="keyword">const</span> QString &amp;fileName);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QVector&lt;cl_Scene* &gt; *scenes;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    QVector&lt;cl_Scene* &gt; scenesNU;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a>* statusForm;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a> *typeObjectsVis;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PARSER_H_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_parser_html_a9196b20c82d5f70a344cf6bca5b30e0f"><div class="ttname"><a href="../../dc/db7/class_parser.html#a9196b20c82d5f70a344cf6bca5b30e0f">Parser::parseVariant</a></div><div class="ttdeci">void parseVariant(const QDomElement &amp;element)</div><div class="ttdoc">функция чтения(разбора) данных</div><div class="ttdef"><b>Definition:</b> parser.cpp:139</div></div>
+<div class="ttc" id="aclass_parser_html_a3efdc9b1d6d7746a7f89177195988e81"><div class="ttname"><a href="../../dc/db7/class_parser.html#a3efdc9b1d6d7746a7f89177195988e81">Parser::saveVariants</a></div><div class="ttdeci">void saveVariants(const QString &amp;fileName, const QString &amp;comment, bool useMap, uint id, QString nameFileSend=&quot;&quot;)</div><div class="ttdoc">сохранить варианты в файл</div><div class="ttdef"><b>Definition:</b> parser.cpp:25</div></div>
+<div class="ttc" id="aclass_parser_html_a56cbb86320eb9a992fbbb992e87709dd"><div class="ttname"><a href="../../dc/db7/class_parser.html#a56cbb86320eb9a992fbbb992e87709dd">Parser::createXMLForModel</a></div><div class="ttdeci">void createXMLForModel(QByteArray *array, QString comment, bool useMap, uint id)</div><div class="ttdoc">создать файл с вариантами для последующей передачи в целевую машину</div><div class="ttdef"><b>Definition:</b> parser.cpp:89</div></div>
+<div class="ttc" id="agroup__core__precision_html_ga483f6011e60602f0b73bfd0acad0f04c"><div class="ttname"><a href="../../d3/dab/group__core__precision.html#ga483f6011e60602f0b73bfd0acad0f04c">glm::uint</a></div><div class="ttdeci">uint_t uint</div><div class="ttdef"><b>Definition:</b> type_int.hpp:131</div></div>
+<div class="ttc" id="acl__scene_8h_html"><div class="ttname"><a href="../../d2/da3/cl__scene_8h.html">cl_scene.h</a></div></div>
+<div class="ttc" id="aclass_parser_html_a1948d28176a9b080672c5352b54ff7f2"><div class="ttname"><a href="../../dc/db7/class_parser.html#a1948d28176a9b080672c5352b54ff7f2">Parser::sortScenesObjects</a></div><div class="ttdeci">void sortScenesObjects()</div><div class="ttdoc">отсортировать общий список объектов</div><div class="ttdef"><b>Definition:</b> parser.cpp:16</div></div>
+<div class="ttc" id="aclass_parser_html_ab025e56fdc2e328ee10dfd594dc18141"><div class="ttname"><a href="../../dc/db7/class_parser.html#ab025e56fdc2e328ee10dfd594dc18141">Parser::domVariantsForModel</a></div><div class="ttdeci">QDomDocument domVariantsForModel</div><div class="ttdef"><b>Definition:</b> parser.h:30</div></div>
+<div class="ttc" id="aclass_parser_html_ab6fdea0a54622a5e1d742186cedc401f"><div class="ttname"><a href="../../dc/db7/class_parser.html#ab6fdea0a54622a5e1d742186cedc401f">Parser::domVariants</a></div><div class="ttdeci">QDomDocument domVariants</div><div class="ttdef"><b>Definition:</b> parser.h:26</div></div>
+<div class="ttc" id="aclass_parser_html_a99f7f2411b83c4d0b92a285ef30baa31"><div class="ttname"><a href="../../dc/db7/class_parser.html#a99f7f2411b83c4d0b92a285ef30baa31">Parser::rootNodeForModel</a></div><div class="ttdeci">QDomElement rootNodeForModel</div><div class="ttdef"><b>Definition:</b> parser.h:32</div></div>
+<div class="ttc" id="aclass_parser_html_a29d0c51f6630833c721a92baa11acfbd"><div class="ttname"><a href="../../dc/db7/class_parser.html#a29d0c51f6630833c721a92baa11acfbd">Parser::saveDomVariantsForModel</a></div><div class="ttdeci">QDomDocument saveDomVariantsForModel</div><div class="ttdef"><b>Definition:</b> parser.h:31</div></div>
+<div class="ttc" id="aclass_parser_html"><div class="ttname"><a href="../../dc/db7/class_parser.html">Parser</a></div><div class="ttdoc">класс для сохранения и чтения вариантов</div><div class="ttdef"><b>Definition:</b> parser.h:23</div></div>
+<div class="ttc" id="aclass_parser_html_a3cea264915fe2b1240549d076f21ca2c"><div class="ttname"><a href="../../dc/db7/class_parser.html#a3cea264915fe2b1240549d076f21ca2c">Parser::readLastNameFile</a></div><div class="ttdeci">QString readLastNameFile(const QString &amp;fileName)</div><div class="ttdoc">прочитать последний загруженный файл</div><div class="ttdef"><b>Definition:</b> parser.cpp:119</div></div>
+<div class="ttc" id="aclass_type_objects_vis_html"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a></div><div class="ttdoc">Класс для загрузки кодов и изображений для объектов</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.h:13</div></div>
+<div class="ttc" id="aclass_parser_html_a30d70cb5632f89f38b53ed81a65c4d68"><div class="ttname"><a href="../../dc/db7/class_parser.html#a30d70cb5632f89f38b53ed81a65c4d68">Parser::saveDomVariants</a></div><div class="ttdeci">QDomDocument saveDomVariants</div><div class="ttdef"><b>Definition:</b> parser.h:27</div></div>
+<div class="ttc" id="aclass_form_status_bar_html"><div class="ttname"><a href="../../d5/d38/class_form_status_bar.html">FormStatusBar</a></div><div class="ttdef"><b>Definition:</b> formstatusbar.h:12</div></div>
+<div class="ttc" id="aclass_parser_html_ae2c502eec7ed3a0a07c85a3913d51e90"><div class="ttname"><a href="../../dc/db7/class_parser.html#ae2c502eec7ed3a0a07c85a3913d51e90">Parser::rootNode</a></div><div class="ttdeci">QDomElement rootNode</div><div class="ttdef"><b>Definition:</b> parser.h:28</div></div>
+<div class="ttc" id="aclass_parser_html_a777db2e3cd46cb52b6a0fd041b51ed56"><div class="ttname"><a href="../../dc/db7/class_parser.html#a777db2e3cd46cb52b6a0fd041b51ed56">Parser::openFileVariants</a></div><div class="ttdeci">bool openFileVariants(const QString &amp;fileName, QString *, bool &amp;useMap, uint &amp;id)</div><div class="ttdoc">открыть файл с вариантами</div><div class="ttdef"><b>Definition:</b> parser.cpp:156</div></div>
+<div class="ttc" id="aclass_parser_html_af055815ce3f097633db02db3a073a344"><div class="ttname"><a href="../../dc/db7/class_parser.html#af055815ce3f097633db02db3a073a344">Parser::Parser</a></div><div class="ttdeci">Parser(FormStatusBar *form, QVector&lt; cl_Scene * &gt; *scenes_, TypeObjectsVis *typeObectsVis_)</div><div class="ttdef"><b>Definition:</b> parser.cpp:7</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

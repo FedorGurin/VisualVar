@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Файл D:/MyProg/226/ui/VisualVar/VisualVar/nodeVisual.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Макросы</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл nodeVisual.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d2/d34/node_visual_8h_source.html">nodeVisual.h</a>&quot;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d21/glm_8hpp_source.html">./glm/glm.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d3f/matrix__transform_8hpp_source.html">./glm/gtc/matrix_transform.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d23/geo_functions_8h_source.html">./GeographicLib/geoFunctions.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Макросы</h2></td></tr>
+<tr class="memitem:a9b6b3c6091ba51be4a934a9a3d6a6d30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df9/node_visual_8cpp.html#a9b6b3c6091ba51be4a934a9a3d6a6d30">GLM_PRECISION_HIGHP_FLOAT</a></td></tr>
+<tr class="separator:a9b6b3c6091ba51be4a934a9a3d6a6d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816ab7d5c2ce1f0a01216042837beb93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df9/node_visual_8cpp.html#a816ab7d5c2ce1f0a01216042837beb93">GLM_FORCE_RADIANS</a></td></tr>
+<tr class="separator:a816ab7d5c2ce1f0a01216042837beb93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a067e27172a5bc3c47458cccfa3d2a01d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/df9/node_visual_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a></td></tr>
+<tr class="separator:a067e27172a5bc3c47458cccfa3d2a01d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Макросы</h2>
+<a id="a816ab7d5c2ce1f0a01216042837beb93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816ab7d5c2ce1f0a01216042837beb93">&#9670;&nbsp;</a></span>GLM_FORCE_RADIANS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GLM_FORCE_RADIANS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b6b3c6091ba51be4a934a9a3d6a6d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b6b3c6091ba51be4a934a9a3d6a6d30">&#9670;&nbsp;</a></span>GLM_PRECISION_HIGHP_FLOAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GLM_PRECISION_HIGHP_FLOAT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a067e27172a5bc3c47458cccfa3d2a01d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a067e27172a5bc3c47458cccfa3d2a01d">&#9670;&nbsp;</a></span>earth</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* earth</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:34. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

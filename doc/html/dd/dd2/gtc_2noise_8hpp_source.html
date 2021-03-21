@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/gtc/noise.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_5421a8671ffa3cebe0a38abc7d91e881.html">gtc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">noise.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/dd2/gtc_2noise_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef GLM_GTC_noise</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../dd/dd2/gtc_2noise_8hpp.html#aa33c6182700450e708d1e7984d273f5f">   42</a></span>&#160;<span class="preprocessor">#define GLM_GTC_noise GLM_VERSION</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// Dependency:</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;../glm.hpp&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#if(defined(GLM_MESSAGES) &amp;&amp; !defined(glm_ext))</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#   pragma message(&quot;GLM: GLM_GTC_noise extension included&quot;)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vecType&gt; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d4/d38/group__gtc__noise.html#gaa9f3e905afe771551512322edcec001b">   59</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../d4/d38/group__gtc__noise.html#gaa9f3e905afe771551512322edcec001b">perlin</a>(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        vecType&lt;T&gt; <span class="keyword">const</span> &amp; p);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vecType&gt; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d4/d38/group__gtc__noise.html#ga52495e641513a2f965178d2a5d803077">   65</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../d4/d38/group__gtc__noise.html#gaa9f3e905afe771551512322edcec001b">perlin</a>(</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        vecType&lt;T&gt; <span class="keyword">const</span> &amp; p, </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        vecType&lt;T&gt; <span class="keyword">const</span> &amp; rep);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vecType&gt; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="../../d4/d38/group__gtc__noise.html#ga5fa44c45d9b0cf67559b705c95b5dcd7">   72</a></span>&#160;    <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <a class="code" href="../../d4/d38/group__gtc__noise.html#ga5fa44c45d9b0cf67559b705c95b5dcd7">simplex</a>(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        vecType&lt;T&gt; <span class="keyword">const</span> &amp; p);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}<span class="comment">//namespace glm</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d6a/noise_8inl.html">noise.inl</a>&quot;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif//GLM_GTC_noise</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">glm::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:43</div></div>
+<div class="ttc" id="anoise_8inl_html"><div class="ttname"><a href="../../d2/d6a/noise_8inl.html">noise.inl</a></div></div>
+<div class="ttc" id="agroup__gtc__noise_html_gaa9f3e905afe771551512322edcec001b"><div class="ttname"><a href="../../d4/d38/group__gtc__noise.html#gaa9f3e905afe771551512322edcec001b">glm::perlin</a></div><div class="ttdeci">T perlin(vecType&lt; T &gt; const &amp;p)</div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="agroup__gtc__noise_html_ga5fa44c45d9b0cf67559b705c95b5dcd7"><div class="ttname"><a href="../../d4/d38/group__gtc__noise.html#ga5fa44c45d9b0cf67559b705c95b5dcd7">glm::simplex</a></div><div class="ttdeci">T simplex(vecType&lt; T &gt; const &amp;p)</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

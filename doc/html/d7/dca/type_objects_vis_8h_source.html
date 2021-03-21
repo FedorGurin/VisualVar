@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/typeObjectsVis.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">typeObjectsVis.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/dca/type_objects_vis_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QDomElement&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QDomDocument&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/d5a/global_type_data_8h.html">globalTypeData.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d2/ded/class_type_objects_vis.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a>:<span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="../../d2/ded/class_type_objects_vis.html#a9dd430b69eb6b3599638d3e9bb493467">TypeObjectsVis</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/ded/class_type_objects_vis.html#a7d6fe977bf4311f7dbc8923ed3ded4bb">parserObject</a>(QDomElement &amp;tempElement,QList&lt;TObjectVis*&gt; &amp;list);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    QString <a class="code" href="../../d2/ded/class_type_objects_vis.html#a60f7193763a10eaaecca5f6171cf85dd">codeAir</a>(<span class="keywordtype">int</span> code);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    QString <a class="code" href="../../d2/ded/class_type_objects_vis.html#a6f5290c1c39269abd91d01440aae7068">codeGround</a>(<span class="keywordtype">int</span> code);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    QList&lt;TObjectVis*&gt;&amp; <a class="code" href="../../d2/ded/class_type_objects_vis.html#a22ac1377f018ca8e2efb3cefee964975">listAirObjects</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    QList&lt;TObjectVis*&gt;&amp; <a class="code" href="../../d2/ded/class_type_objects_vis.html#aa772a5e66b937b3415b13c20519d544c">listGroundObjects</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    QList&lt;TObjectVis*&gt;&amp; <a class="code" href="../../d2/ded/class_type_objects_vis.html#a478f5b50661cc7bb0e1dccea97c4b886">listInfoObjects</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> parser(QDomElement tempElement);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    QList&lt;TObjectVis*&gt; listObjectVisAir;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    QList&lt;TObjectVis*&gt; listObjectVisGround;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QList&lt;TObjectVis*&gt; listObjectVisInfo;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    QDomDocument domDocument;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QDomElement rootNode;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_type_objects_vis_html_a60f7193763a10eaaecca5f6171cf85dd"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html#a60f7193763a10eaaecca5f6171cf85dd">TypeObjectsVis::codeAir</a></div><div class="ttdeci">QString codeAir(int code)</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.cpp:35</div></div>
+<div class="ttc" id="aclass_type_objects_vis_html_a478f5b50661cc7bb0e1dccea97c4b886"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html#a478f5b50661cc7bb0e1dccea97c4b886">TypeObjectsVis::listInfoObjects</a></div><div class="ttdeci">QList&lt; TObjectVis * &gt; &amp; listInfoObjects()</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.cpp:96</div></div>
+<div class="ttc" id="aclass_type_objects_vis_html_a7d6fe977bf4311f7dbc8923ed3ded4bb"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html#a7d6fe977bf4311f7dbc8923ed3ded4bb">TypeObjectsVis::parserObject</a></div><div class="ttdeci">void parserObject(QDomElement &amp;tempElement, QList&lt; TObjectVis * &gt; &amp;list)</div><div class="ttdoc">загрузка объектов воздушных целей</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.cpp:58</div></div>
+<div class="ttc" id="aglobal_type_data_8h_html"><div class="ttname"><a href="../../d4/d5a/global_type_data_8h.html">globalTypeData.h</a></div></div>
+<div class="ttc" id="aclass_type_objects_vis_html"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html">TypeObjectsVis</a></div><div class="ttdoc">Класс для загрузки кодов и изображений для объектов</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.h:13</div></div>
+<div class="ttc" id="aclass_type_objects_vis_html_a9dd430b69eb6b3599638d3e9bb493467"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html#a9dd430b69eb6b3599638d3e9bb493467">TypeObjectsVis::TypeObjectsVis</a></div><div class="ttdeci">TypeObjectsVis()</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.cpp:7</div></div>
+<div class="ttc" id="aclass_type_objects_vis_html_a6f5290c1c39269abd91d01440aae7068"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html#a6f5290c1c39269abd91d01440aae7068">TypeObjectsVis::codeGround</a></div><div class="ttdeci">QString codeGround(int code)</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.cpp:46</div></div>
+<div class="ttc" id="aclass_type_objects_vis_html_a22ac1377f018ca8e2efb3cefee964975"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html#a22ac1377f018ca8e2efb3cefee964975">TypeObjectsVis::listAirObjects</a></div><div class="ttdeci">QList&lt; TObjectVis * &gt; &amp; listAirObjects()</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.cpp:86</div></div>
+<div class="ttc" id="aclass_type_objects_vis_html_aa772a5e66b937b3415b13c20519d544c"><div class="ttname"><a href="../../d2/ded/class_type_objects_vis.html#aa772a5e66b937b3415b13c20519d544c">TypeObjectsVis::listGroundObjects</a></div><div class="ttdeci">QList&lt; TObjectVis * &gt; &amp; listGroundObjects()</div><div class="ttdef"><b>Definition:</b> typeObjectsVis.cpp:91</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

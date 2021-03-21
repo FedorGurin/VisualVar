@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/geoFunctions.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">geoFunctions.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d23/geo_functions_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * geoFunctions.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: 29 мая 2017 г.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: mornelon</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef GEOFUNCTIONS_H_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define GEOFUNCTIONS_H_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/dcf/_local_cartesian_8hpp.html">LocalCartesian.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d8/d48/namespacen_geo_func.html">nGeoFunc</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">Tpoint</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d9/dee/structn_geo_func_1_1_tpoint.html#a36589e5ac57c61c9fa8c4e47b5c16e85">   18</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html#a36589e5ac57c61c9fa8c4e47b5c16e85">x</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d9/dee/structn_geo_func_1_1_tpoint.html#a4c50451cdffb44367a066a04313d0155">   19</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html#a4c50451cdffb44367a066a04313d0155">y</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d9/dee/structn_geo_func_1_1_tpoint.html#ae7fbdf4ab6c9bfdf8e8711ddf9445654">   20</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html#ae7fbdf4ab6c9bfdf8e8711ddf9445654">z</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html#aac4af06683354389d6159635e2aa9a26">   25</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html#aac4af06683354389d6159635e2aa9a26">intersect</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html#a311dcac7051ce1769b14b22545a61cd9">   26</a></span>&#160;    <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">Tpoint</a> <a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html#a311dcac7051ce1769b14b22545a61cd9">intersection</a>[2];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#accb18d7337f5bfce9e109d5c86783d41">line2ray</a>(<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> _res, <span class="keywordtype">double</span> _x1, <span class="keywordtype">double</span> _y1, <span class="keywordtype">double</span> _z1, <span class="keywordtype">double</span> _x2, <span class="keywordtype">double</span> _y2, <span class="keywordtype">double</span> _z2);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#a5dd71d70b152d9d7228c00050be72be1">ray_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <span class="keywordtype">double</span> _x1, <span class="keywordtype">double</span> _y1, <span class="keywordtype">double</span> _z1, <span class="keywordtype">double</span> _x2, <span class="keywordtype">double</span> _y2, <span class="keywordtype">double</span> _z2);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#a5dd71d70b152d9d7228c00050be72be1">ray_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">Tpoint</a> _point1, <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">Tpoint</a> _point2);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#aacfce842642a4f190fd889fcade5066e">ray_lalo_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <span class="keywordtype">double</span> _lat, <span class="keywordtype">double</span> _lon, <span class="keywordtype">double</span> _h, <span class="keywordtype">double</span> _x, <span class="keywordtype">double</span> _y, <span class="keywordtype">double</span> _z);</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d8/d48/namespacen_geo_func.html#a8893c4b725f10c005da8bfda8fa43b36">   33</a></span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#aacfce842642a4f190fd889fcade5066e">ray_lalo_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <span class="keywordtype">double</span> _lat, <span class="keywordtype">double</span> _lon, <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">Tpoint</a> _point2);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#aebdf9afd2be6d2fe51dd6bfb103ec141">ray_fi_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <span class="keywordtype">double</span> _lat, <span class="keywordtype">double</span> _lon, <span class="keywordtype">double</span> _h, <span class="keywordtype">double</span> fiY, <span class="keywordtype">double</span> fiZ);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#a44b5c5877dabba8f1e683e4d9d5c5c30">line_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <span class="keywordtype">double</span> _x1, <span class="keywordtype">double</span> _y1, <span class="keywordtype">double</span> _z1, <span class="keywordtype">double</span> _x2, <span class="keywordtype">double</span> _y2, <span class="keywordtype">double</span> _z2);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#a44b5c5877dabba8f1e683e4d9d5c5c30">line_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">Tpoint</a> _point1, <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">Tpoint</a> _point2);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#a778c152c1d410c6be320ed75cda3a697">line_lalo_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <span class="keywordtype">double</span> _lat, <span class="keywordtype">double</span> _lon, <span class="keywordtype">double</span> _h, <span class="keywordtype">double</span> _x, <span class="keywordtype">double</span> _y, <span class="keywordtype">double</span> _z);</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d8/d48/namespacen_geo_func.html#a996edcf76a25e6ada691bd9ae2241739">   39</a></span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#a778c152c1d410c6be320ed75cda3a697">line_lalo_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <span class="keywordtype">double</span> _lat, <span class="keywordtype">double</span> _lon, <a class="code" href="../../d9/dee/structn_geo_func_1_1_tpoint.html">Tpoint</a> _point2);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#a6ef0a151c873ce3eb2b6568c075d5d72">line_fi_intersect_geoid</a>(<a class="code" href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a>* _earth, <span class="keywordtype">double</span> _lat, <span class="keywordtype">double</span> _lon, <span class="keywordtype">double</span> _h, <span class="keywordtype">double</span> fiY, <span class="keywordtype">double</span> fiZ);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d8/d48/namespacen_geo_func.html#a2bc204b7b8a15029df9ab61b55be64a3">check_values</a>(<span class="keywordtype">double</span> control1, <span class="keywordtype">double</span> control2, <span class="keywordtype">double</span> point1, <span class="keywordtype">double</span> point2);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> <a class="code" href="../../d8/d48/namespacen_geo_func.html#accb18d7337f5bfce9e109d5c86783d41">line2ray</a>(<a class="code" href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">TIntersectionData</a> _res, <span class="keywordtype">double</span> _x1, <span class="keywordtype">double</span> _y1, <span class="keywordtype">double</span> _z1, <span class="keywordtype">double</span> _x2, <span class="keywordtype">double</span> _y2, <span class="keywordtype">double</span> _z2);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* GEOFUNCTIONS_H_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespacen_geo_func_html_a2bc204b7b8a15029df9ab61b55be64a3"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html#a2bc204b7b8a15029df9ab61b55be64a3">nGeoFunc::check_values</a></div><div class="ttdeci">int check_values(double control1, double control2, double point1, double point2)</div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:411</div></div>
+<div class="ttc" id="anamespacen_geo_func_html_aebdf9afd2be6d2fe51dd6bfb103ec141"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html#aebdf9afd2be6d2fe51dd6bfb103ec141">nGeoFunc::ray_fi_intersect_geoid</a></div><div class="ttdeci">TIntersectionData ray_fi_intersect_geoid(GeographicLib::Geocentric *_earth, double _lat, double _lon, double _h, double fiY, double fiZ)</div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:517</div></div>
+<div class="ttc" id="astructn_geo_func_1_1_tpoint_html_ae7fbdf4ab6c9bfdf8e8711ddf9445654"><div class="ttname"><a href="../../d9/dee/structn_geo_func_1_1_tpoint.html#ae7fbdf4ab6c9bfdf8e8711ddf9445654">nGeoFunc::Tpoint::z</a></div><div class="ttdeci">double z</div><div class="ttdef"><b>Definition:</b> geoFunctions.h:20</div></div>
+<div class="ttc" id="astructn_geo_func_1_1_t_intersection_data_html"><div class="ttname"><a href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html">nGeoFunc::TIntersectionData</a></div><div class="ttdef"><b>Definition:</b> geoFunctions.h:24</div></div>
+<div class="ttc" id="astructn_geo_func_1_1_tpoint_html_a4c50451cdffb44367a066a04313d0155"><div class="ttname"><a href="../../d9/dee/structn_geo_func_1_1_tpoint.html#a4c50451cdffb44367a066a04313d0155">nGeoFunc::Tpoint::y</a></div><div class="ttdeci">double y</div><div class="ttdef"><b>Definition:</b> geoFunctions.h:19</div></div>
+<div class="ttc" id="anamespacen_geo_func_html"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html">nGeoFunc</a></div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:12</div></div>
+<div class="ttc" id="anamespacen_geo_func_html_a6ef0a151c873ce3eb2b6568c075d5d72"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html#a6ef0a151c873ce3eb2b6568c075d5d72">nGeoFunc::line_fi_intersect_geoid</a></div><div class="ttdeci">TIntersectionData line_fi_intersect_geoid(GeographicLib::Geocentric *_earth, double _lat, double _lon, double _h, double fiY, double fiZ)</div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:14</div></div>
+<div class="ttc" id="astructn_geo_func_1_1_tpoint_html_a36589e5ac57c61c9fa8c4e47b5c16e85"><div class="ttname"><a href="../../d9/dee/structn_geo_func_1_1_tpoint.html#a36589e5ac57c61c9fa8c4e47b5c16e85">nGeoFunc::Tpoint::x</a></div><div class="ttdeci">double x</div><div class="ttdef"><b>Definition:</b> geoFunctions.h:18</div></div>
+<div class="ttc" id="anamespacen_geo_func_html_accb18d7337f5bfce9e109d5c86783d41"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html#accb18d7337f5bfce9e109d5c86783d41">nGeoFunc::line2ray</a></div><div class="ttdeci">TIntersectionData line2ray(TIntersectionData _res, double _x1, double _y1, double _z1, double _x2, double _y2, double _z2)</div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:444</div></div>
+<div class="ttc" id="astructn_geo_func_1_1_t_intersection_data_html_a311dcac7051ce1769b14b22545a61cd9"><div class="ttname"><a href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html#a311dcac7051ce1769b14b22545a61cd9">nGeoFunc::TIntersectionData::intersection</a></div><div class="ttdeci">Tpoint intersection[2]</div><div class="ttdef"><b>Definition:</b> geoFunctions.h:26</div></div>
+<div class="ttc" id="anamespacen_geo_func_html_a778c152c1d410c6be320ed75cda3a697"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html#a778c152c1d410c6be320ed75cda3a697">nGeoFunc::line_lalo_intersect_geoid</a></div><div class="ttdeci">TIntersectionData line_lalo_intersect_geoid(GeographicLib::Geocentric *_earth, double _lat, double _lon, double _h, Tpoint _point2)</div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:29</div></div>
+<div class="ttc" id="astructn_geo_func_1_1_t_intersection_data_html_aac4af06683354389d6159635e2aa9a26"><div class="ttname"><a href="../../d9/d7c/structn_geo_func_1_1_t_intersection_data.html#aac4af06683354389d6159635e2aa9a26">nGeoFunc::TIntersectionData::intersect</a></div><div class="ttdeci">bool intersect</div><div class="ttdef"><b>Definition:</b> geoFunctions.h:25</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geocentric_html"><div class="ttname"><a href="../../d4/df6/class_geographic_lib_1_1_geocentric.html">GeographicLib::Geocentric</a></div><div class="ttdoc">Geocentric coordinates</div><div class="ttdef"><b>Definition:</b> Geocentric.hpp:67</div></div>
+<div class="ttc" id="astructn_geo_func_1_1_tpoint_html"><div class="ttname"><a href="../../d9/dee/structn_geo_func_1_1_tpoint.html">nGeoFunc::Tpoint</a></div><div class="ttdef"><b>Definition:</b> geoFunctions.h:17</div></div>
+<div class="ttc" id="anamespacen_geo_func_html_a5dd71d70b152d9d7228c00050be72be1"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html#a5dd71d70b152d9d7228c00050be72be1">nGeoFunc::ray_intersect_geoid</a></div><div class="ttdeci">TIntersectionData ray_intersect_geoid(GeographicLib::Geocentric *_earth, double _x1, double _y1, double _z1, double _x2, double _y2, double _z2)</div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:476</div></div>
+<div class="ttc" id="anamespacen_geo_func_html_a44b5c5877dabba8f1e683e4d9d5c5c30"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html#a44b5c5877dabba8f1e683e4d9d5c5c30">nGeoFunc::line_intersect_geoid</a></div><div class="ttdeci">TIntersectionData line_intersect_geoid(GeographicLib::Geocentric *_earth, Tpoint _point1, Tpoint _point2)</div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:94</div></div>
+<div class="ttc" id="a_local_cartesian_8hpp_html"><div class="ttname"><a href="../../d2/dcf/_local_cartesian_8hpp.html">LocalCartesian.hpp</a></div><div class="ttdoc">Header for GeographicLib::LocalCartesian class.</div></div>
+<div class="ttc" id="anamespacen_geo_func_html_aacfce842642a4f190fd889fcade5066e"><div class="ttname"><a href="../../d8/d48/namespacen_geo_func.html#aacfce842642a4f190fd889fcade5066e">nGeoFunc::ray_lalo_intersect_geoid</a></div><div class="ttdeci">TIntersectionData ray_lalo_intersect_geoid(GeographicLib::Geocentric *_earth, double _lat, double _lon, double _h, double _x, double _y, double _z)</div><div class="ttdef"><b>Definition:</b> geoFunctions.cpp:490</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/gscene.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">gscene.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d29/gscene_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;QGraphicsScene&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSceneWheelEvent&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QKeyEvent&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d97/class_g_scene.html">GScene</a> : <span class="keyword">public</span> QGraphicsScene</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../da/d97/class_g_scene.html#a0b8565d324ed678cf14134918ec984cc">GScene</a>(QObject * parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a0827a10cdb889557c0589e8bd9385e7b">wheelEvent</a>(QGraphicsSceneWheelEvent * <a class="code" href="../../da/d97/class_g_scene.html#a0827a10cdb889557c0589e8bd9385e7b">wheelEvent</a>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a94881146833f49a58d562e2842cc2190">mouseReleaseEvent</a>(QGraphicsSceneMouseEvent * mouseEvent);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a2c31a9d08813ac1e13247a5b3fe9ecf0">mouseMoveEvent</a>(QGraphicsSceneMouseEvent    * mouseEvent);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a0edb4f06fc0e4a6937eb880770b6abcf">mousePressEvent</a>(QGraphicsSceneMouseEvent   * mouseEvent);    </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a19f4437200b91a2c8833a55bf34433c2">mouseDoubleClickEvent</a>(QGraphicsSceneMouseEvent *mouseEvent);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a733a96a85173897ce23ad36c91fb4a7d">keyPressEvent</a>(QKeyEvent *event);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a1383647dfa9625f9e363e30ba6f9f553">keyReleaseEvent</a>(QKeyEvent *event);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;signals:</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#adee90752d8b4ad6c795fbb884d5fbe23">   23</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#adee90752d8b4ad6c795fbb884d5fbe23">zoomUp</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#a0338e1efe1a7d964b0829419b6494562">   25</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a0338e1efe1a7d964b0829419b6494562">zoomDown</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#ad1d9336f434d5647e82157c496ef7a99">   27</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#ad1d9336f434d5647e82157c496ef7a99">dragMove</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#abd2c8eb8548460598acdb4d4b818d483">   29</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#abd2c8eb8548460598acdb4d4b818d483">sigRightMouse</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#a7d722a130650c4e15eb2728fed9aecf8">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a7d722a130650c4e15eb2728fed9aecf8">signalDoubleClickMouse</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#a33bc744bb787f8a1edd0cca4ca6ecb7e">   33</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#a33bc744bb787f8a1edd0cca4ca6ecb7e">movePos</a>(QPointF pos);</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#abd1818bc6485167b04be939582e7d3a3">   35</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#abd1818bc6485167b04be939582e7d3a3">clickLeftMouse</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#afe18cfda5b75df53f2b12bec3243e942">   37</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#afe18cfda5b75df53f2b12bec3243e942">signalCtrlPress</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../da/d97/class_g_scene.html#abb24125ca2efc147f1f09094fc51e107">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d97/class_g_scene.html#abb24125ca2efc147f1f09094fc51e107">signalCtrlRelease</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_g_scene_html_a19f4437200b91a2c8833a55bf34433c2"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a19f4437200b91a2c8833a55bf34433c2">GScene::mouseDoubleClickEvent</a></div><div class="ttdeci">virtual void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *mouseEvent)</div><div class="ttdef"><b>Definition:</b> gscene.cpp:37</div></div>
+<div class="ttc" id="aclass_g_scene_html_abd1818bc6485167b04be939582e7d3a3"><div class="ttname"><a href="../../da/d97/class_g_scene.html#abd1818bc6485167b04be939582e7d3a3">GScene::clickLeftMouse</a></div><div class="ttdeci">void clickLeftMouse()</div><div class="ttdoc">нажатие левой кнопки мыши</div></div>
+<div class="ttc" id="aclass_g_scene_html_ad1d9336f434d5647e82157c496ef7a99"><div class="ttname"><a href="../../da/d97/class_g_scene.html#ad1d9336f434d5647e82157c496ef7a99">GScene::dragMove</a></div><div class="ttdeci">void dragMove()</div><div class="ttdoc">перемещение курсора</div></div>
+<div class="ttc" id="aclass_g_scene_html_a33bc744bb787f8a1edd0cca4ca6ecb7e"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a33bc744bb787f8a1edd0cca4ca6ecb7e">GScene::movePos</a></div><div class="ttdeci">void movePos(QPointF pos)</div><div class="ttdoc">текущее положение мышки в СК сцены</div></div>
+<div class="ttc" id="aclass_g_scene_html_a1383647dfa9625f9e363e30ba6f9f553"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a1383647dfa9625f9e363e30ba6f9f553">GScene::keyReleaseEvent</a></div><div class="ttdeci">virtual void keyReleaseEvent(QKeyEvent *event)</div><div class="ttdef"><b>Definition:</b> gscene.cpp:61</div></div>
+<div class="ttc" id="aclass_g_scene_html_abb24125ca2efc147f1f09094fc51e107"><div class="ttname"><a href="../../da/d97/class_g_scene.html#abb24125ca2efc147f1f09094fc51e107">GScene::signalCtrlRelease</a></div><div class="ttdeci">void signalCtrlRelease()</div></div>
+<div class="ttc" id="aclass_g_scene_html_a0338e1efe1a7d964b0829419b6494562"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a0338e1efe1a7d964b0829419b6494562">GScene::zoomDown</a></div><div class="ttdeci">void zoomDown()</div><div class="ttdoc">уменьшить масштаб на один шаг</div></div>
+<div class="ttc" id="aclass_g_scene_html_afe18cfda5b75df53f2b12bec3243e942"><div class="ttname"><a href="../../da/d97/class_g_scene.html#afe18cfda5b75df53f2b12bec3243e942">GScene::signalCtrlPress</a></div><div class="ttdeci">void signalCtrlPress()</div></div>
+<div class="ttc" id="aclass_g_scene_html_a7d722a130650c4e15eb2728fed9aecf8"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a7d722a130650c4e15eb2728fed9aecf8">GScene::signalDoubleClickMouse</a></div><div class="ttdeci">void signalDoubleClickMouse()</div></div>
+<div class="ttc" id="aclass_g_scene_html_a0b8565d324ed678cf14134918ec984cc"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a0b8565d324ed678cf14134918ec984cc">GScene::GScene</a></div><div class="ttdeci">GScene(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> gscene.cpp:3</div></div>
+<div class="ttc" id="aclass_g_scene_html_a0edb4f06fc0e4a6937eb880770b6abcf"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a0edb4f06fc0e4a6937eb880770b6abcf">GScene::mousePressEvent</a></div><div class="ttdeci">virtual void mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)</div><div class="ttdef"><b>Definition:</b> gscene.cpp:24</div></div>
+<div class="ttc" id="aclass_g_scene_html_a733a96a85173897ce23ad36c91fb4a7d"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a733a96a85173897ce23ad36c91fb4a7d">GScene::keyPressEvent</a></div><div class="ttdeci">virtual void keyPressEvent(QKeyEvent *event)</div><div class="ttdef"><b>Definition:</b> gscene.cpp:54</div></div>
+<div class="ttc" id="aclass_g_scene_html_a2c31a9d08813ac1e13247a5b3fe9ecf0"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a2c31a9d08813ac1e13247a5b3fe9ecf0">GScene::mouseMoveEvent</a></div><div class="ttdeci">virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)</div><div class="ttdef"><b>Definition:</b> gscene.cpp:19</div></div>
+<div class="ttc" id="aclass_g_scene_html_a0827a10cdb889557c0589e8bd9385e7b"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a0827a10cdb889557c0589e8bd9385e7b">GScene::wheelEvent</a></div><div class="ttdeci">virtual void wheelEvent(QGraphicsSceneWheelEvent *wheelEvent)</div><div class="ttdef"><b>Definition:</b> gscene.cpp:6</div></div>
+<div class="ttc" id="aclass_g_scene_html_abd2c8eb8548460598acdb4d4b818d483"><div class="ttname"><a href="../../da/d97/class_g_scene.html#abd2c8eb8548460598acdb4d4b818d483">GScene::sigRightMouse</a></div><div class="ttdeci">void sigRightMouse()</div><div class="ttdoc">отпускание правой кнопки</div></div>
+<div class="ttc" id="aclass_g_scene_html"><div class="ttname"><a href="../../da/d97/class_g_scene.html">GScene</a></div><div class="ttdef"><b>Definition:</b> gscene.h:8</div></div>
+<div class="ttc" id="aclass_g_scene_html_adee90752d8b4ad6c795fbb884d5fbe23"><div class="ttname"><a href="../../da/d97/class_g_scene.html#adee90752d8b4ad6c795fbb884d5fbe23">GScene::zoomUp</a></div><div class="ttdeci">void zoomUp()</div><div class="ttdoc">увеличить масштаб на один шаг</div></div>
+<div class="ttc" id="aclass_g_scene_html_a94881146833f49a58d562e2842cc2190"><div class="ttname"><a href="../../da/d97/class_g_scene.html#a94881146833f49a58d562e2842cc2190">GScene::mouseReleaseEvent</a></div><div class="ttdeci">virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)</div><div class="ttdef"><b>Definition:</b> gscene.cpp:43</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

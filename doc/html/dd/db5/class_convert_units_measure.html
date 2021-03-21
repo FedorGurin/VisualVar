@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс ConvertUnitsMeasure</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="../../d2/d55/class_convert_units_measure-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс ConvertUnitsMeasure</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d5/d14/_convert_units_measure_8h_source.html">ConvertUnitsMeasure.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:ConvertUnitsMeasure:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../dd/db5/class_convert_units_measure.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a40ef83503e2efc4a073fe2dc1349635e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db5/class_convert_units_measure.html#a40ef83503e2efc4a073fe2dc1349635e">ConvertUnitsMeasure</a> (QObject *parent=0)</td></tr>
+<tr class="separator:a40ef83503e2efc4a073fe2dc1349635e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea4515bc9e5bd75e5141f8fac829dc9"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db5/class_convert_units_measure.html#acea4515bc9e5bd75e5141f8fac829dc9">getListAvailableUnits</a> (QString &amp;currentUnit)</td></tr>
+<tr class="memdesc:acea4515bc9e5bd75e5141f8fac829dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">получить список возможных преобразований для указаной ед. измерения  <a href="../../dd/db5/class_convert_units_measure.html#acea4515bc9e5bd75e5141f8fac829dc9">Подробнее...</a><br /></td></tr>
+<tr class="separator:acea4515bc9e5bd75e5141f8fac829dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad96ceca6493163858b1d622a63814519"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db5/class_convert_units_measure.html#ad96ceca6493163858b1d622a63814519">checkDerivationUnits</a> (QString &amp;newUnit, QString &amp;currentUnit)</td></tr>
+<tr class="memdesc:ad96ceca6493163858b1d622a63814519"><td class="mdescLeft">&#160;</td><td class="mdescRight">проверка того, что указанная пара может быть выведена друг и здруга  <a href="../../dd/db5/class_convert_units_measure.html#ad96ceca6493163858b1d622a63814519">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad96ceca6493163858b1d622a63814519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab9e6e0c601849afff8c4514cc684d44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db5/class_convert_units_measure.html#aab9e6e0c601849afff8c4514cc684d44">openXMLFile</a> (QString nameFile)</td></tr>
+<tr class="memdesc:aab9e6e0c601849afff8c4514cc684d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">вернуть объект преобразования связанный с указанной единицей  <a href="../../dd/db5/class_convert_units_measure.html#aab9e6e0c601849afff8c4514cc684d44">Подробнее...</a><br /></td></tr>
+<tr class="separator:aab9e6e0c601849afff8c4514cc684d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf00a16b4fa2598f9570d604cd702d5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db5/class_convert_units_measure.html#aaf00a16b4fa2598f9570d604cd702d5a">parseXMLFile</a> (const QDomElement &amp;element)</td></tr>
+<tr class="separator:aaf00a16b4fa2598f9570d604cd702d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abccb69a28f973600c73d07948099b258"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db5/class_convert_units_measure.html#abccb69a28f973600c73d07948099b258">getObjectUnitsByUnitname</a> (QString baseUnit)</td></tr>
+<tr class="separator:abccb69a28f973600c73d07948099b258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:a553bcce17b6e7bd5d88a07255662f870"><td class="memItemLeft" align="right" valign="top">QDomDocument&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/db5/class_convert_units_measure.html#a553bcce17b6e7bd5d88a07255662f870">domMeasureData</a></td></tr>
+<tr class="memdesc:a553bcce17b6e7bd5d88a07255662f870"><td class="mdescLeft">&#160;</td><td class="mdescRight">DOM - дерево c описанием данных c ед. измерения  <a href="../../dd/db5/class_convert_units_measure.html#a553bcce17b6e7bd5d88a07255662f870">Подробнее...</a><br /></td></tr>
+<tr class="separator:a553bcce17b6e7bd5d88a07255662f870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a40ef83503e2efc4a073fe2dc1349635e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ef83503e2efc4a073fe2dc1349635e">&#9670;&nbsp;</a></span>ConvertUnitsMeasure()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ConvertUnitsMeasure::ConvertUnitsMeasure </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ad96ceca6493163858b1d622a63814519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad96ceca6493163858b1d622a63814519">&#9670;&nbsp;</a></span>checkDerivationUnits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConvertUnitsMeasure::checkDerivationUnits </td>
+          <td>(</td>
+          <td class="paramtype">QString &amp;&#160;</td>
+          <td class="paramname"><em>newUnit</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString &amp;&#160;</td>
+          <td class="paramname"><em>currentUnit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>проверка того, что указанная пара может быть выведена друг и здруга </p>
+
+</div>
+</div>
+<a id="acea4515bc9e5bd75e5141f8fac829dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea4515bc9e5bd75e5141f8fac829dc9">&#9670;&nbsp;</a></span>getListAvailableUnits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList ConvertUnitsMeasure::getListAvailableUnits </td>
+          <td>(</td>
+          <td class="paramtype">QString &amp;&#160;</td>
+          <td class="paramname"><em>currentUnit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>получить список возможных преобразований для указаной ед. измерения </p>
+
+</div>
+</div>
+<a id="abccb69a28f973600c73d07948099b258"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abccb69a28f973600c73d07948099b258">&#9670;&nbsp;</a></span>getObjectUnitsByUnitname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d5/d90/class_t_object_property.html">TObjectProperty</a> * ConvertUnitsMeasure::getObjectUnitsByUnitname </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>baseUnit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab9e6e0c601849afff8c4514cc684d44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab9e6e0c601849afff8c4514cc684d44">&#9670;&nbsp;</a></span>openXMLFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ConvertUnitsMeasure::openXMLFile </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nameFile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>вернуть объект преобразования связанный с указанной единицей </p>
+
+</div>
+</div>
+<a id="aaf00a16b4fa2598f9570d604cd702d5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf00a16b4fa2598f9570d604cd702d5a">&#9670;&nbsp;</a></span>parseXMLFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ConvertUnitsMeasure::parseXMLFile </td>
+          <td>(</td>
+          <td class="paramtype">const QDomElement &amp;&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a553bcce17b6e7bd5d88a07255662f870"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553bcce17b6e7bd5d88a07255662f870">&#9670;&nbsp;</a></span>domMeasureData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomDocument ConvertUnitsMeasure::domMeasureData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DOM - дерево c описанием данных c ед. измерения </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/globalFunc/UnitsMeasure/<a class="el" href="../../d5/d14/_convert_units_measure_8h_source.html">ConvertUnitsMeasure.h</a></li>
+<li>D:/MyProg/226/ui/VisualVar/globalFunc/UnitsMeasure/<a class="el" href="../../db/d39/_convert_units_measure_8cpp.html">ConvertUnitsMeasure.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:45. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

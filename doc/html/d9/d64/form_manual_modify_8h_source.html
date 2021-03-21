@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/manualModify/formManualModify.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li><li class="navelem"><a class="el" href="../../dir_29e69a072f4f5b7de49880687d5af8dd.html">manualModify</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">formManualModify.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/d64/form_manual_modify_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FORMMANUALMODIFY_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FORMMANUALMODIFY_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QListWidget&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/dc1/_model_data_table_8h.html">ModelDataTable.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/dc7/_delegate_table_manual_8h.html">DelegateTableManual.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dc/df0/namespace_ui.html">Ui</a>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">class </span><a class="code" href="../../d6/dfd/class_form_manual_modify.html">FormManualModify</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d1/d1c/classcl___mouse_filter.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/d1c/classcl___mouse_filter.html">cl_MouseFilter</a>:<span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d1/d1c/classcl___mouse_filter.html#a9d22ae3c294af6c2832b369f5bd525e8">eventFilter</a>(QObject*,QEvent*);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d1/d1c/classcl___mouse_filter.html#a13b7c0bbad57fc52a20c321a20aa1b9d">cl_MouseFilter</a>(QObject* pobj = <span class="keyword">nullptr</span>,QWidget *slotForm_ = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d1/d1c/classcl___mouse_filter.html#a76b4d784ac6da6e36ea4aed009110133">   22</a></span>&#160;    QWidget *<a class="code" href="../../d1/d1c/classcl___mouse_filter.html#a76b4d784ac6da6e36ea4aed009110133">slotForm</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d6/dfd/class_form_manual_modify.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/dfd/class_form_manual_modify.html">FormManualModify</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a0702521519b6cbd2993cf5b705ec54fc">FormManualModify</a>( QVector&lt;cl_Scene* &gt; *scenes_,QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d6/dfd/class_form_manual_modify.html#ad30f435cc102ae1087e323b5c112c834">~FormManualModify</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a650408146390e6798033537ba8710230">resetModelData</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a650408146390e6798033537ba8710230">resetModelData</a>(QModelIndex);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    QString <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a18f32c70a518439ae7eae5d67c3c4960">comment</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#ade553feec50f74a2d56ec92c3f8b73d1">setComment</a>(QString name);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a63dea2654ca966b79aabcf1eb2667c2b">setLastNameFile</a>(QString name);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a75c864f16d714fea9e0f9e48288981a0">slotMouseDoubleClicked</a>(QModelIndex);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#aa15bfc1827163f23ff912cc5ae89b633">slotMouseClicked</a>(QModelIndex);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a8ba6ee7e4c55fff14ee6a1fee92a9af8">slotPushButtonBack</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#ac09769576b5117f2159871448bc6e8f9">slotPushButtonAdd</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a7de171f649ff6e1060c8e8dcff42098f">slotPushButtonBegin</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a4cc5915048e618aa330d6bd4e5766168">slotPushButtonDelete</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a63a834763e83f4992b6672bafffbe363">slotPushButtonClone</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#adc587f68a9bc6093bf0ae7c2680b420d">slotDoubleClickedListWidget</a>(QListWidgetItem*);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#aa03be45ce34490a3322bdb76667d9aaa">slotKeyboardDel</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a200cdf1a1592af9f6e63428bb75df01e">deleteScene</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a77abf65e2bee67a1ef060bc97c940a8c">slotKeyboardInsert</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d0/dac/class_model_data_table.html">ModelDataTable</a> *modelData;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../d0/db1/class_delegate_table_manual.html">DelegateTableManual</a> *delegateTable;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    QItemSelectionModel *selection;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a1693f765bf41dd6a4292083b28af427a">changeEvent</a>(QEvent *<a class="code" href="../../d7/d6f/group__gtc__constants.html#gab83fb6de0f05d6c0d11bdf0479f8319e">e</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;signals:</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d6/dfd/class_form_manual_modify.html#a27ba7519eaa6bd3e958abf8e7db12f77">   58</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a27ba7519eaa6bd3e958abf8e7db12f77">createNewScene</a>(<span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d6/dfd/class_form_manual_modify.html#a44bdeaf285bae7944eeed104ab289cfd">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a44bdeaf285bae7944eeed104ab289cfd">cloneScene</a>(<a class="code" href="../../d6/d0f/classcl___scene.html">cl_Scene</a>*);</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../d6/dfd/class_form_manual_modify.html#ab537be32ad790eacca12eea9cbcd869d">   60</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#ab537be32ad790eacca12eea9cbcd869d">createNewAirObj</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d6/dfd/class_form_manual_modify.html#a3d4f77987472e1621ce94c64d4f0e852">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a3d4f77987472e1621ce94c64d4f0e852">createNewGroundObj</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../d6/dfd/class_form_manual_modify.html#ae72e92681566a9642af04d671a7e9135">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#ae72e92681566a9642af04d671a7e9135">currentActiveWindow</a>(QString);</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d6/dfd/class_form_manual_modify.html#a8096b1288ee081d4765af73c1b5338f3">   63</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d6/dfd/class_form_manual_modify.html#a8096b1288ee081d4765af73c1b5338f3">signalAttach</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    QVector&lt;cl_Scene* &gt; *scenes;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    Ui::FormManualModify *ui;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QString path;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    QListWidget *listWidget;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif // FORMMANUALMODIFY_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_form_manual_modify_html_a8096b1288ee081d4765af73c1b5338f3"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a8096b1288ee081d4765af73c1b5338f3">FormManualModify::signalAttach</a></div><div class="ttdeci">void signalAttach()</div></div>
+<div class="ttc" id="aclasscl___mouse_filter_html"><div class="ttname"><a href="../../d1/d1c/classcl___mouse_filter.html">cl_MouseFilter</a></div><div class="ttdef"><b>Definition:</b> formManualModify.h:16</div></div>
+<div class="ttc" id="aclasscl___mouse_filter_html_a76b4d784ac6da6e36ea4aed009110133"><div class="ttname"><a href="../../d1/d1c/classcl___mouse_filter.html#a76b4d784ac6da6e36ea4aed009110133">cl_MouseFilter::slotForm</a></div><div class="ttdeci">QWidget * slotForm</div><div class="ttdef"><b>Definition:</b> formManualModify.h:22</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a0702521519b6cbd2993cf5b705ec54fc"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a0702521519b6cbd2993cf5b705ec54fc">FormManualModify::FormManualModify</a></div><div class="ttdeci">FormManualModify(QVector&lt; cl_Scene * &gt; *scenes_, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:39</div></div>
+<div class="ttc" id="a_model_data_table_8h_html"><div class="ttname"><a href="../../da/dc1/_model_data_table_8h.html">ModelDataTable.h</a></div></div>
+<div class="ttc" id="aclass_model_data_table_html"><div class="ttname"><a href="../../d0/dac/class_model_data_table.html">ModelDataTable</a></div><div class="ttdef"><b>Definition:</b> ModelDataTable.h:9</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a63a834763e83f4992b6672bafffbe363"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a63a834763e83f4992b6672bafffbe363">FormManualModify::slotPushButtonClone</a></div><div class="ttdeci">void slotPushButtonClone()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:132</div></div>
+<div class="ttc" id="aclasscl___mouse_filter_html_a13b7c0bbad57fc52a20c321a20aa1b9d"><div class="ttname"><a href="../../d1/d1c/classcl___mouse_filter.html#a13b7c0bbad57fc52a20c321a20aa1b9d">cl_MouseFilter::cl_MouseFilter</a></div><div class="ttdeci">cl_MouseFilter(QObject *pobj=nullptr, QWidget *slotForm_=nullptr)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:7</div></div>
+<div class="ttc" id="agroup__gtc__constants_html_gab83fb6de0f05d6c0d11bdf0479f8319e"><div class="ttname"><a href="../../d7/d6f/group__gtc__constants.html#gab83fb6de0f05d6c0d11bdf0479f8319e">glm::e</a></div><div class="ttdeci">GLM_FUNC_DECL genType e()</div><div class="ttdef"><b>Definition:</b> constants.inl:122</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_ac09769576b5117f2159871448bc6e8f9"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#ac09769576b5117f2159871448bc6e8f9">FormManualModify::slotPushButtonAdd</a></div><div class="ttdeci">void slotPushButtonAdd()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:161</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a75c864f16d714fea9e0f9e48288981a0"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a75c864f16d714fea9e0f9e48288981a0">FormManualModify::slotMouseDoubleClicked</a></div><div class="ttdeci">void slotMouseDoubleClicked(QModelIndex)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:250</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_ab537be32ad790eacca12eea9cbcd869d"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#ab537be32ad790eacca12eea9cbcd869d">FormManualModify::createNewAirObj</a></div><div class="ttdeci">void createNewAirObj()</div></div>
+<div class="ttc" id="aclass_delegate_table_manual_html"><div class="ttname"><a href="../../d0/db1/class_delegate_table_manual.html">DelegateTableManual</a></div><div class="ttdef"><b>Definition:</b> DelegateTableManual.h:9</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a27ba7519eaa6bd3e958abf8e7db12f77"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a27ba7519eaa6bd3e958abf8e7db12f77">FormManualModify::createNewScene</a></div><div class="ttdeci">void createNewScene(bool)</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a7de171f649ff6e1060c8e8dcff42098f"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a7de171f649ff6e1060c8e8dcff42098f">FormManualModify::slotPushButtonBegin</a></div><div class="ttdeci">void slotPushButtonBegin()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:121</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_ad30f435cc102ae1087e323b5c112c834"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#ad30f435cc102ae1087e323b5c112c834">FormManualModify::~FormManualModify</a></div><div class="ttdeci">~FormManualModify()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:102</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_aa03be45ce34490a3322bdb76667d9aaa"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#aa03be45ce34490a3322bdb76667d9aaa">FormManualModify::slotKeyboardDel</a></div><div class="ttdeci">void slotKeyboardDel()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:305</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a4cc5915048e618aa330d6bd4e5766168"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a4cc5915048e618aa330d6bd4e5766168">FormManualModify::slotPushButtonDelete</a></div><div class="ttdeci">void slotPushButtonDelete()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:194</div></div>
+<div class="ttc" id="a_delegate_table_manual_8h_html"><div class="ttname"><a href="../../dc/dc7/_delegate_table_manual_8h.html">DelegateTableManual.h</a></div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a77abf65e2bee67a1ef060bc97c940a8c"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a77abf65e2bee67a1ef060bc97c940a8c">FormManualModify::slotKeyboardInsert</a></div><div class="ttdeci">void slotKeyboardInsert()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:324</div></div>
+<div class="ttc" id="aclasscl___mouse_filter_html_a9d22ae3c294af6c2832b369f5bd525e8"><div class="ttname"><a href="../../d1/d1c/classcl___mouse_filter.html#a9d22ae3c294af6c2832b369f5bd525e8">cl_MouseFilter::eventFilter</a></div><div class="ttdeci">virtual bool eventFilter(QObject *, QEvent *)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:11</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_aa15bfc1827163f23ff912cc5ae89b633"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#aa15bfc1827163f23ff912cc5ae89b633">FormManualModify::slotMouseClicked</a></div><div class="ttdeci">void slotMouseClicked(QModelIndex)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:239</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="../../dc/df0/namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> dialogsavecurvar.h:6</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_ae72e92681566a9642af04d671a7e9135"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#ae72e92681566a9642af04d671a7e9135">FormManualModify::currentActiveWindow</a></div><div class="ttdeci">void currentActiveWindow(QString)</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a1693f765bf41dd6a4292083b28af427a"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a1693f765bf41dd6a4292083b28af427a">FormManualModify::changeEvent</a></div><div class="ttdeci">void changeEvent(QEvent *e)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:344</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a3d4f77987472e1621ce94c64d4f0e852"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a3d4f77987472e1621ce94c64d4f0e852">FormManualModify::createNewGroundObj</a></div><div class="ttdeci">void createNewGroundObj()</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a200cdf1a1592af9f6e63428bb75df01e"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a200cdf1a1592af9f6e63428bb75df01e">FormManualModify::deleteScene</a></div><div class="ttdeci">void deleteScene(int index)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:293</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a8ba6ee7e4c55fff14ee6a1fee92a9af8"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a8ba6ee7e4c55fff14ee6a1fee92a9af8">FormManualModify::slotPushButtonBack</a></div><div class="ttdeci">void slotPushButtonBack()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:274</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a63dea2654ca966b79aabcf1eb2667c2b"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a63dea2654ca966b79aabcf1eb2667c2b">FormManualModify::setLastNameFile</a></div><div class="ttdeci">void setLastNameFile(QString name)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:106</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html">FormManualModify</a></div><div class="ttdef"><b>Definition:</b> formManualModify.h:25</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a18f32c70a518439ae7eae5d67c3c4960"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a18f32c70a518439ae7eae5d67c3c4960">FormManualModify::comment</a></div><div class="ttdeci">QString comment()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:117</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_adc587f68a9bc6093bf0ae7c2680b420d"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#adc587f68a9bc6093bf0ae7c2680b420d">FormManualModify::slotDoubleClickedListWidget</a></div><div class="ttdeci">void slotDoubleClickedListWidget(QListWidgetItem *)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:75</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a44bdeaf285bae7944eeed104ab289cfd"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a44bdeaf285bae7944eeed104ab289cfd">FormManualModify::cloneScene</a></div><div class="ttdeci">void cloneScene(cl_Scene *)</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_a650408146390e6798033537ba8710230"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#a650408146390e6798033537ba8710230">FormManualModify::resetModelData</a></div><div class="ttdeci">void resetModelData()</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:297</div></div>
+<div class="ttc" id="aclasscl___scene_html"><div class="ttname"><a href="../../d6/d0f/classcl___scene.html">cl_Scene</a></div><div class="ttdef"><b>Definition:</b> cl_scene.h:29</div></div>
+<div class="ttc" id="aclass_form_manual_modify_html_ade553feec50f74a2d56ec92c3f8b73d1"><div class="ttname"><a href="../../d6/dfd/class_form_manual_modify.html#ade553feec50f74a2d56ec92c3f8b73d1">FormManualModify::setComment</a></div><div class="ttdeci">void setComment(QString name)</div><div class="ttdef"><b>Definition:</b> formManualModify.cpp:112</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

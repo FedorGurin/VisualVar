@@ -1,0 +1,1070 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Файл D:/MyProg/226/ui/VisualVar/globalFunc/gl_func.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a91295625b6c1d91e5ab7944a56a2122.html">globalFunc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл gl_func.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d9/da9/gl__func_8h_source.html">gl_func.h</a>&quot;</code><br />
+<code>#include &lt;QTextCodec&gt;</code><br />
+<code>#include &lt;QStringList&gt;</code><br />
+<code>#include &lt;QFile&gt;</code><br />
+<code>#include &lt;QApplication&gt;</code><br />
+<code>#include &lt;QTextStream&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a63739ef9a34275070a0e7cc9e7499d38"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a63739ef9a34275070a0e7cc9e7499d38">readParamFromXMLFile</a> (QString fileName, QString nameProg, QString nameAttrib)</td></tr>
+<tr class="separator:a63739ef9a34275070a0e7cc9e7499d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af396e30e03a239b4837d41e04d655b09"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#af396e30e03a239b4837d41e04d655b09">writeAttrParamToXMLFile</a> (QString fileName, QString nameProg, QString nameAttrib, QString value)</td></tr>
+<tr class="separator:af396e30e03a239b4837d41e04d655b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf2a466bd138ba5e54bc16e723c931de"><td class="memItemLeft" align="right" valign="top">QDomElement&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#adf2a466bd138ba5e54bc16e723c931de">paramFromXMLFileWithAttrib</a> (QString fileName, QString nameProg, QString nameAttrib)</td></tr>
+<tr class="separator:adf2a466bd138ba5e54bc16e723c931de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a134cbde3f11391c80f4cc0771f7ac135"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a134cbde3f11391c80f4cc0771f7ac135">TranslateFromCP1251</a> (const QByteArray &amp;ArrayString)</td></tr>
+<tr class="separator:a134cbde3f11391c80f4cc0771f7ac135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0aa059c9956f2a7444a4c10f514c08"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a6b0aa059c9956f2a7444a4c10f514c08">TranslateFromKOI8</a> (const QByteArray &amp;ArrayString)</td></tr>
+<tr class="separator:a6b0aa059c9956f2a7444a4c10f514c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d523c553033418f72bb13bd381cba66"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a8d523c553033418f72bb13bd381cba66">coord_to_float</a> (int grad, int min, double sec)</td></tr>
+<tr class="separator:a8d523c553033418f72bb13bd381cba66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4b1f4aff4bf2f3a82b3fce4f4b4ce0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/da9/gl__func_8h.html#ac46ab53a77eebe0a45cda01c6ab2d2c5">Tcordd</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a8a4b1f4aff4bf2f3a82b3fce4f4b4ce0">float_to_coord</a> (double flt)</td></tr>
+<tr class="separator:a8a4b1f4aff4bf2f3a82b3fce4f4b4ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa08448f36c115ae3f97dfee430fbfa5f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#aa08448f36c115ae3f97dfee430fbfa5f">GradToRadian</a> (double x)</td></tr>
+<tr class="separator:aa08448f36c115ae3f97dfee430fbfa5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf99fa036edb909f28b2401d89d689b1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#acf99fa036edb909f28b2401d89d689b1">RadianToGrad</a> (double x)</td></tr>
+<tr class="separator:acf99fa036edb909f28b2401d89d689b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3230c97ecdf23fd1040d455ce8a8900b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a3230c97ecdf23fd1040d455ce8a8900b">PsiToKurs</a> (double psi_)</td></tr>
+<tr class="memdesc:a3230c97ecdf23fd1040d455ce8a8900b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование [180.0;-180] в [0;360.0].  <a href="../../d5/d68/gl__func_8cpp.html#a3230c97ecdf23fd1040d455ce8a8900b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3230c97ecdf23fd1040d455ce8a8900b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab32da56239179ad7d3473d195475b7de"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#ab32da56239179ad7d3473d195475b7de">checkPI</a> (double angle)</td></tr>
+<tr class="memdesc:ab32da56239179ad7d3473d195475b7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">проверка выхода за [180;-180].  <a href="../../d5/d68/gl__func_8cpp.html#ab32da56239179ad7d3473d195475b7de">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab32da56239179ad7d3473d195475b7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfea2be3274b23f015cd138e34a70a59"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#acfea2be3274b23f015cd138e34a70a59">KursToPsi</a> (double kurs)</td></tr>
+<tr class="memdesc:acfea2be3274b23f015cd138e34a70a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование [0;360.0] в [180.0;-180].  <a href="../../d5/d68/gl__func_8cpp.html#acfea2be3274b23f015cd138e34a70a59">Подробнее...</a><br /></td></tr>
+<tr class="separator:acfea2be3274b23f015cd138e34a70a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0939e4e488a4849c55e2ac4865421d27"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a0939e4e488a4849c55e2ac4865421d27">check360</a> (double angle)</td></tr>
+<tr class="memdesc:a0939e4e488a4849c55e2ac4865421d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">проверка выхода за [0;-360].  <a href="../../d5/d68/gl__func_8cpp.html#a0939e4e488a4849c55e2ac4865421d27">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0939e4e488a4849c55e2ac4865421d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b189c40dd0b2e3911f9feea6e57061"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a36b189c40dd0b2e3911f9feea6e57061">forwardMercator</a> (double lon, double lat, double &amp;x, double &amp;y)</td></tr>
+<tr class="separator:a36b189c40dd0b2e3911f9feea6e57061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fdaed9a32d35a831a676fee8fa43bde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a1fdaed9a32d35a831a676fee8fa43bde">inverseMercator</a> (double x, double y, double &amp;lon, double &amp;lat)</td></tr>
+<tr class="separator:a1fdaed9a32d35a831a676fee8fa43bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48638b621a829ea904e6937c93e7bbde"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a48638b621a829ea904e6937c93e7bbde">KursToPsiGrad</a> (double kurs)</td></tr>
+<tr class="memdesc:a48638b621a829ea904e6937c93e7bbde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Преобразование [0;360.0] в [180.0;-180].  <a href="../../d5/d68/gl__func_8cpp.html#a48638b621a829ea904e6937c93e7bbde">Подробнее...</a><br /></td></tr>
+<tr class="separator:a48638b621a829ea904e6937c93e7bbde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816bdea352134a902f6c4703d63e7044"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a816bdea352134a902f6c4703d63e7044">check180</a> (double angle)</td></tr>
+<tr class="memdesc:a816bdea352134a902f6c4703d63e7044"><td class="mdescLeft">&#160;</td><td class="mdescRight">проверка выхода за [180;-180].  <a href="../../d5/d68/gl__func_8cpp.html#a816bdea352134a902f6c4703d63e7044">Подробнее...</a><br /></td></tr>
+<tr class="separator:a816bdea352134a902f6c4703d63e7044"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8509290eb72686b984fa11988507b0e5"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a8509290eb72686b984fa11988507b0e5">geo_double_to_string</a> (double flt)</td></tr>
+<tr class="separator:a8509290eb72686b984fa11988507b0e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a5e7d0e57883be08852fb5041b5047b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a0a5e7d0e57883be08852fb5041b5047b">geo_string_to_double</a> (QString param)</td></tr>
+<tr class="separator:a0a5e7d0e57883be08852fb5041b5047b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a336cb2c5002668e1c75b72499368b799"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a336cb2c5002668e1c75b72499368b799">mapSize</a> (int levelOfDetail)</td></tr>
+<tr class="memdesc:a336cb2c5002668e1c75b72499368b799"><td class="mdescLeft">&#160;</td><td class="mdescRight">T <a class="el" href="../../d9/da9/gl__func_8h.html#a1a411b8770c961900fb70e9319263a45" title="Microsoft.">clip(T n, T minValue, T maxValue)</a>  <a href="../../d5/d68/gl__func_8cpp.html#a336cb2c5002668e1c75b72499368b799">Подробнее...</a><br /></td></tr>
+<tr class="separator:a336cb2c5002668e1c75b72499368b799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9650619913108aba64375ea58979fbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#ac9650619913108aba64375ea58979fbd">latLongToPixelXY</a> (double latitude, double longitude, int levelOfDetail, int &amp;pixelX, int &amp;pixelY)</td></tr>
+<tr class="memdesc:ac9650619913108aba64375ea58979fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">проекция Меркатора на сфере  <a href="../../d5/d68/gl__func_8cpp.html#ac9650619913108aba64375ea58979fbd">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac9650619913108aba64375ea58979fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5206f25880105afaea7559f050e2b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a9f5206f25880105afaea7559f050e2b1">pixelXYToLatLong</a> (int pixelX, int pixelY, int levelOfDetail, double &amp;latitude, double &amp;longitude)</td></tr>
+<tr class="separator:a9f5206f25880105afaea7559f050e2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a632fff4e226ebf1c61f50afdaa24d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a4a632fff4e226ebf1c61f50afdaa24d4">pixelXYToLatLong</a> (QPointF pixel, int levelOfDetail, double &amp;latitude, double &amp;longitude)</td></tr>
+<tr class="separator:a4a632fff4e226ebf1c61f50afdaa24d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c106306747fa3e8d09d57848a9ad224"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a3c106306747fa3e8d09d57848a9ad224">pixelXYToTileXY</a> (int pixelX, int pixelY, int &amp;tileX, int &amp;tileY)</td></tr>
+<tr class="separator:a3c106306747fa3e8d09d57848a9ad224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3de1e116a592a219b6100735c70df95b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a3de1e116a592a219b6100735c70df95b">tileXYToPixelXY</a> (int tileX, int tileY, int &amp;pixelX, int &amp;pixelY)</td></tr>
+<tr class="separator:a3de1e116a592a219b6100735c70df95b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff695ed1d13972e98d4f3473f9d92523"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#aff695ed1d13972e98d4f3473f9d92523">groundResolution</a> (double latitude, int levelOfDetail)</td></tr>
+<tr class="separator:aff695ed1d13972e98d4f3473f9d92523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667f3ee4f94e8486572ccbf4cbc1a37f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a667f3ee4f94e8486572ccbf4cbc1a37f">mapScale</a> (double latitude, int levelOfDetail, int screenDpi)</td></tr>
+<tr class="separator:a667f3ee4f94e8486572ccbf4cbc1a37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca09b3ddeac6749f4e814f15a7e6c3b0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#aca09b3ddeac6749f4e814f15a7e6c3b0">distanceSphere</a> (double Lon1, double Lat1, double Lon2, double Lat2)</td></tr>
+<tr class="memdesc:aca09b3ddeac6749f4e814f15a7e6c3b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">вычисление расстояния на сфере  <a href="../../d5/d68/gl__func_8cpp.html#aca09b3ddeac6749f4e814f15a7e6c3b0">Подробнее...</a><br /></td></tr>
+<tr class="separator:aca09b3ddeac6749f4e814f15a7e6c3b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4383baf8a5fa3991c988b4b0c14748d9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a4383baf8a5fa3991c988b4b0c14748d9">cutValues</a> (double x)</td></tr>
+<tr class="separator:a4383baf8a5fa3991c988b4b0c14748d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a434e2fe1c3ed0d6807d247de7ccd448d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a434e2fe1c3ed0d6807d247de7ccd448d">limitMax</a> (double value, double max)</td></tr>
+<tr class="memdesc:a434e2fe1c3ed0d6807d247de7ccd448d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ограничение сверху  <a href="../../d5/d68/gl__func_8cpp.html#a434e2fe1c3ed0d6807d247de7ccd448d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a434e2fe1c3ed0d6807d247de7ccd448d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaecf512adf0608ac3b8cd743b70e4c0f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#aaecf512adf0608ac3b8cd743b70e4c0f">limitMin</a> (double value, double min)</td></tr>
+<tr class="memdesc:aaecf512adf0608ac3b8cd743b70e4c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ограничение снизу  <a href="../../d5/d68/gl__func_8cpp.html#aaecf512adf0608ac3b8cd743b70e4c0f">Подробнее...</a><br /></td></tr>
+<tr class="separator:aaecf512adf0608ac3b8cd743b70e4c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a78190d9b5f3f31e26044b29a9285281b"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a78190d9b5f3f31e26044b29a9285281b">listForCompleter</a></td></tr>
+<tr class="memdesc:a78190d9b5f3f31e26044b29a9285281b"><td class="mdescLeft">&#160;</td><td class="mdescRight">общие переменные  <a href="../../d5/d68/gl__func_8cpp.html#a78190d9b5f3f31e26044b29a9285281b">Подробнее...</a><br /></td></tr>
+<tr class="separator:a78190d9b5f3f31e26044b29a9285281b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e77467c5ef4eeb7c48ed547fd5a37e0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d68/gl__func_8cpp.html#a0e77467c5ef4eeb7c48ed547fd5a37e0">nameMainFile</a></td></tr>
+<tr class="memdesc:a0e77467c5ef4eeb7c48ed547fd5a37e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">имя файла с настройками  <a href="../../d5/d68/gl__func_8cpp.html#a0e77467c5ef4eeb7c48ed547fd5a37e0">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0e77467c5ef4eeb7c48ed547fd5a37e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a816bdea352134a902f6c4703d63e7044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816bdea352134a902f6c4703d63e7044">&#9670;&nbsp;</a></span>check180()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double check180 </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>проверка выхода за [180;-180]. </p>
+
+</div>
+</div>
+<a id="a0939e4e488a4849c55e2ac4865421d27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0939e4e488a4849c55e2ac4865421d27">&#9670;&nbsp;</a></span>check360()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double check360 </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>проверка выхода за [0;-360]. </p>
+
+</div>
+</div>
+<a id="ab32da56239179ad7d3473d195475b7de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab32da56239179ad7d3473d195475b7de">&#9670;&nbsp;</a></span>checkPI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double checkPI </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>проверка выхода за [180;-180]. </p>
+
+</div>
+</div>
+<a id="a8d523c553033418f72bb13bd381cba66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d523c553033418f72bb13bd381cba66">&#9670;&nbsp;</a></span>coord_to_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double coord_to_float </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>sec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4383baf8a5fa3991c988b4b0c14748d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4383baf8a5fa3991c988b4b0c14748d9">&#9670;&nbsp;</a></span>cutValues()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double cutValues </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca09b3ddeac6749f4e814f15a7e6c3b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca09b3ddeac6749f4e814f15a7e6c3b0">&#9670;&nbsp;</a></span>distanceSphere()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double distanceSphere </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Lon1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Lat1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Lon2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Lat2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>вычисление расстояния на сфере </p>
+
+</div>
+</div>
+<a id="a8a4b1f4aff4bf2f3a82b3fce4f4b4ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a4b1f4aff4bf2f3a82b3fce4f4b4ce0">&#9670;&nbsp;</a></span>float_to_coord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/da9/gl__func_8h.html#ac46ab53a77eebe0a45cda01c6ab2d2c5">Tcordd</a> float_to_coord </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>flt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36b189c40dd0b2e3911f9feea6e57061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b189c40dd0b2e3911f9feea6e57061">&#9670;&nbsp;</a></span>forwardMercator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void forwardMercator </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8509290eb72686b984fa11988507b0e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8509290eb72686b984fa11988507b0e5">&#9670;&nbsp;</a></span>geo_double_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString geo_double_to_string </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>flt</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0a5e7d0e57883be08852fb5041b5047b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a5e7d0e57883be08852fb5041b5047b">&#9670;&nbsp;</a></span>geo_string_to_double()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double geo_string_to_double </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>param</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa08448f36c115ae3f97dfee430fbfa5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08448f36c115ae3f97dfee430fbfa5f">&#9670;&nbsp;</a></span>GradToRadian()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GradToRadian </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aff695ed1d13972e98d4f3473f9d92523"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff695ed1d13972e98d4f3473f9d92523">&#9670;&nbsp;</a></span>groundResolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double groundResolution </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>levelOfDetail</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fdaed9a32d35a831a676fee8fa43bde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fdaed9a32d35a831a676fee8fa43bde">&#9670;&nbsp;</a></span>inverseMercator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void inverseMercator </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acfea2be3274b23f015cd138e34a70a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfea2be3274b23f015cd138e34a70a59">&#9670;&nbsp;</a></span>KursToPsi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double KursToPsi </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>kurs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Преобразование [0;360.0] в [180.0;-180]. </p>
+
+</div>
+</div>
+<a id="a48638b621a829ea904e6937c93e7bbde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48638b621a829ea904e6937c93e7bbde">&#9670;&nbsp;</a></span>KursToPsiGrad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double KursToPsiGrad </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>kurs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Преобразование [0;360.0] в [180.0;-180]. </p>
+
+</div>
+</div>
+<a id="ac9650619913108aba64375ea58979fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9650619913108aba64375ea58979fbd">&#9670;&nbsp;</a></span>latLongToPixelXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void latLongToPixelXY </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>longitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>levelOfDetail</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>pixelX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>pixelY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>проекция Меркатора на сфере </p>
+
+</div>
+</div>
+<a id="a434e2fe1c3ed0d6807d247de7ccd448d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a434e2fe1c3ed0d6807d247de7ccd448d">&#9670;&nbsp;</a></span>limitMax()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double limitMax </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ограничение сверху </p>
+
+</div>
+</div>
+<a id="aaecf512adf0608ac3b8cd743b70e4c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaecf512adf0608ac3b8cd743b70e4c0f">&#9670;&nbsp;</a></span>limitMin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double limitMin </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>min</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ограничение снизу </p>
+
+</div>
+</div>
+<a id="a667f3ee4f94e8486572ccbf4cbc1a37f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667f3ee4f94e8486572ccbf4cbc1a37f">&#9670;&nbsp;</a></span>mapScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double mapScale </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>levelOfDetail</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>screenDpi</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a336cb2c5002668e1c75b72499368b799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a336cb2c5002668e1c75b72499368b799">&#9670;&nbsp;</a></span>mapSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned mapSize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>levelOfDetail</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>T <a class="el" href="../../d9/da9/gl__func_8h.html#a1a411b8770c961900fb70e9319263a45" title="Microsoft.">clip(T n, T minValue, T maxValue)</a> </p>
+
+</div>
+</div>
+<a id="adf2a466bd138ba5e54bc16e723c931de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf2a466bd138ba5e54bc16e723c931de">&#9670;&nbsp;</a></span>paramFromXMLFileWithAttrib()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDomElement paramFromXMLFileWithAttrib </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nameProg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nameAttrib</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f5206f25880105afaea7559f050e2b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5206f25880105afaea7559f050e2b1">&#9670;&nbsp;</a></span>pixelXYToLatLong() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pixelXYToLatLong </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixelX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixelY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>levelOfDetail</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>longitude</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a632fff4e226ebf1c61f50afdaa24d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a632fff4e226ebf1c61f50afdaa24d4">&#9670;&nbsp;</a></span>pixelXYToLatLong() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pixelXYToLatLong </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>pixel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>levelOfDetail</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>latitude</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>longitude</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c106306747fa3e8d09d57848a9ad224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c106306747fa3e8d09d57848a9ad224">&#9670;&nbsp;</a></span>pixelXYToTileXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pixelXYToTileXY </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixelX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixelY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>tileX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>tileY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3230c97ecdf23fd1040d455ce8a8900b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3230c97ecdf23fd1040d455ce8a8900b">&#9670;&nbsp;</a></span>PsiToKurs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double PsiToKurs </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>psi_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Преобразование [180.0;-180] в [0;360.0]. </p>
+
+</div>
+</div>
+<a id="acf99fa036edb909f28b2401d89d689b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf99fa036edb909f28b2401d89d689b1">&#9670;&nbsp;</a></span>RadianToGrad()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double RadianToGrad </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63739ef9a34275070a0e7cc9e7499d38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63739ef9a34275070a0e7cc9e7499d38">&#9670;&nbsp;</a></span>readParamFromXMLFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString readParamFromXMLFile </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nameProg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nameAttrib</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3de1e116a592a219b6100735c70df95b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de1e116a592a219b6100735c70df95b">&#9670;&nbsp;</a></span>tileXYToPixelXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tileXYToPixelXY </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tileX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tileY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>pixelX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>pixelY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a134cbde3f11391c80f4cc0771f7ac135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134cbde3f11391c80f4cc0771f7ac135">&#9670;&nbsp;</a></span>TranslateFromCP1251()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString TranslateFromCP1251 </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;&#160;</td>
+          <td class="paramname"><em>ArrayString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b0aa059c9956f2a7444a4c10f514c08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b0aa059c9956f2a7444a4c10f514c08">&#9670;&nbsp;</a></span>TranslateFromKOI8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString TranslateFromKOI8 </td>
+          <td>(</td>
+          <td class="paramtype">const QByteArray &amp;&#160;</td>
+          <td class="paramname"><em>ArrayString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af396e30e03a239b4837d41e04d655b09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af396e30e03a239b4837d41e04d655b09">&#9670;&nbsp;</a></span>writeAttrParamToXMLFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool writeAttrParamToXMLFile </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nameProg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>nameAttrib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a78190d9b5f3f31e26044b29a9285281b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78190d9b5f3f31e26044b29a9285281b">&#9670;&nbsp;</a></span>listForCompleter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList listForCompleter</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>общие переменные </p>
+
+</div>
+</div>
+<a id="a0e77467c5ef4eeb7c48ed547fd5a37e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e77467c5ef4eeb7c48ed547fd5a37e0">&#9670;&nbsp;</a></span>nameMainFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString nameMainFile</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>имя файла с настройками </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:34. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

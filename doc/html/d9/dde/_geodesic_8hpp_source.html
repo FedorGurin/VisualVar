@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/Geodesic.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Geodesic.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/dde/_geodesic_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_GEODESIC_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_GEODESIC_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_GEODESIC_ORDER)</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">   20</a></span>&#160;<span class="preprocessor">#  define GEOGRAPHICLIB_GEODESIC_ORDER \</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">  (GEOGRAPHICLIB_PRECISION == 2 ? 6 : \</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">   (GEOGRAPHICLIB_PRECISION == 1 ? 3 : \</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    (GEOGRAPHICLIB_PRECISION == 3 ? 7 : 8)))</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef NONE</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#undef NONE</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">class </span>GeodesicLine;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">  175</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">Geodesic</a> {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ac4a8bd684285e00b12427c052697a106">  178</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html">GeodesicLine</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nA1_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nC1_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nC1p_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nA2_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nC2_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nA3_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nA3x_ = nA3_;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nC3_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nC3x_ = (nC3_ * (nC3_ - 1)) / 2;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nC4_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nC4x_ = (nC4_ * (nC4_ + 1)) / 2;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// Size for temporary array</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// nC = max(max(nC1_, nC1p_, nC2_) + 1, max(nC3_, nC4_))</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> nC_ = <a class="code" href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a> + 1;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> maxit1_ = 20;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">unsigned</span> maxit2_;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    real tiny_, tol0_, tol1_, tol2_, tolb_, xthresh_;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">enum</span> captype {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      CAP_NONE = 0U,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      CAP_C1   = 1U&lt;&lt;0,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      CAP_C1p  = 1U&lt;&lt;1,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      CAP_C2   = 1U&lt;&lt;2,</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;      CAP_C3   = 1U&lt;&lt;3,</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;      CAP_C4   = 1U&lt;&lt;4,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;      CAP_ALL  = 0x1FU,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      CAP_MASK = CAP_ALL,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      OUT_ALL  = 0x7F80U,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;      OUT_MASK = 0xFF80U,       <span class="comment">// Includes LONG_UNROLL</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    };</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keyword">static</span> real SinCosSeries(<span class="keywordtype">bool</span> sinp,</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                             real sinx, real cosx, <span class="keyword">const</span> real c[], <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keyword">static</span> real Astroid(real x, real y);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    real _a, _f, _f1, _e2, _ep2, _n, _b, _c2, _etol2;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    real _A3x[nA3x_], _C3x[nC3x_], _C4x[nC4x_];</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">void</span> Lengths(real eps, real sig12,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                 real ssig1, real csig1, real dn1,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                 real ssig2, real csig2, real dn2,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                 real cbet1, real cbet2, <span class="keywordtype">unsigned</span> outmask,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                 real&amp; s12s, real&amp; m12a, real&amp; m0,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                 real&amp; M12, real&amp; M21, real Ca[]) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    real InverseStart(real sbet1, real cbet1, real dn1,</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                      real sbet2, real cbet2, real dn2,</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                      real lam12,</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                      real&amp; salp1, real&amp; calp1,</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                      real&amp; salp2, real&amp; calp2, real&amp; dnm,</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                      real Ca[]) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    real Lambda12(real sbet1, real cbet1, real dn1,</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                  real sbet2, real cbet2, real dn2,</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                  real salp1, real calp1,</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                  real&amp; salp2, real&amp; calp2, real&amp; sig12,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                  real&amp; ssig1, real&amp; csig1, real&amp; ssig2, real&amp; csig2,</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                  real&amp; eps, real&amp; domg12, <span class="keywordtype">bool</span> diffp, real&amp; dlam12,</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                  real Ca[])</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;      <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// These are Maxima generated functions to provide series approximations to</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">// the integrals for the ellipsoidal geodesic.</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keyword">static</span> real A1m1f(real eps);</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> C1f(real eps, real c[]);</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> C1pf(real eps, real c[]);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keyword">static</span> real A2m1f(real eps);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> C2f(real eps, real c[]);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">void</span> A3coeff();</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    real A3f(real eps) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">void</span> C3coeff();</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">void</span> C3f(real eps, real c[]) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="keywordtype">void</span> C4coeff();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="keywordtype">void</span> C4f(real k2, real c[]) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828">  263</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828">mask</a> {</div>
+<div class="line"><a name="l00268"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828ab10adfebcb73de5356c4787246f056af">  268</a></span>&#160;      NONE          = 0U,</div>
+<div class="line"><a name="l00274"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828a7c1f4742e41ae5e75c8133ee7fb8fd90">  274</a></span>&#160;      LATITUDE      = 1U&lt;&lt;7  | CAP_NONE,</div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828aa1e019a4815f6c23ca30d4b3efcf6c6b">  279</a></span>&#160;      LONGITUDE     = 1U&lt;&lt;8  | CAP_C3,</div>
+<div class="line"><a name="l00286"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828aa413d0b81ccb4b5302285b1a01f16c08">  286</a></span>&#160;      AZIMUTH       = 1U&lt;&lt;9  | CAP_NONE,</div>
+<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828a0fe3400fb8dcc92274fbac2839cc4e0d">  291</a></span>&#160;      DISTANCE      = 1U&lt;&lt;10 | CAP_C1,</div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828ae20140cdf788fa0497df59630d3211ef">  297</a></span>&#160;      DISTANCE_IN   = 1U&lt;&lt;11 | CAP_C1 | CAP_C1p,</div>
+<div class="line"><a name="l00302"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828a7a27709e1377a8c34704cf1cec64db6c">  302</a></span>&#160;      REDUCEDLENGTH = 1U&lt;&lt;12 | CAP_C1 | CAP_C2,</div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828afb114302395314a68dfef3c14693ea2e">  307</a></span>&#160;      GEODESICSCALE = 1U&lt;&lt;13 | CAP_C1 | CAP_C2,</div>
+<div class="line"><a name="l00312"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828a9aea7d24f8e437d6ea38defbe4ec9b14">  312</a></span>&#160;      AREA          = 1U&lt;&lt;14 | CAP_C4,</div>
+<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828a67f4f28fe1a8a235c4b8c43e39285636">  318</a></span>&#160;      LONG_UNROLL   = 1U&lt;&lt;15,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      LONG_NOWRAP   = LONG_UNROLL,</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828a30e0c9456c5df9e6ff23880014bd11e0">  327</a></span>&#160;      ALL           = OUT_ALL| CAP_ALL,</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    };</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">Geodesic</a>(real a, real f);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
+<div class="line"><a name="l00384"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a47d30c7b8b3fb0534ca3d0422f277d69">  384</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a47d30c7b8b3fb0534ca3d0422f277d69">Direct</a>(real lat1, real lon1, real azi1, real s12,</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;                      real&amp; lat2, real&amp; lon2, real&amp; azi2,</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                      real&amp; m12, real&amp; M12, real&amp; M21, real&amp; S12)<span class="keyword"></span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;      real t;</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;      <span class="keywordflow">return</span> GenDirect(lat1, lon1, azi1, <span class="keyword">false</span>, s12,</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;                       LATITUDE | LONGITUDE | AZIMUTH |</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;                       REDUCEDLENGTH | GEODESICSCALE | AREA,</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;                       lat2, lon2, azi2, t, m12, M12, M21, S12);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aa6631a0a0f10b725cc70585a81778641">  398</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aa6631a0a0f10b725cc70585a81778641">Direct</a>(real lat1, real lon1, real azi1, real s12,</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                      real&amp; lat2, real&amp; lon2)<span class="keyword"></span></div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;      real t;</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;      <span class="keywordflow">return</span> GenDirect(lat1, lon1, azi1, <span class="keyword">false</span>, s12,</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                       LATITUDE | LONGITUDE,</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                       lat2, lon2, t, t, t, t, t, t);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a16f708d9a99cb9796124f1ca70f9495d">  410</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a16f708d9a99cb9796124f1ca70f9495d">Direct</a>(real lat1, real lon1, real azi1, real s12,</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;                      real&amp; lat2, real&amp; lon2, real&amp; azi2)<span class="keyword"></span></div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;      real t;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;      <span class="keywordflow">return</span> GenDirect(lat1, lon1, azi1, <span class="keyword">false</span>, s12,</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                       LATITUDE | LONGITUDE | AZIMUTH,</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                       lat2, lon2, azi2, t, t, t, t, t);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    }</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a032c4ef7e9cb2436f94972a1717a0094">  422</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a032c4ef7e9cb2436f94972a1717a0094">Direct</a>(real lat1, real lon1, real azi1, real s12,</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;                      real&amp; lat2, real&amp; lon2, real&amp; azi2, real&amp; m12)<span class="keyword"></span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;      real t;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;      <span class="keywordflow">return</span> GenDirect(lat1, lon1, azi1, <span class="keyword">false</span>, s12,</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;                       LATITUDE | LONGITUDE | AZIMUTH | REDUCEDLENGTH,</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;                       lat2, lon2, azi2, t, m12, t, t, t);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
+<div class="line"><a name="l00434"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a8528c1f25bd2010245935e72f361c66e">  434</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a8528c1f25bd2010245935e72f361c66e">Direct</a>(real lat1, real lon1, real azi1, real s12,</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;                      real&amp; lat2, real&amp; lon2, real&amp; azi2,</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;                      real&amp; M12, real&amp; M21)<span class="keyword"></span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;      real t;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;      <span class="keywordflow">return</span> GenDirect(lat1, lon1, azi1, <span class="keyword">false</span>, s12,</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                       LATITUDE | LONGITUDE | AZIMUTH | GEODESICSCALE,</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                       lat2, lon2, azi2, t, t, M12, M21, t);</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    }</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
+<div class="line"><a name="l00447"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aeab7cf69fcb140a2bba3c09ec57e30a6">  447</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aeab7cf69fcb140a2bba3c09ec57e30a6">Direct</a>(real lat1, real lon1, real azi1, real s12,</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                      real&amp; lat2, real&amp; lon2, real&amp; azi2,</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                      real&amp; m12, real&amp; M12, real&amp; M21)<span class="keyword"></span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;      real t;</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;      <span class="keywordflow">return</span> GenDirect(lat1, lon1, azi1, <span class="keyword">false</span>, s12,</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;                       LATITUDE | LONGITUDE | AZIMUTH |</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                       REDUCEDLENGTH | GEODESICSCALE,</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                       lat2, lon2, azi2, t, m12, M12, M21, t);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    }</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
+<div class="line"><a name="l00496"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ab93ed81cd70c11fa2d1cc48ed2d29adf">  496</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ab93ed81cd70c11fa2d1cc48ed2d29adf">ArcDirect</a>(real lat1, real lon1, real azi1, real a12,</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                   real&amp; lat2, real&amp; lon2, real&amp; azi2, real&amp; s12,</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;                   real&amp; m12, real&amp; M12, real&amp; M21, real&amp; S12)<span class="keyword"></span></div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;      GenDirect(lat1, lon1, azi1, <span class="keyword">true</span>, a12,</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                LATITUDE | LONGITUDE | AZIMUTH | DISTANCE |</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;                REDUCEDLENGTH | GEODESICSCALE | AREA,</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;                lat2, lon2, azi2, s12, m12, M12, M21, S12);</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    }</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160; </div>
+<div class="line"><a name="l00509"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a38552bbe69a9d9e1b1f697b2cc25a71b">  509</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a38552bbe69a9d9e1b1f697b2cc25a71b">ArcDirect</a>(real lat1, real lon1, real azi1, real a12,</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;                   real&amp; lat2, real&amp; lon2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;      real t;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;      GenDirect(lat1, lon1, azi1, <span class="keyword">true</span>, a12,</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;                LATITUDE | LONGITUDE,</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;                lat2, lon2, t, t, t, t, t, t);</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    }</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
+<div class="line"><a name="l00520"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#af2fc21668bf1c3ec5eb0776712a96d65">  520</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#af2fc21668bf1c3ec5eb0776712a96d65">ArcDirect</a>(real lat1, real lon1, real azi1, real a12,</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                   real&amp; lat2, real&amp; lon2, real&amp; azi2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;      real t;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;      GenDirect(lat1, lon1, azi1, <span class="keyword">true</span>, a12,</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                LATITUDE | LONGITUDE | AZIMUTH,</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                lat2, lon2, azi2, t, t, t, t, t);</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    }</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
+<div class="line"><a name="l00531"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a61940c984628204d121d1f5f422e4ea7">  531</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a61940c984628204d121d1f5f422e4ea7">ArcDirect</a>(real lat1, real lon1, real azi1, real a12,</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                   real&amp; lat2, real&amp; lon2, real&amp; azi2, real&amp; s12)<span class="keyword"></span></div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;      real t;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;      GenDirect(lat1, lon1, azi1, <span class="keyword">true</span>, a12,</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                LATITUDE | LONGITUDE | AZIMUTH | DISTANCE,</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                lat2, lon2, azi2, s12, t, t, t, t);</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    }</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
+<div class="line"><a name="l00543"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ad1cece51e3315c10a0eb94676ed2de81">  543</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ad1cece51e3315c10a0eb94676ed2de81">ArcDirect</a>(real lat1, real lon1, real azi1, real a12,</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                   real&amp; lat2, real&amp; lon2, real&amp; azi2,</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;                   real&amp; s12, real&amp; m12)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;      real t;</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;      GenDirect(lat1, lon1, azi1, <span class="keyword">true</span>, a12,</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                LATITUDE | LONGITUDE | AZIMUTH | DISTANCE |</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                REDUCEDLENGTH,</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;                lat2, lon2, azi2, s12, m12, t, t, t);</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    }</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00556"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a256b39e6224033f5af4fbb5a0b6f0ea9">  556</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a256b39e6224033f5af4fbb5a0b6f0ea9">ArcDirect</a>(real lat1, real lon1, real azi1, real a12,</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                   real&amp; lat2, real&amp; lon2, real&amp; azi2, real&amp; s12,</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                   real&amp; M12, real&amp; M21)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;      real t;</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;      GenDirect(lat1, lon1, azi1, <span class="keyword">true</span>, a12,</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                LATITUDE | LONGITUDE | AZIMUTH | DISTANCE |</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                GEODESICSCALE,</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                lat2, lon2, azi2, s12, t, M12, M21, t);</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    }</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
+<div class="line"><a name="l00569"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a4310a95c004b80b1dafd34d19c970179">  569</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a4310a95c004b80b1dafd34d19c970179">ArcDirect</a>(real lat1, real lon1, real azi1, real a12,</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                   real&amp; lat2, real&amp; lon2, real&amp; azi2, real&amp; s12,</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                   real&amp; m12, real&amp; M12, real&amp; M21)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;      real t;</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;      GenDirect(lat1, lon1, azi1, <span class="keyword">true</span>, a12,</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                LATITUDE | LONGITUDE | AZIMUTH | DISTANCE |</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                REDUCEDLENGTH | GEODESICSCALE,</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                lat2, lon2, azi2, s12, m12, M12, M21, t);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    }</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GenDirect(real lat1, real lon1, real azi1,</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                         <span class="keywordtype">bool</span> arcmode, real s12_a12, <span class="keywordtype">unsigned</span> outmask,</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                         real&amp; lat2, real&amp; lon2, real&amp; azi2,</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                         real&amp; s12, real&amp; m12, real&amp; M12, real&amp; M21,</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                         real&amp; S12) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
+<div class="line"><a name="l00679"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#afdca5eb7c37fa2fecf124aecd6c436fd">  679</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#afdca5eb7c37fa2fecf124aecd6c436fd">Inverse</a>(real lat1, real lon1, real lat2, real lon2,</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                       real&amp; s12, real&amp; azi1, real&amp; azi2, real&amp; m12,</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                       real&amp; M12, real&amp; M21, real&amp; S12)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;      <span class="keywordflow">return</span> GenInverse(lat1, lon1, lat2, lon2,</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                        DISTANCE | AZIMUTH |</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                        REDUCEDLENGTH | GEODESICSCALE | AREA,</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                        s12, azi1, azi2, m12, M12, M21, S12);</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    }</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
+<div class="line"><a name="l00691"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ac9e229ff0fc14ae937fc6f8541871ebc">  691</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ac9e229ff0fc14ae937fc6f8541871ebc">Inverse</a>(real lat1, real lon1, real lat2, real lon2,</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                       real&amp; s12)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;      real t;</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;      <span class="keywordflow">return</span> GenInverse(lat1, lon1, lat2, lon2,</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                        DISTANCE,</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                        s12, t, t, t, t, t, t);</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    }</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160; </div>
+<div class="line"><a name="l00702"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ac5c2cdd08bce2a0a24c6f924b295d44f">  702</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ac5c2cdd08bce2a0a24c6f924b295d44f">Inverse</a>(real lat1, real lon1, real lat2, real lon2,</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;                       real&amp; azi1, real&amp; azi2)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;      real t;</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;      <span class="keywordflow">return</span> GenInverse(lat1, lon1, lat2, lon2,</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;                        AZIMUTH,</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                        t, azi1, azi2, t, t, t, t);</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    }</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160; </div>
+<div class="line"><a name="l00713"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a980e4fcb7b2d061a17e9974d2f71c639">  713</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a980e4fcb7b2d061a17e9974d2f71c639">Inverse</a>(real lat1, real lon1, real lat2, real lon2,</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;                       real&amp; s12, real&amp; azi1, real&amp; azi2)<span class="keyword"></span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;      real t;</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;      <span class="keywordflow">return</span> GenInverse(lat1, lon1, lat2, lon2,</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;                        DISTANCE | AZIMUTH,</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;                        s12, azi1, azi2, t, t, t, t);</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    }</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160; </div>
+<div class="line"><a name="l00725"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a5e1180d3ab5e0fddb58231a98322bd2d">  725</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a5e1180d3ab5e0fddb58231a98322bd2d">Inverse</a>(real lat1, real lon1, real lat2, real lon2,</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;                       real&amp; s12, real&amp; azi1, real&amp; azi2, real&amp; m12)<span class="keyword"></span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="keyword">      const </span>{</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;      real t;</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;      <span class="keywordflow">return</span> GenInverse(lat1, lon1, lat2, lon2,</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;                        DISTANCE | AZIMUTH | REDUCEDLENGTH,</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                        s12, azi1, azi2, m12, t, t, t);</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    }</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
+<div class="line"><a name="l00737"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a3e568eaea3659661119074e88968f83e">  737</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a3e568eaea3659661119074e88968f83e">Inverse</a>(real lat1, real lon1, real lat2, real lon2,</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                       real&amp; s12, real&amp; azi1, real&amp; azi2,</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;                       real&amp; M12, real&amp; M21)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;      real t;</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;      <span class="keywordflow">return</span> GenInverse(lat1, lon1, lat2, lon2,</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;                        DISTANCE | AZIMUTH | GEODESICSCALE,</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;                        s12, azi1, azi2, t, M12, M21, t);</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    }</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160; </div>
+<div class="line"><a name="l00749"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a26b5bb183658b4f418bed86f06835949">  749</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a26b5bb183658b4f418bed86f06835949">Inverse</a>(real lat1, real lon1, real lat2, real lon2,</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                       real&amp; s12, real&amp; azi1, real&amp; azi2, real&amp; m12,</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;                       real&amp; M12, real&amp; M21)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;      real t;</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;      <span class="keywordflow">return</span> GenInverse(lat1, lon1, lat2, lon2,</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;                        DISTANCE | AZIMUTH |</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                        REDUCEDLENGTH | GEODESICSCALE,</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                        s12, azi1, azi2, m12, M12, M21, t);</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    }</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160; </div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GenInverse(real lat1, real lon1, real lat2, real lon2,</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;                          <span class="keywordtype">unsigned</span> outmask,</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;                          real&amp; s12, real&amp; azi1, real&amp; azi2,</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;                          real&amp; m12, real&amp; M12, real&amp; M21, real&amp; S12)</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;      <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160; </div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;    <a class="code" href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html">GeodesicLine</a> Line(real lat1, real lon1, real azi1, <span class="keywordtype">unsigned</span> caps = ALL)</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;      <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160; </div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160; </div>
+<div class="line"><a name="l00856"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a06b6dac507494b480e26887fa0832d22">  856</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a06b6dac507494b480e26887fa0832d22">MajorRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _a; }</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160; </div>
+<div class="line"><a name="l00862"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a2b5c1649b624d214943878fe97f2b438">  862</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a2b5c1649b624d214943878fe97f2b438">Flattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _f; }</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160; </div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseFlattening()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 1/_f; }</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160; </div>
+<div class="line"><a name="l00878"></a><span class="lineno"><a class="line" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ad836c10e79729d891892d7cdb10c3925">  878</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ad836c10e79729d891892d7cdb10c3925">EllipsoidArea</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> 4 * <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aca1580c771e7019bfe826512fba9b2f1">Math::pi</a>() * _c2; }</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160; </div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">Geodesic</a>&amp; WGS84();</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160; </div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;  };</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160; </div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160; </div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_GEODESIC_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aca1580c771e7019bfe826512fba9b2f1"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aca1580c771e7019bfe826512fba9b2f1">GeographicLib::Math::pi</a></div><div class="ttdeci">static T pi()</div><div class="ttdef"><b>Definition:</b> Math.hpp:216</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_ac9e229ff0fc14ae937fc6f8541871ebc"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ac9e229ff0fc14ae937fc6f8541871ebc">GeographicLib::Geodesic::Inverse</a></div><div class="ttdeci">Math::real Inverse(real lat1, real lon1, real lat2, real lon2, real &amp;s12) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:691</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a06b6dac507494b480e26887fa0832d22"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a06b6dac507494b480e26887fa0832d22">GeographicLib::Geodesic::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:856</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a26b5bb183658b4f418bed86f06835949"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a26b5bb183658b4f418bed86f06835949">GeographicLib::Geodesic::Inverse</a></div><div class="ttdeci">Math::real Inverse(real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:749</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a61940c984628204d121d1f5f422e4ea7"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a61940c984628204d121d1f5f422e4ea7">GeographicLib::Geodesic::ArcDirect</a></div><div class="ttdeci">void ArcDirect(real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:531</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_afdca5eb7c37fa2fecf124aecd6c436fd"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#afdca5eb7c37fa2fecf124aecd6c436fd">GeographicLib::Geodesic::Inverse</a></div><div class="ttdeci">Math::real Inverse(real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21, real &amp;S12) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:679</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a8528c1f25bd2010245935e72f361c66e"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a8528c1f25bd2010245935e72f361c66e">GeographicLib::Geodesic::Direct</a></div><div class="ttdeci">Math::real Direct(real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;M12, real &amp;M21) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:434</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a032c4ef7e9cb2436f94972a1717a0094"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a032c4ef7e9cb2436f94972a1717a0094">GeographicLib::Geodesic::Direct</a></div><div class="ttdeci">Math::real Direct(real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;m12) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:422</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a2b5c1649b624d214943878fe97f2b438"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a2b5c1649b624d214943878fe97f2b438">GeographicLib::Geodesic::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:862</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_af2fc21668bf1c3ec5eb0776712a96d65"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#af2fc21668bf1c3ec5eb0776712a96d65">GeographicLib::Geodesic::ArcDirect</a></div><div class="ttdeci">void ArcDirect(real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:520</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a980e4fcb7b2d061a17e9974d2f71c639"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a980e4fcb7b2d061a17e9974d2f71c639">GeographicLib::Geodesic::Inverse</a></div><div class="ttdeci">Math::real Inverse(real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:713</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a16f708d9a99cb9796124f1ca70f9495d"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a16f708d9a99cb9796124f1ca70f9495d">GeographicLib::Geodesic::Direct</a></div><div class="ttdeci">Math::real Direct(real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:410</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a3e568eaea3659661119074e88968f83e"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a3e568eaea3659661119074e88968f83e">GeographicLib::Geodesic::Inverse</a></div><div class="ttdeci">Math::real Inverse(real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;M12, real &amp;M21) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:737</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_line_html"><div class="ttname"><a href="../../df/d84/class_geographic_lib_1_1_geodesic_line.html">GeographicLib::GeodesicLine</a></div><div class="ttdoc">A geodesic line.</div><div class="ttdef"><b>Definition:</b> GeodesicLine.hpp:63</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_ad1cece51e3315c10a0eb94676ed2de81"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ad1cece51e3315c10a0eb94676ed2de81">GeographicLib::Geodesic::ArcDirect</a></div><div class="ttdeci">void ArcDirect(real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;m12) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:543</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_aeab7cf69fcb140a2bba3c09ec57e30a6"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aeab7cf69fcb140a2bba3c09ec57e30a6">GeographicLib::Geodesic::Direct</a></div><div class="ttdeci">Math::real Direct(real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:447</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_ad836c10e79729d891892d7cdb10c3925"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ad836c10e79729d891892d7cdb10c3925">GeographicLib::Geodesic::EllipsoidArea</a></div><div class="ttdeci">Math::real EllipsoidArea() const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:878</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a256b39e6224033f5af4fbb5a0b6f0ea9"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a256b39e6224033f5af4fbb5a0b6f0ea9">GeographicLib::Geodesic::ArcDirect</a></div><div class="ttdeci">void ArcDirect(real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;M12, real &amp;M21) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:556</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_ac5c2cdd08bce2a0a24c6f924b295d44f"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ac5c2cdd08bce2a0a24c6f924b295d44f">GeographicLib::Geodesic::Inverse</a></div><div class="ttdeci">Math::real Inverse(real lat1, real lon1, real lat2, real lon2, real &amp;azi1, real &amp;azi2) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:702</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_aab966190e69651b86661fc2628d20828"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aab966190e69651b86661fc2628d20828">GeographicLib::Geodesic::mask</a></div><div class="ttdeci">mask</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:263</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_ab93ed81cd70c11fa2d1cc48ed2d29adf"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#ab93ed81cd70c11fa2d1cc48ed2d29adf">GeographicLib::Geodesic::ArcDirect</a></div><div class="ttdeci">void ArcDirect(real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;m12, real &amp;M12, real &amp;M21, real &amp;S12) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:496</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_aa6631a0a0f10b725cc70585a81778641"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#aa6631a0a0f10b725cc70585a81778641">GeographicLib::Geodesic::Direct</a></div><div class="ttdeci">Math::real Direct(real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:398</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a4310a95c004b80b1dafd34d19c970179"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a4310a95c004b80b1dafd34d19c970179">GeographicLib::Geodesic::ArcDirect</a></div><div class="ttdeci">void ArcDirect(real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;s12, real &amp;m12, real &amp;M12, real &amp;M21) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:569</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">GeographicLib::Geodesic</a></div><div class="ttdoc">Geodesic calculations</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:175</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a38552bbe69a9d9e1b1f697b2cc25a71b"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a38552bbe69a9d9e1b1f697b2cc25a71b">GeographicLib::Geodesic::ArcDirect</a></div><div class="ttdeci">void ArcDirect(real lat1, real lon1, real azi1, real a12, real &amp;lat2, real &amp;lon2) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:509</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a5e1180d3ab5e0fddb58231a98322bd2d"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a5e1180d3ab5e0fddb58231a98322bd2d">GeographicLib::Geodesic::Inverse</a></div><div class="ttdeci">Math::real Inverse(real lat1, real lon1, real lat2, real lon2, real &amp;s12, real &amp;azi1, real &amp;azi2, real &amp;m12) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:725</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a47d30c7b8b3fb0534ca3d0422f277d69"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a47d30c7b8b3fb0534ca3d0422f277d69">GeographicLib::Geodesic::Direct</a></div><div class="ttdeci">Math::real Direct(real lat1, real lon1, real azi1, real s12, real &amp;lat2, real &amp;lon2, real &amp;azi2, real &amp;m12, real &amp;M12, real &amp;M21, real &amp;S12) const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:384</div></div>
+<div class="ttc" id="a_geodesic_8hpp_html_ad09a19b0956ce78fcdd5dc664bf0d6e4"><div class="ttname"><a href="../../d9/dde/_geodesic_8hpp.html#ad09a19b0956ce78fcdd5dc664bf0d6e4">GEOGRAPHICLIB_GEODESIC_ORDER</a></div><div class="ttdeci">#define GEOGRAPHICLIB_GEODESIC_ORDER</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:20</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

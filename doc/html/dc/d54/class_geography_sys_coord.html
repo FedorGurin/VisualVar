@@ -1,0 +1,830 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographySysCoord</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-slots">Открытые слоты</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="../../da/d1e/class_geography_sys_coord-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographySysCoord</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>географическая система координат  
+ <a href="../../dc/d54/class_geography_sys_coord.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../de/db4/map_obj_8h_source.html">mapObj.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:GeographySysCoord:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../dc/d54/class_geography_sys_coord.png" usemap="#GeographySysCoord_map" alt=""/>
+  <map id="GeographySysCoord_map" name="GeographySysCoord_map">
+<area href="../../df/d52/class_graph_node.html" title="основной графический узел" alt="GraphNode" shape="rect" coords="70,56,201,80"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:a1872d97a0e96279a940aa5f5cde611ab"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a> { <br />
+&#160;&#160;<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba020e1097cbe803641ea63651eb51c34e">NO_MAP</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abaa902226385c607bf9f35c0b717ac5951">GOOGLE_SAT</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abac98b80e496117217800b8028c2538bf5">GOOGLE_MAP</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba9274ce2ae9312fabc7c0e1356b6d595e">GOOGLE_LAND</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba783454274abae384a9e643e5c1503fa6">YANDEX_SAT</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba52fd9576b252cffaf75ad94508fbdbd4">YANDEX_MAP</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba64b47230d9e503d24c7cb54ed13f3bf7">BING_SAT</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611abaf6efe819b64ac0c8bad1d045f4ad4757">GOOGLE_SAT_EARTH</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba0bed43827c8c030b763e9b8f7fca8df7">NOKIA_MAP</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611aba90680dd6f2ebc1c2f873250e83406949">NOKIA_HYB</a>
+<br />
+ }</td></tr>
+<tr class="separator:a1872d97a0e96279a940aa5f5cde611ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaabb7ea30aa798675626dd3d0c6096f7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a> { <a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7af913c7dcb961add31fb486e66e582205">NO_LAYER</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7ab0b2a27daaf0afd0d1bf7fd6191911fd">GOOGLE_HYB</a>, 
+<a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7acae4fc9eae321c16582ffc701bd5c9e1">YANDEX_HYB</a>
+ }</td></tr>
+<tr class="separator:aaabb7ea30aa798675626dd3d0c6096f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_class_graph_node"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_graph_node')"><img src="../../closed.png" alt="-"/>&#160;Открытые типы унаследованные от <a class="el" href="../../df/d52/class_graph_node.html">GraphNode</a></td></tr>
+<tr class="memitem:ab489b49b1f629bbf53a253c753b3c450 inherit pub_types_class_graph_node"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450">TypeGraphNode</a> { <br />
+&#160;&#160;<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a67ace217e0a125a5f9b3200f278e05a3">E_MAP</a> = UserType + 1, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450afe5bfe95aa981af90b3707aef8ea3196">E_OBJ_G</a> = UserType + 2, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a7e982a17a1afdfe1acf465f57e279b2f">E_OBJ_V</a> = UserType + 3, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a02932ab07c918f39f4df05828f0dcf96">E_AERODROM</a> = UserType + 4, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450acdbc5305a44030f214bd9ff698802ec5">E_BEACON</a> = UserType + 5, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a4252b351c91e2b6665b22594b1d468ec">E_HELLICOPTER</a> = UserType + 8, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a2ad54221b0e0ded9cd362b0fb00cc8da">E_UNSET</a> = UserType + 7, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a5d65f2a9e3777edb217c0bc68e87ce31">E_SYSCOORD</a> = UserType + 9, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a5373a56376f9d2ac9b95bdf57d7757b4">E_INFO</a> = UserType + 10, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a3629ef766c754f504ca09dbb9f7763ed">E_ROUTE</a> = UserType + 11, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a6928cae5278590b85afecc486c1ce5fc">E_POINT</a> = UserType + 12, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a0d98867c917e43186a057b319a11d70a">E_PPM</a> = UserType + 13, 
+<br />
+&#160;&#160;<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450ad2a470aac745e1b6550320ba11ba6242">E_LABEL</a> = UserType + 14, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450aa1b4c7dfb5facd1386f22985e31a1c99">E_CLOUD</a> = UserType + 15, 
+<a class="el" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a7f41249f6618c954165a3a70b2e9934e">E_FOG</a> = UserType + 16
+<br />
+ }</td></tr>
+<tr class="separator:ab489b49b1f629bbf53a253c753b3c450 inherit pub_types_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Открытые слоты</h2></td></tr>
+<tr class="memitem:abd13bdcfc9be55f1e9b0cc2627ccb30f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#abd13bdcfc9be55f1e9b0cc2627ccb30f">slotCreatePixmapItem</a> (QByteArray pixmap, int pixX, int pixY)</td></tr>
+<tr class="separator:abd13bdcfc9be55f1e9b0cc2627ccb30f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92543769c914de18b7825c7b632d99a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a92543769c914de18b7825c7b632d99a8">slotFinishedLoadAllTile</a> ()</td></tr>
+<tr class="separator:a92543769c914de18b7825c7b632d99a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:aacc9fd2ac2351a018730ba8a776dcaba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#aacc9fd2ac2351a018730ba8a776dcaba">GeographySysCoord</a> (QGraphicsItem *parent=nullptr)</td></tr>
+<tr class="separator:aacc9fd2ac2351a018730ba8a776dcaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a465b48e537287989694ada867f7e60ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a465b48e537287989694ada867f7e60ca">addTile</a> (QString prefix, int i, int j, double pixX, double pixY, QString ext=&quot;.jpg&quot;)</td></tr>
+<tr class="separator:a465b48e537287989694ada867f7e60ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e5f26aa776e8c9c1bbbae2f6a08b76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a35e5f26aa776e8c9c1bbbae2f6a08b76">setTypeMap</a> (<a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a> value)</td></tr>
+<tr class="separator:a35e5f26aa776e8c9c1bbbae2f6a08b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8c8cada111689b42700867817b8aaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a5d8c8cada111689b42700867817b8aaa">setTypeMap</a> (QString value)</td></tr>
+<tr class="separator:a5d8c8cada111689b42700867817b8aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c7cab6aaa5f6c247a9f5fe15673ba2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a36c7cab6aaa5f6c247a9f5fe15673ba2">setTypeLayer</a> (<a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a> value)</td></tr>
+<tr class="separator:a36c7cab6aaa5f6c247a9f5fe15673ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f82c47e92cb4b256448b750d758a22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a66f82c47e92cb4b256448b750d758a22">setTypeLayer</a> (QString value)</td></tr>
+<tr class="separator:a66f82c47e92cb4b256448b750d758a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d07ca1ee26eef9db6e3e3fa67232538"><td class="memItemLeft" align="right" valign="top">virtual QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a8d07ca1ee26eef9db6e3e3fa67232538">boundingRect</a> () const</td></tr>
+<tr class="separator:a8d07ca1ee26eef9db6e3e3fa67232538"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5712a546792993102710c26528bc384"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#ac5712a546792993102710c26528bc384">setZoomLevel</a> (int z, QRectF rectView)</td></tr>
+<tr class="separator:ac5712a546792993102710c26528bc384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a87ec15d2431a6ea9f2bc88d4540211"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a4a87ec15d2431a6ea9f2bc88d4540211">pixelXYToTileXY</a> (double pixX, double pixY, int &amp;tileX, int &amp;tileY)</td></tr>
+<tr class="separator:a4a87ec15d2431a6ea9f2bc88d4540211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e40860c2851d26c32de8bdb4d5818b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a74e40860c2851d26c32de8bdb4d5818b">tileXYToPixelXY</a> (int tileX, int tileY, double &amp;pixX, double &amp;pixY)</td></tr>
+<tr class="separator:a74e40860c2851d26c32de8bdb4d5818b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab96b58c81eb7956944d30d1ade96ef95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#ab96b58c81eb7956944d30d1ade96ef95">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget=0)</td></tr>
+<tr class="separator:ab96b58c81eb7956944d30d1ade96ef95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5bc61ff4d739bc6cb4a98ffea8786e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#aa5bc61ff4d739bc6cb4a98ffea8786e1">addItemToScene</a> (QGraphicsPixmapItem *item)</td></tr>
+<tr class="separator:aa5bc61ff4d739bc6cb4a98ffea8786e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a468e5c0376f67e223efcf25280de43ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a468e5c0376f67e223efcf25280de43ed">addToScene</a> (QGraphicsPixmapItem *item)</td></tr>
+<tr class="separator:a468e5c0376f67e223efcf25280de43ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ed0e18b2afa85ff85885bbab954d4ef"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a5ed0e18b2afa85ff85885bbab954d4ef">type</a> () const</td></tr>
+<tr class="separator:a5ed0e18b2afa85ff85885bbab954d4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42589bbc56009c679f8393cc83f29f51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a42589bbc56009c679f8393cc83f29f51">isTypeMap</a> ()</td></tr>
+<tr class="separator:a42589bbc56009c679f8393cc83f29f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4fa3dd7a21f0d05a2a9ad5f5299761"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a7d4fa3dd7a21f0d05a2a9ad5f5299761">strTypeMap</a> ()</td></tr>
+<tr class="separator:a7d4fa3dd7a21f0d05a2a9ad5f5299761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e5eff1cecba7bf1b5f698c16ab3dbea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a7e5eff1cecba7bf1b5f698c16ab3dbea">isTypeLayer</a> ()</td></tr>
+<tr class="separator:a7e5eff1cecba7bf1b5f698c16ab3dbea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad994582c6614215958acb17e1d8b0734"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#ad994582c6614215958acb17e1d8b0734">strTypeLayer</a> ()</td></tr>
+<tr class="separator:ad994582c6614215958acb17e1d8b0734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_graph_node"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_graph_node')"><img src="../../closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="../../df/d52/class_graph_node.html">GraphNode</a></td></tr>
+<tr class="memitem:a170f361361396311d32aa785a1242074 inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a170f361361396311d32aa785a1242074">GraphNode</a> (QGraphicsItem *parent=nullptr)</td></tr>
+<tr class="separator:a170f361361396311d32aa785a1242074 inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e9aaae8379ca94c32f46e32179aa58d inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a8e9aaae8379ca94c32f46e32179aa58d">setZoomLevel</a> (int value)</td></tr>
+<tr class="memdesc:a8e9aaae8379ca94c32f46e32179aa58d inherit pub_methods_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">координаты положения объекта в прямоугольной СК относительно левого края карты  <a href="../../df/d52/class_graph_node.html#a8e9aaae8379ca94c32f46e32179aa58d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8e9aaae8379ca94c32f46e32179aa58d inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9f94c6bd3adf02f71ddb0ebab4108f inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a3c9f94c6bd3adf02f71ddb0ebab4108f">setName</a> (QString name_)</td></tr>
+<tr class="memdesc:a3c9f94c6bd3adf02f71ddb0ebab4108f inherit pub_methods_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">задать имя объекта  <a href="../../df/d52/class_graph_node.html#a3c9f94c6bd3adf02f71ddb0ebab4108f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3c9f94c6bd3adf02f71ddb0ebab4108f inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc098634299c7bff1d8941d91ebce80 inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a1dc098634299c7bff1d8941d91ebce80">setDirection</a> (QPointF)</td></tr>
+<tr class="separator:a1dc098634299c7bff1d8941d91ebce80 inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc7e5a9dcf7bea27b836dce854bcc4b8 inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#abc7e5a9dcf7bea27b836dce854bcc4b8">saveXML</a> (QDomDocument &amp;domDocument, QDomElement &amp;ele)</td></tr>
+<tr class="memdesc:abc7e5a9dcf7bea27b836dce854bcc4b8 inherit pub_methods_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">сохранение параметров в XML файл  <a href="../../df/d52/class_graph_node.html#abc7e5a9dcf7bea27b836dce854bcc4b8">Подробнее...</a><br /></td></tr>
+<tr class="separator:abc7e5a9dcf7bea27b836dce854bcc4b8 inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0afc8b0cd010854c24379487f605dee8 inherit pub_methods_class_graph_node"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a0afc8b0cd010854c24379487f605dee8">saveXMLForModel</a> (QDomDocument &amp;domDocument, QDomElement &amp;ele)</td></tr>
+<tr class="memdesc:a0afc8b0cd010854c24379487f605dee8 inherit pub_methods_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">сохранение параметров в XML файл(формат для модели)  <a href="../../df/d52/class_graph_node.html#a0afc8b0cd010854c24379487f605dee8">Подробнее...</a><br /></td></tr>
+<tr class="separator:a0afc8b0cd010854c24379487f605dee8 inherit pub_methods_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_graph_node"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_graph_node')"><img src="../../closed.png" alt="-"/>&#160;Открытые атрибуты унаследованные от <a class="el" href="../../df/d52/class_graph_node.html">GraphNode</a></td></tr>
+<tr class="memitem:ad58f39d6e1a0d5b7388419d4931d3c3b inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#ad58f39d6e1a0d5b7388419d4931d3c3b">lat</a></td></tr>
+<tr class="separator:ad58f39d6e1a0d5b7388419d4931d3c3b inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb99e6ef66a4f36c2ed0cd86a7c07e0 inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#addb99e6ef66a4f36c2ed0cd86a7c07e0">lon</a></td></tr>
+<tr class="separator:addb99e6ef66a4f36c2ed0cd86a7c07e0 inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9d720da476e9c5d079a294bee0031b inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#abf9d720da476e9c5d079a294bee0031b">sLat</a></td></tr>
+<tr class="memdesc:abf9d720da476e9c5d079a294bee0031b inherit pub_attribs_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">строка для географическх координат  <a href="../../df/d52/class_graph_node.html#abf9d720da476e9c5d079a294bee0031b">Подробнее...</a><br /></td></tr>
+<tr class="separator:abf9d720da476e9c5d079a294bee0031b inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fa9a6ad070e5f331357dd0d976a6a16 inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a7fa9a6ad070e5f331357dd0d976a6a16">sLon</a></td></tr>
+<tr class="separator:a7fa9a6ad070e5f331357dd0d976a6a16 inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a51fcedb82589114a346393b8af1f9 inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#aa0a51fcedb82589114a346393b8af1f9">zoom</a></td></tr>
+<tr class="memdesc:aa0a51fcedb82589114a346393b8af1f9 inherit pub_attribs_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">уровень детализации на котором отображается объект  <a href="../../df/d52/class_graph_node.html#aa0a51fcedb82589114a346393b8af1f9">Подробнее...</a><br /></td></tr>
+<tr class="separator:aa0a51fcedb82589114a346393b8af1f9 inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae421572b5888ef9475926e06a61a8bbb inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#ae421572b5888ef9475926e06a61a8bbb">name</a></td></tr>
+<tr class="memdesc:ae421572b5888ef9475926e06a61a8bbb inherit pub_attribs_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">имя объекта  <a href="../../df/d52/class_graph_node.html#ae421572b5888ef9475926e06a61a8bbb">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae421572b5888ef9475926e06a61a8bbb inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094956271712cd43eae7ec9bab20d320 inherit pub_attribs_class_graph_node"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d52/class_graph_node.html#a094956271712cd43eae7ec9bab20d320">use_russian</a></td></tr>
+<tr class="memdesc:a094956271712cd43eae7ec9bab20d320 inherit pub_attribs_class_graph_node"><td class="mdescLeft">&#160;</td><td class="mdescRight">признак для выбора единиц измерения  <a href="../../df/d52/class_graph_node.html#a094956271712cd43eae7ec9bab20d320">Подробнее...</a><br /></td></tr>
+<tr class="separator:a094956271712cd43eae7ec9bab20d320 inherit pub_attribs_class_graph_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>географическая система координат </p>
+</div><h2 class="groupheader">Перечисления</h2>
+<a id="aaabb7ea30aa798675626dd3d0c6096f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaabb7ea30aa798675626dd3d0c6096f7">&#9670;&nbsp;</a></span>TypeLayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">GeographySysCoord::TypeLayer</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="aaabb7ea30aa798675626dd3d0c6096f7af913c7dcb961add31fb486e66e582205"></a>NO_LAYER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaabb7ea30aa798675626dd3d0c6096f7ab0b2a27daaf0afd0d1bf7fd6191911fd"></a>GOOGLE_HYB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aaabb7ea30aa798675626dd3d0c6096f7acae4fc9eae321c16582ffc701bd5c9e1"></a>YANDEX_HYB&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a1872d97a0e96279a940aa5f5cde611ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1872d97a0e96279a940aa5f5cde611ab">&#9670;&nbsp;</a></span>TypeMAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">GeographySysCoord::TypeMAP</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Элементы перечислений</th></tr><tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611aba020e1097cbe803641ea63651eb51c34e"></a>NO_MAP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611abaa902226385c607bf9f35c0b717ac5951"></a>GOOGLE_SAT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611abac98b80e496117217800b8028c2538bf5"></a>GOOGLE_MAP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611aba9274ce2ae9312fabc7c0e1356b6d595e"></a>GOOGLE_LAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611aba783454274abae384a9e643e5c1503fa6"></a>YANDEX_SAT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611aba52fd9576b252cffaf75ad94508fbdbd4"></a>YANDEX_MAP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611aba64b47230d9e503d24c7cb54ed13f3bf7"></a>BING_SAT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611abaf6efe819b64ac0c8bad1d045f4ad4757"></a>GOOGLE_SAT_EARTH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611aba0bed43827c8c030b763e9b8f7fca8df7"></a>NOKIA_MAP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1872d97a0e96279a940aa5f5cde611aba90680dd6f2ebc1c2f873250e83406949"></a>NOKIA_HYB&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="aacc9fd2ac2351a018730ba8a776dcaba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacc9fd2ac2351a018730ba8a776dcaba">&#9670;&nbsp;</a></span>GeographySysCoord()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographySysCoord::GeographySysCoord </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsItem *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aa5bc61ff4d739bc6cb4a98ffea8786e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5bc61ff4d739bc6cb4a98ffea8786e1">&#9670;&nbsp;</a></span>addItemToScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::addItemToScene </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsPixmapItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a465b48e537287989694ada867f7e60ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a465b48e537287989694ada867f7e60ca">&#9670;&nbsp;</a></span>addTile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::addTile </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>prefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pixX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pixY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>ext</em> = <code>&quot;.jpg&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a468e5c0376f67e223efcf25280de43ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a468e5c0376f67e223efcf25280de43ed">&#9670;&nbsp;</a></span>addToScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::addToScene </td>
+          <td>(</td>
+          <td class="paramtype">QGraphicsPixmapItem *&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d07ca1ee26eef9db6e3e3fa67232538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d07ca1ee26eef9db6e3e3fa67232538">&#9670;&nbsp;</a></span>boundingRect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QRectF GeographySysCoord::boundingRect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e5eff1cecba7bf1b5f698c16ab3dbea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e5eff1cecba7bf1b5f698c16ab3dbea">&#9670;&nbsp;</a></span>isTypeLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a> GeographySysCoord::isTypeLayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42589bbc56009c679f8393cc83f29f51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42589bbc56009c679f8393cc83f29f51">&#9670;&nbsp;</a></span>isTypeMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a> GeographySysCoord::isTypeMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab96b58c81eb7956944d30d1ade96ef95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab96b58c81eb7956944d30d1ade96ef95">&#9670;&nbsp;</a></span>paint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::paint </td>
+          <td>(</td>
+          <td class="paramtype">QPainter *&#160;</td>
+          <td class="paramname"><em>painter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStyleOptionGraphicsItem *&#160;</td>
+          <td class="paramname"><em>option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramname"><em>widget</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a87ec15d2431a6ea9f2bc88d4540211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a87ec15d2431a6ea9f2bc88d4540211">&#9670;&nbsp;</a></span>pixelXYToTileXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::pixelXYToTileXY </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pixX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pixY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>tileX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>tileY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66f82c47e92cb4b256448b750d758a22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66f82c47e92cb4b256448b750d758a22">&#9670;&nbsp;</a></span>setTypeLayer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::setTypeLayer </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36c7cab6aaa5f6c247a9f5fe15673ba2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36c7cab6aaa5f6c247a9f5fe15673ba2">&#9670;&nbsp;</a></span>setTypeLayer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::setTypeLayer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#aaabb7ea30aa798675626dd3d0c6096f7">TypeLayer</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5d8c8cada111689b42700867817b8aaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d8c8cada111689b42700867817b8aaa">&#9670;&nbsp;</a></span>setTypeMap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::setTypeMap </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35e5f26aa776e8c9c1bbbae2f6a08b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e5f26aa776e8c9c1bbbae2f6a08b76">&#9670;&nbsp;</a></span>setTypeMap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::setTypeMap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dc/d54/class_geography_sys_coord.html#a1872d97a0e96279a940aa5f5cde611ab">TypeMAP</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5712a546792993102710c26528bc384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5712a546792993102710c26528bc384">&#9670;&nbsp;</a></span>setZoomLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::setZoomLevel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QRectF&#160;</td>
+          <td class="paramname"><em>rectView</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abd13bdcfc9be55f1e9b0cc2627ccb30f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd13bdcfc9be55f1e9b0cc2627ccb30f">&#9670;&nbsp;</a></span>slotCreatePixmapItem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::slotCreatePixmapItem </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray&#160;</td>
+          <td class="paramname"><em>pixmap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pixY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a92543769c914de18b7825c7b632d99a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92543769c914de18b7825c7b632d99a8">&#9670;&nbsp;</a></span>slotFinishedLoadAllTile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::slotFinishedLoadAllTile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad994582c6614215958acb17e1d8b0734"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad994582c6614215958acb17e1d8b0734">&#9670;&nbsp;</a></span>strTypeLayer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GeographySysCoord::strTypeLayer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d4fa3dd7a21f0d05a2a9ad5f5299761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4fa3dd7a21f0d05a2a9ad5f5299761">&#9670;&nbsp;</a></span>strTypeMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GeographySysCoord::strTypeMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74e40860c2851d26c32de8bdb4d5818b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74e40860c2851d26c32de8bdb4d5818b">&#9670;&nbsp;</a></span>tileXYToPixelXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographySysCoord::tileXYToPixelXY </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tileX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tileY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>pixX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>pixY</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ed0e18b2afa85ff85885bbab954d4ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ed0e18b2afa85ff85885bbab954d4ef">&#9670;&nbsp;</a></span>type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int GeographySysCoord::type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переопределяет метод предка <a class="el" href="../../df/d52/class_graph_node.html#a2e01eb8281edc85e565566bda273e939">GraphNode</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/nodes/mapObj/<a class="el" href="../../de/db4/map_obj_8h_source.html">mapObj.h</a></li>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/nodes/mapObj/<a class="el" href="../../d1/d26/map_obj_8cpp.html">mapObj.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:59. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

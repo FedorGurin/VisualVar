@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::Georef</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html">Georef</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="../../d4/d61/class_geographic_lib_1_1_georef-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::Georef</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Conversions for the World Geographic Reference System (georef)  
+ <a href="../../d3/dd8/class_geographic_lib_1_1_georef.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d4/d49/_georef_8hpp_source.html">Georef.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:a7b06b5af0bdc8464449078c0277d8bbc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html#a7b06b5af0bdc8464449078c0277d8bbc">Forward</a> (real lat, real lon, int prec, std::string &amp;georef)</td></tr>
+<tr class="separator:a7b06b5af0bdc8464449078c0277d8bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb43fbcfb00a963bc8e71db69a97854a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html#abb43fbcfb00a963bc8e71db69a97854a">Reverse</a> (const std::string &amp;georef, real &amp;lat, real &amp;lon, int &amp;prec, bool centerp=true)</td></tr>
+<tr class="separator:abb43fbcfb00a963bc8e71db69a97854a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7a7dc7fab9031fe2cad7b8acea5261d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html#aa7a7dc7fab9031fe2cad7b8acea5261d">Resolution</a> (int prec)</td></tr>
+<tr class="separator:aa7a7dc7fab9031fe2cad7b8acea5261d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08f061e445595cfb0f4c54867c3964f1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html#a08f061e445595cfb0f4c54867c3964f1">Precision</a> (real res)</td></tr>
+<tr class="separator:a08f061e445595cfb0f4c54867c3964f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Conversions for the World Geographic Reference System (georef) </p>
+<p>The World Geographic Reference System is described in</p><ul>
+<li><a href="https://en.wikipedia.org/wiki/Georef">https://en.wikipedia.org/wiki/Georef</a></li>
+<li><a href="http://earth-info.nga.mil/GandG/coordsys/grids/georef.pdf">http://earth-info.nga.mil/GandG/coordsys/grids/georef.pdf</a></li>
+</ul>
+<p>It provides a compact string representation of a geographic area (expressed as latitude and longitude). The classes <a class="el" href="../../d5/dc5/class_geographic_lib_1_1_g_a_r_s.html" title="Conversions for the Global Area Reference System (GARS)">GARS</a> and <a class="el" href="../../d1/d49/class_geographic_lib_1_1_geohash.html" title="Conversions for geohashes.">Geohash</a> implement similar compact representations.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --> </div><h2 class="groupheader">Методы</h2>
+<a id="a7b06b5af0bdc8464449078c0277d8bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b06b5af0bdc8464449078c0277d8bbc">&#9670;&nbsp;</a></span>Forward()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Georef::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>georef</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert from geographic coordinates to georef.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>the precision of the resulting georef. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">georef</td><td>the georef string. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>lat</em> is not in [&minus;90&deg;, 90&deg;]. </td></tr>
+    <tr><td class="paramname">std::bad_alloc</td><td>if memory for <em>georef</em> can't be allocated.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p><em>prec</em> specifies the precision of <em>georef</em> as follows:</p><ul>
+<li><em>prec</em> = &minus;1 (min), 15&deg;</li>
+<li><em>prec</em> = 0, 1&deg;</li>
+<li><em>prec</em> = 1, converted to <em>prec</em> = 2</li>
+<li><em>prec</em> = 2, 1'</li>
+<li><em>prec</em> = 3, 0.1'</li>
+<li><em>prec</em> = 4, 0.01'</li>
+<li><em>prec</em> = 5, 0.001'</li>
+<li>&hellip;</li>
+<li><em>prec</em> = 11 (max), 10<sup>&minus;9</sup>'</li>
+</ul>
+<p>If <em>lat</em> or <em>lon</em> is NaN, then <em>georef</em> is set to "INVALID". </p>
+
+</div>
+</div>
+<a id="a08f061e445595cfb0f4c54867c3964f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08f061e445595cfb0f4c54867c3964f1">&#9670;&nbsp;</a></span>Precision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int GeographicLib::Georef::Precision </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>res</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The <a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html" title="Conversions for the World Geographic Reference System (georef)">Georef</a> precision required to meet a given geographic resolution.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">res</td><td>the minimum of resolution in latitude and longitude (degrees). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html" title="Conversions for the World Geographic Reference System (georef)">Georef</a> precision.</dd></dl>
+<p>The returned length is in the range [0, 11]. </p>
+
+</div>
+</div>
+<a id="aa7a7dc7fab9031fe2cad7b8acea5261d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7a7dc7fab9031fe2cad7b8acea5261d">&#9670;&nbsp;</a></span>Resolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::Georef::Resolution </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The angular resolution of a <a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html" title="Conversions for the World Geographic Reference System (georef)">Georef</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">prec</td><td>the precision of the <a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html" title="Conversions for the World Geographic Reference System (georef)">Georef</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>the latitude-longitude resolution (degrees).</dd></dl>
+<p>Internally, <em>prec</em> is first put in the range [&minus;1, 11]. </p>
+
+</div>
+</div>
+<a id="abb43fbcfb00a963bc8e71db69a97854a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb43fbcfb00a963bc8e71db69a97854a">&#9670;&nbsp;</a></span>Reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::Georef::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>georef</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>prec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>centerp</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Convert from <a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html" title="Conversions for the World Geographic Reference System (georef)">Georef</a> to geographic coordinates.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">georef</td><td>the <a class="el" href="../../d3/dd8/class_geographic_lib_1_1_georef.html" title="Conversions for the World Geographic Reference System (georef)">Georef</a>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">prec</td><td>the precision of <em>georef</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">centerp</td><td>if true (the default) return the center <em>georef</em>, otherwise return the south-west corner. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>georef</em> is illegal.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The case of the letters in <em>georef</em> is ignored. <em>prec</em> is in the range [&minus;1, 11] and gives the precision of <em>georef</em> as follows:</p><ul>
+<li><em>prec</em> = &minus;1 (min), 15&deg;</li>
+<li><em>prec</em> = 0, 1&deg;</li>
+<li><em>prec</em> = 1, not returned</li>
+<li><em>prec</em> = 2, 1'</li>
+<li><em>prec</em> = 3, 0.1'</li>
+<li><em>prec</em> = 4, 0.01'</li>
+<li><em>prec</em> = 5, 0.001'</li>
+<li>&hellip;</li>
+<li><em>prec</em> = 11 (max), 10<sup>&minus;9</sup>'</li>
+</ul>
+<p>If the first 3 characters of <em>georef</em> are "INV", then <em>lat</em> and <em>lon</em> are set to NaN and <em>prec</em> is unchanged. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d4/d49/_georef_8hpp_source.html">Georef.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d9/d96/_georef_8cpp.html">Georef.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:19. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

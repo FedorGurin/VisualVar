@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/Gnomonic.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Gnomonic.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d68/_gnomonic_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_GNOMONIC_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_GNOMONIC_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d9/dde/_geodesic_8hpp.html">GeographicLib/Geodesic.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/df1/_geodesic_line_8hpp.html">GeographicLib/GeodesicLine.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html">  101</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html">Gnomonic</a> {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    real eps0_, eps_;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">Geodesic</a> _earth;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    real _a, _f;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> numit_ = 10;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html">Gnomonic</a>(<span class="keyword">const</span> <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">Geodesic</a>&amp; <a class="code" href="../../d8/dd9/mainwindow_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a> = <a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a479d30b83e1d2d32ad31c96b4df1543a">Geodesic::WGS84</a>());</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> Forward(real lat0, real lon0, real lat, real lon,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                 real&amp; x, real&amp; y, real&amp; azi, real&amp; rk) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">void</span> Reverse(real lat0, real lon0, real x, real y,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                 real&amp; lat, real&amp; lon, real&amp; azi, real&amp; rk) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#a619dd6ac8e13e9bb6ded1e774deaa815">  171</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#a619dd6ac8e13e9bb6ded1e774deaa815">Forward</a>(real lat0, real lon0, real lat, real lon,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                 real&amp; x, real&amp; y)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      real azi, rk;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      Forward(lat0, lon0, lat, lon, x, y, azi, rk);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#aa5bfeeebc456f877b4312fe66996536f">  180</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#aa5bfeeebc456f877b4312fe66996536f">Reverse</a>(real lat0, real lon0, real x, real y,</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                 real&amp; lat, real&amp; lon)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      real azi, rk;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      Reverse(lat0, lon0, x, y, lat, lon, azi, rk);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#a47502063cbe4336fa74065c936e999c1">  193</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#a47502063cbe4336fa74065c936e999c1">MajorRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _earth.<a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a06b6dac507494b480e26887fa0832d22">MajorRadius</a>(); }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#ab2a613da01e12c30ec2b622127622832">  199</a></span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#ab2a613da01e12c30ec2b622127622832">Flattening</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _earth.<a class="code" href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a2b5c1649b624d214943878fe97f2b438">Flattening</a>(); }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseFlattening()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keyword">    </span>{ <span class="keywordflow">return</span> _earth.InverseFlattening(); }</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;  };</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_GNOMONIC_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a06b6dac507494b480e26887fa0832d22"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a06b6dac507494b480e26887fa0832d22">GeographicLib::Geodesic::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:856</div></div>
+<div class="ttc" id="a_geodesic_line_8hpp_html"><div class="ttname"><a href="../../dc/df1/_geodesic_line_8hpp.html">GeodesicLine.hpp</a></div><div class="ttdoc">Header for GeographicLib::GeodesicLine class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_gnomonic_html_aa5bfeeebc456f877b4312fe66996536f"><div class="ttname"><a href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#aa5bfeeebc456f877b4312fe66996536f">GeographicLib::Gnomonic::Reverse</a></div><div class="ttdeci">void Reverse(real lat0, real lon0, real x, real y, real &amp;lat, real &amp;lon) const</div><div class="ttdef"><b>Definition:</b> Gnomonic.hpp:180</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a2b5c1649b624d214943878fe97f2b438"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a2b5c1649b624d214943878fe97f2b438">GeographicLib::Geodesic::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:862</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_gnomonic_html_a47502063cbe4336fa74065c936e999c1"><div class="ttname"><a href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#a47502063cbe4336fa74065c936e999c1">GeographicLib::Gnomonic::MajorRadius</a></div><div class="ttdeci">Math::real MajorRadius() const</div><div class="ttdef"><b>Definition:</b> Gnomonic.hpp:193</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="amainwindow_8cpp_html_a067e27172a5bc3c47458cccfa3d2a01d"><div class="ttname"><a href="../../d8/dd9/mainwindow_8cpp.html#a067e27172a5bc3c47458cccfa3d2a01d">earth</a></div><div class="ttdeci">GeographicLib::Geocentric * earth</div><div class="ttdef"><b>Definition:</b> mainwindow.cpp:17</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_gnomonic_html_ab2a613da01e12c30ec2b622127622832"><div class="ttname"><a href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#ab2a613da01e12c30ec2b622127622832">GeographicLib::Gnomonic::Flattening</a></div><div class="ttdeci">Math::real Flattening() const</div><div class="ttdef"><b>Definition:</b> Gnomonic.hpp:199</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html">GeographicLib::Geodesic</a></div><div class="ttdoc">Geodesic calculations</div><div class="ttdef"><b>Definition:</b> Geodesic.hpp:175</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_geodesic_html_a479d30b83e1d2d32ad31c96b4df1543a"><div class="ttname"><a href="../../d2/db7/class_geographic_lib_1_1_geodesic.html#a479d30b83e1d2d32ad31c96b4df1543a">GeographicLib::Geodesic::WGS84</a></div><div class="ttdeci">static const Geodesic &amp; WGS84()</div><div class="ttdef"><b>Definition:</b> Geodesic.cpp:89</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_gnomonic_html_a619dd6ac8e13e9bb6ded1e774deaa815"><div class="ttname"><a href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html#a619dd6ac8e13e9bb6ded1e774deaa815">GeographicLib::Gnomonic::Forward</a></div><div class="ttdeci">void Forward(real lat0, real lon0, real lat, real lon, real &amp;x, real &amp;y) const</div><div class="ttdef"><b>Definition:</b> Gnomonic.hpp:171</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<div class="ttc" id="a_geodesic_8hpp_html"><div class="ttname"><a href="../../d9/dde/_geodesic_8hpp.html">Geodesic.hpp</a></div><div class="ttdoc">Header for GeographicLib::Geodesic class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_gnomonic_html"><div class="ttname"><a href="../../d4/d0c/class_geographic_lib_1_1_gnomonic.html">GeographicLib::Gnomonic</a></div><div class="ttdoc">Gnomonic projection</div><div class="ttdef"><b>Definition:</b> Gnomonic.hpp:101</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

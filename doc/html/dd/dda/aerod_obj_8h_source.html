@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/nodes/aerodromObj/aerodObj.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li><li class="navelem"><a class="el" href="../../dir_6df3690b62bff8b3761d9244e124e872.html">nodes</a></li><li class="navelem"><a class="el" href="../../dir_32ae631a7409e144545e146c9c688a05.html">aerodromObj</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">aerodObj.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/dda/aerod_obj_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="../../dd/dda/aerod_obj_8h.html#a525335710b53cb064ca56b936120431e">    3</a></span>&#160;<span class="preprocessor">#define _USE_MATH_DEFINES</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSvgItem&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QSvgRenderer&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QGraphicsPixmapItem&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QGenericMatrix&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QPen&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;QDomDocument&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;QDomElement&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;QPainter&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;QList&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;QApplication&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;QGraphicsScene&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;QThread&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;QPixmap&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;QGraphicsSceneMouseEvent&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../globalFunc/gl_func.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../globalFunc/UnitsMeasure/IUnits.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;../mppm/CommonEngineData.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d46/formsettingaerodrom_8h.html">formsettingaerodrom.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d12/setting_v_v_8h.html">settingVV.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d34/node_visual_8h.html">nodeVisual.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/d0e/our_obj_8h.html">nodes/ourObj/ourObj.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d5/d1d/class_aerodrom_object.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/d1d/class_aerodrom_object.html">AerodromObject</a>:<span class="keyword">public</span> <a class="code" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;     Q_OBJECT</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d5/d1d/class_aerodrom_object.html#a9113695a94fd7fceb99acda7cd368ae2">   37</a></span>&#160;    <a class="code" href="../../d5/d1d/class_aerodrom_object.html#a9113695a94fd7fceb99acda7cd368ae2">AerodromObject</a>(QString <a class="code" href="../../df/d52/class_graph_node.html#ae421572b5888ef9475926e06a61a8bbb">name</a>,<span class="keywordtype">int</span> num,QGraphicsItem *parent):<a class="code" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a>(<a class="code" href="../../df/d52/class_graph_node.html#ae421572b5888ef9475926e06a61a8bbb">name</a>,parent)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        setScale(0.1);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        setAcceptHoverEvents(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        d=0.0;fi=0.0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        numIndex=num;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        lineToAircraft=<span class="keyword">new</span> QGraphicsLineItem(QLineF(0.0,0.0,10.0,10.0),<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        colorItemD=<span class="keyword">new</span> <a class="code" href="../../d3/d9e/class_color_item.html">ColorItem</a>(lineToAircraft);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        colorItemD-&gt;setScale(10);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        colorItemD-&gt;<a class="code" href="../../d3/d9e/class_color_item.html#a908032a7cd13d8e5af4cc8c0745f1e6d">setRows</a>(1);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        colorItemD-&gt;<a class="code" href="../../d3/d9e/class_color_item.html#a1744f623a1fbd69d3abc8248568672cf">setRowText</a>(<span class="stringliteral">&quot;d=&quot;</span>+QString::number(d),0);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        QPen penA(Qt::SolidLine);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        penA.setColor(Qt::gray);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        lineToAircraft-&gt;setPen(penA);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="../../d5/d1d/class_aerodrom_object.html#aa014405aa71f0d51261c9cdb35f3881c">formSetting</a> = <span class="keyword">new</span> <a class="code" href="../../d4/d98/class_form_setting_aerodrom.html">FormSettingAerodrom</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="../../d5/d1d/class_aerodrom_object.html#aa014405aa71f0d51261c9cdb35f3881c">formSetting</a>-&gt;setWindowFlags(Qt::WindowTitleHint | Qt::WindowStaysOnTopHint |Qt::WindowCloseButtonHint);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d5/d1d/class_aerodrom_object.html#a93a234970119726de6a54021182476d5">   59</a></span>&#160; <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#a93a234970119726de6a54021182476d5">updateDToAircraft</a>()</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">//пересчет линии до вертолета</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span>(lineToAircraft-&gt;isVisible()){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            QPointF pointEnd=mapFromItem(<a class="code" href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">itemSvg</a>,<a class="code" href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">itemSvg</a>-&gt;transformOriginPoint());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            QPointF pointStart=mapFromItem(aircraft-&gt;<a class="code" href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">itemSvg</a>,aircraft-&gt;<a class="code" href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">itemSvg</a>-&gt;transformOriginPoint());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            QLineF line(pointStart,pointEnd);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            lineToAircraft-&gt;setLine(line);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../d5/d1d/class_aerodrom_object.html#ab1b3099b79f7247332bda3286c19a61a">   69</a></span>&#160;       <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#ab1b3099b79f7247332bda3286c19a61a">connectToObj</a>(<a class="code" href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a> *obj) {}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#ad41bbd4b2640194be1c033a1887aec57">mousePressEvent</a>(QGraphicsSceneMouseEvent* event);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#a596f6b7f2126b32ea35b0e1a74d7b9f3">mouseMoveEvent</a>(QGraphicsSceneMouseEvent* event);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#a9989133419a8339e238f0c8745130afd">hoverEnterEvent</a>(QGraphicsSceneHoverEvent *event);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#adac3b0ff39debff6a3b2a23c1c485c9c">hoverLeaveEvent</a>(QGraphicsSceneHoverEvent *event);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../d5/d1d/class_aerodrom_object.html#a4f05e13a0a7d6286f568fada3f6a7cbd">   77</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#a4f05e13a0a7d6286f568fada3f6a7cbd">setAircraft</a>(<a class="code" href="../../d6/d71/class_aircraft_object.html">AircraftObject</a> *air)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        aircraft=air;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        connect(aircraft,SIGNAL(isModifyPsi()),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d5/d1d/class_aerodrom_object.html#a37b12c2a98b6a35f50742e9ca6e9020f">slotIsModifyPsi</a>()));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        connect(aircraft,SIGNAL(<a class="code" href="../../d5/d1d/class_aerodrom_object.html#a5a46e8713eb253cb21d429289d95e0cb">isModifyPosition</a>(QPointF,<a class="code" href="../../d4/de1/struct___t_geo_point.html">TGeoPoint</a>)),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d5/d1d/class_aerodrom_object.html#ab7c33db6f238af8a35bb0d55ada5fb4b">slotIsModifyPosition</a>()));</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        connect(aircraft,SIGNAL(sigHoverEnterEvent(<span class="keywordtype">bool</span>)),<span class="keyword">this</span>,SLOT(<a class="code" href="../../d5/d1d/class_aerodrom_object.html#ae6d01bb57005ed8e71c2982533ab82ac">slotEnterLeaveCur</a>(<span class="keywordtype">bool</span>)));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">//signals:</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">/*void isModifyPsi(void);</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">    void isModifyPosition(QPointF,QPointF);</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">    void sigHoverEnterEvent(bool);*/</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d5/d1d/class_aerodrom_object.html#aa014405aa71f0d51261c9cdb35f3881c">   89</a></span>&#160;    <a class="code" href="../../d4/d98/class_form_setting_aerodrom.html">FormSettingAerodrom</a> *<a class="code" href="../../d5/d1d/class_aerodrom_object.html#aa014405aa71f0d51261c9cdb35f3881c">formSetting</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d5/d1d/class_aerodrom_object.html#a74a05480f39773dcdb5feb054fe5721a">   90</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#a74a05480f39773dcdb5feb054fe5721a">type</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a02932ab07c918f39f4df05828f0dcf96">E_AERODROM</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;signals:</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../d5/d1d/class_aerodrom_object.html#a5a46e8713eb253cb21d429289d95e0cb">   95</a></span>&#160;     <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#a5a46e8713eb253cb21d429289d95e0cb">isModifyPosition</a>(QPointF,<a class="code" href="../../d4/de1/struct___t_geo_point.html">TGeoPoint</a>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#a37b12c2a98b6a35f50742e9ca6e9020f">slotIsModifyPsi</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#ab7c33db6f238af8a35bb0d55ada5fb4b">slotIsModifyPosition</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d1d/class_aerodrom_object.html#ae6d01bb57005ed8e71c2982533ab82ac">slotEnterLeaveCur</a>(<span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;     <a class="code" href="../../d6/d71/class_aircraft_object.html">AircraftObject</a> *aircraft;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;     QGraphicsLineItem *lineToAircraft;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;     <a class="code" href="../../d3/d9e/class_color_item.html">ColorItem</a> *colorItemD;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;     <span class="keywordtype">int</span> numIndex;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;     <span class="keywordtype">double</span> d;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;     <span class="keywordtype">double</span> fi;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_object_graph_node_html"><div class="ttname"><a href="../../dd/df9/class_object_graph_node.html">ObjectGraphNode</a></div><div class="ttdoc">основной базовый класс для всех объектов ВЦ, НЦ и т.д</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:165</div></div>
+<div class="ttc" id="aclass_aircraft_object_html"><div class="ttname"><a href="../../d6/d71/class_aircraft_object.html">AircraftObject</a></div><div class="ttdoc">класс с вертолета</div><div class="ttdef"><b>Definition:</b> ourObj.h:26</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_a37b12c2a98b6a35f50742e9ca6e9020f"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#a37b12c2a98b6a35f50742e9ca6e9020f">AerodromObject::slotIsModifyPsi</a></div><div class="ttdeci">void slotIsModifyPsi(void)</div><div class="ttdef"><b>Definition:</b> aerodObj.cpp:17</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_ae6d01bb57005ed8e71c2982533ab82ac"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#ae6d01bb57005ed8e71c2982533ab82ac">AerodromObject::slotEnterLeaveCur</a></div><div class="ttdeci">void slotEnterLeaveCur(bool)</div><div class="ttdef"><b>Definition:</b> aerodObj.cpp:38</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html">AerodromObject</a></div><div class="ttdoc">класс аэродрома</div><div class="ttdef"><b>Definition:</b> aerodObj.h:34</div></div>
+<div class="ttc" id="aclass_color_item_html_a1744f623a1fbd69d3abc8248568672cf"><div class="ttname"><a href="../../d3/d9e/class_color_item.html#a1744f623a1fbd69d3abc8248568672cf">ColorItem::setRowText</a></div><div class="ttdeci">void setRowText(QString str, int row)</div><div class="ttdef"><b>Definition:</b> nodeVisual.cpp:199</div></div>
+<div class="ttc" id="aclass_color_item_html"><div class="ttname"><a href="../../d3/d9e/class_color_item.html">ColorItem</a></div><div class="ttdef"><b>Definition:</b> nodeVisual.h:31</div></div>
+<div class="ttc" id="aclass_form_setting_aerodrom_html"><div class="ttname"><a href="../../d4/d98/class_form_setting_aerodrom.html">FormSettingAerodrom</a></div><div class="ttdef"><b>Definition:</b> formsettingaerodrom.h:11</div></div>
+<div class="ttc" id="aour_obj_8h_html"><div class="ttname"><a href="../../df/d0e/our_obj_8h.html">ourObj.h</a></div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_ad41bbd4b2640194be1c033a1887aec57"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#ad41bbd4b2640194be1c033a1887aec57">AerodromObject::mousePressEvent</a></div><div class="ttdeci">virtual void mousePressEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdef"><b>Definition:</b> aerodObj.cpp:4</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_ab1b3099b79f7247332bda3286c19a61a"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#ab1b3099b79f7247332bda3286c19a61a">AerodromObject::connectToObj</a></div><div class="ttdeci">virtual void connectToObj(ObjectGraphNode *obj)</div><div class="ttdef"><b>Definition:</b> aerodObj.h:69</div></div>
+<div class="ttc" id="aclass_graph_node_html_ab489b49b1f629bbf53a253c753b3c450a02932ab07c918f39f4df05828f0dcf96"><div class="ttname"><a href="../../df/d52/class_graph_node.html#ab489b49b1f629bbf53a253c753b3c450a02932ab07c918f39f4df05828f0dcf96">GraphNode::E_AERODROM</a></div><div class="ttdeci">@ E_AERODROM</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:62</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_a5a46e8713eb253cb21d429289d95e0cb"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#a5a46e8713eb253cb21d429289d95e0cb">AerodromObject::isModifyPosition</a></div><div class="ttdeci">void isModifyPosition(QPointF, TGeoPoint)</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_a93a234970119726de6a54021182476d5"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#a93a234970119726de6a54021182476d5">AerodromObject::updateDToAircraft</a></div><div class="ttdeci">virtual void updateDToAircraft()</div><div class="ttdef"><b>Definition:</b> aerodObj.h:59</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_adac3b0ff39debff6a3b2a23c1c485c9c"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#adac3b0ff39debff6a3b2a23c1c485c9c">AerodromObject::hoverLeaveEvent</a></div><div class="ttdeci">virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent *event)</div><div class="ttdef"><b>Definition:</b> aerodObj.cpp:56</div></div>
+<div class="ttc" id="asetting_v_v_8h_html"><div class="ttname"><a href="../../d8/d12/setting_v_v_8h.html">settingVV.h</a></div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_a74a05480f39773dcdb5feb054fe5721a"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#a74a05480f39773dcdb5feb054fe5721a">AerodromObject::type</a></div><div class="ttdeci">virtual int type() const</div><div class="ttdef"><b>Definition:</b> aerodObj.h:90</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_ab7c33db6f238af8a35bb0d55ada5fb4b"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#ab7c33db6f238af8a35bb0d55ada5fb4b">AerodromObject::slotIsModifyPosition</a></div><div class="ttdeci">void slotIsModifyPosition()</div><div class="ttdef"><b>Definition:</b> aerodObj.cpp:32</div></div>
+<div class="ttc" id="aclass_color_item_html_a908032a7cd13d8e5af4cc8c0745f1e6d"><div class="ttname"><a href="../../d3/d9e/class_color_item.html#a908032a7cd13d8e5af4cc8c0745f1e6d">ColorItem::setRows</a></div><div class="ttdeci">void setRows(unsigned value)</div><div class="ttdef"><b>Definition:</b> nodeVisual.cpp:228</div></div>
+<div class="ttc" id="astruct___t_geo_point_html"><div class="ttname"><a href="../../d4/de1/struct___t_geo_point.html">_TGeoPoint</a></div><div class="ttdef"><b>Definition:</b> gl_func.h:28</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_aa014405aa71f0d51261c9cdb35f3881c"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#aa014405aa71f0d51261c9cdb35f3881c">AerodromObject::formSetting</a></div><div class="ttdeci">FormSettingAerodrom * formSetting</div><div class="ttdef"><b>Definition:</b> aerodObj.h:89</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_a9989133419a8339e238f0c8745130afd"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#a9989133419a8339e238f0c8745130afd">AerodromObject::hoverEnterEvent</a></div><div class="ttdeci">virtual void hoverEnterEvent(QGraphicsSceneHoverEvent *event)</div><div class="ttdef"><b>Definition:</b> aerodObj.cpp:51</div></div>
+<div class="ttc" id="aclass_graph_node_html_ae421572b5888ef9475926e06a61a8bbb"><div class="ttname"><a href="../../df/d52/class_graph_node.html#ae421572b5888ef9475926e06a61a8bbb">GraphNode::name</a></div><div class="ttdeci">QString name</div><div class="ttdoc">имя объекта</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:98</div></div>
+<div class="ttc" id="anode_visual_8h_html"><div class="ttname"><a href="../../d2/d34/node_visual_8h.html">nodeVisual.h</a></div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_a596f6b7f2126b32ea35b0e1a74d7b9f3"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#a596f6b7f2126b32ea35b0e1a74d7b9f3">AerodromObject::mouseMoveEvent</a></div><div class="ttdeci">virtual void mouseMoveEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdef"><b>Definition:</b> aerodObj.cpp:61</div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_a9113695a94fd7fceb99acda7cd368ae2"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#a9113695a94fd7fceb99acda7cd368ae2">AerodromObject::AerodromObject</a></div><div class="ttdeci">AerodromObject(QString name, int num, QGraphicsItem *parent)</div><div class="ttdef"><b>Definition:</b> aerodObj.h:37</div></div>
+<div class="ttc" id="aclass_object_graph_node_html_a483614a55eaf83221238ab4ca1667311"><div class="ttname"><a href="../../dd/df9/class_object_graph_node.html#a483614a55eaf83221238ab4ca1667311">ObjectGraphNode::itemSvg</a></div><div class="ttdeci">QGraphicsSvgItem * itemSvg</div><div class="ttdoc">указатель на элемент с картнкой для данного элемента</div><div class="ttdef"><b>Definition:</b> nodeVisual.h:302</div></div>
+<div class="ttc" id="aformsettingaerodrom_8h_html"><div class="ttname"><a href="../../da/d46/formsettingaerodrom_8h.html">formsettingaerodrom.h</a></div></div>
+<div class="ttc" id="aclass_aerodrom_object_html_a4f05e13a0a7d6286f568fada3f6a7cbd"><div class="ttname"><a href="../../d5/d1d/class_aerodrom_object.html#a4f05e13a0a7d6286f568fada3f6a7cbd">AerodromObject::setAircraft</a></div><div class="ttdeci">void setAircraft(AircraftObject *air)</div><div class="ttdef"><b>Definition:</b> aerodObj.h:77</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

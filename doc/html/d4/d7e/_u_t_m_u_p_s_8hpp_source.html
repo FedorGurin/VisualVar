@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/GeographicLib/UTMUPS.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_343152e76b6958edfb94fd429926f85a.html">GeographicLib</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">UTMUPS.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d7e/_u_t_m_u_p_s_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if !defined(GEOGRAPHICLIB_UTMUPS_HPP)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GEOGRAPHICLIB_UTMUPS_HPP 1</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../dc/d77/_constants_8hpp.html">GeographicLib/Constants.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html">   75</a></span>&#160;  <span class="keyword">class </span><a class="code" href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a> <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html">UTMUPS</a> {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> real;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> falseeasting_[4];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> falsenorthing_[4];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> mineasting_[4];</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> maxeasting_[4];</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> minnorthing_[4];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> maxnorthing_[4];</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> epsg01N = 32601; <span class="comment">// EPSG code for UTM 01N</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> epsg60N = 32660; <span class="comment">// EPSG code for UTM 60N</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> epsgN   = 32661; <span class="comment">// EPSG code for UPS   N</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> epsg01S = 32701; <span class="comment">// EPSG code for UTM 01S</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> epsg60S = 32760; <span class="comment">// EPSG code for UTM 60S</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> epsgS   = 32761; <span class="comment">// EPSG code for UPS   S</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">static</span> real CentralMeridian(<span class="keywordtype">int</span> zone)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    { <span class="keywordflow">return</span> real(6 * zone - 183); }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Throw an error if easting or northing are outside standard ranges.  If</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// throwp = false, return bool instead.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> CheckCoords(<span class="keywordtype">bool</span> utmp, <span class="keywordtype">bool</span> northp, real x, real y,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                            <span class="keywordtype">bool</span> msgrlimits = <span class="keyword">false</span>, <span class="keywordtype">bool</span> throwp = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html">UTMUPS</a>();                   <span class="comment">// Disable constructor</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">  109</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">zonespec</a> {</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a058ac8a834bbc78ce73d9b37a1a5dfb9">  113</a></span>&#160;      MINPSEUDOZONE = -4,</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aeb6750fb82edce6e5b58178a38ee8bd0">  117</a></span>&#160;      INVALID = -4,</div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a9059a8e3b4721e27869e99ed1ae3d320">  122</a></span>&#160;      MATCH = -3,</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7aacc8f89ac6144b1e445ca21cbe9a2533">  129</a></span>&#160;      UTM = -2,</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7adf96495ab4bfbf495f1fe31aebb9e406">  138</a></span>&#160;      STANDARD = -1,</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7ac22db7e136b6e06fba7c3c06b5888362">  142</a></span>&#160;      MAXPSEUDOZONE = -1,</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7af91adc987ae7295bfb6d3786b23c58e1">  146</a></span>&#160;      MINZONE = 0,</div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a40256f9ab9f277957f8ab697bcd2fd42">  150</a></span>&#160;      UPS = 0,</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a1413e6cc83d4bf1eb4ad1c0f1d745eb6">  154</a></span>&#160;      MINUTMZONE = 1,</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7ae8e04ab8df50a062c1fe277a6880bc19">  158</a></span>&#160;      MAXUTMZONE = 60,</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7a12dabceb6da15aa0fc94b9406aca921a">  162</a></span>&#160;      MAXZONE = 60,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    };</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> StandardZone(real lat, real lon, <span class="keywordtype">int</span> setzone = STANDARD);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Forward(real lat, real lon,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        <span class="keywordtype">int</span>&amp; zone, <span class="keywordtype">bool</span>&amp; northp, real&amp; x, real&amp; y,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                        real&amp; gamma, real&amp; k,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                        <span class="keywordtype">int</span> setzone = STANDARD, <span class="keywordtype">bool</span> mgrslimits = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Reverse(<span class="keywordtype">int</span> zone, <span class="keywordtype">bool</span> northp, real x, real y,</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                        real&amp; lat, real&amp; lon, real&amp; gamma, real&amp; k,</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                        <span class="keywordtype">bool</span> mgrslimits = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aa21ec1bc26f691e0a6f2ccc44debe6f0">  269</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aa21ec1bc26f691e0a6f2ccc44debe6f0">Forward</a>(real lat, real lon,</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                        <span class="keywordtype">int</span>&amp; zone, <span class="keywordtype">bool</span>&amp; northp, real&amp; x, real&amp; y,</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                        <span class="keywordtype">int</span> setzone = STANDARD, <span class="keywordtype">bool</span> mgrslimits = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;      real gamma, k;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;      Forward(lat, lon, zone, northp, x, y, gamma, k, setzone, mgrslimits);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac8cbfd7b15c96b52b876b54ce68f7b4d">  279</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac8cbfd7b15c96b52b876b54ce68f7b4d">Reverse</a>(<span class="keywordtype">int</span> zone, <span class="keywordtype">bool</span> northp, real x, real y,</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        real&amp; lat, real&amp; lon, <span class="keywordtype">bool</span> mgrslimits = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;      real gamma, k;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;      Reverse(zone, northp, x, y, lat, lon, gamma, k, mgrslimits);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> Transfer(<span class="keywordtype">int</span> zonein, <span class="keywordtype">bool</span> northpin, real xin, real yin,</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                         <span class="keywordtype">int</span> zoneout, <span class="keywordtype">bool</span> northpout, real&amp; xout, real&amp; yout,</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                         <span class="keywordtype">int</span>&amp; zone);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> DecodeZone(<span class="keyword">const</span> std::string&amp; zonestr, <span class="keywordtype">int</span>&amp; zone, <span class="keywordtype">bool</span>&amp; northp);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keyword">static</span> std::string EncodeZone(<span class="keywordtype">int</span> zone, <span class="keywordtype">bool</span> northp, <span class="keywordtype">bool</span> abbrev = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> DecodeEPSG(<span class="keywordtype">int</span> epsg, <span class="keywordtype">int</span>&amp; zone, <span class="keywordtype">bool</span>&amp; northp);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> EncodeEPSG(<span class="keywordtype">int</span> zone, <span class="keywordtype">bool</span> northp);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> UTMShift();</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00404"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a293aa30508096d49db77a23917ea1092">  404</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a293aa30508096d49db77a23917ea1092">MajorRadius</a>()</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    { <span class="keywordflow">return</span> <a class="code" href="../../d2/de7/class_geographic_lib_1_1_constants.html#ae12127984ac6713823746d917b4abfa7">Constants::WGS84_a</a>(); }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
+<div class="line"><a name="l00413"></a><span class="lineno"><a class="line" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a182de2e29f1181c55a266777039b8a9d">  413</a></span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> <a class="code" href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a182de2e29f1181c55a266777039b8a9d">Flattening</a>()</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    { <span class="keywordflow">return</span> <a class="code" href="../../d2/de7/class_geographic_lib_1_1_constants.html#acc5244425bb484594be51b27d56cd335">Constants::WGS84_f</a>(); }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> InverseFlattening()</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    { <span class="keywordflow">return</span> 1/<a class="code" href="../../d2/de7/class_geographic_lib_1_1_constants.html#acc5244425bb484594be51b27d56cd335">Constants::WGS84_f</a>(); }</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;  };</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160; </div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;} <span class="comment">// namespace GeographicLib</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;<span class="preprocessor">#endif  // GEOGRAPHICLIB_UTMUPS_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a0c459615da18cc899a960bdc8c5b11b7"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a0c459615da18cc899a960bdc8c5b11b7">GeographicLib::UTMUPS::zonespec</a></div><div class="ttdeci">zonespec</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:109</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html">GeographicLib::UTMUPS</a></div><div class="ttdoc">Convert between geographic coordinates and UTM/UPS.</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:75</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_constants_html_ae12127984ac6713823746d917b4abfa7"><div class="ttname"><a href="../../d2/de7/class_geographic_lib_1_1_constants.html#ae12127984ac6713823746d917b4abfa7">GeographicLib::Constants::WGS84_a</a></div><div class="ttdeci">static T WGS84_a()</div><div class="ttdef"><b>Definition:</b> Constants.hpp:143</div></div>
+<div class="ttc" id="a_constants_8hpp_html"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html">Constants.hpp</a></div><div class="ttdoc">Header for GeographicLib::Constants class.</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_constants_html_acc5244425bb484594be51b27d56cd335"><div class="ttname"><a href="../../d2/de7/class_geographic_lib_1_1_constants.html#acc5244425bb484594be51b27d56cd335">GeographicLib::Constants::WGS84_f</a></div><div class="ttdeci">static T WGS84_f()</div><div class="ttdef"><b>Definition:</b> Constants.hpp:153</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a182de2e29f1181c55a266777039b8a9d"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a182de2e29f1181c55a266777039b8a9d">GeographicLib::UTMUPS::Flattening</a></div><div class="ttdeci">static Math::real Flattening()</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:413</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_math_html_aeee4778d7cf2f9fb9648efe4911da59d"><div class="ttname"><a href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">GeographicLib::Math::real</a></div><div class="ttdeci">double real</div><div class="ttdef"><b>Definition:</b> Math.hpp:129</div></div>
+<div class="ttc" id="anamespace_geographic_lib_html"><div class="ttname"><a href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></div><div class="ttdoc">Namespace for GeographicLib.</div><div class="ttdef"><b>Definition:</b> Accumulator.cpp:12</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_a293aa30508096d49db77a23917ea1092"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#a293aa30508096d49db77a23917ea1092">GeographicLib::UTMUPS::MajorRadius</a></div><div class="ttdeci">static Math::real MajorRadius()</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:404</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_ac8cbfd7b15c96b52b876b54ce68f7b4d"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#ac8cbfd7b15c96b52b876b54ce68f7b4d">GeographicLib::UTMUPS::Reverse</a></div><div class="ttdeci">static void Reverse(int zone, bool northp, real x, real y, real &amp;lat, real &amp;lon, bool mgrslimits=false)</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:279</div></div>
+<div class="ttc" id="aclass_geographic_lib_1_1_u_t_m_u_p_s_html_aa21ec1bc26f691e0a6f2ccc44debe6f0"><div class="ttname"><a href="../../d0/daf/class_geographic_lib_1_1_u_t_m_u_p_s.html#aa21ec1bc26f691e0a6f2ccc44debe6f0">GeographicLib::UTMUPS::Forward</a></div><div class="ttdeci">static void Forward(real lat, real lon, int &amp;zone, bool &amp;northp, real &amp;x, real &amp;y, int setzone=STANDARD, bool mgrslimits=false)</div><div class="ttdef"><b>Definition:</b> UTMUPS.hpp:269</div></div>
+<div class="ttc" id="a_constants_8hpp_html_a4eef709a4899767a7eba818ce2e3450e"><div class="ttname"><a href="../../dc/d77/_constants_8hpp.html#a4eef709a4899767a7eba818ce2e3450e">GEOGRAPHICLIB_EXPORT</a></div><div class="ttdeci">#define GEOGRAPHICLIB_EXPORT</div><div class="ttdef"><b>Definition:</b> Constants.hpp:90</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:29. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

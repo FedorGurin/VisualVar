@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/VisualVar/formlistaerodroms.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_1ae79f6957e304059cf24dd2b6692022.html">VisualVar</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">formlistaerodroms.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/da0/formlistaerodroms_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FORMLISTAERODROMS_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FORMLISTAERODROMS_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDomElement&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QDomDocument&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;NodeVisual.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/dda/aerod_obj_8h.html">nodes/aerodromObj/aerodObj.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../dc/df0/namespace_ui.html">Ui</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d83/class_form_list_aerodroms.html">FormListAerodroms</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../dd/d83/class_form_list_aerodroms.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dd/d83/class_form_list_aerodroms.html">FormListAerodroms</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Q_OBJECT    </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#a1135ec565b8c011e3eafc974bce92bc0">FormListAerodroms</a>(QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#a2097f81c286de312b1ac9785b5e08551">~FormListAerodroms</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">// добавить новый аэродром</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#afb25df25e785cdbd1d831e8cff06aafb">addNewAerodrom</a>(<span class="keyword">const</span> QDomElement&amp; element);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#a661bfc2cd8a2c9aa594336907b05c310">parseXML</a>(<span class="keyword">const</span> QDomElement&amp; element);<span class="comment">//рекурсивная</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#ac0668368fd782d4191305085a1ba8b73">openXML</a>(<span class="keyword">const</span> QString &amp;fileName);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//void saveXML(const QString &amp;fileName);</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../dd/d83/class_form_list_aerodroms.html#af19b4525847e961b840fa0c8f8667583">   29</a></span>&#160;    QDomDocument <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#af19b4525847e961b840fa0c8f8667583">domAerodroms</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../dd/d83/class_form_list_aerodroms.html#aaac5ddcdf8e48eb7233ea08b76dea995">   30</a></span>&#160;    QDomDocument <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#aaac5ddcdf8e48eb7233ea08b76dea995">saveDomAerodroms</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../dd/d83/class_form_list_aerodroms.html#ab05da9373762364df1facb691bed863b">   31</a></span>&#160;    QDomElement  <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#ab05da9373762364df1facb691bed863b">rootNode</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../dd/d83/class_form_list_aerodroms.html#a8fc354831ea44083d41a84124a716eb9">   33</a></span>&#160;    QList&lt;AerodromObject* &gt;    <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#a8fc354831ea44083d41a84124a716eb9">aerodromObjects</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../dd/d83/class_form_list_aerodroms.html#a40e9d4b8f444f105506e240c8ea2dabb">event</a>(QEvent *<a class="code" href="../../dd/d83/class_form_list_aerodroms.html#a40e9d4b8f444f105506e240c8ea2dabb">event</a>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Ui::FormListAerodroms *ui;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // FORMLISTAERODROMS_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_form_list_aerodroms_html_af19b4525847e961b840fa0c8f8667583"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#af19b4525847e961b840fa0c8f8667583">FormListAerodroms::domAerodroms</a></div><div class="ttdeci">QDomDocument domAerodroms</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.h:29</div></div>
+<div class="ttc" id="aaerod_obj_8h_html"><div class="ttname"><a href="../../dd/dda/aerod_obj_8h.html">aerodObj.h</a></div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_a661bfc2cd8a2c9aa594336907b05c310"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#a661bfc2cd8a2c9aa594336907b05c310">FormListAerodroms::parseXML</a></div><div class="ttdeci">void parseXML(const QDomElement &amp;element)</div><div class="ttdoc">разбор XML с данными</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.cpp:52</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_aaac5ddcdf8e48eb7233ea08b76dea995"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#aaac5ddcdf8e48eb7233ea08b76dea995">FormListAerodroms::saveDomAerodroms</a></div><div class="ttdeci">QDomDocument saveDomAerodroms</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.h:30</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_ab05da9373762364df1facb691bed863b"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#ab05da9373762364df1facb691bed863b">FormListAerodroms::rootNode</a></div><div class="ttdeci">QDomElement rootNode</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.h:31</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_a2097f81c286de312b1ac9785b5e08551"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#a2097f81c286de312b1ac9785b5e08551">FormListAerodroms::~FormListAerodroms</a></div><div class="ttdeci">~FormListAerodroms()</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.cpp:75</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_a40e9d4b8f444f105506e240c8ea2dabb"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#a40e9d4b8f444f105506e240c8ea2dabb">FormListAerodroms::event</a></div><div class="ttdeci">virtual bool event(QEvent *event)</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.cpp:70</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_ac0668368fd782d4191305085a1ba8b73"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#ac0668368fd782d4191305085a1ba8b73">FormListAerodroms::openXML</a></div><div class="ttdeci">bool openXML(const QString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.cpp:22</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_afb25df25e785cdbd1d831e8cff06aafb"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#afb25df25e785cdbd1d831e8cff06aafb">FormListAerodroms::addNewAerodrom</a></div><div class="ttdeci">void addNewAerodrom(const QDomElement &amp;element)</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.cpp:61</div></div>
+<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="../../dc/df0/namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition:</b> dialogsavecurvar.h:6</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_a1135ec565b8c011e3eafc974bce92bc0"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#a1135ec565b8c011e3eafc974bce92bc0">FormListAerodroms::FormListAerodroms</a></div><div class="ttdeci">FormListAerodroms(QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.cpp:8</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html">FormListAerodroms</a></div><div class="ttdoc">класс для чтения аэродромов и отображение данных</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.h:18</div></div>
+<div class="ttc" id="aclass_form_list_aerodroms_html_a8fc354831ea44083d41a84124a716eb9"><div class="ttname"><a href="../../dd/d83/class_form_list_aerodroms.html#a8fc354831ea44083d41a84124a716eb9">FormListAerodroms::aerodromObjects</a></div><div class="ttdeci">QList&lt; AerodromObject * &gt; aerodromObjects</div><div class="ttdef"><b>Definition:</b> formlistaerodroms.h:33</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

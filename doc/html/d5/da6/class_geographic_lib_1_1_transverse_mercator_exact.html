@@ -1,0 +1,540 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс GeographicLib::TransverseMercatorExact</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dd/d29/namespace_geographic_lib.html">GeographicLib</a></li><li class="navelem"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html">TransverseMercatorExact</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-static-methods">Открытые статические члены</a> &#124;
+<a href="../../d3/d38/class_geographic_lib_1_1_transverse_mercator_exact-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс GeographicLib::TransverseMercatorExact</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>An exact implementation of the transverse Mercator projection.  
+ <a href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d0/dba/_transverse_mercator_exact_8hpp_source.html">TransverseMercatorExact.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a72ffcc89eee6f30a6d1f4d061518a6f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#a72ffcc89eee6f30a6d1f4d061518a6f1">TransverseMercatorExact</a> (real a, real f, real k0, bool extendp=false)</td></tr>
+<tr class="separator:a72ffcc89eee6f30a6d1f4d061518a6f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180193489aec05acf993214bf8e6d9c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#a180193489aec05acf993214bf8e6d9c6">Forward</a> (real lon0, real lat, real lon, real &amp;x, real &amp;y, real &amp;gamma, real &amp;k) const</td></tr>
+<tr class="separator:a180193489aec05acf993214bf8e6d9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa8bb4abff94dd5e6b62c2fd5dd50250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#afa8bb4abff94dd5e6b62c2fd5dd50250">Reverse</a> (real lon0, real x, real y, real &amp;lat, real &amp;lon, real &amp;gamma, real &amp;k) const</td></tr>
+<tr class="separator:afa8bb4abff94dd5e6b62c2fd5dd50250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39704e36022d52f6ea10ae51e6bdbdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#aa39704e36022d52f6ea10ae51e6bdbdf">Forward</a> (real lon0, real lat, real lon, real &amp;x, real &amp;y) const</td></tr>
+<tr class="separator:aa39704e36022d52f6ea10ae51e6bdbdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6202d1ae3ce27674357fe0b82fd6f48a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#a6202d1ae3ce27674357fe0b82fd6f48a">Reverse</a> (real lon0, real x, real y, real &amp;lat, real &amp;lon) const</td></tr>
+<tr class="separator:a6202d1ae3ce27674357fe0b82fd6f48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Inspector functions</div></td></tr>
+<tr class="memitem:aa570ff0cfd9bea78bbe853f7ca2b082a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#aa570ff0cfd9bea78bbe853f7ca2b082a">MajorRadius</a> () const</td></tr>
+<tr class="separator:aa570ff0cfd9bea78bbe853f7ca2b082a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb519fc7c6e3b75ad8dd67887f806a69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#adb519fc7c6e3b75ad8dd67887f806a69">Flattening</a> () const</td></tr>
+<tr class="separator:adb519fc7c6e3b75ad8dd67887f806a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f6aafc39c02d5be4402102115b324b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#a16f6aafc39c02d5be4402102115b324b">CentralScale</a> () const</td></tr>
+<tr class="separator:a16f6aafc39c02d5be4402102115b324b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Открытые статические члены</h2></td></tr>
+<tr class="memitem:aeb0946003bd7cc24dfb3b7c823467a4f"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html">TransverseMercatorExact</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#aeb0946003bd7cc24dfb3b7c823467a4f">UTM</a> ()</td></tr>
+<tr class="separator:aeb0946003bd7cc24dfb3b7c823467a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>An exact implementation of the transverse Mercator projection. </p>
+<p>Implementation of the Transverse Mercator Projection given in</p><ul>
+<li>L. P. Lee, <a href="https://dx.doi.org/10.3138/X687-1574-4325-WM62">Conformal Projections Based On Jacobian Elliptic Functions</a>, Part V of Conformal Projections Based on Elliptic Functions, (B. V. Gutsell, Toronto, 1976), 128pp., ISBN: 0919870163 (also appeared as: Monograph 16, Suppl. No. 1 to Canadian Cartographer, Vol 13).</li>
+<li>C. F. F. Karney, <a href="https://dx.doi.org/10.1007/s00190-011-0445-3">Transverse Mercator with an accuracy of a few nanometers,</a> J. Geodesy 85(8), 475&ndash;485 (Aug. 2011); preprint <a href="http://arxiv.org/abs/1002.1417">arXiv:1002.1417</a>.</li>
+</ul>
+<p>Lee gives the correct results for forward and reverse transformations subject to the branch cut rules (see the description of the <em>extendp</em> argument to the constructor). The maximum error is about 8 nm (8 nanometers), ground distance, for the forward and reverse transformations. The error in the convergence is 2 &times; 10<sup>&minus;15</sup>&quot;, the relative error in the scale is 7 &times; 10<sup>&minus;12</sup>%%. See Sec. 3 of <a href="http://arxiv.org/abs/1002.1417">arXiv:1002.1417</a> for details. The method is "exact" in the sense that the errors are close to the round-off limit and that no changes are needed in the algorithms for them to be used with reals of a higher precision. Thus the errors using long double (with a 64-bit fraction) are about 2000 times smaller than using double (with a 53-bit fraction).</p>
+<p>This algorithm is about 4.5 times slower than the 6th-order Kr&uuml;ger method, <a class="el" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html" title="Transverse Mercator projection.">TransverseMercator</a>, taking about 11 us for a combined forward and reverse projection on a 2.66 GHz Intel machine (g++, version 4.3.0, -O3).</p>
+<p>The ellipsoid parameters and the central scale are set in the constructor. The central meridian (which is a trivial shift of the longitude) is specified as the <em>lon0</em> argument of the <a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#a180193489aec05acf993214bf8e6d9c6">TransverseMercatorExact::Forward</a> and <a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#afa8bb4abff94dd5e6b62c2fd5dd50250">TransverseMercatorExact::Reverse</a> functions. The latitude of origin is taken to be the equator. See the documentation on <a class="el" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html" title="Transverse Mercator projection.">TransverseMercator</a> for how to include a false easting, false northing, or a latitude of origin.</p>
+<p>See <a href="http://geographiclib.sourceforge.net/tm-grid.kmz" type="application/vnd.google-earth.kmz">tm-grid.kmz</a>, for an illustration of the transverse Mercator grid in Google Earth.</p>
+<p>See <a class="el" href="../../dd/d9d/_transverse_mercator_exact_8cpp.html" title="Implementation for GeographicLib::TransverseMercatorExact class.">TransverseMercatorExact.cpp</a> for more information on the implementation.</p>
+<p>See transversemercator for a discussion of this projection.</p>
+<p>Example of use: </p><div class="fragment"></div><!-- fragment --><p><a href="../../TransverseMercatorProj.1.html">TransverseMercatorProj</a> is a command-line utility providing access to the functionality of <a class="el" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html" title="Transverse Mercator projection.">TransverseMercator</a> and <a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html" title="An exact implementation of the transverse Mercator projection.">TransverseMercatorExact</a>. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a72ffcc89eee6f30a6d1f4d061518a6f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ffcc89eee6f30a6d1f4d061518a6f1">&#9670;&nbsp;</a></span>TransverseMercatorExact()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GeographicLib::TransverseMercatorExact::TransverseMercatorExact </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>k0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>extendp</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor for a ellipsoid with</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>equatorial radius (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f</td><td>flattening of ellipsoid. If <em>f</em> &gt; 1, set flattening to 1/<em>f</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">k0</td><td>central scale factor. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">extendp</td><td>use extended domain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d1/dd1/class_geographic_lib_1_1_geographic_err.html" title="Exception handling for GeographicLib.">GeographicErr</a></td><td>if <em>a</em>, <em>f</em>, or <em>k0</em> is not positive.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The transverse Mercator projection has a branch point singularity at <em>lat</em> = 0 and <em>lon</em> &minus; <em>lon0</em> = 90 (1 &minus; <em>e</em>) or (for <a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#aeb0946003bd7cc24dfb3b7c823467a4f">TransverseMercatorExact::UTM</a>) x = 18381 km, y = 0m. The <em>extendp</em> argument governs where the branch cut is placed. With <em>extendp</em> = false, the "standard" convention is followed, namely the cut is placed along <em>x</em> &gt; 18381 km, <em>y</em> = 0m. Forward can be called with any <em>lat</em> and <em>lon</em> then produces the transformation shown in Lee, Fig 46. Reverse analytically continues this in the &plusmn; <em>x</em> direction. As a consequence, Reverse may map multiple points to the same geographic location; for example, for <a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#aeb0946003bd7cc24dfb3b7c823467a4f">TransverseMercatorExact::UTM</a>, <em>x</em> = 22051449.037349 m, <em>y</em> = &minus;7131237.022729 m and <em>x</em> = 29735142.378357 m, <em>y</em> = 4235043.607933 m both map to <em>lat</em> = &minus;2&deg;, <em>lon</em> = 88&deg;.</p>
+<p>With <em>extendp</em> = true, the branch cut is moved to the lower left quadrant. The various symmetries of the transverse Mercator projection can be used to explore the projection on any sheet. In this mode the domains of <em>lat</em>, <em>lon</em>, <em>x</em>, and <em>y</em> are restricted to</p><ul>
+<li>the union of<ul>
+<li><em>lat</em> in [0, 90] and <em>lon</em> &minus; <em>lon0</em> in [0, 90]</li>
+<li><em>lat</em> in (-90, 0] and <em>lon</em> &minus; <em>lon0</em> in [90 (1 &minus; <em>e</em>), 90]</li>
+</ul>
+</li>
+<li>the union of<ul>
+<li><em>x</em>/(<em>k0</em> <em>a</em>) in [0, &infin;) and <em>y</em>/(<em>k0</em> <em>a</em>) in [0, E(<em>e</em><sup>2</sup>)]</li>
+<li><em>x</em>/(<em>k0</em> <em>a</em>) in [K(1 &minus; <em>e</em><sup>2</sup>) &minus; E(1 &minus; <em>e</em><sup>2</sup>), &infin;) and <em>y</em>/(<em>k0</em> <em>a</em>) in (&minus;&infin;, 0]</li>
+</ul>
+</li>
+</ul>
+<p>See Sec. 5 of <a href="http://arxiv.org/abs/1002.1417">arXiv:1002.1417</a> for a full discussion of the treatment of the branch cut.</p>
+<p>The method will work for all ellipsoids used in terrestrial geodesy. The method cannot be applied directly to the case of a sphere (<em>f</em> = 0) because some the constants characterizing this method diverge in that limit, and in practice, <em>f</em> should be larger than about <a class="el" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">numeric_limits&lt;real&gt;::epsilon()</a>. However, <a class="el" href="../../d4/d5d/class_geographic_lib_1_1_transverse_mercator.html" title="Transverse Mercator projection.">TransverseMercator</a> treats the sphere exactly. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a16f6aafc39c02d5be4402102115b324b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f6aafc39c02d5be4402102115b324b">&#9670;&nbsp;</a></span>CentralScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::TransverseMercatorExact::CentralScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>k0</em> central scale for the projection. This is the value of <em>k0</em> used in the constructor and is the scale on the central meridian. </dd></dl>
+
+</div>
+</div>
+<a id="adb519fc7c6e3b75ad8dd67887f806a69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb519fc7c6e3b75ad8dd67887f806a69">&#9670;&nbsp;</a></span>Flattening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::TransverseMercatorExact::Flattening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>f</em> the flattening of the ellipsoid. This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="aa39704e36022d52f6ea10ae51e6bdbdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39704e36022d52f6ea10ae51e6bdbdf">&#9670;&nbsp;</a></span>Forward() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::TransverseMercatorExact::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#a180193489aec05acf993214bf8e6d9c6">TransverseMercatorExact::Forward</a> without returning the convergence and scale. </p>
+
+</div>
+</div>
+<a id="a180193489aec05acf993214bf8e6d9c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180193489aec05acf993214bf8e6d9c6">&#9670;&nbsp;</a></span>Forward() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::TransverseMercatorExact::Forward </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Forward projection, from geographic to transverse Mercator.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon0</td><td>central meridian of the projection (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x</td><td>easting of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">y</td><td>northing of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gamma</td><td>meridian convergence at point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">k</td><td>scale of projection at point.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>No false easting or northing is added. <em>lat</em> should be in the range [&minus;90&deg;, 90&deg;]. </p>
+
+</div>
+</div>
+<a id="aa570ff0cfd9bea78bbe853f7ca2b082a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa570ff0cfd9bea78bbe853f7ca2b082a">&#9670;&nbsp;</a></span>MajorRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/d4b/class_geographic_lib_1_1_math.html#aeee4778d7cf2f9fb9648efe4911da59d">Math::real</a> GeographicLib::TransverseMercatorExact::MajorRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Возвращает</dt><dd><em>a</em> the equatorial radius of the ellipsoid (meters). This is the value used in the constructor. </dd></dl>
+
+</div>
+</div>
+<a id="a6202d1ae3ce27674357fe0b82fd6f48a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6202d1ae3ce27674357fe0b82fd6f48a">&#9670;&nbsp;</a></span>Reverse() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::TransverseMercatorExact::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html#afa8bb4abff94dd5e6b62c2fd5dd50250">TransverseMercatorExact::Reverse</a> without returning the convergence and scale. </p>
+
+</div>
+</div>
+<a id="afa8bb4abff94dd5e6b62c2fd5dd50250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8bb4abff94dd5e6b62c2fd5dd50250">&#9670;&nbsp;</a></span>Reverse() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GeographicLib::TransverseMercatorExact::Reverse </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lon0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>lon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>gamma</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real &amp;&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reverse projection, from transverse Mercator to geographic.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lon0</td><td>central meridian of the projection (degrees). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>easting of point (meters). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>northing of point (meters). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lat</td><td>latitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">lon</td><td>longitude of point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">gamma</td><td>meridian convergence at point (degrees). </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">k</td><td>scale of projection at point.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>No false easting or northing is added. The value of <em>lon</em> returned is in the range [&minus;180&deg;, 180&deg;). </p>
+
+</div>
+</div>
+<a id="aeb0946003bd7cc24dfb3b7c823467a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0946003bd7cc24dfb3b7c823467a4f">&#9670;&nbsp;</a></span>UTM()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html">TransverseMercatorExact</a> &amp; GeographicLib::TransverseMercatorExact::UTM </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A global instantiation of <a class="el" href="../../d5/da6/class_geographic_lib_1_1_transverse_mercator_exact.html" title="An exact implementation of the transverse Mercator projection.">TransverseMercatorExact</a> with the WGS84 ellipsoid and the UTM scale factor. However, unlike UTM, no false easting or northing is added. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../d0/dba/_transverse_mercator_exact_8hpp_source.html">TransverseMercatorExact.hpp</a></li>
+<li>D:/MyProg/226/ui/VisualVar/GeographicLib/<a class="el" href="../../dd/d9d/_transverse_mercator_exact_8cpp.html">TransverseMercatorExact.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:20. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Класс ThreadLoadMaps</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#signals">Сигналы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="../../d4/d8b/class_thread_load_maps-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Класс ThreadLoadMaps</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>поток для подгрузки карт  
+ <a href="../../d0/da9/class_thread_load_maps.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../de/db4/map_obj_8h_source.html">mapObj.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:ThreadLoadMaps:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="../../d0/da9/class_thread_load_maps.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Сигналы</h2></td></tr>
+<tr class="memitem:ae8f08b02bf3de0b66ad78f37ae1a74ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/class_thread_load_maps.html#ae8f08b02bf3de0b66ad78f37ae1a74ed">createNewPixmapItem</a> (QByteArray byteArray, int X, int Y)</td></tr>
+<tr class="separator:ae8f08b02bf3de0b66ad78f37ae1a74ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c32f1022933a4b413a275f360635d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/class_thread_load_maps.html#a29c32f1022933a4b413a275f360635d5">finishedLoadAllTile</a> ()</td></tr>
+<tr class="memdesc:a29c32f1022933a4b413a275f360635d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">сигнал о том, что все тайлы загружены  <a href="../../d0/da9/class_thread_load_maps.html#a29c32f1022933a4b413a275f360635d5">Подробнее...</a><br /></td></tr>
+<tr class="separator:a29c32f1022933a4b413a275f360635d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a8abe0d0e22ffc4a5bb8e307b993a435b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/class_thread_load_maps.html#a8abe0d0e22ffc4a5bb8e307b993a435b">ThreadLoadMaps</a> (QObject *parent=nullptr)</td></tr>
+<tr class="separator:a8abe0d0e22ffc4a5bb8e307b993a435b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a5d96328dd5803336623ddcd6e4e330"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/class_thread_load_maps.html#a4a5d96328dd5803336623ddcd6e4e330">addTile</a> (QString path, int i, int j, double pixX, double pixY, QString ext)</td></tr>
+<tr class="memdesc:a4a5d96328dd5803336623ddcd6e4e330"><td class="mdescLeft">&#160;</td><td class="mdescRight">добавить тайл  <a href="../../d0/da9/class_thread_load_maps.html#a4a5d96328dd5803336623ddcd6e4e330">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4a5d96328dd5803336623ddcd6e4e330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac74dd00a7e291b93879d4307ce388e41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/class_thread_load_maps.html#ac74dd00a7e291b93879d4307ce388e41">startLoadTile</a> (QString pref_map, QString ext_map, QString pref_layer, QString ext_layer, int tileX0, int tileX1, int tileY0, int tileY2)</td></tr>
+<tr class="memdesc:ac74dd00a7e291b93879d4307ce388e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">загрузка тайлов  <a href="../../d0/da9/class_thread_load_maps.html#ac74dd00a7e291b93879d4307ce388e41">Подробнее...</a><br /></td></tr>
+<tr class="separator:ac74dd00a7e291b93879d4307ce388e41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a265ea7973709576d9c6678e64add9412"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da9/class_thread_load_maps.html#a265ea7973709576d9c6678e64add9412">run</a> ()</td></tr>
+<tr class="separator:a265ea7973709576d9c6678e64add9412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>поток для подгрузки карт </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a8abe0d0e22ffc4a5bb8e307b993a435b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8abe0d0e22ffc4a5bb8e307b993a435b">&#9670;&nbsp;</a></span>ThreadLoadMaps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ThreadLoadMaps::ThreadLoadMaps </td>
+          <td>(</td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a4a5d96328dd5803336623ddcd6e4e330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a5d96328dd5803336623ddcd6e4e330">&#9670;&nbsp;</a></span>addTile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThreadLoadMaps::addTile </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pixX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pixY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>ext</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>добавить тайл </p>
+
+</div>
+</div>
+<a id="ae8f08b02bf3de0b66ad78f37ae1a74ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f08b02bf3de0b66ad78f37ae1a74ed">&#9670;&nbsp;</a></span>createNewPixmapItem</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThreadLoadMaps::createNewPixmapItem </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray&#160;</td>
+          <td class="paramname"><em>byteArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>X</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>сигнал о готовности добавления одного тайла </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">byteArray</td><td>- загруженное изображение тайла </td></tr>
+    <tr><td class="paramname">X</td><td>- координата X тайла относительно сцены </td></tr>
+    <tr><td class="paramname">Y</td><td>- координата Y тайла относительно сцены </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a29c32f1022933a4b413a275f360635d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c32f1022933a4b413a275f360635d5">&#9670;&nbsp;</a></span>finishedLoadAllTile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThreadLoadMaps::finishedLoadAllTile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>сигнал о том, что все тайлы загружены </p>
+
+</div>
+</div>
+<a id="a265ea7973709576d9c6678e64add9412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a265ea7973709576d9c6678e64add9412">&#9670;&nbsp;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThreadLoadMaps::run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac74dd00a7e291b93879d4307ce388e41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac74dd00a7e291b93879d4307ce388e41">&#9670;&nbsp;</a></span>startLoadTile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ThreadLoadMaps::startLoadTile </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>pref_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>ext_map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>pref_layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>ext_layer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tileX0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tileX1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tileY0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tileY2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>загрузка тайлов </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/nodes/mapObj/<a class="el" href="../../de/db4/map_obj_8h_source.html">mapObj.h</a></li>
+<li>D:/MyProg/226/ui/VisualVar/VisualVar/nodes/mapObj/<a class="el" href="../../d1/d26/map_obj_8cpp.html">mapObj.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:40:16. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/gtx/quaternion.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_e20a439b6cdbf5d4e02750a868806e68.html">gtx</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">quaternion.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d0/d0c/gtx_2quaternion_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef GLM_GTX_quaternion</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d0/d0c/gtx_2quaternion_8hpp.html#a84e1d9201efa352532c47915589685dc">   40</a></span>&#160;<span class="preprocessor">#define GLM_GTX_quaternion GLM_VERSION</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// Dependency:</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;../glm.hpp&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;../gtc/quaternion.hpp&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if(defined(GLM_MESSAGES) &amp;&amp; !defined(glm_ext))</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#   pragma message(&quot;GLM: GLM_GTX_quaternion extension included&quot;)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    detail::tvec3&lt;valType&gt; <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">cross</a>(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        detail::tquat&lt;valType&gt; <span class="keyword">const</span> &amp; q, </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        detail::tvec3&lt;valType&gt; <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    detail::tvec3&lt;valType&gt; <a class="code" href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">cross</a>(</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        detail::tvec3&lt;valType&gt; <span class="keyword">const</span> &amp; v, </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        detail::tquat&lt;valType&gt; <span class="keyword">const</span> &amp; q);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#ga3e9e70938d0e5528edddadb175f8eda4">   76</a></span>&#160;    <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <a class="code" href="../../d8/db2/group__gtx__quaternion.html#ga3e9e70938d0e5528edddadb175f8eda4">squad</a>(</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; q1, </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; q2, </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; s1, </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; s2, </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        valType <span class="keyword">const</span> &amp; h);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#gadf15938f0260ed8894cc39be603fc4e9">   87</a></span>&#160;    <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <a class="code" href="../../d8/db2/group__gtx__quaternion.html#gadf15938f0260ed8894cc39be603fc4e9">intermediate</a>(</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; prev, </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; curr, </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; next);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#gaadefe537560bc9af6b6a7af1aea83eaf">   96</a></span>&#160;    <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <a class="code" href="../../df/d74/group__core__func__exponential.html#gae154699ba6bda068d4b87cf9b987381f">exp</a>(</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; q);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#ga68d8d03cc87b3980abec4d80534f3d8e">  103</a></span>&#160;    <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga0c8da2d2921da250e8700ac4476916a1">log</a>(</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; q);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#ga7765f7d8a3399af25f8bc7956a77c7b2">  110</a></span>&#160;    <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <a class="code" href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">pow</a>(</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; x, </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        valType <span class="keyword">const</span> &amp; y);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">//template &lt;typename valType&gt; </span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">//detail::tquat&lt;valType&gt; sqrt(</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">//  detail::tquat&lt;valType&gt; const &amp; q);</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#gad1ada3be83514169fed6054b4e68b5ca">  125</a></span>&#160;    <a class="code" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">detail::tvec3&lt;valType&gt;</a> <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#gaacb9cbe8f93a8fef9dc3e25559df19c0">rotate</a>(</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; q, </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">detail::tvec3&lt;valType&gt;</a> <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#ga765b903facf3c4e325cab32cba75d9be">  133</a></span>&#160;    <a class="code" href="../../d3/db5/structglm_1_1detail_1_1tvec4.html">detail::tvec4&lt;valType&gt;</a> <a class="code" href="../../dc/d1c/group__gtc__matrix__transform.html#gaacb9cbe8f93a8fef9dc3e25559df19c0">rotate</a>(</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; q, </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <a class="code" href="../../d3/db5/structglm_1_1detail_1_1tvec4.html">detail::tvec4&lt;valType&gt;</a> <span class="keyword">const</span> &amp; v);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#gaa4574d2111d8c55c0e5c531706c0e20d">  141</a></span>&#160;    valType <a class="code" href="../../d8/db2/group__gtx__quaternion.html#gaa4574d2111d8c55c0e5c531706c0e20d">extractRealComponent</a>(</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; q);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#gaae1a23ba337628402dbe68d6567a9444">  148</a></span>&#160;    <a class="code" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">detail::tmat3x3&lt;valType&gt;</a> <a class="code" href="../../d8/db2/group__gtx__quaternion.html#gaae1a23ba337628402dbe68d6567a9444">toMat3</a>(</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; x){<span class="keywordflow">return</span> <a class="code" href="../../d5/d66/group__gtc__quaternion.html#gae04ce320008c9bec0037b4ba21853cb5">mat3_cast</a>(x);}</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#ga14c3426d79fe82b07cd1f3610a18d9f5">  155</a></span>&#160;    <a class="code" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">detail::tmat4x4&lt;valType&gt;</a> <a class="code" href="../../d8/db2/group__gtx__quaternion.html#ga14c3426d79fe82b07cd1f3610a18d9f5">toMat4</a>(</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <span class="keyword">const</span> &amp; x){<span class="keywordflow">return</span> <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga8c376eb15971eb52d85df5ee26825627">mat4_cast</a>(x);}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#ga70cb5b2da64a17632dbf151dcfec0150">  162</a></span>&#160;    <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <a class="code" href="../../d8/db2/group__gtx__quaternion.html#ga70cb5b2da64a17632dbf151dcfec0150">toQuat</a>(</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <a class="code" href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">detail::tmat3x3&lt;valType&gt;</a> <span class="keyword">const</span> &amp; x){<span class="keywordflow">return</span> <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga4d37447d81ceade1d10d68c995a4d881">quat_cast</a>(x);}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="../../d8/db2/group__gtx__quaternion.html#ga25b6237ccb6c4a69d57a181aac99aa43">  169</a></span>&#160;    <a class="code" href="../../db/de1/structglm_1_1detail_1_1tquat.html">detail::tquat&lt;valType&gt;</a> <a class="code" href="../../d8/db2/group__gtx__quaternion.html#ga70cb5b2da64a17632dbf151dcfec0150">toQuat</a>(</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">detail::tmat4x4&lt;valType&gt;</a> <span class="keyword">const</span> &amp; x){<span class="keywordflow">return</span> <a class="code" href="../../d5/d66/group__gtc__quaternion.html#ga4d37447d81ceade1d10d68c995a4d881">quat_cast</a>(x);}</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    detail::tquat&lt;T&gt; <a class="code" href="../../d8/db2/group__gtx__quaternion.html#gae2cb4ac4676a57fb6db64aa515e608ab">shortMix</a>(</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        detail::tquat&lt;T&gt; <span class="keyword">const</span> &amp; x, </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        detail::tquat&lt;T&gt; <span class="keyword">const</span> &amp; y, </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <span class="keyword">const</span> &amp; a);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    detail::tquat&lt;T&gt; <a class="code" href="../../d8/db2/group__gtx__quaternion.html#ga804e80b331a83eed2ed71a5c985593cd">fastMix</a>(</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        detail::tquat&lt;T&gt; <span class="keyword">const</span> &amp; x, </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        detail::tquat&lt;T&gt; <span class="keyword">const</span> &amp; y, </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <a class="code" href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">T</a> <span class="keyword">const</span> &amp; a);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;}<span class="comment">//namespace glm</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d01/gtx_2quaternion_8inl.html">quaternion.inl</a>&quot;</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif//GLM_GTX_quaternion</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__gtc__matrix__transform_html_gaacb9cbe8f93a8fef9dc3e25559df19c0"><div class="ttname"><a href="../../dc/d1c/group__gtc__matrix__transform.html#gaacb9cbe8f93a8fef9dc3e25559df19c0">glm::rotate</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; rotate(detail::tmat4x4&lt; T &gt; const &amp;m, T const &amp;angle, detail::tvec3&lt; T &gt; const &amp;axis)</div><div class="ttdef"><b>Definition:</b> matrix_transform.inl:45</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tmat3x3_html"><div class="ttname"><a href="../../d4/d28/structglm_1_1detail_1_1tmat3x3.html">glm::detail::tmat3x3</a></div><div class="ttdef"><b>Definition:</b> type_mat3x3.hpp:53</div></div>
+<div class="ttc" id="anamespaceglm_html_abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c"><div class="ttname"><a href="../../d4/dff/namespaceglm.html#abed25d204510fe478baaaddcf24d3beca3f3f949a46ef96cf7dc8a4be1eb6149c">glm::T</a></div><div class="ttdeci">@ T</div><div class="ttdef"><b>Definition:</b> _swizzle.hpp:43</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_ga4d37447d81ceade1d10d68c995a4d881"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#ga4d37447d81ceade1d10d68c995a4d881">glm::quat_cast</a></div><div class="ttdeci">detail::tquat&lt; T &gt; quat_cast(detail::tmat3x3&lt; T &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.inl:657</div></div>
+<div class="ttc" id="agtx_2quaternion_8inl_html"><div class="ttname"><a href="../../d3/d01/gtx_2quaternion_8inl.html">quaternion.inl</a></div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_gae04ce320008c9bec0037b4ba21853cb5"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#gae04ce320008c9bec0037b4ba21853cb5">glm::mat3_cast</a></div><div class="ttdeci">detail::tmat3x3&lt; T &gt; mat3_cast(detail::tquat&lt; T &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.inl:627</div></div>
+<div class="ttc" id="agroup__core__func__geometric_html_ga15a920c14f06882921757e453426efbe"><div class="ttname"><a href="../../d6/da9/group__core__func__geometric.html#ga15a920c14f06882921757e453426efbe">glm::cross</a></div><div class="ttdeci">GLM_FUNC_DECL detail::tvec3&lt; valType &gt; cross(detail::tvec3&lt; valType &gt; const &amp;x, detail::tvec3&lt; valType &gt; const &amp;y)</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tquat_html"><div class="ttname"><a href="../../db/de1/structglm_1_1detail_1_1tquat.html">glm::detail::tquat</a></div><div class="ttdef"><b>Definition:</b> quaternion.hpp:57</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tvec3_html"><div class="ttname"><a href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">glm::detail::tvec3</a></div><div class="ttdef"><b>Definition:</b> type_vec3.hpp:49</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tmat4x4_html"><div class="ttname"><a href="../../d6/d53/structglm_1_1detail_1_1tmat4x4.html">glm::detail::tmat4x4</a></div><div class="ttdef"><b>Definition:</b> type_mat4x4.hpp:53</div></div>
+<div class="ttc" id="agroup__gtx__quaternion_html_ga804e80b331a83eed2ed71a5c985593cd"><div class="ttname"><a href="../../d8/db2/group__gtx__quaternion.html#ga804e80b331a83eed2ed71a5c985593cd">glm::fastMix</a></div><div class="ttdeci">detail::tquat&lt; T &gt; fastMix(detail::tquat&lt; T &gt; const &amp;x, detail::tquat&lt; T &gt; const &amp;y, T const &amp;a)</div><div class="ttdef"><b>Definition:</b> quaternion.inl:200</div></div>
+<div class="ttc" id="agroup__core__func__exponential_html_ga1ce4b2fddd26d0d3a35a8d98f37f3ac0"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#ga1ce4b2fddd26d0d3a35a8d98f37f3ac0">glm::pow</a></div><div class="ttdeci">GLM_FUNC_DECL genType pow(genType const &amp;base, genType const &amp;exponent)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:34</div></div>
+<div class="ttc" id="agroup__gtx__quaternion_html_ga14c3426d79fe82b07cd1f3610a18d9f5"><div class="ttname"><a href="../../d8/db2/group__gtx__quaternion.html#ga14c3426d79fe82b07cd1f3610a18d9f5">glm::toMat4</a></div><div class="ttdeci">detail::tmat4x4&lt; valType &gt; toMat4(detail::tquat&lt; valType &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.hpp:155</div></div>
+<div class="ttc" id="agroup__gtx__quaternion_html_ga70cb5b2da64a17632dbf151dcfec0150"><div class="ttname"><a href="../../d8/db2/group__gtx__quaternion.html#ga70cb5b2da64a17632dbf151dcfec0150">glm::toQuat</a></div><div class="ttdeci">detail::tquat&lt; valType &gt; toQuat(detail::tmat3x3&lt; valType &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.hpp:162</div></div>
+<div class="ttc" id="agroup__gtx__quaternion_html_gaa4574d2111d8c55c0e5c531706c0e20d"><div class="ttname"><a href="../../d8/db2/group__gtx__quaternion.html#gaa4574d2111d8c55c0e5c531706c0e20d">glm::extractRealComponent</a></div><div class="ttdeci">valType extractRealComponent(detail::tquat&lt; valType &gt; const &amp;q)</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tvec4_html"><div class="ttname"><a href="../../d3/db5/structglm_1_1detail_1_1tvec4.html">glm::detail::tvec4</a></div><div class="ttdef"><b>Definition:</b> type_vec4.hpp:49</div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="agroup__core__func__exponential_html_ga0c8da2d2921da250e8700ac4476916a1"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#ga0c8da2d2921da250e8700ac4476916a1">glm::log</a></div><div class="ttdeci">GLM_FUNC_DECL genType log(genType const &amp;x)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:63</div></div>
+<div class="ttc" id="agroup__gtx__quaternion_html_ga3e9e70938d0e5528edddadb175f8eda4"><div class="ttname"><a href="../../d8/db2/group__gtx__quaternion.html#ga3e9e70938d0e5528edddadb175f8eda4">glm::squad</a></div><div class="ttdeci">detail::tquat&lt; valType &gt; squad(detail::tquat&lt; valType &gt; const &amp;q1, detail::tquat&lt; valType &gt; const &amp;q2, detail::tquat&lt; valType &gt; const &amp;s1, detail::tquat&lt; valType &gt; const &amp;s2, valType const &amp;h)</div></div>
+<div class="ttc" id="agroup__gtx__quaternion_html_gadf15938f0260ed8894cc39be603fc4e9"><div class="ttname"><a href="../../d8/db2/group__gtx__quaternion.html#gadf15938f0260ed8894cc39be603fc4e9">glm::intermediate</a></div><div class="ttdeci">detail::tquat&lt; valType &gt; intermediate(detail::tquat&lt; valType &gt; const &amp;prev, detail::tquat&lt; valType &gt; const &amp;curr, detail::tquat&lt; valType &gt; const &amp;next)</div></div>
+<div class="ttc" id="agroup__gtx__quaternion_html_gae2cb4ac4676a57fb6db64aa515e608ab"><div class="ttname"><a href="../../d8/db2/group__gtx__quaternion.html#gae2cb4ac4676a57fb6db64aa515e608ab">glm::shortMix</a></div><div class="ttdeci">detail::tquat&lt; T &gt; shortMix(detail::tquat&lt; T &gt; const &amp;x, detail::tquat&lt; T &gt; const &amp;y, T const &amp;a)</div><div class="ttdef"><b>Definition:</b> quaternion.inl:158</div></div>
+<div class="ttc" id="agroup__core__func__exponential_html_gae154699ba6bda068d4b87cf9b987381f"><div class="ttname"><a href="../../df/d74/group__core__func__exponential.html#gae154699ba6bda068d4b87cf9b987381f">glm::exp</a></div><div class="ttdeci">GLM_FUNC_DECL genType exp(genType const &amp;x)</div><div class="ttdef"><b>Definition:</b> func_exponential.inl:49</div></div>
+<div class="ttc" id="agroup__gtx__quaternion_html_gaae1a23ba337628402dbe68d6567a9444"><div class="ttname"><a href="../../d8/db2/group__gtx__quaternion.html#gaae1a23ba337628402dbe68d6567a9444">glm::toMat3</a></div><div class="ttdeci">detail::tmat3x3&lt; valType &gt; toMat3(detail::tquat&lt; valType &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.hpp:148</div></div>
+<div class="ttc" id="agroup__gtc__quaternion_html_ga8c376eb15971eb52d85df5ee26825627"><div class="ttname"><a href="../../d5/d66/group__gtc__quaternion.html#ga8c376eb15971eb52d85df5ee26825627">glm::mat4_cast</a></div><div class="ttdeci">detail::tmat4x4&lt; T &gt; mat4_cast(detail::tquat&lt; T &gt; const &amp;x)</div><div class="ttdef"><b>Definition:</b> quaternion.inl:648</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

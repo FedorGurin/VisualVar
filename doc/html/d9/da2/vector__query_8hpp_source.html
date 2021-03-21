@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Проект Окно НУМ: Исходный файл D:/MyProg/226/ui/VisualVar/glm/gtx/vector_query.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Проект Окно НУМ
+   &#160;<span id="projectnumber">Версия 0.2</span>
+   </div>
+   <div id="projectbrief">Окно начальных условий моделирования(НУМ)</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.20 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','Поиск');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_a18149d1b32e3efeacb0e34a962af4d3.html">glm</a></li><li class="navelem"><a class="el" href="../../dir_e20a439b6cdbf5d4e02750a868806e68.html">gtx</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">vector_query.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/da2/vector__query_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifndef GLM_GTX_vector_query</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../d9/da2/vector__query_8hpp.html#aabc0baf126b2dab486b2a18baf6437cf">   39</a></span>&#160;<span class="preprocessor">#define GLM_GTX_vector_query GLM_VERSION</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Dependency:</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;../glm.hpp&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;cfloat&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#if(defined(GLM_MESSAGES) &amp;&amp; !defined(glm_ext))</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#   pragma message(&quot;GLM: GLM_GTX_vector_query extension included&quot;)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d4/dff/namespaceglm.html">glm</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../dc/da4/group__gtx__vector__query.html#ga516c25a0d2c46c64fb5afca5eb24daab">   58</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/da4/group__gtx__vector__query.html#ga516c25a0d2c46c64fb5afca5eb24daab">areCollinear</a>(</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        genType <span class="keyword">const</span> &amp; v0, </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        genType <span class="keyword">const</span> &amp; v1, </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">typename</span> genType::value_type <span class="keyword">const</span> &amp; <a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">epsilon</a><span class="comment">/* = std::numeric_limits&lt;typename genType::value_type&gt;::epsilon()*/</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/da4/group__gtx__vector__query.html#ga0cba4a48074a8b8b8474538385a709e7">areOrthogonal</a>(</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        genType <span class="keyword">const</span> &amp; v0, </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        genType <span class="keyword">const</span> &amp; v1, </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">typename</span> genType::value_type <span class="keyword">const</span> &amp; <a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">epsilon</a><span class="comment">/* = std::numeric_limits&lt;typename genType::value_type&gt;::epsilon()*/</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType, <span class="keyword">template</span> &lt;<span class="keyword">typename</span>&gt; <span class="keyword">class </span>vecType&gt; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../df/d21/group__gtx__matrix__query.html#ga4db0eb631e14d23d597b93b80e324c5d">isNormalized</a>(</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        vecType&lt;genType&gt; <span class="keyword">const</span> &amp; v, </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        genType <span class="keyword">const</span> &amp; <a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">epsilon</a><span class="comment">/* = std::numeric_limits&lt;genType&gt;::epsilon()*/</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../df/d21/group__gtx__matrix__query.html#ga522ba657c5bf6a022c49b5717f2b600c">isNull</a>(</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="../../d2/d16/structglm_1_1detail_1_1tvec2.html">detail::tvec2&lt;valType&gt;</a> <span class="keyword">const</span> &amp; v, </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">epsilon</a><span class="comment">/* = std::numeric_limits&lt;typename genType::value_type&gt;::epsilon()*/</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../df/d21/group__gtx__matrix__query.html#ga522ba657c5bf6a022c49b5717f2b600c">isNull</a>(</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">detail::tvec3&lt;valType&gt;</a> <span class="keyword">const</span> &amp; v, </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">epsilon</a><span class="comment">/* = std::numeric_limits&lt;typename genType::value_type&gt;::epsilon()*/</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> valType&gt; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../df/d21/group__gtx__matrix__query.html#ga522ba657c5bf6a022c49b5717f2b600c">isNull</a>(</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="../../d3/db5/structglm_1_1detail_1_1tvec4.html">detail::tvec4&lt;valType&gt;</a> <span class="keyword">const</span> &amp; v, </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        valType <span class="keyword">const</span> &amp; <a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">epsilon</a><span class="comment">/* = std::numeric_limits&lt;typename genType::value_type&gt;::epsilon()*/</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> genType&gt;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/da4/group__gtx__vector__query.html#gab6b9a4e79fb7b34e8817ae9c870eb06e">areOrthonormal</a>(</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        genType <span class="keyword">const</span> &amp; v0, </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        genType <span class="keyword">const</span> &amp; v1, </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keyword">typename</span> genType::value_type <span class="keyword">const</span> &amp; <a class="code" href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">epsilon</a><span class="comment">/* = std::numeric_limits&lt;typename genType::value_type&gt;::epsilon()*/</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}<span class="comment">// namespace glm</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/dfd/vector__query_8inl.html">vector_query.inl</a>&quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif//GLM_GTX_vector_query</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="agroup__gtx__vector__query_html_gab6b9a4e79fb7b34e8817ae9c870eb06e"><div class="ttname"><a href="../../dc/da4/group__gtx__vector__query.html#gab6b9a4e79fb7b34e8817ae9c870eb06e">glm::areOrthonormal</a></div><div class="ttdeci">bool areOrthonormal(genType const &amp;v0, genType const &amp;v1, typename genType::value_type const &amp;epsilon)</div><div class="ttdef"><b>Definition:</b> vector_query.inl:155</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tvec3_html"><div class="ttname"><a href="../../dc/d7d/structglm_1_1detail_1_1tvec3.html">glm::detail::tvec3</a></div><div class="ttdef"><b>Definition:</b> type_vec3.hpp:49</div></div>
+<div class="ttc" id="agroup__gtx__matrix__query_html_ga522ba657c5bf6a022c49b5717f2b600c"><div class="ttname"><a href="../../df/d21/group__gtx__matrix__query.html#ga522ba657c5bf6a022c49b5717f2b600c">glm::isNull</a></div><div class="ttdeci">bool isNull(detail::tmat2x2&lt; T &gt; const &amp;m, T const &amp;epsilon)</div><div class="ttdef"><b>Definition:</b> matrix_query.inl:17</div></div>
+<div class="ttc" id="agroup__gtx__vector__query_html_ga0cba4a48074a8b8b8474538385a709e7"><div class="ttname"><a href="../../dc/da4/group__gtx__vector__query.html#ga0cba4a48074a8b8b8474538385a709e7">glm::areOrthogonal</a></div><div class="ttdeci">bool areOrthogonal(genType const &amp;v0, genType const &amp;v1, typename genType::value_type const &amp;epsilon)</div><div class="ttdef"><b>Definition:</b> vector_query.inl:52</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tvec4_html"><div class="ttname"><a href="../../d3/db5/structglm_1_1detail_1_1tvec4.html">glm::detail::tvec4</a></div><div class="ttdef"><b>Definition:</b> type_vec4.hpp:49</div></div>
+<div class="ttc" id="agroup__gtc__constants_html_gacb41049b8d22c8aa90e362b96c524feb"><div class="ttname"><a href="../../d7/d6f/group__gtc__constants.html#gacb41049b8d22c8aa90e362b96c524feb">glm::epsilon</a></div><div class="ttdeci">GLM_FUNC_DECL genType epsilon()</div><div class="ttdef"><b>Definition:</b> constants.inl:32</div></div>
+<div class="ttc" id="anamespaceglm_html"><div class="ttname"><a href="../../d4/dff/namespaceglm.html">glm</a></div><div class="ttdef"><b>Definition:</b> _detail.hpp:38</div></div>
+<div class="ttc" id="agroup__gtx__vector__query_html_ga516c25a0d2c46c64fb5afca5eb24daab"><div class="ttname"><a href="../../dc/da4/group__gtx__vector__query.html#ga516c25a0d2c46c64fb5afca5eb24daab">glm::areCollinear</a></div><div class="ttdeci">bool areCollinear(genType const &amp;v0, genType const &amp;v1, typename genType::value_type const &amp;epsilon)</div></div>
+<div class="ttc" id="avector__query_8inl_html"><div class="ttname"><a href="../../dc/dfd/vector__query_8inl.html">vector_query.inl</a></div></div>
+<div class="ttc" id="agroup__gtx__matrix__query_html_ga4db0eb631e14d23d597b93b80e324c5d"><div class="ttname"><a href="../../df/d21/group__gtx__matrix__query.html#ga4db0eb631e14d23d597b93b80e324c5d">glm::isNormalized</a></div><div class="ttdeci">bool isNormalized(detail::tmat2x2&lt; valType &gt; const &amp;m, valType const &amp;epsilon)</div></div>
+<div class="ttc" id="astructglm_1_1detail_1_1tvec2_html"><div class="ttname"><a href="../../d2/d16/structglm_1_1detail_1_1tvec2.html">glm::detail::tvec2</a></div><div class="ttdef"><b>Definition:</b> type_vec2.hpp:49</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Проект Окно НУМ. Последние изменения: Вс 21 Мар 2021 17:39:30. Создано системой&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>
